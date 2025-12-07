@@ -32,7 +32,7 @@ const WelcomeGuide = ({ onStartAnalysis }) => {
       title: "AI & Technology",
       description: "Understand AI strategies, partnerships, and technological investments.",
       examples: [
-        "How is Microsoft partnering with OpenAI, and what are the results?",
+        "How is Microsoft commercializing AI with its partner ecosystem, and what are the results?",
         "What are Nvidia's most important AI initiatives this year?",
         "How is AMD competing with Nvidia in AI chips?",
         "How is Salesforce leveraging AI in its CRM platform?"

@@ -13,7 +13,7 @@ This project demonstrates multiple RAG retrieval strategies for financial analys
 | Strategy | Description | Implementation |
 |----------|-------------|----------------|
 | **Auto** | LLM picks best strategy | `autoSelectStrategy()` in route.js |
-| **Dense** | Semantic similarity | OpenAI embeddings → Pinecone |
+| **Dense** | Semantic similarity | Voyage embeddings → Pinecone |
 | **Hybrid** | BM25 + Dense blend | True sparse vectors OR `hybridRerank()` fallback |
 | **HyDE** | Hypothetical doc embedding | `generateHypotheticalDoc()` |
 | **Multi-Query** | Query expansion + RRF | `multiQueryExpand()` + `reciprocalRankFusion()` |
@@ -40,7 +40,7 @@ This project demonstrates multiple RAG retrieval strategies for financial analys
 
 Both Pinecone indexes are now populated:
 
-### Dense Index (clarity-openai) - 28,110 vectors
+### Dense Index (clarity-dense) - 28,110 vectors
 
 | Ticker | Status |
 |--------|--------|
@@ -75,7 +75,7 @@ node scripts/embed-hybrid.js --status
 ### Using Dense-Only Index (default)
 
 ```env
-PINECONE_INDEX=clarity-openai
+PINECONE_INDEX=clarity-dense
 ```
 
 ### Using Hybrid Index (recommended)

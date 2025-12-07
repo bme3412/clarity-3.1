@@ -16,7 +16,7 @@ const QUICK_ACTIONS = [
     icon: <Cpu className="w-4 h-4" />,
     text: "Strategy",
     examples: [
-      "How is Microsoft partnering with OpenAI, and what are the results?",
+      "How is Microsoft commercializing AI with its partner ecosystem, and what are the results?",
       "What are Nvidia's most important AI initiatives this year?",
       "How is AMD competing with Nvidia in AI chips?",
       "What is Google's overall AI strategy in 2025?"

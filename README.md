@@ -103,8 +103,8 @@ A production-grade RAG system for financial analysis, demonstrating advanced ret
 
 ## 🔧 Key Technical Decisions
 
-### Why Voyage AI over OpenAI embeddings?
-Voyage `voyage-3.5` achieves **higher retrieval accuracy** on domain-specific text. In our testing on financial transcripts, it outperformed `text-embedding-3-small` by ~5% on precision@10.
+### Why Voyage AI for dense embeddings?
+Voyage `voyage-3.5` achieves **higher retrieval accuracy** on domain-specific text. In our testing on financial transcripts it delivered a ~5% lift on precision@10 versus the legacy baseline.
 
 ### Why Hybrid Search (Dense + Sparse)?
 Dense embeddings excel at semantic similarity ("AI strategy" ≈ "machine learning initiatives"), but miss exact matches. BM25 sparse vectors catch specific terms like:

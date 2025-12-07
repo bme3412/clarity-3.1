@@ -462,6 +462,7 @@ export default function Chatbox() {
   const [activeTools, setActiveTools] = useState([]);
   const [dataSources, setDataSources] = useState([]);
   const [ragMetrics, setRagMetrics] = useState(null);
+const [dataFreshness, setDataFreshness] = useState(null);
   const [showBehindScenes, setShowBehindScenes] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   
@@ -564,6 +565,7 @@ export default function Chatbox() {
                 case 'metadata':
                   metadata = data;
                   setCurrentMetadata(data);
+                  if (data.dataFreshness) setDataFreshness(data.dataFreshness);
                   break;
                 case 'status':
                   setStatusMessage(data.message);
@@ -870,6 +872,13 @@ export default function Chatbox() {
                     <span className="px-2 py-0.5 bg-slate-100 rounded">Pinecone</span>
                   </div>
                 </div>
+                
+                {dataFreshness?.latestHuman && (
+                  <div className="mb-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 text-xs">
+                    <span className="font-semibold">Data as of</span>
+                    <span className="font-mono">{dataFreshness.latestHuman}</span>
+                  </div>
+                )}
                 
                 <p className="text-xs text-slate-400">
                   11,929 vectors • FY2020-FY2026 • Hybrid search (dense + sparse)

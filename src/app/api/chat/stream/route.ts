@@ -4,6 +4,8 @@ import { FINANCIAL_TOOLS, TOOL_SYSTEM_PROMPT } from '../../../../lib/tools/index
 import { executeToolCallWithTracing } from '../../../../lib/tools/instrumented-executor.js';
 import { createTrace, flush } from '../../../../lib/observability/langfuse.js';
 import { StreamChatRequestSchema, formatValidationError, type ChatMessage } from '../../../../lib/schemas/api';
+import { sanitizeText, summarizeViolations } from '../../../../lib/prompts/guardrails.js';
+import { getDataFreshness } from '../../../../lib/data/freshness.js';
 
 // =============================================================================
 // TYPES
@@ -215,7 +217,8 @@ export async function POST(request: NextRequest): Promise<Response> {
         };
         
         try {
-          streamData(controller, { type: 'metadata', requestId });
+          const dataFreshness = await getDataFreshness();
+          streamData(controller, { type: 'metadata', requestId, dataFreshness });
           
           // Immediate acknowledgment for better perceived latency
           streamData(controller, { type: 'status', message: 'Analyzing your question...' });
@@ -257,10 +260,14 @@ export async function POST(request: NextRequest): Promise<Response> {
                       metrics.firstTokenTime = Date.now() - metrics.startTime;
                       isFirstToken = false;
                     }
-                    metrics.totalTokensEstimate += Math.ceil(textBlock.text.length / 4);
+                    const { sanitized, violations } = sanitizeText(textBlock.text);
+                    if (violations.length) {
+                      streamData(controller, { type: 'status', message: summarizeViolations(violations) });
+                    }
+                    metrics.totalTokensEstimate += Math.ceil(sanitized.length / 4);
                     
                     // Stream character by character for visual effect
-                    const text = textBlock.text;
+                    const text = sanitized;
                     const chunkSize = 5; // Send ~5 chars at a time for smooth streaming
                     for (let i = 0; i < text.length; i += chunkSize) {
                       streamData(controller, { type: 'content', content: text.slice(i, i + chunkSize) });
@@ -284,8 +291,12 @@ export async function POST(request: NextRequest): Promise<Response> {
                     metrics.firstTokenTime = Date.now() - metrics.startTime;
                     isFirstToken = false;
                   }
-                  tokenCount++;
-                  streamData(controller, { type: 'content', content: token });
+                  const { sanitized, violations } = sanitizeText(token);
+                  if (violations.length) {
+                    streamData(controller, { type: 'status', message: summarizeViolations(violations) });
+                  }
+                  tokenCount += Math.ceil(sanitized.length / 4);
+                  streamData(controller, { type: 'content', content: sanitized });
                 }
                 metrics.totalTokensEstimate = tokenCount;
               }

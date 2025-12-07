@@ -433,9 +433,9 @@ data: {"type":"end"}`}
           
           <div className="space-y-6">
             <div>
-              <h3 className="font-semibold text-blue-300 mb-2">Why Voyage over OpenAI embeddings?</h3>
+              <h3 className="font-semibold text-blue-300 mb-2">Why Voyage for dense embeddings?</h3>
               <p className="text-slate-300">
-                Voyage <code className="text-emerald-300">voyage-3.5</code> outperforms OpenAI's models on 
+                Voyage <code className="text-emerald-300">voyage-3.5</code> outperforms our legacy dense baseline on 
                 domain-specific retrieval tasks. In our testing, it achieved ~5% higher precision@10 
                 on financial transcripts.
               </p>

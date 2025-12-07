@@ -43,6 +43,18 @@ function getRunSummaries() {
   );
 }
 
+function formatMs(ms) {
+  if (!ms && ms !== 0) return '—';
+  if (ms > 2000) return `${(ms / 1000).toFixed(1)} s`;
+  return `${Math.round(ms)} ms`;
+}
+
+function formatTokens(tokens) {
+  if (!tokens && tokens !== 0) return '—';
+  if (tokens > 1000) return `${(tokens / 1000).toFixed(1)}k`;
+  return tokens.toString();
+}
+
 function RunCard({ run }) {
   return (
     <div className="bg-card border border-border rounded-xl p-5 flex flex-col gap-4">
@@ -67,6 +79,16 @@ function RunCard({ run }) {
         <span className="text-xs font-mono text-muted-foreground">
           Cases: {run.total_cases}
         </span>
+        {run.summary?.avg_latency_ms != null && (
+          <span className="text-xs font-mono text-muted-foreground">
+            Avg latency: {formatMs(run.summary.avg_latency_ms)}
+          </span>
+        )}
+        {run.summary?.avg_input_tokens != null && (
+          <span className="text-xs font-mono text-muted-foreground">
+            Tokens: in {formatTokens(run.summary.avg_input_tokens)} / out {formatTokens(run.summary.avg_output_tokens ?? 0)}
+          </span>
+        )}
       </div>
     </div>
   );
@@ -122,7 +144,7 @@ export default function EvaluationPage() {
       <div className="max-w-7xl mx-auto p-6 md:p-12 space-y-12">
         <header className="border border-border rounded-2xl p-6 bg-card shadow-sm">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div>
+            <div className="space-y-1">
               <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
                 Latest Run
               </p>
@@ -132,18 +154,54 @@ export default function EvaluationPage() {
               <p className="text-sm text-muted-foreground">
                 Dataset: {latestRun.dataset} • {latestRun.total_cases} cases
               </p>
+              <div className="flex flex-wrap gap-3 text-xs font-mono text-muted-foreground">
+                {latestRun.summary?.avg_latency_ms != null && (
+                  <span>Avg latency: {formatMs(latestRun.summary.avg_latency_ms)}</span>
+                )}
+                {latestRun.summary?.avg_input_tokens != null && (
+                  <span>
+                    Tokens in/out: {formatTokens(latestRun.summary.avg_input_tokens)} /{' '}
+                    {formatTokens(latestRun.summary.avg_output_tokens ?? 0)}
+                  </span>
+                )}
+              </div>
             </div>
-            <Link
-              href={`/evaluation/${latestRun.run_id}`}
-              className="px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold text-center"
-            >
-              View Detailed Report
-            </Link>
+            <div className="flex flex-wrap gap-2">
+              <Link
+                href="/rag-lab"
+                className="px-4 py-2 rounded-lg border border-border text-sm font-semibold hover:bg-muted"
+              >
+                RAG Lab
+              </Link>
+              <Link
+                href="/how-it-works"
+                className="px-4 py-2 rounded-lg border border-border text-sm font-semibold hover:bg-muted"
+              >
+                How It Works
+              </Link>
+              <Link
+                href={`/evaluation/${latestRun.run_id}`}
+                className="px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold text-center"
+              >
+                View Detailed Report
+              </Link>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mt-6">
             <ScoreCard label="Relevance" value={latestRun.summary?.avg_relevance ?? 0} colorClass="text-blue-500" />
             <ScoreCard label="Faithfulness" value={latestRun.summary?.avg_faithfulness ?? 0} colorClass="text-purple-500" />
             <ScoreCard label="Accuracy" value={latestRun.summary?.avg_accuracy ?? 0} colorClass="text-emerald-500" />
+            <ScoreCard
+              label="Avg Latency"
+              value={latestRun.summary?.avg_latency_ms ? latestRun.summary.avg_latency_ms / 1000 : 0}
+              suffix="s"
+              colorClass="text-amber-500"
+            />
+            <ScoreCard
+              label="Avg Input Tokens"
+              value={latestRun.summary?.avg_input_tokens ?? 0}
+              colorClass="text-slate-500"
+            />
           </div>
         </header>
 

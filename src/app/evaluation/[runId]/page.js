@@ -4,6 +4,18 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ScoreCard, StatusBadge } from '../components/ui';
 
+function formatMs(ms) {
+  if (!ms && ms !== 0) return '—';
+  if (ms > 2000) return `${(ms / 1000).toFixed(1)} s`;
+  return `${Math.round(ms)} ms`;
+}
+
+function formatTokens(tokens) {
+  if (!tokens && tokens !== 0) return '—';
+  if (tokens > 1000) return `${(tokens / 1000).toFixed(1)}k`;
+  return tokens.toString();
+}
+
 export const dynamic = 'force-dynamic';
 
 const REPORTS_DIR = path.join(process.cwd(), 'evaluation_reports');
@@ -40,16 +52,53 @@ export default function RunDetailPage({ params }) {
             <p className="text-sm text-muted-foreground">
               {new Date(run.created_at).toLocaleString()} • Dataset: {run.dataset}
             </p>
+            <div className="flex flex-wrap gap-3 text-xs font-mono text-muted-foreground mt-1">
+              {run.summary?.avg_latency_ms != null && (
+                <span>Avg latency: {formatMs(run.summary.avg_latency_ms)}</span>
+              )}
+              {run.summary?.avg_input_tokens != null && (
+                <span>
+                  Tokens in/out: {formatTokens(run.summary.avg_input_tokens)} /{' '}
+                  {formatTokens(run.summary.avg_output_tokens ?? 0)}
+                </span>
+              )}
+            </div>
           </div>
-          <Link href="/evaluation" className="text-sm text-muted-foreground hover:text-foreground">
-            ← Back to Runs
-          </Link>
+          <div className="flex flex-wrap gap-2">
+            <Link href="/evaluation" className="text-sm text-muted-foreground hover:text-foreground">
+              ← Back to Runs
+            </Link>
+            <Link href="/rag-lab" className="text-sm text-blue-600 hover:text-blue-700">
+              RAG Lab
+            </Link>
+            <Link href="/how-it-works" className="text-sm text-violet-600 hover:text-violet-700">
+              How It Works
+            </Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <ScoreCard label="Relevance" value={run.summary?.avg_relevance ?? 0} colorClass="text-blue-500" />
           <ScoreCard label="Faithfulness" value={run.summary?.avg_faithfulness ?? 0} colorClass="text-purple-500" />
           <ScoreCard label="Accuracy" value={run.summary?.avg_accuracy ?? 0} colorClass="text-emerald-500" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <ScoreCard
+            label="Avg Latency"
+            value={run.summary?.avg_latency_ms ? run.summary.avg_latency_ms / 1000 : 0}
+            suffix="s"
+            colorClass="text-amber-500"
+          />
+          <ScoreCard
+            label="Avg Input Tokens"
+            value={run.summary?.avg_input_tokens ?? 0}
+            colorClass="text-slate-500"
+          />
+          <ScoreCard
+            label="Avg Output Tokens"
+            value={run.summary?.avg_output_tokens ?? 0}
+            colorClass="text-slate-500"
+          />
         </div>
 
         <section className="space-y-4">
@@ -70,7 +119,13 @@ export default function RunDetailPage({ params }) {
                     <p className="text-xs font-mono text-muted-foreground">Case ID: {testCase.id}</p>
                     <h3 className="text-lg font-semibold">{testCase.question}</h3>
                     <p className="text-xs text-muted-foreground">
-                      Duration: {testCase.duration_ms}ms • Context chunks: {testCase.context_count}
+                      Duration: {formatMs(testCase.duration_ms)} • Context chunks: {testCase.context_count}
+                      {testCase.metrics?.tokens && (
+                        <>
+                          {' '}• Tokens in/out:{' '}
+                          {formatTokens(testCase.metrics.tokens.input ?? 0)} / {formatTokens(testCase.metrics.tokens.output ?? 0)}
+                        </>
+                      )}
                     </p>
                   </div>
                   <Link
