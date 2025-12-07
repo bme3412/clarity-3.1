@@ -98,4 +98,55 @@ export const financials = {
       return { fiscalYear: fy.replace('FY_', ''), quarters };
     });
   },
+  
+  // Get the most recent quarter available for a ticker
+  getMostRecentQuarter(ticker) {
+    const available = this.listAvailable(ticker);
+    if (!available.length) return null;
+    
+    // Sort fiscal years descending (2026, 2025, 2024...)
+    const sorted = available.sort((a, b) => parseInt(b.fiscalYear) - parseInt(a.fiscalYear));
+    
+    // Find the most recent quarter in the most recent fiscal year
+    for (const fy of sorted) {
+      if (fy.quarters.length > 0) {
+        // Sort quarters descending (Q4, Q3, Q2, Q1)
+        const sortedQs = fy.quarters.sort((a, b) => {
+          const qA = parseInt(a.replace('Q', ''));
+          const qB = parseInt(b.replace('Q', ''));
+          return qB - qA;
+        });
+        return {
+          fiscalYear: fy.fiscalYear,
+          quarter: sortedQs[0]
+        };
+      }
+    }
+    return null;
+  },
+  
+  // Get the N most recent quarters for a ticker
+  getMostRecentQuarters(ticker, count = 4) {
+    const available = this.listAvailable(ticker);
+    if (!available.length) return [];
+    
+    // Flatten all quarters with their fiscal years
+    const allQuarters = [];
+    available.forEach(fy => {
+      fy.quarters.forEach(q => {
+        allQuarters.push({
+          fiscalYear: fy.fiscalYear,
+          quarter: q,
+          // Create sortable value: FY2026Q3 = 20263
+          sortKey: parseInt(fy.fiscalYear) * 10 + parseInt(q.replace('Q', ''))
+        });
+      });
+    });
+    
+    // Sort descending and take top N
+    return allQuarters
+      .sort((a, b) => b.sortKey - a.sortKey)
+      .slice(0, count)
+      .map(({ fiscalYear, quarter }) => ({ fiscalYear, quarter }));
+  },
 };

@@ -518,10 +518,7 @@ export default function ChatResponse({ content, query, isStreaming, onFollowUp, 
         )}
       </div>
       
-      {/* Follow-up suggestions */}
-      {!isStreaming && onFollowUp && (
-        <FollowUpSuggestions query={query} onAsk={onFollowUp} />
-      )}
+      {/* Follow-up hint - removed hardcoded suggestions */}
       
       {/* Reset button */}
       {!isStreaming && onReset && (

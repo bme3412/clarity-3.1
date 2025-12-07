@@ -204,11 +204,53 @@ class FinancialDataCache {
                        incomeStatement.net_income?.non_gaap?.value ||
                        incomeStatement.net_income?.value || 0;
       
-      // Extract gross margin
-      const grossMargin = parseFloat(incomeStatement.margins?.gross_margin?.gaap?.value) || 0;
+      // Extract EPS - handle different structures
+      let eps = 0;
+      let epsDiluted = 0;
+      if (incomeStatement.earnings_per_share?.basic?.value) {
+        eps = incomeStatement.earnings_per_share.basic.value;
+      } else if (incomeStatement.eps?.basic?.value) {
+        eps = incomeStatement.eps.basic.value;
+      } else if (incomeStatement.eps?.gaap?.value) {
+        eps = incomeStatement.eps.gaap.value;
+      }
       
-      // Extract gross profit
-      const grossProfit = incomeStatement.margins?.gross_margin?.gaap?.gross_profit || 0;
+      if (incomeStatement.earnings_per_share?.diluted?.value) {
+        epsDiluted = incomeStatement.earnings_per_share.diluted.value;
+      } else if (incomeStatement.eps?.diluted?.value) {
+        epsDiluted = incomeStatement.eps.diluted.value;
+      } else if (incomeStatement.eps?.non_gaap?.value) {
+        epsDiluted = incomeStatement.eps.non_gaap.value;
+      }
+      
+      // Extract gross margin - handle different structures
+      let grossMargin = 0;
+      if (incomeStatement.margins?.gross_margin?.current_value) {
+        // Apple/standard structure
+        grossMargin = parseFloat(incomeStatement.margins.gross_margin.current_value);
+      } else if (incomeStatement.margins?.gross_margin?.gaap?.value) {
+        // NVDA/GAAP structure
+        grossMargin = parseFloat(incomeStatement.margins.gross_margin.gaap.value);
+      } else if (incomeStatement.margins?.gross_margin?.non_gaap?.value) {
+        // Non-GAAP structure
+        grossMargin = parseFloat(incomeStatement.margins.gross_margin.non_gaap.value);
+      } else if (incomeStatement.margins?.gross_margin?.value) {
+        // Simple structure
+        grossMargin = parseFloat(incomeStatement.margins.gross_margin.value);
+      }
+      
+      // Extract gross profit - handle different structures
+      let grossProfit = 0;
+      if (incomeStatement.margins?.gross_margin?.gross_profit) {
+        // Apple structure
+        grossProfit = incomeStatement.margins.gross_margin.gross_profit;
+      } else if (incomeStatement.margins?.gross_margin?.gaap?.gross_profit) {
+        // NVDA/GAAP structure
+        grossProfit = incomeStatement.margins.gross_margin.gaap.gross_profit;
+      } else if (incomeStatement.gross_profit?.value) {
+        // Direct gross_profit field
+        grossProfit = incomeStatement.gross_profit.value;
+      }
       
       // Extract cash flow data (handle different structures)
       let operatingCashFlow = 0;
@@ -254,7 +296,21 @@ class FinancialDataCache {
       const cashFlowMargin = revenue > 0 ? (operatingCashFlow / revenue) * 100 : 0;
       
       return {
+        // Primary metrics (snake_case for tool compatibility)
         revenue,
+        gross_profit: grossProfit,
+        gross_margin: grossMargin,
+        operating_income: profit,
+        operating_margin: margin,
+        net_income: netIncome,
+        net_margin: revenue > 0 ? (netIncome / revenue) * 100 : 0,
+        operating_cash_flow: operatingCashFlow,
+        free_cash_flow: freeCashFlow,
+        revenue_growth: growth,
+        eps: eps,
+        eps_diluted: epsDiluted,
+        
+        // Also include camelCase for backwards compatibility
         revenueSegments,
         profit,
         margin,

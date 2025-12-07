@@ -4,13 +4,287 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ChatResponse from './ChatResponse';
 import StrategySelector from './StrategySelector';
-import PipelineMetrics from './PipelineMetrics';
+import OnboardingModal from './OnboardingModal';
 import { 
   AlertCircle, Loader2, Bot, Send, FileText, 
   ChevronRight, ChevronDown, Activity, HelpCircle, 
-  FlaskConical, Search, Building2, Calendar, TrendingUp
+  FlaskConical, Search, Building2, Calendar, TrendingUp,
+  Clock, Zap, Database, BarChart3
 } from 'lucide-react';
 import Link from 'next/link';
+
+// Pipeline Stages Component - Shows progress through RAG pipeline
+function PipelineStages({ stage, activeTools, totalVectors = 11929 }) {
+  const stages = [
+    { id: 'analyze', label: 'Analyzing query', icon: '🔍' },
+    { id: 'retrieve', label: `Searching ${totalVectors.toLocaleString()} vectors`, icon: '📚' },
+    { id: 'process', label: 'Processing results', icon: '⚙️' },
+    { id: 'generate', label: 'Generating response', icon: '✨' }
+  ];
+  
+  const getStageStatus = (stageId) => {
+    const stageOrder = ['analyze', 'retrieve', 'process', 'generate'];
+    const currentIndex = stageOrder.indexOf(stage);
+    const stageIndex = stageOrder.indexOf(stageId);
+    
+    if (stageIndex < currentIndex) return 'complete';
+    if (stageIndex === currentIndex) return 'active';
+    return 'pending';
+  };
+  
+  return (
+    <div className="space-y-2">
+      {stages.map((s) => {
+        const status = getStageStatus(s.id);
+        return (
+          <div 
+            key={s.id}
+            className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all ${
+              status === 'complete' ? 'bg-emerald-50 text-emerald-700' :
+              status === 'active' ? 'bg-blue-50 text-blue-700' :
+              'bg-slate-50 text-slate-400'
+            }`}
+          >
+            <span className="text-base">
+              {status === 'complete' ? '✓' : status === 'active' ? '●' : '○'}
+            </span>
+            <span className="text-sm font-medium">{s.label}</span>
+            {status === 'active' && (
+              <Loader2 className="w-3.5 h-3.5 animate-spin ml-auto" />
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// Confidence Indicator Component
+function ConfidenceIndicator({ citations, metrics }) {
+  if (!citations || citations.length === 0) return null;
+  
+  const avgScore = metrics?.avgRetrievalScore || 0;
+  const sourceCount = citations.length;
+  
+  // Determine confidence level
+  let confidence = 'medium';
+  let message = '';
+  let color = 'amber';
+  
+  if (sourceCount >= 5 && avgScore >= 0.6) {
+    confidence = 'high';
+    message = `High confidence: Based on ${sourceCount} verified sources`;
+    color = 'emerald';
+  } else if (sourceCount >= 3 && avgScore >= 0.4) {
+    confidence = 'medium';
+    message = `Moderate confidence: ${sourceCount} sources found`;
+    color = 'amber';
+  } else {
+    confidence = 'low';
+    message = `Limited data: Only ${sourceCount} source${sourceCount !== 1 ? 's' : ''} found`;
+    color = 'rose';
+  }
+  
+  return (
+    <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-${color}-50 text-${color}-700 border border-${color}-200`}>
+      {confidence === 'high' && <span>✅</span>}
+      {confidence === 'medium' && <span>⚡</span>}
+      {confidence === 'low' && <span>⚠️</span>}
+      <span>{message}</span>
+    </div>
+  );
+}
+
+// Behind the Scenes Panel - Shows RAG pipeline details
+function BehindTheScenes({ isOpen, onToggle, toolCalls, citations, systemInfo }) {
+  if (!isOpen) {
+    return (
+      <button
+        onClick={onToggle}
+        className="flex items-center gap-2 text-xs text-slate-500 hover:text-blue-600 transition-colors mt-4"
+      >
+        <FlaskConical className="w-3.5 h-3.5" />
+        <span>Show how this was generated</span>
+        <ChevronRight className="w-3 h-3" />
+      </button>
+    );
+  }
+  
+  return (
+    <div className="mt-4 border border-slate-200 rounded-xl overflow-hidden">
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between px-4 py-3 bg-slate-50 hover:bg-slate-100 transition-colors"
+      >
+        <div className="flex items-center gap-2">
+          <FlaskConical className="w-4 h-4 text-blue-600" />
+          <span className="font-medium text-sm text-slate-700">Behind the Scenes</span>
+        </div>
+        <ChevronDown className="w-4 h-4 text-slate-400" />
+      </button>
+      
+      <div className="p-4 space-y-4 bg-white">
+        {/* Tool Calls */}
+        {toolCalls && toolCalls.length > 0 && (
+          <div>
+            <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
+              Tool Calls ({toolCalls.length})
+            </h4>
+            <div className="space-y-2">
+              {toolCalls.map((tool, i) => (
+                <div key={i} className="bg-slate-50 rounded-lg p-3 text-xs">
+                  <div className="flex items-center justify-between mb-1">
+                    <code className="font-mono text-blue-600">{tool.tool}</code>
+                    <span className={`px-2 py-0.5 rounded-full ${tool.success ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'}`}>
+                      {tool.latencyMs}ms
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        
+        {/* Retrieved Chunks Preview */}
+        {citations && citations.length > 0 && (
+          <div>
+            <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
+              Retrieved Chunks ({citations.length})
+            </h4>
+            <div className="space-y-2 max-h-48 overflow-y-auto">
+              {citations.slice(0, 5).map((c, i) => (
+                <div key={i} className="bg-slate-50 rounded-lg p-3 text-xs">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-medium text-slate-700">{c.source}</span>
+                    <span className="text-slate-400">{c.quarter} FY{c.fiscalYear}</span>
+                  </div>
+                  <p className="text-slate-600 line-clamp-2">{c.text?.slice(0, 150)}...</p>
+                </div>
+              ))}
+              {citations.length > 5 && (
+                <p className="text-xs text-slate-400 text-center">
+                  +{citations.length - 5} more chunks
+                </p>
+              )}
+            </div>
+          </div>
+        )}
+        
+        {/* System Info */}
+        <div>
+          <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
+            System Configuration
+          </h4>
+          <div className="bg-slate-50 rounded-lg p-3 text-xs space-y-1">
+            <div className="flex justify-between">
+              <span className="text-slate-500">Embedding Model</span>
+              <span className="font-mono text-slate-700">voyage-3.5</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-slate-500">LLM</span>
+              <span className="font-mono text-slate-700">claude-sonnet-4</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-slate-500">Vector DB</span>
+              <span className="font-mono text-slate-700">Pinecone</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-slate-500">Search Type</span>
+              <span className="font-mono text-slate-700">Hybrid (Dense + BM25)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// RAG Metrics Panel - Shows pipeline performance
+function RAGMetricsPanel({ metrics, isVisible }) {
+  if (!isVisible || !metrics) return null;
+  
+  return (
+    <div className="bg-gradient-to-r from-slate-50 to-blue-50 border border-slate-200 rounded-xl p-4 mt-4">
+      <div className="flex items-center gap-2 mb-3">
+        <BarChart3 className="w-4 h-4 text-blue-600" />
+        <span className="font-semibold text-sm text-slate-700">Pipeline Metrics</span>
+      </div>
+      
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {/* Time to First Token */}
+        <div className="bg-white rounded-lg p-3 border border-slate-100 shadow-sm">
+          <div className="flex items-center gap-2 mb-1">
+            <Zap className="w-3.5 h-3.5 text-amber-500" />
+            <span className="text-xs text-slate-500">First Token</span>
+          </div>
+          <div className="text-lg font-bold text-slate-800">
+            {metrics.timeToFirstTokenMs ? `${(metrics.timeToFirstTokenMs / 1000).toFixed(1)}s` : '—'}
+          </div>
+        </div>
+        
+        {/* Total Time */}
+        <div className="bg-white rounded-lg p-3 border border-slate-100 shadow-sm">
+          <div className="flex items-center gap-2 mb-1">
+            <Clock className="w-3.5 h-3.5 text-blue-500" />
+            <span className="text-xs text-slate-500">Total Time</span>
+          </div>
+          <div className="text-lg font-bold text-slate-800">
+            {metrics.totalTimeMs ? `${(metrics.totalTimeMs / 1000).toFixed(1)}s` : '—'}
+          </div>
+        </div>
+        
+        {/* Retrieved Chunks */}
+        <div className="bg-white rounded-lg p-3 border border-slate-100 shadow-sm">
+          <div className="flex items-center gap-2 mb-1">
+            <Database className="w-3.5 h-3.5 text-emerald-500" />
+            <span className="text-xs text-slate-500">Retrieved</span>
+          </div>
+          <div className="text-lg font-bold text-slate-800">
+            {metrics.retrievalResults || 0} <span className="text-xs font-normal text-slate-400">chunks</span>
+          </div>
+        </div>
+        
+        {/* Relevance Score */}
+        <div className="bg-white rounded-lg p-3 border border-slate-100 shadow-sm">
+          <div className="flex items-center gap-2 mb-1">
+            <Activity className="w-3.5 h-3.5 text-violet-500" />
+            <span className="text-xs text-slate-500">Avg Score</span>
+          </div>
+          <div className="text-lg font-bold text-slate-800">
+            {metrics.avgRetrievalScore 
+              ? metrics.avgRetrievalScore > 1 
+                ? metrics.avgRetrievalScore.toFixed(2)  // dotproduct scores (not normalized)
+                : `${(metrics.avgRetrievalScore * 100).toFixed(0)}%`  // cosine scores (0-1)
+              : '—'}
+          </div>
+        </div>
+      </div>
+      
+      {/* Tool breakdown */}
+      {metrics.toolBreakdown && metrics.toolBreakdown.length > 0 && (
+        <div className="mt-3 pt-3 border-t border-slate-100">
+          <div className="text-xs text-slate-500 mb-2">Tool Execution</div>
+          <div className="flex flex-wrap gap-2">
+            {metrics.toolBreakdown.map((tool, i) => (
+              <div 
+                key={i}
+                className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-xs ${
+                  tool.success 
+                    ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' 
+                    : 'bg-red-50 text-red-700 border border-red-200'
+                }`}
+              >
+                <span>{tool.tool.replace(/_/g, ' ')}</span>
+                <span className="text-slate-400">•</span>
+                <span className="font-mono">{tool.latencyMs}ms</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 // Context Panel - Shows retrieved sources (same as workbook)
 function ContextPanel({ citations, loading, detectedTickers, strategy }) {
@@ -187,9 +461,31 @@ export default function Chatbox() {
   const [isFirstQuery, setIsFirstQuery] = useState(true);
   const [activeTools, setActiveTools] = useState([]);
   const [dataSources, setDataSources] = useState([]);
+  const [ragMetrics, setRagMetrics] = useState(null);
+  const [showBehindScenes, setShowBehindScenes] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
   
   const inputRef = useRef(null);
+  const responseAreaRef = useRef(null);
   const hasHandledInitialQuery = useRef(false);
+  
+  // Auto-scroll to bottom when response updates
+  useEffect(() => {
+    if (responseAreaRef.current && (currentResponse || loading)) {
+      responseAreaRef.current.scrollTop = responseAreaRef.current.scrollHeight;
+    }
+  }, [currentResponse, loading, activeTools]);
+  
+  // Auto-focus input after response completes (for follow-up questions)
+  useEffect(() => {
+    if (!loading && currentResponse && inputRef.current) {
+      // Small delay to ensure smooth transition
+      const timer = setTimeout(() => {
+        inputRef.current?.focus();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [loading, currentResponse]);
   
   // Handle initial query from URL
   useEffect(() => {
@@ -220,6 +516,9 @@ export default function Chatbox() {
     setIsFirstQuery(false);
     setActiveTools([]);
     setDataSources([]);
+    setRagMetrics(null);
+    setShowBehindScenes(false);
+    setStatusMessage('');
     
     try {
       console.log('[Chatbox] Sending request to /api/chat/stream');
@@ -266,6 +565,9 @@ export default function Chatbox() {
                   metadata = data;
                   setCurrentMetadata(data);
                   break;
+                case 'status':
+                  setStatusMessage(data.message);
+                  break;
                 case 'content':
                   analysis += data.content;
                   setCurrentResponse(analysis);
@@ -273,6 +575,7 @@ export default function Chatbox() {
                 case 'metrics':
                   metrics = data.metrics;
                   setCurrentMetrics(metrics);
+                  setRagMetrics(data.metrics);
                   break;
                 case 'tool_start':
                   setActiveTools((prev) => [...prev, { id: data.id, name: data.tool, status: 'running' }]);
@@ -448,6 +751,9 @@ export default function Chatbox() {
   
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
+      {/* Onboarding Modal for first-time visitors */}
+      <OnboardingModal />
+      
       {/* Header */}
       <header className="bg-white border-b border-slate-200 px-6 py-3 flex items-center justify-between flex-shrink-0">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
@@ -462,7 +768,14 @@ export default function Chatbox() {
           </div>
         </Link>
         
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
+          <Link 
+            href="/how-it-works"
+            className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-blue-600 transition-colors"
+          >
+            <HelpCircle className="w-4 h-4" />
+            <span>How it Works</span>
+          </Link>
           <StrategySelector 
             selectedStrategy={selectedStrategy}
             onStrategyChange={setSelectedStrategy}
@@ -483,10 +796,172 @@ export default function Chatbox() {
           />
         </div>
         
-        {/* Right Panel - Query + Response */}
+        {/* Right Panel - Response + Query (chat-style layout) */}
         <div className="flex-1 flex flex-col overflow-hidden">
-          {/* Query Input */}
-          <div className="p-4 bg-white border-b border-slate-200 flex-shrink-0">
+          {/* Response Area - scrollable */}
+          <div ref={responseAreaRef} className="flex-1 overflow-y-auto p-6">
+            {error && (
+              <div className="rounded-xl bg-rose-50 border border-rose-200 p-4 flex items-start gap-3 mb-4">
+                <AlertCircle className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-medium text-rose-700">Error</p>
+                  <p className="text-sm text-rose-600">{error}</p>
+                </div>
+              </div>
+            )}
+            
+            {/* Empty state - Enhanced welcome */}
+            {!currentResponse && !loading && isFirstQuery && (
+              <div className="h-full flex flex-col items-center justify-center max-w-2xl mx-auto px-4">
+                {/* Logo and title */}
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg mb-4">
+                  <TrendingUp className="w-8 h-8 text-white" />
+                </div>
+                <h2 className="text-2xl font-bold text-slate-800 mb-2">
+                  Clarity <span className="text-blue-600">3.0</span>
+                </h2>
+                <p className="text-slate-500 text-center mb-6">
+                  AI-powered analysis of Big Tech earnings calls, financial metrics, and strategic initiatives
+                </p>
+                
+                {/* Available tickers */}
+                <div className="flex flex-wrap justify-center gap-2 mb-6">
+                  {['AAPL', 'AMD', 'NVDA', 'GOOGL', 'META', 'MSFT', 'AMZN', 'AVGO', 'CRM', 'ORCL'].map(ticker => (
+                    <span 
+                      key={ticker}
+                      className="px-3 py-1 text-xs font-mono font-semibold bg-slate-100 text-slate-700 rounded-full"
+                    >
+                      {ticker}
+                    </span>
+                  ))}
+                </div>
+                
+                {/* What you can ask */}
+                <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+                  <div className="bg-blue-50 rounded-xl p-4 text-left">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Database className="w-4 h-4 text-blue-600" />
+                      <span className="text-sm font-semibold text-blue-800">Financial Metrics</span>
+                    </div>
+                    <p className="text-xs text-blue-600">Revenue, EPS, margins, cash flow, segment breakdowns</p>
+                  </div>
+                  <div className="bg-emerald-50 rounded-xl p-4 text-left">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Search className="w-4 h-4 text-emerald-600" />
+                      <span className="text-sm font-semibold text-emerald-800">Strategy &amp; Guidance</span>
+                    </div>
+                    <p className="text-xs text-emerald-600">AI initiatives, market positioning, executive commentary</p>
+                  </div>
+                  <div className="bg-violet-50 rounded-xl p-4 text-left">
+                    <div className="flex items-center gap-2 mb-2">
+                      <TrendingUp className="w-4 h-4 text-violet-600" />
+                      <span className="text-sm font-semibold text-violet-800">Comparisons</span>
+                    </div>
+                    <p className="text-xs text-violet-600">Cross-company analysis, YoY growth, trend analysis</p>
+                  </div>
+                </div>
+                
+                {/* Powered by */}
+                <div className="flex items-center gap-4 text-xs text-slate-400 mb-4">
+                  <span>Powered by</span>
+                  <div className="flex gap-2">
+                    <span className="px-2 py-0.5 bg-slate-100 rounded">Claude Sonnet</span>
+                    <span className="px-2 py-0.5 bg-slate-100 rounded">Voyage AI</span>
+                    <span className="px-2 py-0.5 bg-slate-100 rounded">Pinecone</span>
+                  </div>
+                </div>
+                
+                <p className="text-xs text-slate-400">
+                  11,929 vectors • FY2020-FY2026 • Hybrid search (dense + sparse)
+                </p>
+              </div>
+            )}
+            
+            {/* Loading state with pipeline stages */}
+            {loading && !currentResponse && (
+              <div className="max-w-md">
+                {/* Progress header */}
+                <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100">
+                  <div className="relative">
+                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                      <Loader2 className="w-5 h-5 animate-spin text-blue-600" />
+                    </div>
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 flex items-center justify-center">
+                      <span className="text-white text-[10px]">AI</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-sm font-semibold text-slate-800">Processing your query</span>
+                    <p className="text-xs text-slate-500">
+                      {statusMessage || (activeTools.length > 0 
+                        ? `${activeTools.filter(t => t.status === 'complete').length}/${activeTools.length} tools complete`
+                        : 'Initializing pipeline...'
+                      )}
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Pipeline stages visualization */}
+                <PipelineStages 
+                  stage={
+                    activeTools.length === 0 ? 'analyze' :
+                    activeTools.some(t => t.status === 'running') ? 'retrieve' :
+                    activeTools.every(t => t.status === 'complete') ? 'generate' : 'process'
+                  }
+                  activeTools={activeTools}
+                />
+                
+                {/* Tool cards */}
+                {activeTools.length > 0 && (
+                  <div className="mt-4 pt-4 border-t border-slate-100">
+                    <p className="text-xs font-medium text-slate-500 mb-2">Active Tools</p>
+                    <div className="space-y-2">
+                      {activeTools.map((t) => (
+                        <ToolIndicator key={t.id} tool={t.name} status={t.status} />
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+            
+            {/* Response */}
+            {currentResponse && (
+              <>
+                {/* Confidence indicator - show after streaming */}
+                {!loading && currentCitations.length > 0 && (
+                  <div className="mb-4">
+                    <ConfidenceIndicator citations={currentCitations} metrics={ragMetrics} />
+                  </div>
+                )}
+                
+                <ChatResponse
+                  content={currentResponse}
+                  query={query}
+                  isStreaming={loading}
+                  onFollowUp={handleFollowUpQuestion}
+                  onReset={handleReset}
+                  sources={dataSources}
+                />
+                
+                {/* RAG Metrics - show after streaming completes */}
+                <RAGMetricsPanel metrics={ragMetrics} isVisible={!loading && ragMetrics} />
+                
+                {/* Behind the Scenes - show after streaming */}
+                {!loading && (
+                  <BehindTheScenes
+                    isOpen={showBehindScenes}
+                    onToggle={() => setShowBehindScenes(!showBehindScenes)}
+                    toolCalls={ragMetrics?.toolBreakdown}
+                    citations={currentCitations}
+                  />
+                )}
+              </>
+            )}
+          </div>
+          
+          {/* Query Input - fixed at bottom */}
+          <div className="p-4 bg-white border-t border-slate-200 flex-shrink-0">
             <form onSubmit={handleSubmit} className="flex gap-3">
               <div className="flex-1 relative">
                 <input
@@ -496,7 +971,10 @@ export default function Chatbox() {
                   type="text"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Ask about Apple, AMD, Nvidia, Microsoft, Google, Meta..."
+                  placeholder={currentResponse && !loading 
+                    ? "Ask a follow-up question..." 
+                    : "Ask about Apple, AMD, Nvidia, Microsoft, Google, Meta..."
+                  }
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-300 focus:ring-2 focus:ring-blue-100 outline-none transition-all text-sm"
                   disabled={loading}
                   autoFocus
@@ -518,107 +996,30 @@ export default function Chatbox() {
             
             {/* Example queries - only show before first query */}
             {isFirstQuery && (
-              <div className="flex flex-wrap gap-2 mt-3">
-                {[
-                  "What was NVIDIA's data center revenue in Q3?",
-                  "How is Apple investing in AI?",
-                  "Compare AMD and Intel's GPU strategies"
-                ].map((example, i) => (
-                  <button
-                    key={i}
-                    onClick={() => {
-                      setQuery(example);
-                      handleSubmit({ preventDefault: () => {} }, example);
-                    }}
-                    className="px-3 py-1.5 text-xs text-slate-600 bg-slate-100 rounded-full hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                  >
-                    {example}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-          
-          {/* Response Area */}
-          <div className="flex-1 overflow-y-auto p-6">
-            {error && (
-              <div className="rounded-xl bg-rose-50 border border-rose-200 p-4 flex items-start gap-3 mb-4">
-                <AlertCircle className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-medium text-rose-700">Error</p>
-                  <p className="text-sm text-rose-600">{error}</p>
+              <div className="mt-3">
+                <p className="text-xs text-slate-400 mb-2">Try asking:</p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { text: "Compare NVDA vs AMD vs AVGO latest revenue", color: "blue" },
+                    { text: "What is Google's AI strategy?", color: "emerald" },
+                    { text: "NVIDIA data center revenue trend", color: "violet" },
+                    { text: "Apple gross margin by segment", color: "amber" }
+                  ].map((example, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setQuery(example.text)}
+                      className={`px-3 py-1.5 text-xs rounded-full transition-colors border
+                        ${example.color === 'blue' ? 'text-blue-600 bg-blue-50 border-blue-200 hover:bg-blue-100' : ''}
+                        ${example.color === 'emerald' ? 'text-emerald-600 bg-emerald-50 border-emerald-200 hover:bg-emerald-100' : ''}
+                        ${example.color === 'violet' ? 'text-violet-600 bg-violet-50 border-violet-200 hover:bg-violet-100' : ''}
+                        ${example.color === 'amber' ? 'text-amber-600 bg-amber-50 border-amber-200 hover:bg-amber-100' : ''}
+                      `}
+                    >
+                      {example.text}
+                    </button>
+                  ))}
                 </div>
               </div>
-            )}
-            
-            {/* Empty state */}
-            {!currentResponse && !loading && isFirstQuery && (
-              <div className="h-full flex flex-col items-center justify-center text-slate-400">
-                <Bot className="w-16 h-16 mb-4 text-slate-300" />
-                <p className="text-lg font-medium text-slate-500">Ask a financial question</p>
-                <p className="text-sm text-slate-400 mt-1">
-                  I&apos;ll retrieve relevant earnings data and provide analysis
-                </p>
-              </div>
-            )}
-            
-            {/* Loading state with tool progress */}
-            {loading && !currentResponse && (
-              <div className="max-w-xl">
-                {/* Progress header */}
-                <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100">
-                  <Loader2 className="w-5 h-5 animate-spin text-blue-600" />
-                  <span className="text-sm font-medium text-slate-700">
-                    {activeTools.length > 0 
-                      ? `Gathering data (${activeTools.filter(t => t.status === 'complete').length}/${activeTools.length} complete)`
-                      : 'Analyzing your question...'
-                    }
-                  </span>
-                </div>
-                
-                {/* Tool cards */}
-                {activeTools.length > 0 && (
-                  <div className="space-y-2 mb-4">
-                    {activeTools.map((t) => (
-                      <ToolIndicator key={t.id} tool={t.name} status={t.status} />
-                    ))}
-                  </div>
-                )}
-                
-                {/* Tip */}
-                {activeTools.length === 0 && (
-                  <div className="text-xs text-slate-400 italic">
-                    The AI is deciding which data sources to query...
-                  </div>
-                )}
-              </div>
-            )}
-            
-            {/* Response */}
-            {currentResponse && (
-              <>
-                <ChatResponse
-                  content={currentResponse}
-                  query={query}
-                  isStreaming={loading}
-                  onFollowUp={handleFollowUpQuestion}
-                  onReset={handleReset}
-                  sources={dataSources}
-                />
-                
-                {/* Pipeline Metrics - show after streaming completes */}
-                {!loading && currentMetrics && (
-                  <div className="mt-6 max-w-3xl">
-                    <PipelineMetrics 
-                      metrics={currentMetrics}
-                      strategy={selectedStrategy}
-                      isStreaming={loading}
-                      hydeDoc={currentMetadata?.hydeDoc}
-                      multiQueryVariations={currentMetadata?.multiQueryVariations}
-                    />
-                  </div>
-                )}
-              </>
             )}
           </div>
         </div>

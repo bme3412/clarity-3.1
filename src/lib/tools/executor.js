@@ -14,12 +14,29 @@ function normalizeQuarter(q) {
 
 async function executeGetFinancialMetrics(input) {
   const { ticker, fiscalYear, quarter, metrics } = input;
-  if (!ticker || !fiscalYear || !quarter || !metrics?.length) {
+  if (!ticker || !metrics?.length) {
     throw new Error('Missing required inputs for get_financial_metrics');
   }
 
-  const fy = normalizeFY(fiscalYear);
-  const q = normalizeQuarter(quarter);
+  // Handle "latest" or missing period - auto-detect most recent
+  let fy = normalizeFY(fiscalYear);
+  let q = normalizeQuarter(quarter);
+  
+  if (!fy || !q || fiscalYear?.toLowerCase() === 'latest' || fiscalYear?.toLowerCase() === 'most recent') {
+    const mostRecent = financials.getMostRecentQuarter(ticker);
+    if (mostRecent) {
+      fy = mostRecent.fiscalYear;
+      q = mostRecent.quarter;
+    } else {
+      return {
+        found: false,
+        ticker,
+        error: 'No financial data available for this ticker',
+        source: 'financials.getMostRecentQuarter'
+      };
+    }
+  }
+  
   const data = await financials.getQuarter(ticker, fy, q);
 
   if (!data) {
@@ -59,9 +76,23 @@ async function executeGetFinancialMetrics(input) {
 }
 
 async function executeGetMultiQuarterMetrics(input) {
-  const { ticker, periods, metrics } = input;
-  if (!ticker || !periods?.length || !metrics?.length) {
+  let { ticker, periods, metrics } = input;
+  if (!ticker || !metrics?.length) {
     throw new Error('Missing required inputs for get_multi_quarter_metrics');
+  }
+
+  // Handle "latest" or missing periods - auto-detect most recent quarters
+  if (!periods?.length || (periods.length === 1 && periods[0]?.fiscalYear?.toLowerCase() === 'latest')) {
+    const recentQuarters = financials.getMostRecentQuarters(ticker, 4);
+    if (recentQuarters.length === 0) {
+      return {
+        ticker,
+        periods: [],
+        error: 'No financial data available for this ticker',
+        source: 'financials.getMostRecentQuarters'
+      };
+    }
+    periods = recentQuarters;
   }
 
   const normalized = periods.map((p) => ({

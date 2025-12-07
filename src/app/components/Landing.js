@@ -211,9 +211,10 @@ const LandingPage = () => {
   const selectedColors = colorClasses[selectedStrategyData?.color || 'amber'];
 
   const exampleQueries = [
-    { text: "Apple's Q3 2025 revenue by segment", hint: "Numbers" },
-    { text: "How is AMD positioning against Nvidia in AI?", hint: "Strategy" },
-    { text: "What are analysts concerned about?", hint: "Exploratory" },
+    { text: "Compare NVDA vs AMD vs AVGO latest quarterly revenue", color: "blue" },
+    { text: "What is NVIDIA's data center growth strategy?", color: "emerald" },
+    { text: "Apple gross margin trend over last 4 quarters", color: "violet" },
+    { text: "How is Google monetizing AI?", color: "amber" },
   ];
 
   return (
@@ -273,14 +274,28 @@ const LandingPage = () => {
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          Financial Intelligence
+          Big Tech <span className="text-blue-600">Earnings</span> Intelligence
         </h1>
         
-        <p className={`text-lg text-slate-500 leading-relaxed mb-10 max-w-xl transition-all duration-1000 delay-200 ${
+        <p className={`text-lg text-slate-500 leading-relaxed mb-6 max-w-xl transition-all duration-1000 delay-200 ${
           mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          Instant analysis of Big Tech earnings calls, guidance, and strategic initiatives
+          Ask questions about revenue, margins, AI strategy, and guidance from quarterly earnings calls
         </p>
+        
+        {/* Available Tickers */}
+        <div className={`flex flex-wrap justify-center gap-2 mb-8 transition-all duration-1000 delay-250 ${
+          mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
+          {['AAPL', 'AMD', 'NVDA', 'GOOGL', 'META', 'MSFT', 'AMZN', 'AVGO', 'CRM', 'ORCL'].map(ticker => (
+            <span 
+              key={ticker}
+              className="px-3 py-1 text-xs font-mono font-bold bg-white/80 text-slate-700 rounded-full border border-slate-200 shadow-sm"
+            >
+              {ticker}
+            </span>
+          ))}
+        </div>
 
         {/* SEARCH INPUT - PROMINENT */}
         <div className={`w-full max-w-2xl mx-auto mb-4 transition-all duration-1000 delay-300 ${
@@ -315,25 +330,46 @@ const LandingPage = () => {
         </div>
 
         {/* Example Queries */}
-        <div className={`flex flex-wrap justify-center gap-2 mb-6 transition-all duration-1000 delay-400 ${
+        <div className={`mb-6 transition-all duration-1000 delay-400 ${
           mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          {exampleQueries.map((q, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                setQuery(q.text);
-                setTimeout(() => {
-                  router.push(`/chat?q=${encodeURIComponent(q.text)}&strategy=${selectedStrategy}`);
-                }, 100);
-              }}
-              className="px-4 py-2 bg-white/70 border border-slate-200 rounded-full text-sm text-slate-600 hover:bg-white hover:border-blue-300 hover:text-blue-600 transition-all duration-200 shadow-sm"
-            >
-              {q.text}
-            </button>
-          ))}
+          <p className="text-xs text-slate-400 mb-3">Try these examples:</p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {exampleQueries.map((q, i) => (
+              <button
+                key={i}
+                onClick={() => setQuery(q.text)}
+                className={`px-4 py-2 rounded-full text-sm transition-all duration-200 shadow-sm border
+                  ${q.color === 'blue' ? 'bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100' : ''}
+                  ${q.color === 'emerald' ? 'bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100' : ''}
+                  ${q.color === 'violet' ? 'bg-violet-50 text-violet-700 border-violet-200 hover:bg-violet-100' : ''}
+                  ${q.color === 'amber' ? 'bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100' : ''}
+                `}
+              >
+                {q.text}
+              </button>
+            ))}
+          </div>
         </div>
 
+        {/* Data Coverage Stats */}
+        <div className={`flex items-center justify-center gap-6 mb-6 text-xs text-slate-400 transition-all duration-1000 delay-450 ${
+          mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
+          <div className="flex items-center gap-1.5">
+            <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
+            <span><strong className="text-slate-600">11,929</strong> indexed vectors</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+            <span><strong className="text-slate-600">FY2020-FY2026</strong> coverage</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <div className="w-2 h-2 rounded-full bg-violet-500"></div>
+            <span><strong className="text-slate-600">Hybrid</strong> search (dense + sparse)</span>
+          </div>
+        </div>
+        
         {/* COLLAPSIBLE STRATEGY SELECTOR */}
         <div className={`w-full max-w-2xl mx-auto transition-all duration-1000 delay-500 ${
           mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'

@@ -26,8 +26,8 @@ Returns only verified values from financial statements. Never estimate.`,
       type: 'object',
       properties: {
         ticker: { type: 'string', enum: TICKER_ENUM, description: 'Stock ticker symbol' },
-        fiscalYear: { type: 'string', description: 'Fiscal year, e.g., "2025" or "FY25". Default to 2025 for recent/current questions.' },
-        quarter: { type: 'string', enum: ['Q1', 'Q2', 'Q3', 'Q4'], description: 'Fiscal quarter' },
+        fiscalYear: { type: 'string', description: 'Fiscal year (e.g., "2025") or "latest" to auto-detect most recent. Use "latest" for current/recent data since companies have different fiscal calendars (NVDA is on FY2026, others on FY2025).' },
+        quarter: { type: 'string', enum: ['Q1', 'Q2', 'Q3', 'Q4'], description: 'Fiscal quarter. Optional if fiscalYear is "latest".' },
         metrics: {
           type: 'array',
           description: 'Metrics to retrieve; choose only what is asked',
@@ -42,7 +42,7 @@ Returns only verified values from financial statements. Never estimate.`,
           }
         }
       },
-      required: ['ticker', 'fiscalYear', 'quarter', 'metrics']
+      required: ['ticker', 'metrics']
     }
   },
   {
@@ -62,14 +62,14 @@ DO NOT USE FOR:
         ticker: { type: 'string', enum: TICKER_ENUM },
         periods: {
           type: 'array',
-          description: 'List of {fiscalYear, quarter} objects. Order matters.',
+          description: 'List of {fiscalYear, quarter} objects. Use [{fiscalYear: "latest"}] to auto-detect the 4 most recent quarters for this ticker.',
           items: {
             type: 'object',
             properties: {
-              fiscalYear: { type: 'string', description: 'Fiscal year, e.g., "2025". Default to 2025 for recent questions.' },
+              fiscalYear: { type: 'string', description: 'Fiscal year (e.g., "2025") or "latest" to auto-detect. Different companies have different fiscal calendars!' },
               quarter: { type: 'string', enum: ['Q1', 'Q2', 'Q3', 'Q4'] }
             },
-            required: ['fiscalYear', 'quarter']
+            required: ['fiscalYear']
           }
         },
         metrics: {

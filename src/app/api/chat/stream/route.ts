@@ -47,8 +47,11 @@ interface StreamData {
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 
-// Model configuration - claude-opus-4-5-20251101 as primary
-const MODEL = 'claude-opus-4-5-20251101';
+// Model configuration
+// Options: 
+//   - claude-sonnet-4-20250514 (fast, great quality - RECOMMENDED)
+//   - claude-opus-4-5-20251101 (slow, best quality)
+const MODEL = process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-20250514';
 
 // Limits to prevent excessive tool usage
 const MAX_TOOL_LOOPS = 4;  // Reduced from 8
@@ -156,11 +159,13 @@ const ENHANCED_SYSTEM_PROMPT = `You are Clarity 3.0, a disciplined financial ana
 
 ${TOOL_SYSTEM_PROMPT}
 
-## CRITICAL: Year/Period Defaults
-- The current fiscal year is FY2025 (we are in December 2025)
-- When users ask about "recent", "current", or "latest" data, default to FY2025
-- For "last quarter", check Q3 or Q4 FY2025 first
-- Only fall back to FY2024 if FY2025 data is not available
+## CRITICAL: Fiscal Year Handling
+- Different companies have different fiscal year calendars!
+- NVIDIA (NVDA) is on FY2026 (their fiscal year ends in January)
+- Most other companies (AMD, AVGO, etc.) are on FY2025
+- When users ask for "recent", "latest", or "current" data, use fiscalYear: "latest" to auto-detect
+- The system will automatically find the most recent available data for each ticker
+- For comparisons across companies, use fiscalYear: "latest" for each to ensure you get their most recent data
 
 ## CRITICAL: Tool Usage Limits
 - Use AT MOST 2-3 tool calls per question
@@ -197,8 +202,23 @@ export async function POST(request: NextRequest): Promise<Response> {
 
     const stream = new ReadableStream({
       async start(controller) {
+        // Metrics tracking
+        const metrics = {
+          startTime: Date.now(),
+          firstTokenTime: 0,
+          endTime: 0,
+          toolCalls: [] as { tool: string; latencyMs: number; success: boolean }[],
+          retrievalResults: 0,
+          avgRetrievalScore: 0,
+          llmCalls: 0,
+          totalTokensEstimate: 0
+        };
+        
         try {
           streamData(controller, { type: 'metadata', requestId });
+          
+          // Immediate acknowledgment for better perceived latency
+          streamData(controller, { type: 'status', message: 'Analyzing your question...' });
 
           let messages: AnthropicMessage[] = toAnthropicMessages(chatHistory, message);
           let loopCount = 0;
@@ -207,13 +227,15 @@ export async function POST(request: NextRequest): Promise<Response> {
           while (loopCount < MAX_TOOL_LOOPS) {
             const genSpan = trace?.span ? trace.span({ name: 'llm:anthropic', input: { messages } }) : null;
             
+            const llmCallStart = Date.now();
             const llmResponse = await callAnthropic({
               system: ENHANCED_SYSTEM_PROMPT,
               messages,
               tools: FINANCIAL_TOOLS,
               max_tokens: 1200
             });
-            genSpan?.end({ metadata: { success: true, model: MODEL } });
+            metrics.llmCalls++;
+            genSpan?.end({ metadata: { success: true, model: MODEL, latencyMs: Date.now() - llmCallStart } });
 
             const toolUses = (llmResponse.content || [])
               .filter((c): c is AnthropicContentBlock & { type: 'tool_use' } => c.type === 'tool_use')
@@ -227,8 +249,16 @@ export async function POST(request: NextRequest): Promise<Response> {
               // Check if we already have text from this response
               if (textBlocks.length > 0) {
                 // Send the text we already received (faster, no extra API call)
+                let isFirstToken = true;
                 for (const textBlock of textBlocks) {
                   if (textBlock.text) {
+                    // Track first token time
+                    if (isFirstToken) {
+                      metrics.firstTokenTime = Date.now() - metrics.startTime;
+                      isFirstToken = false;
+                    }
+                    metrics.totalTokensEstimate += Math.ceil(textBlock.text.length / 4);
+                    
                     // Stream character by character for visual effect
                     const text = textBlock.text;
                     const chunkSize = 5; // Send ~5 chars at a time for smooth streaming
@@ -247,9 +277,17 @@ export async function POST(request: NextRequest): Promise<Response> {
                   max_tokens: 1200
                 };
                 
+                let isFirstToken = true;
+                let tokenCount = 0;
                 for await (const token of streamAnthropicResponse(streamPayload)) {
+                  if (isFirstToken) {
+                    metrics.firstTokenTime = Date.now() - metrics.startTime;
+                    isFirstToken = false;
+                  }
+                  tokenCount++;
                   streamData(controller, { type: 'content', content: token });
                 }
+                metrics.totalTokensEstimate = tokenCount;
               }
               break;
             }
@@ -261,6 +299,8 @@ export async function POST(request: NextRequest): Promise<Response> {
             const toolResultsForUser: AnthropicContentBlock[] = [];
             
             // Execute tools - could parallelize but keeping sequential for now
+            streamData(controller, { type: 'status', message: `Searching ${toolUses.length > 1 ? toolUses.length + ' sources' : 'knowledge base'}...` });
+            
             for (const tu of toolUses) {
               totalToolCalls++;
               streamData(controller, { type: 'tool_start', tool: tu.name, id: tu.id, input: tu.input });
@@ -270,6 +310,26 @@ export async function POST(request: NextRequest): Promise<Response> {
                 tu.input || {}, 
                 trace
               );
+              
+              // Track metrics
+              metrics.toolCalls.push({
+                tool: tu.name!,
+                latencyMs: execResult.latencyMs || 0,
+                success: execResult.success
+              });
+              
+              // Extract retrieval stats if this was a search
+              if (tu.name === 'search_earnings_transcript' && execResult.success) {
+                const result = execResult.result as { results?: { score?: number }[] };
+                if (result?.results) {
+                  metrics.retrievalResults += result.results.length;
+                  const scores = result.results.map(r => r.score || 0).filter(s => s > 0);
+                  if (scores.length > 0) {
+                    const avgScore = scores.reduce((a, b) => a + b, 0) / scores.length;
+                    metrics.avgRetrievalScore = avgScore;
+                  }
+                }
+              }
               
               streamData(controller, {
                 type: 'tool_result',
@@ -308,6 +368,22 @@ export async function POST(request: NextRequest): Promise<Response> {
             }
           }
 
+          // Send final metrics
+          metrics.endTime = Date.now() - metrics.startTime;
+          streamData(controller, { 
+            type: 'metrics', 
+            metrics: {
+              totalTimeMs: metrics.endTime,
+              timeToFirstTokenMs: metrics.firstTokenTime,
+              llmCalls: metrics.llmCalls,
+              toolCalls: metrics.toolCalls.length,
+              toolBreakdown: metrics.toolCalls,
+              retrievalResults: metrics.retrievalResults,
+              avgRetrievalScore: metrics.avgRetrievalScore > 0 ? parseFloat(metrics.avgRetrievalScore.toFixed(3)) : null,
+              estimatedTokens: metrics.totalTokensEstimate
+            }
+          });
+          
           streamData(controller, { type: 'end', requestId });
           await flush();
           controller.close();
