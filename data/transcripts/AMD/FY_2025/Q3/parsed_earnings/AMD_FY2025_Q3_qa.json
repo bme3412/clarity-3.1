@@ -1,0 +1,178 @@
+{
+  "company_name": "AMD",
+  "quarter": "Q3",
+  "fiscal_year": "2025",
+  "speakers": {
+    "lisa_su": {
+      "role": "Chair and CEO",
+      "responses": [
+        {
+          "topic": "Opening Remarks",
+          "content": "Outstanding quarter with record revenue ($9.2B, +36% YoY) and profitability. Broad-based demand across Data Center AI, Server, and PC businesses. Free cash flow tripled."
+        },
+        {
+          "topic": "Data Center Momentum",
+          "content": "Revenue $4.3B (+22% YoY). Server CPU revenue all-time high; Turin ramping rapidly. Instinct GPU business accelerating with MI350 ramp. MI300 deployments broadening."
+        },
+        {
+          "topic": "AI Roadmap & OpenAI",
+          "content": "Announced partnership with OpenAI to deploy 6 GW of Instinct GPUs (starting with MI450 in 2H 2026). Helios rack scale platform progressing. MI400 series on track for 2026."
+        },
+        {
+          "topic": "Client and Gaming",
+          "content": "Revenue $4.0B (+73% YoY). Record Client sales driven by Ryzen 9000. Gaming up significantly (+181% YoY) due to semi-custom seasonality and Radeon demand."
+        }
+      ]
+    },
+    "jean_hu": {
+      "role": "EVP, CFO and Treasurer",
+      "responses": [
+        {
+          "topic": "Financial Summary",
+          "content": "Revenue $9.2B (+36% YoY). Gross margin 54% (+40 bps YoY). Operating income $2.2B (24% margin). EPS $1.20 (+30% YoY)."
+        },
+        {
+          "topic": "Q4 Guidance",
+          "content": "Revenue ~$9.6B (+/- $300M), up ~25% YoY. Driven by Data Center double-digit seq growth and Embedded returning to growth. Gross Margin ~54.5%."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Vivek Arya",
+      "firm": "Bank of America",
+      "topics": ["AI Transition", "OpenAI Visibility"],
+      "questions": [
+        "Managing transition from MI355 to MI400 in 2H 2026?",
+        "Visibility into OpenAI engagement and allocation?"
+      ],
+      "answers": [
+        "Lisa Su: Demand strong into 2026. MI355 ramping 1H 26; sharper ramp in 2H 26 with MI450.",
+        "Lisa Su: Planning multiple quarters out for power/supply chain. First gigawatt deploys 2H 26. Good visibility."
+      ]
+    },
+    {
+      "analyst": "Thomas O'Malley",
+      "firm": "Barclays",
+      "topics": ["Helios Adoption", "Power Constraints"],
+      "questions": [
+        "Discrete vs System (Helios) sales mix for MI450?",
+        "Are components or power the primary constraint for 2026?"
+      ],
+      "answers": [
+        "Lisa Su: Early MI450 customers focused on rack scale (Helios). Other form factors will follow.",
+        "Lisa Su: Industry planning together on power/supply chain. Supply chain is prepared to deliver significant growth."
+      ]
+    },
+    {
+      "analyst": "Joshua Buchalter",
+      "firm": "TD Cowen",
+      "topics": ["CPU Demand", "ROCm Competitiveness"],
+      "questions": [
+        "Sustainability of AI-driven server CPU strength?",
+        "Competitiveness of ROCm 7?"
+      ],
+      "answers": [
+        "Lisa Su: CPU demand durable; AI spawning more general compute needs. Turin ramp fast.",
+        "Lisa Su: ROCm 7 significant step forward (Day 0 model support). Customer experience smooth; continuing to invest."
+      ]
+    },
+    {
+      "analyst": "CJ Muse",
+      "firm": "Cantor Fitzgerald",
+      "topics": ["Gross Margin", "Customer Breadth"],
+      "questions": [
+        "Gross margin framework for MI355 to 400 transition?",
+        "Customer breadth beyond OpenAI in 2026/27?"
+      ],
+      "answers": [
+        "Jean Hu: Margins typically dip during transition then normalize. Priority is top-line/margin dollars.",
+        "Lisa Su: Multiple customers expected to reach significant scale with MI450 (OCI, DOE, etc.)."
+      ]
+    },
+    {
+      "analyst": "Stacy Rasgon",
+      "firm": "Bernstein",
+      "topics": ["Data Center Growth", "Guidance Clarity"],
+      "questions": [
+        "Did Servers or GPUs grow more in Q3?",
+        "Clarification on Q4 'strong double digit' guidance?"
+      ],
+      "answers": [
+        "Jean Hu: Both grew nicely; Server slightly better directionally.",
+        "Jean Hu: Sequentially, Data Center up double digits. Both Server and AI contributing."
+      ]
+    },
+    {
+      "analyst": "Timothy Arcuri",
+      "firm": "UBS",
+      "topics": ["OpenAI Influence", "Customer Concentration"],
+      "questions": [
+        "Has OpenAI deal influenced other customers?",
+        "Risk of customer concentration in 2027/28?"
+      ],
+      "answers": [
+        "Lisa Su: Yes, accelerated interest. Helios at OCP also key.",
+        "Lisa Su: Goal is broad customer base. Supply chain dimensioned for multiple large customers."
+      ]
+    },
+    {
+      "analyst": "Aaron Rakers",
+      "firm": "Wells Fargo",
+      "topics": ["Server Unit/ASP", "AI TAM"],
+      "questions": [
+        "Server unit vs ASP growth with Turin?",
+        "Updated view on $500B AI TAM?"
+      ],
+      "answers": [
+        "Lisa Su: Turin drives ASPs, but Genoa mix remains strong. Broad-based demand.",
+        "Lisa Su: AI Compute TAM going up. Opportunity larger than initial $500B view."
+      ]
+    },
+    {
+      "analyst": "Antoine Chkaiban",
+      "firm": "New Street Research",
+      "topics": ["Software Tailwinds", "GPU Useful Life"],
+      "questions": [
+        "Is OpenAI partnership a tailwind for software stack?",
+        "Are CSPs sweating GPUs longer than 5-6 years?"
+      ],
+      "answers": [
+        "Lisa Su: Yes, large customers strengthen stack. Also using AI to accelerate kernel dev.",
+        "Lisa Su: New infra gets latest GPUs (liquid cooled), but older gens (MI300) still widely used for inference."
+      ]
+    },
+    {
+      "analyst": "Joe Moore",
+      "firm": "Morgan Stanley",
+      "topics": ["MI308 Impact"],
+      "questions": [
+        "Posture on MI308 if licenses granted? Readiness?",
+        "Do you have inventory?"
+      ],
+      "answers": [
+        "Lisa Su: Received some licenses. Dynamic situation. No revenue in Q4 guide.",
+        "Lisa Su: Have WIP inventory. Will assess demand environment."
+      ]
+    },
+    {
+      "analyst": "Ross Seymore",
+      "firm": "Deutsche Bank",
+      "topics": ["Differentiation", "Deal Structure"],
+      "questions": [
+        "How does AMD differentiate to win multi-GW deals?",
+        "Was the OpenAI warrant structure unique?"
+      ],
+      "answers": [
+        "Lisa Su: World needs more compute. MI450 strong product. TCO and open ecosystem key.",
+        "Lisa Su: Unique agreement for unique time/scale. Aligned incentives. Open to other creative partnerships."
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-11-04",
+    "company_ticker": "AMD",
+    "source": "earnings_call_transcript"
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "company_name": "Broadcom Inc.",
+  "quarter": "Q2",
+  "fiscal_year": "2025",
+  "financials": {
+    "total_revenue": {
+      "value": 15004,
+      "unit": "million USD",
+      "year_over_year_change": "+20%",
+      "constant_currency_growth": "N/A",
+      "context": "Q2 Fiscal Year 2025",
+      "fx_impact": "N/A",
+      "composition": {
+        "Semiconductor_Solutions": {
+          "value": 8408,
+          "unit": "million USD",
+          "year_over_year_change": "+17%",
+          "constant_currency_growth": "N/A",
+          "context": "Semiconductor solutions segment",
+          "breakdown": {
+            "AI_Revenue": {
+              "value": 4400,
+              "unit": "million USD",
+              "year_over_year_change": "+46%",
+              "drivers": [
+                "Robust demand for AI networking (up 170% YoY)",
+                "Double digit growth in custom AI accelerators"
+              ]
+            },
+            "Non_AI_Revenue": {
+              "value": 4000,
+              "unit": "million USD",
+              "year_over_year_change": "-5%",
+              "drivers": [
+                "Broadband, enterprise networking, server storage up sequentially",
+                "Industrial down",
+                "Wireless down seasonally"
+              ]
+            }
+          }
+        },
+        "Infrastructure_Software": {
+          "value": 6596,
+          "unit": "million USD",
+          "year_over_year_change": "+25%",
+          "constant_currency_growth": "N/A",
+          "context": "Infrastructure software segment",
+          "breakdown": {
+            "VMware_and_Others": {
+              "drivers": [
+                "Success in converting perpetual vSphere to VCF subscription",
+                "87% adoption of VCF among largest 10,000 customers"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "expenses": {
+      "total_expenses": {
+        "value": 4368,
+        "unit": "million USD",
+        "year_over_year_change": "+12%",
+        "context": "GAAP Operating Expenses"
+      },
+      "operating_expenses_breakdown": {
+        "R&D": {
+          "value": 1524,
+          "unit": "million USD",
+          "context": "Non-GAAP R&D expenses"
+        },
+        "SG&A": {
+          "value": 594,
+          "unit": "million USD",
+          "context": "Non-GAAP SG&A expenses"
+        }
+      }
+    },
+    "profitability": {
+      "operating_income": {
+        "GAAP": {
+          "value": 5829,
+          "unit": "million USD",
+          "margin": "39%"
+        },
+        "Non_GAAP": {
+          "value": 9793,
+          "unit": "million USD",
+          "margin": "65%",
+          "year_over_year_change": "+37%"
+        }
+      },
+      "net_income": {
+        "GAAP": {
+          "value": 4965,
+          "unit": "million USD",
+          "year_over_year_change": "+$2,844 million"
+        },
+        "Non_GAAP": {
+          "value": 7787,
+          "unit": "million USD",
+          "year_over_year_change": "+$2,393 million"
+        }
+      },
+      "eps": {
+        "GAAP_diluted": {
+          "value": 1.03,
+          "unit": "USD per share",
+          "year_over_year_change": "+$0.59"
+        },
+        "Non_GAAP_diluted": {
+          "value": 1.58,
+          "unit": "USD per share",
+          "year_over_year_change": "+$0.48"
+        }
+      },
+      "cash_flow": {
+        "free_cash_flow": {
+          "value": 6411,
+          "unit": "million USD",
+          "year_over_year_change": "+44%",
+          "context": "Free cash flow",
+          "percentage_of_revenue": "43%"
+        },
+        "cash_flow_from_operations": {
+          "value": 6555,
+          "unit": "million USD"
+        }
+      },
+      "adjusted_EBITDA": {
+        "value": 10001,
+        "unit": "million USD",
+        "year_over_year_change": "+35%",
+        "context": "Adjusted EBITDA",
+        "percentage_of_revenue": "67%"
+      }
+    },
+    "capital_expenditures": {
+      "value": 144,
+      "unit": "million USD"
+    },
+    "capital_return": {
+      "share_repurchase": {
+        "value": 4216,
+        "unit": "million USD",
+        "context": "Repurchased 16.0 million shares + 9.3 million shares for tax withholdings"
+      },
+      "dividends": {
+        "value": 2785,
+        "unit": "million USD",
+        "details": {
+          "common_stock_dividend_per_share": {
+            "value": 0.59,
+            "unit": "USD per share"
+          }
+        }
+      }
+    },
+    "outlook": {
+      "fiscal_quarter_3_2025_guidance": {
+        "revenue": {
+          "value": 15800,
+          "unit": "million USD",
+          "year_over_year_change": "+21%",
+          "breakdown": {
+            "Semiconductor": {
+              "value": 9100,
+              "unit": "million USD",
+              "year_over_year_change": "+25%"
+            },
+            "Infrastructure_Software": {
+              "value": 6700,
+              "unit": "million USD",
+              "year_over_year_change": "+16%"
+            },
+            "AI_Revenue": {
+              "value": 5100,
+              "unit": "million USD",
+              "year_over_year_change": "+60%"
+            }
+          }
+        },
+        "adjusted_EBITDA": {
+          "value": "66%",
+          "unit": "percent of projected revenue"
+        }
+      },
+      "long_term_targets": {
+        "AI_Growth": {
+          "value": "Sustain 60% growth",
+          "context": "Anticipate fiscal 2025 AI growth rate to sustain into fiscal 2026"
+        }
+      }
+    },
+    "metadata": {
+      "parsed_date": "2025-06-05",
+      "company_ticker": "AVGO",
+      "source": "Q2 2025 Earnings Call Transcript and Press Release"
+    }
+  }
+}

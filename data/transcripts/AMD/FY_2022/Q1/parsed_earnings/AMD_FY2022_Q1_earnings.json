@@ -1,0 +1,399 @@
+{
+  "company_name": "AMD",
+  "quarter": "Q1",
+  "fiscal_year": "2022",
+  "financials": {
+    "total_revenue": {
+      "value": 5.9,
+      "unit": "billion USD",
+      "year_over_year_change": "+71%",
+      "quarter_over_quarter_change": "+22%",
+      "context": "Q1 2022",
+      "annual": {
+        "value": 26.3,
+        "unit": "billion USD",
+        "year_over_year_change": "+60%",
+        "context": "Full Year 2022"
+      },
+      "composition": {
+        "computing_and_graphics": {
+          "value": 2.8,
+          "unit": "billion USD",
+          "year_over_year_change": "+33%",
+          "quarter_over_quarter_change": "+8%",
+          "context": "Includes Ryzen™ and Radeon™ processor sales",
+          "breakdown": {
+            "desktop_processors": {
+              "revenue_growth_year_over_year": "Double-digit",
+              "revenue_growth_quarter_over_quarter": "Double-digit",
+              "drivers": [
+                "Strong demand for Ryzen 5000 processors in desktops",
+                "Increased market share in premium consumer and gaming segments"
+              ],
+              "details": {
+                "ryzen_5000": {
+                  "description": "Featuring Zen 3 architecture",
+                  "performance_improvement": "+19% instructions per clock compared to Zen 2",
+                  "impact": "Enhanced performance and energy efficiency leading to higher adoption rates"
+                }
+              }
+            },
+            "mobile_processors": {
+              "revenue_growth_year_over_year": "Double-digit",
+              "revenue_growth_quarter_over_quarter": "Double-digit",
+              "unit_shipments_growth_year_over_year": "Double-digit",
+              "unit_shipments_growth_quarter_over_quarter": "Double-digit",
+              "drivers": [
+                "Record quarterly and annual mobile processor unit shipments",
+                "Increased adoption of Ryzen 5000 mobile processors in notebooks"
+              ],
+              "details": {
+                "ryzen_5000_mobile": {
+                  "description": "Optimized for ultra-thin gaming in commercial notebooks",
+                  "performance_improvement": "+23% performance compared to previous generation",
+                  "battery_life": "17.5 hours",
+                  "impact": "Extended performance and battery life leadership in mobile segment",
+                  "future_plans": "Increase notebook designs powered by Ryzen 5000 by 50% compared to prior generation"
+                }
+              }
+            },
+            "graphics": {
+              "revenue_growth_year_over_year": "+100%",
+              "revenue_growth_quarter_over_quarter": "+Double-digit",
+              "context": "Revenue more than doubled YoY, increased QoQ",
+              "drivers": [
+                "Ramp of Radeon 6000 series GPUs with RDNA 2 architecture",
+                "Strong demand for Radeon 6000 series, fastest selling high-end GPUs",
+                "Increased shipments of AMD CDNA 2 data center GPUs"
+              ],
+              "details": {
+                "rdna_2": {
+                  "description": "Next-generation Radeon RX 6000 graphics cards",
+                  "performance_improvement": "Up to twice the performance and 65% more performance per watt",
+                  "impact": "Return to high-end graphics market",
+                  "future_plans": "Expand Radeon 6000 GPU portfolio in the first half of 2021"
+                },
+                "cdna_2_gpu": {
+                  "description": "AMD CDNA 2 data center GPUs",
+                  "performance_improvement": "Significant gains in HPC and AI compute performance",
+                  "impact": "Powering Frontier exascale supercomputer and other HPC applications",
+                  "future_outlook": "Further deployments in scientific and enterprise environments"
+                }
+              }
+            }
+          }
+        },
+        "enterprise_embedded_and_semi_custom": {
+          "value": 2.5,
+          "unit": "billion USD",
+          "year_over_year_change": "+88%",
+          "quarter_over_quarter_change": "+13%",
+          "context": "Includes EPYC™ processor, semi-custom, and embedded product sales",
+          "breakdown": {
+            "semi_custom": {
+              "revenue_growth_year_over_year": "+88%",
+              "revenue_growth_quarter_over_quarter": "+13%",
+              "drivers": [
+                "Strong demand for next-generation Sony and Microsoft consoles",
+                "Increased ramp of semi-custom SoC sales compared to last console cycle",
+                "Higher than typical seasonal sales in Q1 2022"
+              ]
+            },
+            "server_processors": {
+              "revenue_growth_year_over_year": "Double-digit",
+              "revenue_growth_quarter_over_quarter": "Double-digit",
+              "drivers": [
+                "Record quarterly server processor revenue",
+                "Strong growth in cloud and enterprise adoption",
+                "Expansion of EPYC processor deployments by major hyperscalers"
+              ],
+              "key_customers": [
+                "Google",
+                "Microsoft",
+                "Tencent",
+                "Alibaba",
+                "AWS",
+                "Oracle"
+              ],
+              "future_outlook": {
+                "milan_processors": {
+                  "description": "Third-generation EPYC Milan processors with Zen 3",
+                  "production_status": "Ramp significantly in Q1 2022",
+                  "shipments": "Initial shipments to cloud and HPC customers",
+                  "performance_improvement": "68% better performance compared to high-end dual-socket processors",
+                  "launch_plan": "Public launch in March 2022",
+                  "ecosystem_support": "Very strong support"
+                }
+              }
+            },
+            "embedded_products": {
+              "revenue_growth_year_over_year": "+50%",
+              "revenue_growth_quarter_over_quarter": "+10%",
+              "drivers": [
+                "Increased adoption of FPGA and adaptive computing products",
+                "Growth in automotive and networking sectors"
+              ],
+              "details": {
+                "xilinx": {
+                  "description": "Integration of Xilinx embedded products",
+                  "revenue": 559,
+                  "unit": "million USD",
+                  "operating_income": 233,
+                  "unit_operating_income": "million USD",
+                  "pro_forma_revenue": {
+                    "value": 1000,
+                    "unit": "million USD",
+                    "growth_year_over_year": "+22%",
+                    "context": "Pro-forma based on full quarter inclusion"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "expenses": {
+          "total_expenses": {
+            "value": 1.6,
+            "unit": "billion USD",
+            "year_over_year_change": "+75%",
+            "context": "Operating expenses including R&D, go-to-market activities, amortization of intangible assets, and acquisition-related costs",
+            "key_factors": [
+              "Increased investments in R&D",
+              "Enhanced go-to-market activities",
+              "Higher variable employee compensation-related expenses",
+              "Amortization of intangible assets",
+              "Acquisition-related costs"
+            ]
+          },
+          "operating_expenses_breakdown": {
+            "R&D": {
+              "value": "N/A",
+              "context": "Increased investments in research and development"
+            },
+            "marketing": {
+              "value": "N/A",
+              "context": "Enhanced go-to-market activities to support product launches and growth"
+            },
+            "variable_compensation": {
+              "value": "N/A",
+              "context": "Higher variable employee compensation-related expenses"
+            },
+            "amortization": {
+              "value": "N/A",
+              "context": "Amortization of intangible assets related to acquisitions"
+            },
+            "acquisition_related_costs": {
+              "value": "N/A",
+              "context": "Costs associated with acquisitions, including Xilinx"
+            }
+          }
+        },
+        "profitability": {
+          "operating_income": {
+            "value": 951,
+            "unit": "million USD",
+            "year_over_year_change": "+43%",
+            "quarter_over_quarter_change": "-21%",
+            "context": "Non-GAAP operating income for Q1 2022",
+            "operating_margin": "16%",
+            "drivers": [
+              "Higher revenue and gross profit",
+              "Amortization of intangible assets and acquisition-related costs"
+            ]
+          },
+          "non_gaap_operating_income": {
+            "value": 1800,
+            "unit": "million USD",
+            "year_over_year_change": "+135%",
+            "quarter_over_quarter_change": "+38%",
+            "context": "Non-GAAP operating income for Q1 2022",
+            "drivers": [
+              "Higher gross profit"
+            ]
+          },
+          "net_income": {
+            "value": 786,
+            "unit": "million USD",
+            "year_over_year_change": "+42%",
+            "quarter_over_quarter_change": "-19%",
+            "context": "Non-GAAP net income for Q1 2022",
+            "notes": "Includes higher operating income and amortization of intangible assets and acquisition-related costs"
+          },
+          "non_gaap_net_income": {
+            "value": 1600,
+            "unit": "million USD",
+            "year_over_year_change": "+148%",
+            "quarter_over_quarter_change": "+45%",
+            "context": "Non-GAAP net income for Q1 2022",
+            "drivers": [
+              "Higher operating income"
+            ]
+          },
+          "eps": {
+            "value": 0.56,
+            "unit": "USD per share",
+            "year_over_year_change": "+24%",
+            "quarter_over_quarter_change": "-30%",
+            "context": "Diluted earnings per share for Q1 2022",
+            "notes": "Includes a $1.06 per share income tax benefit"
+          },
+          "non_gaap_eps": {
+            "value": 1.13,
+            "unit": "USD per share",
+            "year_over_year_change": "+117%",
+            "quarter_over_quarter_change": "+23%",
+            "context": "Non-GAAP diluted earnings per share for Q1 2022"
+          },
+          "tax_rate": {
+            "current_quarter": "15%",
+            "full_year_guidance": "15%",
+            "context": "Effective tax rate for Q1 2022 and full year 2022"
+          },
+          "cash_flow": {
+            "free_cash_flow": {
+              "value": 924,
+              "unit": "million USD",
+              "year_over_year_change": "+93%",
+              "context": "Free cash flow for Q1 2022",
+              "notes": "Included strategic investments in long-term supply chain capacity to support future revenue growth"
+            }
+          }
+        },
+        "capital_expenditures": {
+          "value": 1.0,
+          "unit": "billion USD",
+          "context": "Invested in long-term supply chain capacity to support future growth",
+          "details": {}
+        },
+        "capital_return": {
+          "share_repurchase": {
+            "value": 1.9,
+            "unit": "billion USD",
+            "context": "Repurchased $1.9 billion of common stock during Q1 2022"
+          },
+          "dividends": {
+            "value": "N/A",
+            "unit": "billion USD",
+            "context": "Not explicitly detailed"
+          }
+        },
+        "guidance": {
+          "second_quarter_2022": {
+            "revenue": {
+              "value": 6.5,
+              "unit": "billion USD",
+              "range": "+/-0.2",
+              "year_over_year_change": "+69%",
+              "quarter_over_quarter_change": "+10%",
+              "context": "Driven by the addition of Xilinx and higher server, semi-custom, and client revenue"
+            },
+            "non_gaap_gross_margin": {
+              "value": 54,
+              "unit": "percent",
+              "context": "Expected for Q2 2022"
+            }
+          },
+          "full_year_2022": {
+            "revenue_growth_year_over_year": "+60%",
+            "context": "Driven by the addition of Xilinx and higher server and semi-custom revenue",
+            "revenue": {
+              "value": 26.3,
+              "unit": "billion USD",
+              "context": "Expected for full year 2022"
+            },
+            "non_gaap_gross_margin": {
+              "value": 54,
+              "unit": "percent",
+              "context": "Expected for full year 2022"
+            },
+            "non_gaap_operating_expenses_percentage": {
+              "value": 24.5,
+              "unit": "percent of revenue",
+              "context": "Expected for full year 2022"
+            },
+            "non_gaap_effective_tax_rate": {
+              "value": 15,
+              "unit": "percent",
+              "context": "Expected for full year 2022"
+            },
+            "cash_tax_rate": {
+              "value": 3,
+              "unit": "percent",
+              "context": "Expected for full year 2022"
+            }
+          },
+          "third_quarter_2022": {
+            "revenue": {
+              "value": 6.7,
+              "unit": "billion USD",
+              "range": "+/-0.2",
+              "year_over_year_change": "+55%",
+              "context": "Driven by growth in the data center and embedded segments"
+            },
+            "non_gaap_gross_margin": {
+              "value": 54,
+              "unit": "percent",
+              "context": "Expected for Q3 2022"
+            },
+            "non_gaap_operating_expenses": {
+              "value": 1.64,
+              "unit": "billion USD",
+              "percentage_of_revenue": "24.5%",
+              "context": "Expected for Q3 2022"
+            },
+            "non_gaap_interest_expense_taxes_other": {
+              "value": 0.27,
+              "unit": "billion USD",
+              "context": "Including effective tax rate of 13%"
+            },
+            "diluted_share_count": {
+              "value": 1.63,
+              "unit": "billion shares",
+              "context": "Expected for Q3 2022"
+            }
+          }
+        },
+        "recent_pr_highlights": {
+          "product_introductions": [
+            "Ryzen™ 7000 desktop processors and AM5 platforms",
+            "RDNA 3 GPUs",
+            "Pensando DPU and software stack",
+            "AMD Instinct MI200 accelerators"
+          ],
+          "partnerships_and_adoptions": [
+            "Lenovo's AMD-powered Think Systems",
+            "HPE ProLiant servers with AMD EPYC processors",
+            "AMD-powered Frontier supercomputer",
+            "New AMD-based commercial notebooks from Dell",
+            "AWS, Google Cloud, Microsoft Azure, and Oracle adopting AMD EPYC processors"
+          ],
+          "ecosystem_support": [
+            "HPE and Oak Ridge National Laboratory building the world's first exascale supercomputer",
+            "Over 300 new AMD-based notebook designs by major PC vendors",
+            "Expanded AMD-powered server platforms by Cisco, Dell, HPE, Lenovo, and Supermicro"
+          ],
+          "corporate_responsibility": [
+            "Investments in sustainable technological and scientific advancements",
+            "Support for community initiatives amidst COVID-19"
+          ]
+        },
+        "metadata": {
+          "parsed_date": "2022-03-31T00:00:00Z",
+          "company_ticker": "AMD",
+          "source": "Q1 2022 Earnings Call Transcript",
+          "operating_environment_challenges": [
+            "Navigating ongoing COVID-19 related disruptions",
+            "Managing supply chain constraints",
+            "Meeting strong demand amidst pandemic-related challenges",
+            "Integration challenges with strategic acquisitions",
+            "Maintaining high growth rates in competitive markets"
+          ]
+        }
+      }
+    },
+    "executive_comments": {
+      "ceo_statement": "“2022 was an excellent quarter for our business as we delivered record revenue and profitability based on our strong execution, leadership product portfolio, and diversified business model. Each of our segments grew significantly year over year, led by higher data center and embedded sales as we continue expanding our presence across a broader set of markets and customers. Revenue grew 70% year over year to a record $6.6 billion.\n\nWe also expanded gross margin six percentage points year over year to 54% and set records for operating and net income, both of which more than doubled from the prior year. Turning to the business results. Starting in the second quarter, we updated our financial segment reporting to align with our four strategic end markets: data center, client, gaming and embedded. Let me start with our data center segment.\n\nRevenue increased 83% year over year and 15% sequentially to $1.5 billion, led by record server processor sales. EPYC processor demand was strong in the quarter, with significant year-over-year growth across both cloud and enterprise customers. In cloud, more than 60 new instances powered by third-gen EPYC processors launched in the quarter from AWS, Baidu, Google, Microsoft Azure, and Oracle, including the industry's first cloud-based software-as-a-service solution for chip design for Microsoft Azure and Synopsys, powered by our Milan-X processors with 3D stacked triplets. In enterprise, OEM adoption accelerated in the quarter as Dell, HPE, Lenovo, Super Micro, Cisco, and others brought tailored solutions to market that deliver leadership performance and TCO across many enterprise workloads.\n\nRecent examples include Lenovo's AMD-powered Think Systems, setting a price performance world record for transaction processing, and AMD-based HPE ProLiant servers, delivering record-setting virtualization performance. We made progress further establishing our data center GPU footprint in the quarter, highlighted by the AMD-powered Frontier supercomputer, debuting in the No. 1 spot on both the top 500 list of the world's fastest supercomputers and the GREEN500 list of the most energy-efficient supercomputers. I am extremely proud of our work with HPE and Oak Ridge National Laboratory to build the world first exascale supercomputer.\n\nBreaking the exa block barrier is a significant computing milestone, and the fact that it was made possible by EPYC processors and Instinct accelerators, highlights AMD's unique ability to push the envelope in computing further and faster than anyone else. Looking at our broader data center opportunities, we saw strong growth year over year for our industry-leading FPGA and networking products with cloud and financial customers. We closed our acquisition of Pensando in the quarter, further expanding our data center solutions capabilities with the addition of a world-class team and an industry-leading DPU and software stack that complement our existing products. With the additions of Xilinx and Pensando, AMD now provides the industry's broadest set of leadership compute engines and accelerators to enable the best performance, security, flexibility, and TCO for leading-edge data centers.\n\nLooking ahead, customer pull for our next-generation 5-nanometer generalist server CPU is very strong. We are on track to launch and ramp production of Genoa as the industry's highest performance general-purpose server CPU later this year, positioning our data center business for continued growth and share gains. Turning to our client segment. Revenue grew 25% year over year to $2.2 billion based on record mobile processor sales.\n\nWe believe we gained client processor revenue share for the ninth straight quarter led by strong adoption of our latest generation Ryzen mobile processors. Acer, Asus, Dell, HP, Lenovo, and others are on track to significantly expand their portfolio of AMD-based notebooks as they bring almost 300 new designs to market this year, powered by Ryzen processors. We also saw strong demand in the quarter for our latest generation Ryzen Pro processors that deliver leadership performance and battery life for professional notebooks. Commercial client processor revenue grew significantly year-over-year as HP, Lenovo and others launched more than 50 AMD-based commercial notebooks and Dell announced its first AMD-based precision workstation.\n\nLooking ahead, we are on track to launch our all-new 5-nanometer Ryzen 7000 desktop processors and AM5 platforms later this quarter, with leadership performance in gaming and content creation. Taking a step back, while there has been additional softness in the PC market in recent months, we believe we are very well positioned to navigate through the current environment based on the strength of our existing product portfolio and upcoming product launches. Now turning to our gaming segment. Revenue increased 32% year over year to $1.7 billion as semi-custom growth more than offset a decline in gaming graphics sales.\n\nSemi-Custom SoC sales continue outpacing the prior generation, and we remain on track for record Semi-Custom annual revenue in 2022. Gaming graphics declined in the quarter as macro conditions impacted discretionary spending. New AMD Advantage gaming notebooks that combine Ryzen and Radeon processors to enable outstanding gaming experiences launched recently to strong reviews, highlighted by the Alienware M17 receiving multiple Editors' Choice awards from leading industry publications. While we expect the gaming graphics market to be down in the third quarter, we remain focused on executing our GPU roadmap, including launching our high-end RDNA three GPUs later this year.\n\nOur next-generation RDNA three architecture is another major step forward for our graphics roadmap, delivering more than a 50% generational improvement in performance per watt by combining our most advanced gaming architecture with 5-nanometer triplet manufacturing. Looking at our embedded segment, revenue grew significantly year over year to $1.3 billion, led by robust demand across all markets and nodes for our FPGA and adaptive computing products. Xilinx products are deployed in virtually every market, powering mission-critical applications for thousands of customers. We accelerated Xilinx product sales in the second quarter with the benefit of the additional manufacturing scale and resources of AMD.\n\nWe delivered record core markets revenue led by aerospace and defense, industrial vision, health and test and measurement. Communications growth was led by higher demand in wired from multiple Tier 1 system vendors, while wireless demand was driven by multiple ramping ORAN deployments in North America. Embedded CPU revenue also grew significantly in the quarter based on higher automotive sales and the ramp of new networking and storage design wins. As we highlighted at our Financial Analyst Day in June, we have identified greater than $10 billion in long-term revenue synergy opportunities as we bring the AMD and Xilinx assets together.\n\nOur largest opportunity is in AI, and we've already started executing new hardware and software roadmaps to capture the significant opportunity we see to drive pervasive AI across cloud, edge, and endpoints. In summary, our work over the last several years has placed AMD on a significant growth trajectory. AMD has never been stronger and the markets for our products have never been as large or diverse. As a result, we have now delivered eight straight quarters of record revenue as our strong execution and leadership products have driven increased adoption across an expanded set of markets and customers.\n\nDespite the current macroeconomic environment, we see continued growth in the back half of the year, highlighted by our next-generation 5-nanometer product shipments and supported by our diversified business model. We remain laser-focused on executing our product and technology roadmaps, further deepening our customer relationships, and investing strategically across the company to drive our next phase of growth across the $300 billion high-performance and adaptive computing markets. Now I'd like to turn the call over to Devinder to provide some additional color on our second-quarter financial performance. Devinder?",
+      "cfo_statement": "“We had an excellent second quarter, with year-over-year revenue growth across all segments, margin expansions, and record profitability,” said Devinder Kumar, Executive Vice President, Chief Financial Officer, and Treasurer.\n\nSecond-quarter revenue was $6.6 billion, up 70% from a year ago, driven by higher revenue across all segments and the inclusion of Xilinx revenue. Gross margin was 54%, up 640 basis points from a year ago, driven primarily by higher data center and embedded revenue. Operating expenses were $1.6 billion, compared to $909 million a year ago as we continue to scale the company. Operating income more than doubled from a year ago to record $2.2 billion, driven by significant revenue growth and higher gross margin.\n\nOperating margin was 30%, up from 24% a year ago. Net income was a record $1.7 billion, up $929 million from a year ago. Earnings per share was $1.05 per share, compared to $0.63 per share a year ago.\n\nNow turning to our reportable segments.\n\nAs previously communicated, we modified our segment reporting to align with our strategic end markets and the way we now manage the business. The data center segment includes service CPUs, data center GPUs, Pensando, and Xilinx data center products. The Client segment includes desktop and notebook PC processors and chipsets, while the Gaming segment includes discrete graphic processors and Semi-Custom game console products. The Embedded segment includes both AMD and Xilinx embedded products.\n\nStarting with the data center segment. Revenue was $1.5 billion, up 83% year over year, driven by strong growth in third-generation EPYC server processor revenue. Data center operating income was $472 million or 32% of revenue, compared to $204 million or 25% a year ago. Higher operating income was driven primarily by stronger revenue, partially offset by higher operating expenses.\n\nClient segment revenue was $2.2 billion, up 25% year over year, driven by a richer mix of Ryzen mobile processor sales. Client operating income was $676 million or 32% of revenue, compared to $538 million or 31% a year ago. Operating income improvement was driven primarily by higher revenue, partially offset by higher operating expenses.\n\nGaming segment revenue was $1.7 billion, up 32% year over year, driven by higher Semi-Custom product sales. Gaming operating income was $187 million or 11% of revenue compared to $175 million or 14% a year ago. Higher operating income was driven primarily by higher Semi-Custom revenue, which was partially offset by higher operating expenses. Operating margin was lower primarily due to lower graphics revenue and higher operating expenses.\n\nEmbedded segment revenue was $1.3 billion, up 100% year over year, driven primarily by the inclusion of Xilinx embedded revenue. Embedded operating income was $641 million or 51% of revenue, compared to $6 million or 11% a year ago, driven by higher revenue.\n\nTurning to the balance sheet. Cash, cash equivalents, and short-term investments were $6 billion at the end of the second quarter. During the quarter, we deployed $920 million to repurchase common stock and have $7.4 billion remaining under the authorized share repurchase plan.\n\nCash from operations was a record $1 billion. Quarterly free cash flow was $906 million, compared to $888 million in the same quarter last year.\n\nInventory was $2.6 billion, up approximately $220 million from the prior quarter in support of second-half revenue and the inclusion of Pensando. During the quarter, we established AMD in the investment-grade debt market by issuing debt of $1 billion.\n\nTurning to our financial outlook. Today's outlook is based on current expectations and contemplates the current macroeconomic environment and customer demand signals. For the third quarter of 2022, we expect revenue to be approximately $6.7 billion, plus or minus $200 million, an increase of approximately 55% year over year, primarily led by growth in the data center and embedded segments. In addition, for Q3 2022, we expect non-GAAP gross margin to be approximately 54%, non-GAAP operating expenses to be approximately $1.64 billion or 24.5% of revenue, non-GAAP interest expense, taxes and other to be approximately $270 million based on the 13% effective tax rate and the diluted share count to be approximately 1.63 billion shares.\n\nFor the full year, we continue to expect revenue of approximately $26.3 billion, plus or minus $300 million, an increase of approximately 60% at the midpoint led by growth in data center and embedded segments. We continue to expect non-GAAP gross margin to be approximately 54%. In closing, we had an excellent second quarter, with year-over-year revenue growth across all segments, margin expansions, and record profitability. Looking ahead, we remain focused on executing our product and financial objectives, while continuing to monitor market signals and work closely with our customers to navigate the dynamic market conditions.\n\nWe are confident that we are well positioned for long-term growth, driven by our revenue diversification, financial model, and earnings power."
+    }
+  }
+}

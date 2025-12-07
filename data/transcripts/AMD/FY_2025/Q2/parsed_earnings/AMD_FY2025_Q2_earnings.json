@@ -1,0 +1,156 @@
+{
+  "company_name": "AMD",
+  "quarter": "Q2",
+  "fiscal_year": "2025",
+  "total_revenue": {
+    "value": 7.7,
+    "unit": "billion",
+    "context": "Up 32% year-over-year, record revenue",
+    "period": "Q2 FY2025",
+    "performance_details": {
+      "drivers": [
+        "Record Client and Gaming segment revenue",
+        "Strong EPYC and Ryzen sales",
+        "Data Center growth (+14%)"
+      ]
+    }
+  },
+  "segments": [
+    {
+      "name": "Data Center",
+      "revenue": {
+        "value": 3.2,
+        "unit": "billion",
+        "context": "Up 14% year-over-year",
+        "period": "Q2 FY2025"
+      },
+      "growth_yoy": 14.0,
+      "operating_income": -155,
+      "operating_margin": -4.8,
+      "key_points": [
+        "Operating loss due to ~$800M inventory charge related to China export controls",
+        "EPYC CPU sales set records for cloud and enterprise",
+        "Launched MI350 series with volume production ahead of schedule",
+        "MI355 matches/exceeds B200 in critical workloads"
+      ]
+    },
+    {
+      "name": "Client and Gaming",
+      "revenue": {
+        "value": 3.6,
+        "unit": "billion",
+        "context": "Up 69% year-over-year",
+        "period": "Q2 FY2025"
+      },
+      "growth_yoy": 69.0,
+      "operating_income": 767,
+      "operating_margin": 21.0,
+      "breakdown": {
+        "client": {
+          "revenue": 2.5,
+          "growth_yoy": 67.0,
+          "context": "Record desktop CPU sales, rich mix of Ryzen 9000"
+        },
+        "gaming": {
+          "revenue": 1.1,
+          "growth_yoy": 73.0,
+          "context": "Strong demand for Radeon 9000 GPUs and semi-custom normalization"
+        }
+      },
+      "key_points": [
+        "Ryzen adoption accelerated in commercial PCs",
+        "Announced multiyear collaboration with Microsoft for next-gen Xbox",
+        "Radeon 9600 XT launched for mainstream gamers"
+      ]
+    },
+    {
+      "name": "Embedded",
+      "revenue": {
+        "value": 0.824,
+        "unit": "billion",
+        "context": "Down 4% year-over-year",
+        "period": "Q2 FY2025"
+      },
+      "growth_yoy": -4.0,
+      "operating_income": 275,
+      "operating_margin": 33.0,
+      "key_points": [
+        "Demand recovering gradually",
+        "Sequential revenue flat",
+        "First production shipments of Spartan UltraScale+ FPGAs",
+        "Expect return to sequential growth in H2 2025"
+      ]
+    }
+  ],
+  "operational_metrics": {
+    "gross_margin": {
+      "value": 43.0,
+      "unit": "percentage",
+      "type": "Non-GAAP",
+      "context": "Down 10 points YoY due to $800M export control charge. ~54% excluding charge.",
+      "period": "Q2 FY2025",
+      "drivers": [
+        "Inventory write-down ($800M)",
+        "Richer client product mix (positive)",
+        "Gaming mix (negative)"
+      ]
+    },
+    "operating_income": {
+      "value": 897,
+      "unit": "million",
+      "type": "Non-GAAP",
+      "margin": 12.0
+    },
+    "net_income": {
+      "value": 872,
+      "unit": "million",
+      "type": "GAAP",
+      "eps": 0.54,
+      "context": "Non-GAAP EPS $0.48. Inventory charge impacted EPS by ~$0.43."
+    },
+    "cash_position": {
+      "cash_and_equivalents": 5.9,
+      "unit": "billion",
+      "cash_flow_operations": 1500,
+      "free_cash_flow": 1200,
+      "share_repurchases": 478
+    }
+  },
+  "future_guidance": {
+    "quarter": "Q3 FY2025",
+    "expectations": {
+      "revenue": "$8.7 billion +/- $300 million",
+      "revenue_context": "Represents ~28% YoY growth. Driven by Data Center double-digit seq growth.",
+      "gross_margin": "54% (Non-GAAP)",
+      "operating_expenses": "~$2.55 billion",
+      "tax_rate": "13%",
+      "notes": "Does not include any revenue from MI308 shipments to China."
+    }
+  },
+  "strategic_highlights": {
+    "acquisitions": [
+      {
+        "name": "ZT Systems",
+        "status": "Closed Q2 2025",
+        "impact": "Accelerates rack-scale AI capabilities. Manufacturing business divestiture to Sanmina for $3B."
+      }
+    ],
+    "regulatory": [
+      {
+        "issue": "China Export Controls",
+        "impact": "Effective elimination of MI308 sales. $800M inventory charge in Q2. Licenses under review."
+      }
+    ],
+    "product_launches": [
+      "Instinct MI350 Series (Production)",
+      "Ryzen 9000 Series",
+      "Radeon 9600 XT",
+      "ROCm 7"
+    ]
+  },
+  "metadata": {
+    "parsed_date": "2025-08-05",
+    "company_ticker": "AMD",
+    "source": "earnings_call_transcript"
+  }
+}

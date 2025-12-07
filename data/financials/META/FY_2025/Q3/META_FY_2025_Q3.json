@@ -1,0 +1,796 @@
+{
+  "financial_reports": [
+    {
+      "period": {
+        "fiscal_quarter": "Q3 2025",
+        "calendar_quarter": "Q3 2025",
+        "fiscal_end_date": "September 30, 2025",
+        "comparison_period": {
+          "fiscal_quarter": "Q3 2024",
+          "calendar_quarter": "Q3 2024",
+          "fiscal_end_date": "September 30, 2024"
+        }
+      },
+      "income_statement": {
+        "net_sales": {
+          "total": {
+            "value": 51242,
+            "yoy_growth": 26.2
+          }
+        },
+        "operating_expenses": {
+          "cost_of_revenue": {
+            "value": 9206,
+            "yoy_growth": 24.8
+          },
+          "research_and_development": {
+            "value": 15144,
+            "yoy_growth": 35.5
+          },
+          "marketing_and_sales": {
+            "value": 2845,
+            "yoy_growth": 0.8
+          },
+          "general_and_administrative": {
+            "value": 3512,
+            "yoy_growth": 88.3
+          },
+          "total": {
+            "value": 30707,
+            "yoy_growth": 32.1
+          }
+        },
+        "operating_income": {
+          "value": 20535,
+          "yoy_growth": 18.4
+        },
+        "operating_margin": {
+          "current_value": 40.0,
+          "previous_value": 43.0,
+          "yoy_change": -3.0
+        },
+        "provision_for_income_taxes": {
+          "value": 18954,
+          "yoy_growth": 788.4,
+          "note": "Includes one-time, non-cash tax charge of $15.93B related to One Big Beautiful Bill Act"
+        },
+        "effective_tax_rate": {
+          "reported": 87.0,
+          "adjusted_ex_tax_charge": 14.0,
+          "previous": 12.0
+        },
+        "net_income": {
+          "reported": {
+            "value": 2709,
+            "yoy_growth": -82.7
+          },
+          "adjusted_ex_tax_charge": {
+            "value": 18639,
+            "yoy_growth": 18.8,
+            "note": "Excluding $15.93B one-time tax charge"
+          }
+        },
+        "earnings_per_share": {
+          "basic": {
+            "reported": {
+              "value": 1.08,
+              "yoy_growth": -82.6
+            },
+            "adjusted_ex_tax_charge": {
+              "value": 7.40,
+              "note": "Excluding one-time tax charge impact"
+            }
+          },
+          "diluted": {
+            "reported": {
+              "value": 1.05,
+              "yoy_growth": -82.6
+            },
+            "adjusted_ex_tax_charge": {
+              "value": 7.25,
+              "yoy_growth": 20.2,
+              "note": "Excluding one-time tax charge impact"
+            }
+          }
+        }
+      },
+      "segment_information": {
+        "family_of_apps": {
+          "revenue": {
+            "advertising": {
+              "value": 50082,
+              "yoy_growth": 25.6
+            },
+            "other": {
+              "value": 690,
+              "yoy_growth": 59.0
+            },
+            "total": {
+              "value": 50772,
+              "yoy_growth": 25.9
+            }
+          },
+          "operating_income": {
+            "value": 24967,
+            "yoy_growth": 14.6
+          }
+        },
+        "reality_labs": {
+          "revenue": {
+            "value": 470,
+            "yoy_growth": 74.1
+          },
+          "operating_loss": {
+            "value": 4432,
+            "yoy_growth": 0.1
+          }
+        }
+      }
+    }
+  ],
+  "balance_sheet": {
+    "assets": {
+      "current_assets": {
+        "cash_and_equivalents": {
+          "value": 10187,
+          "previous": 43889,
+          "change_pct": -76.8
+        },
+        "marketable_securities": {
+          "value": 34261,
+          "previous": 33926,
+          "change_pct": 1.0
+        },
+        "accounts_receivable_net": {
+          "value": 17297,
+          "previous": 16994,
+          "change_pct": 1.8
+        },
+        "prepaid_expenses_and_other": {
+          "value": 11373,
+          "previous": 5236,
+          "change_pct": 117.2
+        },
+        "total_current_assets": {
+          "value": 73118,
+          "previous": 100045,
+          "change_pct": -26.9
+        }
+      },
+      "non_current_assets": {
+        "property_and_equipment_net": {
+          "value": 160270,
+          "previous": 121346,
+          "change_pct": 32.1
+        },
+        "operating_lease_assets": {
+          "value": 17372,
+          "previous": 14922,
+          "change_pct": 16.4
+        },
+        "goodwill": {
+          "value": 21158,
+          "previous": 20654,
+          "change_pct": 2.4
+        },
+        "equity_investments": {
+          "value": 25074,
+          "previous": 6070,
+          "change_pct": 313.1,
+          "note": "Continued aggressive investment in non-marketable equity securities"
+        },
+        "other_assets": {
+          "value": 6852,
+          "previous": 13017,
+          "change_pct": -47.4
+        },
+        "total_non_current_assets": {
+          "value": 230726,
+          "previous": 176009,
+          "change_pct": 31.1
+        }
+      },
+      "total_assets": {
+        "value": 303844,
+        "previous": 276054,
+        "change_pct": 10.1
+      }
+    },
+    "liabilities": {
+      "current_liabilities": {
+        "accounts_payable": {
+          "value": 7798,
+          "previous": 7687,
+          "change_pct": 1.4
+        },
+        "operating_lease_liabilities": {
+          "value": 2113,
+          "previous": 1942,
+          "change_pct": 8.8
+        },
+        "accrued_expenses_and_other": {
+          "value": 27047,
+          "previous": 23967,
+          "change_pct": 12.9
+        },
+        "total_current_liabilities": {
+          "value": 36958,
+          "previous": 33596,
+          "change_pct": 10.0
+        }
+      },
+      "non_current_liabilities": {
+        "operating_lease_liabilities": {
+          "value": 20113,
+          "previous": 18292,
+          "change_pct": 10.0
+        },
+        "long_term_debt": {
+          "value": 28834,
+          "previous": 28826,
+          "change_pct": 0.03
+        },
+        "long_term_income_taxes": {
+          "value": 11738,
+          "previous": 9987,
+          "change_pct": 17.5
+        },
+        "other_liabilities": {
+          "value": 12135,
+          "previous": 2716,
+          "change_pct": 346.8,
+          "note": "Significant increase - likely related to deferred tax and regulatory matters"
+        },
+        "total_non_current_liabilities": {
+          "value": 72820,
+          "previous": 59821,
+          "change_pct": 21.7
+        }
+      },
+      "total_liabilities": {
+        "value": 109778,
+        "previous": 93417,
+        "change_pct": 17.5
+      }
+    },
+    "stockholders_equity": {
+      "common_stock_and_paid_in_capital": {
+        "value": 92330,
+        "previous": 83228,
+        "change_pct": 10.9
+      },
+      "accumulated_other_comprehensive_income_loss": {
+        "value": 159,
+        "previous": -3097,
+        "change_pct": -105.1,
+        "note": "Shifted to positive from negative position"
+      },
+      "retained_earnings": {
+        "value": 101577,
+        "previous": 102506,
+        "change_pct": -0.9,
+        "note": "Decrease due to one-time tax charge impact"
+      },
+      "total_stockholders_equity": {
+        "value": 194066,
+        "previous": 182637,
+        "change_pct": 6.3
+      }
+    },
+    "total_liabilities_and_equity": {
+      "value": 303844,
+      "previous": 276054,
+      "change_pct": 10.1
+    }
+  },
+  "cash_flow": {
+    "cash_flow_statement": {
+      "operating_activities": {
+        "net_income": {
+          "value": 2709,
+          "previous": 15688,
+          "change_pct": -82.7,
+          "note": "Impacted by $15.93B one-time tax charge"
+        },
+        "adjustments": {
+          "depreciation_and_amortization": {
+            "value": 4963,
+            "previous": 4027,
+            "change_pct": 23.2
+          },
+          "share_based_compensation": {
+            "value": 5555,
+            "previous": 4250,
+            "change_pct": 30.7
+          },
+          "deferred_income_taxes": {
+            "value": 19868,
+            "previous": -1308,
+            "change_pct": -1618.6,
+            "note": "Large non-cash add-back related to tax charge"
+          },
+          "unrealized_gain_on_marketable_equity_securities": {
+            "value": -922,
+            "previous": 0,
+            "change_pct": null
+          },
+          "other": {
+            "value": -23,
+            "previous": -3,
+            "change_pct": 666.7
+          }
+        },
+        "changes_in_assets_and_liabilities": {
+          "accounts_receivable": {
+            "value": -807,
+            "previous": 143,
+            "change_pct": -664.3
+          },
+          "prepaid_expenses_and_other_current_assets": {
+            "value": -1033,
+            "previous": -184,
+            "change_pct": 461.4
+          },
+          "other_assets": {
+            "value": 33,
+            "previous": -29,
+            "change_pct": -213.8
+          },
+          "accounts_payable": {
+            "value": -63,
+            "previous": 667,
+            "change_pct": -109.4
+          },
+          "accrued_expenses_and_other_current_liabilities": {
+            "value": 455,
+            "previous": 572,
+            "change_pct": -20.5
+          },
+          "other_liabilities": {
+            "value": -736,
+            "previous": 901,
+            "change_pct": -181.7
+          }
+        },
+        "net_cash_from_operating_activities": {
+          "value": 29999,
+          "previous": 24724,
+          "change_pct": 21.3
+        }
+      },
+      "investing_activities": {
+        "property_and_equipment": {
+          "purchases": {
+            "value": -18829,
+            "previous": -8258,
+            "change_pct": 128.0
+          }
+        },
+        "marketable_securities": {
+          "purchases": {
+            "value": -2840,
+            "previous": -4468,
+            "change_pct": -36.4
+          },
+          "sales_and_maturities": {
+            "value": 4704,
+            "previous": 4114,
+            "change_pct": 14.3
+          }
+        },
+        "non_marketable_equity_investments": {
+          "purchases": {
+            "value": -3046,
+            "previous": -3,
+            "change_pct": 101433.3,
+            "note": "Continued aggressive equity investment activity"
+          }
+        },
+        "held_for_sale_assets": {
+          "payments": {
+            "value": -1022,
+            "previous": 0,
+            "change_pct": null
+          }
+        },
+        "acquisitions_and_intangibles": {
+          "value": -753,
+          "previous": -132,
+          "change_pct": 470.5
+        },
+        "other_investing_activities": {
+          "value": -62,
+          "previous": 127,
+          "change_pct": -148.8
+          }
+        },
+        "net_cash_used_in_investing_activities": {
+          "value": -21848,
+          "previous": -8620,
+          "change_pct": 153.4
+        }
+      },
+      "financing_activities": {
+        "taxes_paid_for_share_settlement": {
+          "value": -5135,
+          "previous": -3544,
+          "change_pct": 44.9
+        },
+        "stock_repurchases": {
+          "value": -3327,
+          "previous": -8818,
+          "change_pct": -62.3,
+          "note": "Significantly reduced from prior year"
+        },
+        "dividends_payments": {
+          "value": -1330,
+          "previous": -1263,
+          "change_pct": 5.3
+        },
+        "long_term_debt_proceeds": {
+          "value": 0,
+          "previous": 10432,
+          "change_pct": -100.0
+        },
+        "finance_lease_payments": {
+          "value": -545,
+          "previous": -944,
+          "change_pct": -42.3
+        },
+        "other_financing_activities": {
+          "value": 290,
+          "previous": -234,
+          "change_pct": -223.9
+        },
+        "net_cash_used_in_financing_activities": {
+          "value": -10047,
+          "previous": -4371,
+          "change_pct": 129.9
+        }
+      },
+      "cash_and_equivalents": {
+        "exchange_rate_effects": {
+          "value": 9,
+          "previous": 368,
+          "change_pct": -97.6
+        },
+        "net_change": {
+          "value": -1887,
+          "previous": 12101,
+          "change_pct": -115.6
+        },
+        "beginning_balance": {
+          "value": 13828,
+          "previous": 33026,
+          "change_pct": -58.1
+        },
+        "ending_balance": {
+          "value": 11941,
+          "previous": 45127,
+          "change_pct": -73.5
+        },
+        "reconciliation": {
+          "cash_and_cash_equivalents": {
+            "value": 10187,
+            "previous": 43852,
+            "change_pct": -76.8
+          },
+          "restricted_cash_current": {
+            "value": 142,
+            "previous": 90,
+            "change_pct": 57.8
+          },
+          "restricted_cash_non_current": {
+            "value": 1612,
+            "previous": 1185,
+            "change_pct": 36.0
+          }
+        }
+      }
+    }
+  ,
+  "metrics": {
+    "working_capital_metrics": {
+      "days_sales_outstanding": {
+        "value": 30.4,
+        "description": "Average number of days to collect receivables",
+        "calculation": "Accounts Receivable (17297) / (Revenue (51242) / 90 days)"
+      },
+      "days_payable_outstanding": {
+        "value": 76.2,
+        "description": "Average number of days to pay suppliers",
+        "calculation": "Accounts Payable (7798) / (Cost of Revenue (9206) / 90 days)"
+      },
+      "days_inventory_outstanding": {
+        "value": 0,
+        "description": "Average number of days to sell inventory",
+        "calculation": "Not applicable - META has no physical inventory"
+      }
+    },
+    "turnover_metrics": {
+      "receivables_turnover": {
+        "value": 11.8,
+        "description": "Number of times receivables are collected annually",
+        "calculation": "Annualized Revenue (204968) / Accounts Receivable (17297)"
+      },
+      "asset_turnover": {
+        "value": 0.67,
+        "description": "Revenue generated per dollar of assets",
+        "calculation": "Annualized Revenue (204968) / Total Assets (303844)"
+      },
+      "fixed_asset_turnover": {
+        "value": 1.28,
+        "description": "Revenue generated per dollar of fixed assets",
+        "calculation": "Annualized Revenue (204968) / Property and Equipment (160270)"
+      }
+    },
+    "key_metrics": {
+      "operating_cash_flow_margin": {
+        "value": 58.5,
+        "description": "Operating Cash Flow as % of Revenue",
+        "calculation": "Operating Cash Flow (29999) / Revenue (51242) * 100"
+      },
+      "free_cash_flow": {
+        "value": 10625,
+        "description": "Operating Cash Flow minus Capex",
+        "calculation": "Operating Cash Flow (29999) - Capex (19374)"
+      },
+      "capex_to_revenue": {
+        "value": 37.8,
+        "description": "Capital Expenditure as % of Revenue",
+        "calculation": "(Capex (19374) / Revenue (51242)) * 100"
+      }
+    },
+    "efficiency_metrics": {
+      "revenue_per_employee": {
+        "value": 2.61,
+        "description": "Annual revenue per employee in millions",
+        "calculation": "Annualized Revenue (204968) / Number of Employees (78450)"
+      },
+      "operating_margin": {
+        "value": 40.0,
+        "description": "Operating Income as % of Revenue",
+        "calculation": "(Operating Income (20535) / Revenue (51242)) * 100"
+      }
+    },
+    "liquidity_metrics": {
+      "current_ratio": {
+        "value": 1.98,
+        "description": "Current assets divided by current liabilities",
+        "calculation": "Current Assets (73118) / Current Liabilities (36958)"
+      },
+      "quick_ratio": {
+        "value": 1.67,
+        "description": "Liquid assets divided by current liabilities",
+        "calculation": "(Cash (10187) + Marketable Securities (34261) + Receivables (17297)) / Current Liabilities (36958)"
+      },
+      "cash_ratio": {
+        "value": 1.20,
+        "description": "Cash and equivalents divided by current liabilities",
+        "calculation": "(Cash (10187) + Marketable Securities (34261)) / Current Liabilities (36958)"
+      }
+    },
+    "user_metrics": {
+      "family_of_apps": {
+        "daily_active_people": {
+          "value": 3540,
+          "yoy_growth": 7.6,
+          "unit": "millions"
+        }
+      }
+    },
+    "revenue_segments": {
+      "advertising": {
+        "value": 50082,
+        "yoy_growth": 25.6,
+        "percentage_of_revenue": 97.7,
+        "metrics": {
+          "impressions_growth": 14.0,
+          "price_per_ad_growth": 10.0
+        }
+      },
+      "other": {
+        "value": 1160,
+        "yoy_growth": 68.7,
+        "percentage_of_revenue": 2.3
+      }
+    },
+    "operational_metrics": {
+      "capital_expenditures": {
+        "value": 19374,
+        "description": "Including principal payments on finance leases"
+      },
+      "cash_and_investments": {
+        "value": 44448,
+        "description": "Cash, cash equivalents, and marketable securities"
+      },
+      "employees": {
+        "value": 78450,
+        "yoy_growth": 8.4
+      },
+      "share_repurchases": {
+        "value": 3160,
+        "dividend_payments": 1330,
+        "description": "Class A common stock repurchases and dividend payments for Q3"
+      }
+    },
+    "margin_metrics": {
+      "operating_margin": {
+        "value": 40.0,
+        "previous_value": 43.0,
+        "yoy_change": -3.0
+      }
+    },
+    "segment_results": {
+      "family_of_apps": {
+        "revenue": {
+          "value": 50772,
+          "yoy_growth": 25.9
+        },
+        "operating_income": {
+          "value": 24967,
+          "yoy_growth": 14.6
+        }
+      },
+      "reality_labs": {
+        "revenue": {
+          "value": 470,
+          "yoy_growth": 74.1
+        },
+        "operating_loss": {
+          "value": 4432,
+          "yoy_growth": 0.1
+        }
+      }
+    }
+  },
+  "guidance": {
+    "q4_2025": {
+      "revenue_range": {
+        "low": 56000,
+        "high": 59000,
+        "fx_tailwind": "1%",
+        "note": "Reflects continued strong ad revenue growth, partially offset by lower year-over-year Reality Labs revenue due to lapping Quest 3S introduction and retail partners procuring Quest headsets in Q3 for holiday season"
+      },
+      "tax_rate": {
+        "low": 12.0,
+        "high": 15.0
+      }
+    },
+    "full_year_2025": {
+      "expenses_range": {
+        "low": 116000,
+        "high": 118000,
+        "yoy_growth_range": "22-24%",
+        "description": "Updated from prior outlook of $114-118B"
+      },
+      "capex_range": {
+        "low": 70000,
+        "high": 72000,
+        "description": "Increased from prior outlook of $66-72B"
+      }
+    },
+    "year_2026_outlook": {
+      "expenses": {
+        "outlook": "Total expenses will grow at a significantly faster percentage rate in 2026 than 2025",
+        "primary_drivers": [
+          "Infrastructure costs (primary driver) - including incremental cloud expenses and depreciation",
+          "Employee compensation costs (second largest) - full year compensation for 2025 hires (particularly AI talent) and adding technical talent in priority areas"
+        ],
+        "note": "Compute needs have continued to expand meaningfully, including versus expectations from last quarter"
+      },
+      "capex": {
+        "outlook": "Capital expenditures dollar growth will be notably larger in 2026 than 2025",
+        "description": "Will invest aggressively to meet compute needs both by building own infrastructure and contracting with third party cloud providers. Infrastructure planning process remains highly dynamic"
+      },
+      "strategy": {
+        "core_business": "Investments in ads and organic engagement initiatives expected to enable continued strong revenue growth",
+        "ai_initiatives": "Progress on AI models and products will position company to capitalize on new revenue opportunities in years to come",
+        "infrastructure_focus": "Central requirement to realizing opportunities is infrastructure capacity"
+      }
+    }
+  },
+  "regulatory_updates": {
+    "european_union": {
+      "issue": "Digital Markets Act (DMA) compliance - Less Personalized Ads (LPA) offering",
+      "status": "Continuing constructive engagement with European Commission on LPA offering",
+      "risk": "Cannot rule out Commission imposing further changes that could have significant negative impact on European revenue",
+      "expected_impact": "As early as Q4 2025",
+      "action": "Monitoring ongoing"
+    },
+    "united_states": {
+      "issue": "Youth-related trials",
+      "status": "Number of trials scheduled for 2026",
+      "risk": "May ultimately result in a material loss"
+    }
+  },
+  "tax_developments": {
+    "one_big_beautiful_bill_act": {
+      "implementation_date": "Q3 2025",
+      "one_time_charge": {
+        "value": 15930,
+        "type": "Non-cash income tax charge",
+        "description": "Valuation allowance against U.S. federal deferred tax assets reflecting impact of U.S. Corporate Alternative Minimum Tax"
+      },
+      "future_impact": {
+        "cash_benefit": "Significant reduction in U.S. federal cash tax payments for remainder of 2025 and future years",
+        "implementation_alternatives": "Several alternative ways of implementing provisions being evaluated"
+      }
+    }
+  },
+  "nine_month_results": {
+    "revenue": {
+      "value": 141073,
+      "yoy_growth": 21.5
+    },
+    "operating_income": {
+      "value": 58531,
+      "yoy_growth": 27.2
+    },
+    "net_income": {
+      "reported": {
+        "value": 37690,
+        "yoy_growth": -9.2,
+        "note": "Impacted by $15.93B one-time tax charge"
+      }
+    },
+    "diluted_eps": {
+      "reported": {
+        "value": 14.62,
+        "yoy_growth": -7.9
+      }
+    },
+    "free_cash_flow": {
+      "value": 29508,
+      "yoy_growth": -24.3
+    },
+    "capital_expenditures": {
+      "value": 50078,
+      "yoy_growth": 119.3
+    },
+    "share_repurchases": {
+      "value": 26248,
+      "description": "Nine month Class A stock repurchases"
+    }
+  },
+  "non_gaap_reconciliation": {
+    "revenue": {
+      "gaap": 51242,
+      "fx_effect": -412,
+      "constant_currency": 50830,
+      "gaap_growth": 26.2,
+      "constant_currency_growth": 25.2
+    },
+    "advertising_revenue": {
+      "gaap": 50082,
+      "fx_effect": -409,
+      "constant_currency": 49673,
+      "gaap_growth": 25.6,
+      "constant_currency_growth": 24.6
+    },
+    "free_cash_flow": {
+      "operating_cash_flow": 29999,
+      "pp_and_e_purchases": -18829,
+      "finance_lease_payments": -545,
+      "free_cash_flow": 10625
+    }
+  },
+  "key_highlights": {
+    "ceo_quote": "We had a strong quarter for our business and our community. Meta Superintelligence Labs is off to a great start and we continue to lead the industry in AI glasses. If we deliver even a fraction of the opportunity ahead, then the next few years will be the most exciting period in our history.",
+    "new_initiatives": [
+      "Meta Superintelligence Labs launched"
+    ],
+    "notable_items": [
+      "One-time $15.93B non-cash tax charge from One Big Beautiful Bill Act implementation",
+      "Strong 26% revenue growth with 8% DAP growth",
+      "Operating margin compressed to 40% from 43% as expenses grew 32%",
+      "Capex reached $19.4B (+128% YoY) - continued AI infrastructure ramp",
+      "Cash position down to $10.2B - lowest level in years",
+      "Reality Labs revenue surged 74% YoY to $470M",
+      "2026 guidance signals massive acceleration in spending: 'notably larger' capex growth and 'significantly faster' expense growth",
+      "Major regulatory risks flagged: EU DMA compliance and U.S. youth-related trials",
+      "Compute needs 'expanded meaningfully' vs expectations just one quarter ago",
+      "Share buybacks dramatically reduced to $3.2B from $8.8B prior year"
+    ]
+  }
+}

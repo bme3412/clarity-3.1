@@ -1,0 +1,156 @@
+{
+  "company_name": "AMD",
+  "quarter": "Q3",
+  "fiscal_year": "2025",
+  "total_revenue": {
+    "value": 9.2,
+    "unit": "billion",
+    "context": "Up 36% year-over-year, record revenue",
+    "period": "Q3 FY2025",
+    "performance_details": {
+      "drivers": [
+        "Data Center revenue record",
+        "Client and Gaming revenue record",
+        "Strong EPYC and MI350 series sales"
+      ]
+    }
+  },
+  "segments": [
+    {
+      "name": "Data Center",
+      "revenue": {
+        "value": 4.3,
+        "unit": "billion",
+        "context": "Up 22% year-over-year, record revenue",
+        "period": "Q3 FY2025"
+      },
+      "growth_yoy": 22.0,
+      "operating_income": 1100,
+      "operating_margin": 25.0,
+      "key_points": [
+        "Driven by MI350 series ramp and EPYC Turin adoption",
+        "Server CPU revenue reached all-time high",
+        "Instinct GPU revenue grew year-over-year",
+        "More than 160 new EPYC instances launched by hyperscalers"
+      ]
+    },
+    {
+      "name": "Client and Gaming",
+      "revenue": {
+        "value": 4.0,
+        "unit": "billion",
+        "context": "Up 73% year-over-year, record revenue",
+        "period": "Q3 FY2025"
+      },
+      "growth_yoy": 73.0,
+      "operating_income": 867,
+      "operating_margin": 21.0,
+      "breakdown": {
+        "client": {
+          "revenue": 2.8,
+          "growth_yoy": 46.0,
+          "context": "Record Ryzen sales, rich product mix"
+        },
+        "gaming": {
+          "revenue": 1.3,
+          "growth_yoy": 181.0,
+          "context": "Higher semi-custom revenue, strong Radeon demand"
+        }
+      },
+      "key_points": [
+        "Desktop CPU sales reached all-time high",
+        "Strong demand for Ryzen 9000 processors",
+        "Commercial momentum accelerated with 30%+ sell-through growth"
+      ]
+    },
+    {
+      "name": "Embedded",
+      "revenue": {
+        "value": 0.857,
+        "unit": "billion",
+        "context": "Down 8% year-over-year",
+        "period": "Q3 FY2025"
+      },
+      "growth_yoy": -8.0,
+      "operating_income": 283,
+      "operating_margin": 33.0,
+      "key_points": [
+        "Revenue up 4% sequentially as demand strengthened",
+        "Expanded portfolio with Ryzen Embedded 9000 series",
+        "On track for second straight year of record design wins"
+      ]
+    }
+  ],
+  "operational_metrics": {
+    "gross_margin": {
+      "value": 54.0,
+      "unit": "percentage",
+      "type": "Non-GAAP",
+      "context": "Up 40 basis points year-over-year driven by mix",
+      "period": "Q3 FY2025",
+      "drivers": [
+        "Product mix"
+      ]
+    },
+    "operating_income": {
+      "value": 2.2,
+      "unit": "billion",
+      "type": "Non-GAAP",
+      "margin": 24.0
+    },
+    "net_income": {
+      "value": 1.243,
+      "unit": "billion",
+      "type": "GAAP",
+      "eps": 0.75,
+      "context": "Non-GAAP Net Income $2.0B, EPS $1.20"
+    },
+    "cash_position": {
+      "cash_and_equivalents": 7.2,
+      "unit": "billion",
+      "cash_flow_operations": 1800,
+      "free_cash_flow": 1500,
+      "share_repurchases": 89
+    }
+  },
+  "future_guidance": {
+    "quarter": "Q4 FY2025",
+    "expectations": {
+      "revenue": "$9.6 billion +/- $300 million",
+      "revenue_context": "Represents ~25% YoY growth. Driven by double-digit growth in Data Center and Client/Gaming.",
+      "gross_margin": "54.5% (Non-GAAP)",
+      "operating_expenses": "~$2.8 billion",
+      "tax_rate": "13%",
+      "notes": "Does not include any revenue from MI308 shipments to China."
+    }
+  },
+  "strategic_highlights": {
+    "partnerships": [
+      {
+        "name": "OpenAI",
+        "details": "Deployment of 6 gigawatts of Instinct GPUs. First gigawatt of MI450 in 2H 2026."
+      },
+      {
+        "name": "Oracle",
+        "details": "First hyperscaler to offer MI355X instances. Deploying MI450 in 2026."
+      }
+    ],
+    "product_launches": [
+      "ROCm 7",
+      "Helios Rack Scale Platform",
+      "Ryzen 9000 Series",
+      "Threadripper 9000WX"
+    ],
+    "regulatory": [
+      {
+        "issue": "China Export Controls",
+        "impact": "Received some licenses for MI308, but no revenue included in Q4 guidance."
+      }
+    ]
+  },
+  "metadata": {
+    "parsed_date": "2025-11-04",
+    "company_ticker": "AMD",
+    "source": "earnings_call_transcript"
+  }
+}

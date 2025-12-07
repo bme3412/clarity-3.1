@@ -1,0 +1,902 @@
+{
+  "company": "Salesforce, Inc.",
+  "report_type": "Consolidated Financial Statements",
+  "financial_report": {
+    "period": {
+      "fiscal_quarter": "Q2 2026",
+      "fiscal_end_date": "July 31, 2025",
+      "sequential_quarter": {
+        "current_date": "July 31, 2025",
+        "previous_date": "April 30, 2025",
+        "type": "Sequential Quarter"
+      },
+      "year_ago_quarter": {
+        "date": "July 31, 2024",
+        "type": "Year-over-Year Quarter"
+      }
+    },
+    "income_statement": {
+      "revenue": {
+        "total": {
+          "value": 10236,
+          "yoy_growth": "9.8",
+          "yoy_growth_constant_currency": "9.0",
+          "sequential_growth": "4.1",
+          "components": {
+            "subscription_and_support": 9690,
+            "professional_services": 546
+          }
+        },
+        "by_cloud": {
+          "sales_cloud": 2267,
+          "service_cloud": 2458,
+          "platform_and_other": 2084,
+          "marketing_and_commerce_cloud": 1365,
+          "integration_and_analytics": 1516
+        },
+        "by_region": {
+          "americas": 6736,
+          "europe": 2429,
+          "asia_pacific": 1071
+        }
+      },
+      "cost_of_revenues": {
+        "total": 2242,
+        "subscription_and_support": 1645,
+        "professional_services": 597
+      },
+      "gross_profit": {
+        "value": 7994,
+        "margin_percent": 78.1
+      },
+      "margins": {
+        "gross_margin": {
+          "gaap": {
+            "value": "78.1",
+            "gross_profit": 7994
+          },
+          "non_gaap": {
+            "value": null,
+            "gross_profit": null
+          }
+        },
+        "operating_margin": {
+          "gaap": {
+            "value": "22.8",
+            "operating_income": 2332
+          },
+          "non_gaap": {
+            "value": "34.3",
+            "operating_income": 3509
+          }
+        }
+      },
+      "operating_expenses": {
+        "research_and_development": {
+          "gaap": {
+            "value": 1481
+          },
+          "non_gaap": {
+            "value": null
+          }
+        },
+        "marketing_and_sales": {
+          "gaap": {
+            "value": 3443
+          },
+          "non_gaap": {
+            "value": null
+          }
+        },
+        "general_and_administrative": {
+          "gaap": {
+            "value": 734
+          },
+          "non_gaap": {
+            "value": null
+          }
+        },
+        "restructuring": {
+          "gaap": {
+            "value": 4
+          },
+          "non_gaap": {
+            "value": null
+          }
+        },
+        "total": {
+          "gaap": {
+            "value": 5662
+          },
+          "non_gaap": {
+            "value": null
+          }
+        }
+      },
+      "other_income_expense": {
+        "gains_losses_on_strategic_investments": 6,
+        "other_income": 68,
+        "income_before_taxes": 2406,
+        "provision_for_income_taxes": 519,
+        "effective_tax_rate": 21.6
+      },
+      "net_income": {
+        "gaap": {
+          "value": 1887
+        },
+        "non_gaap": {
+          "value": 2795
+        }
+      },
+      "earnings_per_share": {
+        "gaap": {
+          "basic": 1.97,
+          "diluted": 1.96
+        },
+        "non_gaap": {
+          "basic": 2.92,
+          "diluted": 2.91
+        }
+      },
+      "shares_outstanding": {
+        "basic": 956,
+        "diluted": 962
+      }
+    },
+    "constant_currency_growth": {
+      "total": "9.0",
+      "subscription_and_support": "9.0",
+      "by_cloud": {
+        "sales": "8.0",
+        "service": "8.0",
+        "platform_and_other": "16.0",
+        "marketing_and_commerce": "3.0",
+        "integration_and_analytics": "12.0"
+      },
+      "by_region": {
+        "americas": "9.0",
+        "europe": "7.0",
+        "asia_pacific": "11.0"
+      }
+    },
+    "additional_metrics": {
+      "remaining_performance_obligation": {
+        "current": 29.4,
+        "noncurrent": 30.5,
+        "total": 59.9,
+        "yoy_growth": "11.0",
+        "yoy_growth_constant_currency": "10.0"
+      },
+      "free_cash_flow": {
+        "operating_cash_flow": 740,
+        "capital_expenditures": 135,
+        "total": 605,
+        "yoy_growth": "-19.9"
+      },
+      "unearned_revenue": {
+        "beginning_period": 17799,
+        "ending_period": 16555,
+        "change": -1244,
+        "billings_and_other": 8992
+      }
+    },
+    "cash_flow": {
+      "operating_cash_flow": 740,
+      "capital_expenditures": 135,
+      "free_cash_flow": 605
+    }
+  },
+  "balance_sheet": {
+    "assets": {
+      "current_assets": {
+        "cash_and_equivalents": {
+          "value": 10365,
+          "previous": 8848,
+          "change_pct": "17.1"
+        },
+        "marketable_securities": {
+          "value": 5007,
+          "previous": 5184,
+          "change_pct": "-3.4"
+        },
+        "accounts_receivable_net": {
+          "value": 5596,
+          "previous": 11945,
+          "change_pct": "-53.1"
+        },
+        "costs_capitalized_to_obtain_revenue": {
+          "value": 1862,
+          "previous": 1971,
+          "change_pct": "-5.5"
+        },
+        "prepaid_expenses_and_other": {
+          "value": 2501,
+          "previous": 1779,
+          "change_pct": "40.6"
+        },
+        "total_current_assets": {
+          "value": 25331,
+          "previous": 29727,
+          "change_pct": "-14.8"
+        }
+      },
+      "non_current_assets": {
+        "property_and_equipment_net": {
+          "value": 3154,
+          "previous": 3236,
+          "change_pct": "-2.5"
+        },
+        "operating_lease_right_of_use": {
+          "value": 2028,
+          "previous": 2157,
+          "change_pct": "-6.0"
+        },
+        "noncurrent_costs_capitalized": {
+          "value": 2266,
+          "previous": 2475,
+          "change_pct": "-8.4"
+        },
+        "strategic_investments": {
+          "value": 5085,
+          "previous": 4852,
+          "change_pct": "4.8"
+        },
+        "goodwill": {
+          "value": 51438,
+          "previous": 51283,
+          "change_pct": "0.3"
+        },
+        "intangible_assets_net": {
+          "value": 3669,
+          "previous": 4428,
+          "change_pct": "-17.1"
+        },
+        "deferred_tax_and_other_assets": {
+          "value": 4602,
+          "previous": 4770,
+          "change_pct": "-3.5"
+        },
+        "total_non_current_assets": {
+          "value": 72242,
+          "previous": 73201,
+          "change_pct": "-1.3"
+        }
+      },
+      "total_assets": {
+        "value": 97573,
+        "previous": 102928,
+        "change_pct": "-5.2"
+      }
+    },
+    "liabilities": {
+      "current_liabilities": {
+        "accounts_payable_and_accrued": {
+          "value": 5397,
+          "previous": 6658,
+          "change_pct": "-18.9"
+        },
+        "operating_lease_current": {
+          "value": 580,
+          "previous": 579,
+          "change_pct": "0.2"
+        },
+        "unearned_revenue": {
+          "value": 16555,
+          "previous": 20743,
+          "change_pct": "-20.2"
+        },
+        "debt_current": {
+          "value": 0,
+          "previous": 0,
+          "change_pct": "0.0"
+        },
+        "total_current_liabilities": {
+          "value": 22532,
+          "previous": 27980,
+          "change_pct": "-19.5"
+        }
+      },
+      "non_current_liabilities": {
+        "long_term_debt": {
+          "value": 8436,
+          "previous": 8433,
+          "change_pct": "0.0"
+        },
+        "operating_lease_noncurrent": {
+          "value": 2221,
+          "previous": 2380,
+          "change_pct": "-6.7"
+        },
+        "other_noncurrent_liabilities": {
+          "value": 3056,
+          "previous": 2962,
+          "change_pct": "3.2"
+        },
+        "total_non_current_liabilities": {
+          "value": 13713,
+          "previous": 13775,
+          "change_pct": "-0.4"
+        }
+      },
+      "total_liabilities": {
+        "value": 36245,
+        "previous": 41755,
+        "change_pct": "-13.2"
+      }
+    },
+    "stockholders_equity": {
+      "common_stock": {
+        "value": 1,
+        "previous": 1,
+        "change_pct": "0.0"
+      },
+      "treasury_stock": {
+        "value": -24408,
+        "previous": -19507,
+        "change_pct": "25.1"
+      },
+      "additional_paid_in_capital": {
+        "value": 66701,
+        "previous": 64576,
+        "change_pct": "3.3"
+      },
+      "accumulated_other_comprehensive_income_loss": {
+        "value": 47,
+        "previous": -266,
+        "change_pct": "-117.7"
+      },
+      "retained_earnings": {
+        "value": 18987,
+        "previous": 16369,
+        "change_pct": "16.0"
+      },
+      "total_stockholders_equity": {
+        "value": 61328,
+        "previous": 61173,
+        "change_pct": "0.3"
+      }
+    },
+    "total_liabilities_and_equity": {
+      "value": 97573,
+      "previous": 102928,
+      "change_pct": "-5.2"
+    }
+  },
+  "cash_flows": {
+    "cash_position": {
+      "beginning_balance": {
+        "value": 10928,
+        "previous": 9958,
+        "yoy_change": "9.7"
+      },
+      "ending_balance": {
+        "value": 10365,
+        "previous": 7682,
+        "yoy_change": "34.9"
+      },
+      "net_change": {
+        "value": -563,
+        "previous": -2276,
+        "yoy_change": "-75.3"
+      }
+    },
+    "cash_flow_from_operations": {
+      "net_income": {
+        "value": 1887,
+        "previous_year": 1429,
+        "yoy_change_percent": "32.1"
+      },
+      "non_cash_adjustments": {
+        "depreciation_and_amortization": {
+          "value": 817,
+          "previous_year": 907,
+          "yoy_change_percent": "-9.9"
+        },
+        "amortization_of_capitalized_costs": {
+          "value": 544,
+          "previous_year": 526,
+          "yoy_change_percent": "3.4"
+        },
+        "stock_based_compensation": {
+          "value": 793,
+          "previous_year": 810,
+          "yoy_change_percent": "-2.1"
+        },
+        "losses_on_strategic_investments": {
+          "value": -6,
+          "previous_year": 37,
+          "yoy_change_percent": "-116.2"
+        }
+      },
+      "working_capital_changes": {
+        "accounts_receivable": {
+          "value": -1242,
+          "previous_year": -1136,
+          "yoy_change_percent": "9.3"
+        },
+        "capitalized_contract_costs": {
+          "value": -406,
+          "previous_year": -427,
+          "yoy_change_percent": "-4.9"
+        },
+        "prepaid_and_other_assets": {
+          "value": -32,
+          "previous_year": -477,
+          "yoy_change_percent": "-93.3"
+        },
+        "accounts_payable": {
+          "value": -217,
+          "previous_year": 220,
+          "yoy_change_percent": "-198.6"
+        },
+        "operating_lease_liabilities": {
+          "value": -154,
+          "previous_year": -158,
+          "yoy_change_percent": "-2.5"
+        },
+        "unearned_revenue": {
+          "value": -1244,
+          "previous_year": -839,
+          "yoy_change_percent": "48.3"
+        }
+      },
+      "total_operating_cash_flow": {
+        "value": 740,
+        "previous_year": 892,
+        "yoy_change_percent": "-17.0"
+      }
+    },
+    "cash_flow_from_investing": {
+      "business_combinations": {
+        "value": -54,
+        "previous_year": 0,
+        "yoy_change_percent": "N/A"
+      },
+      "strategic_investments": {
+        "purchases": {
+          "value": -174,
+          "previous_year": -104,
+          "yoy_change_percent": "67.3"
+        },
+        "sales": {
+          "value": 38,
+          "previous_year": 52,
+          "yoy_change_percent": "-26.9"
+        }
+      },
+      "marketable_securities": {
+        "purchases": {
+          "value": -1118,
+          "previous_year": -550,
+          "yoy_change_percent": "103.3"
+        },
+        "sales": {
+          "value": 1179,
+          "previous_year": 2482,
+          "yoy_change_percent": "-52.5"
+        },
+        "maturities": {
+          "value": 1429,
+          "previous_year": 898,
+          "yoy_change_percent": "59.1"
+        }
+      },
+      "capital_expenditures": {
+        "value": -135,
+        "previous_year": -137,
+        "yoy_change_percent": "-1.5"
+      },
+      "total_investing_cash_flow": {
+        "value": 1165,
+        "previous_year": 2641,
+        "yoy_change_percent": "-55.9"
+      }
+    },
+    "cash_flow_from_financing": {
+      "equity_activities": {
+        "employee_stock_plans": {
+          "value": 232,
+          "previous_year": 202,
+          "yoy_change_percent": "14.9"
+        },
+        "stock_repurchases": {
+          "value": -2225,
+          "previous_year": -4335,
+          "yoy_change_percent": "-48.7"
+        },
+        "taxes_net_share_settlement": {
+          "value": -12,
+          "previous_year": 0,
+          "yoy_change_percent": "N/A"
+        },
+        "dividend_payments": {
+          "value": -399,
+          "previous_year": -384,
+          "yoy_change_percent": "3.9"
+        }
+      },
+      "debt_activities": {
+        "financing_obligation_payments": {
+          "value": -99,
+          "previous_year": -285,
+          "yoy_change_percent": "-65.3"
+        },
+        "debt_repayments": {
+          "value": 0,
+          "previous_year": -1000,
+          "yoy_change_percent": "-100.0"
+        }
+      },
+      "total_financing_cash_flow": {
+        "value": -2503,
+        "previous_year": -5802,
+        "yoy_change_percent": "-56.8"
+      }
+    },
+    "exchange_rate_effect": {
+      "value": 35,
+      "previous_year": -7,
+      "yoy_change_percent": "-600.0"
+    },
+    "net_cash_position": {
+      "net_increase_decrease": {
+        "value": -563,
+        "previous_year": -2276,
+        "yoy_change_percent": "-75.3"
+      },
+      "beginning_balance": {
+        "value": 10928,
+        "previous_year": 9958,
+        "yoy_change_percent": "9.7"
+      },
+      "ending_balance": {
+        "value": 10365,
+        "previous_year": 7682,
+        "yoy_change_percent": "34.9"
+      }
+    }
+  },
+  "six_months_performance": {
+    "income_statement": {
+      "revenue": 20065,
+      "subscription_and_support": 18987,
+      "professional_services": 1078,
+      "gross_profit": 15558,
+      "operating_income_gaap": 4274,
+      "operating_income_non_gaap": 6681,
+      "net_income_gaap": 3428,
+      "net_income_non_gaap": 5294,
+      "diluted_eps_gaap": 3.55,
+      "diluted_eps_non_gaap": 5.48
+    },
+    "cash_flows": {
+      "operating_cash_flow": 7216,
+      "capital_expenditures": 314,
+      "free_cash_flow": 6902,
+      "net_cash_increase": 1517
+    },
+    "margins": {
+      "gaap_operating_margin": 21.3,
+      "non_gaap_operating_margin": 33.3
+    }
+  },
+  "metrics": {
+    "working_capital_metrics": {
+      "days_sales_outstanding": {
+        "value": "49.2",
+        "description": "Average number of days to collect receivables",
+        "calculation": "Accounts Receivable / (Revenue / 90 days)",
+        "components": {
+          "accounts_receivable": 5596,
+          "quarterly_revenue": 10236
+        }
+      },
+      "days_payable_outstanding": {
+        "value": "216.8",
+        "description": "Average number of days to pay suppliers",
+        "calculation": "Accounts Payable / (Cost of Revenue / 90 days)",
+        "components": {
+          "accounts_payable": 5397,
+          "quarterly_cost_of_revenue": 2242
+        }
+      },
+      "deferred_revenue_days": {
+        "value": "145.6",
+        "description": "Average number of days of prepaid revenue",
+        "calculation": "Unearned Revenue / (Revenue / 90 days)",
+        "components": {
+          "unearned_revenue": 16555,
+          "quarterly_revenue": 10236
+        }
+      }
+    },
+    "turnover_metrics": {
+      "receivables_turnover": {
+        "value": "7.3",
+        "description": "Number of times receivables are collected annually (annualized)",
+        "calculation": "Annualized Revenue / Average Accounts Receivable",
+        "components": {
+          "annualized_revenue": 40944,
+          "average_accounts_receivable": 5596
+        }
+      },
+      "asset_turnover": {
+        "value": "0.42",
+        "description": "Revenue generated per dollar of assets (annualized)",
+        "calculation": "Annualized Revenue / Average Total Assets",
+        "components": {
+          "annualized_revenue": 40944,
+          "average_total_assets": 97573
+        }
+      }
+    },
+    "saas_specific_metrics": {
+      "revenue_per_employee": {
+        "value": 0.93,
+        "description": "Quarterly revenue per employee (in millions)",
+        "calculation": "Quarterly Revenue / Number of Employees",
+        "components": {
+          "quarterly_revenue": 10236,
+          "implied_employee_count": 11000
+        }
+      },
+      "remaining_performance_obligation_coverage": {
+        "value": "1.46",
+        "description": "Years of revenue represented by RPO",
+        "calculation": "Total RPO / Annualized Revenue",
+        "components": {
+          "total_rpo": 59900,
+          "annualized_revenue": 40944
+        }
+      },
+      "rule_of_40": {
+        "value": "15.7",
+        "description": "Revenue Growth Rate + Free Cash Flow Margin",
+        "calculation": "YoY Revenue Growth % + FCF Margin %",
+        "components": {
+          "revenue_growth_rate": 9.8,
+          "fcf_margin": 5.9
+        }
+      }
+    },
+    "key_metrics": {
+      "operating_cash_flow_margin": {
+        "value": "7.2",
+        "description": "Operating Cash Flow as % of Revenue",
+        "components": {
+          "operating_cash_flow": 740,
+          "quarterly_revenue": 10236
+        }
+      },
+      "free_cash_flow": {
+        "value": 605,
+        "description": "Operating Cash Flow minus Capex",
+        "components": {
+          "operating_cash_flow": 740,
+          "capital_expenditure": 135
+        }
+      },
+      "free_cash_flow_margin": {
+        "value": "5.9",
+        "description": "Free Cash Flow as % of Revenue",
+        "components": {
+          "free_cash_flow": 605,
+          "quarterly_revenue": 10236
+        }
+      },
+      "capex_to_revenue": {
+        "value": "1.3",
+        "description": "Capital Expenditure as % of Revenue",
+        "components": {
+          "capital_expenditure": 135,
+          "quarterly_revenue": 10236
+        }
+      },
+      "recurring_revenue_percentage": {
+        "value": "94.7",
+        "description": "Subscription Revenue as % of Total Revenue",
+        "components": {
+          "subscription_revenue": 9690,
+          "total_revenue": 10236
+        }
+      }
+    },
+    "profitability_metrics": {
+      "gaap_operating_margin": {
+        "value": "22.8",
+        "description": "GAAP Operating Income / Revenue",
+        "components": {
+          "operating_income": 2332,
+          "revenue": 10236
+        }
+      },
+      "non_gaap_operating_margin": {
+        "value": "34.3",
+        "description": "Non-GAAP Operating Income / Revenue",
+        "components": {
+          "non_gaap_operating_income": 3509,
+          "revenue": 10236
+        }
+      },
+      "gaap_net_margin": {
+        "value": "18.4",
+        "description": "GAAP Net Income / Revenue",
+        "components": {
+          "net_income": 1887,
+          "revenue": 10236
+        }
+      },
+      "non_gaap_net_margin": {
+        "value": "27.3",
+        "description": "Non-GAAP Net Income / Revenue",
+        "components": {
+          "non_gaap_net_income": 2795,
+          "revenue": 10236
+        }
+      }
+    },
+    "capital_allocation": {
+      "share_repurchases": {
+        "quarter": 2225,
+        "six_months": 4858
+      },
+      "dividends": {
+        "quarter": 399,
+        "six_months": 801
+      },
+      "total_returned_to_shareholders": {
+        "quarter": 2624,
+        "six_months": 5659
+      },
+      "buyback_program_update": {
+        "increase": 20000,
+        "total_authorized": 50000
+      }
+    }
+  },
+  "key_highlights": {
+    "agentforce_and_data_cloud": {
+      "data_cloud_ai_arr": 1200,
+      "data_cloud_ai_arr_yoy_growth": "120",
+      "agentforce_deals_closed_total": 12500,
+      "agentforce_paid_deals": 6000,
+      "agentforce_paid_deals_percentage": 48,
+      "agentforce_requests_handled": 1400000,
+      "data_cloud_agentforce_expansion_bookings": ">40%",
+      "deals_over_1m_with_data_cloud_ai": ">60",
+      "service_and_platform_in_top_10_deals": "100%"
+    },
+    "strategic_milestones": {
+      "consecutive_quarters_operating_margin_expansion": 10,
+      "share_repurchase_program_increase": 20000,
+      "total_authorized_repurchase": 50000
+    },
+    "customer_wins": {
+      "notable_customers": ["Pfizer", "Marriott", "U.S. Army"],
+      "transformation_theme": "Agentic enterprises"
+    }
+  },
+  "fy2026_guidance": {
+    "q3": {
+      "revenue": {
+        "low": 10240,
+        "high": 10290,
+        "midpoint": 10265
+      },
+      "yoy_growth": {
+        "reported": "8-9",
+        "constant_currency": "8"
+      },
+      "fx_impact": 75,
+      "gaap_eps": {
+        "low": 1.60,
+        "high": 1.62
+      },
+      "non_gaap_eps": {
+        "low": 2.84,
+        "high": 2.86
+      },
+      "crpo_growth": "Slightly above 10%",
+      "crpo_growth_constant_currency": "Slightly above 9%",
+      "crpo_fx_impact": 300
+    },
+    "full_year": {
+      "revenue": {
+        "low": 41100,
+        "high": 41300,
+        "midpoint": 41200,
+        "previous_midpoint": 41150,
+        "raise": 50
+      },
+      "yoy_growth": {
+        "reported": "8.5-9",
+        "constant_currency": "~8"
+      },
+      "fx_impact": 300,
+      "subscription_support_growth": {
+        "reported": "~9.5",
+        "constant_currency": "~9"
+      },
+      "gaap_operating_margin": "21.2",
+      "non_gaap_operating_margin": "34.1",
+      "gaap_eps": {
+        "low": 6.99,
+        "high": 7.03,
+        "previous_low": 7.15,
+        "previous_high": 7.21,
+        "change_low": -0.16,
+        "change_high": -0.18
+      },
+      "non_gaap_eps": {
+        "low": 11.33,
+        "high": 11.37,
+        "previous_low": 11.27,
+        "previous_high": 11.33,
+        "raise_low": 0.06,
+        "raise_high": 0.04
+      },
+      "operating_cash_flow_growth": "12-13",
+      "free_cash_flow_growth": "12-13",
+      "guidance_updates": {
+        "revenue_guidance": "Raised low end",
+        "gaap_operating_margin": "Updated to 21.2% from 21.6%",
+        "non_gaap_operating_margin": "Raised to 34.1% from 34.0%",
+        "operating_cash_flow": "Raised to 12-13% from 10-11%",
+        "free_cash_flow": "Raised to 12-13% from 9-10%"
+      }
+    }
+  },
+  "sequential_trends": {
+    "revenue": {
+      "q1_fy26": 9829,
+      "q2_fy26": 10236,
+      "sequential_change": 407,
+      "sequential_change_percent": 4.1
+    },
+    "operating_margin_gaap": {
+      "q1_fy26": 19.8,
+      "q2_fy26": 22.8,
+      "improvement_bps": 300
+    },
+    "operating_margin_non_gaap": {
+      "q1_fy26": 32.3,
+      "q2_fy26": 34.3,
+      "improvement_bps": 200
+    },
+    "free_cash_flow": {
+      "q1_fy26": 6297,
+      "q2_fy26": 605,
+      "sequential_change": -5692,
+      "sequential_change_percent": -90.4
+    },
+    "rpo": {
+      "q1_fy26": 60.9,
+      "q2_fy26": 59.9,
+      "sequential_change": -1.0,
+      "sequential_change_percent": -1.6
+    }
+  },
+  "year_over_year_comparison": {
+    "q2_fy25": {
+      "revenue": 9325,
+      "operating_income_gaap": 1783,
+      "net_income_gaap": 1429,
+      "operating_cash_flow": 892,
+      "free_cash_flow": 755
+    },
+    "q2_fy26": {
+      "revenue": 10236,
+      "operating_income_gaap": 2332,
+      "net_income_gaap": 1887,
+      "operating_cash_flow": 740,
+      "free_cash_flow": 605
+    },
+    "yoy_growth": {
+      "revenue_percent": 9.8,
+      "operating_income_percent": 30.8,
+      "net_income_percent": 32.1,
+      "operating_cash_flow_percent": -17.0,
+      "free_cash_flow_percent": -19.9
+    }
+  }
+}

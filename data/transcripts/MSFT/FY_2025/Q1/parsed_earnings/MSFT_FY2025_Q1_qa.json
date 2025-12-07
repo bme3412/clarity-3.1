@@ -1,0 +1,105 @@
+{
+    "company_name": "Microsoft",
+    "quarter": "Q1",
+    "fiscal_year": "2025",
+    "speakers": {
+      "satya_nadella": {
+        "role": "CEO",
+        "responses": [
+          {
+            "topic": "Generative AI Adoption Pace",
+            "content": "Thank you, Keith, for those questions. I think on the first point, ultimately when you think about, let’s say, a capital outlay for training, because that’s essentially what you’re asking, it is going to be very limited by your monetization of inference in a given generation. Just like in the past, we would allocate capital to build out cloud based on the demand signal we were seeing, and then we would then project the demand, and that’s what we would build for.\n\nYou can think of training essentially as that, which is you’re building the next generation model so that then, you have a more capable model that then drives more inference demand. Ultimately, even with all the scaling laws and what have you, I think you ultimately will normalize to having a pace. In fact, I think the best way to think about even, is given the Moore’s Law effectively is working on the silicon and system side, it’s just not compute, it’s efficiencies in compute, it’s data as well as algorithms, you will want to keep on that curve, which is you really want to refresh your fleet with the Moore’s Law every year and then effectively depreciate it over the period of the life cycle of it. And then the inference demand ultimately will govern how much we invest in training, because that’s, I think, at the end of the day, you’re all subject to ultimately demand.\n\nThe second piece of the external constraints, we have run into, obviously, lots of external constraints because this demand all showed up pretty fast. I mean, if you think about even the most hit products of this generation, all are in our cloud, whether it’s ChatGPT, whether it’s Copilot, whether it’s GitHub Copilot or even DAX Copilot. I mean, pick the top 4 or 5 products of this generation, they’re all in and around our ecosystem.\n\nAnd so, therefore, we ran into a set of constraints which are everything because DCs don’t get built overnight. There is DCs. There is power. And so, that’s been the short-term constraint. Even in Q2, for example, some of the demand issues we have, or rather our ability to fulfill demand is because of, in fact, external third-party stuff that we leased moving up. That’s the constraints we have.\n\nBut in the long run, we do need effectively power, and we need DCs. And some of these things are more long lead, but I feel pretty good that going into the second half of even this fiscal year, that some of that supply demand will match up."
+          },
+          {
+            "topic": "Copilot and AI Strategy",
+            "content": "Yeah. I mean, the system we have built is Copilot, Copilot Studio, agents and autonomous agents. You should think of that as the spectrum of things. Ultimately, the way we think about how this all comes together is you need humans to be able to interface with AI. The UI layer for AI is Copilot. You can then use the Copilot Studio to extend Copilot. For example, you want to connect it to your CRM system, to your Office system, to your HR system. You do that through Copilot Studio by building agents, effectively.\n\nYou also build autonomous agents, so you can use even – that’s the announcement we made a couple of weeks ago, is you can even use Copilot Studio to build autonomous agents. Now, these autonomous agents are working independently, but from time to time, they need to raise an exception. Autonomous agents are not fully autonomous because at some point, they need to either notify someone or have someone input something. And when they need to do that, they need a UI layer. And that’s where, again, it’s Copilot.\n\nCopilot, Copilot agents, built in Copilot Studio, autonomous agents built in Copilot Studio, that’s the full system, we think, that comes together. And we feel very, very good about the positioning.\n\nAnd then, of course, we are taking the underlying system services across that entire stack that I just talked about and are making it available in Azure. You have the raw infrastructure if you want it. You have the model layer independent of it. You have the AI app server in Azure AI. Everything is also a building block service in Azure for you to be able to build. In fact, if you want to build everything that we have built in the Copilot Stack, you can build it yourself using the AI platform. That’s in simple terms, our strategy, and that’s how it all comes together."
+          }
+        ]
+      },
+      "amy_hood": {
+        "role": "CFO",
+        "responses": [
+          {
+            "topic": "OpenAI Partnership Accounting",
+            "content": "Thanks, Keith. In some ways, let me start by saying it’s a great partnership. We’re proud to have worked together for a number of years, leading to some of the announcements that you’ve heard us make more recently. And we’ve talked about the foundation of our partnership remains that when we both are successful, the other benefits. When we grow, it helps them, and when they grow, it helps us.\n\nBut specifically to your question on how does it show up, it’s easiest in this situation to think about them as a customer of ours, like any other customer who would use the Azure infrastructure and our Azure AI Services in service of supporting their end customers. And so, when they do that, like any other customer who has a commercial relationship with us, we recognize revenue on that behalf. That’s probably the simplest frame, Keith, that I hope is helpful."
+          },
+          {
+            "topic": "Gross Margins for Generative AI Technologies",
+            "content": "Yes, Karl, I think it's a good opportunity to explain a bit about how I think about where we are, which is you look at all of the businesses we’re in, and we look at our competitiveness in those businesses. And this is where Satya started to comment a bit about our relative performance versus absolute. And I’ll tell you that the energy and focus we put right now is on relative performance and share gains.\n\nRight now, we have the largest commercial cloud with increasing commitments by customers, with new workloads, new TAM opportunities that Satya’s talking about with customers. And our focus is going to be and will be on continuing to take a growing share of that, while we continue to focus on our customers’ success and getting a ton of value out of what we are selling, whether that’s the E5 product of Microsoft 365, whether that’s Windows 365 to help. Maybe it’s on compute costs and PC cost, whether it’s working across the Azure stack. And so, if we feel like, and I do, that we are well positioned to continue to take share in so many key places, then I say great. And we want to be able to focus on investing in AI, which I talked about. We’ll increase COGS growth, but we’re committed to making sure we have healthy profitability by keeping operating expenses low.\n\nAnd so, what really this past year has been about, but really what Q3 starts to show is our willingness to pivot to the future, to make sure we can keep all those commitments that Satya listed. While I know that’s not giving specificity, it is in fact how we think about long-term success, is being well-positioned in big markets, taking share in those markets, committing to make sure we’re going to lead this wave, staying focused on gross margin improvements where we can. Some of them will come in AI over time, given our commitment to the buildout. We will charge for those AI capabilities, and then ultimately, we’ll deliver operating profit."
+          },
+          {
+            "topic": "Azure Guidance and Revenue Growth",
+            "content": "Thanks, Brent. Maybe this is a great question, because I can reiterate some of the points I made and tie them together a little bit.\n\nIn Q1, the 34 in CC, as we talked about, that upside versus the 33 that we had guided to was primarily due to some revenue recognition benefits. And so, I think about that on a pure consumption basis and AI as being 33. And you think about a point or two of decel that we guided to and the majority of that is due to, unfortunately, some supply push outs that I mentioned, and then Satya reiterated, in terms of AI supply coming online that we counted on.\n\nThe underlying consumption growth is stable Q1 to Q2. And so, to your question on some ins and outs, it is certainly some ins and outs. I do, as you heard, have confidence as we get a good influx of supply across the second half of the year, particularly on the AI side, that we’ll be better able to do some supply demand matching.\n\nAnd hence, while we’re talking about acceleration in the back half, I’ll also take the opportunity to say when you see usage in AI workloads, we always intend to think about that as just a GPU exercise. The importance of having GPUs and CPUs be able to run these workloads is also important. That’s a piece of the acceleration H2 as well."
+          },
+          {
+            "topic": "Microsoft 365 and SMB Market",
+            "content": "It’s a good question because you’ve continued to see the seat growth, I think, for actually much longer than many of the investors had expected. And it really should continue in some ways, because we’re focusing on frontline workers scenarios. We’re continuing to focus on small and midsize business growth, and we’re adding new things to which you can grow, whether that’s Viva, whether it’s Teams. There’s new things that enable us to add relevancy, frankly, and then to add value, and then to add seats.\n\nAnd so, I don’t want to say it has to be, again, this vision of “or.” So, I think you’ll continue to see lower end seat growth, which is what we’ve been seeing. And you will see us continue to focus on the value of E5 and the E3 SKU, where we’ve added some value, making sure we can still move people to that suite as well.\n\nAnd so, you will see, right, over time, long term, the seat growth move a little bit, and then you’ll see ASP show up. And it depends a little bit on mix, frankly, each quarter. You saw a little more RPU in Q4. You saw a little less in Q1. That had to do with some E3 execution in Q1. But I actually think there’s room to do both those things, and I’ve felt that way now for a couple of years."
+          },
+          {
+            "topic": "Operating Margins and AI Investments",
+            "content": "That’s a good question, especially because this quarter, you started to see a little bit more of that ARPU influence. And as you might have gathered from your question, and I’ll just reinforce it, as we see some of these moderating seat growth, whether that’s some of the new SKU weakness that we had talked about, some of the standalone stuff, you’re starting to also see E5 ARPU happen at the same time. It does create some stability in that Office 365 Commercial revenue number.\n\nWe’re seeing still good seat growth, still growth across all workloads. And, as you’re pointing seen, I want to say, four or five really good quarters of E5 adoption. The value there is just very high for customers in this environment, between analytics, security, and I think we’ve given some, I think, good security data points in terms of adoption, and voice. This is a place where customers can save money by moving to this suite. And I do think you’re starting to see some of that ARPU help.\n\nAnd then, Satya talked a bit about Azure. Let me talk a little bit about the per user, where the way it showed itself is we had very high renewal rates, and very good suite performance at renewal, meaning what we tend to call internally recapture. While we had some more challenges on maybe a standalone sale of a new product, where the cycle is going to be a little longer, you’re going to have to show that cost savings. But the suite sale, the value in that showed itself in terms of strong E5. You can see the ARPU growth, and you can see the consistency, potentially, in both renewal rate and frankly within Microsoft 365 performance."
+          },
+          {
+            "topic": "Gross Margins for Generative AI Technologies",
+            "content": "Yes, Karl, I think it's a good opportunity to explain a bit about how I think about where we are, which is you look at all of the businesses we’re in, and we look at our competitiveness in those businesses. And this is where Satya started to comment a bit about our relative performance versus absolute. And I’ll tell you that the energy and focus we put right now is on relative performance and share gains.\n\nRight now, we have the largest commercial cloud with increasing commitments by customers, with new workloads, new TAM opportunities that Satya’s talking about with customers. And our focus is going to be and will be on continuing to take a growing share of that, while we continue to focus on our customers’ success and getting a ton of value out of what we are selling, whether that’s the E5 product of Microsoft 365, whether that’s Windows 365 to help. Maybe it’s on compute costs and PC cost, whether it’s working across the Azure stack. And so, if we feel like, and I do, that we are well positioned to continue to take share in so many key places, then I say great. And we want to be able to focus on investing in AI, which I talked about. We’ll increase COGS growth, but we’re committed to making sure we have healthy profitability by keeping operating expenses low.\n\nAnd so, what really this past year has been about, but really what Q3 starts to show is our willingness to pivot to the future, to make sure we can keep all those commitments that Satya listed. While I know that’s not giving specificity, it is in fact how we think about long-term success, is being well-positioned in big markets, taking share in those markets, committing to make sure we’re going to lead this wave, staying focused on gross margin improvements where we can. Some of them will come in AI over time, given our commitment to the buildout. We will charge for those AI capabilities, and then ultimately, we’ll deliver operating profit."
+          }
+        ]
+      }
+    },
+    "analyst_questions": [
+      {
+        "analyst": "Keith Weiss",
+        "firm": "Morgan Stanley",
+        "topics": ["Generative AI", "Investment Constraints", "Compute Capacity", "Environmental Sustainability"],
+        "questions": [
+          "Excellent. Thank you, guys, for taking the question, and congratulations on a really solid quarter.\n\nSatya, the expansion of capabilities, the speed of innovation, the magnitude of the opportunities ahead for generative AI makes this the most exciting period for software I’ve seen in my 25 years of covering this space. And based upon this call, it seems like you share that excitement.\n\nBut in my investor conversation, that excitement also feeds two related questions, and they both have to do with constraints. And the first is what are the internal constraints or guardrails that Microsoft has when it comes to investing behind these innovations, particularly in relation to the funding of a future generations of foundational models, where people are talking about price tags growing to tens of billions or even $100 billion plus.\n\nAnd then on the other side of the spectrum, what are the external constraints that Microsoft sees in building out this capacity to meet the demand and capture the opportunity, particularly constraints in your ability to power all these new data centers being built out and power it in an environmentally sustainable fashion? I’d love to get the Microsoft perspective on both those questions."
+        ]
+      },
+      {
+        "analyst": "Brent Thill",
+        "firm": "Jefferies",
+        "topics": ["Azure Growth", "Supply Constraints", "AI Capabilities"],
+        "questions": [
+          "Thanks. Amy, good to hear the acceleration in the back half for Azure. I guess many are asking 34% growth in Q1 falling to low 30s, I know the comp is a couple of points harder, but is there anything else you’re contemplating in that guide for Q2 to see that deceleration other than a tougher comp?"
+        ]
+      },
+      {
+        "analyst": "Mark Moerdler",
+        "firm": "Bernstein",
+        "topics": ["CapEx Growth", "Cloud Revenue", "Data Centers"],
+        "questions": [
+          "Thank you very much for taking my question, and congratulations on the quarter. The question every investor obviously asks is the question on the CapEx growth and the CapEx spend. Obviously, half of that’s facilities and equivalent that have a longer life, but the other half is the rest of the components.\n\nCan you give any color on how you think of that growth? Does it return to the traditional approach, where basically CapEx is going to grow in line with slightly slower than cloud revenue? And if so, any sense of the timing? Do we do we have enough facilities online by some time next year, etcetera? Any color would be appreciated."
+        ]
+      },
+      {
+        "analyst": "Kash Rangan",
+        "firm": "Goldman Sachs",
+        "topics": ["AI Inference Revenue", "AI CapEx Cycle", "P&L Impact"],
+        "questions": [
+          "Hi, thank you very much. Satya, when you talked about the investment cycle, these models are getting bigger and more expensive, but you also pointed out to how in the inference phase, we’re likely to get paid. How does that cycle look like an inference from Microsoft? Where are the products and the applications that will show up on the Microsoft P&L as a result of the inference phase of AI kicking in?"
+        ]
+      },
+      {
+        "analyst": "Karl Keirstead",
+        "firm": "UBS",
+        "topics": ["Microsoft 365 Copilot", "Gross Margins", "Azure Integration"],
+        "questions": [
+          "Amy, if I could double-click a little bit on the exciting news around M365 Copilot, as everybody on the line looks to layer that opportunity into our models, I just wanted to get your views. Are there any guardrails you’d offer us to sort of keep us in line? Is there a degree of gross margin pressure in the Office segment? In other words, is it a fairly cost intensive new product that we should keep in mind? And also, could it pull along Azure in the sense that you need Azure AD and perhaps some of the other cybersecurity products? A little color there might help everybody with their modeling exercise tonight and in the coming weeks."
+        ]
+      },
+      {
+        "analyst": "Rishi Jaluria",
+        "firm": "RBC",
+        "topics": ["Copilot Usage", "Consumer vs Enterprise AI"],
+        "questions": [
+          "Oh, wonderful. Thanks. Hi, Satya. Hi, Amy. I appreciate the question. I want to go and think a little bit about Copilot, how we should be thinking about numbers here with the recategorization. It seems like that was maybe softer in the past than expected, but maybe with the numbers this quarter starting to pick up.\n\nCan you maybe walk us through what you’re seeing on that, and maybe more importantly, how we should be thinking about your overall AI strategy on consumer versus enterprise, especially now with Mustafa in the fold."
+        ]
+      }
+    ],
+    "metadata": {
+      "parsed_date": "2025-03-31T00:00:00Z",
+      "company_ticker": "MSFT",
+      "source": "Q1 2025 Earnings Call Transcript"
+    }
+  }
+  

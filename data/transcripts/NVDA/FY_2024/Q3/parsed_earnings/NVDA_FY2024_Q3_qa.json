@@ -1,0 +1,147 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q3",
+  "fiscal_year": "2024",
+  "speakers": {
+    "jensen_huang": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "AI factories & capacity expansion",
+          "content": "AI is driving a multibillion-dollar demand surge. We raised supply each quarter, ramped HGX with Hopper, shipping H200/H200G, and are delivering InfiniBand networking and Spectrum-X Ethernet to scale AI factories globally, including sovereign clouds."
+        },
+        {
+          "topic": "Inference, TensorRT-LLM & compatibility",
+          "content": "TensorRT-LLM doubled inference performance, followed by another 2x with H200, slashing inference cost by 4x in a year. CUDA compatibility lets every GPU benefit from the latest innovations across clouds, enterprise, and on-prem environments."
+        },
+        {
+          "topic": "AI foundry and software monetization",
+          "content": "The AI Foundry (AI Foundations + NeMo + DGX Cloud) helps partners like SAP, ServiceNow, Dropbox build proprietary copilots. They run on NVIDIA AI Enterprise (license-based, $4,500 per GPU per year) and scale via cloud, on-prem, and DGX Cloud sandboxes."
+        },
+        {
+          "topic": "Networking strategy & Ethernet role",
+          "content": "InfiniBand is the fabric for AI factories with congestion control, adaptive routing, and compute in the switches, while Spectrum-X extends Ethernet (BlueField + Spectrum switches) for enterprises needing enterprise-grade AI performance."
+        },
+        {
+          "topic": "Grace Hopper & sovereign AI",
+          "content": "Grace Hopper Superchips, GH200, and ARM-based Grace CPU broaden our TAM, serving supercomputing centers (Isambard-AI, Jülich) and sovereign clouds defending regional data/backbone needs."
+        }
+      ]
+    },
+    "colette_kress": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Operational leverage & investment discipline",
+          "content": "We kept OpEx growth modest while reallocating spend to AI infrastructure; margin improvement comes from higher data center mix and release of past inventory reserves. We continue to invest in future capacity while maintaining leverage."
+        },
+        {
+          "topic": "China/export control impact",
+          "content": "China/affected regions accounted for ~20-25% of data center revenue. Q4 guidance assumes those shipments drop significantly, though we are engaging on regulation-compliant SKUs; supply increases elsewhere can more than offset the reduction."
+        },
+        {
+          "topic": "Supply visibility & guidance",
+          "content": "We continue to expand supply (HGX, networking) and partner with OEMs to re-route capacity. Q4 revenue guidance $20B (+/-2%), margins mid-70s, and we’re on track for +$1B annualized recurring software/services run rate."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Vivek Arya",
+      "firm": "Bank of America",
+      "topics": [
+        "China exposure",
+        "Adoption curve"
+      ],
+      "questions": [
+        "How much of Q4 revenue will China contribute under the new export controls, and where do you see the purchase adoption curve for generative AI workloads?"
+      ]
+    },
+    {
+      "analyst": "Aaron Rakers",
+      "firm": "Wells Fargo",
+      "topics": [
+        "Networking",
+        "Spectrum-X"
+      ],
+      "questions": [
+        "Can you expand on Spectrum-X Ethernet and how it complements InfiniBand as networking revenue scales toward $10B+ run rate?"
+      ]
+    },
+    {
+      "analyst": "Joseph Moore",
+      "firm": "Morgan Stanley",
+      "topics": [
+        "Grace Hopper",
+        "TAM expansion"
+      ],
+      "questions": [
+        "How does Grace Hopper expand your TAM, and which workloads or customer segments benefit most versus H100?"
+      ]
+    },
+    {
+      "analyst": "Timothy Arcuri",
+      "firm": "UBS",
+      "topics": [
+        "Supply visibility",
+        "Future growth"
+      ],
+      "questions": [
+        "With China redirected, what is your visibility on multi-quarter revenue and can data center growth continue through 2025?"
+      ]
+    },
+    {
+      "analyst": "Toshiya Hari",
+      "firm": "Goldman Sachs",
+      "topics": [
+        "Regulation-compliant products",
+        "AI Foundry"
+      ],
+      "questions": [
+        "Can you characterize the delivery timeline and macro impact of the new regulation-compliant products for China and clarify how the AI Foundry monetization model works?"
+      ]
+    },
+    {
+      "analyst": "Stacy Rasgon",
+      "firm": "Bernstein Research",
+      "topics": [
+        "China restrictions",
+        "Supply lead times"
+      ],
+      "questions": [
+        "Would Q4 guidance be higher absent the China restrictions, and are lead times loosening because you can reallocate inventory elsewhere?"
+      ]
+    },
+    {
+      "analyst": "Matthew Ramsay",
+      "firm": "TD Cowen",
+      "topics": [
+        "Inference vs training",
+        "Data processing"
+      ],
+      "questions": [
+        "How does inference evolve for large language models and what role does CUDA acceleration play in the massive data processing workload around training/inference?"
+      ]
+    },
+    {
+      "analyst": "Harlan Sur",
+      "firm": "JPMorgan",
+      "topics": [
+        "Product cadence",
+        "Execution"
+      ],
+      "questions": [
+        "With an aggressive roadmap (training/inference/CPU/DPU/software) and R&D OpEx growth, how do you stay organized and execute across so many segments?"
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2024-11-21T00:00:00Z",
+    "source": "NVDA Q3 FY2024 transcript",
+    "notes": [
+      "Transcription aligned with press release, capturing key exec commentary on AI factories, TensorRT-LLM, Spectrum-X, AI Foundry, and export controls."
+    ]
+  }
+}
+

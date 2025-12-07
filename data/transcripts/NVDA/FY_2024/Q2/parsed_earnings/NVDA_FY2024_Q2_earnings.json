@@ -1,0 +1,117 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q2",
+  "fiscal_year": "2024",
+  "financials": {
+    "context_note": "The supplied transcript and press release describe the quarter ended April 30, 2023; this information was used for Q2 because those were the only documents provided in the Q2 folder.",
+    "gaap": {
+      "total_revenue": {
+        "value": 7.19,
+        "unit": "billion USD",
+        "quarter_over_quarter_change": "+19%",
+        "year_over_year_change": "-13%"
+      },
+      "gross_margin": "64.6%",
+      "operating_expenses": 2.51,
+      "operating_income": 2.14,
+      "net_income": 2.04,
+      "eps": 0.82
+    },
+    "non_gaap": {
+      "gross_margin": "66.8%",
+      "operating_expenses": 1.75,
+      "operating_income": 3.05,
+      "net_income": 2.71,
+      "eps": 1.09
+    },
+    "segments": {
+      "data_center": {
+        "revenue": 4.28,
+        "unit": "billion USD",
+        "yoy_change": "+14%",
+        "qoq_change": "+18%",
+        "highlights": [
+          "Record accelerated computing revenue fueled by generative AI workloads",
+          "DGX H100 shipments and DGX Cloud partnerships with Azure, GCP, OCI",
+          "Launched new inference platforms (L4, L40, H100 NVL, Grace Hopper)"
+        ]
+      },
+      "gaming": {
+        "revenue": 2.24,
+        "unit": "billion USD",
+        "yoy_change": "-38%",
+        "qoq_change": "+22%",
+        "highlights": [
+          "Continued RTX 40 Series laptop momentum, RTX 4070 ramp, RTX 4060 family launch",
+          "GeForce NOW catalog expansion, including Xbox titles, DLSS game additions"
+        ]
+      },
+      "professional_visualization": {
+        "revenue": 0.295,
+        "unit": "billion USD",
+        "yoy_change": "-53%",
+        "qoq_change": "+31%",
+        "highlights": [
+          "Omniverse Cloud in Azure and new Ada-based RTX GPUs for workstations"
+        ]
+      },
+      "automotive": {
+        "revenue": 0.296,
+        "unit": "billion USD",
+        "yoy_change": "+114%",
+        "highlights": [
+          "DRIVE Orin ramp, $14B design win pipeline, BYD expansion"
+        ]
+      }
+    },
+    "cash_flow": {
+      "operating": 2.911,
+      "investing": -0.841,
+      "financing": -0.380,
+      "free_cash_flow": 2.643
+    },
+    "capital_investment": {
+      "capex": 0.248,
+      "context": "PP&E & intangible investments to support AI infrastructure"
+    },
+    "capital_return": {
+      "dividends": 0.099,
+      "share_repurchases": 0,
+      "note": "No share repurchases this quarter; opportunistic programs remain"
+    }
+  },
+  "guidance": {
+    "next_quarter": {
+      "revenue": 11.0,
+      "plus_minus": 0.22,
+      "gross_margin": {
+        "gaap": "68.6%",
+        "non_gaap": "70%",
+        "range": "±50 bps"
+      },
+      "operating_expenses": {
+        "gaap": 2.71,
+        "non_gaap": 1.90
+      },
+      "other_income": 0.09,
+      "tax_rate": "14% ±1%",
+      "capex": "0.30-0.35"
+    }
+  },
+  "highlights": {
+    "ai_infrastructure": [
+      "Generative AI demand fueling exponential accelerated computing adoption and supply-chain ramp",
+      "Quantum-2 400G InfiniBand, BlueField-3 DPU, Spectrum-4 Ethernet, Grace Hopper, and DGX Cloud momentum"
+    ],
+    "software": [
+      "NVIDIA AI Foundations, AI Enterprise, and Omniverse platforms guiding enterprises from data to deployment",
+      "Partnerships with Microsoft Azure, Google Cloud, Oracle Cloud, ServiceNow, Dell, Adobe, among others"
+    ]
+  },
+  "metadata": {
+    "parsed_date": "2023-05-24T00:00:00Z",
+    "company_ticker": "NVDA",
+    "source": "NVDA Q1 FY2024 press release and earnings call transcript (provided in the Q2 folder)"
+  }
+}
+

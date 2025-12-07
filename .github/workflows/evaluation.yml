@@ -1,0 +1,31 @@
+name: evaluation-smoke
+
+on:
+  pull_request:
+    paths:
+      - "src/**"
+      - "scripts/**"
+      - "data/evaluation/**"
+      - ".github/workflows/evaluation.yml"
+
+jobs:
+  smoke-eval:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        run: npm run build --if-present
+
+      - name: Show note
+        run: echo "API smoke eval would run here (requires service availability)."

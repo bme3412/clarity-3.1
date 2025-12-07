@@ -1,0 +1,579 @@
+{
+  "run_id": "2025-12-04T19-54-55-045Z",
+  "strategy_id": "baseline",
+  "created_at": "2025-12-04T19:54:55.045Z",
+  "dataset": "data/evaluation/dataset.json",
+  "total_cases": 8,
+  "summary": {
+    "avg_relevance": 0.925,
+    "avg_faithfulness": 0.7437499999999999,
+    "avg_accuracy": 0.85,
+    "timings_ms": {
+      "intentMs": 3841,
+      "embeddingMs": 292.625,
+      "pineconeMs": 702.875,
+      "financialMs": 3.25,
+      "keywordMs": 7.625,
+      "llmMs": 11612.75,
+      "totalMs": 16460.75
+    },
+    "retrieval": {
+      "pineconeMatches": 1.625,
+      "financialMatches": 1.75,
+      "keywordMatches": 3,
+      "combinedContext": 6.375
+    },
+    "fallback_rates": {
+      "usedFinancialData": 0.75,
+      "usedKeywordFallback": 0.75,
+      "financialQuery": 0.375,
+      "hadTranscriptMatches": 0.5
+    },
+    "llm_usage": {
+      "input_tokens": 1188.875,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 422.375
+    }
+  },
+  "cases": [
+    {
+      "id": "fin-1",
+      "question": "What was AMD's total revenue in Q3 2024?",
+      "duration_ms": 13248,
+      "context_count": 4,
+      "metrics": {
+        "relevance": {
+          "score": 1,
+          "reasoning": "The answer directly and completely addresses the question about AMD's total revenue in Q3 2024. It clearly states the total revenue was $6.8 billion and provides additional context including year-over-year and quarter-over-quarter growth percentages, detailed segment breakdowns, and key highlights. The response is highly relevant and comprehensive."
+        },
+        "faithfulness": {
+          "score": 0.95,
+          "reasoning": "The answer is highly faithful to the provided context. All key financial figures are accurately derived from the chunks: Total Revenue of $6.8 billion with +18% YoY and +17% QoQ growth matches Chunks 1, 2, and 4. The segment breakdown (Data Center $3.5B/+122%, Client $1.9B/+29%, Gaming $462M/-69%, Embedded $927M/-25%) aligns precisely with the context. Operating expenses of $1.96 billion and +15% YoY are correctly stated from Chunk 1. The mention of MI300 driving Data Center growth is supported by Chunk 3. The only minor deduction is for interpretive statements like 'standout performer,' 'structural transformation,' and characterizations of market conditions (console chip demand, gaming GPU market) that add context not explicitly stated in the source material, though these are reasonable inferences rather than hallucinations."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer correctly states AMD's total revenue in Q3 2024 was $6.8 billion with an 18% year-over-year increase, which exactly matches the ground truth. The generated answer provides significantly more detail including segment breakdowns, quarter-over-quarter growth, and profitability context, but all of this additional information is consistent with and expands upon the core facts in the ground truth without contradicting them."
+        }
+      },
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 3126,
+          "embeddingMs": 238,
+          "pineconeMs": 1401,
+          "financialMs": 2,
+          "keywordMs": 6,
+          "llmMs": 8472,
+          "totalMs": 13247
+        },
+        "retrieval": {
+          "pineconeMatches": 1,
+          "financialMatches": 1,
+          "keywordMatches": 2,
+          "combinedContext": 4,
+          "filtersApplied": {
+            "company": "AMD",
+            "fiscal_year": "2024",
+            "quarter": "Q3"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": true,
+          "financialQuery": true,
+          "hadTranscriptMatches": true
+        },
+        "intent": {
+          "analysis_type": "financial",
+          "timeframe": "Q3 2024",
+          "company_name": "AMD",
+          "isComparisonQuery": false,
+          "primaryTicker": "AMD"
+        },
+        "llm": {
+          "input_tokens": 902,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 326,
+          "service_tier": "standard"
+        }
+      },
+      "file": "fin-1.json",
+      "category": "financial"
+    },
+    {
+      "id": "fin-2",
+      "question": "How did the AMD Data Center segment perform in Q3 2024?",
+      "duration_ms": 13784,
+      "context_count": 4,
+      "metrics": {
+        "relevance": {
+          "score": 1,
+          "reasoning": "The answer directly and comprehensively addresses the question about AMD's Data Center segment performance in Q3 2024. It provides specific revenue figures ($3.5 billion), year-over-year growth (+122%), the segment's share of total revenue (52%), and contextual information about growth drivers (Instinct AI accelerators and EPYC processors). The answer also provides helpful comparative context with other segments and overall company performance, making it a complete and highly relevant response."
+        },
+        "faithfulness": {
+          "score": 0.85,
+          "reasoning": "The answer is largely faithful to the provided context, with most key figures accurately derived from the chunks. The revenue figures ($6.8B total, $3.5B Data Center, $1.9B Client, $927M Embedded, $462M Gaming) and YoY changes (+18%, +122%, +29%, -25%, -69%) are correctly stated. The operating expenses figure of $1.96 billion and +15% YoY change are supported by Chunk 1. The $500 million outlook increase is mentioned in Chunk 3. However, there are some minor issues: (1) The statement that Data Center represents 'approximately 52%' of revenue is a calculation not explicitly stated in the context. (2) The claim about 'Instinct AI accelerators and EPYC server processors' driving growth is an inference not directly supported by the provided chunks. (3) The characterization of 'console cycle dynamics' and 'inventory digestion in industrial markets' as reasons for Gaming and Embedded declines are not mentioned in the context. (4) The Q/Q growth of +17% is mentioned in Chunk 2 but the answer presents it as fact. These minor additions/inferences prevent a perfect score, but the core financial data is accurate."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer accurately contains all the key facts from the ground truth: Data Center segment revenue of $3.5 billion, 122% year-over-year growth, and mentions both AMD Instinct GPUs (referred to as 'Instinct AI accelerators') and EPYC CPUs (referred to as 'EPYC server processors') as growth drivers. The generated answer provides significantly more detail including other segment performance, total company revenue, and additional context, but all information is consistent with and expands upon the ground truth without any contradictions."
+        }
+      },
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 3304,
+          "embeddingMs": 264,
+          "pineconeMs": 585,
+          "financialMs": 1,
+          "keywordMs": 4,
+          "llmMs": 9625,
+          "totalMs": 13784
+        },
+        "retrieval": {
+          "pineconeMatches": 1,
+          "financialMatches": 1,
+          "keywordMatches": 2,
+          "combinedContext": 4,
+          "filtersApplied": {
+            "company": "AMD",
+            "fiscal_year": "2024",
+            "quarter": "Q3"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": true,
+          "financialQuery": true,
+          "hadTranscriptMatches": true
+        },
+        "intent": {
+          "analysis_type": "financial",
+          "timeframe": "Q3 2024",
+          "company_name": "AMD",
+          "isComparisonQuery": false,
+          "primaryTicker": "AMD"
+        },
+        "llm": {
+          "input_tokens": 901,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 383,
+          "service_tier": "standard"
+        }
+      },
+      "file": "fin-2.json",
+      "category": "financial"
+    },
+    {
+      "id": "fin-3",
+      "question": "How has Nvidia's data center revenue changed over the past year?",
+      "duration_ms": 15312,
+      "context_count": 8,
+      "metrics": {
+        "relevance": {
+          "score": 0.95,
+          "reasoning": "The answer directly and comprehensively addresses the question about Nvidia's data center revenue changes over the past year. It provides specific quarterly revenue figures ($26.3B to $35.6B), year-over-year growth rates (78% to 122%), quarter-over-quarter growth (15-17%), and contextualizes the segment's importance (90% of total revenue). The answer includes relevant supporting details like growth drivers and cash flow metrics. The only minor issue is that some data points reference FY2026 quarters which may extend slightly beyond 'the past year' depending on interpretation, but overall the response is highly relevant and informative."
+        },
+        "faithfulness": {
+          "score": 0.75,
+          "reasoning": "The answer is largely faithful to the provided context but contains some issues. The revenue figures and growth rates for Q4 FY2025 ($35.6B, 78% YoY, 16% QoQ), Q3 FY2025 ($30.8B, 94% YoY, 17% QoQ), and Q2 FY2025 ($26.3B, 122% YoY) are accurately derived from the context. The free cash flow figures are mostly correct ($15.5B for Q4, $13.5B for Q2). However, there are some concerns: 1) The answer references 'Q2 FY2026' and 'Q3 FY2026' which don't appear in the context - the context shows Q2-Q4 FY2025. 2) The $22.1B free cash flow figure attributed to 'Q3 FY2026' appears to be from a different quarter in the context (Chunk 3 shows $22.089B). 3) The statement about Data Center representing '90% of total company revenue' is a reasonable calculation from the data but involves interpretation. 4) The commentary about 'enterprise AI adoption, cloud provider investments, and AI infrastructure buildout cycle' is not explicitly stated in the context - this appears to be added interpretation. The Blackwell/Ultra references and lead time information are supported by the context chunks."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer is fully consistent with the ground truth and provides significantly more detail. The ground truth states that data center revenue has grown significantly with 'consistent triple-digit growth rates throughout FY2024-2025.' The generated answer confirms this with specific figures: Q2 FY2025 at 122% YoY growth, Q3 FY2025 at 94% YoY growth, and Q4 FY2025 at 78% YoY growth. While Q3 and Q4 are technically not 'triple-digit' (they're 94% and 78%), the answer correctly characterizes this as 'triple-digit or near-triple-digit YoY growth,' which is consistent with the ground truth's characterization of the growth pattern. The generated answer also provides additional accurate context about revenue figures, segment dominance, cash flow, and growth drivers, all of which support and expand upon the ground truth without contradicting it."
+        }
+      },
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 3947,
+          "embeddingMs": 265,
+          "pineconeMs": 596,
+          "financialMs": 5,
+          "keywordMs": 8,
+          "llmMs": 10489,
+          "totalMs": 15311
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 3,
+          "keywordMatches": 5,
+          "combinedContext": 8,
+          "filtersApplied": {
+            "company": "NVDA",
+            "$or": [
+              {
+                "fiscal_year": "2024"
+              },
+              {
+                "fiscal_year": "2023"
+              }
+            ]
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": true,
+          "financialQuery": true,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "financial",
+          "timeframe": "past year",
+          "company_name": "NVDA",
+          "isComparisonQuery": false,
+          "primaryTicker": "NVDA"
+        },
+        "llm": {
+          "input_tokens": 1531,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 424,
+          "service_tier": "standard"
+        }
+      },
+      "file": "fin-3.json",
+      "category": "financial"
+    },
+    {
+      "id": "strat-1",
+      "question": "What are AMD's strategic priorities for AI as of late 2024?",
+      "duration_ms": 19485,
+      "context_count": 1,
+      "metrics": {
+        "relevance": {
+          "score": 0.9,
+          "reasoning": "The answer directly addresses AMD's strategic priorities for AI as of late 2024. It covers key AI-related priorities including AI/Data Center dominance with MI300 series GPUs, AI PC capabilities with NPUs in Ryzen processors, and portfolio rebalancing. The answer provides specific Q3 2024 financial data supporting these priorities, discusses competitive positioning against NVIDIA, and includes a strategic summary table. The response is comprehensive, relevant, and timely to the question asked. It loses a small amount because some content (Gaming/Embedded details) is tangentially related to AI strategy rather than directly about AI priorities."
+        },
+        "faithfulness": {
+          "score": 0.6,
+          "reasoning": "The answer correctly uses financial data from the context (revenue figures, YoY changes, segment breakdowns). However, it contains several claims not supported by the provided context: 1) 'MI300 series' is not mentioned in the context, 2) 'positioning against NVIDIA' and 'competitive TCO messaging' are not in the context, 3) 'AI PC capabilities with Ryzen processors featuring NPUs' is not mentioned, 4) 'Gaining share in notebook and desktop markets' is not stated, 5) 'strategic de-emphasis of semi-custom console business' is an interpretation not in the context, 6) 'cyclical inventory correction' for Embedded is not mentioned. While the core financial figures are faithful to the context, significant strategic commentary and product-specific details appear to be hallucinated or inferred beyond what the context provides."
+        },
+        "accuracy": {
+          "score": 0.6,
+          "reasoning": "The generated answer partially addresses AMD's strategic priorities but misses key specific elements from the ground truth. It does mention MI300 series and AI GPU expansion, which aligns with the 'Instinct data center GPU portfolio' point. However, it completely omits the ROCm software stack enhancement and the competition with CUDA, which is a significant strategic priority in the ground truth. The answer also doesn't explicitly mention 'cloud and enterprise markets' adoption, though it broadly discusses Data Center growth. The generated answer provides extensive additional context about financial performance and other segments (Client, Gaming, Embedded) that, while accurate and relevant, don't compensate for the missing core strategic elements. The answer is not factually incorrect but is incomplete regarding the specific priorities outlined in the ground truth."
+        }
+      },
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 2998,
+          "embeddingMs": 260,
+          "pineconeMs": 586,
+          "llmMs": 15639,
+          "totalMs": 19484
+        },
+        "retrieval": {
+          "pineconeMatches": 1,
+          "financialMatches": 0,
+          "keywordMatches": 0,
+          "combinedContext": 1,
+          "filtersApplied": {
+            "company": "AMD",
+            "fiscal_year": "2024"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": false,
+          "usedKeywordFallback": false,
+          "financialQuery": false,
+          "hadTranscriptMatches": true
+        },
+        "intent": {
+          "analysis_type": "strategic",
+          "timeframe": "recent",
+          "company_name": "AMD",
+          "isComparisonQuery": false,
+          "primaryTicker": "AMD"
+        },
+        "llm": {
+          "input_tokens": 475,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 438,
+          "service_tier": "standard"
+        }
+      },
+      "file": "strat-1.json",
+      "category": "strategy"
+    },
+    {
+      "id": "strat-2",
+      "question": "What is Apple's approach to AI and machine learning in their products?",
+      "duration_ms": 16304,
+      "context_count": 8,
+      "metrics": {
+        "relevance": {
+          "score": 0.95,
+          "reasoning": "The answer is highly relevant and directly addresses the question about Apple's approach to AI and machine learning in their products. It covers multiple aspects including: Apple Intelligence initiative and its developer beta launch, capital expenditure investments in AI infrastructure (Private Cloud Compute), product integration across the ecosystem, and developer enablement. The answer is well-structured, provides specific details from Q3 2024 earnings discussions, and honestly acknowledges what information was not available in the source data. The only minor deduction is that it could have included more specific details about machine learning features in existing products, but overall it comprehensively addresses the question."
+        },
+        "faithfulness": {
+          "score": 0.7,
+          "reasoning": "The answer is partially faithful to the context but contains some extrapolations and organizational framing not directly present in the source material. Faithful elements include: (1) Apple Intelligence rollout to developers mentioned in Chunk 1, (2) Goldman Sachs analyst questions about upgrade rates and AI from Chunk 5, (3) CFO Luca Maestri addressing CapEx and Private Cloud Compute from Chunk 3, (4) Vision Pro and enterprise opportunities mentioned in Chunk 1, and (5) the quote about enabling developers to 'take their apps to the next level' from Chunk 1. However, the answer adds interpretive framing like 'AI is viewed as a potential catalyst for device sales' and 'potentially tied to AI infrastructure buildout' which are reasonable inferences but not explicitly stated in the context. The answer also presents information in a more structured analytical format than the raw context supports, and some claims like 'Apple Intelligence features are being integrated across the product ecosystem' are not directly supported by the chunks. The answer correctly notes that specific financial metrics for AI were not found, which is accurate and honest."
+        },
+        "accuracy": {
+          "score": 0.6,
+          "reasoning": "The generated answer discusses Apple Intelligence and mentions ecosystem integration, which aligns with the ground truth. However, it misses key specific elements from the ground truth: there's no mention of 'on-device AI processing,' 'privacy-first ML capabilities,' 'custom silicon,' or the 'Neural Engine.' The generated answer focuses more on developer betas, CapEx investments, and Private Cloud Compute (which actually somewhat contradicts the 'on-device' emphasis in the ground truth). While the answer provides relevant information about Apple's AI initiatives, it doesn't capture the core differentiating aspects emphasized in the ground truth about Apple's privacy-focused, on-device approach with custom silicon."
+        }
+      },
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 4029,
+          "embeddingMs": 468,
+          "pineconeMs": 617,
+          "financialMs": 4,
+          "keywordMs": 12,
+          "llmMs": 11174,
+          "totalMs": 16304
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 3,
+          "keywordMatches": 5,
+          "combinedContext": 8,
+          "filtersApplied": {
+            "company": "AAPL"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": true,
+          "financialQuery": false,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "technology",
+          "timeframe": "all",
+          "company_name": "AAPL",
+          "isComparisonQuery": false,
+          "primaryTicker": "AAPL"
+        },
+        "llm": {
+          "input_tokens": 1435,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 395,
+          "service_tier": "standard"
+        }
+      },
+      "file": "strat-2.json",
+      "category": "strategy"
+    },
+    {
+      "id": "strat-3",
+      "question": "How is Meta investing in AI infrastructure?",
+      "duration_ms": 18297,
+      "context_count": 8,
+      "metrics": {
+        "relevance": {
+          "score": 1,
+          "reasoning": "The answer directly and comprehensively addresses the question about Meta's AI infrastructure investments. It provides detailed capital expenditure figures ($13.7B-$16.1B quarterly, $64-72B annual guidance), explains the financial capacity supporting these investments (cash flow, cash position), identifies specific AI investment focus areas (internal AI capacity, GenAI infrastructure, advertising AI systems), demonstrates ROI from AI investments (Reels ads, Advantage+ campaigns), and discusses key investor considerations. The response is highly relevant, data-rich, and thoroughly answers the question."
+        },
+        "faithfulness": {
+          "score": 0.4,
+          "reasoning": "The answer contains significant information that is not supported by or contradicts the provided context. Key issues: 1) The CapEx figures cited (Q1: $13.7B, Q2: $14.1B, Q3: $16.1B) don't match the context which shows Q1: $13,692M, Q2: $17,012M, Q3: $19,374M. 2) The 'YoY Change' percentages (60%, 28%, 32%) are fabricated - the context shows Q2 CapEx grew 102.3% YoY and Q3 grew 128% YoY. 3) Q3 2025 Operating Cash Flow is stated as $27.5B but context shows $29,999M. 4) Q3 2025 Free Cash Flow is stated as $17.8B but context shows $10,625M. 5) Cash Position of $77.8B is fabricated - context shows $10,187M cash + $34,261M marketable securities = ~$44.4B. 6) The full-year 2025 CapEx guidance of $64-72B appears in Q1 guidance but was updated to $70-72B in Q3. Some elements are accurate: the Meta AI 500M+ MAU figure, the advertising performance metrics (36% ROAS, $10B Advantage+ run rate, 22% higher ROAS, $2B Shops ads), and the general analyst questions about infrastructure ROI. However, the core financial metrics presented are largely inaccurate or hallucinated."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer is fully consistent with the ground truth and provides substantially more detail. The ground truth states Meta is investing heavily in AI infrastructure including GPU clusters, custom AI chips, and data center capacity. The generated answer confirms this heavy investment with specific CapEx figures ($13.7B-$16.1B quarterly, $64-72B annual guidance), describes the infrastructure buildout for AI model training and inference (mentioning 'internal AI capacity for both research and production workloads'), and provides extensive supporting financial data. While the generated answer doesn't explicitly mention 'custom AI chips' by name, it comprehensively covers the AI infrastructure investment theme with concrete numbers and additional context about ROI and use cases. The answer is factually consistent and more detailed than the ground truth."
+        }
+      },
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 4417,
+          "embeddingMs": 257,
+          "pineconeMs": 585,
+          "financialMs": 6,
+          "keywordMs": 15,
+          "llmMs": 13017,
+          "totalMs": 18297
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 3,
+          "keywordMatches": 5,
+          "combinedContext": 8,
+          "filtersApplied": {
+            "company": "META"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": true,
+          "financialQuery": false,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "technology",
+          "timeframe": "all",
+          "company_name": "META",
+          "isComparisonQuery": false,
+          "primaryTicker": "META"
+        },
+        "llm": {
+          "input_tokens": 1420,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 512,
+          "service_tier": "standard"
+        }
+      },
+      "file": "strat-3.json",
+      "category": "strategy"
+    },
+    {
+      "id": "comp-1",
+      "question": "How do AMD and Nvidia compare in the AI accelerator market?",
+      "duration_ms": 16161,
+      "context_count": 10,
+      "metrics": {
+        "relevance": {
+          "score": 0.65,
+          "reasoning": "The answer provides substantial information about AMD's position in the AI accelerator market, including product roadmap, revenue figures, and competitive positioning. However, it fails to adequately address the comparison aspect of the question - it explicitly notes that 'Specific competitive market share data versus NVIDIA was not found' and provides virtually no information about Nvidia's position, products, or performance. The question asks for a comparison between the two companies, but the answer is almost entirely AMD-focused. While the AMD information is relevant and detailed, the lack of Nvidia information means the answer only partially addresses what was asked."
+        },
+        "faithfulness": {
+          "score": 0.85,
+          "reasoning": "The answer is largely faithful to the provided context, accurately representing key information about AMD's Data Center GPU guidance increase ($4.5B to $5B), product roadmap (MI300, MI325X timing, MI350 series), customer engagement expansion, gross margin drivers from Data Center mix (>50% of revenue), and the Ultra Ethernet Consortium support. The answer correctly notes that specific competitive market share data versus NVIDIA was not found. However, there are minor issues: (1) The answer states 'MI325X' but the context refers to '325X' and '325' without the 'MI' prefix consistently; (2) The answer organizes and synthesizes information in a structured format that goes slightly beyond the raw context presentation; (3) The characterization of 'annual product cadence as a competitive differentiator' is an inference from the context mentioning 'annual cadence' but not explicitly calling it a differentiator. Overall, the core facts are well-supported by the context with only minor extrapolations."
+        },
+        "accuracy": {
+          "score": 0.6,
+          "reasoning": "The generated answer provides extensive detail about AMD's competitive position, product roadmap (MI300, MI325X, MI350), and market dynamics, which aligns with the ground truth's mention of AMD competing with MI300 series and gaining traction in cloud deployments. However, the generated answer is missing key elements from the ground truth: 1) No mention of Nvidia's dominance or CUDA ecosystem lock-in, 2) No explicit mention of the ROCm software stack (only vague references to 'open ecosystem'), 3) The answer explicitly states 'Specific competitive market share data versus NVIDIA was not found' which means it fails to address the core competitive dynamic described in the ground truth. While the AMD-specific information is accurate and detailed, the answer is incomplete regarding the comparative competitive landscape that the ground truth emphasizes."
+        }
+      },
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 2836,
+          "embeddingMs": 250,
+          "pineconeMs": 660,
+          "llmMs": 12415,
+          "totalMs": 16161
+        },
+        "retrieval": {
+          "pineconeMatches": 10,
+          "financialMatches": 0,
+          "keywordMatches": 0,
+          "combinedContext": 10,
+          "filtersApplied": {}
+        },
+        "fallbacks": {
+          "usedFinancialData": false,
+          "usedKeywordFallback": false,
+          "financialQuery": false,
+          "hadTranscriptMatches": true
+        },
+        "intent": {
+          "analysis_type": "market",
+          "timeframe": "all",
+          "company_name": [
+            "AMD",
+            "NVDA"
+          ],
+          "isComparisonQuery": true,
+          "primaryTicker": "AMD"
+        },
+        "llm": {
+          "input_tokens": 1367,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 428,
+          "service_tier": "standard"
+        }
+      },
+      "file": "comp-1.json",
+      "category": "comparison"
+    },
+    {
+      "id": "market-1",
+      "question": "How is the cloud computing market affecting Microsoft's business?",
+      "duration_ms": 19099,
+      "context_count": 8,
+      "metrics": {
+        "relevance": {
+          "score": 0.95,
+          "reasoning": "The answer is highly relevant and directly addresses the question about how the cloud computing market is affecting Microsoft's business. It provides comprehensive data including: (1) specific revenue figures and growth rates for cloud segments, (2) quarterly performance trends, (3) commercial momentum indicators like bookings growth and remaining performance obligations, (4) operating leverage and margin improvements, and (5) key takeaways about cloud's impact on Microsoft's overall business. The answer demonstrates that cloud computing is Microsoft's primary growth engine with concrete financial evidence. The only minor deduction is for the note acknowledging some specific data wasn't available, but overall the response thoroughly answers the question."
+        },
+        "faithfulness": {
+          "score": 0.85,
+          "reasoning": "The answer is largely faithful to the provided context, with most claims directly supported by the chunks. Accurate elements include: Q1 FY26 revenue of $77.7B (+18%), Q4 FY25 revenue of $76.4B (+18%), Q3 FY25 revenue of $70.1B (+13%), commercial bookings growth of 112%, RPO of $392B (+51%), ~35% recognized in 12 months, Q1 FY26 operating income of $38B (+24%), Q4 FY25 operating income of $34.3B (+23%), and the service vs. product revenue mix figures. However, there are some issues: (1) The Intelligent Cloud segment figures in the table show Q4 FY25 as $30.3B, but the context shows $29.878B (rounded to $29.9B would be more accurate); Q3 FY25 shows $26.8B but context shows $26.751B (acceptable rounding); Q2 FY25 shows $25.5B matching context. (2) The statement about 'operating margin expansion continues' is supported by context showing margin improvements. (3) The note about Azure revenue and AI-specific breakdowns not being found is honest and accurate. The minor discrepancy in the Q4 Intelligent Cloud figure ($30.3B vs $29.9B) represents a small inaccuracy but doesn't constitute a major hallucination."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer is fully consistent with the ground truth and provides substantially more detail. The ground truth states that Microsoft Azure shows strong growth driven by AI services and enterprise cloud adoption, contributing to overall revenue growth. The generated answer confirms this with specific data: Intelligent Cloud segment showing consistent growth ($25.5B to $30.3B over quarters), commercial bookings grew 112% driven by Azure and OpenAI commitments, double-digit revenue growth consistently driven by cloud and AI, and explicit statements about 'Cloud and AI strength' as key drivers. The answer provides concrete numbers and metrics that support the ground truth's claims about strong growth and AI-driven enterprise adoption."
+        }
+      },
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 6071,
+          "embeddingMs": 339,
+          "pineconeMs": 593,
+          "financialMs": 8,
+          "keywordMs": 16,
+          "llmMs": 12071,
+          "totalMs": 19098
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 3,
+          "keywordMatches": 5,
+          "combinedContext": 8,
+          "filtersApplied": {
+            "company": "MSFT"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": true,
+          "financialQuery": false,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "market",
+          "timeframe": "all",
+          "company_name": "MSFT",
+          "isComparisonQuery": false,
+          "primaryTicker": "MSFT"
+        },
+        "llm": {
+          "input_tokens": 1480,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 473,
+          "service_tier": "standard"
+        }
+      },
+      "file": "market-1.json",
+      "category": "market"
+    }
+  ]
+}

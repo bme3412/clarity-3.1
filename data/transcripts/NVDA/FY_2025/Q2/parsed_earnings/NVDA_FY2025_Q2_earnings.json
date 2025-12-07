@@ -1,0 +1,119 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q2",
+  "fiscal_year": "2025",
+  "financials": {
+    "report_date": "August 28, 2024",
+    "quarter_ended": "July 28, 2024",
+    "gaap": {
+      "total_revenue": {
+        "value": 30.04,
+        "unit": "billion USD",
+        "qoq_change": "+15%",
+        "yoy_change": "+122%"
+      },
+      "gross_margin": "75.1%",
+      "operating_expenses": 3.932,
+      "operating_income": 18.642,
+      "net_income": 16.599,
+      "eps": 0.67
+    },
+    "non_gaap": {
+      "gross_margin": "75.7%",
+      "operating_expenses": 2.792,
+      "operating_income": 19.937,
+      "net_income": 16.952,
+      "eps": 0.68
+    },
+    "segments": {
+      "data_center": {
+        "revenue": 26.3,
+        "unit": "billion USD",
+        "yoy_change": "+154%",
+        "qoq_change": "+16%",
+        "highlights": [
+          "Record data center revenue driven by Hopper compute, HGX systems, networking",
+          "Blackwell sampling, H200 ramp, spectrum of next-gen platforms (H200, B200, NIM microservices)"
+        ]
+      },
+      "gaming_and_ai_pc": {
+        "revenue": 2.88,
+        "unit": "billion USD",
+        "qoq_change": "+9%",
+        "yoy_change": "+16%",
+        "notes": [
+          "Exciting launches: ACE digital humans, Project G-Assist, 600 AI-enabled RTX apps, 2,000 GeForce NOW titles"
+        ]
+      },
+      "professional_visualization": {
+        "revenue": 0.454,
+        "unit": "billion USD",
+        "yoy_change": "+20%",
+        "notes": [
+          "Omniverse digital twin accelerations, USD NIM microservices, automotive/robotics verticals"
+        ]
+      },
+      "automotive_and_robotics": {
+        "revenue": 0.346,
+        "unit": "billion USD",
+        "yoy_change": "+37%",
+        "notes": [
+          "NVIDIA DRIVE platform, robotics customers (Boston Dynamics, BYD, Siemens) and automotive AI applications"
+        ]
+      }
+    },
+    "cash_flow": {
+      "operations": 14.489,
+      "investing": -3.185,
+      "financing": -10.320,
+      "free_cash_flow": 13.483
+    },
+    "capital_expenditure": {
+      "value": 0.977,
+      "unit": "billion USD",
+      "context": "Partial capex for AI infrastructure (PP&E + intangibles)"
+    },
+    "capital_return": {
+      "dividends": 0.246,
+      "share_repurchases": 7.158,
+      "note": "Returned $7.4B in Q2; added $50B authorization"
+    }
+  },
+  "highlights": {
+    "product_innovation": [
+      "Blackwell sampling, H200 shipments, MBG 200 NVL72 NVLink domain (72 GPUs)",
+      "Spectrum-X Ethernet for AI, integrated with OEMs/OEMs, plus NIM microservices, AI Foundry with Llama 3.1"
+    ],
+    "software": [
+      "AI Enterprise run rate ~ $2B, NIM Agent Blueprints for enterprise, software run rate increasing",
+      "Omniverse Cloud expansions for Mercedes-Benz and manufacturing digital twins"
+    ],
+    "sovereign_and_enterprise": [
+      "Sovereign AI builds (Japan ABCI 3.0) with H200 + Quantum-2",
+      "Enterprise AI adoption (Amdocs, ServiceNow, SAP, Snowflake, Cohesity)"
+    ]
+  },
+  "guidance": {
+    "q3": {
+      "revenue": 32.5,
+      "plus_minus": 0.65,
+      "gross_margin": {
+        "gaap": "74.4%",
+        "non_gaap": "75.0%",
+        "range": "±0.5 pts"
+      },
+      "operating_expenses": {
+        "gaap": 4.25,
+        "non_gaap": 3.00
+      },
+      "other_income": 0.35,
+      "tax_rate": "17% ±1%",
+      "full_year_expenses_growth": "+45%"
+    }
+  },
+  "metadata": {
+    "source": "NVDA Q2 FY2025 press release & transcript", 
+    "parsed_date": "2024-08-28T00:00:00Z"
+  }
+}
+

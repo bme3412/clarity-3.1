@@ -1,0 +1,115 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q1",
+  "fiscal_year": "2025",
+  "financials": {
+    "report_date": "May 24, 2023",
+    "quarter_ended": "April 30, 2023",
+    "gaap": {
+      "total_revenue": {
+        "value": 7.192,
+        "unit": "billion USD",
+        "qoq_change": "+19%",
+        "yoy_change": "-13%"
+      },
+      "gross_margin": "64.6%",
+      "operating_expenses": 2.508,
+      "operating_income": 2.140,
+      "net_income": 2.043,
+      "eps": 0.82
+    },
+    "non_gaap": {
+      "gross_margin": "66.8%",
+      "operating_expenses": 1.750,
+      "operating_income": 3.052,
+      "net_income": 2.713,
+      "eps": 1.09
+    },
+    "segments": {
+      "data_center": {
+        "revenue": 4.28,
+        "unit": "billion USD",
+        "yoy_change": "+14%",
+        "qoq_change": "+18%",
+        "highlights": [
+          "Record data center revenue led by HGX/H100 and inference demand",
+          "New inference platforms (L4, L40, H100 NVL, Grace Hopper Superchip) launched"
+        ]
+      },
+      "gaming": {
+        "revenue": 2.24,
+        "unit": "billion USD",
+        "qoq_change": "+22%",
+        "yoy_change": "-38%",
+        "notes": [
+          "Launches: GeForce RTX 40 Series laptops, RTX 4070, RTX 4060 family, expanded DLSS and GeForce NOW lineup"
+        ]
+      },
+      "professional_visualization": {
+        "revenue": 0.295,
+        "unit": "billion USD",
+        "qoq_change": "+31%",
+        "yoy_change": "-53%",
+        "notes": [
+          "NVIDIA Omniverse Cloud for Azure, new Ada RTX GPU releases"
+        ]
+      },
+      "automotive": {
+        "revenue": 0.296,
+        "unit": "billion USD",
+        "yoy_change": "+114%",
+        "notes": [
+          "Drive Orin ramp, $14B design win pipeline, BYD continues partnership"
+        ]
+      }
+    },
+    "cash_flow": {
+      "operating": 2.911,
+      "investing": -0.841,
+      "financing": -0.380,
+      "free_cash_flow": 2.643
+    },
+    "capital_expenditure": {
+      "value": 0.248,
+      "unit": "billion USD",
+      "context": "PP&E and intangible investments supporting AI infrastructure"
+    },
+    "capital_return": {
+      "dividends": 0.099,
+      "share_repurchases": 0.0,
+      "note": "Returned $99M via dividends; share repurchases opportunistic"
+    }
+  },
+  "highlights": {
+    "software": [
+      "AI Foundations, NeMo, Omniverse Cloud and AI Enterprise continue to expand developer adoption",
+      "DGX Cloud launched via Azure, GCP, Oracle partnership"
+    ],
+    "networking": [
+      "Quantum-2 InfiniBand momentum with 400G platform; BlueField-3 in production for CSPs",
+      "Spectrum-X Ethernet previewed for AI workloads, focus on AI optimization"
+    ]
+  },
+  "guidance": {
+    "q2": {
+      "revenue": 11.0,
+      "plus_minus": 0.22,
+      "gross_margin": {
+        "gaap": "68.6%",
+        "non_gaap": "70.0%",
+        "range": "±50 bps"
+      },
+      "operating_expenses": {
+        "gaap": 2.71,
+        "non_gaap": 1.90
+      },
+      "other_income": 0.09,
+      "tax_rate": "14% ±1%",
+      "capex": "0.30-0.35"
+    }
+  },
+  "metadata": {
+    "source": "NVDA Q1 FY2024 press release and earnings call transcript",
+    "parsed_date": "2023-05-24T00:00:00Z"
+  }
+}

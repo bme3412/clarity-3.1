@@ -1,0 +1,185 @@
+{
+  "company_name": "AMD",
+  "quarter": "Q1",
+  "fiscal_year": "2025",
+  "speakers": {
+    "lisa_su": {
+      "role": "Chair and CEO",
+      "responses": [
+        {
+          "topic": "Opening Remarks",
+          "content": "Delivered outstanding start to the year despite evolving dynamics related to tariffs/regulatory environment. Revenue/EPS exceeded consensus. Data Center and Client/Gaming both grew large double digit percentage. Expanded gross margin year-over-year for 5th straight quarter."
+        },
+        {
+          "topic": "Data Center Performance",
+          "content": "Revenue $3.7B (+57% YoY). Gained server CPU share with 5th Gen EPYC Turin. Hyperscaler demand strong. Enterprise adoption accelerating (EPYC-powered cloud instances by Forbes 2000 doubled YoY). MI300 series platforms in production. MI350 sampling, production mid-year."
+        },
+        {
+          "topic": "Client and Gaming Performance",
+          "content": "Client revenue grew 68% YoY. Fifth consecutive quarter of revenue share gains. Record client CPU ASP driven by rich mix (Ryzen 9000, X3D). Desktop channel sellout >50% YoY. Gaming revenue down 30% YoY due to semi-custom, but Radeon 9070 series saw strong demand."
+        },
+        {
+          "topic": "AI Roadmap & Strategy",
+          "content": "Acquisition of ZT Systems closed. MI350 series on track for 2H ramp (35x higher throughput vs MI300X). MI400 on track for 2026 launch. Focused on rack-scale solutions. Working on AI diffusion rules and sovereign AI deployments."
+        },
+        {
+          "topic": "Outlook & Guidance",
+          "content": "Q2 Revenue ~$7.4B (+/- $300M). Includes $700M revenue reduction from new export license requirement for MI308 to China. Full year impact ~$1.5B. Confident in strong double digit percentage revenue growth for 2025."
+        }
+      ]
+    },
+    "jean_hu": {
+      "role": "EVP, CFO and Treasurer",
+      "responses": [
+        {
+          "topic": "Financial Results",
+          "content": "Revenue $7.4B (+36% YoY). Gross margin 54% (Non-GAAP), up 140 bps YoY. Operating income $1.8B (24% margin). EPS $0.96 (+55% YoY). Operating cash flow $939M, Free cash flow $727M."
+        },
+        {
+          "topic": "Segment Financials",
+          "content": "Data Center: $3.7B (+57% YoY), Op Margin 25%. Client/Gaming: $2.9B (+28% YoY), Op Margin 17%. Embedded: $823M (-3% YoY), Op Margin 40%."
+        },
+        {
+          "topic": "Q2 Guidance Details",
+          "content": "Q2 Non-GAAP GM ~43% due to ~$800M charge for inventory/reserves related to China export controls. Excluding charge, GM would be ~54%. OpEx ~$2.3B (includes $50M for ZT Systems design team)."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Joshua Buckwalter",
+      "firm": "TD Cowen",
+      "topics": ["Client Growth", "Q2 Guidance"],
+      "questions": [
+        "Drivers of client strength (up 67% YoY)? Any tariff-related pull-ins?",
+        "How did Ex-China Instinct perform in Q1? Thoughts on 2H ramp?"
+      ],
+      "answers": [
+        "Lisa Su: Client strength driven by desktop performance and ASPs, not tariff pull-ins. Q2 guide includes $700M MI308 headwind.",
+        "Lisa Su: Instinct Q1 performance in line/better. MI350 launch mid-year, strong growth expected in 2H."
+      ]
+    },
+    {
+      "analyst": "Timothy Arcuri",
+      "firm": "UBS",
+      "topics": ["Data Center GPU", "China Export Impact"],
+      "questions": [
+        "DC GPU growth vs expectations? Does the $800M charge/ban impact Q4?",
+        "Inventory up significantly - is this ZT related?"
+      ],
+      "answers": [
+        "Lisa Su: DC GPU performed well. Majority of $1.5B China impact is in Q2/Q3. Q4 planned as non-China (MI350).",
+        "Jean Hu: Inventory build is for Client/Server ramp and 2H DC GPU ramp (long lead times)."
+      ]
+    },
+    {
+      "analyst": "Harlan Sur",
+      "firm": "JP Morgan",
+      "topics": ["MI400 Rack Scale", "Enterprise Share"],
+      "questions": [
+        "What is AMD doing to address ease of deployment for MI400 rack scale?",
+        "Drivers for 7 consecutive quarters of EPYC enterprise share gains?"
+      ],
+      "answers": [
+        "Lisa Su: ZT Systems acquisition specifically addresses rack scale. Active planning with customers.",
+        "Lisa Su: Product strength (Turin) and significant investment in go-to-market/direct enterprise engagement."
+      ]
+    },
+    {
+      "analyst": "Aaron Rakers",
+      "firm": "Wells Fargo",
+      "topics": ["DC GPU Seasonality", "Gross Margin"],
+      "questions": [
+        "Is DC GPU revenue flat 1H vs 2H excluding China impact?",
+        "Will Gross Margin return to 54%+ in 2H?"
+      ],
+      "answers": [
+        "Jean Hu: Yes, 1H flat vs 2H roughly. 2H weighted due to MI355 ramp.",
+        "Jean Hu: Q2 ex-charge is 54%. 2H expected to improve slightly due to DC growth."
+      ]
+    },
+    {
+      "analyst": "Thomas O'Malley",
+      "firm": "Barclays",
+      "topics": ["System Architecture", "Client Share"],
+      "questions": [
+        "Does AMD have necessary interconnect/system pieces? Build vs Partner?",
+        "View on full year Client share gains vs market?"
+      ],
+      "answers": [
+        "Lisa Su: Have all pieces + deep partnerships. Focused on interoperability.",
+        "Lisa Su: Gaining revenue share in premium segments (high-end, commercial). Inventory healthy."
+      ]
+    },
+    {
+      "analyst": "Vivek Arya",
+      "firm": "Bank of America",
+      "topics": ["GPU Growth", "AI TAM"],
+      "questions": [
+        "Did GPU sales grow sequentially in Q1? Can they grow in 2025 despite China headwind?",
+        "Impact of China restrictions/AI diffusion rules on $500B TAM?"
+      ],
+      "answers": [
+        "Lisa Su: Yes, strong double digit growth for full year. Q1 down modestly seq. China restrictions already factored into TAM."
+      ]
+    },
+    {
+      "analyst": "C.J. Muse",
+      "firm": "Cantor Fitzgerald",
+      "topics": ["Client Seasonality", "MI400 GTM"],
+      "questions": [
+        "Thoughts on 2H Client seasonality?",
+        "MI400/Rack scale go-to-market strategy?"
+      ],
+      "answers": [
+        "Lisa Su: Planning for sub-seasonal 2H because 1H was so strong (upgrade cycle).",
+        "Lisa Su: Early start on MI400 rack scale with hyperscalers and OEMs."
+      ]
+    },
+    {
+      "analyst": "Stacy Rasgon",
+      "firm": "Bernstein",
+      "topics": ["DC GPU Growth", "Q1 Trends"],
+      "questions": [
+        "Can DC GPU grow YoY in Q2/Q3 given headwinds?",
+        "Clarification on Q1 DC GPU and Server CPU sequential trends?"
+      ],
+      "answers": [
+        "Lisa Su: Q2 will not grow YoY (due to $700M hit). Q3/Q4 will grow YoY.",
+        "Jean Hu: DC GPU declined seq (modestly). Server CPU declined seq."
+      ]
+    },
+    {
+      "analyst": "Ross Seymore",
+      "firm": "Deutsche Bank",
+      "topics": ["Embedded", "OpEx"],
+      "questions": [
+        "Confidence in Embedded 2H ramp?",
+        "OpEx outlook with ZT?"
+      ],
+      "answers": [
+        "Jean Hu: Gradual recovery seen in order patterns. Q4 expected to grow YoY.",
+        "Jean Hu: $50M incremental OpEx from ZT design. Revenue growing faster than OpEx."
+      ]
+    },
+    {
+      "analyst": "Joe Moore",
+      "firm": "Morgan Stanley",
+      "topics": ["Inference Costs", "ASICs"],
+      "questions": [
+        "Impact of reasoning models/inference costs?",
+        "Competing with custom silicon (ASICs) at customers?"
+      ],
+      "answers": [
+        "Lisa Su: Reasoning models increase inference need (plays to memory bandwidth strengths).",
+        "Lisa Su: Not either/or. GPUs have larger share due to model evolution. Competitive TCO key."
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-05-06",
+    "company_ticker": "AMD",
+    "source": "earnings_call_transcript"
+  }
+}

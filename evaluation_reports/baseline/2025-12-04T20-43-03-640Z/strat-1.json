@@ -1,0 +1,85 @@
+{
+  "id": "strat-1",
+  "run_id": "2025-12-04T20-43-03-640Z",
+  "strategy_id": "baseline",
+  "question": "What are AMD's strategic priorities for AI as of late 2024?",
+  "ground_truth": "AMD is focusing on expanding its Instinct data center GPU portfolio (specifically MI300), enhancing the ROCm software stack to compete with CUDA, and driving adoption across cloud and enterprise markets.",
+  "generated_answer": "AMD Strategic Priorities & AI Focus (Q3 2024)\n AI-Centric Growth Strategy\nAMD's strategic priorities are clearly centered on AI acceleration, with the Data Center segment now representing the company's primary growth engine.\n Key Strategic Metrics:\n- Data Center Revenue: $3.5 billion (+122% YoY) - now AMD's largest segment\n- Total Revenue: $6.8 billion (+18% YoY)\n- Operating Expenses: $1.96 billion (+15% YoY), reflecting continued R&D investment\n Strategic Priorities Evident from Performance:\n1. AI Infrastructure Dominance\n   - Data Center's 122% growth signals aggressive positioning in AI/ML workloads\n   - Segment now exceeds 50% of total revenue, up from ~28% a year ago\n2. Client Computing Momentum\n   - Client segment at $1.9 billion (+29% YoY) indicates strong PC/laptop CPU market share gains\n   - Likely driven by AI PC and Ryzen processor adoption\n3. Portfolio Rebalancing\n   - Gaming (-69% YoY) and Embedded (-25% YoY) declines suggest strategic de-emphasis or cyclical headwinds\n   - Resources appear redirected toward higher-growth AI opportunities\n4. Sustained Investment Posture\n   - Operating expense growth (+15%) trails revenue growth (+18%), showing improving leverage\n   - Continued R&D spending supports AI product roadmap expansion\n Strategic Outlook\nAMD's recent performance demonstrates a deliberate pivot toward AI infrastructure as its core strategic priority, with Data Center growth dramatically outpacing all other segments.\nNote: Specific details on cash flow metrics and explicit strategic initiative names were not found in the retrieved context.",
+  "duration_ms": 16688,
+  "metrics": {
+    "relevance": {
+      "score": 0.85,
+      "reasoning": "The answer addresses AMD's strategic priorities for AI as of late 2024 reasonably well. It provides relevant financial metrics from Q3 2024, identifies AI-centric growth as a key strategy, and discusses the Data Center segment's dominance (122% YoY growth). The answer covers strategic priorities like AI infrastructure, client computing momentum, and portfolio rebalancing. However, the answer is largely inferential - it derives strategic priorities from financial performance rather than citing explicit strategic statements from AMD. The note at the end acknowledges this limitation. The answer is relevant and informative but could be more direct about stated strategic priorities rather than inferred ones."
+    },
+    "faithfulness": {
+      "score": 0.6,
+      "reasoning": "The answer correctly uses the financial data from the context (Data Center $3.5B +122%, Total Revenue $6.8B +18%, Client $1.9B +29%, Gaming -69%, Embedded -25%, Operating Expenses $1.96B +15%). However, the answer contains significant interpretive content and inferences not explicitly stated in the context, such as: (1) 'AI-Centric Growth Strategy' and 'AI Infrastructure Dominance' - the context never mentions AI; (2) claims about 'aggressive positioning in AI/ML workloads'; (3) assertions about 'AI PC and Ryzen processor adoption'; (4) interpretations about 'strategic de-emphasis' and 'resources redirected toward AI opportunities'; (5) claims about 'deliberate pivot toward AI infrastructure.' While the numerical data is faithful, the strategic narrative and AI-focused interpretation are largely inferred rather than derived from the provided context."
+    },
+    "accuracy": {
+      "score": 0.6,
+      "reasoning": "The generated answer discusses AMD's strategic focus on AI and data center growth, which aligns with the ground truth's mention of expanding the Instinct data center GPU portfolio. However, the generated answer lacks the specific details mentioned in the ground truth: it does not mention the MI300 specifically, does not discuss the ROCm software stack or its competition with CUDA, and does not explicitly mention cloud and enterprise market adoption strategies. The generated answer provides extensive financial metrics and segment analysis that, while relevant context, doesn't directly address the specific strategic priorities outlined in the ground truth. The answer is not incorrect, but it's more general and misses the key specific elements (MI300, ROCm, CUDA competition, cloud/enterprise markets) that the ground truth emphasizes."
+    }
+  },
+  "context_count": 1,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3002,
+      "embeddingMs": 255,
+      "pineconeMs": 598,
+      "llmMs": 12832,
+      "totalMs": 16687
+    },
+    "retrieval": {
+      "pineconeMatches": 1,
+      "financialMatches": 0,
+      "keywordMatches": 0,
+      "combinedContext": 1,
+      "filtersApplied": {
+        "company": "AMD",
+        "fiscal_year": "2024"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": false,
+      "financialQuery": false,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "strategic",
+      "timeframe": "recent",
+      "company_name": "AMD",
+      "isComparisonQuery": false,
+      "primaryTicker": "AMD"
+    },
+    "llm": {
+      "input_tokens": 475,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 408,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "AMD_2024_Q3_earnings_0_0",
+      "score": 0.42032066679999996,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "earnings",
+        "source": "AMD_FY2024_Q3_earnings.json",
+        "retrieval": null,
+        "text": "Financials:\nTotal Revenue: 6.8 billion USD (Q3 2024)\nYear-over-Year Change: +18%\nRevenue Composition:\n  Data Center: 3.5 billion USD\n    Year-over-Year Change: +122%\n  Client: 1.9 billion USD\n    Year-over-Year Change: +29%\n  Gaming: 0.462 billion USD\n    Year-over-Year Change: -69%\n  Embedded: 0.927 billion USD\n    Year-over-Year Change: -25%\nTotal Expenses: 1.96 billion USD (Operating expenses including R&D, marketing, and other activities)\nYear-over-Year Change: +15%\nOperating Expenses Breakdown:\n  R&D:\n  Marketing:\n  Variable Compensation:\n  Amortization:\n  Acquisition Related Costs:\nOperating Income: 0.724 billion USD (Operating income for Q3 2024)\nOperating Margin: 10.6%\nNet Income: 0.771 billion USD\nEPS: 0.47 USD per share\nTax Rate: [object Object]\nFree Cash Flow: [object Object] undefined\nCapital Expenditures: N/A billion USD\nContext: Not explicitly detailed for Q3 2024"
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 0.420)\nFinancials:\nTotal Revenue: 6.8 billion USD (Q3 2024)\nYear-over-Year Change: +18%\nRevenue Composition:\n  Data Center: 3.5 billion USD\n    Year-over-Year Change: +122%\n  Client: 1.9 billion USD\n    Year-over-Year Change: +29%\n  Gaming: 0.462 billion USD\n    Year-over-Year Change: -69%\n  Embedded: 0.927 billion USD\n    Year-over-Year Change: -25%\nTotal Expenses: 1.96 billion USD (Operating expenses including R&D, marketing, and other activities)\nYear-over-Year Change: +15%\nOperating Expenses Breakdown:\n  R&D:\n  Marketing:\n  Variable Compensation:\n  Amortization:\n  Acquisition Related Costs:\nOperating Income: 0.724 billion USD (Operating income for Q3 2024)\nOperating Margin: 10.6%\nNet Income: 0.771 billion USD\nEPS: 0.47 USD per share\nTax Rate: [object Object]\nFree Cash Flow: [object Object] undefined\nCapital Expenditures: N/A billion USD\nContext: Not explicitly detailed for Q3 2024",
+  "created_at": "2025-12-04T20:45:59.260Z",
+  "category": "strategy"
+}

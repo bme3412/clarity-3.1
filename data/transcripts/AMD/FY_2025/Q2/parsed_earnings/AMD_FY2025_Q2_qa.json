@@ -1,0 +1,173 @@
+{
+  "company_name": "AMD",
+  "quarter": "Q2",
+  "fiscal_year": "2025",
+  "speakers": {
+    "lisa_su": {
+      "role": "Chair and CEO",
+      "responses": [
+        {
+          "topic": "Opening Remarks",
+          "content": "Very strong Q2 results. Revenue $7.7B (+32% YoY), exceeded guidance midpoint. Record EPYC and Ryzen sales offset export control headwinds. Free cash flow >$1B."
+        },
+        {
+          "topic": "Data Center Business",
+          "content": "Revenue $3.2B (+14% YoY). EPYC 5th Gen Turin ramping significantly. Cloud instances grew to nearly 1,200. MI350 series launched with volume production ahead of schedule. MI355 matches/exceeds B200 in critical workloads."
+        },
+        {
+          "topic": "Client and Gaming",
+          "content": "Revenue $3.6B (+69% YoY). Client revenue $2.5B (+67% YoY) led by record desktop sales. Gaming revenue $1.1B (+73% YoY) with semi-custom normalization and new Xbox collaboration."
+        },
+        {
+          "topic": "AI Strategy & Roadmap",
+          "content": "MI350 ramping H2. MI400 progressing for 2026 (Helios platform). Sovereign AI engagements accelerating (e.g., UMaine). ROCm 7 delivering 3x performance increase."
+        },
+        {
+          "topic": "Regulatory Update",
+          "content": "Department of Commerce reviewing MI308 licenses. Expect to resume shipments if approved. No MI308 revenue included in Q3 guidance."
+        }
+      ]
+    },
+    "jean_hu": {
+      "role": "EVP, CFO and Treasurer",
+      "responses": [
+        {
+          "topic": "Financial Summary",
+          "content": "Revenue $7.7B (+32% YoY). Gross margin 43% (GAAP 40%) due to $800M export control charge. Excluding charge, Non-GAAP GM ~54%. Operating income $897M. EPS $0.48."
+        },
+        {
+          "topic": "Segment Details",
+          "content": "Data Center Op Loss $155M due to inventory charge. Client/Gaming Op Income $767M (21% margin). Embedded Op Income $275M (33% margin)."
+        },
+        {
+          "topic": "Q3 Guidance",
+          "content": "Revenue ~$8.7B (+/- $300M), up ~28% YoY. Driven by MI350 ramp and Data Center double-digit seq growth. Gross Margin ~54%."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Thomas O'Malley",
+      "firm": "Barclays",
+      "topics": ["Client Pull-Forward", "China Update"],
+      "questions": [
+        "Did Q2 include client pull-forward given flat H2 outlook?",
+        "Update on China MI308 licenses and supply chain readiness?"
+      ],
+      "answers": [
+        "Lisa Su: No major pull-forward seen; strong sell-through. Gaining share in premium segments.",
+        "Lisa Su: Licenses under review. $800M charge was mostly WIP inventory; will take time to ramp once licensed."
+      ]
+    },
+    {
+      "analyst": "Vivek Arya",
+      "firm": "Bank of America",
+      "topics": ["Sovereign AI", "MI Gross Margins"],
+      "questions": [
+        "Sizing of Sovereign opportunity in 2026?",
+        "MI product gross margin trajectory?"
+      ],
+      "answers": [
+        "Lisa Su: Additive opportunity. Multi-billion dollar potential (e.g., Saudi Arabia).",
+        "Jean Hu: MI margins below corporate average but improving with operational efficiency. Focused on margin dollars."
+      ]
+    },
+    {
+      "analyst": "Timothy Arcuri",
+      "firm": "UBS",
+      "topics": ["DC GPU Ramp", "Developer Cloud"],
+      "questions": [
+        "MI350 ramp magnitude in Q3?",
+        "Revenue contribution from Developer Cloud?"
+      ],
+      "answers": [
+        "Lisa Su: Strong ramp Q2 to Q3. MI355 production started in June.",
+        "Lisa Su: Developer Cloud revenue not material in H2; strategic for developer access."
+      ]
+    },
+    {
+      "analyst": "Ross Seymore",
+      "firm": "Deutsche Bank",
+      "topics": ["MI350 Adoption", "Seasonality"],
+      "questions": [
+        "MI350 adoption vs expectations 90 days ago?",
+        "H2 Client and Gaming seasonality?"
+      ],
+      "answers": [
+        "Lisa Su: Adoption faster/better than expected. Broad interest.",
+        "Lisa Su: Client single-digit seq growth Q3. Gaming flat Q3, down strong double-digits Q4 (console seasonality)."
+      ]
+    },
+    {
+      "analyst": "Joshua Buckhalter",
+      "firm": "TD Cowen",
+      "topics": ["Lead Times", "Gross Margin Drivers"],
+      "questions": [
+        "Visibility/Lead times for MI350/400?",
+        "How is GM flat sequentially despite GPU ramp (dilutive)?"
+      ],
+      "answers": [
+        "Lisa Su: Lead times 8-9 months. Strong supply chain.",
+        "Jean Hu: Server expansion and Commercial Client mix tailwinds offset gaming/GPU mix headwinds."
+      ]
+    },
+    {
+      "analyst": "Joe Moore",
+      "firm": "Morgan Stanley",
+      "topics": ["AI Opportunity", "Inference"],
+      "questions": [
+        "Timeline for $10s of billions AI revenue?",
+        "Impact of reasoning models on inference complexity?"
+      ],
+      "answers": [
+        "Lisa Su: Aspiration for future. Requires gigawatt-scale deployments.",
+        "Lisa Su: Proliferation of models confirms GPU as compute of choice. Scale-up/out architecture critical."
+      ]
+    },
+    {
+      "analyst": "Aaron Rakers",
+      "firm": "Wells Fargo",
+      "topics": ["Server Market Share", "Inventory Charge"],
+      "questions": [
+        "Server CPU market share trends?",
+        "Can the $800M write-down be reversed?"
+      ],
+      "answers": [
+        "Jean Hu: Strong double-digit seq growth in Data Center (CPU+GPU). Market share increasing.",
+        "Jean Hu: Majority was WIP inventory, not on-shelf finished goods. Takes time to process."
+      ]
+    },
+    {
+      "analyst": "CJ Muse",
+      "firm": "Cantor Fitzgerald",
+      "topics": ["Helios Ramp", "Capital Allocation"],
+      "questions": [
+        "Helios/MI400 ramp into 2026?",
+        "Use of proceeds from ZT manufacturing sale ($3B)?"
+      ],
+      "answers": [
+        "Lisa Su: Helios on track for significant 2026 contribution.",
+        "Jean Hu: Invest in business first, then return cash to shareholders (buybacks)."
+      ]
+    },
+    {
+      "analyst": "Ben Reitzes",
+      "firm": "Melius Research",
+      "topics": ["Sequential Growth", "MI308 Ramp"],
+      "questions": [
+        "Drivers of $1B sequential revenue increase?",
+        "MI308 ramp speed if licensed?"
+      ],
+      "answers": [
+        "Jean Hu: Majority driven by MI355 ramp, plus Client/Embedded growth.",
+        "Lisa Su: Will take time to ramp; not expecting significant impact in Q3."
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-08-05",
+    "company_ticker": "AMD",
+    "source": "earnings_call_transcript"
+  }
+}

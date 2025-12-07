@@ -1,0 +1,155 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q4",
+  "fiscal_year": "2025",
+  "speakers": {
+    "jensen_huang": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "Inference and reasoning AI scaling",
+          "content": "We now have three scaling laws—pretraining, post-training, and test-time (inference) scaling—and this newfound reasoning AI demand is consuming 100x more compute, which is why Blackwell was architected to deliver up to 25x higher throughput and dramatically lower TCO than Hopper."
+        },
+        {
+          "topic": "Blackwell ramp and supply",
+          "content": "Blackwell production is in full steam; shipments exceeded our original estimates with large CSP partners (Microsoft, AWS, Google, Oracle) standing up 100k+ GPU clusters, and we keep solving the complex engineering puzzle across 350 manufacturing sites to deliver these systems."
+        },
+        {
+          "topic": "Annual roadmap and future products",
+          "content": "We stay on an annual cadence—Blackwell Ultra is on track for H2 along with future platforms like Rubin, and the next transitions plug directly into existing Blackwell infrastructure because the system architectures are similar."
+        },
+        {
+          "topic": "Compute mix and opportunity",
+          "content": "The CSPs represent about half of our business with both internal and external workloads, but enterprise, physical AI, and robotics represent a much larger long-term opportunity as every industry modernizes with AI factories, giving NVIDIA a multi-decade runway."
+        }
+      ]
+    },
+    "colette_kress": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Gross margin trajectory",
+          "content": "Blackwell dilutes margins into the low 70s this quarter as we prioritize supply, but we expect to move to the mid-70s later in the year as yields improve, and the current focus is on expediting manufacturing for customers."
+        },
+        {
+          "topic": "CapEx and investments",
+          "content": "CapEx remains elevated (>$30B guide for Q1) to fund AI factories, but the mix shifts toward shorter-lived assets and finance leases; we continue to balance long-lead decisions with the demand curves Jensen is seeing."
+        },
+        {
+          "topic": "Blackwell execution and supply discipline",
+          "content": "We pulled some supply forward this quarter while staying in close collaboration with our entire supply chain, keeping us tight exiting the year yet confident that we can ramp capacity quickly to meet demand."
+        },
+        {
+          "topic": "Gaming vs data center prioritization",
+          "content": "Gaming revenue was impacted by supply constraints because we prioritized the higher-return data center demand, but gaming supply should rebound in Q1 while enterprise and CSP customers keep scaling AI workloads."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Christopher Muse",
+      "firm": "Cantor Fitzgerald",
+      "topics": [
+        "Inference scaling",
+        "Blackwell demand"
+      ],
+      "questions": [
+        "Does the continued compute and reinforcement learning momentum validate the need for inference-dedicated clusters, and does this more-than-double compute demand translate into even greater demand for Blackwell?"
+      ]
+    },
+    {
+      "analyst": "Joseph Moore",
+      "firm": "Morgan Stanley",
+      "topics": [
+        "Blackwell ramp",
+        "System complexity"
+      ],
+      "questions": [
+        "Where are you in the ramp of GB200 and what system-level bottlenecks remain beyond the chip level, especially as you balance NVLink 72 deployments?"
+      ]
+    },
+    {
+      "analyst": "Vivek Arya",
+      "firm": "Bank of America Securities",
+      "topics": [
+        "Gross margins",
+        "Demand visibility"
+      ],
+      "questions": [
+        "Is Q1 the trough for gross margins and what dashboards give you confidence that Blackwell demand will remain strong through next year, especially in light of DeepSeek and other innovations?"
+      ]
+    },
+    {
+      "analyst": "Harlan Sur",
+      "firm": "JPMorgan",
+      "topics": [
+        "Blackwell Ultra",
+        "Product cadence"
+      ],
+      "questions": [
+        "How do customers and the supply chain balance simultaneous ramps of Blackwell and Blackwell Ultra, and is the team still on track to launch Ultra in H2?"
+      ]
+    },
+    {
+      "analyst": "Timothy Arcuri",
+      "firm": "UBS",
+      "topics": [
+        "Custom ASICs",
+        "Compute mix"
+      ],
+      "questions": [
+        "How do you differentiate NVIDIA’s platform from custom ASIC-based systems, and do you see heterogenous superclusters emerging or is NVIDIA’s fungible architecture advantaged?"
+      ]
+    },
+    {
+      "analyst": "Ben Reitzes",
+      "firm": "Melius Research",
+      "topics": [
+        "Geography mix",
+        "China exposure"
+      ],
+      "questions": [
+        "With strong U.S. sequential growth, can the U.S. continue to carry growth if other geographies slow, and what is the current share of China relative to pre-export-control levels?"
+      ]
+    },
+    {
+      "analyst": "Aaron Rakers",
+      "firm": "Wells Fargo",
+      "topics": [
+        "Product replacement",
+        "Infrastructure lifecycle"
+      ],
+      "questions": [
+        "As the Hopper inflection anniversary approaches, how do you think about replacements or refresh cycles for GB300/Rubin, and how long before the existing installed base needs refresh?"
+      ]
+    },
+    {
+      "analyst": "Atif Malik",
+      "firm": "Citi",
+      "topics": [
+        "Gross margins",
+        "Tariffs"
+      ],
+      "questions": [
+        "You mentioned the April quarter might be the bottom for margins; what gives you confidence in a 200-basis-point jump per quarter and how do potential tariffs factor into that trajectory?"
+      ]
+    },
+    {
+      "analyst": "Mark Lipacis",
+      "firm": "Evercore ISI",
+      "topics": [
+        "Enterprise spend",
+        "External vs internal workloads"
+      ],
+      "questions": [
+        "How do hyperscalers' internal versus external workloads split and do you see enterprises becoming a larger part of the consumption mix of your infrastructure?"
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-02-26T00:00:00Z",
+    "source": "NVIDIA FY2025 Q4 earnings call transcript"
+  }
+}
+

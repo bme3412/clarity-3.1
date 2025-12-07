@@ -1,0 +1,122 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q4",
+  "fiscal_year": "2024",
+  "financials": {
+    "report_date": "February 21, 2024",
+    "quarter_ended": "January 28, 2024",
+    "gaap": {
+      "total_revenue": {
+        "value": 22.103,
+        "unit": "billion USD",
+        "yoy_change": "+265%",
+        "qoq_change": "+22%"
+      },
+      "gross_margin": "76.0%",
+      "operating_expenses": 3.176,
+      "operating_income": 13.615,
+      "net_income": 12.285,
+      "eps": 4.93
+    },
+    "non_gaap": {
+      "gross_margin": "76.7%",
+      "operating_expenses": 2.210,
+      "operating_income": 14.749,
+      "net_income": 12.839,
+      "eps": 5.16
+    },
+    "segments": {
+      "data_center": {
+        "revenue": 18.4,
+        "unit": "billion USD",
+        "yoy_change": "+409%",
+        "qoq_change": "+27%",
+        "highlights": [
+          "Hopper compute + InfiniBand networking core to AI factories; 40% revenue now inference",
+          "H200 ramping (HBM3e) and TensorRT LLM doubling inference performance",
+          "Spectrum-X Ethernet launch, Quantum InfiniBand 5x growth, DGX Cloud expanding to AWS"
+        ]
+      },
+      "gaming": {
+        "revenue": 2.87,
+        "unit": "billion USD",
+        "yoy_change": "+56%",
+        "notes": [
+          "GeForce RTX 40 SUPER series, DLSS 3.5 Ray Reconstruction, TensorRT-LLM for Windows, RTX AI PCs"
+        ]
+      },
+      "professional_visualization": {
+        "revenue": 0.463,
+        "unit": "billion USD",
+        "yoy_change": "+105%",
+        "notes": [
+          "Omniverse adoption by Mercedes-Benz, RTX 2000 Ada for AI workloads, vehicle configurators"
+        ]
+      },
+      "automotive": {
+        "revenue": 0.281,
+        "unit": "billion USD",
+        "yoy_change": "+4%",
+        "notes": [
+          "Drive Orin traction and new DRIVE Thor partnership with Foxconn; AI cockpit solutions ramping"
+        ]
+      }
+    },
+    "cash_flow": {
+      "operations": 11.499,
+      "investing": -6.109,
+      "financing": -3.629,
+      "free_cash_flow": 11.217
+    },
+    "capital_expenditure": {
+      "value": 7.524,
+      "unit": "billion USD",
+      "context": "Includes capex and intangibles to expand AI compute/data center infrastructure"
+    },
+    "capital_return": {
+      "dividends": 0.099,
+      "share_repurchases": 2.66,
+      "note": "Returned $2.8B in Q4; $9.9B in FY24 to shareholders"
+    }
+  },
+  "highlights": {
+    "data_center": [
+      "Record $18.4B data center revenue; 47.5B FY24, 40% inference mix, sovereign AI expansions",
+      "H200 and Spectrum-X, TensorRT-LLM, DGX Cloud on AWS, Microsoft Azure, Google, Oracle collaborations"
+    ],
+    "software_services": [
+      "$1B annualized run rate for NVIDIA AI Enterprise, software growing with partners such as Adobe, ServiceNow, SAP",
+      "AI Foundry for custom copilots, BioNeMo for biotech, MONAI cloud APIs for healthcare"
+    ],
+    "innovation": [
+      "Hopper GPU & InfiniBand as AI factory standard; Spectrum-X Ethernet and Quantum InfiniBand fueling networking"
+    ]
+  },
+  "guidance": {
+    "q1_fold": {
+      "revenue": 24.0,
+      "plus_minus": 0.48,
+      "gross_margin": {
+        "gaap": "76.3%",
+        "non_gaap": "77.0%",
+        "range": "±0.5 pts"
+      },
+      "operating_expenses": {
+        "gaap": 3.48,
+        "non_gaap": 2.5
+      },
+      "other_income": 0.25,
+      "tax_rate": "17% ±1%"
+    },
+    "full_year_2025": {
+      "operating_expenses_growth": "+30-35%",
+      "other_income": 0.25,
+      "tax_rate": "17% ±1%"
+    }
+  },
+  "metadata": {
+    "source": "NVDA Q4 FY2024 press release & transcript",
+    "parsed_date": "2024-02-21T00:00:00Z"
+  }
+}
+

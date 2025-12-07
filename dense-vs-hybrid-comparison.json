@@ -1,0 +1,406 @@
+{
+  "timestamp": "2025-12-04T14:29:05.255Z",
+  "summary": {
+    "denseWins": 5,
+    "hybridWins": 2,
+    "ties": 3,
+    "avgDenseLatency": 424.7,
+    "avgHybridLatency": 247.8,
+    "avgDenseKeywords": 0.85,
+    "avgHybridKeywords": 0.7833333333333333,
+    "overallWinner": "DENSE"
+  },
+  "results": [
+    {
+      "id": "exact-revenue",
+      "query": "What was AMD's Q3 2024 revenue?",
+      "ticker": "AMD",
+      "type": "exact-number",
+      "keywords": [
+        "Q3",
+        "2024",
+        "revenue",
+        "AMD"
+      ],
+      "expectation": "Hybrid should find exact quarter/year better",
+      "dense": {
+        "matches": 10,
+        "latency": 248,
+        "avgScore": 0.6963992356999998,
+        "keywordHits": {
+          "hits": 4,
+          "total": 4,
+          "ratio": 1
+        }
+      },
+      "hybrid": {
+        "matches": 10,
+        "latency": 141,
+        "avgScore": 10.277516427,
+        "keywordHits": {
+          "hits": 4,
+          "total": 4,
+          "ratio": 1
+        }
+      },
+      "llmEval": {
+        "denseRating": 2,
+        "hybridRating": 5,
+        "winner": "hybrid",
+        "explanation": "Dense retrieval returns mostly 2025 data and guidance instead of actual Q3 2024 results. Hybrid retrieval directly provides the exact answer: AMD Q3 2024 revenue was $6.8 billion with structured financial data including YoY growth."
+      },
+      "winner": "hybrid"
+    },
+    {
+      "id": "product-name",
+      "query": "What did NVIDIA say about MI300 competition?",
+      "ticker": "NVDA",
+      "type": "product-specific",
+      "keywords": [
+        "MI300",
+        "competition",
+        "NVIDIA"
+      ],
+      "expectation": "Hybrid should catch MI300 keyword",
+      "dense": {
+        "matches": 10,
+        "latency": 565,
+        "avgScore": 0.4492039741999999,
+        "keywordHits": {
+          "hits": 2,
+          "total": 3,
+          "ratio": 0.6666666666666666
+        }
+      },
+      "hybrid": {
+        "matches": 10,
+        "latency": 230,
+        "avgScore": 2.852897503,
+        "keywordHits": {
+          "hits": 2,
+          "total": 3,
+          "ratio": 0.6666666666666666
+        }
+      },
+      "llmEval": {
+        "denseRating": 1,
+        "hybridRating": 1,
+        "winner": "tie",
+        "explanation": "Both retrievals completely miss the mark. The query specifically asks about NVIDIA's statements regarding MI300 competition (AMD's competing chip), but neither retrieval contains any mention of MI300, AMD, or competitive comparisons. Both return generic NVIDIA earnings content that doesn't address the competitive landscape question."
+      },
+      "winner": "tie"
+    },
+    {
+      "id": "comparison",
+      "query": "Compare AMD and NVIDIA data center strategies",
+      "ticker": null,
+      "type": "multi-company",
+      "keywords": [
+        "AMD",
+        "NVIDIA",
+        "data center",
+        "strategy"
+      ],
+      "expectation": "Both should work, hybrid may find keyword matches",
+      "dense": {
+        "matches": 10,
+        "latency": 389,
+        "avgScore": 0.6177143693999999,
+        "keywordHits": {
+          "hits": 3,
+          "total": 4,
+          "ratio": 0.75
+        }
+      },
+      "hybrid": {
+        "matches": 10,
+        "latency": 448,
+        "avgScore": 9.160703085,
+        "keywordHits": {
+          "hits": 3,
+          "total": 4,
+          "ratio": 0.75
+        }
+      },
+      "llmEval": {
+        "denseRating": 4,
+        "hybridRating": 2,
+        "winner": "dense",
+        "explanation": "Dense retrieval provides specific data center strategy information (AMD CDNA 2 GPUs, Instinct accelerators, Frontier supercomputer, hybrid data center strategy) that directly addresses the query. Hybrid retrieval returns mostly generic financial data without strategic details and lacks NVIDIA information entirely."
+      },
+      "winner": "dense"
+    },
+    {
+      "id": "strategic",
+      "query": "What is Meta's approach to AI infrastructure investment?",
+      "ticker": "META",
+      "type": "strategic",
+      "keywords": [
+        "AI",
+        "infrastructure",
+        "investment"
+      ],
+      "expectation": "Dense should excel at semantic meaning",
+      "dense": {
+        "matches": 10,
+        "latency": 453,
+        "avgScore": 0.5854698358999999,
+        "keywordHits": {
+          "hits": 3,
+          "total": 3,
+          "ratio": 1
+        }
+      },
+      "hybrid": {
+        "matches": 10,
+        "latency": 246,
+        "avgScore": 9.185344974,
+        "keywordHits": {
+          "hits": 3,
+          "total": 3,
+          "ratio": 1
+        }
+      },
+      "llmEval": {
+        "denseRating": 4,
+        "hybridRating": 1,
+        "explanation": "Dense retrieval provides relevant content about Meta's AI strategy, infrastructure costs, and investment approach including mentions of CapEx growth and AI development positioning. Hybrid retrieval only returns basic financial revenue data across quarters with no mention of AI infrastructure investment strategy."
+      },
+      "winner": "tie"
+    },
+    {
+      "id": "guidance",
+      "query": "What guidance did Oracle give for FY2026 cloud revenue?",
+      "ticker": "ORCL",
+      "type": "guidance",
+      "keywords": [
+        "guidance",
+        "FY2026",
+        "cloud",
+        "revenue"
+      ],
+      "expectation": "Hybrid should find FY2026 and guidance terms",
+      "dense": {
+        "matches": 10,
+        "latency": 521,
+        "avgScore": 0.6377389162000001,
+        "keywordHits": {
+          "hits": 3,
+          "total": 4,
+          "ratio": 0.75
+        }
+      },
+      "hybrid": {
+        "matches": 10,
+        "latency": 236,
+        "avgScore": 15.73547238,
+        "keywordHits": {
+          "hits": 3,
+          "total": 4,
+          "ratio": 0.75
+        }
+      },
+      "llmEval": {
+        "denseRating": 5,
+        "hybridRating": 1,
+        "winner": "dense",
+        "explanation": "Dense retrieval directly answers the query with Oracle's FY2026 guidance of >$67B revenue and cloud revenue growth >40%. Hybrid retrieval contains only historical quarterly data from FY2022-2025 with no FY2026 guidance information."
+      },
+      "winner": "dense"
+    },
+    {
+      "id": "executive-quote",
+      "query": "What did Tim Cook say about Apple Intelligence?",
+      "ticker": "AAPL",
+      "type": "quote",
+      "keywords": [
+        "Tim Cook",
+        "Apple Intelligence"
+      ],
+      "expectation": "Hybrid should match exact names",
+      "dense": {
+        "matches": 10,
+        "latency": 387,
+        "avgScore": 0.6655347882,
+        "keywordHits": {
+          "hits": 2,
+          "total": 2,
+          "ratio": 1
+        }
+      },
+      "hybrid": {
+        "matches": 10,
+        "latency": 198,
+        "avgScore": 6.9374447350000015,
+        "keywordHits": {
+          "hits": 2,
+          "total": 2,
+          "ratio": 1
+        }
+      },
+      "llmEval": {
+        "denseRating": 2,
+        "hybridRating": 4,
+        "explanation": "Dense retrieval returns mostly generic Apple Intelligence features without specific Cook quotes. Hybrid retrieval includes actual structured data showing Tim Cook's responses on 'Apple Intelligence Impact' and 'Apple Intelligence Features and Adoption' topics, plus relevant analyst questions about AI rollout timelines, making it much more relevant to the specific query about what Cook said."
+      },
+      "winner": "tie"
+    },
+    {
+      "id": "metric-specific",
+      "query": "What was Google Cloud's growth rate in Q4 2024?",
+      "ticker": "GOOGL",
+      "type": "metric",
+      "keywords": [
+        "Google Cloud",
+        "growth",
+        "Q4",
+        "2024"
+      ],
+      "expectation": "Hybrid should find exact quarter",
+      "dense": {
+        "matches": 10,
+        "latency": 462,
+        "avgScore": 0.5763989665,
+        "keywordHits": {
+          "hits": 4,
+          "total": 4,
+          "ratio": 1
+        }
+      },
+      "hybrid": {
+        "matches": 10,
+        "latency": 239,
+        "avgScore": 15.91204175,
+        "keywordHits": {
+          "hits": 4,
+          "total": 4,
+          "ratio": 1
+        }
+      },
+      "llmEval": {
+        "denseRating": 2,
+        "hybridRating": 3,
+        "winner": "hybrid",
+        "explanation": "Dense retrieval contains mostly irrelevant content about general Google business topics, YouTube, and older quarters. Hybrid retrieval provides structured financial data for multiple 2024 quarters including Q3, which is closer to the requested Q4 2024 timeframe, though it still lacks specific Google Cloud growth rates."
+      },
+      "winner": "hybrid"
+    },
+    {
+      "id": "trend",
+      "query": "How has Microsoft Azure revenue trended over the past year?",
+      "ticker": "MSFT",
+      "type": "trend",
+      "keywords": [
+        "Azure",
+        "revenue",
+        "trend"
+      ],
+      "expectation": "Dense should understand temporal concept",
+      "dense": {
+        "matches": 10,
+        "latency": 389,
+        "avgScore": 0.6571772278999999,
+        "keywordHits": {
+          "hits": 3,
+          "total": 3,
+          "ratio": 1
+        }
+      },
+      "hybrid": {
+        "matches": 10,
+        "latency": 265,
+        "avgScore": 17.67063466,
+        "keywordHits": {
+          "hits": 2,
+          "total": 3,
+          "ratio": 0.6666666666666666
+        }
+      },
+      "llmEval": {
+        "denseRating": 2,
+        "hybridRating": 4,
+        "winner": "hybrid",
+        "explanation": "Dense retrieval returns repetitive, non-specific content about SQL Server without Azure revenue data or trends. Hybrid retrieval provides structured financial data with specific revenue figures, growth percentages, and quarterly comparisons that directly address the Azure revenue trending question."
+      },
+      "winner": "dense"
+    },
+    {
+      "id": "competitive",
+      "query": "What advantages does Broadcom have in AI networking?",
+      "ticker": "AVGO",
+      "type": "competitive",
+      "keywords": [
+        "AI",
+        "networking",
+        "advantages"
+      ],
+      "expectation": "Dense should capture competitive positioning",
+      "dense": {
+        "matches": 10,
+        "latency": 382,
+        "avgScore": 0.5606371937000001,
+        "keywordHits": {
+          "hits": 2,
+          "total": 3,
+          "ratio": 0.6666666666666666
+        }
+      },
+      "hybrid": {
+        "matches": 10,
+        "latency": 216,
+        "avgScore": 4.180073355999999,
+        "keywordHits": {
+          "hits": 2,
+          "total": 3,
+          "ratio": 0.6666666666666666
+        }
+      },
+      "llmEval": {
+        "denseRating": 4,
+        "hybridRating": 2,
+        "winner": "dense",
+        "explanation": "Dense retrieval provides multiple relevant passages discussing Broadcom's AI networking advantages including PCI switches, Tomahawk, Jericho ASICs, electro-optics, and network routing technology applied to AI networks. Hybrid retrieval contains mostly irrelevant financial data with only 1-2 relevant passages about AI networking."
+      },
+      "winner": "dense"
+    },
+    {
+      "id": "product-launch",
+      "query": "What new products did Salesforce announce with AI?",
+      "ticker": "CRM",
+      "type": "product",
+      "keywords": [
+        "new products",
+        "AI",
+        "announce"
+      ],
+      "expectation": "Both should work reasonably well",
+      "dense": {
+        "matches": 10,
+        "latency": 451,
+        "avgScore": 0.6045751681,
+        "keywordHits": {
+          "hits": 2,
+          "total": 3,
+          "ratio": 0.6666666666666666
+        }
+      },
+      "hybrid": {
+        "matches": 10,
+        "latency": 259,
+        "avgScore": 7.176082911,
+        "keywordHits": {
+          "hits": 1,
+          "total": 3,
+          "ratio": 0.3333333333333333
+        }
+      },
+      "llmEval": {
+        "denseRating": 2,
+        "hybridRating": 1,
+        "winner": "dense",
+        "explanation": "Dense retrieval at least mentions AI integration, platform capabilities, and some product context like Agentforce, while hybrid retrieval only returns financial revenue data completely unrelated to AI products or announcements."
+      },
+      "winner": "dense"
+    }
+  ]
+}

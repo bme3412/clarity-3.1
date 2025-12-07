@@ -1,0 +1,117 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q3",
+  "fiscal_year": "2024",
+  "financials": {
+    "report_date": "November 21, 2023",
+    "quarter_ended": "October 29, 2023",
+    "gaap": {
+      "total_revenue": {
+        "value": 18.12,
+        "unit": "billion USD",
+        "qoq_change": "+34%",
+        "yoy_change": "+206%"
+      },
+      "gross_margin": "74.0%",
+      "operating_expenses": 2.983,
+      "operating_income": 10.417,
+      "net_income": 9.243,
+      "eps": 3.71
+    },
+    "non_gaap": {
+      "gross_margin": "75.0%",
+      "operating_expenses": 2.026,
+      "operating_income": 11.557,
+      "net_income": 10.02,
+      "eps": 4.02
+    },
+    "segments": {
+      "data_center": {
+        "revenue": 14.51,
+        "unit": "billion USD",
+        "qoq_change": "+41%",
+        "yoy_change": "+279%",
+        "drivers": [
+          "HGX platform with Hopper GPUs and InfiniBand networking",
+          "H200 (HBM3e) on track, TensorRT-LLM software, DGX Cloud AI Foundry partners"
+        ]
+      },
+      "gaming": {
+        "revenue": 2.86,
+        "unit": "billion USD",
+        "qoq_change": "+15%",
+        "yoy_change": "+81%",
+        "drivers": [
+          "RTX 40 Series PCs, DLSS 3.5, TensorRT-LLM for Windows, GeForce NOW growth"
+        ]
+      },
+      "professional_visualization": {
+        "revenue": 0.416,
+        "unit": "billion USD",
+        "qoq_change": "+10%",
+        "yoy_change": "+108%",
+        "drivers": [
+          "Omniverse Cloud for Mercedes-Benz, RTX 6000 Ada Generation workstations"
+        ]
+      },
+      "automotive": {
+        "revenue": 0.261,
+        "unit": "billion USD",
+        "qoq_change": "+3%",
+        "yoy_change": "+4%",
+        "drivers": [
+          "Drive Orin solutions and expanded Foxconn partnership for DRIVE Thor"
+        ]
+      }
+    },
+    "cash_flow": {
+      "operations": 7.333,
+      "investing": -3.169,
+      "financing": -4.527,
+      "free_cash_flow": 7.042
+    },
+    "capital_expenditure": {
+      "pp&e": 0.278,
+      "context": "Investments in AI compute infrastructure supporting growth in HGX, Grace, networking"
+    },
+    "capital_return": {
+      "dividends": 0.099,
+      "share_repurchases": 3.806
+    }
+  },
+  "highlights": {
+    "products": [
+      "HGX platform drove record AI infrastructure revenue; H200 (HBM3e) and Grace Hopper ramping",
+      "TensorRT-LLM doubled inference performance and H200 promises another 2x gain",
+      "Spectrum-X Ethernet for AI (Dell/HPE/Lenovo ecosystem) and AI Foundry service with Azure"
+    ],
+    "partnerships": [
+      "Microsoft, SAP, Amdocs, Google Cloud, Oracle Cloud, Dell, HPE, Lenovo",
+      "Sovereign AI initiatives (India, France, Jülich, Isambard-AI) leveraging Grace Hopper + Quantum-2"
+    ]
+  },
+  "guidance": {
+    "q4": {
+      "revenue": 20.0,
+      "plus_minus": 0.4,
+      "gross_margin": {
+        "gaap": "74.5%",
+        "non_gaap": "75.5%",
+        "range": "±0.5 pts"
+      },
+      "operating_expenses": {
+        "gaap": 3.165,
+        "non_gaap": 2.2
+      },
+      "other_income": 0.2,
+      "tax_rate": "15% ±1%",
+      "capital_expenditures": 3.4
+    }
+  },
+  "metadata": {
+    "source": "NVDA Q3 2024 press release & transcript",
+    "parsed_date": "2024-11-21T00:00:00Z",
+    "note": "Figures match the release dated Nov 21, 2023"
+  }
+}
+

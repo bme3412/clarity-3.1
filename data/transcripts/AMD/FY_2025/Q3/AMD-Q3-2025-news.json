@@ -1,0 +1,76 @@
+{
+  "ticker": "AMD",
+  "fiscal_year": 2025,
+  "fiscal_quarter": "Q3",
+  "timeframe": {
+    "quarter_start": "2025-06-29",
+    "quarter_end": "2025-09-27",
+    "earnings_release_date": "2025-11-04"
+  },
+  "documents": [
+    {
+      "id": "AMD_FY25Q3_001",
+      "title": "AMD Reports Third Quarter 2025 Financial Results",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1265/amd-reports-third-quarter-2025-financial-results",
+      "publisher": "AMD Investor Relations",
+      "published_date": "2025-11-04",
+      "source_type": "official",
+      "category": ["earnings", "company_results"],
+      "event_date": "2025-09-27",
+      "relevance": "Primary source for Q3 2025 financials and management commentary.",
+      "summary": "AMD announced record Q3 2025 revenue of ~$9.246 billion (up ~36% YoY), GAAP operating income ~$1.27 billion, net income ~$1.243 billion. On a non-GAAP basis, operating income ~$2.238 billion and net income ~$1.965 billion, with diluted EPS ~$1.20. Performance driven by strong Data Center, Client & Gaming segments; note that results did not include shipments of Instinct MI308 GPU products to China. AMD also provided a strong Q4 guidance range of approximately $9.3B-$9.9B revenue.",
+      "key_points": [
+        "Revenue: ~$9.246 billion, up 36% year-over-year. :contentReference[oaicite:1]{index=1}",
+        "GAAP diluted EPS: ~$0.75; non-GAAP EPS: ~$1.20. :contentReference[oaicite:2]{index=2}",
+        "Data Center segment revenue: ~$4.3 billion, up ~22% YoY. :contentReference[oaicite:3]{index=3}",
+        "Client & Gaming segment revenue: ~$4.0 billion, up ~73% YoY (Client ~$2.8B +46% YoY; Gaming ~$1.3B +181% YoY). :contentReference[oaicite:4]{index=4}",
+        "Embedded revenue: ~$857 million, down ~8% YoY. :contentReference[oaicite:5]{index=5}",
+        "Guidance for Q4 2025: Revenue ~ $9.3-9.9 billion (midpoint ~25% YoY growth) and gross margin approx. ~54.5%. :contentReference[oaicite:6]{index=6}",
+        "Results exclude any revenue from shipments of Instinct MI308 GPUs to China in that quarter. :contentReference[oaicite:7]{index=7}"
+      ],
+      "embeddings_text": "In fiscal Q3 2025, AMD generated record revenue of approximately $9.246 billion, up ~36% year-over-year, and achieved strong profitability (GAAP operating income ~$1.27 billion, non-GAAP ~$2.24 billion) with a non-GAAP diluted EPS of ~$1.20. The Data Center business delivered ~$4.3 billion (+22% YoY) driven by EPYC CPUs and Instinct MI350 series GPUs. The Client & Gaming segment delivered ~ $4.0 billion (+73% YoY) with Client revenue ~$2.8 billion and Gaming ~$1.3 billion (+181% YoY). The Embedded segment slipped ~8% to ~$857 million. Management emphasised broad-based compute momentum, especially in AI/data center and premium client. Importantly, the quarter did not include any revenue from the MI308 GPU shipments to China — a notable headwind until regulatory/licensing issues are resolved. AMD provided Q4 guidance of roughly $9.3-9.9 billion revenue (midpoint ~25% growth) and gross margin target ~54.5%, reinforcing confidence in scaling compute franchise. This quarter therefore serves as a clear inflection point for AMD’s high-performance computing and AI strategy moving into fiscal 2026.",
+      "tags": ["FY25-Q3", "earnings", "data_center_growth", "client_gaming_explosion", "guidance", "china_export_controls", "ai_accelerator"]
+    },
+    {
+      "id": "AMD_FY25Q3_002",
+      "title": "AMD Q3 2025 Earnings Highlight Broad-Based Compute Momentum",
+      "url": "https://futurumgroup.com/insights/amd-q3-fy-2025-earnings-highlight-broad-based-compute-momentum/",
+      "publisher": "Futurum Group",
+      "published_date": "2025-11-07",
+      "source_type": "analysis",
+      "category": ["analysis", "strategic_insight"],
+      "event_date": "2025-11-04",
+      "relevance": "Analyst commentary relating to AMD’s Q3 2025 results, compute/AI ramp, product mix, and strategic risk factors.",
+      "summary": "Futurum Research notes that AMD’s Q3 2025 results underscore broad-based compute demand across its AI accelerators, server CPUs (EPYC), and premium PC platforms (Ryzen). The data center AI business is scaling with MI350 series GPUs and EPYC Turin processors, while the Client & Gaming segment benefits from Ryzen 9000/9000X3D and Radeon GPU momentum. The Embedded segment remains weak. Analyst focus shifts to AMD’s ecosystem (ROCm), software, ramp of MI400 series, and licensing/export-control risks in China.",
+      "key_points": [
+        "Client & Gaming: +73% YoY to ~$4.0 billion; Gaming +181% YoY. :contentReference[oaicite:8]{index=8}",
+        "Data Center: +22% YoY to ~$4.3 billion. :contentReference[oaicite:9]{index=9}",
+        "Embedded: ~-8% YoY; still a drag. :contentReference[oaicite:10]{index=10}",
+        "Software/ROCm ecosystem gaining traction, important for accelerating AI compute. (Futurum commentary) :contentReference[oaicite:11]{index=11}",
+        "Export-control/China headwinds remain relevant, as MI308 shipments still excluded and any change could unlock upside. :contentReference[oaicite:12]{index=12}"
+      ],
+      "embeddings_text": "Analyst commentary following AMD’s fiscal Q3 2025 results emphasises that the company is riding a broad compute wave: server CPUs (EPYC), AI accelerators (Instinct MI350 series), and client/gaming (Ryzen + Radeon) all delivered impressive growth. While Data Center grew ~22% to ~$4.3 billion and Client/Gaming ~73% to ~$4.0 billion, the embedded business remains weak (~-8%). The piece stresses that AMD’s software stack (ROCm) and ecosystem momentum are becoming strategic differentiators. On the risk side, the continued exclusion of MI308 shipments to China highlights regulatory and export-control overhangs that could either lift margins or constrain upside. For RAG purposes, this document bridges quantitative results with strategic levers — essential when modelling AMD’s compute/AI transition narrative.",
+      "tags": ["compute_momentum", "ai_accelerator_ramp", "software_ecosystem", "embedded_headwind", "china_overhang"]
+    },
+    {
+      "id": "AMD_FY25Q3_003",
+      "title": "AMD Q3 2025 Earnings: Market Reaction & Guidance",
+      "url": "https://finance.yahoo.com/news/amd-beats-q3-estimates-on-top-and-bottom-line-offers-strong-q4-guidance-202400302.html",
+      "publisher": "Yahoo Finance",
+      "published_date": "2025-11-05",
+      "source_type": "news",
+      "category": ["market_reaction", "guidance"],
+      "event_date": "2025-11-05",
+      "relevance": "Covers how markets interpreted AMD’s Q3 2025 results and guidance, including stock movement, sentiment and outlook risks.",
+      "summary": "After AMD reported Q3 2025 revenue of about $9.25 billion and EPS ~$1.20, the company provided Q4 revenue guidance of $9.3-9.9 billion and margin expectations near ~54.5%. Despite beating estimates, AMD’s stock fell ~2% as investors weighed export-control risks, embedded segment weakness, and AI competitive pressures. Analysts noted that while the compute momentum is strong, the company must deliver ramp of next-gen MI400 series and broaden its China access to validate long-term upside.",
+      "key_points": [
+        "EPS beat: ~$1.20 actual vs ~$1.17 expected. :contentReference[oaicite:13]{index=13}",
+        "Q4 guidance: revenue range ~$9.3-9.9 billion. :contentReference[oaicite:14]{index=14}",
+        "Stock reaction: slipped ~2-3% after hours despite beat, reflecting concerns about embedded decline and competitive/AI risk. :contentReference[oaicite:15]{index=15}",
+        "Export-control/China issue: MI308 excluded; future China shipments cited as upside risk. :contentReference[oaicite:16]{index=16}"
+      ],
+      "embeddings_text": "Market commentary on AMD’s fiscal Q3 2025 results frames a nuanced story: although revenue and EPS came in ahead of expectations (~$9.25 billion revenue, ~$1.20 EPS) and guidance for Q4 (~$9.3-9.9 billion revenue) was strong, the stock fell due to investor caution around embedded-segment weakness (~-8% YoY), unresolved export/licensing issues for MI308 in China, and intense competitive pressure in AI accelerator space. For embedding, this document helps map how quantitative results translated into investor sentiment, which is critical when embedding “why” along with “what” into a RAG system.",
+      "tags": ["stock_sentiment", "guidance", "embedded_risk", "export_controls", "ai_competition"]
+    }
+  ]
+}

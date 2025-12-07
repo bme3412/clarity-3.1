@@ -1,0 +1,131 @@
+{
+  "company_name": "Meta",
+  "quarter": "Q4",
+  "fiscal_year": "2023",
+  "speakers": {
+    "mark_zuckerberg": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "Advertising Business Improvements",
+          "content": "We have a long history of open sourcing parts of our infrastructure that are not directly related to product code. This approach increases adoption, creates industry standards, and drives forward innovation, benefiting both our products and the broader community. Open-source initiatives also enhance security and safety through greater scrutiny. Additionally, community-driven efficiency improvements help reduce our costs, particularly in CapEx expenses. Open sourcing attracts top talent who are eager to work on industry-standard tools, enhancing our recruiting efforts. While we open-source foundational models like Llama, our core product-specific logic remains proprietary to maintain unique value propositions."
+        },
+        {
+          "topic": "Generative AI Tools for Advertising",
+          "content": "We launched Meta AI, an AI assistant that can answer questions and generate images, and AI Studio with initial AI characters. These tools aim to enhance user engagement and provide advertisers with innovative ways to create and optimize ads. AI-driven features like text variations, image expansion, and background generation help advertisers generate multiple ad creatives efficiently, improving ROAS and driving sales, especially during peak seasons like the holidays."
+        },
+        {
+          "topic": "AI Agents and Messaging",
+          "content": "We're developing AI agents to assist users in interacting with creators and businesses. These agents will facilitate more engaging and efficient communications, reducing the human labor required for businesses to interact with customers. This initiative is expected to enhance both engagement and monetization by enabling more seamless and scalable interactions within our messaging platforms."
+        },
+        {
+          "topic": "Year of Efficiency Learnings",
+          "content": "The themes for the year of efficiency were to make us a stronger technology company by becoming leaner and more balanced towards our engineering work and more streamlined, and to improve our financial performance, primarily to provide stability for long-term investments in AI and the metaverse. We learned that operating as a leaner company improves overall performance and cultural alignment. Moving forward, we plan to keep headcount growth minimal unless absolutely necessary to maintain efficiency and flexibility in a volatile and unpredictable market environment."
+        },
+        {
+          "topic": "Meta AI Strategy and Impact",
+          "content": "Meta AI is a crucial initiative across our products, currently available in select countries on WhatsApp, Messenger, and Instagram. We're in the tuning phase, learning how users engage with it, and plan to roll it out more prominently across our apps this year. Meta AI is expected to significantly transform user interactions, content creation, and advertising by integrating AI-generated and AI-edited content, enhancing user engagement, and creating new monetization opportunities."
+        }
+      ]
+    },
+    "susan_li": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Advertising Business Strength",
+          "content": "We've been driving ad performance improvements and year-over-year conversion growth remains strong, which is reflected in advertiser feedback. Our focus areas include creating engaging on-platform ad experiences with formats like click-to-message ads, Shops ads, and lead generation ads. We're also making it easier for advertisers to connect with their marketing data through investments in features like conversions API and AEM, enhancing reporting and performance. Additionally, we're leveraging AI across our ads platform, scaling our Advantage+ suites, which automate the ad creation process and deliver strong ROAS for advertisers."
+        },
+        {
+          "topic": "Q1 Revenue Guide and Acceleration Confidence",
+          "content": "Our Q1 revenue guide reflects the strong, broad-based advertising demand across verticals, particularly within online commerce and gaming. The inclusion of February 29 has positively impacted this quarter's performance. The continuous improvements from our investments in ad performance further support our confidence in the revenue acceleration."
+        },
+        {
+          "topic": "Operating Losses at Reality Labs",
+          "content": "Reality Labs' operating losses are primarily driven by direct costs in headcount, operating expenses, and product development. Indirect costs, such as facilities, are allocated based on their benefit to Reality Labs. We're investing in technologies like avatars, smart glasses, and AI assistants that will eventually benefit our Family of Apps by creating more engaging content and enhancing user experiences. While these investments lead to increased losses in the short term, they are essential for long-term growth and innovation."
+        },
+        {
+          "topic": "CapEx Outlook and Data Center Architecture",
+          "content": "We're transitioning to a new data center architecture that supports both AI and non-AI workloads more efficiently. This new design is cost-effective and quicker to build, providing greater flexibility to scale based on demand. In 2023, we adjusted our CapEx forecast downward by $3 billion to $5 billion due to delays in data center projects and server deliveries. For 2024, we expect CapEx to increase as we ramp up construction of new data centers and invest in AI infrastructure, aiming to realize cost efficiencies and support our expanding AI initiatives."
+        },
+        {
+          "topic": "Messaging Monetization",
+          "content": "Our messaging monetization efforts focus on click-to-messaging ads and paid messaging. Click-to-messaging ads have shown strong revenue growth and broad advertiser adoption. We're enhancing optimization and reporting to drive performance and enabling businesses to optimize for purchases. Paid messaging is in early stages but shows good momentum, especially with marketing messages and our updated pricing model. We're testing features like AI chats with businesses and enhancing user experiences within WhatsApp to drive monetization."
+        },
+        {
+          "topic": "Shop Ads and E-commerce",
+          "content": "Online commerce remains one of our strongest verticals. Our Advantage+ tools, especially Advantage+ Shopping, continue to drive strong performance and conversions for advertisers. We're making it easier for businesses to onboard Shops on Facebook and Instagram, enhancing integrations with partners, and leveraging AI to improve Shops ads' performance. Our partnership with Amazon for Buy with Prime is an early test to create a seamless shopping experience, which we're expanding further."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Brian Nowak",
+      "firm": "Morgan Stanley",
+      "topics": ["Advertising Business Improvements", "Reality Labs Operating Losses"],
+      "questions": [
+        "Mark, can you talk about some of the largest areas of improvement your advertisers say are really driving this inflection of advertising? And what are the areas where you still get the most feedback for further areas of improvement in the ad business that we should think about?",
+        "Susan, regarding the first quarter guide, can you provide more color on which surfaces or ad units or regions are giving you confidence in the type of acceleration you're seeing this quarter?"
+      ]
+    },
+    {
+      "analyst": "Eric Sheridan",
+      "firm": "Goldman Sachs",
+      "topics": ["Year of Efficiency Learnings", "CapEx Guidance"],
+      "questions": [
+        "Mark, coming out of a year like you had with the year of efficiency, what key messages do you want to share with investors about what you learned during the year of efficiency and how it might inform running an organization with the scale of ambition and organizational scale that Meta has on a long-term basis?",
+        "Susan, with a wide range in your CapEx guidance, what should we be monitoring for that would push you towards either the lower end or the higher end of that CapEx guidance as you move through 2024?"
+      ]
+    },
+    {
+      "analyst": "Mark Shmulik",
+      "firm": "AllianceBernstein",
+      "topics": ["Meta AI Assistant Timeline", "Shop Ads Integration"],
+      "questions": [
+        "Mark, given the pace of innovation around AI, has the timeline for achieving the vision of everyone having a Meta AI assistant changed? Do you think we'll reach it quicker?",
+        "Susan, regarding Shops ads, especially after the Amazon partnership news, can you share some of the learnings and what's different this time around compared to previous attempts to integrate shopping?"
+      ]
+    },
+    {
+      "analyst": "Doug Anmuth",
+      "firm": "JPMorgan",
+      "topics": ["FAIR Shift", "Dividend Addition"],
+      "questions": [
+        "Mark, you've shifted FAIR out of Reality Labs into the Family of Apps. Can you talk about the benefits of moving that group as you pursue general intelligence?",
+        "Susan, can you walk us through your thought process on adding a dividend to your capital returns at this stage beyond the share repurchases?"
+      ]
+    },
+    {
+      "analyst": "Justin Post",
+      "firm": "Bank of America Merrill Lynch",
+      "topics": ["Messaging Run Rate", "Comps and Q1 Growth"],
+      "questions": [
+        "Can you help us think about the messaging run rate for revenues and the long-term opportunity on a multiyear basis?",
+        "With the guidance for Q1 suggesting stable growth at the midpoint despite comps getting tougher, how are you thinking about those comps and how you could grow in the second half?"
+      ]
+    },
+    {
+      "analyst": "Ron Josey",
+      "firm": "Citi",
+      "topics": ["App Store in Europe", "Business Messaging Testing"],
+      "questions": [
+        "Mark, how do you think Apple's opening up its App Store in Europe might play a role for Meta in building out App Store app install ads?",
+        "Susan, can you discuss how the team is testing business messaging with WhatsApp and Messenger, especially in relation to AI Studio and timing?"
+      ]
+    },
+    {
+      "analyst": "Ross Sandler",
+      "firm": "Barclays",
+      "topics": ["Meta AI Engagement", "Cost Efficiency of AI Responses"],
+      "questions": [
+        "Mark, what's the current state of Meta AI? Which apps in the Family of Apps have seen engagement increases from Meta AI, and do you anticipate increased commercial activity as AI usage grows within your apps?",
+        "Given that serving responses with stickers and images is more expensive than aggregating the News Feed, how much more expensive is it, and what measures are being taken to reduce these costs?"
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2023-12-15T16:30:00.000Z",
+    "company_ticker": "META",
+    "source": "earnings_call_transcript"
+  }
+}

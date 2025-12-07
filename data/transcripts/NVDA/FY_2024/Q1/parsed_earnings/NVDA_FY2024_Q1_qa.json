@@ -1,0 +1,125 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q1",
+  "fiscal_year": "2024",
+  "speakers": {
+    "jensen_huang": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "Accelerated computing & generative AI",
+          "content": "Generative AI is the killer app that is forcing the world’s $1T data center infrastructure to transition to accelerated computing. We supply GPUs, networking, and software so the data center can become a full-stack AI factory."
+        },
+        {
+          "topic": "Software stack and ecosystems",
+          "content": "NVIDIA AI Foundation, AI Enterprise, and Omniverse form the software platforms that guide enterprises and partners through data processing, model training, alignment, and deployment. DGX Cloud and partnerships with Azure, GCP, and OCI deliver these stacks anywhere customers need them."
+        },
+        {
+          "topic": "Networking, InfiniBand & Ethernet",
+          "content": "Networking is part of the computer. Quantum InfiniBand continues to grow; we are also expanding Ethernet for multi-tenant generative AI clouds while continuing to deliver the best throughput/lower TCO for AI workloads."
+        }
+      ]
+    },
+    "colette_kress": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Financial strength",
+          "content": "Q1 revenue $7.19B (+19% sequentially) with record data center revenue and strong gross margins; operating expenses limited while investing in AI infrastructure and software."
+        },
+        {
+          "topic": "CapEx and supply",
+          "content": "We are procuring substantial supply for the second half to meet generative AI demand; second-quarter outlook calls for $11B revenue plus/minus $0.22B."
+        },
+        {
+          "topic": "Operating leverage",
+          "content": "Accelerated computing demand drives operating leverage; we held operating expenses flat while margins recover and plan opportunistic capital deployment."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Toshiya Hari",
+      "firm": "Goldman Sachs",
+      "topics": [
+        "Data center outlook",
+        "Supply"
+      ],
+      "questions": [
+        "What are the drivers of the data center sequential growth between Q1 and Q2, and how much supply can you procure for the second half?"
+      ]
+    },
+    {
+      "analyst": "C.J. Muse",
+      "firm": "Evercore ISI",
+      "topics": [
+        "Servers",
+        "Procurement"
+      ],
+      "questions": [
+        "How are you managing the acceleration in AI servers and long cycle times with TSMC and partners while matching supply to the enormous demand?"
+      ]
+    },
+    {
+      "analyst": "Vivek Arya",
+      "firm": "BofA Securities",
+      "topics": [
+        "Demand visibility",
+        "Competition"
+      ],
+      "questions": [
+        "Does the extended visibility mean data center growth continues in H2, and how does the competitive landscape evolve with more entrants and custom ASICs?"
+      ]
+    },
+    {
+      "analyst": "Aaron Rakers",
+      "firm": "Wells Fargo",
+      "topics": [
+        "Software monetization",
+        "AI Enterprise"
+      ],
+      "questions": [
+        "How should we think about the monetization of NVIDIA’s software (AI Enterprise, Omniverse, AI Foundations) as AI workloads grow?"
+      ]
+    },
+    {
+      "analyst": "Timothy Arcuri",
+      "firm": "UBS",
+      "topics": [
+        "Networking",
+        "Share buybacks"
+      ],
+      "questions": [
+        "What is the attach rate between InfiniBand and compute shipments, how are you unlocking more networking throughput, and why no share repurchases this quarter?"
+      ]
+    },
+    {
+      "analyst": "Stacy Rasgon",
+      "firm": "Bernstein Research",
+      "topics": [
+        "Inference vs training",
+        "Large language models"
+      ],
+      "questions": [
+        "How should we compare the opportunity between inferencing (usage-based) and training (continuous); is inference bigger and by how much?"
+      ]
+    },
+    {
+      "analyst": "Joseph Moore",
+      "firm": "Morgan Stanley",
+      "topics": [
+        "DGX Cloud",
+        "Hyperscaler mix"
+      ],
+      "questions": [
+        "How much of your data center load is first-party (DGX Cloud) versus hyperscaler CSP deployments, and what have you learned post-launch?"
+      ]
+    }
+  ],
+  "metadata": {
+    "source": "NVIDIA Q1 2024 transcript and press release",
+    "parsed_date": "2023-05-24T00:00:00Z"
+  }
+}
+

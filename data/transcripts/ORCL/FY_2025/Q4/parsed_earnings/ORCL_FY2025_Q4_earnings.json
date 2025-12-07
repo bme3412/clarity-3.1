@@ -1,0 +1,127 @@
+{
+  "company_name": "Oracle",
+  "quarter": "Q4",
+  "fiscal_year": "2025",
+  "financials": {
+    "total_revenue": {
+      "value": 15.9,
+      "unit": "billion USD",
+      "yoy_growth_usd": "+11%",
+      "yoy_growth_constant_currency": "+11%",
+      "context": "Q4 FY25 despite capacity constraints"
+    },
+    "cloud_revenue": {
+      "total": {
+        "value": 6.7,
+        "unit": "billion USD",
+        "yoy_growth": "+27%",
+        "components": {
+          "infrastructure_iaas": {
+            "value": 3.0,
+            "unit": "billion USD",
+            "yoy_growth": "+52%"
+          },
+          "applications_saas": {
+            "value": 3.7,
+            "unit": "billion USD",
+            "yoy_growth": "+12%"
+          }
+        }
+      },
+      "cloud_services_and_license_support": {
+        "value": 11.7,
+        "unit": "billion USD",
+        "yoy_growth": "+14%",
+        "notes": "Driven by AI data platform, Autonomous Database, and multi-cloud partnerships"
+      }
+    },
+    "remaining_performance_obligations": {
+      "value": 138,
+      "unit": "billion USD",
+      "yoy_growth_usd": "+41%",
+      "context": "Includes multi-cloud, Oracle Cloud@Customer, and AI contracts"
+    },
+    "profitability": {
+      "gaap": {
+        "operating_income": 5.1,
+        "net_income": 3.4,
+        "diluted_eps": 1.19,
+        "operating_margin": "32%",
+        "context": "GAAP results from press release"
+      },
+      "non_gaap": {
+        "operating_income": 7.0,
+        "net_income": 4.9,
+        "diluted_eps": 1.70,
+        "operating_margin": "44%",
+        "context": "Non-GAAP excludes stock-based comp, amortization, other charges"
+      }
+    },
+    "cash_flow": {
+      "operating_cash_flow": 20.8,
+      "capital_expenditures": 21.2,
+      "free_cash_flow": -0.4,
+      "unit": "billion USD",
+      "notes": "High capex due to OCI capacity expansion"
+    },
+    "capital_return": {
+      "share_repurchases": {
+        "value": 0.15,
+        "unit": "billion USD",
+        "notes": "Over 1M shares repurchased in Q4"
+      },
+      "dividend": {
+        "value": 0.50,
+        "unit": "USD per share",
+        "notes": "Quarterly dividend maintained at $0.50"
+      }
+    },
+    "strategic_updates": {
+      "cloud_growth": [
+        "OCI consumption revenue up 62% and infrastructure revenue up 52%, reflecting insatiable AI demand",
+        "MultiCloud database revenue up 115% Q3-to-Q4, with 23 MultiCloud regions live and 47 more planned",
+        "Oracle Cloud@Customer deployments up 104%, with 29 live and 30 additional sites scheduled"
+      ],
+      "applications": [
+        "Strategic SaaS applications achieved $9.3B annualized run rate and 20% growth, backed by 100+ AI agents",
+        "Total application subscription revenue grew 7%, demonstrating renewed demand for back-office modernization"
+      ],
+      "ai_and_infrastructure": [
+        "Oracle AI Data Platform and Database 23AI deliver secure, private AI workloads on OpenAI/Grok/Llama",
+        "Autonomous Database and AI-enabled Agents continue to automate operations while tightening security"
+      ]
+    },
+    "outlook": {
+      "fiscal_year_2026": {
+        "revenue_target": 67,
+        "unit": "billion USD",
+        "yoy_growth_constant_currency": "+16%",
+        "cloud_growth_constant_currency": "+>40%",
+        "iaas_growth_constant_currency": "+>70%",
+        "rpo_growth": "+>100%",
+        "capex": {
+          "value": 25,
+          "unit": "billion USD",
+          "notes": "Plan to keep expanding data center capacity; could exceed $25B"
+        },
+        "notes": "FY26 will be even stronger, propelled by AI and Oracle’s full-stack cloud advantage"
+      },
+      "q4_guidance": {
+        "revenue_constant_currency": "+11% to +13%",
+        "revenue_usd": "+12% to +14%",
+        "cloud_revenue_growth": "+26% to +30%",
+        "non_gaap_eps_constant_currency": "$1.44 to $1.48",
+        "non_gaap_eps_usd": "$1.46 to $1.50",
+        "tax_rate": "19%",
+        "currency_effect": "+$0.02 EPS, +0-1% revenue",
+        "notes": "Guidance assumes currency stays near today’s levels"
+      }
+    },
+    "metadata": {
+      "parsed_date": "2025-06-11T00:00:00Z",
+      "source": "Q4 FY25 press release + call transcript",
+      "ticker": "ORCL"
+    }
+  }
+}
+

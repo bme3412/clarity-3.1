@@ -1,0 +1,159 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q3",
+  "fiscal_year": "2025",
+  "speakers": {
+    "jensen_huang": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "AI factory and scaling",
+          "content": "Foundation-model pretraining continues to scale while post-training and inference-time scaling add new vectors, creating what I call AI factories; this multi-year transition is driving demand for Hopper today and Blackwell tomorrow."
+        },
+        {
+          "topic": "Blackwell ramp and execution",
+          "content": "Blackwell production is in full steam, with more systems shipping than initially projected, and the full partner ecosystem—from CSPs like Microsoft and Oracle to integrators such as Dell and Quanta—is working through the complex engineering to bring the platform online quickly."
+        },
+        {
+          "topic": "Infrastructure and inference demand",
+          "content": "Inference is beginning to outgrow training as context lengths and multimodal workloads expand; our massive installed base of Hopper and previous platforms keeps NVIDIA as the largest inference provider while we simultaneously build the next generation of compute."
+        }
+      ]
+    },
+    "colette_kress": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Gross margin and capex cadence",
+          "content": "Blackwell dilutes gross margin into the low 70s during the ramp but we expect to regain the mid-70s as mix improves, and CapEx continues to fund the AI infrastructure transition even as we target a leaner rate later in the year."
+        },
+        {
+          "topic": "Supply discipline and execution",
+          "content": "We balance long-lead data‑center decisions with the demand Satya sees; we pulled forward space this quarter to deliver capacity, remain tight exiting the year, and continue to collaborate with every supplier to keep the ramp on track."
+        },
+        {
+          "topic": "Sovereign demand and gaming supply",
+          "content": "Sovereign AI remains a low-double-digit-billion opportunity with regional cloud build-outs, and gaming supply was tight because we prioritized high-return data center demand, though we expect gaming availability to improve in the new calendar year."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Christopher Muse",
+      "firm": "Cantor Fitzgerald",
+      "topics": [
+        "Blackwell demand",
+        "Inference scaling"
+      ],
+      "questions": [
+        "Is the debate around large language model scaling premature, and is this momentum feeding even more demand for Blackwell?"
+      ]
+    },
+    {
+      "analyst": "Toshiya Hari",
+      "firm": "Goldman Sachs",
+      "topics": [
+        "Blackwell execution",
+        "Supply constraints"
+      ],
+      "questions": [
+        "How confident are you on the roadmap given reports of heating issues and what are the main supply challenges—CoWoS, HBM, or other components?"
+      ]
+    },
+    {
+      "analyst": "Timothy Arcuri",
+      "firm": "UBS",
+      "topics": [
+        "Gross margin trajectory",
+        "Blackwell vs Hopper mix"
+      ],
+      "questions": [
+        "Will Blackwell cross over Hopper in the April quarter and does that mark the low point for gross margins?"
+      ]
+    },
+    {
+      "analyst": "Vivek Arya",
+      "firm": "Bank of America",
+      "topics": [
+        "Gross margin recovery",
+        "Demand digestion"
+      ],
+      "questions": [
+        "Is it reasonable to expect a mid-70s gross margin in H2 calendar 2025, and is there a digestion phase after this infrastructure build?"
+      ]
+    },
+    {
+      "analyst": "Stacy Rasgon",
+      "firm": "Bernstein Research",
+      "topics": [
+        "Blackwell ramp",
+        "Hopper supply",
+        "China demand"
+      ],
+      "questions": [
+        "Can you clarify the low-70s margin reference and provide color on Hopper growth vs Blackwell ramp and any China-related sequential trends?"
+      ]
+    },
+    {
+      "analyst": "Joseph Moore",
+      "firm": "Morgan Stanley",
+      "topics": [
+        "Inference growth",
+        "Blackwell rollout"
+      ],
+      "questions": [
+        "Do you expect inference to outgrow training over the next 12 months and what is the path to supporting the explosion in inference workloads?"
+      ]
+    },
+    {
+      "analyst": "Aaron Rakers",
+      "firm": "Wells Fargo",
+      "topics": [
+        "Networking",
+        "Spectrum-X"
+      ],
+      "questions": [
+        "Despite networking revenue dipping 15% sequentially, how should we think about demand for Spectrum-X and the timing of the multi-billion-dollar opportunity?"
+      ]
+    },
+    {
+      "analyst": "Atif Malik",
+      "firm": "Citi",
+      "topics": [
+        "Sovereign AI",
+        "Gaming supply"
+      ],
+      "questions": [
+        "Could you update the size of the sovereign AI backlog and explain whether gaming supply constraints are due to prioritizing data center?"
+      ]
+    },
+    {
+      "analyst": "Ben Reitzes",
+      "firm": "Melius Research",
+      "topics": [
+        "Sequential growth",
+        "Geopolitics"
+      ],
+      "questions": [
+        "Will the strong sequential growth reaccelerate as Blackwell supply expands and do you have early views on the new U.S. administration’s potential impact on China business?"
+      ]
+    },
+    {
+      "analyst": "Pierre Ferragu",
+      "firm": "New Street Research",
+      "topics": [
+        "Compute mix",
+        "Pretraining vs inference"
+      ],
+      "questions": [
+        "How do you break down compute spend today across pretraining, reinforcement learning, and inference and where is the biggest growth?"
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2024-11-20T00:00:00Z",
+    "source": "NVIDIA FY2025 Q3 earnings call transcript"
+  }
+}
+

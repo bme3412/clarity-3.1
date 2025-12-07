@@ -1,0 +1,168 @@
+{
+  "company_name": "Microsoft",
+  "quarter": "Q3",
+  "fiscal_year": "2025",
+  "financials": {
+    "total_revenue": {
+      "value": 70.1,
+      "unit": "billion USD",
+      "year_over_year_change": "+13%",
+      "constant_currency_growth": "+15%",
+      "notes": "Cloud and AI strength offset macro uncertainty"
+    },
+    "operating_income": {
+      "value": 32.0,
+      "unit": "billion USD",
+      "year_over_year_change": "+16%",
+      "constant_currency_growth": "+19%",
+      "notes": "Operating margin expanded to 46% as operating expenses grew only 2%"
+    },
+    "net_income": {
+      "value": 25.8,
+      "unit": "billion USD",
+      "year_over_year_change": "+18%",
+      "constant_currency_growth": "+19%",
+      "notes": "Includes favorable other income and derivatives gains"
+    },
+    "eps": {
+      "value": 3.46,
+      "unit": "USD per share",
+      "year_over_year_change": "+18%",
+      "constant_currency_growth": "+19%"
+    }
+  },
+  "segment_revenue": {
+    "Productivity_and_Business_Processes": {
+      "value": 29.9,
+      "unit": "billion USD",
+      "year_over_year_change": "+10%",
+      "constant_currency_growth": "+13%",
+      "highlights": [
+        "Microsoft 365 Commercial products and cloud services +11% (14% CC)",
+        "Microsoft 365 Commercial cloud +12% (15% CC) driven by E5 and Copilot ARPU growth",
+        "Consumer cloud +10% (12% CC) after the January price increase",
+        "LinkedIn +7% (8% CC)",
+        "Dynamics products and cloud services +11% (13% CC) with Dynamics 365 +16% (18% CC)"
+      ]
+    },
+    "Intelligent_Cloud": {
+      "value": 26.8,
+      "unit": "billion USD",
+      "year_over_year_change": "+21%",
+      "constant_currency_growth": "+22%",
+      "highlights": [
+        "Server products and cloud services +22% (24% CC)",
+        "Azure and other cloud services +33% (35% CC) including 16 points from AI services",
+        "Azure AI outperformance driven by pulled-forward capacity while non-AI enterprise demand strengthened"
+      ]
+    },
+    "More_Personal_Computing": {
+      "value": 13.4,
+      "unit": "billion USD",
+      "year_over_year_change": "+6%",
+      "constant_currency_growth": "+7%",
+      "highlights": [
+        "Windows OEM and Devices +3%",
+        "Xbox content and services +8% (9% CC)",
+        "Search and news advertising ex-TAC +21% (23% CC)"
+      ]
+    }
+  },
+  "cloud_metrics": {
+    "Microsoft_Cloud": {
+      "value": 42.4,
+      "unit": "billion USD",
+      "growth": "+20%",
+      "constant_currency_growth": "+22%",
+      "gross_margin": "69%"
+    },
+    "Azure_AI_services": {
+      "contribution_points": 16,
+      "notes": "AI services accounted for 16 points of Azure growth as capacity came online faster"
+    }
+  },
+  "expenses": {
+    "cost_of_revenue": {
+      "value": 21.919,
+      "unit": "billion USD"
+    },
+    "research_and_development": {
+      "value": 8.198,
+      "unit": "billion USD"
+    },
+    "sales_and_marketing": {
+      "value": 6.212,
+      "unit": "billion USD"
+    },
+    "general_and_administrative": {
+      "value": 1.737,
+      "unit": "billion USD"
+    }
+  },
+  "cash_flow": {
+    "from_operations": {
+      "value": 37.0,
+      "unit": "billion USD",
+      "year_over_year_change": "+16%"
+    },
+    "free_cash_flow": {
+      "value": 20.3,
+      "unit": "billion USD"
+    }
+  },
+  "capital_expenditures": {
+    "value": 21.4,
+    "unit": "billion USD",
+    "notes": "Slightly below expectations due to delivery timing; cash paid for PP&E $16.7B",
+    "mix": "Roughly half long-lived assets and half servers GPUs/CPUs tied to customer backlog"
+  },
+  "operational_highlights": {
+    "infrastructure": [
+      "Opened data centers in 10 countries this quarter and reduced dock-to-live GPU lead times by nearly 20%",
+      "Azure supply chain performance improved GPU and AI performance by ~$30% while halving cost per token"
+    ],
+    "data_and_ai": [
+      "Fabric surpassed 21,000 paid customers with 50% using three or more workloads and OneLake data grew 6x YoY",
+      "Foundry now runs 100 trillion tokens per quarter, supports 70,000 enterprises, and added new models from OpenAI, Cohere, DeepSeek, Meta, Mistral, Stability"
+    ],
+    "developer_tools_and_power_platform": [
+      "GitHub Copilot users grew to 15M (4x YoY), introduced agent modes like Autofix and code review agents, and previewed an asynchronous SWE agent",
+      "Visual Studio/VS Code reach 50M MAUs; Power Platform users 56M (+27%) with increasing AI features"
+    ],
+    "productivity_and_agents": [
+      "Microsoft 365 Copilot seats tripled YoY, introduced new role-based agents and deep reasoning/agent flows, and customers built 1M custom agents this quarter",
+      "Dynamics 365 gained share with customers like Avaya and Brunswick, and Dragon Copilot handled 9.5M physician encounters (+50% QoQ)"
+    ],
+    "consumer_and_edge": [
+      "Copilot+ PCs expanded with AI experiences like Recall, Click to Do, Windows Search, and Windows 11 deployments rose ~75% YoY",
+      "LinkedIn members exceeded 1B, video watch time +36%, upskill coaching usage +2x QoQ, and premium SMB page subscribers surged 75% QoQ",
+      "Bing/Edge search innovations (Copilot Vision, Copilot Discover) helped maintain ad share gains and push trailing 12-month advertising revenue beyond $20B"
+    ],
+    "security_and_gaming": [
+      "Security Copilot agents leverage 84 trillion threat signals; Entra now has >900M MAUs and 1.4M security customers with 4+ workloads",
+      "Gaming reached 500M monthly active users, cloud gaming hit 150M hours, Xbox Play Anywhere spans 1,000+ games, and Copilot for Gaming offers live assistance"
+    ]
+  },
+  "outlook": {
+    "q4_guidance": {
+      "Productivity_and_Business_Processes": "Revenue $32.05B to $32.35B (+11-12% CC); M365 commercial cloud ~14% CC; consumer cloud mid-teens; LinkedIn high-single digits; Dynamics mid-to-high teens.",
+      "Intelligent_Cloud": "Revenue $28.75B to $29.05B (+20-22% CC); Azure growth 34-35% CC with expected non-AI strength and some AI capacity constraints beyond June; on-prem servers decline mid-single digits; Enterprise/Partner Services mid-to-high single digits.",
+      "More_Personal_Computing": "Revenue $12.35B to $12.85B; Windows OEM/devices down mid-to-high single digits; Search and news advertising ex-TAC high teens; overall search mid-teens; gaming revenue mid-single digits with Xbox content/services high-single digit growth."
+    },
+    "company_guidance": {
+      "COGS": "$23.6B to $23.8B (+19-20% CC)",
+      "Operating_expenses": "$18.0B to $18.1B (+~5% CC)",
+      "Other_income_and_expense": "Negative ~$1.2B from equity-method investments",
+      "Tax_rate": "Approximately 19%"
+    },
+    "longer_term": {
+      "capex": "FY26 spend will grow at a lower rate with a higher mix of short-lived assets more closely tied to revenue while preserving fungibility.",
+      "no_change": "H2 CapEx guidance from January remains intact despite sequential increase in Q4."
+    }
+  },
+  "metadata": {
+    "parsed_date": "2025-04-30T00:00:00Z",
+    "source": "Microsoft FY 2025 Q3 earnings release and transcript"
+  }
+}
+

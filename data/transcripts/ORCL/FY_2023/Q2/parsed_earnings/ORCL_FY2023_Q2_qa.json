@@ -1,0 +1,135 @@
+{
+  "company_name": "Oracle",
+  "quarter": "Q2",
+  "fiscal_year": "2023",
+  "speakers": {
+    "safra_ada_catz": {
+      "role": "Chief Executive Officer",
+      "responses": [
+        {
+          "topic": "Organic Revenue Growth Drivers",
+          "content": "So, let me tell you, it is all of the above, but let me tell you what's really happening down at each customer level. When customers try us for some reason, whether they're using Fusion and they start using OCI for their own applications or they hear really from word of mouth and from really a need to run some of their Oracle workloads or otherwise, when they give a try to Gen2 OCI or to Fusion for that matter, what they find is that it is phenomenal. Our Gen2 Cloud is so much better than what they're used to and is so much more flexible and can be much more local, gives them so many more opportunities to really match to their own needs, but they're overwhelmed by the technical capabilities of our cloud and how great it is. So, what happens is they may start small and then they accelerate in their consumption, and they sign larger and larger and more significant contracts.\n\nAs you see in our RPO, there's a lot already contracted, and that's without us adding a single additional customer or expanding the use. But we have, as I said, so much company-specific or product-specific momentum that as customers discover us, use us, give us a chance, they become honestly overwhelmed by our capabilities and how much less expensive, more flexible, more secure, and how differently we're architected such that we're also more sustainable for them. And so, it's just incredible company-specific, product-specific momentum, and nothing really has to happen for us to continue to do very, very well here. And whether they're trying to save costs or expand growth, we help them do that in an incredibly flexible way and super, super cost-competitive for them."
+        },
+        {
+          "topic": "License Revenue Strength",
+          "content": "So contrary to, I think, the fears the people always have, the Oracle database is still the biggest part of license by far. So, most important part, the database remains strong because customers understand that they can BYOL, bring your own license, and they can have coverage, whether they're on-premise, in the cloud, or moving in between the two. So, again, really always the big number. But we've got growth rates that are very strong in Analytics.\n\nWe have growth rates that are super strong in Java. We have growth rates that are strong in the Industries areas. Some of our Industries applications. And then -- so, I want to make sure I gave you the numbers both ways.\n\nWith Cerner, we have a growth rate of 23% because, of course, you had the Cerner license. Without Cerner, it's 9% growth. So, even without Cerner, we have license growth after a very strong growth rate a full year ago in license. So, again, big dog is, of course, technology.\n\nThat's the bulk of it. But we've got a few industry apps and a little bit of Cerner. And it just remains just super strong."
+        }
+      ]
+    },
+    "larry_j_ellison": {
+      "role": "Chairman and Chief Technology Officer",
+      "responses": [
+        {
+          "topic": "Unique Value Proposition of Oracle Infrastructure",
+          "content": "Well, maybe the most interesting thing is we have a much faster network than anybody else. We have a fundamentally different network than any of the other cloud providers. We have what's called an RDMA network that we had to build because our Exadata machines and our database actually glued together a lot of computers. And when you had a single database application that could run on one computer or it could run on a cluster of computers, two computers, four computers, eight computers, whatever, so that there was no single point of failure.\n\nOne of the beauties of the Oracle Database, one of the big differences between the Oracle Database and other databases is that the Oracle Database, a single application could run on multiple computers. If one of those computers would fail, the application would keep running. It was fault tolerant. It would tolerate a failure of a machine.\n\nOther people don't have that. But in order to do that, we had to make our network. You're going to have a cluster of four machines running a single database app. We have to make that network between those four machines very fast.\n\nAnd that's called an RDMA network. It means that one computer can immediately access the memory of another computer without going through an interrupt. It's a very fast way to interconnect computers and have them act as a group. We built that for our entire cloud so we could run our database, our Oracle Real Application Cluster database on any of the computers in our cloud.\n\nNow, because we built this hyper-fast network, it turns out it has more utility than just running the Oracle Database. So, if you're running a cluster of computers doing a simulation, a car crash simulation -- that was one of the first applications people noticed ran much faster on Oracle. And now, a much bigger application that has run much faster on Oracle was on neural networks and machine-learning workloads, run much faster on Oracle, so -- because our network is just intrinsically much faster and thereby there are also -- there are security and reliability advantages to go along with that. So, our networks configured, we actually have -- all of our computers actually have two networks.\n\nI'm not going to go into all the details. But our computers are fundamentally different than any other cloud company. We have two networks. One of which is on the internet -- or I should say, one of which interconnects all of our customers' computers.\n\nAnd the other, which is our, if you will, our control network, where our -- and computers that run our cloud control software, which is isolated from the customer's software. So, the customer can't tamper with our cloud control software. They can't get control of it. And we can't see the customers' data.\n\nThat is unique to Oracle. But the -- because we have the two networks and because one of the networks is RDMA, we just run much, much faster, much more reliably than they do. And it's a fundamental advantage that they can't compete with, unless they rebuild their cloud from scratch."
+        },
+        {
+          "topic": "OCI Multi-Cloud Partnerships Impact",
+          "content": "Yeah, let me just add one thing, which is Safra addressed the issue of modernizing back office to save money. Let me tell you another way you can save money. We -- I personally have been talking to some of Amazon's most famous brands that are running at AWS.\n\nAnd the AWS build is getting very large, and they can save a huge amount of money by moving to OCI. And we, I expect next quarter, will be announcing some brands, some companies moving off of Amazon to OCI that will shock you. I'll stop there."
+        }
+      ]
+    },
+    "ken_bond": {
+      "role": "Senior Vice President",
+      "responses": [
+        {
+          "topic": "Closing Remarks",
+          "content": "A telephonic replay of this conference call will be available for 24 hours on our Investor Relations website. Thank you for joining us today.\n\nAnd with that, I'll turn the call back to Josh for closing."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Brad Zelnick",
+      "firm": "Deutsche Bank",
+      "topics": ["OCI Cost Advantage", "Sustainability of Cost Advantage"],
+      "questions": [
+        {
+          "question_text": "Great. Thanks very much for taking my question, and congrats on the solid results. Larry, Oracle has a rich history of being a price performance leader in just about everything it does. But technically speaking, why exactly does OCI have an inherent cost advantage? And how sustainable is that advantage? Thanks."
+        }
+      ]
+    },
+    {
+      "analyst": "Phil Winslow",
+      "firm": "Credit Suisse",
+      "topics": ["IaaS and RPO Growth Drivers", "OCI Workloads Strength"],
+      "questions": [
+        {
+          "question_text": "Hey. Thanks for taking my question. Congrats on another strong quarter. And really, two metrics jumped out to me this quarter.\n\nFirst, with, you know, IaaS revenue accelerated to 59% from 58% and 39% the prior two quarters. And organic RPO growth also accelerated to 28%, which is pretty phenomenal this quarter, from 22 and 17 in the prior two quarters. Can you just give us sort of a breakdown of what's driving this continued strength compared to some of your cloud competitors in the past in the IaaS world that have experienced decelerating growth in recent months? And are there any workloads in particular that are driving the relative strength of OCI?"
+        }
+      ]
+    },
+    {
+      "analyst": "John DiFucci",
+      "firm": "Guggenheim Partners",
+      "topics": ["Cloud Services Growth Drivers", "Revenue Growth Confidence"],
+      "questions": [
+        {
+          "question_text": "Hi, Safra and Larry. I'm a little surprised to see your strong results here when most software companies, other than some of the pure security names, really faltered some against the macro backdrop. And frankly, you just didn't hear. But I want to focus the question on one area that we've gotten the most questions on since we launched coverage, and that's on organic constant-currency cloud services growth.\n\nIt looks like you came in above the high end of your guidance for the quarter, and you reiterated, Safra, that you expect greater than 30% growth for the year, which doesn't seem like a stretch like it did when you gave that first. We understand the way a subscription model works but we obviously don't see everything that you see. Can you give us some more color around what's driving the results this quarter and what gave you the confidence in this outlook for cloud services? Was it previously contracted revenue that's just starting to ramp up? Was it expected increase in consumption or something else or all of the above?"
+        }
+      ]
+    },
+    {
+      "analyst": "Mark Moerdler",
+      "firm": "AllianceBernstein",
+      "topics": ["ERP and HCM Growth Amid Economic Downturn", "Back-Office Investment Drivers"],
+      "questions": [
+        {
+          "question_text": "Thank you very much for taking question. I really appreciate the ability to ask the question, and congratulations on the quarter. Two related questions on Cerner. Safra, where are we on the Cerner integration process, as well as taking out the costs? And when do you think you can drive those long-term costs over time? And, Larry, we heard a lot of great futures at Oracle World about CERN and what you can do in healthcare.\n\nIt'd be interesting to hear what progress you've made recently. Thanks."
+        }
+      ]
+    },
+    {
+      "analyst": "Derrick Wood",
+      "firm": "Cowen and Company",
+      "topics": ["OCI Go-to-Market Strategy", "Sales Force and Bundling"],
+      "questions": [
+        {
+          "question_text": "Great. Thanks. And I'll add my congratulations, and Larry, thanks for all the color on the OCI wins. I was hoping to get an update on your go-to-market strategy for OCI.\n\nI mean, it's clearly becoming a more critical growth driver for you guys. Is there a dedicated sales force? Are you doing more bundling of OCI with other offerings? Just hoping to get an update on how you're going to market and what kind of resources you're putting around OCI because with 58% growth, it certainly seems like you're now gaining share in the cloud infrastructure market and it's a big market to go after. So, any color on that would be helpful."
+        }
+      ]
+    },
+    {
+      "analyst": "Brad Zelnick",
+      "firm": "Deutsche Bank",
+      "topics": ["Cerner Integration Value", "CapEx Increase Explanation"],
+      "questions": [
+        {
+          "question_text": "Excellent. Thank you. And congrats on the solid execution. Larry, we've heard of some very exciting things happening with Cerner pretty quickly after the deal just closed, with some hospital networks we heard from significantly expanding their existing contracts.\n\nCan you talk about the unique value you're able to deliver now that Cerner is a part of Oracle and the broader expansion opportunity that you see ahead? And if I could just sneak in one for you as well, Safra. $1.7 billion in capex in Q1 is a pretty big number. And I know very well that you don't spend frivolously. What can you tell us about the big step-up here?"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2023-06-15T00:00:00Z",
+    "company_ticker": "ORCL",
+    "source": "Q2 2023 Earnings Call Transcript",
+    "operating_environment_challenges": [
+      "Macroeconomic uncertainty and potential recession impacts",
+      "High competition in cloud infrastructure market",
+      "Integration of acquired companies (e.g., Cerner)",
+      "Customer demand for flexible and cost-effective cloud solutions",
+      "Technological advancements in AI and machine learning workloads",
+      "Maintaining and expanding multi-cloud partnerships"
+    ],
+    "executive_changes": {
+      "new_leadership": {
+        "name": "N/A",
+        "role": "N/A",
+        "start_date": "N/A",
+        "context": "N/A"
+      },
+      "leadership_transition": {
+        "name": "N/A",
+        "role": "N/A",
+        "end_date": "N/A",
+        "successor": {
+          "name": "N/A",
+          "role": "N/A",
+          "context": "N/A"
+        }
+      }
+    }
+  }
+}

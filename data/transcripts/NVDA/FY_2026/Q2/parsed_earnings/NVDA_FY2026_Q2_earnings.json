@@ -1,0 +1,179 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q2",
+  "fiscal_year": "2026",
+  "financials": {
+    "gaap": {
+      "revenue": {
+        "value": 46.743,
+        "unit": "billion USD",
+        "year_over_year_change": "+56%",
+        "quarter_over_quarter_change": "+6%",
+        "notes": "Blackwell Data Center revenue grew 17% sequentially and GB300 production ramped"
+      },
+      "gross_margin": {
+        "value": 72.4,
+        "unit": "percent",
+        "change": "+11.9 pts QoQ",
+        "notes": "Includes a $180M release of prior H20 reserves plus $650M of unrestricted H20 sales"
+      },
+      "operating_expenses": {
+        "value": 5.413,
+        "unit": "billion USD",
+        "year_over_year_change": "+38%",
+        "quarter_over_quarter_change": "+8%",
+        "notes": "Reflects higher compute infrastructure, compensation and benefit investments"
+      },
+      "operating_income": {
+        "value": 28.440,
+        "unit": "billion USD",
+        "year_over_year_change": "+31%"
+      },
+      "net_income": {
+        "value": 26.422,
+        "unit": "billion USD",
+        "year_over_year_change": "+41%",
+        "notes": "Income lifted by the release of H20 reserves while no China H20 shipments were assumed"
+      },
+      "eps": {
+        "diluted": 1.08,
+        "basic": 1.08,
+        "year_over_year_change": "+61%"
+      }
+    },
+    "non_gaap": {
+      "gross_margin": {
+        "value": 72.7,
+        "unit": "percent",
+        "adjusted_for": "72.3% margin ex-H20 charges/releases"
+      },
+      "operating_expenses": {
+        "value": 3.795,
+        "unit": "billion USD",
+        "notes": "Excludes stock-based compensation, acquisition, and other costs"
+      },
+      "operating_income": {
+        "value": 30.165,
+        "unit": "billion USD",
+        "year_over_year_change": "+30%"
+      },
+      "net_income": {
+        "value": 25.783,
+        "unit": "billion USD",
+        "year_over_year_change": "+30%",
+        "notes": "Non-GAAP excludes the $180M H20 release adjustment"
+      },
+      "eps": {
+        "diluted": 1.05,
+        "adjusted_diluted": 1.04,
+        "notes": "1.04 excluding H20 related charge/release and tax impact"
+      }
+    },
+    "segment_revenue": {
+      "Data_Center": {
+        "value": 41.1,
+        "unit": "billion USD",
+        "year_over_year_change": "+56%",
+        "quarter_over_quarter_change": "+5%",
+        "highlights": [
+          "Blackwell Data Center revenue grew 17% sequentially; GB300 production shipments accelerated after the seamless GB200 ramp",
+          "No H20 shipments to China, but $180M release of reserved inventory and $650M of unrestricted H20 sales supported the quarter",
+          "Rubin platform timing remains on track while NVLink 144 and Spectrum-XGS continue to support AI factory build-outs"
+        ]
+      },
+      "Gaming": {
+        "value": 4.3,
+        "unit": "billion USD",
+        "year_over_year_change": "+49%",
+        "quarter_over_quarter_change": "+14%",
+        "highlights": [
+          "Blackwell-powered GeForce RTX 5060 family and DLSS 4 adoption fueled record gaming revenue and improved supply",
+          "GeForce Now expanded with Install-to-Play and 4,500-title catalog; OpenAI models optimized for RTX PCs"
+        ]
+      },
+      "Professional_Visualization": {
+        "value": 0.601,
+        "unit": "billion USD",
+        "year_over_year_change": "+32%",
+        "quarter_over_quarter_change": "+18%",
+        "notes": "RTX PRO 4000/2000 Blackwell GPUs and Omniverse/RTX Pro servers drive adoption"
+      },
+      "Automotive_and_Robotics": {
+        "value": 0.586,
+        "unit": "billion USD",
+        "year_over_year_change": "+69%",
+        "quarter_over_quarter_change": "+3%",
+        "notes": "Thor SoC, DRIVE AGX, and Isaac GR00T platforms enable automakers and robotics pioneers"
+      }
+    },
+    "operations": {
+      "cash_flow": {
+        "from_operations": {
+          "value": 15.365,
+          "unit": "billion USD"
+        },
+        "free_cash_flow": {
+          "value": 13.450,
+          "unit": "billion USD"
+        }
+      },
+      "capital_return": {
+        "share_repurchases": 10.0,
+        "dividends": 0.244,
+        "notes": "Returned $10B in the quarter; Board authorized an additional $60B buyback"
+      }
+    },
+    "capital_expenditures": {
+      "cash_paid_pp&e": {
+        "value": 1.894,
+        "unit": "billion USD",
+        "notes": "Investing to expand GB200/GB300 production footprints, networking, and Omniverse compute"
+      }
+    },
+    "expenses": {
+      "cost_of_revenue": 12.890,
+      "research_and_development": 4.291,
+      "sales_general_and_administrative": 1.122
+    }
+  },
+  "operational_highlights": {
+    "data_center_and_blackwell": [
+      "GB200 NVLink72 racks remain the inference workhorse while GB300 samples transitioned into full production with 1,000 racks per week",
+      "Rubin roadmap remains on cadence as customers prepare for NVLink 144 scale-up, Spectrum-XGS, and Quantum-X silicon photonics interconnects",
+      "Blackwell Ultra revenue accelerated and AI factories across sovereigns/enterprises scaled tokens at 10k+ NVLink racks"
+    ],
+    "networking": [
+      "Networking revenue hit a record $7.3B led by Spectrum-X, Spectrum-XGS, NVLink Fusion, InfiniBand XDR, and NVLink switches with 130 TB/sec domains",
+      "Spectrum-X annualized revenue surpassed $10B and now includes Google Cloud, Meta, and global OEM collaborations"
+    ],
+    "gaming_and_ai_pc": [
+      "GeForce RTX 5060 desktops/laptops hit record ramp; DLSS 4 is live in 175+ games and arriving on Blackwell-powered GeForce NOW",
+      "Partnered with OpenAI and NVIDIA optimized GPT inference on RTX PCs, enabling fast local AI experiences"
+    ],
+    "sovereign_and_physical_ai": [
+      "Announced AI factories with European & Middle Eastern governments and the $500B Stargate-style infrastructure; OmniVerse/Digital Twin blueprints accelerate robotic/industrial operations",
+      "Automotive wins include Mercedes-Benz, GM, Hyundai and Jetson AGX Thor deployments while Isaac GR00T supports humanoid innovation"
+    ]
+  },
+  "outlook": {
+    "q3_guidance": {
+      "revenue": "54.0 ±2% billion USD",
+      "gaap_gross_margin": "73.3% ±0.5 pts",
+      "non_gaap_gross_margin": "73.5% ±0.5 pts",
+      "gaap_operating_expenses": "≈5.9 billion USD",
+      "non_gaap_operating_expenses": "≈4.2 billion USD",
+      "other_income": "≈0.5 billion USD income excluding non-marketable equity gains",
+      "tax_rate": "≈16.5% ±1%",
+      "notes": "Guidance assumes no H20 shipments to China; targets mid-70s non-GAAP margin exit"
+    },
+    "full_year": {
+      "operating_expenses": "Expected to grow in the high-30s% range; CapEx will continue to fund AI factory and networking expansion",
+      "cash_flow": "H20 adjustments and inventory tailwinds may continue to favor margins; onshore supply chain capacity remains a priority"
+    }
+  },
+  "metadata": {
+    "parsed_date": "2025-08-27T00:00:00Z",
+    "source": "NVIDIA FY 2026 Q2 press release"
+  }
+}
+

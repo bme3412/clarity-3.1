@@ -1,0 +1,210 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q4",
+  "fiscal_year": "2025",
+  "financials": {
+    "gaap": {
+      "revenue": {
+        "value": 39.331,
+        "unit": "billion USD",
+        "year_over_year_change": "+78%",
+        "quarter_over_quarter_change": "+12%",
+        "notes": "Record quarterly revenue led by Data Center and Blackwell demand"
+      },
+      "gross_margin": {
+        "value": 73.0,
+        "unit": "percent",
+        "change": "-1.6 pts QoQ"
+      },
+      "operating_expenses": {
+        "value": 4.689,
+        "unit": "billion USD",
+        "year_over_year_change": "+48%",
+        "quarter_over_quarter_change": "+9%"
+      },
+      "operating_income": {
+        "value": 24.034,
+        "unit": "billion USD",
+        "year_over_year_change": "+77%",
+        "quarter_over_quarter_change": "+10%"
+      },
+      "net_income": {
+        "value": 22.091,
+        "unit": "billion USD",
+        "year_over_year_change": "+80%",
+        "quarter_over_quarter_change": "+14%"
+      },
+      "eps": {
+        "diluted": 0.89,
+        "basic": 0.90,
+        "year_over_year_change": "+82%",
+        "quarter_over_quarter_change": "+14%"
+      }
+    },
+    "non_gaap": {
+      "gross_margin": {
+        "value": 73.5,
+        "unit": "percent",
+        "notes": "Includes adjustments for stock-based compensation and acquisition costs"
+      },
+      "operating_expenses": {
+        "value": 3.378,
+        "unit": "billion USD",
+        "year_over_year_change": "+53%",
+        "quarter_over_quarter_change": "+11%"
+      },
+      "operating_income": {
+        "value": 25.516,
+        "unit": "billion USD",
+        "year_over_year_change": "+73%",
+        "quarter_over_quarter_change": "+10%"
+      },
+      "net_income": {
+        "value": 22.066,
+        "unit": "billion USD",
+        "year_over_year_change": "+72%",
+        "quarter_over_quarter_change": "+10%"
+      },
+      "eps": {
+        "diluted": 0.89,
+        "year_over_year_change": "+71%",
+        "quarter_over_quarter_change": "+10%"
+      }
+    },
+    "fiscal_year": {
+      "revenue": {
+        "value": 130.497,
+        "unit": "billion USD",
+        "year_over_year_change": "+114%"
+      },
+      "net_income": {
+        "value": 72.880,
+        "unit": "billion USD",
+        "year_over_year_change": "+145%"
+      },
+      "eps": {
+        "diluted": 2.94,
+        "year_over_year_change": "+147%"
+      }
+    }
+  },
+  "segment_revenue": {
+    "Data_Center": {
+      "value": 35.6,
+      "unit": "billion USD",
+      "year_over_year_change": "+93%",
+      "quarter_over_quarter_change": "+16%",
+      "highlights": [
+        "Blackwell revenue topped $11B in its first quarter with fastest ramp in company history",
+        "Data Center revenue now $115.2B for FY 2025, more than doubling year over year",
+        "Inference and reasoning models (OpenAI, DeepSeek-R1, Grok 3) continue to drive capacity build-outs"
+      ]
+    },
+    "Gaming": {
+      "value": 2.5,
+      "unit": "billion USD",
+      "year_over_year_change": "-11%",
+      "quarter_over_quarter_change": "-22%",
+      "highlights": [
+        "New GeForce RTX 50-series and DLSS 4 launched alongside Copilot+ AI PC partnerships",
+        "Supply constraints eased slightly with expectation of Q1 sequential rebound"
+      ]
+    },
+    "Professional_Visualization": {
+      "value": 0.511,
+      "unit": "billion USD",
+      "year_over_year_change": "+10%",
+      "quarter_over_quarter_change": "+5%",
+      "highlights": [
+        "Digital twin, robotics, and simulation workloads benefit from Omniverse and AI Blueprints"
+      ]
+    },
+    "Automotive_and_Robotics": {
+      "value": 0.570,
+      "unit": "billion USD",
+      "year_over_year_change": "+103%",
+      "quarter_over_quarter_change": "+27%",
+      "highlights": [
+        "Record Automotive revenue as Toyota, Aurora, Continental, and Hyundai ramp Orin and Drive platforms"
+      ]
+    }
+  },
+  "cash_flow": {
+    "from_operations": {
+      "value": 16.628,
+      "unit": "billion USD",
+      "notes": "GAAP cash from ops reflects strong revenue and deferred investment timing"
+    },
+    "free_cash_flow": {
+      "value": 15.519,
+      "unit": "billion USD",
+      "notes": "After CapEx and PP&E purchases the quarter remained highly cash generative"
+    },
+    "capital_returns": {
+      "share_repurchases": {
+        "value": 7.810,
+        "unit": "billion USD"
+      },
+      "dividends": {
+        "value": 0.245,
+        "unit": "billion USD"
+      }
+    }
+  },
+  "capital_expenditures": {
+    "cash_paid_PP&E": {
+      "value": 1.077,
+      "unit": "billion USD",
+      "notes": "Investments continue to support Blackwell and data center build-outs"
+    },
+    "non_gaap_investments": {
+      "value": 0.478,
+      "unit": "billion USD",
+      "notes": "Acquisitions and non-affiliated investments to expand AI software and services"
+    }
+  },
+  "operational_highlights": {
+    "data_center_and_blackwell": [
+      "Blackwell became available across AWS, Azure, GCP, OCI, and sovereign builds with 100k+ GPU clusters",
+      "Q4 Data Center revenue grew 18% sequentially with GB200 deployments used for training, inference, and reasoning workloads"
+    ],
+    "inference_and_scaling": [
+      "Blackwell designed for reasoning AI delivers 25x faster throughput and 20x lower cost vs Hopper for long-thinking workloads",
+      "Inference time scaling (Strawberry, Grok 3, DeepSeek-R1) is consuming 100x more compute and is already expanding rapidly"
+    ],
+    "networking": [
+      "Spectrum-X Ethernet and NVLink switches power AI factories while networking revenue expected to rebound in Q1 after a slight sequential dip",
+      "Cisco and other partners embedding Spectrum-X to extend GPU-accelerated networking across enterprise AI deployments"
+    ],
+    "gaming_and_ai_pcs": [
+      "GeForce RTX 50 series PCs deliver up to 2x generational performance and multi-frame generation through DLSS 4",
+      "Copilot+ PCs launched with multi-modal AI experiences while gaming supply constraints ease going into Q1"
+    ],
+    "sovereign_and_physical_ai": [
+      "Sovereign clouds, including the $500B Stargate project, adopt GB200 clusters and Omniverse/AI Blueprints",
+      "Automotive and robotics wins (Toyota, Hyundai, Uber, Aurora) expand the physical AI platform and DriveOS certification"
+    ]
+  },
+  "outlook": {
+    "q1_guidance": {
+      "revenue": "43.0 ±2% billion USD",
+      "gaap_gross_margin": "70.6% ±0.5 pts; reflects continued Blackwell mix",
+      "non_gaap_gross_margin": "71.0% ±0.5 pts",
+      "gaap_operating_expenses": "≈5.2 billion USD",
+      "non_gaap_operating_expenses": "≈3.6 billion USD",
+      "other_income": "≈0.4 billion USD income excluding non-marketable investment volatility",
+      "tax_rate": "17% ±1%"
+    },
+    "full_year_fy26": {
+      "revenue_growth": "Double-digit growth sustained by AI and Data Center investments",
+      "capex": ">30 billion USD with finance-lease timing, with more short-lived assets supporting cloud expansions",
+      "operating_expenses": "Expected to grow into the mid-30s percentile year over year as R&D and data center spend continue",
+      "gross_margin_direction": "Low-70s this quarter, improving toward mid-70s as Blackwell yields normalize"
+    }
+  },
+  "metadata": {
+    "parsed_date": "2025-02-26T00:00:00Z",
+    "source": "NVIDIA FY2025 Q4 earnings release and transcript"
+  }
+}
+

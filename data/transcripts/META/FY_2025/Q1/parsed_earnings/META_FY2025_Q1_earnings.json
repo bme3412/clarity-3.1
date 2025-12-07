@@ -1,0 +1,161 @@
+{
+  "company_name": "Meta",
+  "quarter": "Q1",
+  "fiscal_year": "2025",
+  "financials": {
+    "total_revenue": {
+      "value": 42.314,
+      "unit": "billion USD",
+      "year_over_year_change": "+16%",
+      "constant_currency_growth": "+19%",
+      "context": "Q1 2025 revenue of $42.3B driven by ads strength, business messaging, and ongoing user growth."
+    },
+    "costs_and_expenses": {
+      "value": 24.759,
+      "unit": "billion USD",
+      "year_over_year_change": "+9%",
+      "context": "Operating costs rose with infrastructure inflation, but lower legal expenses kept growth controlled."
+    },
+    "operating_income": {
+      "value": 17.555,
+      "unit": "billion USD",
+      "operating_margin": "41%",
+      "context": "Operating margin expanded from 38% to 41% as AI-driven ads performance offset infrastructure costs."
+    },
+    "net_income": {
+      "value": 16.644,
+      "unit": "billion USD",
+      "year_over_year_change": "+35%",
+      "context": "Net income benefited from higher leverage and a lower tax rate (9%) due to share-based comp windfalls."
+    },
+    "eps": {
+      "basic": 6.59,
+      "diluted": 6.43,
+      "unit": "USD per share",
+      "context": "Diluted EPS rose 37% to $6.43."
+    },
+    "cash_flow": {
+      "operating_cash_flow": {
+        "value": 24.026,
+        "unit": "billion USD",
+        "context": "Strong underlying cash generation of $24.0B."
+      },
+      "free_cash_flow": {
+        "value": 10.334,
+        "unit": "billion USD",
+        "context": "Free cash flow after $12.9B of CapEx and $751M finance lease payments."
+      }
+    },
+    "capital_expenditures": {
+      "value": 13.69,
+      "unit": "billion USD",
+      "context": "CapEx up as data center build-outs and AI hardware costs accelerate; FY guide now $64-72B."
+    },
+    "capital_return": {
+      "share_repurchases": {
+        "value": 13.4,
+        "unit": "billion USD",
+        "context": "Aggressive buybacks under the $50B authority."
+      },
+      "dividends": {
+        "value": 1.33,
+        "unit": "billion USD",
+        "context": "Quarterly dividend paid in April 2025."
+      }
+    }
+  },
+  "operating_metrics": {
+    "family": {
+      "daily_active_people": {
+        "value": 3.43,
+        "unit": "billion",
+        "context": "Average DAP for March 2025."
+      },
+      "ad_impressions_growth": "+5% YoY",
+      "average_price_per_ad": "+10% YoY",
+      "regional_breakdown": {
+        "rest_of_world": "+19% revenue growth",
+        "north_america": "+18%",
+        "europe": "+14%",
+        "asia_pacific": "+12%"
+      },
+      "other_revenue": {
+        "value": 0.51,
+        "unit": "billion USD",
+        "context": "Business messaging and WhatsApp revenue growth (+34%)."
+      }
+    },
+    "reality_labs": {
+      "revenue": {
+        "value": 0.412,
+        "unit": "billion USD",
+        "year_over_year_change": "-6%",
+        "context": "Hardware sales down as Quest softens but Ray-Ban Meta AI glasses continue to ramp." 
+      },
+      "expenses": {
+        "value": 4.210,
+        "unit": "billion USD",
+        "year_over_year_change": "+8%",
+        "context": "Higher staffing and go-to-market investments kept RL losses around $4.2B."
+      }
+    }
+  },
+  "strategic_updates": {
+    "ads": {
+      "initiatives": [
+        "Generative Ads Recommendation Model (GEM) training on thousands of GPUs",
+        "Advantage+ Creative expansion with video expansion and image generation",
+        "Incremental attribution tests showing +46% lift in conversions"
+      ],
+      "goals": [
+        "Drive precision ad supply matching to objectives",
+        "Rationalize ad formats across emerging formats (Reels, Threads)"
+      ]
+    },
+    "ai": {
+      "milestones": [
+        "Meta AI continues scaling to ~1B MAUs across surfaces",
+        "Stand-alone Meta AI app launched with social feed and personalization",
+        "Live translations rolled out on Ray-Ban Meta AI glasses"
+      ],
+      "goals": [
+        "Deepen personalization via memory and activity data",
+        "Use Meta AI to power new business messaging agents",
+        "Advance AI devices that blend physical and digital contexts"
+      ]
+    },
+    "infrastructure": {
+      "description": "CapEx range raised to $64-72B to keep AI and core capacity ahead of demand while staying flexible.",
+      "drivers": ["Data center build-outs", "Higher hardware costs from global supply uncertainty", "Flexible deployment across gen AI and rankings"]
+    }
+  },
+  "outlook": {
+    "q2_2025_revenue_guidance": {
+      "range": "42.5-45.5",
+      "unit": "billion USD",
+      "context": "Assumes ~1% FX tailwind and reflects e-commerce advertiser uncertainty post-de minimis Elimination."
+    },
+    "full_year_2025_expenses": {
+      "range": "113-118",
+      "unit": "billion USD",
+      "context": "Updated view incorporates refined personnel forecasts offsetting higher infrastructure/Reality Labs COGS."
+    },
+    "capex": {
+      "range": "64-72",
+      "unit": "billion USD",
+      "context": "Revised up to fund faster data center deployment and absorb rising hardware costs."
+    },
+    "tax_rate": {
+      "range": "12-15%",
+      "context": "No change despite lower Q1 tax screw."
+    },
+    "regulatory": {
+      "focus": "Monitoring DMA compliance on no-ads subscription model and potential EU revenue impact."
+    }
+  },
+  "metadata": {
+    "parsed_date": "2025-05-15T00:00:00Z",
+    "company_ticker": "META",
+    "source": "Q1 2025 press release"
+  }
+}

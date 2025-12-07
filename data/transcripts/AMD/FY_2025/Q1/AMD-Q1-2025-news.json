@@ -1,0 +1,75 @@
+{
+  "ticker": "AMD",
+  "fiscal_year": 2025,
+  "fiscal_quarter": "Q1",
+  "timeframe": {
+    "quarter_start": "2024-12-29",
+    "quarter_end": "2025-03-29",
+    "earnings_release_date": "2025-05-06"
+  },
+  "documents": [
+    {
+      "id": "AMD_FY25Q1_001",
+      "title": "AMD Reports First Quarter 2025 Financial Results",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1247/amd-reports-first-quarter-2025-financial-results",
+      "publisher": "AMD Investor Relations",
+      "published_date": "2025-05-06",
+      "source_type": "official",
+      "category": ["earnings", "company_results"],
+      "event_date": "2025-03-29",
+      "relevance": "Authoritative source for Q1 2025 financials including revenue, margin, EPS and segment performance.",
+      "summary": "AMD announced Q1 2025 revenue of approximately $7.438 billion, up 36% year-over-year. GAAP gross margin was 50%. GAAP operating income was about $806 million; net income $709 million; diluted EPS $0.44. On a non-GAAP basis, gross margin was 54%, operating income $1.779 billion, net income $1.566 billion, EPS $0.96. Data Center segment revenue was $3.7 billion (+57% YoY). Client & Gaming revenue was $2.9 billion (+28% YoY; Client portion up ~68%, Gaming down ~30%). Embedded segment revenue was $823 million (-3% YoY).",
+      "key_points": [
+        "Revenue: ~$7.438B, +36% year-over-year. :contentReference[oaicite:1]{index=1}",
+        "GAAP EPS: $0.44; Non-GAAP EPS: $0.96. :contentReference[oaicite:2]{index=2}",
+        "Data Center revenue: ~$3.7B, +57% YoY. :contentReference[oaicite:3]{index=3}",
+        "Client & Gaming: ~$2.9B, +28% YoY; Client ~$2.3B (+68% YoY), Gaming ~$647M (-30% YoY). :contentReference[oaicite:4]{index=4}",
+        "Embedded: ~$823M, down ~3% YoY. :contentReference[oaicite:5]{index=5}",
+        "Management commentary stressed execution, AI/data-center momentum, and regulatory/headwind risks. :contentReference[oaicite:6]{index=6}"
+      ],
+      "embeddings_text": "AMD’s Q1 2025 results marked a strong start to the year: revenue climbed ~36 % year-over-year to about $7.44 billion, with non-GAAP EPS of $0.96. The Data Center segment grew ~57 % to ~$3.7 billion, driven by EPYC CPUs and Instinct GPUs, while Client & Gaming revenue rose ~28 % to ~$2.9 billion, powered by a ~68 % jump in Client lead processors; Gaming declined ~30 % due to semi-custom weakness. Embedded revenue slipped ~3 % to ~$823 million. Gross margin improved to ~54 % non-GAAP. Management emphasised expanding AI and data-center momentum, but noted regulatory risks – especially export restrictions to China – and indicated Q2 guidance reflecting those headwinds. These results set the stage for AMD’s 2025 growth narrative in compute and AI, though near-term margin and China exposure remain key risk levers.",
+      "tags": ["FY25-Q1", "earnings", "data_center_growth", "client_cpu_ramp", "gaming_decline", "export_controls", "ai_momentum"]
+    },
+    {
+      "id": "AMD_FY25Q1_002",
+      "title": "AMD Q1 FY 2025 Financial Results Highlight AI-Led Growth Across Core Segments",
+      "url": "https://futurumgroup.com/insights/amd-q1-fy-2025-financial-results-highlight-ai-led-growth-across-core-segments/",
+      "publisher": "Futurum Group",
+      "published_date": "2025-05-13",
+      "source_type": "analysis",
+      "category": ["analysis", "strategic_growth"],
+      "event_date": "2025-05-06",
+      "relevance": "Analyst commentary on growth drivers, product mix shifts, and regulatory risk around export controls and AI acceleration.",
+      "summary": "The article highlights AMD’s AI-led growth in Q1 FY2025: Data Center revenue surged ~57 % YoY to ~$3.7 billion, led by EPYC and Instinct platforms. Client revenue grew ~68 % to ~$2.3 billion thanks to premium Ryzen CPU mix. Gaming revenue declined ~30 % to ~$647 million due to console softness and semi-custom. Embedded revenue was down ~3 %. It emphasizes that export restrictions on MI308/AI accelerators to China represent a ~$1.5 billion revenue headwind for 2025. The piece frames AMD’s positioning in the fast-growing compute/AI market, while pointing to margin and China risks as key watchpoints.",
+      "key_points": [
+        "Data Center +57% YoY to ~$3.7B. :contentReference[oaicite:7]{index=7}",
+        "Client revenue +68% YoY to ~$2.3B. :contentReference[oaicite:8]{index=8}",
+        "Gaming revenue –30% YoY to ~$647M. :contentReference[oaicite:9]{index=9}",
+        "Export controls to China estimated to impose ~$1.5B revenue hit in 2025. :contentReference[oaicite:10]{index=10}",
+        "Gross margin ~54% non-GAAP, supporting operating leverage. :contentReference[oaicite:11]{index=11}"
+      ],
+      "embeddings_text": "Analyst perspective: AMD’s Q1 2025 demonstrates meaningful share gains and product-cycle strength in high-growth domains, particularly data center and client computing. Data Center revenue grew ~57%, underpinned by EPYC CPUs and Instinct GPUs, while Client revenue soared ~68% driven by high-end Ryzen processors and richer ASPs. Gaming remains under pressure, with a ~30% decline tied to console chip cutbacks and semi-custom softness. Embedded continues to be a drag. Importantly, while the underlying operating performance is improving, export controls—specifically restrictions on shipments to China of MI308/AI accelerators—represent an estimated ~$1.5 billion headwind in 2025. From a margin standpoint, AMD achieved ~54% gross margin (non-GAAP) and is leveraging cost scale. For a RAG index, this narrative helps tie together AMD’s product roadmap, AI/compute strategy, growth vectors, and regulatory/geopolitical cross-winds in Q1 2025.",
+      "tags": ["ai_strategy", "compute_share_gain", "premium_cpu", "china_export_risk", "embedded_weakness"]
+    },
+    {
+      "id": "AMD_FY25Q1_003",
+      "title": "AMD Q1 2025 Earnings Call Transcript & Market Reaction",
+      "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-amd-q1-2025-earnings-exceed-expectations-93CH-4026713",
+      "publisher": "Investing.com",
+      "published_date": "2025-05-06",
+      "source_type": "news",
+      "category": ["earnings_call", "market_sentiment"],
+      "event_date": "2025-05-06",
+      "relevance": "Captures management commentary, market/analyst sentiment, and forward-looking guidance including China/export headwinds and AI ramp timing.",
+      "summary": "In the Q1 2025 earnings call, AMD management stated that revenue grew 36% year-over-year to ~$7.4 billion. The company slightly beat expectations with non-GAAP EPS ~$0.96. CEO Dr. Lisa Su said the firm ‘delivered an outstanding start to 2025…’ citing accelerating growth and AI/data-center momentum. CFO Jean Hu noted investment in R&D and go-to-market to support long-term growth. Analysts pressed on timing of MI350/MI355 AI accelerator rollout and regulatory/licensing drag in China. The company guided Q2 revenue around ~$7.4 billion (±$300 million), and flagged that export controls could influence margins and shipments.",
+      "key_points": [
+        "Revenue ~ $7.4B; non-GAAP EPS ~$0.96. :contentReference[oaicite:12]{index=12}",
+        "Guidance: Q2 revenue around $7.4B ± $300M. :contentReference[oaicite:13]{index=13}",
+        "Management emphasised AI/Data Center growth momentum but acknowledged China/export risk. :contentReference[oaicite:14]{index=14}",
+        "Market reaction: stock modestly up after hours; analysts focused on execution risk in AI accelerators and licensing. :contentReference[oaicite:15]{index=15}"
+      ],
+      "embeddings_text": "Management commentary from AMD’s Q1 2025 earnings call focuses on strong execution and growth across its core compute franchise, led by data center and client segments. While the topline and margins impressed, the company emphasizes that near-term drag remains from export/licensing constraints (especially to China) and that the competitive environment in AI accelerators remains intense. Guidance for Q2 (~$7.4 billion revenue) embeds that caution. For embedding purposes, this transcript document links the quantitative results to the qualitative strategic narrative — critical for downstream RAG queries like 'How does AMD view China risk in Q1 2025?' or 'What did AMD cite as the key drivers of AI momentum?'",
+      "tags": ["earnings_guidance", "management_commentary", "ai_ramp_timing", "export_controls", "client_growth"]
+    }
+  ]
+}

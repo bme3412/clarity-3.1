@@ -1,0 +1,166 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q3",
+  "fiscal_year": "2026",
+  "financials": {
+    "gaap": {
+      "revenue": {
+        "value": 57.006,
+        "unit": "billion USD",
+        "year_over_year_change": "+62%",
+        "quarter_over_quarter_change": "+22%",
+        "notes": "Record revenue with record Data Center and double-digit sequential growth"
+      },
+      "gross_margin": {
+        "value": 73.4,
+        "unit": "percent",
+        "change": "+1.0 pts QoQ",
+        "notes": "Improved mix, cycle times, and supply execution"
+      },
+      "operating_expenses": {
+        "value": 5.839,
+        "unit": "billion USD",
+        "notes": "Higher infrastructure compute and compensation supporting Rubin, GB300, networking, and software"
+      },
+      "operating_income": {
+        "value": 36.010,
+        "unit": "billion USD",
+        "year_over_year_change": "+65%"
+      },
+      "net_income": {
+        "value": 31.910,
+        "unit": "billion USD",
+        "year_over_year_change": "+65%"
+      },
+      "eps": {
+        "diluted": 1.30,
+        "basic": 1.31
+      }
+    },
+    "non_gaap": {
+      "gross_margin": {
+        "value": 73.6,
+        "unit": "percent",
+        "notes": "Includes H20 charge/release adjustments but excluding net approx still 73.6%"
+      },
+      "operating_expenses": {
+        "value": 4.215,
+        "unit": "billion USD"
+      },
+      "operating_income": {
+        "value": 37.752,
+        "unit": "billion USD"
+      },
+      "net_income": {
+        "value": 31.767,
+        "unit": "billion USD"
+      },
+      "eps": {
+        "diluted": 1.30
+      }
+    },
+    "segment_revenue": {
+      "Data_Center": {
+        "value": 51.2,
+        "unit": "billion USD",
+        "year_over_year_change": "+66%",
+        "quarter_over_quarter_change": "+25%",
+        "highlights": [
+          "Blackwell Ultra is ramping at full speed; record third-quarter Data Center revenue with GB300 contributions and NVLink networking enhancements",
+          "Partnerships with OpenAI, Google Cloud, Microsoft, Oracle, xAI, Anthropic, and sovereign programs expanded multi-gigawatt deployments",
+          "Rubin CPX and NVQLink platform announcements plus NVLink Fusion collaborations with Fujitsu and Intel underline next-gen roadmap"
+        ]
+      },
+      "Gaming": {
+        "value": 4.3,
+        "unit": "billion USD",
+        "year_over_year_change": "+30%",
+        "quarter_over_quarter_change": "-1%",
+        "highlights": [
+          "GeForce RTX Series launches (Borderlands 4, Battlefield 6) with DLSS 4 & Reflex and GeForce Now enhancements sustain demand"
+        ]
+      },
+      "Professional_Visualization": {
+        "value": 0.760,
+        "unit": "billion USD",
+        "year_over_year_change": "+56%",
+        "highlights": [
+          "DGX Spark shipments and RTX Pro/Omniverse innovations drive renewed enterprise workflows"
+        ]
+      },
+      "Automotive_and_Robotics": {
+        "value": 0.592,
+        "unit": "billion USD",
+        "year_over_year_change": "+32%",
+        "notes": "Drive AGX Hyperion 10 platform and Uber Level 4 fleet expansion"
+      }
+    },
+    "operations": {
+      "cash_flow": {
+        "from_operations": {
+          "value": 23.750,
+          "unit": "billion USD"
+        },
+        "free_cash_flow": {
+          "value": 22.089,
+          "unit": "billion USD"
+        }
+      },
+      "capital_return": {
+        "share_repurchases": 12.456,
+        "dividends": 0.243,
+        "notes": "Increased authorization (additional $60B) leaves $62.2B remaining"
+      }
+    },
+    "capital_expenditures": {
+      "cash_paid_pp&e": {
+        "value": 1.637,
+        "unit": "billion USD",
+        "notes": "Supports GB200/GB300/Blackwell Ultra capacity and Omniverse simulation sites"
+      }
+    },
+    "expenses": {
+      "cost_of_revenue": 15.157,
+      "research_and_development": 4.705,
+      "sales_general_and_administrative": 1.134
+    }
+  },
+  "operational_highlights": {
+    "data_center_innovation": [
+      "Blackwell Ultra and GB300 dominate revenue with NVLink rack-scale systems, while Rubin remains on track with Vera, Rubin GPU, CX9 SuperNIC, and Quantum-X interconnects",
+      "NVLink Fusion partnerships with Fujitsu and Intel plus NVQLink quantum interconnect and Spectrum-XGS scale-across offerings differentiate AI factory networking"
+    ],
+    "networking": [
+      "Networking revenue surged to $8.2B (162% YoY) with Spectrum-X, Spectrum-XGS, InfiniBand, NVLink, Quantum-X, and BlueField-4 fueling AI factory performance"
+    ],
+    "ecosystem": [
+      "Partnerships with OpenAI (10GW commitment), Anthropic, AWS/Human, Palantir, Nokia/6G, and U.S./European sovereign clouds highlight ecosystem breadth",
+      "Omniverse, Cosmos, RTX Pro servers, and RTX Remix/RTX Blueprint updates accelerate robotics, industrial, and creative AI use cases"
+    ],
+    "strategic_mentions": [
+      "Blackwell wafer production on U.S. soil, NVLink adoption by Meta/MSFT/Oracle/xAI, and Spectrum-X annualized revenue >$10B underscore resilience",
+      "Customer roadmap includes Anthropic (1GW), huge government builds (Solstice, Equinox, industrial AI cloud), and RoboAI momentum"
+    ]
+  },
+  "outlook": {
+    "q4_guidance": {
+      "revenue": "65.0 ±2% billion USD",
+      "gaap_gross_margin": "74.8% ±0.5 pts",
+      "non_gaap_gross_margin": "75.0% ±0.5 pts",
+      "gaap_operating_expenses": "≈6.7 billion USD",
+      "non_gaap_operating_expenses": "≈5.0 billion USD",
+      "other_income": "≈0.5 billion USD income excluding equity gains",
+      "tax_rate": "≈17% ±1%",
+      "notes": "Assumes no China Data Center revenue; mid-70s margin exit"
+    },
+    "full_year": {
+      "operating_expenses": "Forecast high-30s YoY growth as infrastructure spend scales",
+      "capital_allocation": "Board increased buyback authorization to support growth while financing new supply chains"
+    }
+  },
+  "metadata": {
+    "parsed_date": "2025-11-19T00:00:00Z",
+    "source": "NVIDIA FY 2026 Q3 press release"
+  }
+}
+

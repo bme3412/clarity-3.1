@@ -1,0 +1,408 @@
+{
+  "company_name": "AMD",
+  "quarter": "Q3",
+  "fiscal_year": "2023",
+  "financials": {
+    "total_revenue": {
+      "value": 5.8,
+      "unit": "billion USD",
+      "year_over_year_change": "+4%",
+      "quarter_over_quarter_change": "+8%",
+      "context": "Q3 2023",
+      "composition": {
+        "data_center": {
+          "value": 1.6,
+          "unit": "billion USD",
+          "year_over_year_change": "0%",
+          "quarter_over_quarter_change": "+21%",
+          "context": "Includes 4th Gen EPYC™ server processors and related data center products",
+          "breakdown": {
+            "epyc_processors": {
+              "revenue_growth_year_over_year": "0%",
+              "revenue_growth_quarter_over_quarter": "+21%",
+              "drivers": [
+                "Strong sales of 4th Gen EPYC™ CPUs",
+                "Record server processor revenue"
+              ],
+              "details": {
+                "gen4_epyc": {
+                  "description": "4th Gen EPYC™ CPUs",
+                  "performance_improvement": "Up to 1.9 times more performance in enterprise and cloud applications",
+                  "impact": "Nearly doubled revenue sequentially with accelerated adoption",
+                  "customers": [
+                    "Amazon",
+                    "Google",
+                    "Microsoft",
+                    "Oracle",
+                    "Tencent"
+                  ]
+                },
+                "instinct_mi300": {
+                  "description": "Instinct™ MI300A and MI300X GPUs",
+                  "performance_improvement": "World's most advanced accelerators for generative AI",
+                  "impact": "On track for volume production to support deployments with HPC, cloud, and AI customers",
+                  "status": "Sampling to leading HPC, Cloud, and AI customers"
+                }
+              }
+            },
+            "adaptive_system_on_chip": {
+              "description": "Adaptive System-on-Chip (SoC) data center products",
+              "revenue_growth_year_over_year": "-",
+              "revenue_growth_quarter_over_quarter": "-",
+              "drivers": [
+                "Decline in adaptive SoC data center product sales"
+              ],
+              "details": {
+                "versa_premium_vp1902": {
+                  "description": "Versal™ Premium VP1902 Adaptive SoC",
+                  "impact": "Expanding adaptive computing product leadership"
+                },
+                "spartan_ultrascale_fpgas": {
+                  "description": "Spartan™ UltraScale+™ FPGAs",
+                  "impact": "Addressing cost-optimized, industrial, computer vision, healthcare, and robotics applications"
+                }
+              }
+            }
+          }
+        },
+        "client": {
+          "value": 1.5,
+          "unit": "billion USD",
+          "year_over_year_change": "+42%",
+          "quarter_over_quarter_change": "+46%",
+          "context": "Includes desktop and notebook PC processors and chipsets",
+          "breakdown": {
+            "desktop_processors": {
+              "revenue_growth_year_over_year": "+42%",
+              "revenue_growth_quarter_over_quarter": "+46%",
+              "drivers": [
+                "Higher sales of Ryzen™ 7000 Series PC processors",
+                "Increased demand for Ryzen AI on-chip accelerators"
+              ],
+              "details": {
+                "ryzen_series": {
+                  "description": "Ryzen™ 7000 Series CPUs",
+                  "performance_improvement": "Leadership performance and energy efficiency with dedicated AI engine",
+                  "impact": "Significantly grew CPU sales with new notebook launches"
+                },
+                "am5_platform": {
+                  "description": "AM5 platform",
+                  "impact": "Supports the launch of Ryzen 7000 Series processors and new commercial PC platforms"
+                },
+                "threadripper_pro": {
+                  "description": "Threadripper PRO workstation CPUs",
+                  "impact": "Unmatched performance for multi-threaded professional applications"
+                }
+              }
+            }
+          }
+        },
+        "gaming": {
+          "value": 1.5,
+          "unit": "billion USD",
+          "year_over_year_change": "-8%",
+          "quarter_over_quarter_change": "-5%",
+          "context": "Includes discrete graphics processors and semi-custom game console products",
+          "breakdown": {
+            "semi_custom": {
+              "revenue_growth_year_over_year": "-8%",
+              "revenue_growth_quarter_over_quarter": "-5%",
+              "drivers": [
+                "Decline in semi-custom revenue due to console cycle"
+              ],
+              "details": {
+                "so_c_sales": {
+                  "description": "Semi-custom SoC sales",
+                  "impact": "Driven by improved console demand from Microsoft and Sony despite overall decline"
+                }
+              }
+            },
+            "graphics": {
+              "revenue_growth_year_over_year": "+",
+              "revenue_growth_quarter_over_quarter": "-5%",
+              "context": "Partially offset by increased Radeon™ GPU sales",
+              "drivers": [
+                "Lower semi-custom sales",
+                "Increased sales of Radeon™ GPUs"
+              ],
+              "details": {
+                "rdna_3": {
+                  "description": "RDNA 3 GPUs",
+                  "performance_improvement": "Enhanced performance and performance per watt",
+                  "impact": "Supports high-resolution, high-frame-rate gaming",
+                  "future_plans": "Launch of new enthusiast-class Radeon 7000 series GPUs in Q4 2023"
+                }
+              }
+            }
+          }
+        },
+        "embedded": {
+          "value": 1.2,
+          "unit": "billion USD",
+          "year_over_year_change": "-5%",
+          "quarter_over_quarter_change": "-15%",
+          "context": "Includes Xilinx embedded products and other adaptive computing solutions",
+          "breakdown": {
+            "xilinx_embedded": {
+              "revenue_growth_year_over_year": "-5%",
+              "revenue_growth_quarter_over_quarter": "-15%",
+              "drivers": [
+                "Decrease in revenue in the communications market",
+                "Inventory correction at customers in several end markets"
+              ],
+              "details": {
+                "industrial_vision_healthcare": {
+                  "description": "Industrial, Vision and Healthcare",
+                  "impact": "Increased demand for advanced compute capabilities and new Vitis AI software libraries"
+                },
+                "automotive": {
+                  "description": "Automotive",
+                  "impact": "Deployments of adaptive silicon solutions for high-end ADAS and AI features, e.g., Subaru's AMD-based iSIGHT platform"
+                },
+                "communications": {
+                  "description": "Communications",
+                  "impact": "Softness due to some operators slowing infrastructure upgrades"
+                },
+                "test_emulation": {
+                  "description": "Test and Emulation",
+                  "impact": "Launch of Versal™ Premium VP1902 and Spartan™ UltraScale+™ FPGAs enhancing adaptive computing solutions"
+                },
+                "new_adaptive_products": {
+                  "description": "Versal™ Premium VP1902 Adaptive SoC and Spartan™ UltraScale+™ FPGAs",
+                  "impact": "Expanding AMD’s adaptive computing product leadership"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "expenses": {
+      "total_expenses": {
+        "value": 1.7,
+        "unit": "billion USD",
+        "year_over_year_change": "+12%",
+        "context": "Operating expenses including R&D, marketing, amortization of intangible assets, and acquisition-related costs",
+        "key_factors": [
+          "Higher R&D investments to support AI growth opportunities",
+          "Enhanced marketing and go-to-market activities",
+          "Higher operating expenses to scale the business"
+        ]
+      },
+      "operating_expenses_breakdown": {
+        "R&D": {
+          "value": "N/A",
+          "context": "Increased investments in research and development to support product roadmaps and AI initiatives"
+        },
+        "marketing": {
+          "value": "N/A",
+          "context": "Enhanced go-to-market activities to support product launches and growth initiatives"
+        },
+        "variable_compensation": {
+          "value": "N/A",
+          "context": "Higher variable employee compensation-related expenses"
+        },
+        "amortization": {
+          "value": "N/A",
+          "context": "Amortization of intangible assets associated with acquisitions"
+        },
+        "acquisition_related_costs": {
+          "value": "N/A",
+          "context": "Costs related to strategic acquisitions, including Xilinx and Nod.ai"
+        }
+      }
+    },
+    "profitability": {
+      "operating_income": {
+        "value": 1.3,
+        "unit": "billion USD",
+        "year_over_year_change": "+0.7",
+        "quarter_over_quarter_change": "+0.2",
+        "context": "Operating income for Q3 2023",
+        "operating_margin": "22%",
+        "drivers": [
+          "Higher revenue in Client segment",
+          "Stronger product mix",
+          "Disciplined operating expense management",
+          "Increased R&D investments"
+        ]
+      },
+      "non_gaap_operating_income": {
+        "value": "N/A",
+        "unit": "billion USD",
+        "year_over_year_change": "N/A",
+        "quarter_over_quarter_change": "N/A",
+        "context": "Not explicitly detailed for Q3 2023"
+      },
+      "net_income": {
+        "value": "N/A",
+        "unit": "billion USD",
+        "year_over_year_change": "N/A",
+        "quarter_over_quarter_change": "N/A",
+        "context": "Net income not explicitly detailed for Q3 2023"
+      },
+      "non_gaap_net_income": {
+        "value": "N/A",
+        "unit": "billion USD",
+        "year_over_year_change": "N/A",
+        "quarter_over_quarter_change": "N/A",
+        "context": "Not explicitly detailed for Q3 2023"
+      },
+      "eps": {
+        "value": 0.70,
+        "unit": "USD per share",
+        "year_over_year_change": "+",
+        "quarter_over_quarter_change": "+",
+        "context": "Diluted earnings per share for Q3 2023",
+        "notes": "Includes better-than-expected revenue and operating expenses"
+      },
+      "non_gaap_eps": {
+        "value": "N/A",
+        "unit": "USD per share",
+        "year_over_year_change": "N/A",
+        "quarter_over_quarter_change": "N/A",
+        "context": "Not explicitly detailed for Q3 2023"
+      },
+      "tax_rate": {
+        "current_quarter": "13%",
+        "full_year_guidance": "13%",
+        "context": "Effective tax rate for Q3 2023 and full year 2023"
+      },
+      "cash_flow": {
+        "free_cash_flow": {
+          "value": 0.297,
+          "unit": "billion USD",
+          "year_over_year_change": "N/A",
+          "context": "Free cash flow for Q3 2023",
+          "notes": "Includes strategic investments and stock repurchases"
+        },
+        "cash_from_operations": {
+          "value": 0.421,
+          "unit": "billion USD",
+          "year_over_year_change": "N/A",
+          "context": "Cash from operations for Q3 2023",
+          "notes": "Reflects strong financial model despite mixed demand environment"
+        }
+      }
+    },
+    "capital_expenditures": {
+      "value": "N/A",
+      "unit": "billion USD",
+      "context": "Not explicitly detailed for Q3 2023",
+      "details": {}
+    },
+    "capital_return": {
+      "share_repurchase": {
+        "value": 0.511,
+        "unit": "billion USD",
+        "context": "Repurchased $511 million of common stock during Q3 2023"
+      },
+      "dividends": {
+        "value": "N/A",
+        "unit": "billion USD",
+        "context": "Not explicitly detailed"
+      }
+    },
+    "guidance": {
+      "fourth_quarter_2023": {
+        "revenue": {
+          "value": 6.1,
+          "unit": "billion USD",
+          "range": "+/-0.3",
+          "year_over_year_change": "+9%",
+          "quarter_over_quarter_change": "+5%",
+          "context": "Expected for Q4 2023"
+        },
+        "non_gaap_gross_margin": {
+          "value": 51.5,
+          "unit": "percent",
+          "context": "Expected for Q4 2023"
+        },
+        "non_gaap_operating_expenses": {
+          "value": 1.74,
+          "unit": "billion USD",
+          "percentage_of_revenue": "30%",
+          "context": "Expected for Q4 2023"
+        },
+        "non_gaap_interest_expense_taxes_other": {
+          "value": 0.175,
+          "unit": "billion USD",
+          "context": "Including effective tax rate of 13%"
+        },
+        "diluted_share_count": {
+          "value": 1.63,
+          "unit": "billion shares",
+          "context": "Expected for Q4 2023"
+        }
+      },
+      "full_year_2023": {
+        "revenue_growth_year_over_year": "Expected based on roadmaps and strategic priorities",
+        "context": "Led by growth in Embedded and Data Center segments",
+        "revenue": {
+          "value": "Not specified",
+          "unit": "billion USD",
+          "context": "Expected for full year 2023"
+        },
+        "non_gaap_gross_margin": {
+          "value": 50,
+          "unit": "percent",
+          "context": "Expected for full year 2023"
+        }
+      }
+    },
+    "recent_pr_highlights": {
+      "product_introductions": [
+        "4th Gen EPYC™ CPUs (Gen 1)",
+        "Genoa and Genoa-X EPYC processors",
+        "Bergamo cloud-native server CPU",
+        "Instinct MI300A and MI300X GPUs",
+        "Versal™ Premium VP1902 Adaptive SoC",
+        "Spartan™ UltraScale+™ FPGAs",
+        "Enhanced Vivado™ and Vitis™ software platforms",
+        "Ryzen™ 7000 Series CPUs",
+        "Threadripper PRO workstation CPUs",
+        "Radeon™ 7000 GPU series",
+        "RX 7000 and RX 7600 mainstream GPUs",
+        "Versal™ Premium VP1902 Adaptive SoC with on-chip HBM memory",
+        "Spartan™ UltraScale+™ FPGAs",
+        "Space-grade Versal SoC with enhanced AI Engine",
+        "Alveo Accelerator card for fintech"
+      ],
+      "partnerships_and_adoptions": [
+        "Meta deploying Bergamo across global data centers",
+        "Dell, Lenovo, Super Micro launching new Bergamo platforms",
+        "Microsoft Azure launching Genoa-X HPC instances",
+        "AWS announcing M7a Genoa instances",
+        "Alibaba and Oracle Cloud expanding Pensando DPU deployments",
+        "MAX Plug Society's supercomputer in the EU powered by AMD",
+        "Hugging Face optimizing models for AMD platforms",
+        "MosaicML highlighting Instinct MI250 performance"
+      ],
+      "ecosystem_support": [
+        "Expanded ROCm software stack with support for PyTorch, TensorFlow, Onyx, OpenAI Triton",
+        "Collaborations with major AI software and cloud providers",
+        "Hugging Face models regularly updated and validated for Instinct accelerators",
+        "Strategic acquisitions of Mipsology and Nod.ai to enhance AI software capabilities"
+      ],
+      "corporate_responsibility": [
+        "Investments in sustainable technological and scientific advancements",
+        "Support for community initiatives amidst COVID-19"
+      ]
+    },
+    "metadata": {
+      "parsed_date": "2023-09-30T00:00:00Z",
+      "company_ticker": "AMD",
+      "source": "Q3 2023 Earnings Call Transcript",
+      "operating_environment_challenges": [
+        "Softening PC market",
+        "Substantial inventory reduction across the PC supply chain",
+        "Managing supply chain constraints",
+        "Navigating macroeconomic uncertainties"
+      ]
+    }
+  },
+  "executive_comments": {
+    "ceo_statement": "“We delivered strong revenue and earnings growth driven by demand for our Ryzen 7000 series PC processors and record server processor sales,” said AMD Chair and CEO Dr. Lisa Su. “Our data center business is on a significant growth trajectory based on the strength of our EPYC CPU portfolio and the ramp of Instinct MI300 accelerator shipments to support multiple deployments with hyperscale, enterprise and AI customers.”",
+    "cfo_statement": "“We executed well in the third quarter, delivering year-over-year growth in revenue, gross margin and earnings per share,” said AMD EVP, CFO and Treasurer Jean Hu. “In the fourth quarter, we expect to see strong growth in Data Center and continued momentum in Client, partially offset by lower sales in the Gaming segment and additional softening of demand in the embedded markets.”"
+  }
+}

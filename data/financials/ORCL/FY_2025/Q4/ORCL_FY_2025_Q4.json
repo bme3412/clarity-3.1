@@ -1,0 +1,160 @@
+{
+  "financial_report": {
+    "period": {
+      "fiscal_quarter": "Q4 2025",
+      "fiscal_year": "2025",
+      "year_ago_quarter": {
+        "date": "Q4 2024",
+        "type": "Year-over-Year Quarter"
+      }
+    },
+    "overview": {
+      "total_revenue": 15903,
+      "yoy_growth_usd": "11%",
+      "yoy_growth_constant_currency": "11%",
+      "cloud_revenue": 6700,
+      "cloud_growth": "27%",
+      "rpo": {
+        "value": 138,
+        "unit": "billion USD",
+        "yoy_growth": "41%"
+      }
+    },
+    "income_statement": {
+      "revenue": {
+        "total": 15903,
+        "components": {
+          "cloud_services_and_license_support": 11698,
+          "cloud_license_and_on_premise": 2007,
+          "hardware": 850,
+          "services": 1348
+        }
+      },
+      "operating_expenses": {
+        "total": 10794,
+        "breakdown": {
+          "cloud_services_and_license_support": 3343,
+          "hardware": 252,
+          "services": 1145,
+          "sales_and_marketing": 2306,
+          "research_and_development": 2654,
+          "general_and_administrative": 467,
+          "amortization_of_intangible_assets": 544,
+          "acquisition_related": 4,
+          "restructuring": 79
+        },
+        "non_gaap_adjustments": {
+          "stock_based_compensation": -1299,
+          "amortization_of_intangible_assets": -544,
+          "acquisition_related": -4,
+          "restructuring": -79,
+          "total_adjustments": -1926
+        },
+        "non_gaap_total": 8868
+      },
+      "operating_income": {
+        "gaap": {
+          "value": 5109,
+          "margin": "32%"
+        },
+        "non_gaap": {
+          "value": 7035,
+          "margin": "44%",
+          "adjustments": 1926
+        }
+      },
+      "net_income": {
+        "gaap": 3427,
+        "non_gaap": 4881
+      },
+      "eps": {
+        "gaap": 1.19,
+        "non_gaap": 1.70
+      }
+    },
+    "cash_flow": {
+      "operating_cash_flow": 20799,
+      "capital_expenditures": -21215,
+      "free_cash_flow": -396,
+      "notes": "FY25 annual cash flow"
+    },
+    "year_to_date": {
+      "total_revenue": 57399,
+      "yoy_growth_usd": "8%",
+      "yoy_growth_constant_currency": "9%",
+      "cloud_services_and_license_support": 44029,
+      "cloud_license_and_on_premise": 5201,
+      "operating_income": {
+        "gaap": 15353,
+        "non_gaap": 25033
+      },
+      "net_income": {
+        "gaap": 10467,
+        "non_gaap": 17284
+      },
+      "eps": {
+        "gaap": 4.34,
+        "non_gaap": 6.03
+      }
+    }
+  },
+  "balance_sheet": {
+    "assets": {
+      "cash_and_equivalents": 10454,
+      "marketable_securities": 417,
+      "trade_receivables_net": 8558,
+      "prepaid_and_other_current_assets": 4818,
+      "total_current_assets": 22547,
+      "property_plant_equipment_net": 43522,
+      "intangible_assets_net": 4587,
+      "goodwill_net": 62207,
+      "deferred_tax_assets": 11877,
+      "other_non_current_assets": 21589,
+      "total_non_current_assets": 118422,
+      "total_assets": 140976
+    },
+    "liabilities": {
+      "current_liabilities": {
+        "notes_payable": 7267,
+        "accounts_payable": 5113,
+        "accrued_compensation": 2243,
+        "deferred_revenues": 9387,
+        "other_current_liabilities": 8629,
+        "total_current_liabilities": 32643
+      },
+      "non_current_liabilities": {
+        "notes_payable": 85297,
+        "income_taxes_payable": 10269,
+        "operating_lease_liabilities": 11536,
+        "other_non_current_liabilities": 7647,
+        "total_non_current_liabilities": 114749
+      },
+      "total_liabilities": 147392
+    },
+    "equity": {
+      "total": 96584,
+      "notes": "Derived from press release footnote items"
+    }
+  },
+  "metrics": {
+    "cloud_growth": {
+      "applications": "+8%",
+      "infrastructure": "+52%"
+    },
+    "deferred_revenue": {
+      "value": 9372,
+      "unit": "million USD"
+    },
+    "dividend": {
+      "value": 0.5,
+      "unit": "USD per share",
+      "notes": "25% increase paid April 2025"
+    }
+  },
+  "metadata": {
+    "parsed_date": "2025-06-11T00:00:00Z",
+    "source": "Q4 FY25 earnings release",
+    "ticker": "ORCL"
+  }
+}
+

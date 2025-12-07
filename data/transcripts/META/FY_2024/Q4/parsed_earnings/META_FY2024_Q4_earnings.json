@@ -1,0 +1,177 @@
+{
+  "company_name": "Meta",
+  "quarter": "Q4",
+  "fiscal_year": "2024",
+  "financials": {
+    "total_revenue": {
+      "value": 48.385,
+      "unit": "billion USD",
+      "year_over_year_change": "+21%",
+      "constant_currency_growth": "+21%",
+      "context": "Q4 2024 total revenue grew 21% thanks to momentum across ads, family apps, and emerging services."
+    },
+    "costs_and_expenses": {
+      "value": 25.020,
+      "unit": "billion USD",
+      "year_over_year_change": "+5%",
+      "drivers": ["Lower legal accruals (-$1.55B)", "Infrastructure and employee compensation investments"],
+      "context": "Expense growth was moderated by favorable legal accrual adjustments and continued operating efficiency."
+    },
+    "operating_income": {
+      "value": 23.365,
+      "unit": "billion USD",
+      "operating_margin": "48%",
+      "context": "Operating income expanded 43% year over year with a 48% margin."
+    },
+    "net_income": {
+      "value": 20.838,
+      "unit": "billion USD",
+      "year_over_year_change": "+49%",
+      "context": "Net income and EPS benefited from top-line strength, efficiency gains, and a 12% tax rate."
+    },
+    "eps": {
+      "basic": 8.24,
+      "diluted": 8.02,
+      "unit": "USD per share",
+      "context": "Diluted EPS grew 50% YoY to $8.02."
+    },
+    "cash_flow": {
+      "free_cash_flow": {
+        "value": 13.152,
+        "unit": "billion USD",
+        "context": "Free cash flow after CapEx and finance lease principal payments."
+      },
+      "operating_cash_flow": {
+        "value": 27.988,
+        "unit": "billion USD",
+        "context": "Net cash provided by operating activities in Q4 2024."
+      }
+    },
+    "capital_expenditures": {
+      "value": 14.84,
+      "unit": "billion USD",
+      "context": "CapEx focused on servers, data centers, and network infrastructure to support AI and core services."
+    },
+    "capital_return": {
+      "dividends": {
+        "value": 1.27,
+        "unit": "billion USD",
+        "context": "Dividend payments in Q4 2024."
+      },
+      "share_repurchases": {
+        "value": 0,
+        "unit": "billion USD",
+        "context": "No share repurchases executed in Q4; full-year repurchases totaled $29.75B."
+      },
+      "total_yearly_return": {
+        "value": 29.75,
+        "unit": "billion USD",
+        "context": "FY 2024 share repurchases."
+      }
+    }
+  },
+  "operating_metrics": {
+    "family": {
+      "daily_active_people": {
+        "value": 3.35,
+        "unit": "billion",
+        "context": "Average daily active people across the Family of Apps in December 2024."
+      },
+      "ad_impressions_growth": "+6% YoY",
+      "average_price_per_ad": "+14% YoY",
+      "drivers": ["Video time growth", "Creative tools"],
+      "regional_strength": {
+        "rest_of_world": "+27% YoY",
+        "asia_pacific": "+23% YoY",
+        "europe": "+22% YoY",
+        "us_canada": "+18% YoY"
+      }
+    },
+    "reality_labs": {
+      "revenue": {
+        "value": 1.083,
+        "unit": "billion USD",
+        "year_over_year_change": "+1%",
+        "context": "Sales of Quest/Reality Labs hardware."
+      },
+      "expenses": {
+        "value": 5.0,
+        "unit": "billion USD",
+        "year_over_year_change": "+6%",
+        "context": "Infrastructure, content, and employee investments" 
+      }
+    }
+  },
+  "strategic_updates": {
+    "ads": {
+      "description": "Scaling advantage+ automation, Division in high-performing formats, and advanced models for ranking and attribution.",
+      "initiatives": [
+        "Rolling out Advantage+ across sales, app, and lead campaigns by default",
+        "Deploying Andromeda retraining for richer ads ranking",
+        "Expanding conversational and Business Messaging ads"
+      ],
+      "goals": [
+        "Drive higher ROAS via automation",
+        "Introduce more generative AI creative tools",
+        "Modernize measurement with conversion modeling"
+      ]
+    },
+    "ai": {
+      "description": "Developing Meta AI, Llama, and AI Studio while integrating inference and custom silicon to serve billions.",
+      "milestones": [
+        "Meta AI reached 700M MAUs with usage on WhatsApp, Facebook, and Instagram",
+        "Llama 4 (multimodal, agentic) and Llama 4 Mini progress",
+        "AI Studio and Business AI bets expanding creator/enterprise tooling"
+      ],
+      "goals": [
+        "Personalize Meta AI responses via memory",
+        "Support creators with generative workflows",
+        "Advance AI assistant presence through smart glasses"
+      ]
+    },
+    "reality_labs": {
+      "description": "Investing in Quest, Horizon, and AR/VR experiences as mass-market adoption accelerates.",
+      "initiatives": [
+        "Strengthening hardware/software pipelines",
+        "Iterating on Horizon and Orion experiences",
+        "Partnering on Ray-Ban Meta Glasses"
+      ],
+      "goals": [
+        "Deliver immersive social experiences",
+        "Extend Reality Labs computing ecosystem",
+        "Develop sustainable metaverse economy"
+      ]
+    }
+  },
+  "outlook": {
+    "q1_2025_revenue_guidance": {
+      "range": "39.5-41.8",
+      "unit": "billion USD",
+      "growth": "8-15% YoY (11-18% cc)",
+      "context": "Reflects FX headwind and leap day comps."
+    },
+    "full_year_2025_expenses": {
+      "range": "114-119",
+      "unit": "billion USD",
+      "drivers": ["Infrastructure costs", "Employee compensation", "Safety and compliance"]
+    },
+    "capex": {
+      "range": "60-65",
+      "unit": "billion USD",
+      "focus": ["Generative AI", "Core business", "Servers/data centers/networks"],
+      "context": "Majority directed at core business while supporting AI initiatives."
+    },
+    "tax_rate": {
+      "range": "12-15%",
+      "context": "Assumes no significant tax landscape changes."
+    },
+    "regulatory": {
+      "focus": "Monitoring active legal and regulatory headwinds in the U.S. and EU."
+    }
+  },
+  "metadata": {
+    "parsed_date": "2025-01-29T00:00:00Z",
+    "company_ticker": "META",
+    "source": "Q4 2024 press release"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "company_name": "Oracle",
+  "quarter": "Q2",
+  "fiscal_year": "2022",
+  "speakers": {
+    "safra_ada_catz": {
+      "role": "Chief Executive Officer",
+      "responses": [
+        {
+          "topic": "Digital Transformation and Applications Business",
+          "content": "Raimo, maybe I'll start and then Larry can add in. I think that one of the things that has become incredibly obvious during this pandemic is that companies that have closer digital relationships with their customers, their employees, and their suppliers are doing much better than those that don't. And the work from home and all the data that -- capabilities, whether it's mobile or otherwise, once you have that implemented your ability to adapt to changing business situations is so much better if you've moved to the cloud. And also capabilities that you may need can be supplied by a vendor like ourselves where, for example, as we've discussed, we rolled out health and safety to our HCM customers, so they could better work with their employees and monitor and advise them regarding COVID.\n\nAnd there's no question that digital transformation is the top goal of companies and those companies that had been delaying or moving slowly have brand-new urgency on it. And of course, because we are ranked, and I think it's our third year in a row, in the top right-hand quadrant of Gartner, really with no one even close to us, we are the No. 1 choice of -- for moving to Fusion ERP and other back-office applications. So for us, I have to say that there's just incredible, incredible momentum and commitment from our -- from prospects and customers and for companies who have been on-premise, either with our products or historically with SAP, where they just can't continue like they did."
+        },
+        {
+          "topic": "RPO Growth and Revenue Acceleration",
+          "content": "Yeah, and as far as where it's happening, I have to tell you, it is so broad-based. It is a worldwide phenomena for us. Our Fusion, NetSuite are just chugging along. It was an incredible Q4, and Q1 looks enormous.\n\nSo imagine, bookings are way up, and there's just a lot of success. We have so many customers that have gone live. So we have references from some of the largest companies in the world to really small or medium-sized companies that it's pretty consistent. Almost any prospect can find many companies just like it already being incredibly successful.\n\nAnd I think that, frankly, the pandemic taught many of our prospects and customers that moving quickly is really required these days. I think that folks used to think moving quickly is risky. I think they really saw that they had to move to much more modern, flexible, digital businesses, and that we are the [Audio gap] destination for them for the back office without a doubt."
+        }
+      ]
+    },
+    "larry_j_ellison": {
+      "role": "Chairman and Chief Technology Officer",
+      "responses": [
+        {
+          "topic": "OCI Success and Cloud Infrastructure Impact",
+          "content": "Well again, we have a bunch of things the other guys don't have. We have applications. But I know you don't want to talk about OCI. You want to talk about infrastructure.\n\nWe think of those as two separate businesses. But of course, they're not. I mean, everyone who is running Oracle ERP is building data warehouses on top of their ERP data. They're mashing it up maybe with Salesforce data.\n\nThey're doing all of these things. They're doing a combination of big application customers. Bank of America, for example, is doing a combination of running our apps and building bespoke apps around those. So, this is a huge opportunity for us that our other infrastructure customers -- other infrastructure providers don't have.\n\nWe've often had the discussion: Do we want to support 10 databases? Or do we want to support 30 databases? And do we want to have every single service that, let's say, an Amazon has? And I think our view is we want to have some really good choices but not every single choice on the menu. We want to have all of the popular databases but not some of the obscure databases, so we are not going to try to feature-match every single thing they do. We will, however, have development environments they don't have at all. So, if you're building data warehouses on top of Fusion ERP or on top of Fusion HCM or on top of NetSuite, we have a whole set of tools that makes that easy for you over on the infrastructure side of our business.\n\nSo, we have some -- we have all the popular stuff around. I mean, obviously, you have Kubernetes and the like. And we have PostgreSQL and the popular databases. We have MySQL, but our version of MySQL is much better than Amazon's version of MySQL.\n\nIt's much faster, I mean, more than 10 times faster because of HeatWave. We have this query optimizer they don't have at all. So, our idea is to look at the most popular products, to have recommended development environments and recommended systems, and be able to do things they can't do at all. I think one other -- let me mention one of the fundamental differences in our strategy versus their strategy.\n\nThey are building a small number of very, very large data centers. Our strategy is to build a large number of smaller, less expensive data centers. We think that improves reliability dramatically. We won't have this giant data center going down.\n\nIt reduces the blast radius of what happens when things go down. Less goes down. It allows us to go into sovereign nations, in some smaller countries that they can't -- never afford to put a data center in. And we can now put one but two primary and a backup data center in sovereign countries that care about data sovereignty.\n\nSo, we can put a complete cloud. I don't mean just database cloud. I mean, a complete cloud at a customer like NRI in Japan, and we did that. With that, we put in a primary and a backup.\n\nSo, if people want to run a cloud, if a large financial institution wants to run our cloud inside their firewall, inside their data center, we can do that. And how will that cloud differ from the cloud that we run in the public? It won't differ at all. We can make that small enough. We can it into their data center.\n\nNobody else can do this. So, we think we -- and then let me close with a note that I'm going to paraphrase from a very large telecommunications company who uses our cloud and all the other three North American clouds: Google, Amazon, and Microsoft. And the note basically said the one thing we've noticed about Oracle, Oracle's Cloud, is that it never ever goes down. We can't say that about any of the other clouds.\n\nWe think this is a critical differentiator, availability. Another critical differentiator is security, where we have -- where the only way you can achieve security, I promise you this is true, is through autonomy. If you have human beings deploying and tinkering with your systems, they can make mistakes that expose your data. The only way we've been able to solve that problem is to get human beings out of the equation.\n\nNo human beings, no human error, no human malice. So, we think we have a bunch of differentiators, and we'll be able to compete very, very effectively with security, reliability, combination of apps and infrastructure autonomy, and a bunch of other things the other guys just will not be able to do."
+        },
+        {
+          "topic": "OCI Functionality and Competitive Positioning (Additional)",
+          "content": "Yes. I'd like to just second that with an example in the past, recent history where when we bought NetSuite, we considered NetSuite strategic. We thought that this was -- this is a company that should be growing even faster than it was independently as a part of Oracle. And so we made a number of investments in NetSuite, and we've seen their growth rate.\n\nNetSuite's gotten bigger obviously. But their growth rate has increased, and we've invested but we've made more money and we're growing faster in NetSuite. So, I think that's the model that Safra likes to implement. And it seems to be working pretty well at NetSuite.\n\nWe don't see why it would be any different than a larger business like the Oracle Public Cloud."
+        },
+        {
+          "topic": "OCI Functionality and Competitive Positioning (Additional)",
+          "content": "Yeah. And I would say that as SAP moves their applications to S/4HANA in the cloud, and they do what I call hosting and they call cloud, the vast majority of those SAP databases do not run HANA. Way over -- 95% of them still run Oracle.\n\nPhil Winslow -- Credit Suisse -- Analyst\n\nThat's a big business for us, even when it migrates to the cloud. I mean, Amazon has customers who have taken their Oracle database licenses, and they're running those Oracle database licenses in the cloud. So, license does not mean on-premise, and license does not mean the cloud. It can -- it's a bit of a -- it's a mixed bag, right? Some of that license revenue and most of the new license revenue is on its way to the cloud."
+        },
+        {
+          "topic": "OCI Functionality and Competitive Positioning (Additional)",
+          "content": "Yeah. And I would say that as SAP moves their applications to S/4HANA in the cloud, and they do what I call hosting and they call cloud, the vast majority of those SAP databases do not run HANA. Way over -- 95% of them still run Oracle.\n\nPhil Winslow -- Credit Suisse -- Analyst\n\nThat's a big business for us, even when it migrates to the cloud. I mean, Amazon has customers who have taken their Oracle database licenses, and they're running those Oracle database licenses in the cloud. So, license does not mean on-premise, and license does not mean the cloud. It can -- it's a bit of a -- it's a mixed bag, right? Some of that license revenue and most of the new license revenue is on its way to the cloud.\n\nLarry Ellison -- Chairman and Chief Technology Officer\n\nIt's a big business for us, even when it migrates to the cloud. I mean, Amazon has customers who have taken their Oracle database licenses, and they're running those Oracle database licenses in the cloud. So, license does not mean on-premise, and license does not mean the cloud. It can -- it's a bit of a -- it's a mixed bag, right? Some of that license revenue and most of the new license revenue is on its way to the cloud.\n\nKen Bond -- Senior Vice President of Investor Relations\n\nOK. Great. Thank you, Larry."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Brad Zelnick",
+      "firm": "Deutsche Bank",
+      "topics": ["OCI Growth and Investments", "Infrastructure vs. Functionality", "Cloud Market Competition"],
+      "questions": [
+        {
+          "question_text": "Great. Thank you so much, and congrats on a great quarter with accelerating growth. Larry, you shared quite a bit with us, really, really helpful. But I wanted to ask you about OCI because we continue to hear great things from customers.\n\nAnd I think people understand Oracle's cloud is hyper-secure, highly automated, and there's real price-performance advantage. But as we think about your product's road map and what it takes for Oracle to capture more than its fair share of the broader public cloud market, how much are you investing in breadth versus depth? Because we just see in this quarter alone, like the partnership with Airtel in India, Orange in West Africa, new regions in Singapore, UAE, France, and I'm probably missing some. But clearly, there's demand. Otherwise, I know Safra wouldn't be making these investments.\n\nBut when a new competitor posts -- Larry, when your main competitor posts over 200 services up the stack, how far should we expect to see you build up the stack competing on functionality versus continuing to go broad with what you already have? Thanks."
+        }
+      ]
+    },
+    {
+      "analyst": "Raimo Lenschow",
+      "firm": "Barclays Investment Bank",
+      "topics": ["Fusion and NetSuite Growth", "Professional Services Demand", "Digital Transformation Acceleration"],
+      "questions": [
+        {
+          "question_text": "Thank you, and congrats from me as well and especially on the RPO disclosure and growth there. My question is around Fusion and NetSuite. We obviously are in a recovery -- somewhat recovery scenario, and I'm looking at your professional services as well, which kind of -- is kind of very strong there. Can you talk a little bit about what you're seeing there in terms of people wanting to do, now that they're coming out of the pandemic, more around digital transformation; and hence, you had actually an extra boost on demand despite what you saw already beforehand? Or how do we have to think about the dynamic there? Thank you."
+        }
+      ]
+    },
+    {
+      "analyst": "Mark Moerdler",
+      "firm": "Sanford C. Bernstein",
+      "topics": ["OCI Functionality vs. Competitors", "Customer Perception of OCI", "Market Positioning"],
+      "questions": [
+        {
+          "question_text": "Thank you very much. I'm going to follow up on discussion on OCI Gen2. Oracle's dedicated regions seem to be reasonably unique offerings and a different spin on the hybrid cloud which the largest hyperscale providers are not offering. Can you explain how you're able to deliver this successfully and with good margins and why others cannot? And can you give us any sense of how large do you see that opportunity? Thanks."
+        }
+      ]
+    },
+    {
+      "analyst": "Keith Weiss",
+      "firm": "Morgan Stanley",
+      "topics": ["OCI Consumption Workloads", "Database and Non-Database Workloads", "OCI Competitive Advantages"],
+      "questions": [
+        {
+          "question_text": "Excellent. Thank you guys for taking the questions and congratulations on another year of 20% or year of 20% plus earnings growth. And frankly, nice to see the stock starting to reflect the durability of earnings growth you guys have seen over the past couple of years. So it's nice to see that.\n\nI wanted to dig in a little bit on the infrastructure side of the equation, and in particular, OCI. Another quarter of at least 103% growth in OCI consumption. Can you dig in a little bit on sort of what are the workloads that are being done on OCI? Is this just all Oracle database workloads? We know there's a lot of those out there that just run so well on OCI. Or is there a broader perspective of the big workloads that guys are bringing over? Not looking for commentary on any specific customer, but just broadly, what do you see in that space? Where do you guys do well? Where do you win with OCI?"
+        }
+      ]
+    },
+    {
+      "analyst": "Phil Winslow",
+      "firm": "Credit Suisse",
+      "topics": ["License Revenue Drivers", "Oracle Database and Add-ons", "Cloud vs. On-Premise Performance"],
+      "questions": [
+        {
+          "question_text": "Hi, guys. Thanks for taking my question, and congrats on a great quarter and outlook. In a quarter where a lot of numbers jumped out, I mean, the one that jumped out to me the most was the license growth year over year. I had to go back nine years in my model to find a quarter that was actually higher than this.\n\nAnd obviously, when I think about license for Oracle, I was assuming it's being driven by the database business. And then when you think about that in the --"
+        },
+        {
+          "question_text": "That's great. Well, that partially answers one of my questions. But when you think about that license and your example of their -- for example, like Salesforce, together with just the cloud services and the acceleration you see there, I mean, just that overall business seemed to accelerate during Q2 here and even versus Q1. And when I think about some of the other smaller competitors in the space, they've seen an acceleration as well.\n\nSo, I guess, Larry, my question is -- there seems to be something going on in the data world, the data infrastructure stack. And obviously, when Oracle moves at these -- at your scale at these percentages, there definitely seems to be something going on. So, what is that? And how do you think about the sustainability of those drivers?"
+        }
+      ]
+    },
+    {
+      "analyst": "Mark Murphy",
+      "firm": "JPMorgan Chase & Co.",
+      "topics": ["SAP Replacement Wave", "ERP Product Strengths", "Oracle Product Advantages"],
+      "questions": [
+        {
+          "question_text": "Yeah. Thank you very much. So you seem to have pivoted your CapEx approach a bit from just-in-time purchases to carrying a bit of a capacity buffer so that you can deploy the -- all these OCI wins. I'm just curious, Safra, does it take a quarter or two and then you have enough of a buffer there? Or do you see such a pipeline for OCI demand that this CapEx rise perhaps could last a while longer, which might be good news for future revenue growth?"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2022-07-15T00:00:00Z",
+    "company_ticker": "ORCL",
+    "source": "Q2 2022 Earnings Call Transcript",
+    "operating_environment_challenges": [
+      "Impact of COVID-19 on digital transformation and remote work",
+      "Increased demand for cloud services and digital tools",
+      "Competitive pressure from SAP and other cloud vendors",
+      "Managing rapid data center expansions",
+      "Security concerns in cloud infrastructure"
+    ],
+    "executive_changes": {
+      "new_leadership": {
+        "name": "N/A",
+        "role": "N/A",
+        "start_date": "N/A",
+        "context": "N/A"
+      },
+      "leadership_transition": {
+        "name": "N/A",
+        "role": "N/A",
+        "end_date": "N/A",
+        "successor": {
+          "name": "N/A",
+          "role": "N/A",
+          "context": "N/A"
+        }
+      }
+    }
+  }
+}

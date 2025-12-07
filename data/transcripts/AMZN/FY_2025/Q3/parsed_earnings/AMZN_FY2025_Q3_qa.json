@@ -1,0 +1,110 @@
+{
+  "company_name": "Amazon",
+  "quarter": "Q3",
+  "fiscal_year": "2025",
+  "speakers": {
+    "andrew_jassy": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "AWS Growth and Momentum",
+          "content": "AWS is growing at a pace we haven't seen since 2022, reaccelerating to 20.2% year-over-year... Backlog grew to $200 billion by Q3 quarter end and doesn't include several unannounced new deals in October, which together or more than our total deal volume for all of Q3. AWS is gaining momentum... The scale I see in front of us gives me significant confidence."
+        },
+        {
+          "topic": "Generative AI and Agents",
+          "content": "A lot of the future value companies will get from AI will be in the form of agents. AWS is heavily investing in this area... It's why we launched strands to make it much easier to create agents... It's why we launched AgentCore... to deploy secure, scalable agents. Ericsson used AgentCore... Sony used it... Cohere Health is using AgentCore... AgentCore's SDK has already been downloaded over 1 million times."
+        },
+        {
+          "topic": "AI Hardware (Trainium)",
+          "content": "Trainium2 continues to see strong adoption, is fully subscribed is now a multibillion-dollar business that grew 150% quarter-over-quarter... We've recently brought Project Rainier Online, our massive AI compute cluster... containing nearly 500,000 of our Trainium2 chips. Anthropic is using it now... We're building Bedrock to be the biggest inference engine in the world and... believe Bedrock could be as big a business for AWS as EC2."
+        },
+        {
+          "topic": "Stores Innovation",
+          "content": "We're offering 14% more selection since last quarter... Everyday Essentials continues to grow quickly, and year-to-date is growing nearly twice as fast as the rest of the business. We continue to make it easier for customers to order low-priced perishable groceries from Amazon, and customers in more than 1,000 cities and towns now can shop fresh groceries alongside millions of Amazon.com products with free same-day delivery."
+        },
+        {
+          "topic": "Rufus and AI Shopping",
+          "content": "Rufus, our AI-powered shopping assistant has had 250 million active customers this year... Rufus is on track to deliver over $10 billion in incremental annualized sales. Amazon Lens... now includes Lens Live, which instantly scans products... Tens and millions of customers are using Amazon Lens each month."
+        },
+        {
+          "topic": "Advertising",
+          "content": "Advertising revenue... growing 22% year-over-year... We also continue to be excited about our demand side platform, Amazon DSP... we've built on that with a partnership with Netflix... integrations with Spotify and SiriusXM."
+        },
+        {
+          "topic": "Headcount and Culture",
+          "content": "The announcement that we made a few days ago was not really financially driven and it's not even really AI-driven, not right now... It really -- its culture... we are committed to operating like the world's largest start-up. And that means removing layers. It means increasing the amount of ownership that people have... It's important to be lean, it's important to be flat, and it's important to move fast."
+        }
+      ]
+    },
+    "brian_olsavsky": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Financial Overview",
+          "content": "Worldwide revenue was $180.2 billion, a 12% increase year-over-year... Operating income was $17.4 billion. This operating income includes 2 special charges... $2.5 billion is related to a legal settlement with the Federal Trade Commission... The second charge of $1.8 billion relates to severance costs... Excluding these 2 charges, worldwide operating income would have been $21.7 billion."
+        },
+        {
+          "topic": "Segment Performance",
+          "content": "North America segment operating income was $4.8 billion... Excluding the $2.5 billion charge... would have been $7.3 billion... International segment operating income was $1.2 billion... AWS operating income was $11.4 billion."
+        },
+        {
+          "topic": "Capital Expenditures",
+          "content": "Cash CapEx was $34.2 billion in Q3. We've now spent $89.9 billion so far this year... We expect our full year cash CapEx to be approximately $125 billion in 2025, and we expect that amount will increase in 2026."
+        },
+        {
+          "topic": "Net Income and Anthropic Gain",
+          "content": "Third quarter net income of $21.2 billion includes a pretax gain of $9.5 billion related to our investment in Anthropic. This investment activity is not related to Amazon's ongoing operations."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Justin Post",
+      "firm": "Bank of America",
+      "question": "How are you feeling about capacity levels and constraints? And can you talk about Trainium demand outside of major customers?",
+      "response_summary": "Added 3.8 GW power capacity in last year, expect to double by end of 2027. Monetizing capacity as fast as it comes online. Trainium2 fully subscribed, growing 150% QoQ. Demand is strong beyond top customers due to 30-40% better price performance. Trainium3 previewing year-end."
+    },
+    {
+      "analyst": "Brian Nowak",
+      "firm": "Morgan Stanley",
+      "question": "Trainium positioning vs third-party chips? Key hurdles for broader Trainium3 adoption?",
+      "response_summary": "Will always offer multiple options (NVIDIA, AMD, Intel). Deep partnership with NVIDIA continues. Trainium offers price/performance advantage (Trainium2 ~40% better than others, Trainium3 another 40% better than T2). Need to deliver volume and software ecosystem, which is improving."
+    },
+    {
+      "analyst": "Douglas Anmuth",
+      "firm": "JPMorgan",
+      "question": "Architecture of Project Rainier and what it means for customers? Replicating with Trainium3?",
+      "response_summary": "Project Rainier is a massive cluster (500k -> 1M Trainium2 chips) for Anthropic. Shows infrastructure capability at scale and chip performance. Other customers interested in similar large clusters with Trainium3."
+    },
+    {
+      "analyst": "Mark Stephen Mahaney",
+      "firm": "Evercore ISI",
+      "question": "Groceries/Perishables scale - can you change habits without Fresh stores? Headcount philosophy going forward?",
+      "response_summary": "Grocery business is huge (>$100B GMS excluding Whole Foods/Fresh). Perishables via same-day is a game changer, expanded to 1,000 cities. Headcount reduction is culture-driven, not financial/AI-driven yet; goal is to remove layers and move faster like a startup."
+    },
+    {
+      "analyst": "Eric Sheridan",
+      "firm": "Goldman Sachs",
+      "question": "Opportunity in robotics/automation and physical AI?",
+      "response_summary": "Over 1 million robots deployed. Investing significantly for safety, productivity, and speed. Robots and humans will complement each other."
+    },
+    {
+      "analyst": "John Blackledge",
+      "firm": "TD Cowen",
+      "question": "Agentic commerce thoughts and Amazon's role?",
+      "response_summary": "Agentic commerce is exciting long-term. Rufus is Amazon's effort (getting better, Buy for Me feature). Will partner with third-party agents, similar to search engines. Key is improving customer experience (personalization, accurate data)."
+    },
+    {
+      "analyst": "Colin Sebastian",
+      "firm": "Baird",
+      "question": "AWS acceleration drivers (core vs AI)? AgentCore importance? Advertising acceleration drivers (DSP/Prime Video)?",
+      "response_summary": "AWS: Acceleration driven by both AI (Trainium, Bedrock, Agents) and core infrastructure (migration from on-prem). AgentCore addresses security/scale needs for enterprise agents. Ads: Full funnel offering resonating. Growth in Stores, Video (early days), and DSP (feature gaps closed, Roku/Netflix/Spotify partnerships)."
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-10-30",
+    "company_ticker": "AMZN",
+    "source": "earnings_call_transcript_q3_2025"
+  }
+}

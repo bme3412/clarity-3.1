@@ -1,0 +1,302 @@
+{
+  "earnings_call": {
+    "quarter": "Q3 2021",
+    "date": "2021-08-27",  
+    "participants": [
+      {
+        "name": "Tim Cook",
+        "role": "CEO"
+      },
+      {
+        "name": "Luca Maestri",
+        "role": "CFO"
+      }
+    ],
+    "sections": [
+      {
+        "speaker": "Tim Cook",
+        "timestamp": "00:00",
+        "content": "Thanks, Tejas. Good afternoon, everyone...",
+        "topics": [
+          "Introduction",
+          "Overall Company Performance",
+          "Product Highlights",
+          "Services Overview",
+          "Developer Ecosystem",
+          "Software Updates",
+          "Customer Initiatives",
+          "Social Responsibility",
+          "Local Community Support",
+          "Future Outlook"
+        ]
+      },
+      {
+        "speaker": "Luca Maestri",
+        "timestamp": "50:00",
+        "content": "Thank you, Tim. Good afternoon, everyone...",
+        "topics": [
+          "Financial Results",
+          "Revenue Breakdown",
+          "Product Category Performance",
+          "Services Performance",
+          "Gross Margin Analysis",
+          "Net Income",
+          "Cash Position",
+          "Debt Management",
+          "Shareholder Returns",
+          "Outlook and Guidance"
+        ]
+      }
+    ],
+    "financials": {
+      "total_revenue": {
+        "amount": 81400000000,
+        "currency": "USD",
+        "growth_percentage": 36,
+        "year_over_year": true
+      },
+      "quarterly_revenue": {
+        "amount": 81400000000,
+        "currency": "USD",
+        "growth_percentage": 36,
+        "year_over_year": true
+      },
+      "product_growth": {
+        "percentage": 36,
+        "categories": [
+          "All Product Categories",
+          "Every Geographic Segment"
+        ]
+      },
+      "services": {
+        "revenue": 17500000000,
+        "growth_percentage": 33,
+        "record_high": true
+      },
+      "gross_margin": {
+        "total": "43.3%",
+        "products": "36%",
+        "services": "69.8%",
+        "change_from_last_quarter": {
+          "total": "+0.80%",
+          "products": "-0.10%",
+          "services": "-0.30%"
+        }
+      },
+      "net_income": {
+        "amount": 21700000000,
+        "currency": "USD",
+        "growth_percentage": null,  
+        "year_over_year": null
+      },
+      "earnings_per_share": {
+        "diluted": 1.30,
+        "currency": "USD",
+        "growth_percentage": null,
+        "year_over_year": null
+      },
+      "operating_cash_flow": {
+        "amount": 21100000000,
+        "currency": "USD",
+        "description": "June quarter record"
+      },
+      "cash_position": {
+        "cash": 194000000000,
+        "marketable_securities": null,  
+        "total_cash": 194000000000,
+        "currency": "USD"
+      },
+      "debt": {
+        "total_debt": 122000000000,
+        "details": {
+          "term_debt_retired": 3000000000,
+          "commercial_paper_increased": 3000000000,
+          "term_debt_issued": null,  
+          "commercial_paper_decreased": null
+        },
+        "currency": "USD"
+      },
+      "shareholder_returns": {
+        "dividends": 3800000000,
+        "share_repurchases": 17500000000,
+        "shares_repurposed": 136000000,
+        "accelerated_share_repurchase_program": {
+          "total_amount": 5000000000,
+          "shares_retired": 32000000,
+          "currency": "USD"
+        },
+        "currency": "USD"
+      }
+    },
+    "product_announcements": [
+      {
+        "product_name": "iPhone 12 Lineup",
+        "features": [
+          "Superfast 5G speeds",
+          "A14 Bionic chip",
+          "Adobe vision camera"
+        ],
+        "models": ["iPhone 12", "iPhone 12 Pro", "iPhone 12 Pro Max", "iPhone 12 mini"]
+      },
+      {
+        "product_name": "iMac",
+        "features": [
+          "Powered by M1 chip",
+          "Remarkably thin design",
+          "Vibrant colors"
+        ]
+      },
+      {
+        "product_name": "iPad Pro",
+        "features": [
+          "Powered by M1 chip",
+          "Exceptional speed",
+          "Power-efficient performance"
+        ]
+      },
+      {
+        "product_name": "Apple Watch",
+        "features": [
+          "Stay on top of health",
+          "Reach fitness goals"
+        ]
+      },
+      {
+        "product_name": "AirTag",
+        "features": [
+          "Find My network integration",
+          "Protects user privacy"
+        ]
+      },
+      {
+        "product_name": "Apple TV 4K",
+        "features": [
+          "Redesigned Siri remote"
+        ]
+      }
+    ],
+    "software_updates": {
+      "iOS_15": {
+        "features": [
+          "SharePlay",
+          "Spatial audio for FaceTime",
+          "Focus mode",
+          "Mail privacy protection",
+          "App Privacy Report",
+          "Assistive Touch enhancements",
+          "New VoiceOver capabilities"
+        ]
+      },
+      "iPad_OS": {
+        "features": [
+          "Enhanced multitasking",
+          "Split screen navigation",
+          "Quick Note feature"
+        ]
+      },
+      "Mac_OS": {
+        "features": [
+          "New productivity features",
+          "Enhanced connectivity"
+        ]
+      },
+      "Watch_OS": {
+        "features": [
+          "Health sharing feature",
+          "Walking steadiness",
+          "Exercise recommendations"
+        ]
+      }
+    },
+    "services": {
+      "apple_tv_plus": {
+        "achievements": ["35 Emmy Nominations"],
+        "popular_series": ["Mythic Quest", "Ted Lasso"],
+        "upcoming_films": ["Coda"],
+        "new_features": ["Apple Podcast Subscriptions", "Spatial Audio for Apple Music"]
+      },
+      "apple_arcade": {
+        "description": "Global marketplace for exclusive content"
+      },
+      "apple_news_plus": {
+        "description": "Enhanced news and journalism support"
+      },
+      "apple_fitness_plus": {
+        "updates": [
+          "New activities like meditation and pilates",
+          "Group workouts feature",
+          "Expansion to 15 new countries"
+        ]
+      },
+      "apple_wallet": {
+        "features": ["Enhanced security", "New Apple Wallet features previewed at WWDC"]
+      },
+      "apple_one_bundle": {
+        "description": "Comprehensive service bundle for users"
+      }
+    },
+    "initiatives": {
+      "education": {
+        "programs": [
+          {
+            "name": "Innovation Grants",
+            "description": "Granted to engineering schools at four historically black colleges and universities",
+            "purpose": "Expand coursework, scholarships, and internship opportunities in hardware engineering and silicon chip design"
+          },
+          {
+            "name": "350 Swift Student Challenge Winners",
+            "description": "Recognized at WWDC for developing apps that teach coding and support COVID-19 related efforts"
+          }
+        ]
+      },
+      "social_responsibility": {
+        "affordable_housing": {
+          "contribution": 1000000000,
+          "description": "Helping first-time homeowners and constructing thousands of new affordable housing units across California"
+        },
+        "global_pandemic_response": {
+          "description": "Supporting the global response to COVID-19 and delivering best products and services"
+        }
+      }
+    },
+    "geographic_performance": {
+      "revenue_growth": "Double digits across all geographic segments",
+      "strong_markets": ["Emerging markets including India, Latin America, and Vietnam"],
+      "store_openings": [
+        "New Apple Tower Theater in Los Angeles",
+        "Almost all retail stores have opened their doors"
+      ]
+    },
+    "outlook": {
+      "supply_constraints_impact": {
+        "current_quarter": 6000000000,
+        "expected_next_quarter": "Greater than current",
+        "affected_products": ["iPhone", "iPad"]
+      },
+      "revenue_expectations": {
+        "direction": "Very strong double digit year-over-year growth",
+        "record_revenue": true,
+        "product_category_growth": "All except iPad (expected decline)"
+      },
+      "foreign_exchange_impact": "Three points less favorable than June quarter",
+      "services_growth_rate": "Return to more typical level",
+      "gross_margin_expectation": {
+        "range": "41.5% - 42.5%"
+      },
+      "operating_expenses": {
+        "range": "11.3 billion - 11.5 billion USD"
+      },
+      "operating_income_and_expenses": {
+        "OI&E": "Around zero",
+        "exclusions": ["Mark-to-market of minority investments"]
+      },
+      "tax_rate": "Approximately 16%"
+    },
+    "dividends": {
+      "amount_per_share": 0.22,
+      "currency": "USD",
+      "payment_date": "2021-08-12",
+      "record_date": "2021-08-09"
+    }
+  }
+}
