@@ -158,7 +158,7 @@ export default function HowItWorks() {
                   <ul className="text-sm text-blue-700 space-y-1">
                     <li>• 1024 dimensions</li>
                     <li>• Captures semantic meaning</li>
-                    <li>• "AI strategy" ≈ "machine learning initiatives"</li>
+                    <li>• &quot;AI strategy&quot; ≈ &quot;machine learning initiatives&quot;</li>
                   </ul>
                 </div>
                 <div className="bg-emerald-50 rounded-xl p-4">
@@ -166,7 +166,7 @@ export default function HowItWorks() {
                   <ul className="text-sm text-emerald-700 space-y-1">
                     <li>• Keyword frequency-based</li>
                     <li>• Catches exact matches</li>
-                    <li>• "MI300", "Blackwell", "Q3 FY2025"</li>
+                    <li>• &quot;MI300&quot;, &quot;Blackwell&quot;, &quot;Q3 FY2025&quot;</li>
                   </ul>
                 </div>
               </div>
