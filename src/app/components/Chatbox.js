@@ -488,18 +488,7 @@ const [dataFreshness, setDataFreshness] = useState(null);
     }
   }, [loading, currentResponse]);
   
-  // Handle initial query from URL
-  useEffect(() => {
-    if (initialQuery && !hasHandledInitialQuery.current) {
-      hasHandledInitialQuery.current = true;
-      setQuery(initialQuery);
-      setTimeout(() => {
-        handleSubmit({ preventDefault: () => {} }, initialQuery);
-      }, 100);
-    }
-  }, [initialQuery]);
-  
-  async function handleSubmit(e, customQuery = null) {
+  const handleSubmit = useCallback(async (e, customQuery = null) => {
     e.preventDefault();
     const queryToSubmit = customQuery || query;
     console.log('[Chatbox] handleSubmit called with query:', queryToSubmit);
@@ -732,7 +721,18 @@ const [dataFreshness, setDataFreshness] = useState(null);
     } finally {
       setLoading(false);
     }
-  }
+  }, [query, setError, setLoading, setCurrentResponse, setCurrentCitations, setCurrentMetadata, setCurrentMetrics, setIsFirstQuery, setActiveTools, setDataSources, setRagMetrics, setShowBehindScenes, setStatusMessage]);
+  
+  // Handle initial query from URL
+  useEffect(() => {
+    if (initialQuery && !hasHandledInitialQuery.current) {
+      hasHandledInitialQuery.current = true;
+      setQuery(initialQuery);
+      setTimeout(() => {
+        handleSubmit({ preventDefault: () => {} }, initialQuery);
+      }, 100);
+    }
+  }, [initialQuery, handleSubmit]);
   
   const handleFollowUpQuestion = (question) => {
     setQuery(question);

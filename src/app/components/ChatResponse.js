@@ -392,8 +392,7 @@ function FollowUpSuggestions({ query, onAsk }) {
 
 // Source citations component
 function SourceCitations({ sources }) {
-  if (!sources || sources.length === 0) return null;
-  
+  const safeSources = sources || [];
   // Deduplicate and organize sources
   const organizedSources = useMemo(() => {
     const byType = {
@@ -402,14 +401,14 @@ function SourceCitations({ sources }) {
       computed: []
     };
     
-    sources.forEach(source => {
+    safeSources.forEach(source => {
       if (source.type && byType[source.type]) {
         byType[source.type].push(source);
       }
     });
     
     return byType;
-  }, [sources]);
+  }, [safeSources]);
   
   const getIcon = (type) => {
     switch (type) {

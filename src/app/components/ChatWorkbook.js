@@ -151,18 +151,7 @@ export default function ChatWorkbook() {
   const inputRef = useRef(null);
   const hasHandledInitialQuery = useRef(false);
   
-  // Handle initial query from URL
-  useEffect(() => {
-    if (initialQuery && !hasHandledInitialQuery.current) {
-      hasHandledInitialQuery.current = true;
-      setQuery(initialQuery);
-      setTimeout(() => {
-        handleSubmit({ preventDefault: () => {} }, initialQuery);
-      }, 100);
-    }
-  }, [initialQuery]);
-  
-  async function handleSubmit(e, customQuery = null) {
+  const handleSubmit = useCallback(async (e, customQuery = null) => {
     e.preventDefault();
     const queryToSubmit = customQuery || query;
     if (!queryToSubmit.trim()) return;
@@ -241,7 +230,18 @@ export default function ChatWorkbook() {
     } finally {
       setLoading(false);
     }
-  }
+  }, [query, selectedStrategy]);
+  
+  // Handle initial query from URL
+  useEffect(() => {
+    if (initialQuery && !hasHandledInitialQuery.current) {
+      hasHandledInitialQuery.current = true;
+      setQuery(initialQuery);
+      setTimeout(() => {
+        handleSubmit({ preventDefault: () => {} }, initialQuery);
+      }, 100);
+    }
+  }, [initialQuery, handleSubmit]);
   
   const handleFollowUpQuestion = (question) => {
     setQuery(question);
