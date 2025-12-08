@@ -471,28 +471,28 @@ const LandingPage = () => {
               <div className="space-y-2">
                 <h4 className="text-lg font-semibold text-slate-900">Change 1: Hybrid Search via Sparse Vectors</h4>
                 <p className="text-sm">
-                  Dense vectors missed exact terms like “Q3 FY2025 gross margin.” We built hybrid search combining dense (semantic) and sparse (BM25) with a dotproduct index, then re-embedded all 11,929 vectors. Retrieval dropped from 1716ms to 985ms (43% faster) and relevance for financial terms improved. Trade-off: re-indexing took 63.8 minutes and required code changes for dotproduct metrics, but creating a new index kept rollback safety and documented the migration path.
+                  Dense vectors missed exact terms like &quot;Q3 FY2025 gross margin.&quot; We built hybrid search combining dense (semantic) and sparse (BM25) with a dotproduct index, then re-embedded all 11,929 vectors. Retrieval dropped from 1716ms to 985ms (43% faster) and relevance for financial terms improved. Trade-off: re-indexing took 63.8 minutes and required code changes for dotproduct metrics, but creating a new index kept rollback safety and documented the migration path.
                 </p>
               </div>
 
               <div className="space-y-2">
                 <h4 className="text-lg font-semibold text-slate-900">Change 2: Model Selection — Power vs. Speed</h4>
                 <p className="text-sm">
-                  After hybrid search, retrieval was fast (985ms) but TTFT stayed ~22s. The agentic RAG flow required two calls: “should I search and which tools?” (~3s) plus tool time (~1s), then “generate the response” (~12s). We swapped Opus 4.5 for Sonnet 4.5, keeping the model env-configurable. TTFT fell from 22.8s to 16.5s (28% faster) and total time from 30.0s to 20.9s (30% faster). Trade-off: slightly less nuanced reasoning, but still excellent for finance and faster UX.
+                  After hybrid search, retrieval was fast (985ms) but TTFT stayed ~22s. The agentic RAG flow required two calls: &quot;should I search and which tools?&quot; (~3s) plus tool time (~1s), then &quot;generate the response&quot; (~12s). We swapped Opus 4.5 for Sonnet 4.5, keeping the model env-configurable. TTFT fell from 22.8s to 16.5s (28% faster) and total time from 30.0s to 20.9s (30% faster). Trade-off: slightly less nuanced reasoning, but still excellent for finance and faster UX.
                 </p>
               </div>
 
               <div className="space-y-2">
                 <h4 className="text-lg font-semibold text-slate-900">Change 3: Fiscal Year Intelligence</h4>
                 <p className="text-sm">
-                  Different fiscal calendars (NVIDIA on FY2026 vs. AMD on FY2025) meant “latest revenue” could be three quarters old. We added fiscal year auto-detection in the data layer (`getMostRecentQuarter()`), allowed `fiscalYear: "latest"` in the tool, and instructed the model accordingly. Comparisons now stay apples-to-apples.
+                  Different fiscal calendars (NVIDIA on FY2026 vs. AMD on FY2025) meant &quot;latest revenue&quot; could be three quarters old. We added fiscal year auto-detection in the data layer (`getMostRecentQuarter()`), allowed `fiscalYear: &quot;latest&quot;` in the tool, and instructed the model accordingly. Comparisons now stay apples-to-apples.
                 </p>
               </div>
 
               <div className="space-y-2">
                 <h4 className="text-lg font-semibold text-slate-900">Change 4: Building Observability</h4>
                 <p className="text-sm">
-                  Silence for 22 seconds eroded trust. We added real-time status messages (“Analyzing…”, “Searching…”), an expandable behind-the-scenes panel showing tools, retrieved chunks with sources, and confidence scores, plus a lightweight metrics view (TTFT, latency, retrieval score). Users now see what’s happening; debugging is faster.
+                  Silence for 22 seconds eroded trust. We added real-time status messages (&quot;Analyzing…&quot;, &quot;Searching…&quot;), an expandable behind-the-scenes panel showing tools, retrieved chunks with sources, and confidence scores, plus a lightweight metrics view (TTFT, latency, retrieval score). Users now see what’s happening; debugging is faster.
                 </p>
               </div>
 
