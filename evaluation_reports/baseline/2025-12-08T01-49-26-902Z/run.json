@@ -1,0 +1,109 @@
+{
+  "run_id": "2025-12-08T01-49-26-902Z",
+  "strategy_id": "baseline",
+  "created_at": "2025-12-08T01:49:26.902Z",
+  "dataset": "data/evaluation/dataset.json",
+  "total_cases": 1,
+  "summary": {
+    "avg_relevance": 1,
+    "avg_faithfulness": 0.92,
+    "avg_accuracy": 1,
+    "timings_ms": {
+      "intentMs": 2924,
+      "embeddingMs": 292,
+      "pineconeMs": 955,
+      "financialMs": 2,
+      "keywordMs": 6,
+      "llmMs": 10128,
+      "totalMs": 14308
+    },
+    "retrieval": {
+      "pineconeMatches": 10,
+      "financialMatches": 1,
+      "keywordMatches": 2,
+      "combinedContext": 13
+    },
+    "fallback_rates": {
+      "usedFinancialData": 1,
+      "usedKeywordFallback": 1,
+      "financialQuery": 1,
+      "hadTranscriptMatches": 1
+    },
+    "llm_usage": {
+      "input_tokens": 2796,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 338
+    }
+  },
+  "cases": [
+    {
+      "id": "fin-1",
+      "question": "What was AMD's total revenue in Q3 2024?",
+      "duration_ms": 14309,
+      "context_count": 13,
+      "metrics": {
+        "relevance": {
+          "score": 1,
+          "reasoning": "The answer directly and completely addresses the question by stating AMD's total revenue in Q3 2024 was $6.8 billion in the very first sentence. The answer then provides extensive additional context about the revenue breakdown, growth drivers, margins, and segment performance, which adds valuable detail beyond the basic question but remains highly relevant to understanding AMD's Q3 2024 financial performance."
+        },
+        "faithfulness": {
+          "score": 0.92,
+          "reasoning": "The answer is largely faithful to the provided context. Key facts verified from context: Q3 2024 revenue of $6.8 billion with 18% YoY and 17% sequential growth (Chunk 11), Data Center accounting for more than 50% of revenue mix (Chunk 3), strong Instinct portfolio performance (Chunk 1), $500 million guidance increase for AI GPU revenue (Chunk 4), gross margin of 53.6% in Q3 with 54% Q4 guidance (Chunk 3), enterprise recovery continuing (Chunk 5), AI PC momentum with 2025 expansion at broader price points (Chunk 6), muted Embedded recovery (Chunk 7), operating income $724 million at 10.6% margin, net income $771 million, EPS $0.47, operating cash flow $628 million (Chunk 13). The MI325X launch timing and ramp details (Chunk 10) are also consistent. Minor deduction: the answer states enterprise recovery 'began in Q2' which is implied but not explicitly stated in the context. The answer also adds interpretive language about 'earnings quality' which is reasonable inference but not directly stated. Overall, the answer demonstrates strong faithfulness to the source material with minimal extrapolation."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer correctly states AMD's Q3 2024 revenue as $6.8 billion and the year-over-year growth as 18%, which matches the ground truth exactly. The generated answer provides significantly more detail about the revenue breakdown, drivers, margins, and other financial metrics, but all of this additional information is consistent with and expands upon the core facts in the ground truth. The key numbers (revenue amount and YoY growth percentage) are accurate."
+        }
+      },
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 2924,
+          "embeddingMs": 292,
+          "pineconeMs": 955,
+          "financialMs": 2,
+          "keywordMs": 6,
+          "llmMs": 10128,
+          "totalMs": 14308
+        },
+        "retrieval": {
+          "pineconeMatches": 10,
+          "financialMatches": 1,
+          "keywordMatches": 2,
+          "combinedContext": 13,
+          "filtersApplied": {
+            "company": "AMD",
+            "fiscal_year": "2024",
+            "quarter": "Q3"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": true,
+          "financialQuery": true,
+          "hadTranscriptMatches": true
+        },
+        "intent": {
+          "analysis_type": "financial",
+          "timeframe": "Q3 2024",
+          "company_name": "AMD",
+          "isComparisonQuery": false,
+          "primaryTicker": "AMD"
+        },
+        "llm": {
+          "input_tokens": 2796,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 338,
+          "service_tier": "standard"
+        }
+      },
+      "file": "fin-1.json",
+      "category": "financial"
+    }
+  ]
+}

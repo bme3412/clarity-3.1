@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { 
-  ArrowRight, TrendingUp, Search, FlaskConical, Clock,
+  ArrowRight, TrendingUp, Search, Clock,
   Layers, GitMerge, Sparkles, Wand2, CheckCircle2, Zap, ChevronDown,
   Hash, MessageSquare, FileText, Network, Settings2, BookOpen
 } from 'lucide-react';
@@ -195,6 +195,7 @@ const LandingPage = () => {
   const [selectedStrategy, setSelectedStrategy] = useState('auto');
   const [showStrategyOptions, setShowStrategyOptions] = useState(false);
   const router = useRouter();
+  const primaryPost = blogPosts[0];
 
   useEffect(() => {
     setMounted(true);
@@ -211,10 +212,9 @@ const LandingPage = () => {
   const selectedColors = colorClasses[selectedStrategyData?.color || 'amber'];
 
   const exampleQueries = [
-    { text: "Compare NVDA vs AMD vs AVGO latest quarterly revenue", color: "blue" },
-    { text: "What is NVIDIA's data center growth strategy?", color: "emerald" },
-    { text: "Apple gross margin trend over last 4 quarters", color: "violet" },
-    { text: "How is Google monetizing AI?", color: "amber" },
+    { text: "What is NVIDIA's data center growth strategy?", color: "blue" },
+    { text: "Apple gross margin trend over last 4 quarters", color: "emerald" },
+    { text: "How is Google monetizing AI?", color: "violet" },
   ];
 
   return (
@@ -249,13 +249,6 @@ const LandingPage = () => {
         </div>
         <div className="flex items-center gap-4">
           <Link
-            href="/rag-lab"
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-full shadow-lg shadow-blue-600/20 hover:bg-blue-700 hover:shadow-blue-600/30 transition-all duration-200"
-          >
-            <FlaskConical className="w-4 h-4" />
-            RAG Lab
-          </Link>
-          <Link
             href="/how-it-works"
             className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors"
           >
@@ -284,10 +277,10 @@ const LandingPage = () => {
           Big Tech <span className="text-blue-600">Earnings</span> Intelligence
         </h1>
         
-        <p className={`text-lg text-slate-500 leading-relaxed mb-6 max-w-xl transition-all duration-1000 delay-200 ${
+        <p className={`text-lg text-slate-600 leading-relaxed mb-6 max-w-xl transition-all duration-1000 delay-200 ${
           mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          Ask questions about revenue, margins, AI strategy, and guidance from quarterly earnings calls
+          Over 200 MegaCap Tech earnings calls + financials at your fingertips. Use AI to surface cross-company trends, strategy shifts, and AI bets.
         </p>
         
         {/* Available Tickers */}
@@ -365,15 +358,15 @@ const LandingPage = () => {
         }`}>
           <div className="flex items-center gap-1.5">
             <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-            <span><strong className="text-slate-600">11,929</strong> indexed vectors</span>
+            <span><strong className="text-slate-700">241</strong> earnings-call quarters</span>
           </div>
           <div className="flex items-center gap-1.5">
             <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-            <span><strong className="text-slate-600">FY2020-FY2026</strong> coverage</span>
+            <span><strong className="text-slate-700">FY2020–FY2026</strong> quarterly coverage</span>
           </div>
           <div className="flex items-center gap-1.5">
             <div className="w-2 h-2 rounded-full bg-violet-500"></div>
-            <span><strong className="text-slate-600">Hybrid</strong> search (dense + sparse)</span>
+            <span><strong className="text-slate-700">Hybrid</strong> (dense + sparse) retrieval</span>
           </div>
         </div>
         
@@ -392,13 +385,13 @@ const LandingPage = () => {
           >
             <div className="flex items-center gap-3">
               <Settings2 className="w-4 h-4 text-slate-400" />
-              <span className="text-sm text-slate-600">Search Mode:</span>
+              <span className="text-sm text-slate-700">Search mode</span>
               <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border ${selectedColors.badge}`}>
                 {React.createElement(selectedStrategyData?.icon || Wand2, { className: 'w-3 h-3' })}
-                {selectedStrategyData?.name || 'Smart Mode'}
+                {selectedStrategyData?.name || 'Smart (auto)'}
               </span>
               {selectedStrategy === 'auto' && (
-                <span className="text-xs text-slate-400">• AI picks the best approach</span>
+                <span className="text-xs text-slate-500">Auto-picks dense vs hybrid per query</span>
               )}
             </div>
             <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${showStrategyOptions ? 'rotate-180' : ''}`} />
@@ -437,92 +430,111 @@ const LandingPage = () => {
       </div>
 
 
-      {/* Blog Preview Section */}
-      {blogPosts.length > 0 && (
-        <div className={`relative z-10 max-w-6xl mx-auto px-6 pb-20 transition-all duration-1000 delay-700 ${
+      {/* Blog Highlight - minimal styling */}
+      {primaryPost && (
+        <div className={`relative z-10 max-w-4xl mx-auto px-6 pb-24 transition-all duration-1000 delay-700 ${
           mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          {/* Blog Cards Grid */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {blogPosts.slice(0, 2).map((post, index) => (
-              <Link
-                key={post.id}
-                href="/rag-strategy"
-                className="group relative bg-white rounded-2xl border border-slate-200 shadow-lg shadow-slate-200/50 overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-300"
-              >
-                {/* Accent line */}
-                <div className="h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500" />
-                
-                <div className="p-6">
-                  {/* Status & Date */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${
-                      post.status === 'published' 
-                        ? 'bg-emerald-100 text-emerald-700' 
-                        : 'bg-amber-100 text-amber-700'
-                    }`}>
-                      {post.status === 'published' ? '● Published' : '◐ Draft'}
-                    </span>
-                    <span className="text-xs text-slate-400 font-mono">{post.date}</span>
-                  </div>
+          <div className="bg-white rounded-xl border border-blue-200 shadow-sm px-6 py-8 md:px-10 md:py-10 space-y-6">
+            {/* Header */}
+            <div className="space-y-3">
+              <h3 className="text-3xl font-serif font-semibold text-slate-900 leading-snug">
+                Building Production-Grade RAG: Engineering Trade-offs in Clarity 3.0
+              </h3>
+              <p className="text-base text-slate-700">
+                How we improved retrieval, latency, and trust—one bottleneck at a time.
+              </p>
+            </div>
 
-                  {/* Title & Subtitle */}
-                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-blue-600 font-medium mb-3">
-                    {post.subtitle}
-                  </p>
+            <div className="space-y-7 text-slate-800 leading-relaxed">
+              <p>
+                When we started optimizing Clarity 3.0—our AI-powered financial intelligence platform—we had a working system but nowhere near production quality. First token time hovered around 22 seconds, dense-only search retrieved irrelevant results, and users had no visibility into what the system was actually doing. Over several optimization sprints, we systematically addressed each bottleneck. This is the story of those changes, the trade-offs we made, and what we learned about building RAG systems for real-world use.
+              </p>
 
-                  {/* Summary */}
-                  <p className="text-sm text-slate-600 leading-relaxed mb-4 line-clamp-2">
-                    {post.summary}
-                  </p>
+              <div className="space-y-2">
+                <h4 className="text-xl font-serif font-semibold text-slate-900">The Starting Point: 22 Seconds Is Not Good Enough</h4>
+                <p className="text-sm">
+                  Time to First Token was 22.8 seconds. Average relevance was 51%. User observability was zero. Search was dense-only. The model was Claude Opus 4.5. For a portfolio-grade build, this was a clear signal we were leaving performance and trust on the table.
+                </p>
+                <p className="text-sm">
+                  The question became: which bottleneck should we attack first?
+                </p>
+              </div>
 
-                  {/* Meta */}
-                  <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                    <div className="flex items-center gap-2 text-xs text-slate-400">
-                      <Clock className="w-3.5 h-3.5" />
-                      {post.readingTime}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      {post.tags?.slice(0, 2).map((tag) => (
-                        <span key={tag} className="px-2 py-0.5 bg-slate-100 rounded text-xs text-slate-500 font-mono">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+              <div className="space-y-2">
+                <h4 className="text-xl font-serif font-semibold text-slate-900">Strategy: Attack Bottlenecks in Order of Impact</h4>
+                <p className="text-sm">
+                  We profiled before optimizing and found three buckets: retrieval quality (affecting everything downstream), model latency (the long pole once retrieval is fixed), and user perception (status/transparency so waits feel acceptable). Fix retrieval first, speed the model second, improve perception third.
+                </p>
+              </div>
 
-                  {/* Metrics Preview (if available) */}
-                  {post.metricsProgression && post.metricsProgression[0]?.faithfulness != null && (
-                    <div className="mt-4 pt-4 border-t border-slate-100">
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="text-slate-500">Metrics journey:</span>
-                        <div className="flex items-center gap-3">
-                          <span className="text-slate-400">
-                            {post.metricsProgression[0]?.faithfulness?.toFixed(0)}%
-                          </span>
-                          <span className="text-slate-300">→</span>
-                          <span className="text-emerald-600 font-semibold">
-                            {post.metricsProgression[post.metricsProgression.length - 1]?.faithfulness?.toFixed(0)}%
-                          </span>
-                          <span className="text-emerald-600 text-xs">faithfulness</span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
+              <div className="space-y-2">
+                <h4 className="text-lg font-semibold text-slate-900">Change 1: Hybrid Search via Sparse Vectors</h4>
+                <p className="text-sm">
+                  Dense vectors missed exact terms like “Q3 FY2025 gross margin.” We built hybrid search combining dense (semantic) and sparse (BM25) with a dotproduct index, then re-embedded all 11,929 vectors. Retrieval dropped from 1716ms to 985ms (43% faster) and relevance for financial terms improved. Trade-off: re-indexing took 63.8 minutes and required code changes for dotproduct metrics, but creating a new index kept rollback safety and documented the migration path.
+                </p>
+              </div>
 
-                {/* Hover arrow */}
-                <div className="absolute bottom-6 right-6 w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ArrowRight className="w-4 h-4 text-blue-600" />
-                </div>
-              </Link>
-            ))}
+              <div className="space-y-2">
+                <h4 className="text-lg font-semibold text-slate-900">Change 2: Model Selection — Power vs. Speed</h4>
+                <p className="text-sm">
+                  After hybrid search, retrieval was fast (985ms) but TTFT stayed ~22s. The agentic RAG flow required two calls: “should I search and which tools?” (~3s) plus tool time (~1s), then “generate the response” (~12s). We swapped Opus 4.5 for Sonnet 4.5, keeping the model env-configurable. TTFT fell from 22.8s to 16.5s (28% faster) and total time from 30.0s to 20.9s (30% faster). Trade-off: slightly less nuanced reasoning, but still excellent for finance and faster UX.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="text-lg font-semibold text-slate-900">Change 3: Fiscal Year Intelligence</h4>
+                <p className="text-sm">
+                  Different fiscal calendars (NVIDIA on FY2026 vs. AMD on FY2025) meant “latest revenue” could be three quarters old. We added fiscal year auto-detection in the data layer (`getMostRecentQuarter()`), allowed `fiscalYear: "latest"` in the tool, and instructed the model accordingly. Comparisons now stay apples-to-apples.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="text-lg font-semibold text-slate-900">Change 4: Building Observability</h4>
+                <p className="text-sm">
+                  Silence for 22 seconds eroded trust. We added real-time status messages (“Analyzing…”, “Searching…”), an expandable behind-the-scenes panel showing tools, retrieved chunks with sources, and confidence scores, plus a lightweight metrics view (TTFT, latency, retrieval score). Users now see what’s happening; debugging is faster.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="text-lg font-semibold text-slate-900">Change 5: Data Extraction Fixes</h4>
+                <p className="text-sm">
+                  Gross margin data existed but schema drift hid it. We added defensive extraction with fallbacks and derived metrics (gross_profit, net_margin, diluted EPS). Real-world finance data is messy; strict-but-flexible parsing is required.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="text-lg font-semibold text-slate-900">Change 6: UX Improvements</h4>
+                <p className="text-sm">
+                  The chat felt like a form. We moved input to the bottom, made responses stream with status, auto-focused after answers, and stopped auto-submitting example queries. The landing page now clearly states value, shows supported tickers, better sample queries, and coverage stats (11,929 vectors, FY2020–FY2026, hybrid search). UX now feels like a real conversation.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="text-xl font-serif font-semibold text-slate-900">The Architecture: How It Fits Together</h4>
+                <p className="text-sm">
+                  User input flows from the landing page into a bottom-anchored chat. The route handler calls LLM #1 to decide tools, runs hybrid Pinecone search and financial metric lookups, then calls LLM #2 to generate. Responses stream with status, confidence, behind-the-scenes details, and metrics (TTFT, relevance, retrieval time).
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="text-xl font-serif font-semibold text-slate-900">Results: Before and After</h4>
+                <p className="text-sm">
+                  TTFT improved from 22.8s to 16.5s (28%). Total time improved from 30.0s to 20.9s (30%). Retrieval time improved from 1716ms to 985ms (43%). Relevance rose from 51% to 65%. Faithfulness rose from 0.63 to 0.94. Search moved from dense-only to hybrid. Observability moved from none to full, and UX shifted from confusing to natural.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <h4 className="text-xl font-serif font-semibold text-slate-900">Key Lessons Learned</h4>
+                <p className="text-sm">
+                  Measure before optimizing: retrieval was only ~5% of total time, so fixing latency mattered more. Trade-offs are everywhere: hybrid re-indexing takes time, Sonnet is faster but slightly less capable, observability adds frontend code, and defensive extraction adds edge-case handling—be intentional. Preserve optionality: new index for hybrid and env-configurable LLMs keep escape hatches open. Real-world data is messy: build strict-yet-flexible fallbacks. Observability is not optional: metrics and behind-the-scenes views transform trust and debugging. UX matters as much as performance: status messages alone improved perceived speed.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       )}
+
 
       <style jsx>{`
         @keyframes ripple {

@@ -1,8 +1,9 @@
 {
   "run_id": "2025-12-08T01-52-04-686Z",
   "strategy_id": "baseline",
+  "created_at": "2025-12-08T01:52:04.686Z",
   "dataset": "data/evaluation/dataset.json",
-  "timestamp": "2025-12-08T01:52:04.686Z",
+  "total_cases": 11,
   "summary": {
     "avg_relevance": 0.8954545454545453,
     "avg_faithfulness": 0.6409090909090909,
@@ -35,13 +36,11 @@
       "output_tokens": 440.6363636363636
     }
   },
-  "details": [
+  "cases": [
     {
       "id": "fin-1",
-      "strategy_id": "baseline",
       "question": "What was AMD's total revenue in Q3 2024?",
-      "ground_truth": "AMD's total revenue in Q3 2024 was $6.8 billion, representing an 18% increase year-over-year.",
-      "generated_answer": "AMD delivered Q3 2024 revenue of $6.8 billion, representing 18% year-over-year growth and 17% sequential improvement [Q3 2024 earnings data].\nThe growth was primarily driven by Data Center, which now accounts for more than 50% of AMD's total revenue mix. Within Data Center, the Instinct GPU portfolio delivered particularly strong results, with management raising full-year 2024 AI GPU revenue guidance by $500 million during the quarter. The MI300 product line drove the bulk of GPU revenue, with MI325X expected to contribute only modestly in Q4 before ramping more meaningfully in the first half of 2025.\nGross margin reached 53.6% in Q3, with guidance for approximately 54% in Q4—improvement driven predominantly by the favorable mix shift toward higher-margin Data Center products.\nThe Client segment showed momentum from AI PC launches, with management noting PC as \"a good revenue growth opportunity\" with products performing well across OEM partners. Embedded, however, remained muted, with management characterizing any Q4 recovery as modest at best.\nOperating income was $724 million (10.6% operating margin), while operating cash flow came in at $628 million [Q3 2024 financial data]. Net income reached $771 million, translating to $0.47 diluted EPS.\nFor Q4, implied guidance suggests continued Data Center strength offsetting still-soft Embedded trends, with the revenue mix increasingly tilted toward AI-driven products.",
+      "duration_ms": 14320,
       "context_count": 13,
       "metrics": {
         "relevance": {
@@ -57,7 +56,6 @@
           "reasoning": "The generated answer correctly states AMD's Q3 2024 revenue as $6.8 billion and the year-over-year growth as 18%, which matches the ground truth exactly. The generated answer provides significantly more detail about the revenue breakdown, margins, and other financial metrics, but all of this additional information is consistent with and expands upon the core facts in the ground truth. The key facts (revenue amount and YoY growth percentage) are accurately captured."
         }
       },
-      "duration_ms": 14320,
       "pipeline_metrics": {
         "timings": {
           "intentMs": 2773,
@@ -104,14 +102,13 @@
           "service_tier": "standard"
         }
       },
+      "file": "fin-1.json",
       "category": "financial"
     },
     {
       "id": "fin-2",
-      "strategy_id": "baseline",
       "question": "How did the AMD Data Center segment perform in Q3 2024?",
-      "ground_truth": "The Data Center segment revenue reached a record $3.5 billion in Q3 2024, up 122% year-over-year, driven by strong sales of AMD Instinct GPUs and EPYC CPUs.",
-      "generated_answer": "AMD's Data Center segment delivered $3.5 billion in Q3 2024 revenue, up 122% year-over-year, making it the company's largest segment at over 50% of total revenue [Q3 2024 earnings].\nThe segment's performance was driven by two engines. Data Center GPU revenue (Instinct MI300 series) approached the size of the server CPU business, which CFO Jean Hu characterized as \"under $1.7 billion, maybe a little more.\" This implies GPU revenue in the $1.5 billion range for Q3, with management raising full-year 2024 GPU guidance from \"exceeding $4.5 billion\" to \"exceeding $5 billion\" based on completing key customer milestones ahead of schedule.\nEPYC server CPU revenue grew 29% year-over-year, benefiting from continued enterprise recovery that began in Q2 and share gains against Intel. CEO Lisa Su noted the enterprise strength was \"broad-based across many verticals\" and extended into Q3.\nThe segment's mix shift toward higher-margin data center products was the primary driver of AMD's gross margin expansion to 53.6% in Q3, with guidance for 54% in Q4. Management explicitly tied margin improvement to Data Center now exceeding 50% of revenue mix.\nOn supply, AMD has been building out capacity for MI300/MI325 production, though analysts probed whether the implied Q4 GPU trajectory (roughly $2 billion needed to hit $5 billion+ annually) was achievable. Su confirmed strong Q3 execution against \"customer milestones\" but declined to provide 2025 quantitative guidance, noting only that they see \"significant growth\" ahead as MI325X and MI355 expand workload breadth with existing hyperscale customers.",
+      "duration_ms": 15627,
       "context_count": 13,
       "metrics": {
         "relevance": {
@@ -127,7 +124,6 @@
           "reasoning": "The generated answer contains all the key facts from the ground truth: Data Center segment revenue of $3.5 billion in Q3 2024, up 122% year-over-year, driven by AMD Instinct GPUs and EPYC CPUs. The generated answer provides significantly more detail including specific GPU revenue estimates, EPYC growth rates (29% YoY), gross margin information, and forward guidance, but all of this additional information is consistent with and expands upon the ground truth rather than contradicting it. The core facts match exactly."
         }
       },
-      "duration_ms": 15627,
       "pipeline_metrics": {
         "timings": {
           "intentMs": 3115,
@@ -174,14 +170,13 @@
           "service_tier": "standard"
         }
       },
+      "file": "fin-2.json",
       "category": "financial"
     },
     {
       "id": "fin-3",
-      "strategy_id": "baseline",
       "question": "How has Nvidia's data center revenue changed over the past year?",
-      "ground_truth": "Nvidia's data center revenue has grown significantly, driven by AI GPU demand. The segment has shown consistent triple-digit growth rates throughout FY2024-2025.",
-      "generated_answer": "NVIDIA's Data Center segment generated approximately $152B in trailing twelve-month revenue through Q3 FY2026, representing year-over-year growth of roughly 70-80% depending on the baseline comparison.\nThe quarterly progression shows sustained momentum: Data Center revenue climbed from $26.3B in Q2 FY2025 to $30.8B in Q3 FY2025 (+17% YoY of 112%), then $35.6B in Q4 FY2025 (+16% QoQ, +93% YoY), followed by $39.1B in Q1 FY2026, $41.1B in Q2 FY2026 (+5% QoQ, +56% YoY), and $45.0B in Q3 FY2026 [Q3 FY2026 operational highlights reference Blackwell Ultra and GB300 \"dominating revenue\"].\nThe growth narrative has evolved across this period. Through FY2025, Hopper-based H100/H200 systems drove the expansion, with cloud service providers representing roughly 45% of Data Center revenue and compute revenue growing more than 2.5x year-over-year [Q2 FY2025 earnings]. The transition to Blackwell architecture accelerated in FY2026—Blackwell Data Center revenue grew 17% sequentially in Q2 FY2026, and by Q3 FY2026, management noted \"GB300 crossed over GB200\" with visibility to \"$0.5T in Blackwell/Rubin revenue\" as AI infrastructure spending reaches \"hundreds of billions\" annually [Q3 FY2026 CEO commentary].\nSequential growth rates have moderated from the triple-digit YoY comparisons of early FY2025 to the 50-60% range in FY2026, reflecting base effects rather than demand softening—management characterized Blackwell demand as \"off the charts\" with GB300 production reaching 1,000 racks per week [Q2 FY2026].",
+      "duration_ms": 15865,
       "context_count": 18,
       "metrics": {
         "relevance": {
@@ -197,7 +192,6 @@
           "reasoning": "The generated answer is fully consistent with the ground truth and provides substantially more detail. The ground truth states that Nvidia's data center revenue has grown significantly with 'consistent triple-digit growth rates throughout FY2024-2025.' The generated answer confirms this by providing specific quarterly figures showing triple-digit YoY growth rates during FY2025 (112% YoY in Q3 FY2025, 93% YoY in Q4 FY2025). The answer also accurately notes that growth rates moderated to 50-60% in FY2026 due to base effects, which is consistent with the ground truth's timeframe of FY2024-2025 for triple-digit growth. The additional detail about revenue figures, product transitions (Hopper to Blackwell), and customer mix enhances rather than contradicts the ground truth."
         }
       },
-      "duration_ms": 15865,
       "pipeline_metrics": {
         "timings": {
           "intentMs": 3133,
@@ -242,14 +236,13 @@
           "service_tier": "standard"
         }
       },
+      "file": "fin-3.json",
       "category": "financial"
     },
     {
       "id": "strat-1",
-      "strategy_id": "baseline",
       "question": "What are AMD's strategic priorities for AI as of late 2024?",
-      "ground_truth": "AMD is focusing on expanding its Instinct data center GPU portfolio (specifically MI300), enhancing the ROCm software stack to compete with CUDA, and driving adoption across cloud and enterprise markets.",
-      "generated_answer": "AMD's AI strategy in 2024 centered on aggressive MI300 deployment, software ecosystem expansion, and broadening customer engagements beyond hyperscalers.\n2024: Execution Year\nThe year began with MI300 qualification ramps. Lisa Su noted in Q1 2024: \"The MI300 ramp is going really well. If we look at just what's happened over the last 90 days, we've been working very closely with our customers to qualify MI300 in their production data centers, both from a hardware standpoint, software standpoint.\" The focus was establishing production credibility with major cloud customers.\nBy mid-year, monetization accelerated with sequential revenue growth. Q2 2024 commentary emphasized workload diversification: \"We're very happy with how MI300 has progressed. When we started the year, I think the key point for us was to get our products into our customers' data centers, to have them qualify their workloads, to really ramp in production.\"\nQ3 2024 marked both product transition and customer expansion. Su stated: \"Our customer engagements are actually broadening quite well. So, certainly, cloud -- our largest cloud customers are broadening the set of workloads that they're running on AMD Instinct. And we're also very engaged with a number of large cloud and enterprise customers that are actively working with us.\" The MI325 launch in Q4 signaled continued roadmap execution.\nSoftware investment emerged as a strategic priority, with analysts probing what Su acknowledged as \"a big challenge\" alongside hardware scaling.\n2022, 2023, 2025\nThe retrieved context contains no evidence for these years. A comprehensive timeline would require additional earnings materials from those periods.",
+      "duration_ms": 14225,
       "context_count": 10,
       "metrics": {
         "relevance": {
@@ -265,7 +258,6 @@
           "reasoning": "The generated answer accurately covers all three key elements from the ground truth: (1) expanding Instinct data center GPU portfolio with specific focus on MI300 (extensively discussed with MI300 deployment, qualification, and MI325 launch), (2) ROCm/software stack enhancement (mentioned as 'software ecosystem expansion' and 'strategic priority' with acknowledgment of it being 'a big challenge'), and (3) driving adoption across cloud and enterprise markets (discussed with 'broadening customer engagements beyond hyperscalers' and mentions of cloud and enterprise customers). The generated answer provides significantly more detail with specific quotes and timeline information, which is consistent with the ground truth. The only minor deduction is that ROCm is not explicitly named and the CUDA competition aspect is not directly mentioned, though software ecosystem challenges are acknowledged."
         }
       },
-      "duration_ms": 14225,
       "pipeline_metrics": {
         "timings": {
           "intentMs": 3362,
@@ -309,14 +301,13 @@
           "service_tier": "standard"
         }
       },
+      "file": "strat-1.json",
       "category": "strategy"
     },
     {
       "id": "strat-2",
-      "strategy_id": "baseline",
       "question": "What is Apple's approach to AI and machine learning in their products?",
-      "ground_truth": "Apple emphasizes on-device AI processing through Apple Intelligence, focusing on privacy-first ML capabilities, custom silicon (Neural Engine), and integration across the ecosystem.",
-      "generated_answer": "Apple's AI strategy has evolved from foundational silicon investments to a comprehensive generative AI ecosystem built around privacy-preserving on-device processing.\n 2022\nApple laid groundwork through custom silicon, though explicit AI strategy announcements were limited in the retrieved data. The Apple Watch Ultra and Series 8 launched with health features powered by machine learning, and AirPods Pro delivered AI-driven noise cancellation that received \"off the charts\" reviews [Q4 FY2022]. No major AI platform announcements appear in this period's context.\n 2023\nNo substantive AI strategy evidence was retrieved for this year. This gap likely reflects the pre-Apple Intelligence period before the company's public generative AI pivot.\n 2024\nApple announced Apple Intelligence at WWDC 2024, marking its generative AI inflection point. \"We built our own highly capable foundation models that are specialized for everyday tasks... we went to great lengths to build a system that protects user privacy, whether requests are processed on-device or in the cloud with Private Cloud Compute\" [Q2 FY2025, referencing WWDC 2024]. The strategy emphasized on-device processing via Apple Silicon's neural engine.\n 2025\nFull commercialization accelerated across hardware and software:\nProduct Integration: \"AI and advanced machine learning are at the core of powerful health features... Hypertension notifications, developed using large-scale machine learning models\" [Q4 FY2025]. New features include Live Translation, Visual Intelligence, and Workout Buddy providing \"personalized motivational insights.\"\nGlobal Expansion: iOS 18.4 brought Apple Intelligence to French, German, Italian, Portuguese, Spanish, Japanese, Korean, and Simplified Chinese [Q2 FY2025].\nPlatform Strategy: WWDC 2025 expanded developer access to on-device foundation models, with \"a roadmap toward more personalized Siri and cross-device intelligence features\" [Q4 FY2025].\nMonetization: Indirect through hardware differentiation—\"A19 Pro chip and M5... make Apple products the very best place to experience the power of AI\" [Q4 FY2025].",
+      "duration_ms": 15874,
       "context_count": 10,
       "metrics": {
         "relevance": {
@@ -332,7 +323,6 @@
           "reasoning": "The generated answer fully covers all key elements from the ground truth: (1) on-device AI processing is emphasized throughout, with specific quotes about 'on-device processing via Apple Silicon's neural engine' and 'privacy-preserving on-device processing'; (2) privacy-first ML capabilities are explicitly mentioned with quotes about 'a system that protects user privacy' and 'Private Cloud Compute'; (3) custom silicon/Neural Engine is referenced multiple times including 'Apple Silicon's neural engine', 'A19 Pro chip and M5'; (4) ecosystem integration is demonstrated through examples across Watch, AirPods, health features, and cross-device intelligence. The generated answer provides substantially more detail with specific timeline, product examples, and direct quotes, but remains fully consistent with the ground truth's core claims."
         }
       },
-      "duration_ms": 15874,
       "pipeline_metrics": {
         "timings": {
           "intentMs": 3066,
@@ -375,14 +365,13 @@
           "service_tier": "standard"
         }
       },
+      "file": "strat-2.json",
       "category": "strategy"
     },
     {
       "id": "strat-3",
-      "strategy_id": "baseline",
       "question": "How is Meta investing in AI infrastructure?",
-      "ground_truth": "Meta is investing heavily in AI infrastructure, including building large GPU clusters, developing custom AI chips, and expanding data center capacity to support AI model training and inference.",
-      "generated_answer": "Meta's AI infrastructure and investment trajectory shows a dramatic acceleration from 2022 through 2025, with capital expenditure roughly tripling and AI becoming the organizing principle for nearly every product and resource allocation decision.\n2022\nNo retrieved evidence available for this year in the provided context.\n2023\nLimited direct context, though Q4 2024 year-over-year comparisons indicate 2023 served as the baseline before the major AI capex surge. Depreciation and amortization was $11.2B for full-year 2023 versus $15.5B in 2024, reflecting the infrastructure ramp that followed.\n2024\nThe inflection year for AI monetization and infrastructure commitment. Q4 FY2024 delivered total revenue of $48.4B (+21% YoY) with operating margins at 48%, while AI recommendation models began demonstrably improving ad performance. Mark Zuckerberg positioned the year around scaling Meta AI \"toward one billion people, with a focus on highly personalized experiences and multimodal agents, while Llama 4 prepares to deliver agentic capabilities\" [Q4 FY2024]. On infrastructure: \"we continue ramping AI coding assistants to boost engineer productivity\" [Q4 FY2024]. Free cash flow reached $13.2B in Q4 alone despite heavy capex.\n2025\nCapex guidance jumped to $66-72B for the full year—roughly $30B higher than 2024. Q1 FY2025 noted \"almost 1B monthly actives use Meta AI\" with deepening personalization and a standalone Meta AI app in development. By Q2 FY2025, AI recommendation models drove \"~5% more conversions on Instagram and 3% on Facebook,\" with generative creative tools powering \"a meaningful share of ad revenue, especially for smaller advertisers\" [Q2 FY2025]. Susan Li noted the company is \"exploring data-center financing partnerships to manage multi-gigawatt build\" [Q2 FY2025], signaling infrastructure scale now measured in power capacity rather than server counts. The forward message: \"2026 CapEx/expenses to keep growing with infra and talent\" [Q2 FY2025].",
+      "duration_ms": 16465,
       "context_count": 10,
       "metrics": {
         "relevance": {
@@ -398,7 +387,6 @@
           "reasoning": "The generated answer is fully consistent with the ground truth and provides substantially more detail. The ground truth states Meta is investing heavily in AI infrastructure including GPU clusters, custom AI chips, and data center expansion. The generated answer confirms this with specific evidence: capex guidance of $66-72B for 2025 (roughly tripling from earlier years), mentions of 'multi-gigawatt build' for data centers, infrastructure ramp reflected in depreciation increases ($11.2B to $15.5B), and explicit statements about AI infrastructure investment. While the generated answer doesn't specifically mention 'custom AI chips' by name, it comprehensively covers the heavy AI infrastructure investment theme with concrete financial figures and timeline details that support and expand upon the ground truth claim."
         }
       },
-      "duration_ms": 16465,
       "pipeline_metrics": {
         "timings": {
           "intentMs": 3314,
@@ -441,14 +429,13 @@
           "service_tier": "standard"
         }
       },
+      "file": "strat-3.json",
       "category": "strategy"
     },
     {
       "id": "comp-1",
-      "strategy_id": "baseline",
       "question": "How do AMD and Nvidia compare in the AI accelerator market?",
-      "ground_truth": "Nvidia dominates the AI accelerator market with CUDA ecosystem lock-in, while AMD is competing with MI300 series and open ROCm software stack, gaining traction in cloud deployments.",
-      "generated_answer": "AMD's AI accelerator strategy has evolved from early market entry to aggressive scaling, though competitive dynamics with NVIDIA remain the central challenge.\n2022\nNo specific AI accelerator evidence retrieved for this period.\n2023\nAMD positioned MI300 as its flagship AI entry point, targeting both training and inference workloads. During Q2 2023, analysts pressed management on competitive positioning, with one asking \"What is AMD's specific edge in this market?\" in reference to commercial AI accelerators excluding supercomputing contracts [Q2 FY2023]. The company faced questions about GPU accelerator revenue potentially reaching \"about $500-ish million this year, so about 7%, 8% of data center sales\" [Q2 FY2023], indicating modest initial scale relative to the broader data center business.\n2024\nThe competitive landscape intensified as NVIDIA reported \"demand for accelerated computing and generative AI surging worldwide across companies, industries and nations\" with its \"Data Center platform being powered by increasingly diverse drivers, including demand for data processing, training and inference\" [Q4 FY2024]. AMD's forward-looking statements acknowledged NVIDIA's \"dominance in the graphics processing unit market and its aggressive business practices\" as a material risk factor.\n2025\nAMD executed significant strategic moves to scale its AI infrastructure capabilities. The company \"closed the acquisition of ZT Systems, bringing together leadership systems and rack-level expertise with AMD GPU, CPU and networking silicon and open-source software to address the $500 billion data center AI accelerator opportunity in 2028\" [Q1 FY2025]. Product expansion included announcing \"AMD Instinct MI355X GPUs\" for the Lux AI supercomputer and \"AMD Instinct MI430X GPUs, a new MI400 Series accelerator designed for sovereign AI and scientific computing\" expected in 2028 [Q3 FY2025]. Software investment continued with \"ROCm 7 software, boosting training and inference performance\" [Q3 FY2025].",
+      "duration_ms": 14164,
       "context_count": 10,
       "metrics": {
         "relevance": {
@@ -464,7 +451,6 @@
           "reasoning": "The generated answer accurately captures the key facts from the ground truth: 1) It acknowledges NVIDIA's dominance, explicitly mentioning NVIDIA's 'dominance in the graphics processing unit market' as a risk factor for AMD. 2) It correctly identifies AMD's MI300 series as their competitive product (mentioning MI300 as 'flagship AI entry point'). 3) It mentions the ROCm software stack ('ROCm 7 software'). However, the generated answer does not explicitly mention 'CUDA ecosystem lock-in' which is a key concept in the ground truth, nor does it specifically mention 'cloud deployments' where AMD is gaining traction. The generated answer provides significantly more detail and timeline context, which is consistent with the ground truth but doesn't fully emphasize the specific competitive dynamics mentioned (CUDA lock-in, cloud traction). The core facts align well but some specific framing from the ground truth is missing."
         }
       },
-      "duration_ms": 14164,
       "pipeline_metrics": {
         "timings": {
           "intentMs": 2901,
@@ -508,14 +494,13 @@
           "service_tier": "standard"
         }
       },
+      "file": "comp-1.json",
       "category": "comparison"
     },
     {
       "id": "market-1",
-      "strategy_id": "baseline",
       "question": "How is the cloud computing market affecting Microsoft's business?",
-      "ground_truth": "Microsoft Azure continues to show strong growth driven by AI services and enterprise cloud adoption, contributing significantly to overall revenue growth.",
-      "generated_answer": "Microsoft AI Strategy Timeline\n FY2024 (July 2023 – June 2024)\nThe retrieved context contains limited direct evidence for this fiscal year. Q2 FY2025 (calendar Q4 2024) references provide backward-looking context, noting \"significant investments in products and services that may not achieve expected returns\" and \"focus on cloud-based and AI services presenting execution and competitive risks\" [Q2 FY2025]. Azure growth during this period laid groundwork for the acceleration seen in subsequent quarters.\nEvidence gap: No specific FY2024 product launches, capex figures, or AI monetization metrics were retrieved.\n FY2025 (July 2024 – June 2025)\nInfrastructure signals: Management emphasized \"balancing operational discipline with continued investments in our cloud and AI infrastructure\" [Q2 FY2025]. Azure revenue grew 20-22% in constant currency through the year.\nMonetization trajectory: Microsoft Cloud reached $27B quarterly run-rate by Q4 FY2025, growing 25% in constant currency. Dynamics 365 accelerated to 18% growth, reflecting AI-enhanced business applications adoption.\nKey quote: \"Strong execution by our sales teams and partners drove On-Premises Server business revenue growth of 7% as well as continued momentum for our differentiated offerings\" [Q3 FY2025].\n FY2026 Q1 (July – September 2025)\nAcceleration evident: Azure and cloud services revenue increased 28% (27% constant currency) [Q1 FY2026]—a meaningful step-up from prior quarters. Commercial remaining performance obligation surged 51% to $392 billion, signaling robust forward demand.\nFinancial performance: Revenue reached $77.7B (+18% YoY), operating income $38.0B (+24%), EPS $3.72 GAAP (+13%) [Q1 FY2026].\nEvidence gap for 2022-2023: No retrieved documents cover these periods.",
+      "duration_ms": 16460,
       "context_count": 10,
       "metrics": {
         "relevance": {
@@ -531,7 +516,6 @@
           "reasoning": "The generated answer confirms Azure's strong growth trajectory, which aligns with the ground truth's assertion about 'strong growth.' It provides specific metrics (Azure growing 20-22%, then accelerating to 28% in Q1 FY2026) and mentions AI services contributing to this growth. However, the generated answer is more focused on timeline details and financial metrics rather than explicitly stating that AI services and enterprise cloud adoption are the primary drivers. The ground truth's key claim about AI services driving growth is partially supported but not as directly stated. The answer also acknowledges evidence gaps and provides more detail than needed, but the core message about Azure's strong growth is consistent with the ground truth."
         }
       },
-      "duration_ms": 16460,
       "pipeline_metrics": {
         "timings": {
           "intentMs": 3350,
@@ -574,14 +558,13 @@
           "service_tier": "standard"
         }
       },
+      "file": "market-1.json",
       "category": "market"
     },
     {
       "id": "segment-1",
-      "strategy_id": "baseline",
       "question": "How is Amazon's AWS performing compared to overall company growth?",
-      "ground_truth": "AWS continues to be a key profit driver for Amazon, with growth rates driven by cloud adoption and AI services, though facing competitive pressure from Azure and Google Cloud.",
-      "generated_answer": "AWS delivered $121.9B in trailing twelve-month revenue through Q1 2025, growing 18% year-over-year with remarkable consistency—the segment has maintained 18% YoY growth across the last four reported quarters [Q1 2025, Q2 2025 data].\nProfitability Trajectory\nOperating income reached $11.5B in Q1 2025, representing a 39.5% operating margin—the highest quarterly margin in the available data series. TTM operating income hit $42.0B, up 45% YoY [Q1 2025], demonstrating significant margin expansion from the 27.1% TTM margin reported in Q4 2023.\nThe operating income growth story shows a notable deceleration pattern: YoY growth excluding FX impact compressed from 83% (Q1 2024) to 21% (Q1 2025) to 10% (Q2 2025). This reflects the law of large numbers as the absolute profit base expanded, not deteriorating fundamentals—TTM operating income continued climbing from $39.8B to $43.8B across this period.\nStrategic Context\nAWS is aggressively positioning around generative AI, with management highlighting investments in large language models as a competitive differentiator [Q3 2023]. Key enterprise wins include Amgen (generative AI for drug discovery), MUFG (personalized financial services via Amazon Bedrock), and Merck (IT infrastructure migration) [Q4 2023]. The AWS European Sovereign Cloud launch signals continued geographic expansion.\nInvestment Implications\nThe segment generates approximately 60% of Amazon's consolidated operating income on roughly 17% of revenue, making AWS margin trajectory the single most important variable for consolidated earnings. The Q2 2025 margin compression to 32.9% (from 39.5% in Q1) warrants monitoring—FX headwinds of $139M partially explain the sequential decline, but underlying investment intensity may be increasing.",
+      "duration_ms": 17813,
       "context_count": 10,
       "metrics": {
         "relevance": {
@@ -597,7 +580,6 @@
           "reasoning": "The generated answer is fully consistent with the ground truth and provides substantially more detail. The ground truth states AWS is a 'key profit driver' - the generated answer confirms this with specific data showing AWS generates ~60% of Amazon's operating income on ~17% of revenue. The ground truth mentions 'growth rates driven by cloud adoption and AI services' - the generated answer confirms 18% YoY revenue growth and details AI investments including generative AI positioning, Amazon Bedrock, and enterprise AI wins (Amgen, MUFG, Merck). The ground truth mentions 'competitive pressure' - while the generated answer doesn't explicitly discuss Azure/Google Cloud competition, it does note margin compression and investment intensity that could relate to competitive dynamics. The generated answer provides extensive factual detail (specific revenue figures, margins, growth rates) that enriches rather than contradicts the ground truth's summary assessment."
         }
       },
-      "duration_ms": 17813,
       "pipeline_metrics": {
         "timings": {
           "intentMs": 4065,
@@ -640,14 +622,13 @@
           "service_tier": "standard"
         }
       },
+      "file": "segment-1.json",
       "category": "market"
     },
     {
       "id": "exec-1",
-      "strategy_id": "baseline",
       "question": "What did AMD's CEO say about AI demand in recent earnings?",
-      "ground_truth": "AMD CEO Lisa Su emphasized strong AI demand, particularly for MI300 accelerators, and outlined plans to expand AI product portfolio to capture growing market opportunity.",
-      "generated_answer": "AMD's AI strategy has accelerated dramatically over the past three years, with 2024 marking the inflection point for meaningful revenue contribution.\n2022: The retrieved context does not contain evidence from this period.\n2023: The retrieved context does not contain direct evidence from this period, though MI300 development was underway based on subsequent commentary.\n2024: This was the breakout year for AMD's data center AI business. MI300 moved from qualification to production scale, with Lisa Su noting in Q2 2024: \"We're very happy with how MI300 has progressed... the key point was to get our products into our customers' data centers, to have them qualify their workloads, to really ramp in production.\" [Q2 FY2024] By Q3, total revenue reached $6.8B (+18% YoY), with the Data Center segment driving growth. Management outlined a clear product cadence: \"325 will start in the fourth quarter and then ramp more in the first half of next year. And then as we look at the 350 Series... there will be multiple SKUs in that series that we'll go through the range of air-cooled to liquid-cooled.\" [Q3 FY2024]\n2025 (through Q3): Revenue accelerated to $9.2B in Q3 (+35.6% YoY) with gross margins at 52%. The product roadmap extended to next-generation silicon, with management highlighting plans to \"reach significant scale with MI450\" through deployments at Oracle Cloud Infrastructure and the Department of Energy. [Q3 FY2025] Jean Hu confirmed that both Server CPUs and GPUs \"grew nicely; Server slightly better directionally\" in Q3, with Q4 guidance for \"strong double digit\" sequential Data Center growth.\nThe monetization trajectory shows AMD moving from single-customer concentration toward diversified hyperscaler and enterprise adoption, with infrastructure partners now committing to multi-generational roadmaps.",
+      "duration_ms": 15034,
       "context_count": 8,
       "metrics": {
         "relevance": {
@@ -663,7 +644,6 @@
           "reasoning": "The generated answer is consistent with the ground truth and significantly expands upon it. It confirms strong AI demand (mentioning MI300 accelerators moving to production scale, revenue growth) and outlines AMD's expanding AI product portfolio (MI325, MI350, MI450 roadmap). The answer correctly attributes statements to Lisa Su and provides specific details about market opportunity capture through hyperscaler and enterprise adoption. However, the ground truth specifically mentions Lisa Su 'emphasized' these points, suggesting a more direct attribution to her statements, while the generated answer distributes commentary across multiple executives (including Jean Hu). The core facts align well, but the generated answer is more of a comprehensive timeline analysis rather than a direct summary of Lisa Su's emphasis, which slightly diverges from the ground truth's framing."
         }
       },
-      "duration_ms": 15034,
       "pipeline_metrics": {
         "timings": {
           "intentMs": 3257,
@@ -709,14 +689,13 @@
           "service_tier": "standard"
         }
       },
+      "file": "exec-1.json",
       "category": "executive"
     },
     {
       "id": "guidance-1",
-      "strategy_id": "baseline",
       "question": "What is Nvidia's revenue guidance for upcoming quarters?",
-      "ground_truth": "Nvidia has provided optimistic guidance driven by continued AI infrastructure demand, expecting sustained growth in data center revenue.",
-      "generated_answer": "NVIDIA guided Q4 FY2026 revenue to approximately $45B, representing continued sequential growth from Q3's $57.0B, with management signaling sustained momentum into calendar 2026 driven by Blackwell architecture demand.\nForward Revenue Visibility\nCEO Jensen Huang provided an unusually specific long-term outlook during Q3 FY2026, stating the company now has \"visibility to $0.5T in Blackwell/Rubin revenue as AI infrastructure spend hits the hundreds of billions.\" This half-trillion dollar pipeline represents a significant forward commitment from hyperscalers and enterprise customers building AI factories.\nRecent Trajectory Supporting Guidance\nThe revenue acceleration has been remarkable: Q3 FY2026 delivered $57.0B (+62% YoY, +22% QoQ), following Q2's $46.7B (+56% YoY) and Q1's $44.1B (+69% YoY). Data Center revenue, the primary growth driver, reached approximately $50B in Q3, with Blackwell systems now dominating the mix—GB300 has \"crossed over\" GB200 as the lead product.\nProduct Roadmap Underpinning Outlook\nManagement confirmed Rubin (next-generation architecture) remains on schedule for calendar 2026, with Vera GPU, NVQLink, and NVLink 144 all maintaining an annual cadence. The Q2 commentary noted GB300 production had ramped to \"1,000 racks per week,\" while Blackwell Ultra is already \"generating tens of billions\" in revenue.\nMargin Expectations\nGross margins have stabilized in the 73-75% range (GAAP), with Q3 FY2026 at 73.4% ($41.8B gross profit on $57.0B revenue). Management has historically guided margins in the \"mid-70s,\" and the current product mix suggests this range remains achievable through FY2026.",
+      "duration_ms": 17069,
       "context_count": 18,
       "metrics": {
         "relevance": {
@@ -732,7 +711,6 @@
           "reasoning": "The generated answer is fully consistent with the ground truth and provides substantially more detail. The ground truth states that Nvidia provided optimistic guidance driven by continued AI infrastructure demand with expected sustained growth in data center revenue. The generated answer confirms this with specific details: Q4 FY2026 guidance of ~$45B, a $0.5T forward pipeline in Blackwell/Rubin revenue tied to AI infrastructure spending, remarkable revenue growth trajectory (Q3 at $57B, +62% YoY), Data Center revenue reaching ~$50B in Q3, and sustained momentum driven by Blackwell architecture demand. All key facts align with the ground truth's assertion of optimistic guidance and AI infrastructure-driven data center growth expectations."
         }
       },
-      "duration_ms": 17069,
       "pipeline_metrics": {
         "timings": {
           "intentMs": 3064,
@@ -777,6 +755,7 @@
           "service_tier": "standard"
         }
       },
+      "file": "guidance-1.json",
       "category": "guidance"
     }
   ]

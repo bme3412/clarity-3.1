@@ -168,12 +168,6 @@ export default function EvaluationPage() {
             </div>
             <div className="flex flex-wrap gap-2">
               <Link
-                href="/rag-lab"
-                className="px-4 py-2 rounded-lg border border-border text-sm font-semibold hover:bg-muted"
-              >
-                RAG Lab
-              </Link>
-              <Link
                 href="/how-it-works"
                 className="px-4 py-2 rounded-lg border border-border text-sm font-semibold hover:bg-muted"
               >

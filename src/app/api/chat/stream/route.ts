@@ -235,7 +235,7 @@ export async function POST(request: NextRequest): Promise<Response> {
               system: ENHANCED_SYSTEM_PROMPT,
               messages,
               tools: FINANCIAL_TOOLS,
-              max_tokens: 1200
+              max_tokens: 2400
             });
             metrics.llmCalls++;
             genSpan?.end({ metadata: { success: true, model: MODEL, latencyMs: Date.now() - llmCallStart } });
@@ -281,7 +281,7 @@ export async function POST(request: NextRequest): Promise<Response> {
                 const streamPayload = {
                   system: ENHANCED_SYSTEM_PROMPT,
                   messages,
-                  max_tokens: 1200
+                  max_tokens: 2400
                 };
                 
                 let isFirstToken = true;

@@ -68,9 +68,6 @@ export default function RunDetailPage({ params }) {
             <Link href="/evaluation" className="text-sm text-muted-foreground hover:text-foreground">
               ← Back to Runs
             </Link>
-            <Link href="/rag-lab" className="text-sm text-blue-600 hover:text-blue-700">
-              RAG Lab
-            </Link>
             <Link href="/how-it-works" className="text-sm text-violet-600 hover:text-violet-700">
               How It Works
             </Link>

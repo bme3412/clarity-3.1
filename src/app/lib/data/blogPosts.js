@@ -1,98 +1,8 @@
 export const blogPosts = [
   {
-    id: 'dense-vs-hybrid-search',
-    title: 'Dense vs Hybrid Search: What We Actually Learned',
-    subtitle: 'Spoiler: It\'s not as simple as "hybrid is better"',
-    date: '2024-12-04',
-    status: 'published',
-    readingTime: '10 min',
-    tags: ['RAG', 'Hybrid Search', 'BM25', 'Evaluation'],
-    summary: 'We ran a head-to-head comparison of dense-only vs hybrid (dense + sparse) search. The results surprised us—and revealed that data coverage matters more than algorithm choice.',
-    
-    tldr: [
-      'Dense won 5/10 queries, Hybrid won 2/10, 3 ties',
-      'Hybrid is 42% faster (248ms vs 425ms)',
-      'Data coverage matters more than algorithm choice',
-      'Use query classification to route to optimal strategy',
-    ],
-
-    coreInsight: 'Neither approach is universally better. Dense excels at strategic questions and comparisons. Hybrid excels at exact metric lookups (Q3 revenue, specific product names). The real insight: don\'t pick one—classify queries and route appropriately.',
-    
-    metricsProgression: [
-      { version: 'Dense (clarity-openai)', latency: 425, wins: 5 },
-      { version: 'Hybrid (clarity-hybrid)', latency: 248, wins: 2 },
-    ],
-    
-    // Custom metric display for this post (latency-focused)
-    primaryMetric: 'latency',
-
-    experiments: [
-      {
-        name: 'Exact Revenue Lookup',
-        description: 'Query: "What was AMD\'s Q3 2024 revenue?" Dense returned 2025 guidance. Hybrid found exact $6.8B figure.',
-        impact: 'Hybrid: 5/5, Dense: 2/5',
-        cost: 'Same embedding cost',
-        verdict: 'hybrid',
-        lessons: ['Sparse vectors catch exact quarters/years', 'Dense conflates semantically similar but factually different data']
-      },
-      {
-        name: 'Strategic Analysis',
-        description: 'Query: "What is Meta\'s approach to AI infrastructure?" Dense retrieved strategy content. Hybrid returned financial tables.',
-        impact: 'Dense: 4/5, Hybrid: 1/5',
-        cost: 'Same embedding cost',
-        verdict: 'dense',
-        lessons: ['Semantic understanding required', 'Keywords alone miss context']
-      },
-      {
-        name: 'Multi-Company Comparison',
-        description: 'Query: "Compare AMD and NVIDIA data center strategies." Dense found relevant strategic details. Hybrid missed NVIDIA entirely.',
-        impact: 'Dense: 4/5, Hybrid: 2/5',
-        cost: 'Same embedding cost',
-        verdict: 'dense',
-        lessons: ['Dense synthesizes across sources', 'Data coverage in hybrid index was lacking']
-      },
-      {
-        name: 'Latency Comparison',
-        description: 'Measured average query latency across 10 test queries.',
-        impact: 'Hybrid 42% faster',
-        cost: 'Dense: 425ms avg, Hybrid: 248ms avg',
-        verdict: 'hybrid',
-        lessons: ['Pinecone native hybrid scoring is optimized', 'Smaller index also helps']
-      },
-    ],
-
-    lessons: [
-      {
-        title: 'Data Coverage > Algorithm',
-        content: 'Our hybrid index had 4,583 vectors vs 28,110 in dense. This single factor likely explains most results. Before concluding hybrid doesn\'t work, ensure data parity.',
-      },
-      {
-        title: 'Use Query Classification',
-        content: 'Don\'t pick one approach. Classify queries: exact metrics → hybrid, strategic questions → dense, comparisons → multi-query with RRF.',
-      },
-      {
-        title: 'Hybrid is Faster',
-        content: 'Counter-intuitive: adding sparse vectors made queries 42% faster. Pinecone\'s native hybrid scoring is well-optimized.',
-      },
-      {
-        title: 'Keep Both Indexes',
-        content: 'Maintaining both during migration lets you A/B test, fall back on failures, and gradually shift traffic as confidence grows.',
-      },
-    ],
-
-    failureAnalysis: [
-      { type: 'Data coverage gap', percentage: 50, description: 'Hybrid index had 6x fewer vectors' },
-      { type: 'Wrong query type', percentage: 25, description: 'Strategic query sent to keyword-heavy index' },
-      { type: 'Keyword missed', percentage: 15, description: 'Product name not in sparse vocabulary' },
-      { type: 'True tie', percentage: 10, description: 'Both approaches performed equally' },
-    ],
-
-    contentPath: 'docs/blog/dense-vs-hybrid-search.md',
-  },
-  {
     id: 'building-production-rag',
     title: 'Building a Production RAG System for Financial Analysis',
-    subtitle: 'A Journey from 73% to 94% Faithfulness',
+    subtitle: 'How I iteratively improved a RAG system for analyzing Big Tech earnings calls, with detailed metrics at each step.',
     date: '2024-12-03',
     status: 'draft', // 'draft' | 'published'
     readingTime: '15 min',
@@ -194,6 +104,96 @@ export const blogPosts = [
 
     // Full markdown content (abbreviated for display, full version in separate file)
     contentPath: 'docs/blog/building-a-production-rag-system.md',
+  },
+  {
+    id: 'dense-vs-hybrid-search',
+    title: 'Dense vs Hybrid Search: What We Actually Learned',
+    subtitle: 'Spoiler: It\'s not as simple as "hybrid is better"',
+    date: '2024-12-04',
+    status: 'published',
+    readingTime: '10 min',
+    tags: ['RAG', 'Hybrid Search', 'BM25', 'Evaluation'],
+    summary: 'We ran a head-to-head comparison of dense-only vs hybrid (dense + sparse) search. The results surprised us—and revealed that data coverage matters more than algorithm choice.',
+    
+    tldr: [
+      'Dense won 5/10 queries, Hybrid won 2/10, 3 ties',
+      'Hybrid is 42% faster (248ms vs 425ms)',
+      'Data coverage matters more than algorithm choice',
+      'Use query classification to route to optimal strategy',
+    ],
+
+    coreInsight: 'Neither approach is universally better. Dense excels at strategic questions and comparisons. Hybrid excels at exact metric lookups (Q3 revenue, specific product names). The real insight: don\'t pick one—classify queries and route appropriately.',
+    
+    metricsProgression: [
+      { version: 'Dense (clarity-openai)', latency: 425, wins: 5 },
+      { version: 'Hybrid (clarity-hybrid)', latency: 248, wins: 2 },
+    ],
+    
+    // Custom metric display for this post (latency-focused)
+    primaryMetric: 'latency',
+
+    experiments: [
+      {
+        name: 'Exact Revenue Lookup',
+        description: 'Query: "What was AMD\'s Q3 2024 revenue?" Dense returned 2025 guidance. Hybrid found exact $6.8B figure.',
+        impact: 'Hybrid: 5/5, Dense: 2/5',
+        cost: 'Same embedding cost',
+        verdict: 'hybrid',
+        lessons: ['Sparse vectors catch exact quarters/years', 'Dense conflates semantically similar but factually different data']
+      },
+      {
+        name: 'Strategic Analysis',
+        description: 'Query: "What is Meta\'s approach to AI infrastructure?" Dense retrieved strategy content. Hybrid returned financial tables.',
+        impact: 'Dense: 4/5, Hybrid: 1/5',
+        cost: 'Same embedding cost',
+        verdict: 'dense',
+        lessons: ['Semantic understanding required', 'Keywords alone miss context']
+      },
+      {
+        name: 'Multi-Company Comparison',
+        description: 'Query: "Compare AMD and NVIDIA data center strategies." Dense found relevant strategic details. Hybrid missed NVIDIA entirely.',
+        impact: 'Dense: 4/5, Hybrid: 2/5',
+        cost: 'Same embedding cost',
+        verdict: 'dense',
+        lessons: ['Dense synthesizes across sources', 'Data coverage in hybrid index was lacking']
+      },
+      {
+        name: 'Latency Comparison',
+        description: 'Measured average query latency across 10 test queries.',
+        impact: 'Hybrid 42% faster',
+        cost: 'Dense: 425ms avg, Hybrid: 248ms avg',
+        verdict: 'hybrid',
+        lessons: ['Pinecone native hybrid scoring is optimized', 'Smaller index also helps']
+      },
+    ],
+
+    lessons: [
+      {
+        title: 'Data Coverage > Algorithm',
+        content: 'Our hybrid index had 4,583 vectors vs 28,110 in dense. This single factor likely explains most results. Before concluding hybrid doesn\'t work, ensure data parity.',
+      },
+      {
+        title: 'Use Query Classification',
+        content: 'Don\'t pick one approach. Classify queries: exact metrics → hybrid, strategic questions → dense, comparisons → multi-query with RRF.',
+      },
+      {
+        title: 'Hybrid is Faster',
+        content: 'Counter-intuitive: adding sparse vectors made queries 42% faster. Pinecone\'s native hybrid scoring is well-optimized.',
+      },
+      {
+        title: 'Keep Both Indexes',
+        content: 'Maintaining both during migration lets you A/B test, fall back on failures, and gradually shift traffic as confidence grows.',
+      },
+    ],
+
+    failureAnalysis: [
+      { type: 'Data coverage gap', percentage: 50, description: 'Hybrid index had 6x fewer vectors' },
+      { type: 'Wrong query type', percentage: 25, description: 'Strategic query sent to keyword-heavy index' },
+      { type: 'Keyword missed', percentage: 15, description: 'Product name not in sparse vocabulary' },
+      { type: 'True tie', percentage: 10, description: 'Both approaches performed equally' },
+    ],
+
+    contentPath: 'docs/blog/dense-vs-hybrid-search.md',
   },
   {
     id: 'scaling-with-gemini',
