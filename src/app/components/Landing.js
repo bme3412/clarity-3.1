@@ -66,7 +66,7 @@ const STRATEGIES = [
     name: 'Precision',
     icon: Hash,
     useCase: 'Specific numbers, dates & metrics',
-    bestFor: '"Q3 2025 revenue", "MI300 sales", exact figures',
+    bestFor: '&quot;Q3 2025 revenue&quot;, &quot;MI300 sales&quot;, exact figures',
     color: 'emerald',
   },
   {
@@ -74,7 +74,7 @@ const STRATEGIES = [
     name: 'Concepts',
     icon: MessageSquare,
     useCase: 'Strategic & thematic analysis',
-    bestFor: '"AI strategy", "competitive positioning", trends',
+    bestFor: '&quot;AI strategy&quot;, &quot;competitive positioning&quot;, trends',
     color: 'blue',
   },
   {
@@ -82,7 +82,7 @@ const STRATEGIES = [
     name: 'Exploratory',
     icon: Sparkles,
     useCase: 'Vague or open-ended questions',
-    bestFor: '"What\'s driving growth?", "Any concerns?"',
+    bestFor: '&quot;What&apos;s driving growth?&quot;, &quot;Any concerns?&quot;',
     color: 'violet',
   },
   {
@@ -90,7 +90,7 @@ const STRATEGIES = [
     name: 'Deep Dive',
     icon: Network,
     useCase: 'Complex, multi-faceted questions',
-    bestFor: '"Compare revenue growth AND margins across segments"',
+    bestFor: '&quot;Compare revenue growth AND margins across segments&quot;',
     color: 'rose',
   },
 ];
@@ -212,7 +212,7 @@ const LandingPage = () => {
   const selectedColors = colorClasses[selectedStrategyData?.color || 'amber'];
 
   const exampleQueries = [
-    { text: "What is NVIDIA's data center growth strategy?", color: "blue" },
+    { text: "What is NVIDIA&apos;s data center growth strategy?", color: "blue" },
     { text: "Apple gross margin trend over last 4 quarters", color: "emerald" },
     { text: "How is Google monetizing AI?", color: "violet" },
   ];
