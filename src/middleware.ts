@@ -34,9 +34,13 @@ export function middleware(request: NextRequest) {
     }
   }
 
+  const forwardedFor = request.headers.get('x-forwarded-for');
+  const realIp = request.headers.get('x-real-ip');
+  const cfConnectingIp = request.headers.get('cf-connecting-ip');
   const clientKey =
-    request.headers.get('x-forwarded-for') ||
-    request.ip ||
+    forwardedFor?.split(',')[0]?.trim() ||
+    realIp ||
+    cfConnectingIp ||
     'anonymous';
 
   const rate = checkRateLimit(clientKey);
