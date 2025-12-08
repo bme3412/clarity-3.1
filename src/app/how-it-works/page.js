@@ -261,17 +261,17 @@ function chunkText(text) {
                   </thead>
                   <tbody className="divide-y divide-slate-100">
                     <tr>
-                      <td className="py-3 px-4 text-slate-600">"What was AMD's revenue?"</td>
+                      <td className="py-3 px-4 text-slate-600">&quot;What was AMD&apos;s revenue?&quot;</td>
                       <td className="py-3 px-4"><code className="text-blue-600">get_financial_metrics</code></td>
                       <td className="py-3 px-4 text-slate-500">Local JSON</td>
                     </tr>
                     <tr>
-                      <td className="py-3 px-4 text-slate-600">"NVIDIA's AI strategy?"</td>
+                      <td className="py-3 px-4 text-slate-600">&quot;NVIDIA&apos;s AI strategy?&quot;</td>
                       <td className="py-3 px-4"><code className="text-blue-600">search_earnings_transcript</code></td>
                       <td className="py-3 px-4 text-slate-500">Pinecone vectors</td>
                     </tr>
                     <tr>
-                      <td className="py-3 px-4 text-slate-600">"YoY growth rate?"</td>
+                      <td className="py-3 px-4 text-slate-600">&quot;YoY growth rate?&quot;</td>
                       <td className="py-3 px-4"><code className="text-blue-600">compute_growth_rate</code></td>
                       <td className="py-3 px-4 text-slate-500">Calculated</td>
                     </tr>
