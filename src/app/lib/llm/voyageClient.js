@@ -1,6 +1,6 @@
-'use client';
-
-// Lightweight JS version for Node scripts (evaluations) to avoid TS imports
+// Voyage embedding client (server-safe).
+// Note: This module must NOT be marked 'use client' because it's used by API routes and retrieval.
+// It is safe for Node scripts and server runtime; do not import it from browser components.
 
 const API_KEY = process.env.VOYAGE_API_KEY;
 const VOYAGE_EMBED_URL = 'https://api.voyageai.com/v1/embeddings';
