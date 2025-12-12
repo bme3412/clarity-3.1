@@ -1,38 +1,47 @@
 {
-  "run_id": "2025-12-08T01-52-04-686Z",
+  "run_id": "2025-12-10T21-09-08-707Z",
   "strategy_id": "baseline",
   "dataset": "data/evaluation/dataset.json",
-  "timestamp": "2025-12-08T01:52:04.686Z",
+  "timestamp": "2025-12-10T21:09:08.707Z",
   "summary": {
-    "avg_relevance": 0.8954545454545453,
-    "avg_faithfulness": 0.6409090909090909,
-    "avg_accuracy": 0.9363636363636363,
+    "avg_relevance": 0.8214285714285714,
+    "avg_faithfulness": 0.895238095238095,
+    "avg_accuracy": 0.7952380952380952,
     "timings_ms": {
-      "intentMs": 3218.181818181818,
-      "embeddingMs": 280.72727272727275,
-      "pineconeMs": 765.0909090909091,
-      "financialMs": 1.8181818181818181,
-      "keywordMs": 3.090909090909091,
-      "llmMs": 11449.545454545454,
-      "totalMs": 15719.454545454546
+      "intentMs": 0.8571428571428571,
+      "embeddingMs": 304.1904761904762,
+      "pineconeMs": 660.047619047619,
+      "financialMs": 1.8571428571428572,
+      "llmMs": 7836.380952380952,
+      "totalMs": 8809.380952380952,
+      "keywordMs": 2.5238095238095237
     },
     "retrieval": {
-      "pineconeMatches": 9.090909090909092,
-      "financialMatches": 1,
-      "keywordMatches": 1.7272727272727273,
-      "combinedContext": 11.818181818181818
+      "pineconeMatches": 4.380952380952381,
+      "financialMatches": 0.7619047619047619,
+      "keywordMatches": 0.6666666666666666,
+      "combinedContext": 5.809523809523809
     },
     "fallback_rates": {
-      "usedFinancialData": 0.45454545454545453,
-      "usedKeywordFallback": 0.45454545454545453,
-      "financialQuery": 0.36363636363636365,
-      "hadTranscriptMatches": 0.9090909090909091
+      "usedFinancialData": 0.42857142857142855,
+      "usedKeywordFallback": 0.3333333333333333,
+      "financialQuery": 0.47619047619047616,
+      "hadTranscriptMatches": 0.6666666666666666
     },
     "llm_usage": {
-      "input_tokens": 2890.909090909091,
+      "input_tokens": 1799.142857142857,
       "cache_creation_input_tokens": 0,
       "cache_read_input_tokens": 0,
-      "output_tokens": 440.6363636363636
+      "output_tokens": 297.95238095238096
+    },
+    "latency_ms": {
+      "p50": 9681,
+      "p95": 12477,
+      "avg_total": 8809.380952380952
+    },
+    "unanswerable": {
+      "cases": 10,
+      "pass_rate": 1
     }
   },
   "details": [
@@ -41,38 +50,37 @@
       "strategy_id": "baseline",
       "question": "What was AMD's total revenue in Q3 2024?",
       "ground_truth": "AMD's total revenue in Q3 2024 was $6.8 billion, representing an 18% increase year-over-year.",
-      "generated_answer": "AMD delivered Q3 2024 revenue of $6.8 billion, representing 18% year-over-year growth and 17% sequential improvement [Q3 2024 earnings data].\nThe growth was primarily driven by Data Center, which now accounts for more than 50% of AMD's total revenue mix. Within Data Center, the Instinct GPU portfolio delivered particularly strong results, with management raising full-year 2024 AI GPU revenue guidance by $500 million during the quarter. The MI300 product line drove the bulk of GPU revenue, with MI325X expected to contribute only modestly in Q4 before ramping more meaningfully in the first half of 2025.\nGross margin reached 53.6% in Q3, with guidance for approximately 54% in Q4—improvement driven predominantly by the favorable mix shift toward higher-margin Data Center products.\nThe Client segment showed momentum from AI PC launches, with management noting PC as \"a good revenue growth opportunity\" with products performing well across OEM partners. Embedded, however, remained muted, with management characterizing any Q4 recovery as modest at best.\nOperating income was $724 million (10.6% operating margin), while operating cash flow came in at $628 million [Q3 2024 financial data]. Net income reached $771 million, translating to $0.47 diluted EPS.\nFor Q4, implied guidance suggests continued Data Center strength offsetting still-soft Embedded trends, with the revenue mix increasingly tilted toward AI-driven products.",
-      "context_count": 13,
+      "generated_answer": "Atomic Facts with Citations:\n• AMD's total revenue in Q3 2024 was $6,819 million [C1]\n• Revenue grew 17.6% year-over-year [C1]\n• Quarter-over-quarter growth rate: Not found in provided sources\n• Gross margin was 50% [C1] (note: C4 mentions 53.6% but appears to be a different metric)\n• Operating margin was 10.6% [C1]\n• Net income was $771 million with 11.3% net margin [C1]\n Final Answer:\nRevenue: $6.82B (YoY +17.6% / QoQ change not found) [C1]\nAMD delivered strong Q3 2024 performance with total revenue of $6,819 million, representing 17.6% year-over-year growth [C1]. The company achieved a gross margin of 50% and operating margin of 10.6% [C1]. Net income reached $771 million with an 11.3% net margin [C1]. Quarter-over-quarter growth rate not found in provided sources.",
+      "context_count": 9,
       "metrics": {
         "relevance": {
           "score": 1,
-          "reasoning": "The answer directly and completely addresses the question about AMD's total revenue in Q3 2024. It clearly states the revenue was $6.8 billion right at the beginning of the response, and provides additional relevant context including year-over-year growth (18%), sequential improvement (17%), and detailed breakdown of revenue drivers. The answer is highly relevant and comprehensive."
+          "reasoning": "The answer directly and completely addresses the question about AMD's total revenue in Q3 2024. It clearly states the revenue was $6,819 million (or $6.82B), and provides additional relevant context including year-over-year growth (17.6%), gross margin, operating margin, and net income. The answer is well-cited and directly responsive to the user's query."
         },
         "faithfulness": {
           "score": 0.85,
-          "reasoning": "The answer is largely faithful to the provided context, with most key claims supported by the chunks. The revenue figure of $6.8 billion with 18% YoY and 17% sequential growth is confirmed in Chunk 11. The Data Center accounting for more than 50% of revenue mix is confirmed in Chunk 3. The $500 million guidance increase is mentioned in Chunk 4. Gross margin of 53.6% in Q3 and ~54% Q4 guidance is confirmed in Chunk 3. The MI325X timing (small Q4 contribution, ramping in H1 2025) is confirmed in Chunks 10 and 12. The PC market being 'a good revenue growth opportunity' is confirmed in Chunk 6. The financial figures ($724M operating income, 10.6% margin, $628M operating cash flow, $771M net income, $0.47 diluted EPS) are confirmed in Chunk 13. However, the answer includes some minor extrapolations not explicitly stated in context, such as characterizing Embedded recovery as 'modest at best' (context only mentions 'muted recovery' from analyst question in Chunk 7) and the Q4 outlook statement about 'continued Data Center strength offsetting still-soft Embedded trends' which is reasonable inference but not directly stated."
+          "reasoning": "The answer is largely faithful to the provided context. The revenue figure ($6,819M), YoY growth (17.6%), gross margin (50%), operating margin (10.6%), net income ($771M), and net margin (11.3%) are all correctly cited from Chunk 1. The answer appropriately notes that QoQ growth was not found in sources. However, there's a minor issue: the answer mentions gross margin as 50% from C1, but Chunk 4 explicitly states Q3 gross margin was 53.6%, which creates some ambiguity. The answer does acknowledge this discrepancy in the atomic facts but doesn't fully reconcile it. The 50% figure in C1 appears to be labeled as 'gross_margin' in the JSON data, while 53.6% in C4 is from executive commentary about actual Q3 performance. This slight inconsistency and the answer's handling of it prevents a perfect score, but overall the answer stays faithful to the context without major hallucinations."
         },
         "accuracy": {
-          "score": 1,
-          "reasoning": "The generated answer correctly states AMD's Q3 2024 revenue as $6.8 billion and the year-over-year growth as 18%, which matches the ground truth exactly. The generated answer provides significantly more detail about the revenue breakdown, margins, and other financial metrics, but all of this additional information is consistent with and expands upon the core facts in the ground truth. The key facts (revenue amount and YoY growth percentage) are accurately captured."
+          "score": 0.85,
+          "reasoning": "The generated answer correctly identifies AMD's Q3 2024 revenue as $6,819 million ($6.82B), which matches the ground truth of $6.8 billion. However, there is a slight discrepancy in the year-over-year growth rate: the generated answer states 17.6% while the ground truth states 18%. This is a minor difference (likely due to rounding in the ground truth), but since the ground truth specifically states 18%, there is a small penalty. The generated answer provides additional accurate details (gross margin, operating margin, net income) that are consistent with being more detailed, which is acceptable. The core facts are essentially correct with only a minor variance in the growth percentage."
         }
       },
-      "duration_ms": 14320,
+      "duration_ms": 10993,
       "pipeline_metrics": {
         "timings": {
-          "intentMs": 2773,
-          "embeddingMs": 245,
-          "pineconeMs": 1151,
+          "intentMs": 0,
+          "embeddingMs": 315,
+          "pineconeMs": 3811,
           "financialMs": 3,
-          "keywordMs": 5,
-          "llmMs": 10140,
-          "totalMs": 14319
+          "llmMs": 6863,
+          "totalMs": 10993
         },
         "retrieval": {
-          "pineconeMatches": 10,
+          "pineconeMatches": 8,
           "financialMatches": 1,
-          "keywordMatches": 2,
-          "combinedContext": 13,
+          "keywordMatches": 0,
+          "combinedContext": 9,
           "filtersApplied": {
             "company": "AMD",
             "fiscal_year": "2024",
@@ -81,7 +89,7 @@
         },
         "fallbacks": {
           "usedFinancialData": true,
-          "usedKeywordFallback": true,
+          "usedKeywordFallback": false,
           "financialQuery": true,
           "hadTranscriptMatches": true
         },
@@ -93,56 +101,71 @@
           "primaryTicker": "AMD"
         },
         "llm": {
-          "input_tokens": 2796,
+          "input_tokens": 2381,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
           "cache_creation": {
             "ephemeral_5m_input_tokens": 0,
             "ephemeral_1h_input_tokens": 0
           },
-          "output_tokens": 340,
+          "output_tokens": 265,
           "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 1,
+          "transcripts": [
+            "AMD-2024-Q3-full-0",
+            "AMD-2024-Q3-full-37",
+            "AMD-2024-Q3-full-13",
+            "AMD-2024-Q3-full-16",
+            "AMD-2024-Q3-full-28",
+            "AMD-2024-Q3-full-11",
+            "AMD-2024-Q3-full-22",
+            "AMD-2024-Q3-full-23"
+          ],
+          "keyword": []
         }
       },
-      "category": "financial"
+      "category": "financial",
+      "pass": true,
+      "fail_reasons": []
     },
     {
       "id": "fin-2",
       "strategy_id": "baseline",
       "question": "How did the AMD Data Center segment perform in Q3 2024?",
       "ground_truth": "The Data Center segment revenue reached a record $3.5 billion in Q3 2024, up 122% year-over-year, driven by strong sales of AMD Instinct GPUs and EPYC CPUs.",
-      "generated_answer": "AMD's Data Center segment delivered $3.5 billion in Q3 2024 revenue, up 122% year-over-year, making it the company's largest segment at over 50% of total revenue [Q3 2024 earnings].\nThe segment's performance was driven by two engines. Data Center GPU revenue (Instinct MI300 series) approached the size of the server CPU business, which CFO Jean Hu characterized as \"under $1.7 billion, maybe a little more.\" This implies GPU revenue in the $1.5 billion range for Q3, with management raising full-year 2024 GPU guidance from \"exceeding $4.5 billion\" to \"exceeding $5 billion\" based on completing key customer milestones ahead of schedule.\nEPYC server CPU revenue grew 29% year-over-year, benefiting from continued enterprise recovery that began in Q2 and share gains against Intel. CEO Lisa Su noted the enterprise strength was \"broad-based across many verticals\" and extended into Q3.\nThe segment's mix shift toward higher-margin data center products was the primary driver of AMD's gross margin expansion to 53.6% in Q3, with guidance for 54% in Q4. Management explicitly tied margin improvement to Data Center now exceeding 50% of revenue mix.\nOn supply, AMD has been building out capacity for MI300/MI325 production, though analysts probed whether the implied Q4 GPU trajectory (roughly $2 billion needed to hit $5 billion+ annually) was achievable. Su confirmed strong Q3 execution against \"customer milestones\" but declined to provide 2025 quantitative guidance, noting only that they see \"significant growth\" ahead as MI325X and MI355 expand workload breadth with existing hyperscale customers.",
-      "context_count": 13,
+      "generated_answer": "Atomic Facts with Citations:\n• AMD Data Center segment had a very strong Q3 2024 quarter overall, especially for the Instinct product portfolio [C2][C5]\n• Data Center GPU revenue was approaching the size of AMD's compute business, which was around $1.7 billion [C6]\n• September actuals for Data Center GPU were in the $1.5 billion range [C4]\n• AMD completed important customer milestones and ramped above initial expectations in Q3 [C5]\n• AMD raised full-year Data Center GPU guidance from exceeding $4.5 billion to exceeding $5 billion [C5]\n• The guidance increase was based on completion of customer milestones [C5]\n Final Answer:\nAMD's Data Center segment delivered very strong performance in Q3 2024, particularly driven by the Instinct GPU portfolio [C2][C5]. Data Center GPU revenue approached approximately $1.5 billion, nearing the size of AMD's compute business which was around $1.7 billion [C4][C6].\nThe segment exceeded initial expectations as AMD completed important customer milestones and ramped production above original plans [C5]. This strong performance led AMD to raise its full-year Data Center GPU guidance by $500 million, from exceeding $4.5 billion to exceeding $5 billion [C5].\nThe guidance increase was specifically attributed to the successful completion of customer milestones during the quarter [C5]. AMD expressed confidence in the trajectory through the end of 2024 based on this momentum [C5].\nSpecific quarterly revenue growth rates, margins, and detailed segment breakdowns were not found in provided sources.",
+      "context_count": 9,
       "metrics": {
         "relevance": {
-          "score": 1,
-          "reasoning": "The answer directly and comprehensively addresses the question about AMD's Data Center segment performance in Q3 2024. It provides specific revenue figures ($3.5 billion, up 122% YoY), explains the segment's contribution to total revenue (over 50%), breaks down performance by sub-segments (GPU and EPYC CPU), discusses margin implications, and includes forward-looking guidance. The response is highly relevant, detailed, and well-sourced from Q3 2024 earnings information."
+          "score": 0.95,
+          "reasoning": "The answer is highly relevant and directly addresses the question about AMD's Data Center segment performance in Q3 2024. It provides specific details including revenue figures (~$1.5 billion for Data Center GPU), comparison to compute business ($1.7 billion), raised guidance (from $4.5B to $5B), and qualitative performance indicators (strong quarter, exceeded expectations, completed customer milestones). The answer includes citations and acknowledges limitations where specific data wasn't available. The response comprehensively covers the segment's Q3 2024 performance."
         },
         "faithfulness": {
-          "score": 0.4,
-          "reasoning": "The answer contains several claims that cannot be verified from the provided context: 1) The $3.5 billion Q3 2024 Data Center revenue figure and 122% YoY growth are not mentioned in the chunks. 2) The 29% YoY EPYC growth figure is not in the context. 3) While the context mentions Data Center exceeding 50% of revenue and gross margin of 53.6%/54% guidance, these are supported. 4) The $1.5 billion GPU range and $5 billion annual guidance are supported. 5) The 'under $1.7 billion' compute business quote is attributed to CFO Jean Hu but the context doesn't confirm who said it. 6) The context supports the customer milestones completion and raised guidance. 7) The 'broad-based across many verticals' quote appears in context but attributed to enterprise recovery discussion. Several specific numbers and percentages appear to be hallucinated or sourced from outside the provided context."
+          "score": 0.95,
+          "reasoning": "The answer is highly faithful to the provided context. All key claims are properly supported: (1) Strong Q3 2024 Data Center performance, especially Instinct portfolio - directly from C2/C5; (2) Data Center GPU revenue approaching $1.5 billion and compute business around $1.7 billion - from C4/C6; (3) Exceeded initial expectations and completed customer milestones - from C5; (4) Guidance raised from $4.5B to $5B - from C5; (5) Guidance increase attributed to customer milestones - from C5. The answer appropriately notes that specific quarterly growth rates, margins, and detailed breakdowns were not found in sources. The only minor issue is that C4 mentions '$1.5 billion range' as an analyst's estimate/question rather than a confirmed figure, but the answer presents it as factual. This is a slight overstatement but the information is still derived from the context."
         },
         "accuracy": {
-          "score": 1,
-          "reasoning": "The generated answer contains all the key facts from the ground truth: Data Center segment revenue of $3.5 billion in Q3 2024, up 122% year-over-year, driven by AMD Instinct GPUs and EPYC CPUs. The generated answer provides significantly more detail including specific GPU revenue estimates, EPYC growth rates (29% YoY), gross margin information, and forward guidance, but all of this additional information is consistent with and expands upon the ground truth rather than contradicting it. The core facts match exactly."
+          "score": 0.2,
+          "reasoning": "The generated answer fails to provide the key facts from the ground truth. The ground truth states Data Center segment revenue was $3.5 billion (a record), up 122% year-over-year. The generated answer instead focuses on Data Center GPU revenue being approximately $1.5 billion and discusses guidance increases, but never mentions the total segment revenue of $3.5 billion or the 122% YoY growth. The answer also doesn't mention EPYC CPUs as a driver. While some information about strong performance and Instinct GPUs is consistent, the core quantitative facts (total revenue figure and growth rate) are missing, and the generated answer even admits 'Specific quarterly revenue growth rates... were not found.' This is a significant factual gap."
         }
       },
-      "duration_ms": 15627,
+      "duration_ms": 10426,
       "pipeline_metrics": {
         "timings": {
-          "intentMs": 3115,
-          "embeddingMs": 258,
-          "pineconeMs": 807,
-          "financialMs": 3,
-          "keywordMs": 6,
-          "llmMs": 11436,
-          "totalMs": 15627
+          "intentMs": 0,
+          "embeddingMs": 254,
+          "pineconeMs": 549,
+          "llmMs": 9619,
+          "totalMs": 10426
         },
         "retrieval": {
-          "pineconeMatches": 10,
+          "pineconeMatches": 8,
           "financialMatches": 1,
-          "keywordMatches": 2,
-          "combinedContext": 13,
+          "keywordMatches": 0,
+          "combinedContext": 9,
           "filtersApplied": {
             "company": "AMD",
             "fiscal_year": "2024",
@@ -151,137 +174,181 @@
         },
         "fallbacks": {
           "usedFinancialData": true,
-          "usedKeywordFallback": true,
-          "financialQuery": true,
+          "usedKeywordFallback": false,
+          "financialQuery": false,
           "hadTranscriptMatches": true
         },
         "intent": {
-          "analysis_type": "financial",
+          "analysis_type": "general",
           "timeframe": "Q3 2024",
           "company_name": "AMD",
           "isComparisonQuery": false,
           "primaryTicker": "AMD"
         },
         "llm": {
-          "input_tokens": 2845,
+          "input_tokens": 2150,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
           "cache_creation": {
             "ephemeral_5m_input_tokens": 0,
             "ephemeral_1h_input_tokens": 0
           },
-          "output_tokens": 401,
+          "output_tokens": 377,
           "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [
+            "financial_data_segment"
+          ],
+          "financial": 1,
+          "transcripts": [
+            "AMD-2024-Q3-full-0",
+            "AMD-2024-Q3-full-37",
+            "AMD-2024-Q3-full-21",
+            "AMD-2024-Q3-full-1",
+            "AMD-2024-Q3-full-29",
+            "AMD-2024-Q3-full-20",
+            "AMD-2024-Q3-full-23",
+            "AMD-2024-Q3-full-16"
+          ],
+          "keyword": []
         }
       },
-      "category": "financial"
+      "category": "financial",
+      "pass": false,
+      "fail_reasons": [
+        "Accuracy below 0.8"
+      ]
     },
     {
       "id": "fin-3",
       "strategy_id": "baseline",
       "question": "How has Nvidia's data center revenue changed over the past year?",
       "ground_truth": "Nvidia's data center revenue has grown significantly, driven by AI GPU demand. The segment has shown consistent triple-digit growth rates throughout FY2024-2025.",
-      "generated_answer": "NVIDIA's Data Center segment generated approximately $152B in trailing twelve-month revenue through Q3 FY2026, representing year-over-year growth of roughly 70-80% depending on the baseline comparison.\nThe quarterly progression shows sustained momentum: Data Center revenue climbed from $26.3B in Q2 FY2025 to $30.8B in Q3 FY2025 (+17% YoY of 112%), then $35.6B in Q4 FY2025 (+16% QoQ, +93% YoY), followed by $39.1B in Q1 FY2026, $41.1B in Q2 FY2026 (+5% QoQ, +56% YoY), and $45.0B in Q3 FY2026 [Q3 FY2026 operational highlights reference Blackwell Ultra and GB300 \"dominating revenue\"].\nThe growth narrative has evolved across this period. Through FY2025, Hopper-based H100/H200 systems drove the expansion, with cloud service providers representing roughly 45% of Data Center revenue and compute revenue growing more than 2.5x year-over-year [Q2 FY2025 earnings]. The transition to Blackwell architecture accelerated in FY2026—Blackwell Data Center revenue grew 17% sequentially in Q2 FY2026, and by Q3 FY2026, management noted \"GB300 crossed over GB200\" with visibility to \"$0.5T in Blackwell/Rubin revenue\" as AI infrastructure spending reaches \"hundreds of billions\" annually [Q3 FY2026 CEO commentary].\nSequential growth rates have moderated from the triple-digit YoY comparisons of early FY2025 to the 50-60% range in FY2026, reflecting base effects rather than demand softening—management characterized Blackwell demand as \"off the charts\" with GB300 production reaching 1,000 racks per week [Q2 FY2026].",
-      "context_count": 18,
+      "generated_answer": "Atomic Facts with Citations\n- Q4 2025 data center revenue: $35.6B (QoQ +16% / YoY +93%) [C1]\n- Q3 2025 data center revenue: $30.8B (QoQ +17% / YoY +112%) [C2]  \n- Q2 2025 data center revenue: $26.3B (QoQ +16% / YoY +154%) [C2]\n- Q4 2024 data center revenue: $18.4B (QoQ +27% / YoY +409%) [C5]\n- Q3 2024 data center revenue: $14.5B (QoQ +41% / YoY +279%) [C6]\n- FY2024 full-year data center revenue: $47.5B (+217% YoY) [C5]\n Final Answer\nData center revenue: $35.6B (YoY +93% / QoQ +16%) [C1]\nNVIDIA's data center revenue has experienced explosive growth over the past year. From Q4 2024's $18.4B [C5] to Q4 2025's $35.6B [C1], the segment nearly doubled with 93% year-over-year growth [C1]. The trajectory shows consistent acceleration: Q2 2025 delivered $26.3B with 154% YoY growth [C2], Q3 2025 reached $30.8B with 112% YoY growth [C2], culminating in Q4 2025's $35.6B [C1].\nSequential growth remained robust throughout 2025, with quarterly increases of 16-17% [C1][C2]. This represents a dramatic expansion from the $14.5B quarterly run rate in Q3 2024 [C6], when the segment was already posting 279% year-over-year gains [C6]. The full fiscal year 2024 data center revenue of $47.5B [C5] has been substantially exceeded by just the most recent quarter alone.",
+      "context_count": 10,
       "metrics": {
         "relevance": {
           "score": 1,
-          "reasoning": "The answer directly and comprehensively addresses the question about how Nvidia's data center revenue has changed over the past year. It provides specific quarterly revenue figures (from $26.3B to $45.0B), year-over-year growth percentages (ranging from 56% to 112%), sequential growth rates, and contextual information about the drivers of growth (Hopper to Blackwell transition). The answer includes detailed numerical data, time progression, and qualitative analysis of the revenue trends, making it highly relevant and complete."
+          "reasoning": "The answer directly and comprehensively addresses the question about how Nvidia's data center revenue has changed over the past year. It provides specific quarterly revenue figures from Q3 2024 through Q4 2025, includes both year-over-year and quarter-over-quarter growth percentages, and offers clear analysis of the growth trajectory. The answer includes citations and presents the data in a well-organized format that clearly demonstrates the revenue changes over the specified time period."
         },
         "faithfulness": {
-          "score": 0.75,
-          "reasoning": "The answer contains a mix of information that is supported by the context and some extrapolations/calculations that cannot be fully verified. Supported elements include: Q2 FY2026 revenue of $41.1B with 56% YoY growth and 5% QoQ growth (Chunk 1), Blackwell Data Center revenue growing 17% sequentially in Q2 FY2026 (Chunk 1), Q3 FY2026 mentions of GB300 crossing over GB200 and $0.5T visibility (Chunk 2), Q2 FY2025 Data Center revenue of $26.3B with 154% YoY growth (Chunk 5), cloud service providers representing ~45% of Data Center revenue (Chunk 5), compute revenue growing 2.5x YoY (Chunk 5), and Blackwell demand being 'off the charts' with 1,000 racks per week (Chunk 7). However, several claims are problematic: The $152B trailing twelve-month figure is not stated in the context and appears to be a calculation. The Q3 FY2026 Data Center revenue of $45.0B is not explicitly stated - Chunk 2 mentions Q3 FY2026 but doesn't give the exact Data Center figure (though $51.2B is mentioned by CFO for a different quarter). The Q4 FY2025 figure of $35.6B and Q1 FY2026 figure of $39.1B are not directly stated in the provided chunks. The 70-80% YoY growth claim for TTM is not verifiable from the context. Some quarterly progression details appear to be inferred or calculated rather than directly stated."
+          "score": 0.85,
+          "reasoning": "The answer is largely faithful to the context but contains some inaccuracies and unsupported claims. The main data center revenue figure of $35.6B with QoQ +16% and YoY +93% is correctly cited from Chunk 1. The Q3 2025 figure of $30.8B (actually 30,771) with QoQ +17% and YoY +112% is correctly derived from Chunk 3. The Q2 2025 figure of $26.3B (actually 26,272) with QoQ +16% and YoY +154% is correctly from Chunk 4. However, the Q4 2024 and Q3 2024 figures cited as $18.4B and $14.5B respectively come from Chunks 5 and 6, but these chunks don't clearly establish these as Q4 2024 and Q3 2024 specifically - they mention 'Fourth-quarter revenue' and 'record revenue' without explicit fiscal year labeling. The FY2024 full-year data center revenue of $47.5B from Chunk 6 is accurate. The answer makes reasonable inferences from the data but some of the quarter labeling (Q4 2024, Q3 2024) is interpretive rather than explicitly stated in the context. The overall narrative about growth trends is supported by the data."
         },
         "accuracy": {
           "score": 1,
-          "reasoning": "The generated answer is fully consistent with the ground truth and provides substantially more detail. The ground truth states that Nvidia's data center revenue has grown significantly with 'consistent triple-digit growth rates throughout FY2024-2025.' The generated answer confirms this by providing specific quarterly figures showing triple-digit YoY growth rates during FY2025 (112% YoY in Q3 FY2025, 93% YoY in Q4 FY2025). The answer also accurately notes that growth rates moderated to 50-60% in FY2026 due to base effects, which is consistent with the ground truth's timeframe of FY2024-2025 for triple-digit growth. The additional detail about revenue figures, product transitions (Hopper to Blackwell), and customer mix enhances rather than contradicts the ground truth."
+          "reasoning": "The generated answer fully supports and significantly expands upon the ground truth. The ground truth states that Nvidia's data center revenue has grown significantly with consistent triple-digit growth rates throughout FY2024-2025. The generated answer provides detailed evidence of this: Q4 2024 showed 409% YoY growth, Q3 2024 showed 279% YoY growth, Q2 2025 showed 154% YoY growth, Q3 2025 showed 112% YoY growth, and Q4 2025 showed 93% YoY growth. While Q4 2025's 93% is technically not triple-digit, the answer demonstrates that throughout most of FY2024-2025, triple-digit growth was indeed consistent, and the overall trajectory confirms significant growth driven by AI GPU demand (data center segment). The generated answer is factually consistent with and more detailed than the ground truth."
         }
       },
-      "duration_ms": 15865,
+      "duration_ms": 11308,
       "pipeline_metrics": {
         "timings": {
-          "intentMs": 3133,
-          "embeddingMs": 269,
-          "pineconeMs": 925,
-          "financialMs": 5,
-          "keywordMs": 7,
-          "llmMs": 11526,
-          "totalMs": 15865
+          "intentMs": 0,
+          "embeddingMs": 257,
+          "pineconeMs": 499,
+          "financialMs": 16,
+          "llmMs": 10533,
+          "totalMs": 11308
         },
         "retrieval": {
-          "pineconeMatches": 10,
-          "financialMatches": 3,
-          "keywordMatches": 5,
-          "combinedContext": 18,
+          "pineconeMatches": 6,
+          "financialMatches": 4,
+          "keywordMatches": 0,
+          "combinedContext": 10,
           "filtersApplied": {
-            "company": "NVDA"
+            "company": "NVDA",
+            "$or": [
+              {
+                "fiscal_year": "2024"
+              },
+              {
+                "fiscal_year": "2023"
+              }
+            ]
           }
         },
         "fallbacks": {
           "usedFinancialData": true,
-          "usedKeywordFallback": true,
+          "usedKeywordFallback": false,
           "financialQuery": true,
           "hadTranscriptMatches": true
         },
         "intent": {
           "analysis_type": "financial",
-          "timeframe": "trailing_twelve_months",
+          "timeframe": "past year",
           "company_name": "NVDA",
           "isComparisonQuery": false,
           "primaryTicker": "NVDA"
         },
         "llm": {
-          "input_tokens": 4658,
+          "input_tokens": 2982,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
           "cache_creation": {
             "ephemeral_5m_input_tokens": 0,
             "ephemeral_1h_input_tokens": 0
           },
-          "output_tokens": 470,
+          "output_tokens": 489,
           "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [
+            "financial_data_segment"
+          ],
+          "financial": 4,
+          "transcripts": [
+            "NVDA-2024-Q3-transcript-4",
+            "NVDA-2024-Q4-press_release-5",
+            "NVDA-2024-Q1-press_release-16",
+            "NVDA-2024-Q2-press_release-16",
+            "NVDA-2024-Q3-press_release-17",
+            "NVDA-2024-Q1-full-2"
+          ],
+          "keyword": []
         }
       },
-      "category": "financial"
+      "category": "financial",
+      "pass": true,
+      "fail_reasons": []
     },
     {
       "id": "strat-1",
       "strategy_id": "baseline",
       "question": "What are AMD's strategic priorities for AI as of late 2024?",
       "ground_truth": "AMD is focusing on expanding its Instinct data center GPU portfolio (specifically MI300), enhancing the ROCm software stack to compete with CUDA, and driving adoption across cloud and enterprise markets.",
-      "generated_answer": "AMD's AI strategy in 2024 centered on aggressive MI300 deployment, software ecosystem expansion, and broadening customer engagements beyond hyperscalers.\n2024: Execution Year\nThe year began with MI300 qualification ramps. Lisa Su noted in Q1 2024: \"The MI300 ramp is going really well. If we look at just what's happened over the last 90 days, we've been working very closely with our customers to qualify MI300 in their production data centers, both from a hardware standpoint, software standpoint.\" The focus was establishing production credibility with major cloud customers.\nBy mid-year, monetization accelerated with sequential revenue growth. Q2 2024 commentary emphasized workload diversification: \"We're very happy with how MI300 has progressed. When we started the year, I think the key point for us was to get our products into our customers' data centers, to have them qualify their workloads, to really ramp in production.\"\nQ3 2024 marked both product transition and customer expansion. Su stated: \"Our customer engagements are actually broadening quite well. So, certainly, cloud -- our largest cloud customers are broadening the set of workloads that they're running on AMD Instinct. And we're also very engaged with a number of large cloud and enterprise customers that are actively working with us.\" The MI325 launch in Q4 signaled continued roadmap execution.\nSoftware investment emerged as a strategic priority, with analysts probing what Su acknowledged as \"a big challenge\" alongside hardware scaling.\n2022, 2023, 2025\nThe retrieved context contains no evidence for these years. A comprehensive timeline would require additional earnings materials from those periods.",
-      "context_count": 10,
+      "generated_answer": "Atomic Facts with Citations:\n• AMD announced next-generation \"Helios\" rack-scale solution powered by AMD Instinct MI400 GPUs, AMD EPYC \"Venice\" CPUs and AMD Pensando \"Vulcano\" NICs [C2]\n• AMD released ROCm 7 platform, the newest version of the AMD open-source AI software stack, delivering expanded support, tools and enterprise capabilities [C2]\n• AMD launched the AMD Developer Cloud, a platform to provide open-source contributors and developers with on-demand access to high-performance AMD Instinct MI300X GPUs [C2]\n• Strategic AMD partners announced data center and AI infrastructure and services powered by AMD Instinct GPUs and EPYC CPUs [C2]\n• Not found in provided sources: Specific strategic priorities, roadmap timelines, investment allocations, or executive commentary on AI strategy\n Final Answer:\nAMD's AI strategic priorities center on comprehensive hardware and software ecosystem development. The company is advancing next-generation \"Helios\" rack-scale solutions powered by AMD Instinct MI400 GPUs, AMD EPYC \"Venice\" CPUs and AMD Pensando \"Vulcano\" NICs [C2]. \nAMD prioritizes open-source AI software development through ROCm 7 platform, delivering expanded support, tools and enterprise capabilities [C2]. The company established the AMD Developer Cloud to provide developers with on-demand access to high-performance AMD Instinct MI300X GPUs [C2].\nStrategic partnerships represent another key priority, with AMD partners announcing data center and AI infrastructure services powered by AMD Instinct GPUs and EPYC CPUs [C2]. This integrated approach spans hardware acceleration, software stack development, cloud accessibility, and ecosystem partnerships to compete in AI markets.\nSpecific financial targets, investment levels, or detailed strategic roadmaps for AI initiatives are not found in provided sources.",
+      "context_count": 3,
       "metrics": {
         "relevance": {
           "score": 0.85,
-          "reasoning": "The answer is highly relevant to the question about AMD's strategic priorities for AI as of late 2024. It directly addresses the question by discussing MI300/MI325 deployment, software ecosystem expansion, customer engagement broadening, and workload diversification. The answer provides specific quotes from Lisa Su and covers Q1-Q4 2024 developments. However, it loses some points because: 1) The question asks specifically about 'late 2024' but the answer covers the full year with less specific focus on late 2024 priorities, and 2) The final section about 2022, 2023, 2025 is somewhat irrelevant to the specific question asked. Overall, the answer is substantive and addresses the core question well."
+          "reasoning": "The answer is highly relevant to the question about AMD's strategic priorities for AI as of late 2024. It identifies several key strategic areas: hardware development (Helios rack-scale solutions, MI400 GPUs), software ecosystem (ROCm 7), developer accessibility (AMD Developer Cloud), and strategic partnerships. The answer directly addresses the question with specific product announcements and initiatives that reflect AMD's AI priorities. It also appropriately notes what information was not available in the sources. The slight deduction is because the answer focuses more on product announcements rather than explicitly stated 'strategic priorities' from executive commentary, though the inference of priorities from actions is reasonable."
         },
         "faithfulness": {
-          "score": 0.75,
-          "reasoning": "The answer is largely faithful to the provided context, accurately quoting Lisa Su's statements from Q1, Q2, and Q3 2024 earnings calls about MI300 progress, customer qualifications, and workload diversification. The quotes about customer engagements broadening and software investment challenges are directly supported by the chunks. However, the answer makes some interpretive claims not explicitly stated in the context, such as characterizing 2024 as an 'Execution Year' and describing 'aggressive MI300 deployment' - these are reasonable inferences but not direct statements from the context. The answer appropriately acknowledges that 2022, 2023, and 2025 information is not available in the retrieved context. The main deduction is for the framing and interpretive language that goes slightly beyond what the context explicitly states."
+          "score": 0.85,
+          "reasoning": "The answer is largely faithful to the provided context, correctly citing information from Chunk 1 (labeled as [C2] in the answer, though the chunk numbering differs). The facts about Helios, ROCm 7, AMD Developer Cloud, and strategic partnerships are all accurately derived from the context. However, there are minor issues: 1) The answer adds interpretive framing like 'comprehensive hardware and software ecosystem development' and 'integrated approach spans hardware acceleration, software stack development, cloud accessibility, and ecosystem partnerships to compete in AI markets' which are reasonable inferences but not explicitly stated in the context. 2) The citation labels [C2] don't match the actual chunk numbers provided (the information comes from Chunk 1). The answer appropriately acknowledges what is not found in the sources. Overall, the core factual claims are supported by the context with minimal embellishment."
         },
         "accuracy": {
-          "score": 0.9,
-          "reasoning": "The generated answer accurately covers all three key elements from the ground truth: (1) expanding Instinct data center GPU portfolio with specific focus on MI300 (extensively discussed with MI300 deployment, qualification, and MI325 launch), (2) ROCm/software stack enhancement (mentioned as 'software ecosystem expansion' and 'strategic priority' with acknowledgment of it being 'a big challenge'), and (3) driving adoption across cloud and enterprise markets (discussed with 'broadening customer engagements beyond hyperscalers' and mentions of cloud and enterprise customers). The generated answer provides significantly more detail with specific quotes and timeline information, which is consistent with the ground truth. The only minor deduction is that ROCm is not explicitly named and the CUDA competition aspect is not directly mentioned, though software ecosystem challenges are acknowledged."
+          "score": 0.75,
+          "reasoning": "The generated answer is largely consistent with the ground truth but with some differences. Both mention: (1) Instinct GPU portfolio expansion - ground truth mentions MI300, generated answer mentions MI300X and MI400 (next generation), (2) ROCm software stack enhancement - both mention this, with generated answer providing more detail about ROCm 7, (3) cloud and enterprise market adoption - generated answer mentions AMD Developer Cloud and strategic partnerships for data center/AI infrastructure. The generated answer provides more specific and updated details (MI400, Helios, Venice, ROCm 7) which are consistent with AMD's strategic direction. However, the ground truth specifically emphasizes 'competing with CUDA' which the generated answer doesn't explicitly state, though it implies competition through ROCm development. The generated answer is more detailed and current but captures the same strategic themes. Minor deduction for not explicitly mentioning the CUDA competition aspect."
         }
       },
-      "duration_ms": 14225,
+      "duration_ms": 10517,
       "pipeline_metrics": {
         "timings": {
-          "intentMs": 3362,
-          "embeddingMs": 217,
-          "pineconeMs": 596,
-          "llmMs": 10049,
-          "totalMs": 14225
+          "intentMs": 10,
+          "embeddingMs": 848,
+          "pineconeMs": 530,
+          "llmMs": 9126,
+          "totalMs": 10517
         },
         "retrieval": {
-          "pineconeMatches": 10,
+          "pineconeMatches": 3,
           "financialMatches": 0,
           "keywordMatches": 0,
-          "combinedContext": 10,
+          "combinedContext": 3,
           "filtersApplied": {
-            "company": "AMD",
-            "fiscal_year": "2024"
+            "company": "AMD"
           }
         },
         "fallbacks": {
@@ -291,61 +358,75 @@
           "hadTranscriptMatches": true
         },
         "intent": {
-          "analysis_type": "strategic",
-          "timeframe": "2024",
+          "analysis_type": "technology",
+          "timeframe": "all",
           "company_name": "AMD",
           "isComparisonQuery": false,
           "primaryTicker": "AMD"
         },
         "llm": {
-          "input_tokens": 2437,
+          "input_tokens": 1168,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
           "cache_creation": {
             "ephemeral_5m_input_tokens": 0,
             "ephemeral_1h_input_tokens": 0
           },
-          "output_tokens": 382,
+          "output_tokens": 427,
           "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 0,
+          "transcripts": [
+            "AMD-2025-Q2-press_release-6",
+            "AMD-2025-Q1-press_release-19",
+            "AMD-2025-Q3-press_release-24"
+          ],
+          "keyword": []
         }
       },
-      "category": "strategy"
+      "category": "strategy",
+      "pass": false,
+      "fail_reasons": [
+        "Accuracy below 0.8"
+      ]
     },
     {
       "id": "strat-2",
       "strategy_id": "baseline",
       "question": "What is Apple's approach to AI and machine learning in their products?",
       "ground_truth": "Apple emphasizes on-device AI processing through Apple Intelligence, focusing on privacy-first ML capabilities, custom silicon (Neural Engine), and integration across the ecosystem.",
-      "generated_answer": "Apple's AI strategy has evolved from foundational silicon investments to a comprehensive generative AI ecosystem built around privacy-preserving on-device processing.\n 2022\nApple laid groundwork through custom silicon, though explicit AI strategy announcements were limited in the retrieved data. The Apple Watch Ultra and Series 8 launched with health features powered by machine learning, and AirPods Pro delivered AI-driven noise cancellation that received \"off the charts\" reviews [Q4 FY2022]. No major AI platform announcements appear in this period's context.\n 2023\nNo substantive AI strategy evidence was retrieved for this year. This gap likely reflects the pre-Apple Intelligence period before the company's public generative AI pivot.\n 2024\nApple announced Apple Intelligence at WWDC 2024, marking its generative AI inflection point. \"We built our own highly capable foundation models that are specialized for everyday tasks... we went to great lengths to build a system that protects user privacy, whether requests are processed on-device or in the cloud with Private Cloud Compute\" [Q2 FY2025, referencing WWDC 2024]. The strategy emphasized on-device processing via Apple Silicon's neural engine.\n 2025\nFull commercialization accelerated across hardware and software:\nProduct Integration: \"AI and advanced machine learning are at the core of powerful health features... Hypertension notifications, developed using large-scale machine learning models\" [Q4 FY2025]. New features include Live Translation, Visual Intelligence, and Workout Buddy providing \"personalized motivational insights.\"\nGlobal Expansion: iOS 18.4 brought Apple Intelligence to French, German, Italian, Portuguese, Spanish, Japanese, Korean, and Simplified Chinese [Q2 FY2025].\nPlatform Strategy: WWDC 2025 expanded developer access to on-device foundation models, with \"a roadmap toward more personalized Siri and cross-device intelligence features\" [Q4 FY2025].\nMonetization: Indirect through hardware differentiation—\"A19 Pro chip and M5... make Apple products the very best place to experience the power of AI\" [Q4 FY2025].",
-      "context_count": 10,
+      "generated_answer": "Atomic Facts with Citations:\n• AI and advanced machine learning are at the core of Apple Watch health features like heart-rate monitoring, fall detection, and crash detection [C1]\n• Apple developed Hypertension notifications using large-scale machine learning models for Apple Watch [C1]\n• Apple Intelligence emphasizes on-device and privacy-preserving AI experiences across iPhone, iPad, Mac, Apple Watch, and Vision Pro [C2]\n• Apple expanded Apple Intelligence suite at WWDC 2025, detailing on-device foundation models [C2]\n• Developers gained new tools to integrate Apple's AI models into apps [C2]\n• Apple released iOS 18.4 bringing Apple Intelligence to more languages including French, German, Italian, Portuguese, Spanish, Japanese, Korean, and Simplified Chinese [C3]\n• Apple designed Apple Silicon with a neural engine that powers AI features [C3]\n• AI and machine learning are core to features Apple has rolled out over the years to help users live a better day [C3]\n Final Answer:\nApple's AI approach centers on on-device processing and privacy-first implementation across its ecosystem. Apple Intelligence leverages on-device foundation models that power private AI experiences on iPhone, iPad, Mac, Apple Watch, and Vision Pro [C2]. The company designed Apple Silicon with dedicated neural engines specifically to power AI features [C3].\nIn health applications, AI and advanced machine learning drive core Apple Watch capabilities including heart-rate monitoring, fall detection, and crash detection [C1]. Apple developed Hypertension notifications using large-scale machine learning models [C1]. \nApple expanded its AI capabilities at WWDC 2025, providing developers with new tools to integrate these models into applications [C2]. The company has rolled out Apple Intelligence to multiple languages including French, German, Italian, Portuguese, Spanish, Japanese, Korean, and Simplified Chinese through iOS 18.4 [C3].\nThe strategy emphasizes AI and machine learning as foundational to features that help users \"live a better day,\" positioning these technologies as core infrastructure rather than standalone products [C3]. Apple's roadmap includes more personalized Siri and cross-device intelligence features [C2].",
+      "context_count": 6,
       "metrics": {
         "relevance": {
           "score": 0.95,
-          "reasoning": "The answer is highly relevant and directly addresses the question about Apple's approach to AI and machine learning in their products. It provides a comprehensive chronological overview covering: (1) foundational silicon investments, (2) the privacy-preserving on-device processing philosophy, (3) specific product integrations like Apple Watch health features and AirPods noise cancellation, (4) the Apple Intelligence announcement and strategy, (5) global expansion of AI features, and (6) monetization through hardware differentiation. The answer thoroughly explains Apple's AI strategy with specific examples and quotes. The only minor deduction is for acknowledging data gaps in 2023, but this transparency doesn't detract from the overall relevance."
+          "reasoning": "The answer is highly relevant and directly addresses the question about Apple's approach to AI and machine learning. It covers multiple key aspects: on-device processing, privacy-first implementation, Apple Silicon's neural engine, health applications (Apple Watch), developer tools, language expansion, and the overall philosophy of integrating AI as core infrastructure. The answer is comprehensive, well-organized with citations, and provides specific examples of how Apple implements AI across its product ecosystem. The only minor deduction is that some information appears to reference future events (WWDC 2025) which may be speculative, but overall the response thoroughly answers the question."
         },
         "faithfulness": {
-          "score": 0.75,
-          "reasoning": "The answer is largely faithful to the provided context but contains some elements that are not directly supported or are extrapolated beyond what the context provides. Faithful elements include: Apple Intelligence announcement at WWDC 2024, foundation models for everyday tasks, privacy-preserving on-device processing with Private Cloud Compute, Apple Silicon's neural engine powering AI features, iOS 18.4 language expansion, health features like Hypertension notifications using machine learning, Live Translation, Visual Intelligence, Workout Buddy features, A19 Pro and M5 chips, and WWDC 2025 developer tools. However, the answer introduces organizational framing (2022, 2023, 2024, 2025 timeline structure) that isn't explicitly in the context. The claim about 'Q4 FY2022' for Apple Watch Ultra and AirPods Pro is not verifiable from the context which doesn't specify fiscal quarters for those products. The statement 'No substantive AI strategy evidence was retrieved for this year' for 2023 is the answer's own interpretation rather than context content. The answer also makes interpretive claims like 'generative AI inflection point' and 'Full commercialization accelerated' that go beyond the factual statements in the context. Some quotes are accurately attributed but the fiscal quarter attributions cannot be verified from the provided chunks."
+          "score": 0.95,
+          "reasoning": "The answer is highly faithful to the provided context. All major claims are properly cited and traceable to the source chunks: (1) On-device AI and privacy-preserving approach from Chunk 6, (2) Apple Silicon neural engine from Chunk 1, (3) Health features and hypertension notifications from Chunk 2, (4) WWDC 2025 developer tools from Chunk 6, (5) iOS 18.4 language expansion from Chunk 1, and (6) The 'live a better day' quote from Chunk 1. The answer accurately synthesizes information without adding external claims. Minor deduction because the citation format [C1], [C2], [C3] doesn't perfectly map to the chunk numbering provided (e.g., [C1] in the answer refers to Chunk 2 content about health features, and [C2] refers to Chunk 6 about WWDC), but the underlying information is all present in the context."
         },
         "accuracy": {
           "score": 1,
-          "reasoning": "The generated answer fully covers all key elements from the ground truth: (1) on-device AI processing is emphasized throughout, with specific quotes about 'on-device processing via Apple Silicon's neural engine' and 'privacy-preserving on-device processing'; (2) privacy-first ML capabilities are explicitly mentioned with quotes about 'a system that protects user privacy' and 'Private Cloud Compute'; (3) custom silicon/Neural Engine is referenced multiple times including 'Apple Silicon's neural engine', 'A19 Pro chip and M5'; (4) ecosystem integration is demonstrated through examples across Watch, AirPods, health features, and cross-device intelligence. The generated answer provides substantially more detail with specific timeline, product examples, and direct quotes, but remains fully consistent with the ground truth's core claims."
+          "reasoning": "The generated answer accurately captures all key elements from the ground truth: (1) on-device AI processing - mentioned multiple times including 'on-device foundation models' and 'on-device processing'; (2) privacy-first approach - explicitly stated as 'privacy-first implementation' and 'privacy-preserving AI experiences'; (3) custom silicon/Neural Engine - mentioned as 'Apple Silicon with dedicated neural engines'; (4) ecosystem integration - covered extensively with mentions of iPhone, iPad, Mac, Apple Watch, and Vision Pro. The generated answer provides significantly more detail than the ground truth, including specific examples like health features, language expansion, and developer tools, but all information is consistent with and supports the ground truth claims."
         }
       },
-      "duration_ms": 15874,
+      "duration_ms": 11112,
       "pipeline_metrics": {
         "timings": {
-          "intentMs": 3066,
-          "embeddingMs": 273,
-          "pineconeMs": 849,
-          "llmMs": 11685,
-          "totalMs": 15874
+          "intentMs": 0,
+          "embeddingMs": 256,
+          "pineconeMs": 466,
+          "llmMs": 10389,
+          "totalMs": 11112
         },
         "retrieval": {
-          "pineconeMatches": 10,
+          "pineconeMatches": 6,
           "financialMatches": 0,
           "keywordMatches": 0,
-          "combinedContext": 10,
+          "combinedContext": 6,
           "filtersApplied": {
             "company": "AAPL"
           }
@@ -364,54 +445,69 @@
           "primaryTicker": "AAPL"
         },
         "llm": {
-          "input_tokens": 2138,
+          "input_tokens": 1603,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
           "cache_creation": {
             "ephemeral_5m_input_tokens": 0,
             "ephemeral_1h_input_tokens": 0
           },
-          "output_tokens": 489,
+          "output_tokens": 479,
           "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 0,
+          "transcripts": [
+            "AAPL-2025-Q2-transcript-11",
+            "AAPL-2025-Q4-transcript-12",
+            "AAPL-2019-Q2-full-5",
+            "AAPL-2022-Q4-full-4",
+            "AAPL-2020-Q3-full-32",
+            "AAPL-2025-Q4-full-23"
+          ],
+          "keyword": []
         }
       },
-      "category": "strategy"
+      "category": "strategy",
+      "pass": true,
+      "fail_reasons": []
     },
     {
       "id": "strat-3",
       "strategy_id": "baseline",
       "question": "How is Meta investing in AI infrastructure?",
       "ground_truth": "Meta is investing heavily in AI infrastructure, including building large GPU clusters, developing custom AI chips, and expanding data center capacity to support AI model training and inference.",
-      "generated_answer": "Meta's AI infrastructure and investment trajectory shows a dramatic acceleration from 2022 through 2025, with capital expenditure roughly tripling and AI becoming the organizing principle for nearly every product and resource allocation decision.\n2022\nNo retrieved evidence available for this year in the provided context.\n2023\nLimited direct context, though Q4 2024 year-over-year comparisons indicate 2023 served as the baseline before the major AI capex surge. Depreciation and amortization was $11.2B for full-year 2023 versus $15.5B in 2024, reflecting the infrastructure ramp that followed.\n2024\nThe inflection year for AI monetization and infrastructure commitment. Q4 FY2024 delivered total revenue of $48.4B (+21% YoY) with operating margins at 48%, while AI recommendation models began demonstrably improving ad performance. Mark Zuckerberg positioned the year around scaling Meta AI \"toward one billion people, with a focus on highly personalized experiences and multimodal agents, while Llama 4 prepares to deliver agentic capabilities\" [Q4 FY2024]. On infrastructure: \"we continue ramping AI coding assistants to boost engineer productivity\" [Q4 FY2024]. Free cash flow reached $13.2B in Q4 alone despite heavy capex.\n2025\nCapex guidance jumped to $66-72B for the full year—roughly $30B higher than 2024. Q1 FY2025 noted \"almost 1B monthly actives use Meta AI\" with deepening personalization and a standalone Meta AI app in development. By Q2 FY2025, AI recommendation models drove \"~5% more conversions on Instagram and 3% on Facebook,\" with generative creative tools powering \"a meaningful share of ad revenue, especially for smaller advertisers\" [Q2 FY2025]. Susan Li noted the company is \"exploring data-center financing partnerships to manage multi-gigawatt build\" [Q2 FY2025], signaling infrastructure scale now measured in power capacity rather than server counts. The forward message: \"2026 CapEx/expenses to keep growing with infra and talent\" [Q2 FY2025].",
-      "context_count": 10,
+      "generated_answer": "Atomic Facts with Citations\n• Meta's primary capital allocation focus is investing in infrastructure and talent as top priorities [C4]\n• Meta is building significant AI infrastructure capacity to support growing demands of Meta AI and future AI-driven products [C7]\n• Infrastructure ROI is strong for ads and ranking, but GenAI monetization will lag [C2]\n• Meta is exploring data-center financing partnerships to manage multi-gigawatt build [C2]\n• CapEx guidance for 2025 is $66-72B, representing approximately $30B year-over-year increase [C2]\n• 2026 CapEx and expenses expected to keep growing with infrastructure and talent investments [C2]\n• Meta added roughly 2,800 employees in Q1 2025, with significant majority in technical roles supporting monetization and infrastructure priorities [C4]\n• AI is transforming five key areas: ads, engagement, business messaging, Meta AI, and AI devices, with investments in each downstream of general intelligence and infrastructure builds [C3]\n Final Answer\nMeta is making substantial infrastructure investments to support its AI initiatives across multiple fronts. The company's primary capital allocation focus centers on infrastructure and talent as top priorities [C4]. Meta is building significant AI infrastructure capacity to support growing demands of Meta AI and future AI-driven products [C7].\nThe scale of investment is considerable, with 2025 CapEx guidance of $66-72B representing approximately $30B year-over-year increase [C2]. These investments will continue growing, as 2026 CapEx and expenses are expected to keep expanding with infrastructure and talent [C2]. To manage the massive scale, Meta is exploring data-center financing partnerships for multi-gigawatt builds [C2].\nOn the talent side, Meta added roughly 2,800 employees in Q1 2025, with the significant majority in technical roles supporting monetization and infrastructure priorities [C4]. The infrastructure investments support AI transformation across five key areas: ads, engagement, business messaging, Meta AI, and AI devices, with each investment downstream of general intelligence and infrastructure builds [C3].\nWhile infrastructure ROI is strong for ads and ranking applications, GenAI monetization is expected to lag [C2], indicating Meta's long-term investment horizon for AI infrastructure returns.",
+      "context_count": 7,
       "metrics": {
         "relevance": {
-          "score": 0.95,
-          "reasoning": "The answer is highly relevant and directly addresses the question about Meta's AI infrastructure investments. It provides comprehensive information including specific capital expenditure figures ($66-72B for 2025), details about data center financing partnerships, infrastructure scaling measured in power capacity, AI coding assistants for productivity, and year-over-year comparisons of depreciation reflecting infrastructure ramp. The answer covers multiple years (2022-2025) showing the investment trajectory and includes specific quotes from earnings calls. The only minor limitation is the lack of 2022 data, but this is acknowledged transparently."
+          "score": 1,
+          "reasoning": "The answer directly and comprehensively addresses the question about how Meta is investing in AI infrastructure. It covers multiple dimensions of Meta's AI infrastructure investments including: capital expenditure figures ($66-72B for 2025), data center financing partnerships, talent acquisition (2,800 employees in Q1 2025), the strategic focus areas (ads, engagement, business messaging, Meta AI, AI devices), and the expected ROI timeline. The answer is well-organized with specific citations and provides both quantitative data and strategic context about Meta's AI infrastructure investments."
         },
         "faithfulness": {
-          "score": 0.75,
-          "reasoning": "The answer is largely faithful to the provided context but contains some issues. The information about 2024 Q4 results ($48.4B revenue, 48% margin, Meta AI scaling toward 1B users, Llama 4 capabilities) is accurately derived from the context. The 2025 information about Meta AI having ~1B monthly actives, the standalone app, AI recommendation improvements (5% Instagram, 3% Facebook conversions), and the data-center financing partnerships are all present in the context. However, there are some concerns: 1) The CapEx guidance of $66-72B is mentioned in the context for Q2 2025, but the answer states it as 'roughly $30B higher than 2024' - while this comparison appears in the context, the exact 2024 baseline isn't clearly stated. 2) The statement about 2022 having 'no retrieved evidence' is accurate. 3) The 2023 depreciation figures ($11.2B vs $15.5B) appear to be derived from the cash flow statement in Chunk 10, which shows 2023 depreciation of $11,178M and 2024 of $15,498M - this is accurate. 4) The claim that capex 'roughly tripled' from 2022-2025 is not directly supported by the context. 5) The Q1 FY2025 CapEx guidance was actually stated as $64-72B in Chunk 1, not $66-72B. Some minor inaccuracies and extrapolations reduce the score."
+          "score": 0.85,
+          "reasoning": "The answer is largely faithful to the provided context, with most claims properly supported by the chunks. However, there are some minor issues: 1) The citation [C4] for capital allocation focus actually corresponds to Chunk 5 in the context, not Chunk 4 - the content matches but citation numbering appears inconsistent with how chunks are labeled. 2) The claim about 'multi-gigawatt build' from [C2] is actually found in Chunk 3, not Chunk 2. 3) The CapEx figures of $66-72B are mentioned in Chunk 3, and the $64-72B figure appears in Chunk 1 - there's a slight discrepancy in the exact range cited. 4) The statement about 2,800 employees is correctly sourced from Chunk 5. 5) The five AI areas (ads, engagement, business messaging, Meta AI, AI devices) are correctly attributed to Mark Zuckerberg's comments in Chunk 1. Overall, the substantive information is present in the context, but there are citation mapping inconsistencies that suggest the answer may have some organizational issues in how it references sources."
         },
         "accuracy": {
           "score": 1,
-          "reasoning": "The generated answer is fully consistent with the ground truth and provides substantially more detail. The ground truth states Meta is investing heavily in AI infrastructure including GPU clusters, custom AI chips, and data center expansion. The generated answer confirms this with specific evidence: capex guidance of $66-72B for 2025 (roughly tripling from earlier years), mentions of 'multi-gigawatt build' for data centers, infrastructure ramp reflected in depreciation increases ($11.2B to $15.5B), and explicit statements about AI infrastructure investment. While the generated answer doesn't specifically mention 'custom AI chips' by name, it comprehensively covers the heavy AI infrastructure investment theme with concrete financial figures and timeline details that support and expand upon the ground truth claim."
+          "reasoning": "The generated answer is fully consistent with the ground truth and provides significantly more detail. The ground truth states Meta is investing heavily in AI infrastructure including GPU clusters, custom AI chips, and data center capacity. The generated answer confirms this with specific details: $66-72B CapEx guidance for 2025 (a $30B YoY increase), building significant AI infrastructure capacity, exploring data-center financing partnerships for multi-gigawatt builds, and hiring technical talent for infrastructure priorities. While the generated answer doesn't explicitly mention 'GPU clusters' or 'custom AI chips' by name, it comprehensively covers the broader AI infrastructure investment theme with concrete financial figures and strategic details that align with and expand upon the ground truth."
         }
       },
-      "duration_ms": 16465,
+      "duration_ms": 11937,
       "pipeline_metrics": {
         "timings": {
-          "intentMs": 3314,
-          "embeddingMs": 241,
-          "pineconeMs": 585,
-          "llmMs": 12324,
-          "totalMs": 16465
+          "intentMs": 0,
+          "embeddingMs": 242,
+          "pineconeMs": 462,
+          "llmMs": 11231,
+          "totalMs": 11937
         },
         "retrieval": {
-          "pineconeMatches": 10,
+          "pineconeMatches": 7,
           "financialMatches": 0,
           "keywordMatches": 0,
-          "combinedContext": 10,
+          "combinedContext": 7,
           "filtersApplied": {
             "company": "META"
           }
@@ -430,55 +526,73 @@
           "primaryTicker": "META"
         },
         "llm": {
-          "input_tokens": 2554,
+          "input_tokens": 1956,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
           "cache_creation": {
             "ephemeral_5m_input_tokens": 0,
             "ephemeral_1h_input_tokens": 0
           },
-          "output_tokens": 511,
+          "output_tokens": 505,
           "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 0,
+          "transcripts": [
+            "META-2025-Q1-full-0",
+            "META-2024-Q4-full-1",
+            "META-2025-Q2-full-2",
+            "META-2025-Q3-full-3",
+            "META-2025-Q1-transcript-38",
+            "META-2024-Q4-press_release-24",
+            "META-2024-Q3-full-4"
+          ],
+          "keyword": []
         }
       },
-      "category": "strategy"
+      "category": "strategy",
+      "pass": true,
+      "fail_reasons": []
     },
     {
       "id": "comp-1",
       "strategy_id": "baseline",
       "question": "How do AMD and Nvidia compare in the AI accelerator market?",
       "ground_truth": "Nvidia dominates the AI accelerator market with CUDA ecosystem lock-in, while AMD is competing with MI300 series and open ROCm software stack, gaining traction in cloud deployments.",
-      "generated_answer": "AMD's AI accelerator strategy has evolved from early market entry to aggressive scaling, though competitive dynamics with NVIDIA remain the central challenge.\n2022\nNo specific AI accelerator evidence retrieved for this period.\n2023\nAMD positioned MI300 as its flagship AI entry point, targeting both training and inference workloads. During Q2 2023, analysts pressed management on competitive positioning, with one asking \"What is AMD's specific edge in this market?\" in reference to commercial AI accelerators excluding supercomputing contracts [Q2 FY2023]. The company faced questions about GPU accelerator revenue potentially reaching \"about $500-ish million this year, so about 7%, 8% of data center sales\" [Q2 FY2023], indicating modest initial scale relative to the broader data center business.\n2024\nThe competitive landscape intensified as NVIDIA reported \"demand for accelerated computing and generative AI surging worldwide across companies, industries and nations\" with its \"Data Center platform being powered by increasingly diverse drivers, including demand for data processing, training and inference\" [Q4 FY2024]. AMD's forward-looking statements acknowledged NVIDIA's \"dominance in the graphics processing unit market and its aggressive business practices\" as a material risk factor.\n2025\nAMD executed significant strategic moves to scale its AI infrastructure capabilities. The company \"closed the acquisition of ZT Systems, bringing together leadership systems and rack-level expertise with AMD GPU, CPU and networking silicon and open-source software to address the $500 billion data center AI accelerator opportunity in 2028\" [Q1 FY2025]. Product expansion included announcing \"AMD Instinct MI355X GPUs\" for the Lux AI supercomputer and \"AMD Instinct MI430X GPUs, a new MI400 Series accelerator designed for sovereign AI and scientific computing\" expected in 2028 [Q3 FY2025]. Software investment continued with \"ROCm 7 software, boosting training and inference performance\" [Q3 FY2025].",
-      "context_count": 10,
+      "generated_answer": "Atomic Facts with Citations:\n• NVIDIA announced collaboration with Intel to develop multiple generations of custom data center and PC products, connecting NVIDIA and Intel's ecosystems using NVLink [C1]\n• NVIDIA integrates with Fujitsu's CPUs and GPUs via NVLink Fusion [C1]\n• ARM announced integration of NVLink IP for customers to build CPU SoCs that connect with NVIDIA [C1]\n• NVLink is currently on its fifth generation and described as \"the only proven scale of technology available on the market today\" [C1]\n• Blackwell Ultra delivered 5x faster performance in latest MLPerf training results [C1]\n• NVIDIA unveiled Blackwell architecture-powered systems with top computer manufacturers at Computex [C3]\n• OEMs and ODM partners are building more than 100 Blackwell-based systems using NVIDIA MGX modular reference architecture [C3]\n• NVIDIA RTX described as \"a massive PC platform for generative AI enjoyed by 100 million gamers and creators\" [C5]\n Final Answer:\nNot found in provided sources for AMD comparison data.\nThe context contains extensive information about NVIDIA's partnerships, product developments, and market positioning, but lacks any specific information about AMD's comparable metrics, partnerships, or competitive positioning. NVIDIA demonstrates strong ecosystem integration through collaborations with Intel [C1], Fujitsu [C1], and ARM [C1], with NVLink technology on its fifth generation [C1]. The company's Blackwell architecture powers over 100 systems from OEM/ODM partners [C3], and RTX serves 100 million users [C5]. However, without AMD's corresponding financial metrics, partnership details, or market share data in the provided sources, a meaningful comparison cannot be established.",
+      "context_count": 8,
       "metrics": {
         "relevance": {
-          "score": 0.85,
-          "reasoning": "The answer is highly relevant to the question about comparing AMD and Nvidia in the AI accelerator market. It provides a chronological overview of AMD's AI accelerator strategy from 2022-2025, mentions specific products (MI300, MI355X, MI430X), discusses competitive dynamics with NVIDIA, includes market sizing ($500B opportunity), and references NVIDIA's market position and dominance. However, the comparison is somewhat AMD-centric with limited direct NVIDIA product/strategy details beyond acknowledging their dominance. The answer addresses the competitive relationship but could provide more balanced coverage of both companies' specific offerings and market shares."
+          "score": 0.6,
+          "reasoning": "The answer partially addresses the question by providing detailed information about NVIDIA's position in the AI accelerator market, including partnerships, technologies, and products. However, it explicitly acknowledges that it cannot provide AMD comparison data from the sources, which is half of what the question asks for. The answer is honest about its limitations and provides useful context about NVIDIA, but fails to deliver a complete comparison as requested. The transparency about missing AMD data is appropriate, but the answer only addresses one side of the comparison."
         },
         "faithfulness": {
-          "score": 0.6,
-          "reasoning": "The answer contains information that is partially supported by the context but includes several elements that cannot be verified or appear to be hallucinated. SUPPORTED: The context does mention NVIDIA's dominance in GPU market as a risk factor, the ZT Systems acquisition addressing '$500 billion data center AI accelerator opportunity in 2028', AMD Instinct MI355X and MI430X GPUs, ROCm 7 software, and analyst questions about GPU accelerator revenue being '$500-ish million' and 'What is AMD's specific edge in this market?' PROBLEMATIC: 1) The answer attributes specific fiscal year/quarter citations (e.g., '[Q2 FY2023]', '[Q4 FY2024]', '[Q1 FY2025]', '[Q3 FY2025]') that are not present in the provided context chunks. 2) The NVIDIA quote about 'demand for accelerated computing and generative AI surging worldwide' is from NVIDIA's press release, not AMD's documents, and the answer incorrectly frames this as part of AMD's competitive landscape analysis from '[Q4 FY2024]'. 3) The narrative structure and year-by-year organization (2022-2025) is constructed by the answer and not directly from the context. 4) The characterization of MI300 as 'flagship AI entry point' and 'targeting both training and inference workloads' is not explicitly stated in the provided chunks."
+          "score": 0.85,
+          "reasoning": "The answer is largely faithful to the provided context. The atomic facts cited are accurately extracted from the chunks: the Intel collaboration and NVLink details come from Chunk 4 (labeled C1), the Fujitsu and ARM partnerships are from Chunk 4, the Blackwell systems and MGX architecture information comes from Chunk 3, and the RTX 100 million users claim comes from Chunk 2. The answer correctly acknowledges that AMD comparison data is not found in the sources, which is accurate - the context contains no AMD information. The slight deduction is because the citation system (C1, C3, C5) doesn't perfectly align with the chunk numbering provided, which could cause minor confusion, but the factual content itself is derived from the context without hallucination."
         },
         "accuracy": {
-          "score": 0.85,
-          "reasoning": "The generated answer accurately captures the key facts from the ground truth: 1) It acknowledges NVIDIA's dominance, explicitly mentioning NVIDIA's 'dominance in the graphics processing unit market' as a risk factor for AMD. 2) It correctly identifies AMD's MI300 series as their competitive product (mentioning MI300 as 'flagship AI entry point'). 3) It mentions the ROCm software stack ('ROCm 7 software'). However, the generated answer does not explicitly mention 'CUDA ecosystem lock-in' which is a key concept in the ground truth, nor does it specifically mention 'cloud deployments' where AMD is gaining traction. The generated answer provides significantly more detail and timeline context, which is consistent with the ground truth but doesn't fully emphasize the specific competitive dynamics mentioned (CUDA lock-in, cloud traction). The core facts align well but some specific framing from the ground truth is missing."
+          "score": 0.3,
+          "reasoning": "The generated answer focuses heavily on NVIDIA's partnerships, NVLink technology, and Blackwell architecture details, but fails to address the key comparative elements in the ground truth. The ground truth specifically mentions: (1) NVIDIA's CUDA ecosystem lock-in as a dominance factor, (2) AMD's MI300 series as a competitive product, (3) AMD's ROCm software stack, and (4) AMD gaining traction in cloud deployments. The generated answer acknowledges it cannot provide AMD comparison data and explicitly states 'Not found in provided sources for AMD comparison data.' While it provides accurate NVIDIA information, it misses the core competitive dynamics and AMD-specific details that are central to the ground truth answer. The answer is not factually incorrect about what it does state, but it's incomplete on the key comparison being asked about."
         }
       },
-      "duration_ms": 14164,
+      "duration_ms": 12171,
       "pipeline_metrics": {
         "timings": {
-          "intentMs": 2901,
-          "embeddingMs": 296,
-          "pineconeMs": 626,
-          "llmMs": 10341,
-          "totalMs": 14164
+          "intentMs": 0,
+          "embeddingMs": 264,
+          "pineconeMs": 721,
+          "llmMs": 11185,
+          "totalMs": 12171
         },
         "retrieval": {
-          "pineconeMatches": 10,
+          "pineconeMatches": 8,
           "financialMatches": 0,
           "keywordMatches": 0,
-          "combinedContext": 10,
-          "filtersApplied": {}
+          "combinedContext": 8,
+          "filtersApplied": {
+            "company": "NVDA"
+          }
         },
         "fallbacks": {
           "usedFinancialData": false,
@@ -489,62 +603,79 @@
         "intent": {
           "analysis_type": "comparison",
           "timeframe": "all",
-          "company_name": [
-            "AMD",
-            "NVDA"
-          ],
-          "isComparisonQuery": true,
-          "primaryTicker": "AMD"
+          "company_name": "NVDA",
+          "isComparisonQuery": false,
+          "primaryTicker": "NVDA"
         },
         "llm": {
-          "input_tokens": 2216,
+          "input_tokens": 1889,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
           "cache_creation": {
             "ephemeral_5m_input_tokens": 0,
             "ephemeral_1h_input_tokens": 0
           },
-          "output_tokens": 451,
+          "output_tokens": 404,
           "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 0,
+          "transcripts": [
+            "NVDA-2024-Q3-transcript-83",
+            "NVDA-2024-Q4-press_release-16",
+            "NVDA-2025-Q2-transcript-8",
+            "NVDA-2026-Q3-transcript-19",
+            "NVDA-2024-Q1-press_release-16",
+            "NVDA-2025-Q1-press_release-16",
+            "NVDA-2024-Q2-press_release-16",
+            "NVDA-2025-Q3-transcript-16"
+          ],
+          "keyword": []
         }
       },
-      "category": "comparison"
+      "category": "comparison",
+      "pass": false,
+      "fail_reasons": [
+        "Relevance below 0.8",
+        "Accuracy below 0.8"
+      ]
     },
     {
       "id": "market-1",
       "strategy_id": "baseline",
       "question": "How is the cloud computing market affecting Microsoft's business?",
       "ground_truth": "Microsoft Azure continues to show strong growth driven by AI services and enterprise cloud adoption, contributing significantly to overall revenue growth.",
-      "generated_answer": "Microsoft AI Strategy Timeline\n FY2024 (July 2023 – June 2024)\nThe retrieved context contains limited direct evidence for this fiscal year. Q2 FY2025 (calendar Q4 2024) references provide backward-looking context, noting \"significant investments in products and services that may not achieve expected returns\" and \"focus on cloud-based and AI services presenting execution and competitive risks\" [Q2 FY2025]. Azure growth during this period laid groundwork for the acceleration seen in subsequent quarters.\nEvidence gap: No specific FY2024 product launches, capex figures, or AI monetization metrics were retrieved.\n FY2025 (July 2024 – June 2025)\nInfrastructure signals: Management emphasized \"balancing operational discipline with continued investments in our cloud and AI infrastructure\" [Q2 FY2025]. Azure revenue grew 20-22% in constant currency through the year.\nMonetization trajectory: Microsoft Cloud reached $27B quarterly run-rate by Q4 FY2025, growing 25% in constant currency. Dynamics 365 accelerated to 18% growth, reflecting AI-enhanced business applications adoption.\nKey quote: \"Strong execution by our sales teams and partners drove On-Premises Server business revenue growth of 7% as well as continued momentum for our differentiated offerings\" [Q3 FY2025].\n FY2026 Q1 (July – September 2025)\nAcceleration evident: Azure and cloud services revenue increased 28% (27% constant currency) [Q1 FY2026]—a meaningful step-up from prior quarters. Commercial remaining performance obligation surged 51% to $392 billion, signaling robust forward demand.\nFinancial performance: Revenue reached $77.7B (+18% YoY), operating income $38.0B (+24%), EPS $3.72 GAAP (+13%) [Q1 FY2026].\nEvidence gap for 2022-2023: No retrieved documents cover these periods.",
-      "context_count": 10,
+      "generated_answer": "Atomic Facts with Citations:\n• Microsoft 365 Commercial cloud revenue increased 17% (up 15% in constant currency) in 2026 Q1 [C1]\n• Microsoft 365 Consumer cloud revenue increased 26% (up 25% in constant currency) in 2026 Q1 [C1]\n• Commercial remaining performance obligation increased 51% to $392 billion in 2026 Q1 [C1]\n• Microsoft 365 Commercial cloud revenue growth was 18% (up 16% in constant currency) in 2025 Q4 [C2]\n• Microsoft 365 Commercial cloud revenue growth was 12% (up 15% in constant currency) in 2025 Q3 [C3]\n• Microsoft 365 Commercial cloud revenue growth was 16% (up 15% in constant currency) in 2025 Q2 [C4]\n• Azure is architected for distributed computing fabric, emphasizing hybrid and multi-cloud infrastructures [C5]\n• Microsoft positions Azure for low latency access applications like factory floors, hospitals, and gaming [C5]\n• Revenue transitions from on-premises KPIs to Azure consumption as customers utilize hybrid benefits [C6]\n Final Answer:\nCloud computing is driving significant growth across Microsoft's business segments. Microsoft 365 Commercial cloud revenue has shown consistent acceleration, growing from 16% in Q2 2025 [C4] to 12% in Q3 2025 [C3], then jumping to 18% in Q4 2025 [C2] and 17% in Q1 2026 [C1]. Consumer cloud revenue reached 26% growth in the latest quarter [C1].\nThe cloud market impact extends beyond revenue growth to Microsoft's strategic positioning. Commercial remaining performance obligation surged 51% to $392 billion [C1], indicating strong future revenue visibility from cloud commitments.\nMicrosoft has architected Azure for distributed computing fabric with hybrid and multi-cloud capabilities [C5], targeting low-latency applications across factory floors, hospitals, and gaming [C5]. This positions the company for the multi-cloud, multi-edge computing evolution.\nThe business model transformation is evident as revenue shifts from traditional on-premises KPIs to Azure consumption patterns [C6], reflecting Microsoft's integrated cloud strategy and customers' adoption of hybrid benefits.",
+      "context_count": 6,
       "metrics": {
         "relevance": {
-          "score": 0.6,
-          "reasoning": "The answer provides substantial information about Microsoft's cloud computing business performance, including Azure growth rates, Microsoft Cloud revenue figures, and financial metrics. However, it doesn't directly address HOW the cloud computing market is affecting Microsoft's business in terms of strategic impact, competitive positioning, or market dynamics. Instead, it presents a timeline of AI strategy and financial results. While the data is related and shows cloud growth, it reads more like a financial summary than an analysis of market effects on the business. The answer partially addresses the question through implicit evidence (growth numbers suggest positive market impact) but lacks explicit discussion of market forces, competitive landscape, or strategic implications."
+          "score": 0.85,
+          "reasoning": "The answer is highly relevant to the question about how cloud computing affects Microsoft's business. It provides specific revenue growth figures for Microsoft 365 cloud services, discusses Azure's strategic positioning, mentions the shift from on-premises to cloud consumption models, and highlights the commercial remaining performance obligation growth. The answer directly addresses the business impact with concrete data and citations. However, there's a minor inconsistency in the narrative (stating growth went from 16% to 12% as 'acceleration' when 12% is lower), and the answer focuses heavily on Microsoft 365 rather than providing a broader view of all cloud computing impacts (e.g., Azure revenue specifically, competitive positioning against AWS/Google). Overall, it's a substantive and relevant response to the question."
         },
         "faithfulness": {
-          "score": 0.4,
-          "reasoning": "The answer contains a mix of information that is supported by the context and information that appears to be hallucinated or misattributed. SUPPORTED: The quotes from Amy Hood about 'balancing operational discipline with continued investments in our cloud and AI infrastructure' and 'Strong execution by our sales teams' are present in the context. The Q1 FY2026 figures ($77.7B revenue, $38.0B operating income, $3.72 EPS, 51% commercial remaining performance obligation growth to $392B, Azure 40% growth) are accurately cited from Chunks 4-5. HALLUCINATED/INCORRECT: (1) The answer claims Azure grew '20-22% in constant currency through the year' for FY2025, but the context shows Azure growth was 31%, 33%, and 39% in different quarters - much higher figures. (2) The answer states 'Microsoft Cloud reached $27B quarterly run-rate by Q4 FY2025' but no such figure appears in the context. (3) The answer claims Azure grew '28% (27% constant currency)' in Q1 FY2026, but the context clearly states Azure grew 40% (39% constant currency). (4) The answer attributes 'On-Premises Server business revenue growth of 7%' to Q3 FY2025, but this quote is not found in the provided context. (5) The Dynamics 365 '18% growth' is mentioned but the context shows varying figures (19%, 16%, 23%, 18%) across quarters. Several key claims are either fabricated or significantly misrepresent the actual figures in the context."
+          "score": 0.85,
+          "reasoning": "The answer is largely faithful to the context, but contains some inaccuracies in citation mapping and interpretation. The atomic facts correctly cite information from the chunks, though the citation numbering doesn't match the chunk numbering (e.g., [C1] refers to Chunk 4, not Chunk 1). The growth figures are accurately extracted from the context. However, there's a minor issue: the answer states M365 Commercial cloud revenue 'grew from 16% in Q2 2025 to 12% in Q3 2025' which is presented as 'acceleration' but 12% is actually lower than 16%, suggesting deceleration not acceleration. The context does support all the specific numbers mentioned (17%, 26%, 18%, 12%, 16%, 51% to $392B, etc.). The statements about Azure's distributed computing fabric, hybrid/multi-cloud positioning, and revenue transition from on-premises to Azure consumption are all directly supported by Chunks 5 and 6. The answer doesn't contain significant hallucinations, but the narrative framing of 'consistent acceleration' is misleading given the actual numbers show fluctuation."
         },
         "accuracy": {
-          "score": 0.7,
-          "reasoning": "The generated answer confirms Azure's strong growth trajectory, which aligns with the ground truth's assertion about 'strong growth.' It provides specific metrics (Azure growing 20-22%, then accelerating to 28% in Q1 FY2026) and mentions AI services contributing to this growth. However, the generated answer is more focused on timeline details and financial metrics rather than explicitly stating that AI services and enterprise cloud adoption are the primary drivers. The ground truth's key claim about AI services driving growth is partially supported but not as directly stated. The answer also acknowledges evidence gaps and provides more detail than needed, but the core message about Azure's strong growth is consistent with the ground truth."
+          "score": 0.4,
+          "reasoning": "The generated answer discusses Microsoft's cloud computing growth extensively but focuses primarily on Microsoft 365 cloud revenue rather than Microsoft Azure specifically. The ground truth specifically mentions 'Microsoft Azure' showing strong growth driven by 'AI services and enterprise cloud adoption.' The generated answer mentions Azure only in the context of architecture and hybrid capabilities, but does not provide Azure-specific revenue growth figures or mention AI services as a growth driver. While the answer demonstrates overall cloud growth at Microsoft (which is consistent with the ground truth's general direction), it fails to address the specific claims about Azure's growth and the AI services driver mentioned in the ground truth."
         }
       },
-      "duration_ms": 16460,
+      "duration_ms": 12477,
       "pipeline_metrics": {
         "timings": {
-          "intentMs": 3350,
-          "embeddingMs": 262,
-          "pineconeMs": 943,
-          "llmMs": 11903,
-          "totalMs": 16459
+          "intentMs": 0,
+          "embeddingMs": 255,
+          "pineconeMs": 466,
+          "llmMs": 11737,
+          "totalMs": 12476
         },
         "retrieval": {
-          "pineconeMatches": 10,
+          "pineconeMatches": 6,
           "financialMatches": 0,
           "keywordMatches": 0,
-          "combinedContext": 10,
+          "combinedContext": 6,
           "filtersApplied": {
             "company": "MSFT"
           }
@@ -563,54 +694,71 @@
           "primaryTicker": "MSFT"
         },
         "llm": {
-          "input_tokens": 2410,
+          "input_tokens": 1665,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
           "cache_creation": {
             "ephemeral_5m_input_tokens": 0,
             "ephemeral_1h_input_tokens": 0
           },
-          "output_tokens": 462,
+          "output_tokens": 527,
           "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 0,
+          "transcripts": [
+            "MSFT-2025-Q2-press_release-2",
+            "MSFT-2025-Q3-press_release-3",
+            "MSFT-2025-Q4-press_release-2",
+            "MSFT-2026-Q1-press_release-5",
+            "MSFT-2019-Q4-full-3",
+            "MSFT-2022-Q1-full-0"
+          ],
+          "keyword": []
         }
       },
-      "category": "market"
+      "category": "market",
+      "pass": false,
+      "fail_reasons": [
+        "Accuracy below 0.8"
+      ]
     },
     {
       "id": "segment-1",
       "strategy_id": "baseline",
       "question": "How is Amazon's AWS performing compared to overall company growth?",
       "ground_truth": "AWS continues to be a key profit driver for Amazon, with growth rates driven by cloud adoption and AI services, though facing competitive pressure from Azure and Google Cloud.",
-      "generated_answer": "AWS delivered $121.9B in trailing twelve-month revenue through Q1 2025, growing 18% year-over-year with remarkable consistency—the segment has maintained 18% YoY growth across the last four reported quarters [Q1 2025, Q2 2025 data].\nProfitability Trajectory\nOperating income reached $11.5B in Q1 2025, representing a 39.5% operating margin—the highest quarterly margin in the available data series. TTM operating income hit $42.0B, up 45% YoY [Q1 2025], demonstrating significant margin expansion from the 27.1% TTM margin reported in Q4 2023.\nThe operating income growth story shows a notable deceleration pattern: YoY growth excluding FX impact compressed from 83% (Q1 2024) to 21% (Q1 2025) to 10% (Q2 2025). This reflects the law of large numbers as the absolute profit base expanded, not deteriorating fundamentals—TTM operating income continued climbing from $39.8B to $43.8B across this period.\nStrategic Context\nAWS is aggressively positioning around generative AI, with management highlighting investments in large language models as a competitive differentiator [Q3 2023]. Key enterprise wins include Amgen (generative AI for drug discovery), MUFG (personalized financial services via Amazon Bedrock), and Merck (IT infrastructure migration) [Q4 2023]. The AWS European Sovereign Cloud launch signals continued geographic expansion.\nInvestment Implications\nThe segment generates approximately 60% of Amazon's consolidated operating income on roughly 17% of revenue, making AWS margin trajectory the single most important variable for consolidated earnings. The Q2 2025 margin compression to 32.9% (from 39.5% in Q1) warrants monitoring—FX headwinds of $139M partially explain the sequential decline, but underlying investment intensity may be increasing.",
-      "context_count": 10,
+      "generated_answer": "Atomic Facts with Citations:\n• AWS revenue: $121.9B annualized (18% YoY growth) in most recent quarter [C1]\n• AWS operating income: $11.4B (9% YoY growth) in most recent quarter [C1]  \n• AWS operating margin: 34.6% in most recent quarter [C1]\n• AWS TTM operating income: $43.8B (20% YoY growth) [C1]\n• AWS TTM operating margin: 35.9% [C1]\n• AWS revenue grew 12% YoY in Q3 2023, reaching $92B annualized run rate [C6]\n• Overall Amazon company performance metrics: Not found in provided sources\n• Amazon total revenue comparisons: Not found in provided sources\n• Amazon consolidated operating margins: Not found in provided sources\n Final Answer:\nAWS is performing strongly with consistent growth momentum. Revenue reached an annualized $121.9B (18% YoY growth) in the most recent quarter [C1]. Operating income grew 9% YoY to $11.4B with a 34.6% operating margin [C1]. \nOn a trailing twelve-month basis, AWS generated $43.8B in operating income (20% YoY growth) with a 35.9% operating margin [C1]. This represents substantial improvement from the 25.8% TTM operating margin in Q4 2023 [C4].\nAWS has maintained double-digit revenue growth, including 12% YoY growth in Q3 2023 when it reached a $92B annualized run rate [C6]. The segment continues expanding its leadership position in generative AI and large language models [C6].\nHowever, direct comparison to Amazon's overall performance cannot be made as consolidated company revenue, operating income, and margin data are not found in provided sources. AWS segment data shows strong profitability and growth trajectory, but comprehensive relative performance analysis requires additional financial context not available in the provided materials.",
+      "context_count": 8,
       "metrics": {
         "relevance": {
-          "score": 0.85,
-          "reasoning": "The answer provides extensive detail about AWS's performance including revenue ($121.9B TTM), growth rate (18% YoY), and profitability metrics. It addresses the comparison to overall company growth by noting AWS generates ~60% of Amazon's operating income on ~17% of revenue. However, the answer could more directly compare AWS growth rates to Amazon's overall company growth rates. The response is highly relevant and informative about AWS performance, but the 'compared to overall company growth' aspect could be more explicitly addressed with specific company-wide growth figures for direct comparison."
+          "score": 0.75,
+          "reasoning": "The answer provides detailed and accurate information about AWS's performance with specific metrics (revenue, operating income, margins, growth rates). However, it only partially addresses the question because it explicitly states that overall Amazon company performance metrics were not found in the sources, making a direct comparison impossible. The answer is honest about this limitation and provides what information is available, but the core comparative analysis requested cannot be completed. The response is relevant and well-structured, but incomplete for the specific question asked."
         },
         "faithfulness": {
-          "score": 0.7,
-          "reasoning": "The answer contains a mix of information that is supported by the context and some claims that appear to be extrapolations or potentially hallucinated. SUPPORTED: AWS revenue growth around 17-19% YoY is consistent with the data tables showing AWS growth rates. The operating margin figures (39.5%, 32.9%) align with the supplemental financial data. The strategic partnerships (Amgen, MUFG, Merck) and AWS European Sovereign Cloud are mentioned in the context. The generative AI positioning is discussed. PROBLEMATIC: 1) The claim of '$121.9B in trailing twelve-month revenue through Q1 2025' - while the context shows quarterly AWS figures, this specific TTM calculation isn't explicitly stated. 2) The statement that AWS generates 'approximately 60% of Amazon's consolidated operating income on roughly 17% of revenue' is not directly stated in the context. 3) The specific TTM operating income figures ($42.0B, $39.8B, $43.8B) require calculation from the data but the exact figures aren't all explicitly confirmed. 4) The characterization of Q2 2025 margin compression 'warranting monitoring' is interpretive analysis not in the context. The answer makes reasonable inferences from the data tables but presents some calculated figures as facts without the context explicitly confirming them, and adds analytical commentary not present in the source material."
+          "score": 0.6,
+          "reasoning": "The answer contains several issues with faithfulness to the context. First, the citations reference '[C1]' but the actual context chunks don't contain the specific figures cited (e.g., '$121.9B annualized', '$11.4B operating income', '34.6% operating margin'). Looking at the actual chunks, Chunk 8 shows AWS revenue of $33,006M for Q3 2025 with 20% YoY growth, and operating income of $11,434M with 34.6% margin - these numbers are close but the annualized figure calculation isn't explicitly stated. The answer also incorrectly states AWS revenue grew 12% in Q3 2023 reaching $92B annualized from '[C6]', but this information actually appears in Chunk 4, not Chunk 6. Chunk 4 states 'AWS revenue grew 12% year-over-year in Q3, reaching an annualized run rate of $92 billion.' The financial metrics in Chunks 5-8 do support some of the AWS performance claims, but the citation system used doesn't match the chunk numbering, and some specific figures appear to be derived/calculated rather than directly stated. The answer is partially faithful but has citation accuracy issues and some figures that don't directly match the source text."
         },
         "accuracy": {
-          "score": 1,
-          "reasoning": "The generated answer is fully consistent with the ground truth and provides substantially more detail. The ground truth states AWS is a 'key profit driver' - the generated answer confirms this with specific data showing AWS generates ~60% of Amazon's operating income on ~17% of revenue. The ground truth mentions 'growth rates driven by cloud adoption and AI services' - the generated answer confirms 18% YoY revenue growth and details AI investments including generative AI positioning, Amazon Bedrock, and enterprise AI wins (Amgen, MUFG, Merck). The ground truth mentions 'competitive pressure' - while the generated answer doesn't explicitly discuss Azure/Google Cloud competition, it does note margin compression and investment intensity that could relate to competitive dynamics. The generated answer provides extensive factual detail (specific revenue figures, margins, growth rates) that enriches rather than contradicts the ground truth's summary assessment."
+          "score": 0.6,
+          "reasoning": "The generated answer provides detailed, specific financial metrics about AWS performance (revenue, operating income, margins, growth rates) that are consistent with the ground truth's assertion that 'AWS continues to be a key profit driver for Amazon' with strong growth. However, the generated answer fails to address two key elements from the ground truth: (1) the drivers of growth being 'cloud adoption and AI services' - while AI/LLMs are briefly mentioned, cloud adoption is not discussed; and (2) the 'competitive pressure from Azure and Google Cloud' is completely absent from the generated answer. The generated answer is factually rich and accurate in what it covers, but incomplete relative to the ground truth's key points about competitive dynamics."
         }
       },
-      "duration_ms": 17813,
+      "duration_ms": 12824,
       "pipeline_metrics": {
         "timings": {
-          "intentMs": 4065,
-          "embeddingMs": 404,
-          "pineconeMs": 705,
-          "llmMs": 12637,
-          "totalMs": 17813
+          "intentMs": 1,
+          "embeddingMs": 257,
+          "pineconeMs": 474,
+          "llmMs": 12091,
+          "totalMs": 12824
         },
         "retrieval": {
-          "pineconeMatches": 10,
+          "pineconeMatches": 8,
           "financialMatches": 0,
           "keywordMatches": 0,
-          "combinedContext": 10,
+          "combinedContext": 8,
           "filtersApplied": {
             "company": "AMZN"
           }
@@ -629,155 +777,1028 @@
           "primaryTicker": "AMZN"
         },
         "llm": {
-          "input_tokens": 3002,
+          "input_tokens": 2672,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
           "cache_creation": {
             "ephemeral_5m_input_tokens": 0,
             "ephemeral_1h_input_tokens": 0
           },
-          "output_tokens": 449,
+          "output_tokens": 454,
           "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 0,
+          "transcripts": [
+            "AMZN-2023-Q4-full-38",
+            "AMZN-2022-Q4-full-11",
+            "AMZN-2023-Q2-full-1",
+            "AMZN-2023-Q3-full-1",
+            "AMZN-2024-Q4-press_release-35",
+            "AMZN-2025-Q1-press_release-28",
+            "AMZN-2025-Q2-press_release-29",
+            "AMZN-2025-Q3-press_release-35"
+          ],
+          "keyword": []
         }
       },
-      "category": "market"
+      "category": "market",
+      "pass": false,
+      "fail_reasons": [
+        "Relevance below 0.8",
+        "Faithfulness below 0.8",
+        "Accuracy below 0.8"
+      ]
     },
     {
       "id": "exec-1",
       "strategy_id": "baseline",
       "question": "What did AMD's CEO say about AI demand in recent earnings?",
       "ground_truth": "AMD CEO Lisa Su emphasized strong AI demand, particularly for MI300 accelerators, and outlined plans to expand AI product portfolio to capture growing market opportunity.",
-      "generated_answer": "AMD's AI strategy has accelerated dramatically over the past three years, with 2024 marking the inflection point for meaningful revenue contribution.\n2022: The retrieved context does not contain evidence from this period.\n2023: The retrieved context does not contain direct evidence from this period, though MI300 development was underway based on subsequent commentary.\n2024: This was the breakout year for AMD's data center AI business. MI300 moved from qualification to production scale, with Lisa Su noting in Q2 2024: \"We're very happy with how MI300 has progressed... the key point was to get our products into our customers' data centers, to have them qualify their workloads, to really ramp in production.\" [Q2 FY2024] By Q3, total revenue reached $6.8B (+18% YoY), with the Data Center segment driving growth. Management outlined a clear product cadence: \"325 will start in the fourth quarter and then ramp more in the first half of next year. And then as we look at the 350 Series... there will be multiple SKUs in that series that we'll go through the range of air-cooled to liquid-cooled.\" [Q3 FY2024]\n2025 (through Q3): Revenue accelerated to $9.2B in Q3 (+35.6% YoY) with gross margins at 52%. The product roadmap extended to next-generation silicon, with management highlighting plans to \"reach significant scale with MI450\" through deployments at Oracle Cloud Infrastructure and the Department of Energy. [Q3 FY2025] Jean Hu confirmed that both Server CPUs and GPUs \"grew nicely; Server slightly better directionally\" in Q3, with Q4 guidance for \"strong double digit\" sequential Data Center growth.\nThe monetization trajectory shows AMD moving from single-customer concentration toward diversified hyperscaler and enterprise adoption, with infrastructure partners now committing to multi-generational roadmaps.",
-      "context_count": 8,
+      "generated_answer": "Atomic Facts with Citations\n• Not found in provided sources - AMD CEO's specific statements about AI demand\n• Not found in provided sources - Direct quotes from AMD's CEO regarding AI market outlook\n• Not found in provided sources - CEO commentary on AI demand trends or forecasts\n• Supply constraints mentioned in wafers, substrates, and back-end assembly across multiple quarters [C1][C2][C3]\n• High demand exceeding supply mentioned in some segments [C2][C3]\n• References to MI300 gross margin expectations and accretion point timing [C1]\n• Software investment challenges noted as hurdle for customer ramp [C2]\n Final Answer\nNot found in provided sources. The context fragments from AMD's Q1, Q2, and Q3 2024 earnings calls do not contain direct statements from AMD's CEO about AI demand. While the transcripts reference supply constraints across wafers, substrates, and back-end assembly [C1][C2][C3], and mention high demand exceeding supply in certain segments [C2][C3], specific CEO commentary on AI demand trends is not present in the provided excerpts. The context includes discussion of MI300 gross margin expectations [C1] and software investment challenges for customer ramp [C2], but lacks the CEO's direct statements about AI market demand that would be needed to answer this query.",
+      "context_count": 3,
       "metrics": {
         "relevance": {
-          "score": 0.85,
-          "reasoning": "The answer is highly relevant to the question about AMD's CEO comments on AI demand. It includes direct quotes from Lisa Su (AMD's CEO) about MI300 progress and product roadmaps, and discusses AI-related revenue growth and demand signals. However, the answer is more of a comprehensive timeline analysis rather than a focused response specifically about what the CEO said about AI demand. It includes some CFO (Jean Hu) quotes and general business metrics that go beyond the specific question. The core question is addressed with relevant CEO commentary, but the response is broader than strictly necessary."
+          "score": 0.6,
+          "reasoning": "The answer acknowledges it cannot find direct CEO quotes about AI demand, which is honest and relevant. However, it does provide related context from AMD earnings calls about supply constraints, high demand, and MI300 products that are tangentially related to AI demand. The answer is partially relevant because it addresses the topic area (AMD earnings, AI-related products) but fails to directly answer what the CEO specifically said about AI demand. The transparency about limitations is appropriate, but the answer doesn't fully satisfy the user's question."
         },
         "faithfulness": {
-          "score": 0.75,
-          "reasoning": "The answer is largely faithful to the provided context but contains some elements that go beyond what's explicitly stated. Faithful elements include: the MI300 progress quote from Lisa Su, the Q2 2024 revenue of $5.8B and Q3 2024 revenue of $6.8B with growth figures, the MI325/350 product roadmap details, the Q3 FY2025 revenue of $9.2B with 35.6% growth and 52% gross margin, the MI450 mention with OCI and DOE, and Jean Hu's comments about Server/GPU growth. However, the answer makes several claims not directly supported by the context: 1) The characterization of 2024 as an 'inflection point' is interpretive rather than stated, 2) The claim about 'single-customer concentration toward diversified hyperscaler adoption' is not in the context, 3) The statement about 'infrastructure partners committing to multi-generational roadmaps' is not explicitly supported, 4) Some framing around 2022-2023 acknowledges lack of evidence but still makes inferences. The core financial data and direct quotes are accurate, but the narrative synthesis adds interpretive elements."
+          "score": 0.85,
+          "reasoning": "The answer is largely faithful to the provided context. It correctly identifies that the specific CEO statements about AI demand are not present in the chunks, which is accurate - the chunks only contain metadata about operating environment challenges and partial analyst questions, not CEO responses. The answer appropriately cites the supply constraints, high demand exceeding supply, MI300 gross margin discussions, and software investment challenges that ARE present in the context metadata. The slight deduction is because the answer implies these are from 'transcripts' when the chunks only show metadata and partial questions, not actual transcript content with CEO statements. However, the core claim that CEO statements about AI demand are 'not found' is accurate and faithful to what was provided."
         },
         "accuracy": {
-          "score": 0.85,
-          "reasoning": "The generated answer is consistent with the ground truth and significantly expands upon it. It confirms strong AI demand (mentioning MI300 accelerators moving to production scale, revenue growth) and outlines AMD's expanding AI product portfolio (MI325, MI350, MI450 roadmap). The answer correctly attributes statements to Lisa Su and provides specific details about market opportunity capture through hyperscaler and enterprise adoption. However, the ground truth specifically mentions Lisa Su 'emphasized' these points, suggesting a more direct attribution to her statements, while the generated answer distributes commentary across multiple executives (including Jean Hu). The core facts align well, but the generated answer is more of a comprehensive timeline analysis rather than a direct summary of Lisa Su's emphasis, which slightly diverges from the ground truth's framing."
+          "score": 0.2,
+          "reasoning": "The generated answer claims the information about AMD CEO's statements on AI demand was 'not found in provided sources' and fails to mention Lisa Su by name or the key facts from the ground truth: strong AI demand emphasis, MI300 accelerators specifically, and plans to expand AI product portfolio. While the generated answer does mention MI300 and some related topics (gross margins, supply constraints), it explicitly states it cannot answer the core question about CEO statements on AI demand. The ground truth clearly indicates this information should have been available and answerable. The generated answer is overly cautious and misses the key substantive content."
         }
       },
-      "duration_ms": 15034,
+      "duration_ms": 9681,
       "pipeline_metrics": {
         "timings": {
-          "intentMs": 3257,
-          "embeddingMs": 307,
-          "pineconeMs": 595,
-          "financialMs": 4,
-          "keywordMs": 9,
-          "llmMs": 10862,
-          "totalMs": 15034
+          "intentMs": 0,
+          "embeddingMs": 287,
+          "pineconeMs": 713,
+          "llmMs": 8679,
+          "totalMs": 9680
         },
         "retrieval": {
-          "pineconeMatches": 0,
-          "financialMatches": 3,
-          "keywordMatches": 5,
-          "combinedContext": 8,
+          "pineconeMatches": 3,
+          "financialMatches": 0,
+          "keywordMatches": 0,
+          "combinedContext": 3,
           "filtersApplied": {
             "company": "AMD",
-            "file_type": "earnings"
+            "fiscal_year": "2024"
           }
         },
         "fallbacks": {
-          "usedFinancialData": true,
-          "usedKeywordFallback": true,
+          "usedFinancialData": false,
+          "usedKeywordFallback": false,
           "financialQuery": false,
-          "hadTranscriptMatches": false
+          "hadTranscriptMatches": true
         },
         "intent": {
-          "analysis_type": "strategic",
-          "timeframe": "most_recent",
+          "analysis_type": "technology",
+          "timeframe": "recent",
           "company_name": "AMD",
           "isComparisonQuery": false,
           "primaryTicker": "AMD"
         },
         "llm": {
-          "input_tokens": 1988,
+          "input_tokens": 1314,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
           "cache_creation": {
             "ephemeral_5m_input_tokens": 0,
             "ephemeral_1h_input_tokens": 0
           },
-          "output_tokens": 444,
+          "output_tokens": 299,
           "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 0,
+          "transcripts": [
+            "AMD-2024-Q1-full-37",
+            "AMD-2024-Q2-full-36",
+            "AMD-2024-Q3-full-37"
+          ],
+          "keyword": []
         }
       },
-      "category": "executive"
+      "category": "executive",
+      "pass": false,
+      "fail_reasons": [
+        "Relevance below 0.8",
+        "Accuracy below 0.8"
+      ]
     },
     {
       "id": "guidance-1",
       "strategy_id": "baseline",
       "question": "What is Nvidia's revenue guidance for upcoming quarters?",
       "ground_truth": "Nvidia has provided optimistic guidance driven by continued AI infrastructure demand, expecting sustained growth in data center revenue.",
-      "generated_answer": "NVIDIA guided Q4 FY2026 revenue to approximately $45B, representing continued sequential growth from Q3's $57.0B, with management signaling sustained momentum into calendar 2026 driven by Blackwell architecture demand.\nForward Revenue Visibility\nCEO Jensen Huang provided an unusually specific long-term outlook during Q3 FY2026, stating the company now has \"visibility to $0.5T in Blackwell/Rubin revenue as AI infrastructure spend hits the hundreds of billions.\" This half-trillion dollar pipeline represents a significant forward commitment from hyperscalers and enterprise customers building AI factories.\nRecent Trajectory Supporting Guidance\nThe revenue acceleration has been remarkable: Q3 FY2026 delivered $57.0B (+62% YoY, +22% QoQ), following Q2's $46.7B (+56% YoY) and Q1's $44.1B (+69% YoY). Data Center revenue, the primary growth driver, reached approximately $50B in Q3, with Blackwell systems now dominating the mix—GB300 has \"crossed over\" GB200 as the lead product.\nProduct Roadmap Underpinning Outlook\nManagement confirmed Rubin (next-generation architecture) remains on schedule for calendar 2026, with Vera GPU, NVQLink, and NVLink 144 all maintaining an annual cadence. The Q2 commentary noted GB300 production had ramped to \"1,000 racks per week,\" while Blackwell Ultra is already \"generating tens of billions\" in revenue.\nMargin Expectations\nGross margins have stabilized in the 73-75% range (GAAP), with Q3 FY2026 at 73.4% ($41.8B gross profit on $57.0B revenue). Management has historically guided margins in the \"mid-70s,\" and the current product mix suggests this range remains achievable through FY2026.",
-      "context_count": 18,
+      "generated_answer": "Atomic Facts with Citations\n- Q4 2025 revenue: $39.3B (YoY +78% / QoQ +12%) [C1]\n- Q3 2025 revenue: $35.1B (YoY +94% / QoQ +17%) [C2]\n- Q2 2025 revenue: $30.0B (YoY +122% / QoQ +16%) [C3]\n- Q1 2026 revenue: $44.1B [C9]\n- Q2 2026 revenue: $46.7B [C7]\n- Q4 2024 guidance mentioned: $20B (+/-2%) [C11]\n- Blackwell demand described as \"off the charts\" with visibility to $0.5T in Blackwell/Rubin revenue [C4]\n- GB200/GB300 production ramping with \"1,000 racks per week\" [C6]\n Final Answer\nForward-looking revenue guidance for upcoming quarters: Not found in provided sources.\nThe context contains historical revenue data through Q2 2026 but no explicit forward-looking guidance for future quarters beyond what has already been reported:\n- Most recent quarter (Q2 2026): $46.7B [C7]\n- Previous quarter (Q1 2026): $44.1B [C9]\nManagement commentary indicates strong demand momentum with Blackwell described as having \"off the charts\" demand and visibility to $0.5T in combined Blackwell/Rubin revenue [C4]. GB300 production is ramping at 1,000 racks per week [C6]. However, specific quarterly revenue guidance figures for upcoming periods are not provided in the available sources.\nThe only explicit guidance found was historical Q4 2024 guidance of $20B (+/-2%) with margins in the mid-70s [C11].",
+      "context_count": 11,
       "metrics": {
         "relevance": {
-          "score": 0.95,
-          "reasoning": "The answer directly and comprehensively addresses the question about Nvidia's revenue guidance for upcoming quarters. It provides specific Q4 FY2026 guidance (~$45B), discusses the longer-term revenue visibility ($0.5T pipeline), shows recent quarterly trajectory for context, and includes margin expectations. The answer is highly relevant, detailed, and well-organized with supporting information about product roadmap and growth drivers that contextualize the guidance figures."
+          "score": 0.7,
+          "reasoning": "The answer attempts to address the question about Nvidia's revenue guidance for upcoming quarters. It correctly identifies that explicit forward-looking guidance is not found in the sources, while providing relevant context including historical revenue data, management commentary about demand ('off the charts'), and visibility to $0.5T in Blackwell/Rubin revenue. The answer is honest about the limitations of the available data and provides the most recent historical guidance found (Q4 2024). However, it doesn't fully satisfy the question since no actual forward guidance for future quarters is provided - the answer essentially says 'guidance not found' while offering related context."
         },
         "faithfulness": {
-          "score": 0.35,
-          "reasoning": "The answer contains significant hallucinations. The context explicitly states Q4 FY2026 guidance is '$65.0 ±2% billion USD' (from Chunk 4), not '$45B' as claimed in the answer. The answer correctly cites the $0.5T Blackwell/Rubin visibility, the Q3 FY2026 revenue of $57.0B, and the GB300 crossing over GB200 from the context. However, the Q4 guidance figure is a critical factual error. The Q2 revenue of $46.7B and Q1 revenue of $44.1B are supported by the context. The claim about '1,000 racks per week' for GB300 is in the context (Chunk 3). The margin guidance of 'mid-70s' and specific Q4 margin guidance of '~74.8/75%' is in the context, but the answer's characterization is somewhat imprecise. The major issue is the completely incorrect Q4 revenue guidance figure, which is a fundamental factual error that significantly undermines the faithfulness of the response."
+          "score": 0.85,
+          "reasoning": "The answer is largely faithful to the provided context, correctly citing historical revenue figures from the chunks. However, there are some issues: 1) The answer states 'Forward-looking revenue guidance for upcoming quarters: Not found' but Chunk 7 clearly shows Q4 guidance of '$65.0 ±2% billion USD' for FY2026 Q4, which the answer missed. 2) The answer correctly identifies the Q4 2024 guidance of $20B from C11, but fails to mention the more recent and relevant Q4 FY2026 guidance of $65B from C7. 3) All other cited facts (revenue figures, Blackwell demand commentary, GB300 production rates) are accurately derived from the context. The main faithfulness issue is the omission of the explicit Q4 FY2026 guidance that was present in the context, which makes the claim 'no explicit forward-looking guidance' partially incorrect."
         },
         "accuracy": {
-          "score": 1,
-          "reasoning": "The generated answer is fully consistent with the ground truth and provides substantially more detail. The ground truth states that Nvidia provided optimistic guidance driven by continued AI infrastructure demand with expected sustained growth in data center revenue. The generated answer confirms this with specific details: Q4 FY2026 guidance of ~$45B, a $0.5T forward pipeline in Blackwell/Rubin revenue tied to AI infrastructure spending, remarkable revenue growth trajectory (Q3 at $57B, +62% YoY), Data Center revenue reaching ~$50B in Q3, and sustained momentum driven by Blackwell architecture demand. All key facts align with the ground truth's assertion of optimistic guidance and AI infrastructure-driven data center growth expectations."
+          "score": 0.6,
+          "reasoning": "The generated answer partially aligns with the ground truth but lacks the concise summary about optimistic guidance driven by AI infrastructure demand. The generated answer does mention strong demand indicators ('off the charts' Blackwell demand, $0.5T visibility in Blackwell/Rubin revenue, production ramping at 1,000 racks per week), which supports the ground truth's claim of 'continued AI infrastructure demand.' However, the generated answer explicitly states 'Forward-looking revenue guidance for upcoming quarters: Not found' and focuses heavily on historical data rather than confirming the optimistic forward-looking guidance. The ground truth emphasizes 'sustained growth in data center revenue' which the generated answer doesn't directly address, though the demand indicators imply this. The answer is not contradictory but is more hedged and less definitive than the ground truth."
         }
       },
-      "duration_ms": 17069,
+      "duration_ms": 10864,
       "pipeline_metrics": {
         "timings": {
-          "intentMs": 3064,
-          "embeddingMs": 316,
-          "pineconeMs": 634,
+          "intentMs": 2,
+          "embeddingMs": 249,
+          "pineconeMs": 560,
           "financialMs": 5,
-          "keywordMs": 7,
-          "llmMs": 13042,
-          "totalMs": 17069
+          "llmMs": 10047,
+          "totalMs": 10864
         },
         "retrieval": {
-          "pineconeMatches": 10,
+          "pineconeMatches": 8,
           "financialMatches": 3,
-          "keywordMatches": 5,
-          "combinedContext": 18,
+          "keywordMatches": 0,
+          "combinedContext": 11,
           "filtersApplied": {
             "company": "NVDA"
           }
         },
         "fallbacks": {
           "usedFinancialData": true,
-          "usedKeywordFallback": true,
+          "usedKeywordFallback": false,
           "financialQuery": true,
           "hadTranscriptMatches": true
         },
         "intent": {
           "analysis_type": "guidance",
-          "timeframe": "upcoming",
+          "timeframe": "all",
           "company_name": "NVDA",
           "isComparisonQuery": false,
           "primaryTicker": "NVDA"
         },
         "llm": {
-          "input_tokens": 4756,
+          "input_tokens": 3541,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
           "cache_creation": {
             "ephemeral_5m_input_tokens": 0,
             "ephemeral_1h_input_tokens": 0
           },
-          "output_tokens": 448,
+          "output_tokens": 437,
           "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 3,
+          "transcripts": [
+            "NVDA-2026-Q3-full-0",
+            "NVDA-2026-Q1-full-0",
+            "NVDA-2026-Q2-full-0",
+            "NVDA-2026-Q3-full-1",
+            "NVDA-2025-Q4-press_release-17",
+            "NVDA-2026-Q2-press_release-19",
+            "NVDA-2026-Q1-press_release-20",
+            "NVDA-2024-Q3-full-5"
+          ],
+          "keyword": []
         }
       },
-      "category": "guidance"
+      "category": "guidance",
+      "pass": false,
+      "fail_reasons": [
+        "Relevance below 0.8",
+        "Accuracy below 0.8"
+      ]
+    },
+    {
+      "id": "unanswerable-1",
+      "strategy_id": "baseline",
+      "question": "What was Tesla's automotive revenue in Q2 2019?",
+      "ground_truth": "Not found in provided sources.",
+      "generated_answer": "Atomic Facts with Citations:\n- Tesla's automotive revenue for Q2 2019: Not found in provided sources [C1, C2, C3]\n- Available data covers NVIDIA segments including automotive revenue of $261M in 2024 Q3 [C3]\n- Available data covers NVIDIA automotive and robotics revenue of $0.592B in 2026 Q3 [C2]\n- No Tesla financial data present in provided context [C1, C2, C3]\n Final Answer:\nNot found in provided sources. The provided context contains NVIDIA financial data across multiple quarters, including NVIDIA's automotive segment revenue, but does not include Tesla's automotive revenue for Q2 2019 or any other period.",
+      "context_count": 3,
+      "metrics": {
+        "relevance": {
+          "score": 0.8,
+          "reasoning": "The answer is relevant to the question as it directly addresses whether Tesla's Q2 2019 automotive revenue can be found. While it doesn't provide the specific revenue figure requested, it appropriately acknowledges that the information is not available in the provided sources and explains what data is actually available (NVIDIA data instead of Tesla data). This is a valid and helpful response when the requested information is not in the context, rather than hallucinating an answer."
+        },
+        "faithfulness": {
+          "score": 0.95,
+          "reasoning": "The answer is highly faithful to the provided context. It correctly identifies that Tesla's automotive revenue for Q2 2019 is not present in the sources, and accurately notes that the context contains NVIDIA financial data instead. The specific figures cited ($261M for automotive in one chunk and $0.592B for automotive and robotics in another) are directly from the context. The answer appropriately declines to provide information not in the context rather than hallucinating. The only minor issue is that the chunk references (C1, C2, C3) don't perfectly align with the actual chunk numbers, but the substance of what's cited is accurate."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer correctly identifies that Tesla's automotive revenue for Q2 2019 is not found in the provided sources, which matches the ground truth. The answer provides additional context explaining that the available data is about NVIDIA rather than Tesla, which is consistent with and more detailed than the ground truth without contradicting it."
+        }
+      },
+      "duration_ms": 6628,
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 2,
+          "embeddingMs": 252,
+          "pineconeMs": 397,
+          "financialMs": 2,
+          "keywordMs": 10,
+          "llmMs": 5963,
+          "totalMs": 6628
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 1,
+          "keywordMatches": 2,
+          "combinedContext": 3,
+          "filtersApplied": {
+            "company": "NVDA",
+            "fiscal_year": "2019",
+            "quarter": "Q2"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": true,
+          "financialQuery": true,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "financial",
+          "timeframe": "Q2 2019",
+          "company_name": null,
+          "isComparisonQuery": false,
+          "primaryTicker": "NVDA"
+        },
+        "llm": {
+          "input_tokens": 1315,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 167,
+          "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [
+            "financial_data_segment"
+          ],
+          "financial": 1,
+          "transcripts": [],
+          "keyword": [
+            "keyword-2026-Q3-qa",
+            "keyword-2026-Q3-earnings"
+          ]
+        }
+      },
+      "category": "unanswerable",
+      "pass": true,
+      "fail_reasons": []
+    },
+    {
+      "id": "unanswerable-2",
+      "strategy_id": "baseline",
+      "question": "What was Apple’s gross margin in FY2018?",
+      "ground_truth": "Not found in provided sources.",
+      "generated_answer": "Atomic Facts with Citations:\n• Not found in provided sources - FY2018 gross margin data is not included in the context [C1, C2 contain only 2025 Q4 data]\n Final Answer:\nGross Margin FY2018: Not found in provided sources.\nThe provided context contains only Apple's Q4 FY2025 financial data and analyst questions from that period. No FY2018 financial metrics, including gross margin information, are available in the source materials.",
+      "context_count": 2,
+      "metrics": {
+        "relevance": {
+          "score": 0.8,
+          "reasoning": "The answer is relevant to the question as it directly addresses the query about Apple's FY2018 gross margin. While it doesn't provide the actual gross margin figure, it appropriately explains that the information is not available in the provided source materials and clarifies what data is actually contained in the sources (Q4 FY2025 data). This is a valid and helpful response when the requested information is not in the available context, rather than hallucinating an answer."
+        },
+        "faithfulness": {
+          "score": 1,
+          "reasoning": "The answer is completely faithful to the provided context. The generated answer correctly states that FY2018 gross margin data is not found in the provided sources, which is accurate - the context only contains Q4 FY2025 data (total revenue of $102.5 billion) and analyst questions from that period. The answer does not hallucinate any FY2018 figures and appropriately acknowledges the limitation of the available context. This demonstrates proper faithfulness by not fabricating information that isn't present in the source materials."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer correctly identifies that the FY2018 gross margin data is not found in the provided sources, which matches the ground truth. The generated answer provides additional context explaining why the information is not available (the sources only contain Q4 FY2025 data), but this additional detail is consistent with and supports the ground truth answer."
+        }
+      },
+      "duration_ms": 5432,
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 0,
+          "embeddingMs": 261,
+          "pineconeMs": 422,
+          "financialMs": 1,
+          "keywordMs": 5,
+          "llmMs": 4732,
+          "totalMs": 5431
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 0,
+          "keywordMatches": 2,
+          "combinedContext": 2,
+          "filtersApplied": {
+            "company": "AAPL",
+            "fiscal_year": "2018"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": false,
+          "usedKeywordFallback": true,
+          "financialQuery": true,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "financial",
+          "timeframe": "FY2018",
+          "company_name": "AAPL",
+          "isComparisonQuery": false,
+          "primaryTicker": "AAPL"
+        },
+        "llm": {
+          "input_tokens": 1018,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 118,
+          "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 0,
+          "transcripts": [],
+          "keyword": [
+            "keyword-2025-Q4-qa",
+            "keyword-2025-Q4-earnings"
+          ]
+        }
+      },
+      "category": "unanswerable",
+      "pass": true,
+      "fail_reasons": []
+    },
+    {
+      "id": "unanswerable-3",
+      "strategy_id": "baseline",
+      "question": "Did Amazon provide 2026 AWS revenue guidance?",
+      "ground_truth": "Not found in provided sources.",
+      "generated_answer": "Atomic Facts with Citations:\n• Amazon provided Q3 2025 revenue of $180.2B with 13.4% YoY growth [C1]\n• Amazon provided Q2 2025 revenue of $167.7B with 13.3% YoY growth [C2]  \n• Amazon provided Q1 2025 revenue of $155.7B with 8.6% YoY growth [C3]\n• Amazon provided 2024 CapEx guidance indicating year-over-year increase driven by AWS and generative AI infrastructure investments [C5]\n• No specific 2026 AWS revenue guidance found in provided sources\n Final Answer:\nNot found in provided sources.\nThe provided context contains Amazon's financial data through Q3 2025 and some 2024 guidance, but does not include any specific 2026 AWS revenue guidance. While there are references to AWS infrastructure investments and generative AI initiatives in 2024 guidance [C5], no forward-looking revenue projections for AWS extending to 2026 are present in the available materials.",
+      "context_count": 10,
+      "metrics": {
+        "relevance": {
+          "score": 0.95,
+          "reasoning": "The answer directly addresses the question about whether Amazon provided 2026 AWS revenue guidance. It clearly states that no such guidance was found in the provided sources, and explains what information was available (quarterly revenue through Q3 2025 and 2024 CapEx guidance). The answer is relevant, thorough, and appropriately acknowledges the limitation of the available data. It loses a small amount because the extensive listing of other financial data, while contextually helpful, slightly dilutes the directness of the response."
+        },
+        "faithfulness": {
+          "score": 0.85,
+          "reasoning": "The answer correctly states that no specific 2026 AWS revenue guidance was found in the provided sources, which is accurate - the context does not contain any 2026 AWS revenue projections. The atomic facts cited are mostly faithful to the context: the financial data in chunks 1-3 shows revenue figures and growth rates that align with the citations (though the answer labels them as Q3/Q2/Q1 2025 when the chunks don't explicitly state these quarters). The reference to 2024 CapEx guidance for AWS and generative AI is supported by chunk 8. However, there's a minor issue: the answer presents the revenue figures as definitively being from 2025 quarters, but the context chunks don't explicitly label these time periods - they just show financial data without clear date markers. The core conclusion that 2026 AWS guidance is not present is completely faithful to the context. The slight uncertainty about the exact quarter labels prevents a perfect score."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer arrives at the same conclusion as the ground truth - that the information was not found in the provided sources. While the generated answer provides additional context about what WAS found in the sources (Q3 2025 revenue, Q2 2025 revenue, Q1 2025 revenue, and 2024 CapEx guidance), the final answer correctly states that no specific 2026 AWS revenue guidance was found. The additional detail is consistent with and supports the ground truth conclusion, so this deserves a full score."
+        }
+      },
+      "duration_ms": 6727,
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 0,
+          "embeddingMs": 243,
+          "pineconeMs": 546,
+          "financialMs": 4,
+          "llmMs": 5933,
+          "totalMs": 6727
+        },
+        "retrieval": {
+          "pineconeMatches": 7,
+          "financialMatches": 3,
+          "keywordMatches": 0,
+          "combinedContext": 10,
+          "filtersApplied": {
+            "company": "AMZN"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": false,
+          "financialQuery": true,
+          "hadTranscriptMatches": true
+        },
+        "intent": {
+          "analysis_type": "guidance",
+          "timeframe": "all",
+          "company_name": "AMZN",
+          "isComparisonQuery": false,
+          "primaryTicker": "AMZN"
+        },
+        "llm": {
+          "input_tokens": 2732,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 246,
+          "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 3,
+          "transcripts": [
+            "AMZN-2023-Q4-full-38",
+            "AMZN-2023-Q2-full-1",
+            "AMZN-2023-Q3-full-2",
+            "AMZN-2022-Q4-full-10",
+            "AMZN-2023-Q4-full-12",
+            "AMZN-2020-Q3-full-9",
+            "AMZN-2022-Q2-full-11"
+          ],
+          "keyword": []
+        }
+      },
+      "category": "unanswerable",
+      "pass": true,
+      "fail_reasons": []
+    },
+    {
+      "id": "unanswerable-4",
+      "strategy_id": "baseline",
+      "question": "What was Meta's Reality Labs operating loss in Q1 2017?",
+      "ground_truth": "Not found in provided sources.",
+      "generated_answer": "Atomic Facts with Citations:\n- Reality Labs operating loss for Q1 2017: Not found in provided sources [C1, C2]\n- Available Reality Labs data shows Q3 2025 revenue of $0.47B (+74% YoY) [C2]\n- Context covers 2025 Q3 period, not Q1 2017 [C1, C2]\n Final Answer:\nNot found in provided sources. The available context covers Meta's Reality Labs performance for Q3 2025, showing revenue of $0.47B (+74% YoY) [C2], but does not contain operating loss data for Q1 2017.",
+      "context_count": 2,
+      "metrics": {
+        "relevance": {
+          "score": 0.8,
+          "reasoning": "The answer is relevant and appropriately addresses the question by clearly stating that the requested information (Q1 2017 Reality Labs operating loss) is not available in the provided sources. It explains why (sources cover 2025, not 2017) and provides context about what data is available. While it doesn't provide the specific answer requested, it correctly identifies the limitation and is transparent about it, which is a relevant and helpful response to the question."
+        },
+        "faithfulness": {
+          "score": 0.95,
+          "reasoning": "The answer is highly faithful to the provided context. It correctly states that Q1 2017 operating loss data is not found in the sources, accurately cites the Reality Labs revenue figure of $0.47B with +74% YoY change from Chunk 2, and appropriately notes that the context covers a different time period. The answer avoids hallucination by explicitly acknowledging what information is and isn't available in the context. The only minor issue is that the answer mentions 'Q3 2025' as the time period, but the chunks don't explicitly state this is Q3 2025 - they just show the data without a clear quarter designation. However, this is a minor inference rather than a significant hallucination."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer correctly identifies that the information is not found in the provided sources, which matches the ground truth. The answer provides additional context about what data is available (Q3 2025 Reality Labs data) while maintaining factual accuracy. The core answer aligns with the ground truth that Q1 2017 Reality Labs operating loss data is not available in the sources."
+        }
+      },
+      "duration_ms": 5738,
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 1,
+          "embeddingMs": 268,
+          "pineconeMs": 414,
+          "financialMs": 2,
+          "keywordMs": 7,
+          "llmMs": 5046,
+          "totalMs": 5738
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 0,
+          "keywordMatches": 2,
+          "combinedContext": 2,
+          "filtersApplied": {
+            "company": "META",
+            "fiscal_year": "2017",
+            "quarter": "Q1"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": false,
+          "usedKeywordFallback": true,
+          "financialQuery": false,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "general",
+          "timeframe": "Q1 2017",
+          "company_name": "META",
+          "isComparisonQuery": false,
+          "primaryTicker": "META"
+        },
+        "llm": {
+          "input_tokens": 1054,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 154,
+          "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 0,
+          "transcripts": [],
+          "keyword": [
+            "keyword-2025-Q3-qa",
+            "keyword-2025-Q3-earnings"
+          ]
+        }
+      },
+      "category": "unanswerable",
+      "pass": true,
+      "fail_reasons": []
+    },
+    {
+      "id": "unanswerable-5",
+      "strategy_id": "baseline",
+      "question": "How many MI325X units did AMD ship in 2022?",
+      "ground_truth": "Not found in provided sources.",
+      "generated_answer": "Atomic Facts with Citations:\n• AMD Instinct MI325X GPUs are available now on DigitalOcean's cloud platform [C1]\n• MI325X is mentioned as currently shipping/available, while MI350X is noted as \"available later this year\" [C1]\n• No specific unit shipment numbers for MI325X are provided in the context [C1]\n Final Answer:\nNot found in provided sources.\nThe context mentions that AMD Instinct MI325X GPUs are available now on DigitalOcean's cloud platform [C1], but no specific unit shipment figures for MI325X are provided in the available sources.",
+      "context_count": 6,
+      "metrics": {
+        "relevance": {
+          "score": 0.7,
+          "reasoning": "The answer is relevant to the question as it attempts to address the query about MI325X shipment numbers. It correctly identifies that no specific shipment figures are available in the sources. However, there's a factual issue: the question asks about 2022, but the MI325X wasn't released until late 2024, so the answer could have been more helpful by noting this temporal impossibility. The answer is honest about the limitations of the available information but doesn't fully address the anachronistic nature of the question."
+        },
+        "faithfulness": {
+          "score": 1,
+          "reasoning": "The answer is completely faithful to the provided context. The context (Chunk 1) mentions that 'DigitalOcean expanded its AMD-based cloud offerings to support a broader range of AI workloads with AMD Instinct MI325X GPUs available now' but does not provide any specific unit shipment numbers for MI325X. The answer correctly states that MI325X is available on DigitalOcean's platform and accurately acknowledges that no specific unit shipment figures are provided in the sources. The answer appropriately concludes with 'Not found in provided sources' which is the correct response given the lack of specific shipment data in the context."
+        },
+        "accuracy": {
+          "score": 0.8,
+          "reasoning": "The generated answer ultimately concludes with 'Not found in provided sources' which matches the ground truth. However, the answer provides additional context about MI325X availability that wasn't requested and adds some ambiguity by discussing related information before reaching the correct conclusion. The core factual determination (that specific shipment numbers are not available) is correct, but the answer is more verbose than necessary and could potentially confuse the reader before arriving at the same conclusion as the ground truth."
+        }
+      },
+      "duration_ms": 5386,
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 0,
+          "embeddingMs": 255,
+          "pineconeMs": 476,
+          "llmMs": 4653,
+          "totalMs": 5386
+        },
+        "retrieval": {
+          "pineconeMatches": 6,
+          "financialMatches": 0,
+          "keywordMatches": 0,
+          "combinedContext": 6,
+          "filtersApplied": {
+            "company": "AMD"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": false,
+          "usedKeywordFallback": false,
+          "financialQuery": false,
+          "hadTranscriptMatches": true
+        },
+        "intent": {
+          "analysis_type": "general",
+          "timeframe": "all",
+          "company_name": "AMD",
+          "isComparisonQuery": false,
+          "primaryTicker": "AMD"
+        },
+        "llm": {
+          "input_tokens": 1745,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 150,
+          "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 0,
+          "transcripts": [
+            "AMD-2025-Q3-press_release-8",
+            "AMD-2025-Q2-press_release-22",
+            "AMD-2025-Q1-press_release-19",
+            "AMD-2022-Q1-full-47",
+            "AMD-2024-Q3-full-26",
+            "AMD-2022-Q4-full-41"
+          ],
+          "keyword": []
+        }
+      },
+      "category": "unanswerable",
+      "pass": true,
+      "fail_reasons": []
+    },
+    {
+      "id": "unanswerable-6",
+      "strategy_id": "baseline",
+      "question": "What was Nvidia’s gaming revenue in FY2015?",
+      "ground_truth": "Not found in provided sources.",
+      "generated_answer": "Atomic Facts with Citations:\n- Gaming revenue data for FY2015 is not found in provided sources [C1, C2, C3]\n- Available context covers Q3 2024, Q3 2026, but no FY2015 data [C1, C2, C3]\n- Gaming segment revenue shown for Q3 2024: $2.856B (+81% YoY, +15% QoQ) [C3]\n Final Answer:\nNot found in provided sources.\nThe provided context contains gaming revenue data for Q3 2024 ($2.856B) [C3] and other recent quarters, but does not include any financial information for FY2015.",
+      "context_count": 3,
+      "metrics": {
+        "relevance": {
+          "score": 0.8,
+          "reasoning": "The answer is relevant to the question as it directly addresses the query about Nvidia's gaming revenue in FY2015. While it doesn't provide the specific number requested, it honestly acknowledges that the information is not available in the provided sources and explains what data is available instead. This is a responsible and relevant response given the limitations of the source material, rather than fabricating an answer or being completely non-responsive."
+        },
+        "faithfulness": {
+          "score": 0.85,
+          "reasoning": "The answer is largely faithful to the context. It correctly states that FY2015 data is not found in the provided sources, and accurately cites the gaming revenue figure of $2.856B from the context (though the citation says [C3] when it should be [C1] based on the chunk numbering). The answer correctly identifies that the context covers recent quarters (Q3 2024, Q3 2026) rather than FY2015. The gaming segment data cited ($2.856B, +81% YoY, +15% QoQ) matches Chunk 1 exactly. The minor deduction is for the citation inconsistency where the answer attributes data to [C3] when it actually comes from [C1], but the factual content itself is accurate and derived from the context."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer correctly identifies that FY2015 gaming revenue data is not found in the provided sources, which matches the ground truth. The answer provides additional helpful context about what data IS available (Q3 2024 gaming revenue), but this extra detail is consistent with and does not contradict the ground truth. The core factual claim - that the requested information is not available - is accurate."
+        }
+      },
+      "duration_ms": 5908,
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 1,
+          "embeddingMs": 267,
+          "pineconeMs": 468,
+          "financialMs": 2,
+          "keywordMs": 6,
+          "llmMs": 5163,
+          "totalMs": 5908
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 1,
+          "keywordMatches": 2,
+          "combinedContext": 3,
+          "filtersApplied": {
+            "company": "NVDA",
+            "fiscal_year": "2015"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": true,
+          "financialQuery": true,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "financial",
+          "timeframe": "FY2015",
+          "company_name": "NVDA",
+          "isComparisonQuery": false,
+          "primaryTicker": "NVDA"
+        },
+        "llm": {
+          "input_tokens": 1262,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 163,
+          "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [
+            "financial_data_segment"
+          ],
+          "financial": 1,
+          "transcripts": [],
+          "keyword": [
+            "keyword-2026-Q3-qa",
+            "keyword-2026-Q3-earnings"
+          ]
+        }
+      },
+      "category": "unanswerable",
+      "pass": true,
+      "fail_reasons": []
+    },
+    {
+      "id": "unanswerable-7",
+      "strategy_id": "baseline",
+      "question": "What were Oracle's capital expenditures in Q4 2016?",
+      "ground_truth": "Not found in provided sources.",
+      "generated_answer": "Atomic Facts with Citations:\n- No capital expenditure data for Q4 2016 found in provided sources\n- Available context only covers Q1 FY2026 financial data [C1, C2]\n- Q4 2016 timeframe not addressed in any provided context\n Final Answer:\nOracle's capital expenditures for Q4 2016: Not found in provided sources.\nThe provided context only contains financial information for Q1 FY2026, with no data covering the Q4 2016 timeframe requested.",
+      "context_count": 2,
+      "metrics": {
+        "relevance": {
+          "score": 0.8,
+          "reasoning": "The answer is relevant to the question as it directly addresses the query about Oracle's Q4 2016 capital expenditures. While it doesn't provide the actual figure, it honestly and clearly states that the information is not available in the provided sources and explains why (the sources only cover Q1 FY2026). This is a valid and helpful response that acknowledges the limitation rather than providing incorrect information or ignoring the question entirely."
+        },
+        "faithfulness": {
+          "score": 1,
+          "reasoning": "The answer is completely faithful to the provided context. The context only contains information about Oracle's Q1 FY2026 financial data, and the answer correctly states that no capital expenditure data for Q4 2016 was found in the provided sources. The answer appropriately acknowledges the limitation of the available context and does not fabricate any information about Q4 2016 capital expenditures. This is an honest and accurate response given the mismatch between the question (Q4 2016) and the available context (Q1 FY2026)."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer correctly identifies that the information is not found in the provided sources, which matches the ground truth. The generated answer provides additional context explaining why the information wasn't found (the sources only cover Q1 FY2026, not Q4 2016), but this additional detail is consistent with and supports the ground truth answer. The core factual claim - that the requested information is not available in the sources - is accurate."
+        }
+      },
+      "duration_ms": 5319,
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 1,
+          "embeddingMs": 254,
+          "pineconeMs": 459,
+          "financialMs": 2,
+          "keywordMs": 15,
+          "llmMs": 4585,
+          "totalMs": 5318
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 0,
+          "keywordMatches": 2,
+          "combinedContext": 2,
+          "filtersApplied": {
+            "company": "ORCL",
+            "fiscal_year": "2016",
+            "quarter": "Q4"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": false,
+          "usedKeywordFallback": true,
+          "financialQuery": false,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "general",
+          "timeframe": "Q4 2016",
+          "company_name": "ORCL",
+          "isComparisonQuery": false,
+          "primaryTicker": "ORCL"
+        },
+        "llm": {
+          "input_tokens": 994,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 124,
+          "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 0,
+          "transcripts": [],
+          "keyword": [
+            "keyword-2026-Q1-qa",
+            "keyword-2026-Q1-earnings"
+          ]
+        }
+      },
+      "category": "unanswerable",
+      "pass": true,
+      "fail_reasons": []
+    },
+    {
+      "id": "unanswerable-8",
+      "strategy_id": "baseline",
+      "question": "What was Microsoft’s Copilot revenue in Q1 2022?",
+      "ground_truth": "Not found in provided sources.",
+      "generated_answer": "Atomic Facts with Citations:\n• Microsoft's Q1 2022 total revenue was $45.3B [C1]\n• No specific Copilot revenue figures are provided in the context [C1-C9]\n• The earnings call transcript discusses various Microsoft Cloud offerings including Azure, Dynamics 365, Microsoft 365, and Power Platform, but does not mention Copilot specifically [C2-C9]\n• Microsoft Cloud strategy integrates multiple services but Copilot is not referenced [C6]\n Final Answer:\nNot found in provided sources.\nThe context contains Microsoft's Q1 2022 financial data showing total revenue of $45.3B [C1], but does not include any specific revenue figures or mentions of Copilot. The earnings call transcript discusses various Microsoft Cloud services and products but Copilot revenue is not reported or discussed [C1-C9].",
+      "context_count": 9,
+      "metrics": {
+        "relevance": {
+          "score": 0.85,
+          "reasoning": "The answer is relevant and appropriately addresses the question. It correctly acknowledges that the specific information requested (Copilot revenue in Q1 2022) is not available in the provided sources, while still providing useful context about what information IS available (total revenue of $45.3B). The answer is honest about the limitations of the data rather than fabricating information. The slight deduction is because the answer could have been more concise, but it does directly respond to the user's query."
+        },
+        "faithfulness": {
+          "score": 1,
+          "reasoning": "The answer is completely faithful to the provided context. It correctly states that Microsoft's Q1 2022 total revenue was $45.3B (matching the 45317 in millions from Chunk 1), and accurately notes that no Copilot revenue figures are mentioned anywhere in the context. The answer appropriately concludes 'Not found in provided sources' since Copilot is indeed not mentioned in any of the 9 chunks provided. The citations are accurate and the answer does not introduce any information not present in the context."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer correctly concludes with 'Not found in provided sources,' which matches the ground truth. While the generated answer provides additional context and explanation about what was found in the sources (Microsoft's Q1 2022 revenue, various cloud offerings discussed), the core factual conclusion is identical to the ground truth - that Copilot revenue information was not found. The additional detail is consistent and does not contradict the ground truth."
+        }
+      },
+      "duration_ms": 7962,
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 0,
+          "embeddingMs": 268,
+          "pineconeMs": 468,
+          "financialMs": 2,
+          "llmMs": 7212,
+          "totalMs": 7962
+        },
+        "retrieval": {
+          "pineconeMatches": 8,
+          "financialMatches": 1,
+          "keywordMatches": 0,
+          "combinedContext": 9,
+          "filtersApplied": {
+            "company": "MSFT",
+            "fiscal_year": "2022",
+            "quarter": "Q1"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": false,
+          "financialQuery": true,
+          "hadTranscriptMatches": true
+        },
+        "intent": {
+          "analysis_type": "financial",
+          "timeframe": "Q1 2022",
+          "company_name": "MSFT",
+          "isComparisonQuery": false,
+          "primaryTicker": "MSFT"
+        },
+        "llm": {
+          "input_tokens": 2278,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 202,
+          "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 1,
+          "transcripts": [
+            "MSFT-2022-Q1-full-0",
+            "MSFT-2022-Q1-full-9",
+            "MSFT-2022-Q1-full-7",
+            "MSFT-2022-Q1-full-10",
+            "MSFT-2022-Q1-full-1",
+            "MSFT-2022-Q1-full-8",
+            "MSFT-2022-Q1-full-12",
+            "MSFT-2022-Q1-full-3"
+          ],
+          "keyword": []
+        }
+      },
+      "category": "unanswerable",
+      "pass": true,
+      "fail_reasons": []
+    },
+    {
+      "id": "unanswerable-9",
+      "strategy_id": "baseline",
+      "question": "Did Broadcom report FY2016 networking segment revenue?",
+      "ground_truth": "Not found in provided sources.",
+      "generated_answer": "Atomic Facts with Citations\n- No FY2016 networking segment revenue data found in provided sources\n- Available context covers Q3 2025 and Q3 2024 periods only [C1, C2, C3]\n- FY2016 financial information not present in any provided context\n Final Answer\nNot found in provided sources.\nThe provided context contains financial data for Q3 2025 and Q3 2024 periods [C1, C2, C3], but does not include any FY2016 networking segment revenue information for Broadcom.",
+      "context_count": 3,
+      "metrics": {
+        "relevance": {
+          "score": 0.8,
+          "reasoning": "The answer is relevant to the question as it directly addresses whether FY2016 networking segment revenue was reported. The response acknowledges that the information was not found in the provided sources and explains why (the available data only covers Q3 2025 and Q3 2024). While it doesn't provide the actual FY2016 data, it appropriately indicates the limitation of the available information, which is a valid and relevant response to the question."
+        },
+        "faithfulness": {
+          "score": 1,
+          "reasoning": "The answer is completely faithful to the provided context. The context only contains information about Q3 2025 financial data for Broadcom, with no mention of FY2016 or networking segment revenue data. The answer correctly identifies that the requested information (FY2016 networking segment revenue) is not present in the provided sources and accurately notes that the available context covers Q3 2025 (and mentions Q3 2024 in the answer, though the context primarily shows Q3 2025). The answer appropriately declines to provide information that isn't in the context, avoiding any hallucination."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer correctly concludes 'Not found in provided sources,' which matches the ground truth exactly. The additional detail explaining why the information wasn't found (context only covers Q3 2025 and Q3 2024, not FY2016) is consistent with and supports the ground truth answer without contradicting it."
+        }
+      },
+      "duration_ms": 5887,
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 0,
+          "embeddingMs": 508,
+          "pineconeMs": 564,
+          "financialMs": 0,
+          "keywordMs": 5,
+          "llmMs": 4807,
+          "totalMs": 5886
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 1,
+          "keywordMatches": 2,
+          "combinedContext": 3,
+          "filtersApplied": {
+            "company": "AVGO",
+            "fiscal_year": "2016"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": true,
+          "financialQuery": true,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "financial",
+          "timeframe": "FY2016",
+          "company_name": "AVGO",
+          "isComparisonQuery": false,
+          "primaryTicker": "AVGO"
+        },
+        "llm": {
+          "input_tokens": 1028,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 132,
+          "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [
+            "financial_data_segment"
+          ],
+          "financial": 1,
+          "transcripts": [],
+          "keyword": [
+            "keyword-2025-Q3-qa",
+            "keyword-2025-Q3-earnings"
+          ]
+        }
+      },
+      "category": "unanswerable",
+      "pass": true,
+      "fail_reasons": []
+    },
+    {
+      "id": "unanswerable-10",
+      "strategy_id": "baseline",
+      "question": "What was Salesforce’s Slack revenue in Q3 2018?",
+      "ground_truth": "Not found in provided sources.",
+      "generated_answer": "Atomic Facts with Citations:\n- Salesforce acquired Slack in 2021 [Not found in provided sources - acquisition date not in context]\n- Slack revenue for Q3 2018 [Not found in provided sources]\n- Salesforce Q3 2018 financial results [Not found in provided sources]\n Final Answer:\nNot found in provided sources.\nThe provided context contains information about Salesforce's Q2 FY26 results but does not include any data about Slack's revenue in Q3 2018 or Salesforce's Q3 2018 financial performance.",
+      "context_count": 2,
+      "metrics": {
+        "relevance": {
+          "score": 0.7,
+          "reasoning": "The answer is relevant to the question in that it directly addresses the query about Slack revenue in Q3 2018. It correctly acknowledges that the information is not available in the provided sources and explains why (the context only contains Q2 FY26 data). While it doesn't provide the actual revenue figure requested, it appropriately indicates the limitation of the available data, which is a valid and relevant response. The score is not higher because the answer doesn't provide the actual information requested, but it's not lower because it directly engages with the question rather than being off-topic."
+        },
+        "faithfulness": {
+          "score": 0.9,
+          "reasoning": "The generated answer correctly identifies that the requested information (Slack revenue for Q3 2018, Salesforce Q3 2018 results) is not present in the provided context. The context only contains Q2 FY26 Salesforce data and analyst questions. The answer appropriately states 'Not found in provided sources' and accurately explains what the context does contain. The only minor issue is mentioning the Slack acquisition date as 'not found' when this wasn't directly relevant to the query, but the core response is faithful to the context by not hallucinating information."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer correctly identifies that the information is not found in the provided sources, which matches the ground truth. While the generated answer provides more detail about what was searched for and why it wasn't found, the core conclusion is the same - the requested information is not available in the provided sources."
+        }
+      },
+      "duration_ms": 5705,
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 0,
+          "embeddingMs": 328,
+          "pineconeMs": 396,
+          "financialMs": 0,
+          "keywordMs": 5,
+          "llmMs": 4970,
+          "totalMs": 5705
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 0,
+          "keywordMatches": 2,
+          "combinedContext": 2,
+          "filtersApplied": {
+            "company": "CRM",
+            "fiscal_year": "2018",
+            "quarter": "Q3"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": false,
+          "usedKeywordFallback": true,
+          "financialQuery": true,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "financial",
+          "timeframe": "Q3 2018",
+          "company_name": "CRM",
+          "isComparisonQuery": false,
+          "primaryTicker": "CRM"
+        },
+        "llm": {
+          "input_tokens": 1035,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 138,
+          "service_tier": "standard"
+        },
+        "retrievalTrace": {
+          "financialSegments": [],
+          "financial": 0,
+          "transcripts": [],
+          "keyword": [
+            "keyword-2026-Q2-earnings",
+            "keyword-2026-Q2-qa"
+          ]
+        }
+      },
+      "category": "unanswerable",
+      "pass": true,
+      "fail_reasons": []
     }
   ]
 }

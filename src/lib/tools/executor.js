@@ -1,5 +1,55 @@
 import { financials } from '../data/financials.js';
 import { retriever } from '../rag/retriever.js';
+import { KeywordTranscriptRetriever } from '../rag/components.js';
+import path from 'path';
+
+const COMPANY_NAME_BY_TICKER = {
+  NVDA: 'NVIDIA',
+  AAPL: 'Apple',
+  AMD: 'Advanced Micro Devices',
+  AMZN: 'Amazon',
+  MSFT: 'Microsoft',
+  META: 'Meta',
+  GOOGL: 'Alphabet',
+  AVGO: 'Broadcom',
+  CRM: 'Salesforce',
+  ORCL: 'Oracle'
+};
+
+// Local transcript fallback (keyword-based) to avoid zero results when Pinecone misses
+const keywordTranscriptRetriever = new KeywordTranscriptRetriever(
+  path.join(process.cwd(), 'data', 'transcripts')
+);
+
+function formatNumber(val) {
+  if (val === null || val === undefined) return null;
+  const num = Number(val);
+  if (!Number.isFinite(num)) return null;
+  if (Math.abs(num) >= 1000) {
+    return `$${(num / 1000).toFixed(1)}B`;
+  }
+  return `$${num.toFixed(1)}M`;
+}
+
+function summarizeMetrics(period, metrics = {}) {
+  const parts = [];
+  if (metrics.revenue !== undefined && metrics.revenue !== null && Number.isFinite(Number(metrics.revenue))) {
+    parts.push(`Revenue ${formatNumber(metrics.revenue)}`);
+  }
+  if (metrics.operating_income !== undefined && metrics.operating_income !== null && Number.isFinite(Number(metrics.operating_income))) {
+    parts.push(`OpInc ${formatNumber(metrics.operating_income)}`);
+  }
+  if (metrics.net_income !== undefined && metrics.net_income !== null && Number.isFinite(Number(metrics.net_income))) {
+    parts.push(`NetInc ${formatNumber(metrics.net_income)}`);
+  }
+  if (metrics.revenue_segments && typeof metrics.revenue_segments === 'object') {
+    const dc = metrics.revenue_segments.data_center ?? metrics.revenue_segments.dataCenter ?? null;
+    if (Number.isFinite(Number(dc))) {
+      parts.push(`Data Center ${formatNumber(dc)}`);
+    }
+  }
+  return parts.length ? `${period}: ${parts.join(' | ')}` : `${period}: no numeric metrics`;
+}
 
 function normalizeFY(fiscalYear) {
   if (!fiscalYear) return null;
@@ -70,6 +120,7 @@ async function executeGetFinancialMetrics(input) {
     ticker,
     period: `${q} FY${fy}`,
     metrics: out,
+    summary: summarizeMetrics(`${q} FY${fy}`, out),
     missingMetrics: missing.length ? missing : undefined,
     source: 'financials.getQuarter'
   };
@@ -127,6 +178,7 @@ async function executeGetMultiQuarterMetrics(input) {
   return {
     ticker,
     periods: results,
+    summaries: results.map((r) => summarizeMetrics(r.period, r.metrics)),
     source: 'financials.getQuarter'
   };
 }
@@ -188,99 +240,101 @@ async function executeSearchTranscript(input) {
   }
 
   // Strategy/tech/market asks benefit from higher recall
-  const intendedTopK = Number.isFinite(topK) ? Math.min(topK, 50) : 15;
+  const intendedTopK = Number.isFinite(topK) ? Math.min(topK, 50) : 20;
 
   // Build a tolerant, AND-composed filter
   // Note: Pinecone metadata uses 'company_ticker' as the field name
+  const companyName = COMPANY_NAME_BY_TICKER[ticker] || ticker;
   const tickerFilter = {
     $or: [
       { company_ticker: ticker },
       { ticker: ticker },
-      { company: ticker }
+      { company: ticker },
+      { company_name: companyName }
     ]
   };
 
-  // Current date is December 2025 - prefer recent data
-  const currentYear = '2025';
-  const previousYear = '2024';
-  
-  // If no fiscalYear specified, try 2025 first, then 2024, then all
-  let results = null;
-  let searchedYears = [];
-  
+  // Derive candidate fiscal years (prefer most recent available for this ticker)
+  const available = financials.listAvailable(ticker) || [];
+  const sortedYears = available
+    .map((y) => y.fiscalYear)
+    .filter(Boolean)
+    .sort((a, b) => parseInt(b) - parseInt(a));
+
+  const yearsToTry = [];
   if (fiscalYear) {
-    // User specified a year - use it
-    const filterClauses = [tickerFilter, { fiscal_year: normalizeFY(fiscalYear) }];
-    if (quarter) {
-      filterClauses.push({ quarter: normalizeQuarter(quarter) });
-    }
-    results = await retriever.search({
+    yearsToTry.push(normalizeFY(fiscalYear));
+  } else if (sortedYears.length) {
+    yearsToTry.push(sortedYears[0]); // most recent
+    if (sortedYears[1]) yearsToTry.push(sortedYears[1]); // previous
+  }
+  // Always include a no-year fallback
+  yearsToTry.push(null);
+
+  let results = null;
+  const searchedYears = [];
+
+  for (const yr of yearsToTry) {
+    const clauses = [tickerFilter];
+    if (yr) clauses.push({ fiscal_year: yr });
+    if (quarter) clauses.push({ quarter: normalizeQuarter(quarter) });
+    const filters = clauses.length === 1 ? clauses[0] : { $and: clauses };
+
+    const res = await retriever.search({
       query,
-      filters: { $and: filterClauses },
+      filters,
       topK: intendedTopK
     });
-    searchedYears.push(fiscalYear);
-  } else {
-    // No year specified - try recent years first
-    // Try 2025 first
-    const filter2025 = quarter 
-      ? { $and: [tickerFilter, { fiscal_year: currentYear }, { quarter: normalizeQuarter(quarter) }] }
-      : { $and: [tickerFilter, { fiscal_year: currentYear }] };
-    
-    results = await retriever.search({
+
+    if (yr) searchedYears.push(yr); else searchedYears.push('all');
+
+    if (res?.matches?.length) {
+      results = res;
+      break;
+    }
+  }
+
+  // Fallback: no-filter search if still empty
+  if (!results?.matches?.length) {
+    const res = await retriever.search({
       query,
-      filters: filter2025,
       topK: intendedTopK
     });
-    searchedYears.push(currentYear);
-    
-    // If no 2025 results, try 2024
-    if (!results?.matches?.length || results.matches.length < 3) {
-      const filter2024 = quarter 
-        ? { $and: [tickerFilter, { fiscal_year: previousYear }, { quarter: normalizeQuarter(quarter) }] }
-        : { $and: [tickerFilter, { fiscal_year: previousYear }] };
-      
-      const results2024 = await retriever.search({
-        query,
-        filters: filter2024,
-        topK: intendedTopK
-      });
-      searchedYears.push(previousYear);
-      
-      // Merge results, keeping 2025 first
-      if (results2024?.matches?.length) {
-        const existingIds = new Set((results?.matches || []).map(m => m.id));
-        const newMatches = results2024.matches.filter(m => !existingIds.has(m.id));
-        results = {
-          ...results,
-          matches: [...(results?.matches || []), ...newMatches].slice(0, intendedTopK)
-        };
-      }
+    searchedYears.push('all');
+    if (res?.matches?.length) {
+      results = res;
     }
-    
-    // Final fallback: no year filter
-    if (!results?.matches?.length) {
-      results = await retriever.search({
-        query,
-        filters: tickerFilter,
-        topK: intendedTopK
-      });
-      searchedYears.push('all');
-    }
+  }
+
+  // Fallback: local keyword retriever if Pinecone returns nothing
+  let keywordMatches = [];
+  if (!results?.matches?.length) {
+    keywordMatches = await keywordTranscriptRetriever.retrieveByKeywords(ticker, query, {
+      timeframe: fiscalYear ? `FY ${fiscalYear}` : ''
+    });
   }
 
   return {
     ticker,
     query,
     searchedYears,
-    results: results?.matches?.map((m) => ({
-      score: m.score,
-      text: m.metadata?.text,
-      fiscalYear: m.metadata?.fiscalYear || m.metadata?.fiscal_year,
-      quarter: m.metadata?.quarter,
-      source: m.metadata?.source || m.metadata?.source_file,
-      type: m.metadata?.type
-    })) || [],
+    results:
+      results?.matches?.map((m) => ({
+        score: m.score,
+        text: m.metadata?.text,
+        fiscalYear: m.metadata?.fiscalYear || m.metadata?.fiscal_year,
+        quarter: m.metadata?.quarter,
+        source: m.metadata?.source || m.metadata?.source_file,
+        type: m.metadata?.type
+      })) ||
+      keywordMatches.map((m) => ({
+        score: m.score,
+        text: m.metadata?.text,
+        fiscalYear: m.metadata?.fiscalYear,
+        quarter: m.metadata?.quarter,
+        source: m.metadata?.source,
+        type: m.metadata?.type
+      })),
     hadFallback: searchedYears.includes('all'),
     source: 'retriever.search'
   };

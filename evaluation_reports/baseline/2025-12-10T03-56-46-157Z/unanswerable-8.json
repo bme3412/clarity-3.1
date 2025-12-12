@@ -1,0 +1,244 @@
+{
+  "id": "unanswerable-8",
+  "run_id": "2025-12-10T03-56-46-157Z",
+  "strategy_id": "baseline",
+  "question": "What was Microsoft’s Copilot revenue in Q1 2022?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts Extracted\n- Q1 2022 total revenue: $45.3B (YoY +22%, constant currency +20%) [C12]\n- Q1 2022 revenue (alternate source): $45,317M [C1]\n- Q1 2022 revenue growth: 22% [C1]\n- Gross profit: $31,671M [C1]\n- Gross margin: 69.9% [C1]\n- Operating income: $20,238M [C1]\n- Operating margin: 44.7% [C1]\n- Net income: $20,505M [C1]\n- Operating cash flow: $24,540M [C1]\n- Copilot revenue or metrics for Q1 2022: Not found in provided sources\n---\n Final Answer\nCopilot revenue for Q1 2022: Not found in provided sources. The provided context contains no mention of Copilot or any associated revenue figures for this period.\nQ1 2022 Total Company Revenue: $45.3B (YoY +22% / constant currency +20%) [C12]\nSupporting financials:\n- Gross margin: 69.9% [C1]\n- Operating income: $20.2B, operating margin 44.7% [C1]\n- Net income: $20.5B [C1]\n- Operating cash flow: $24.5B [C1]\nMicrosoft Cloud strategy during this quarter emphasized Azure, Dynamics 365, Microsoft 365, Power Platform, GitHub, and VS Code integration, with industry clouds adding sector-specific value [C2][C6]. Azure consumption growth remained consistent with reduced seasonality [C10]. Large enterprise commitments were driven by comprehensive cloud offerings across the product suite [C4][C7].\nNote: Copilot as a commercial product was not yet launched in Q1 FY2022; the context contains no Copilot-specific data.",
+  "duration_ms": 12698,
+  "metrics": {
+    "relevance": {
+      "score": 0.85,
+      "reasoning": "The answer is highly relevant to the question. It directly addresses that Copilot revenue for Q1 2022 was not found in the provided sources, and importantly notes that Copilot as a commercial product was not yet launched in Q1 FY2022. This is a valid and informative response to the question. The answer also provides helpful context by sharing the overall Q1 2022 revenue figures. The slight deduction is because the answer includes extensive additional financial details that weren't specifically asked for, though this context is still useful."
+    },
+    "faithfulness": {
+      "score": 0.95,
+      "reasoning": "The answer is highly faithful to the provided context. All financial figures cited (revenue $45.3B/45,317M, 22% growth, gross profit $31,671M, gross margin 69.9%, operating income $20,238M, operating margin 44.7%, net income $20,505M, operating cash flow $24,540M) are directly found in Chunks 1 and 12. The Microsoft Cloud strategy details about Azure, Dynamics 365, Microsoft 365, Power Platform, GitHub, and VS Code integration are accurately drawn from Chunks 2 and 6. The statement about Azure seasonality decreasing comes from Chunk 10, and large enterprise commitments information comes from Chunks 4 and 7. The answer correctly acknowledges that Copilot revenue is not found in the provided sources, which is accurate - there is no mention of Copilot in any chunk. The only minor deduction is for the note about Copilot not being launched yet, which is external knowledge not explicitly stated in the context, though it's presented as a clarifying note rather than a factual claim from the sources."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer correctly identifies that Copilot revenue/metrics for Q1 2022 was 'Not found in provided sources,' which matches the ground truth. While the generated answer provides extensive additional context about Q1 2022 financials and explains why Copilot data isn't available (it wasn't launched yet), the core factual claim aligns with the ground truth. The additional information is consistent and accurate, and the answer explicitly states the same conclusion as the ground truth regarding the specific query about Copilot."
+    }
+  },
+  "context_count": 13,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 2931,
+      "embeddingMs": 226,
+      "pineconeMs": 719,
+      "financialMs": 2,
+      "keywordMs": 4,
+      "llmMs": 8815,
+      "totalMs": 12698
+    },
+    "retrieval": {
+      "pineconeMatches": 10,
+      "financialMatches": 1,
+      "keywordMatches": 2,
+      "combinedContext": 13,
+      "filtersApplied": {
+        "company": "MSFT",
+        "fiscal_year": "2022",
+        "quarter": "Q1"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": true,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "Q1 2022",
+      "company_name": "MSFT",
+      "isComparisonQuery": false,
+      "primaryTicker": "MSFT"
+    },
+    "llm": {
+      "input_tokens": 2964,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 454,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "context-0",
+      "score": 0,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"revenue\": 45317,\n  \"gross_profit\": 31671,\n  \"gross_margin\": 69.9,\n  \"operating_income\": 20238,\n  \"operating_margin\": 44.7,\n  \"net_income\": 20505,\n  \"net_margin\": 45.247920206545004,\n  \"operating_cash_flow\": 24540,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 22,\n  \"eps\": 0,\n  \"eps_diluted\": 0,\n  \"revenueSegments\": {\n    \"composition\": null,\n    \"data_center\": null\n  },\n  \"profit\": 20238,\n  \"margin\": 44.7,\n  \"growth\": 22,\n  \"netIncome\": 20505,\n  \"grossMargin\": 69.9,\n  \"grossProfit\": 31671,\n  \"operatingCashFlow\": 24540,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 54.151863539069225\n}"
+      }
+    },
+    {
+      "id": "MSFT-2022-Q1-full-0",
+      "score": 2.70994654,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "MSFT_FY2022_Q1_qa.json",
+        "retrieval": null,
+        "text": "{\n  \"company_name\": \"Microsoft\",\n  \"quarter\": \"Q1\",\n  \"fiscal_year\": \"2022\",\n  \"speakers\": {\n    \"satya_nadella\": {\n      \"role\": \"CEO\",\n      \"responses\": [\n        {\n          \"topic\": \"Edge Computing Opportunity and Differentiation\",\n          \"content\": \"We have architected Azure for a distributed computing fabric, emphasizing hybrid and multi-cloud infrastructures. This approach supports low latency access for applications like factory floors, hospitals, and gaming, ensuring our position in a multi-cloud, multi-edge world remains strong.\"\n        },\n        {\n          \"topic\": \"Microsoft Cloud Strategy\",\n          \"content\": \"Our Microsoft Cloud integrates Azure, Dynamics 365, Microsoft 365, Power Platform, GitHub, and VS Code, offering a comprehensive stack."
+      }
+    },
+    {
+      "id": "MSFT-2022-Q1-full-9",
+      "score": 2.669209544,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "MSFT_FY2022_Q1_qa.json",
+        "retrieval": null,
+        "text": "\"topic\": \"Inflation and Operational Efficiency\",\n          \"content\": \"Inflationary pressures are being offset by productivity gains from digital transformation. Our investments in high-growth areas and efficient operational controls ensure that we maintain strong gross margins and operational efficiency.\"\n        }\n      ]\n    }\n  },\n  \"analyst_questions\": [\n    {\n      \"analyst\": \"Keith Weiss\",\n      \"firm\": \"Morgan Stanley\",\n      \"topics\": [\n        \"Edge Computing\",\n        \"Architectural Differentiation\"\n      ],\n      \"questions\": [\n        \"Can you talk about the edge computing opportunity, specifically the programmable edge, and how Microsoft’s architectural approach differentiates from competitors with last-mile solutions?\"\n      ]\n    },\n    {\n      \"analyst\": \"Brent Thill\",\n      \"firm\": \"Jefferies\",\n      \"topics\": [\n        \"Commercial Bookings\",\n        \"Azure Performance\"\n      ],\n      \"questions\": [\n        \"With commercial bookings up 14%, which is a slowdown from last quarter’s 25%, can you provide additional color on Azure’s performance and any other factors contributing to this change?\"\n      ]\n    },\n    {\n      \"analyst\": \"Karl Keirstead\",\n      \"firm\": \"UBS\",\n      \"topics\": [\n        \"Windows OEM Performance\",\n        \"Supply Chain\"\n      ],\n      \"questions\": [\n        \"How did Microsoft exceed guidance in the Windows OEM segment despite unit shipment and supply chain issues, and what is your outlook for the second half of the fiscal year?\"\n      ]\n    },\n    {\n      \"analyst\": \"Mark Moerdler\",\n      \"firm\": \"Bernstein Research\",\n      \"topics\": [\n        \"Azure Seasonality\",\n        \"Cloud OpEx\"\n      ],\n      \"questions\": [\n        \"Has the seasonality of the Azure business changed, and should cloud OpEx continue to grow slower than revenue on an annual basis?\"\n      ]\n    },\n    {\n      \"analyst\": \"Brett Iversen\",\n      \"firm\": \"Piper Sandler\",\n      \"topics\": [\n        \"Large Enterprise Commitments\",\n        \"Dynamics 365\"\n      ],\n      \"questions\": [\n        \"$10 million-plus contracts: What are the drivers of these larger enterprise commitments?"
+      }
+    },
+    {
+      "id": "MSFT-2022-Q1-full-7",
+      "score": 2.6113237659999995,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "MSFT_FY2022_Q1_qa.json",
+        "retrieval": null,
+        "text": "\"content\": \"Despite supply chain challenges, Windows OEM numbers exceeded guidance due to strong demand in the commercial segment. Higher revenue per license in the commercial market contributed to robust performance in Q1 and Q2.\"\n        },\n        {\n          \"topic\": \"Large Enterprise Commitments\",\n          \"content\": \"Large enterprise commitments are driven by the comprehensive scope of Microsoft Cloud offerings, including Dynamics, Power Platform, Microsoft 365, and Azure."
+      }
+    },
+    {
+      "id": "MSFT-2022-Q1-full-10",
+      "score": 2.605652053,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "MSFT_FY2022_Q1_qa.json",
+        "retrieval": null,
+        "text": "the seasonality of the Azure business changed, and should cloud OpEx continue to grow slower than revenue on an annual basis?\"\n      ]\n    },\n    {\n      \"analyst\": \"Brett Iversen\",\n      \"firm\": \"Piper Sandler\",\n      \"topics\": [\n        \"Large Enterprise Commitments\",\n        \"Dynamics 365\"\n      ],\n      \"questions\": [\n        \"$10 million-plus contracts: What are the drivers of these larger enterprise commitments? Is this driven by the larger scope of deals or are you seeing broader attach rates across the breadth of Microsoft products?\"\n      ]\n    },\n    {\n      \"analyst\": \"Alex Zukin\",\n      \"firm\": \"Wolfe Research\",\n      \"topics\": [\n        \"Dynamics 365 and Teams Integration\",\n        \"Competitive Landscape\"\n      ],\n      \"questions\": [\n        \"How is the integration of Dynamics 365 with Teams and other Microsoft services driving larger deals and competing against other vendors?\"\n      ]\n    },\n    {\n      \"analyst\": \"Brad Sills\",\n      \"firm\": \"Bank of America\",\n      \"topics\": [\n        \"Industry Clouds\",\n        \"Azure Business Results\"\n      ],\n      \"questions\": [\n        \"Are Azure business results increasingly driven by industry cloud solutions as opposed to horizontal projects like ERP and databases?"
+      }
+    },
+    {
+      "id": "MSFT-2022-Q1-full-1",
+      "score": 1.7666101949999997,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "MSFT_FY2022_Q1_qa.json",
+        "retrieval": null,
+        "text": "\"Microsoft Cloud Strategy\",\n          \"content\": \"Our Microsoft Cloud integrates Azure, Dynamics 365, Microsoft 365, Power Platform, GitHub, and VS Code, offering a comprehensive stack. Industry clouds add specific value for sectors like retail, manufacturing, and healthcare, enhancing time-to-value for customers.\"\n        },\n        {\n          \"topic\": \"Hybrid Cloud and Server Products\",\n          \"content\": \"We are witnessing a shift towards hybrid cloud with customers migrating tier one workloads to Azure."
+      }
+    },
+    {
+      "id": "MSFT-2022-Q1-full-8",
+      "score": 1.503531407,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "MSFT_FY2022_Q1_qa.json",
+        "retrieval": null,
+        "text": "are driven by the comprehensive scope of Microsoft Cloud offerings, including Dynamics, Power Platform, Microsoft 365, and Azure. These commitments reflect strong renewals, recapture rates, and add-ons across our product suite.\"\n        },\n        {\n          \"topic\": \"Cash Flow and Operating Income\",\n          \"content\": \"Our cash flow is expected to grow in line with operating income, supported by strong sales, improving margins in the cloud, and effective business execution. We remain focused on optimizing for customer success.\"\n        },\n        {\n          \"topic\": \"Inflation and Operational Efficiency\",\n          \"content\": \"Inflationary pressures are being offset by productivity gains from digital transformation."
+      }
+    },
+    {
+      "id": "MSFT-2022-Q1-full-12",
+      "score": 1.021301078,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "MSFT_FY2022_Q1_qa.json",
+        "retrieval": null,
+        "text": "\"Hybrid Cloud\",\n        \"Client Migration\"\n      ],\n      \"questions\": [\n        \"How is the dynamic on the client side regarding workload migration to the cloud affecting server and tools growth? Is the pendulum swinging back towards on-premises deployments?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2022-03-31T16:30:00.000Z\",\n    \"company_ticker\": \"MSFT\",\n    \"source\": \"earnings_call_transcript\"\n  }\n}"
+      }
+    },
+    {
+      "id": "MSFT-2022-Q1-full-3",
+      "score": 0.9890066129999999,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "MSFT_FY2022_Q1_qa.json",
+        "retrieval": null,
+        "text": "\"content\": \"With Xbox Game Pass Ultimate and xCloud, we're expanding our gaming reach beyond traditional consoles and PCs. These initiatives position us to tap into new markets and enhance the gaming experience through cloud-based services.\"\n        },\n        {\n          \"topic\": \"Dynamics 365 Market Share and Growth\",\n          \"content\": \"Dynamics 365 is gaining significant market share in both ERP and CRM segments by integrating deeply with Teams, Azure, and other Microsoft services. This integration facilitates comprehensive digital transformation for our customers.\"\n        },\n        {\n          \"topic\": \"Security and Zero Trust Architecture\",\n          \"content\": \"Security remains a top priority."
+      }
+    },
+    {
+      "id": "MSFT-2022-Q1-full-6",
+      "score": 0.3136033061,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "MSFT_FY2022_Q1_qa.json",
+        "retrieval": null,
+        "text": "\"content\": \"Azure's seasonality has decreased as consumption grows consistently, especially in high-growth and premium SKUs. Operating expenses are expected to align with headcount growth, and gross margins will benefit from a shift towards higher-margin services.\"\n        },\n        {\n          \"topic\": \"PC OEM Performance\",\n          \"content\": \"Despite supply chain challenges, Windows OEM numbers exceeded guidance due to strong demand in the commercial segment."
+      }
+    },
+    {
+      "id": "MSFT-2022-Q1-full-2",
+      "score": 0.2828035357,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "MSFT_FY2022_Q1_qa.json",
+        "retrieval": null,
+        "text": "\"content\": \"We are witnessing a shift towards hybrid cloud with customers migrating tier one workloads to Azure. Our focus on integrating server products with cloud services like Azure Purview and Azure Arc reinforces our hybrid cloud strength.\"\n        },\n        {\n          \"topic\": \"Gaming Strategy and xCloud\",\n          \"content\": \"With Xbox Game Pass Ultimate and xCloud, we're expanding our gaming reach beyond traditional consoles and PCs."
+      }
+    },
+    {
+      "id": "keyword-2022-Q1-earnings",
+      "score": 1.2,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/MSFT/FY_2022/Q1/parsed_earnings/MSFT_FY2022_Q1_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Microsoft\", \"quarter\": \"Q1\", \"fiscal_year\": \"2022\", \"financials\": { \"total_revenue\": { \"value\": 45.3, \"unit\": \"billion USD\", \"year_over_year_change\": \"+22%\", \"constant_currency_growth\": \"+20%\", \"context\": \"Q1 2"
+      }
+    },
+    {
+      "id": "keyword-2022-Q1-qa",
+      "score": 1.2,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": "transcript_qa",
+        "source": "data/transcripts/MSFT/FY_2022/Q1/parsed_earnings/MSFT_FY2022_Q1_qa.json",
+        "retrieval": "keyword",
+        "text": ", \"firm\": \"UBS\", \"topics\": [ \"Windows OEM Performance\", \"Supply Chain\" ], \"questions\": [ \"How did Microsoft exceed guidance in the Windows OEM segment despite unit shipment and supply chain issues, and what is your outlook for the second half of the fiscal year?\" ] }, { \"analyst\": \"Mark Moerdler\", \"firm\": \"Bernstein Research\", \"topics\": [ \"Azure Seasonality\", \"Cloud OpEx\" ], \"questions\": ["
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 0.000)\n{\n  \"revenue\": 45317,\n  \"gross_profit\": 31671,\n  \"gross_margin\": 69.9,\n  \"operating_income\": 20238,\n  \"operating_margin\": 44.7,\n  \"net_income\": 20505,\n  \"net_margin\": 45.247920206545004,\n  \"operating_cash_flow\": 24540,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 22,\n  \"eps\": 0,\n  \"eps_diluted\": 0,\n  \"revenueSegments\": {\n    \"composition\": null,\n    \"data_center\": null\n  },\n  \"profit\": 20238,\n  \"margin\": 44.7,\n  \"growth\": 22,\n  \"netIncome\": 20505,\n  \"grossMargin\": 69.9,\n  \"grossProfit\": 31671,\n  \"operatingCashFlow\": 24540,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 54.151863539069225\n}\n\n[Chunk 2] (Score: 2.710)\n{\n  \"company_name\": \"Microsoft\",\n  \"quarter\": \"Q1\",\n  \"fiscal_year\": \"2022\",\n  \"speakers\": {\n    \"satya_nadella\": {\n      \"role\": \"CEO\",\n      \"responses\": [\n        {\n          \"topic\": \"Edge Computing Opportunity and Differentiation\",\n          \"content\": \"We have architected Azure for a distributed computing fabric, emphasizing hybrid and multi-cloud infrastructures. This approach supports low latency access for applications like factory floors, hospitals, and gaming, ensuring our position in a multi-cloud, multi-edge world remains strong.\"\n        },\n        {\n          \"topic\": \"Microsoft Cloud Strategy\",\n          \"content\": \"Our Microsoft Cloud integrates Azure, Dynamics 365, Microsoft 365, Power Platform, GitHub, and VS Code, offering a comprehensive stack.\n\n[Chunk 3] (Score: 2.669)\n\"topic\": \"Inflation and Operational Efficiency\",\n          \"content\": \"Inflationary pressures are being offset by productivity gains from digital transformation. Our investments in high-growth areas and efficient operational controls ensure that we maintain strong gross margins and operational efficiency.\"\n        }\n      ]\n    }\n  },\n  \"analyst_questions\": [\n    {\n      \"analyst\": \"Keith Weiss\",\n      \"firm\": \"Morgan Stanley\",\n      \"topics\": [\n        \"Edge Computing\",\n        \"Architectural Differentiation\"\n      ],\n      \"questions\": [\n        \"Can you talk about the edge computing opportunity, specifically the programmable edge, and how Microsoft’s architectural approach differentiates from competitors with last-mile solutions?\"\n      ]\n    },\n    {\n      \"analyst\": \"Brent Thill\",\n      \"firm\": \"Jefferies\",\n      \"topics\": [\n        \"Commercial Bookings\",\n        \"Azure Performance\"\n      ],\n      \"questions\": [\n        \"With commercial bookings up 14%, which is a slowdown from last quarter’s 25%, can you provide additional color on Azure’s performance and any other factors contributing to this change?\"\n      ]\n    },\n    {\n      \"analyst\": \"Karl Keirstead\",\n      \"firm\": \"UBS\",\n      \"topics\": [\n        \"Windows OEM Performance\",\n        \"Supply Chain\"\n      ],\n      \"questions\": [\n        \"How did Microsoft exceed guidance in the Windows OEM segment despite unit shipment and supply chain issues, and what is your outlook for the second half of the fiscal year?\"\n      ]\n    },\n    {\n      \"analyst\": \"Mark Moerdler\",\n      \"firm\": \"Bernstein Research\",\n      \"topics\": [\n        \"Azure Seasonality\",\n        \"Cloud OpEx\"\n      ],\n      \"questions\": [\n        \"Has the seasonality of the Azure business changed, and should cloud OpEx continue to grow slower than revenue on an annual basis?\"\n      ]\n    },\n    {\n      \"analyst\": \"Brett Iversen\",\n      \"firm\": \"Piper Sandler\",\n      \"topics\": [\n        \"Large Enterprise Commitments\",\n        \"Dynamics 365\"\n      ],\n      \"questions\": [\n        \"$10 million-plus contracts: What are the drivers of these larger enterprise commitments?\n\n[Chunk 4] (Score: 2.611)\n\"content\": \"Despite supply chain challenges, Windows OEM numbers exceeded guidance due to strong demand in the commercial segment. Higher revenue per license in the commercial market contributed to robust performance in Q1 and Q2.\"\n        },\n        {\n          \"topic\": \"Large Enterprise Commitments\",\n          \"content\": \"Large enterprise commitments are driven by the comprehensive scope of Microsoft Cloud offerings, including Dynamics, Power Platform, Microsoft 365, and Azure.\n\n[Chunk 5] (Score: 2.606)\nthe seasonality of the Azure business changed, and should cloud OpEx continue to grow slower than revenue on an annual basis?\"\n      ]\n    },\n    {\n      \"analyst\": \"Brett Iversen\",\n      \"firm\": \"Piper Sandler\",\n      \"topics\": [\n        \"Large Enterprise Commitments\",\n        \"Dynamics 365\"\n      ],\n      \"questions\": [\n        \"$10 million-plus contracts: What are the drivers of these larger enterprise commitments? Is this driven by the larger scope of deals or are you seeing broader attach rates across the breadth of Microsoft products?\"\n      ]\n    },\n    {\n      \"analyst\": \"Alex Zukin\",\n      \"firm\": \"Wolfe Research\",\n      \"topics\": [\n        \"Dynamics 365 and Teams Integration\",\n        \"Competitive Landscape\"\n      ],\n      \"questions\": [\n        \"How is the integration of Dynamics 365 with Teams and other Microsoft services driving larger deals and competing against other vendors?\"\n      ]\n    },\n    {\n      \"analyst\": \"Brad Sills\",\n      \"firm\": \"Bank of America\",\n      \"topics\": [\n        \"Industry Clouds\",\n        \"Azure Business Results\"\n      ],\n      \"questions\": [\n        \"Are Azure business results increasingly driven by industry cloud solutions as opposed to horizontal projects like ERP and databases?\n\n[Chunk 6] (Score: 1.767)\n\"Microsoft Cloud Strategy\",\n          \"content\": \"Our Microsoft Cloud integrates Azure, Dynamics 365, Microsoft 365, Power Platform, GitHub, and VS Code, offering a comprehensive stack. Industry clouds add specific value for sectors like retail, manufacturing, and healthcare, enhancing time-to-value for customers.\"\n        },\n        {\n          \"topic\": \"Hybrid Cloud and Server Products\",\n          \"content\": \"We are witnessing a shift towards hybrid cloud with customers migrating tier one workloads to Azure.\n\n[Chunk 7] (Score: 1.504)\nare driven by the comprehensive scope of Microsoft Cloud offerings, including Dynamics, Power Platform, Microsoft 365, and Azure. These commitments reflect strong renewals, recapture rates, and add-ons across our product suite.\"\n        },\n        {\n          \"topic\": \"Cash Flow and Operating Income\",\n          \"content\": \"Our cash flow is expected to grow in line with operating income, supported by strong sales, improving margins in the cloud, and effective business execution. We remain focused on optimizing for customer success.\"\n        },\n        {\n          \"topic\": \"Inflation and Operational Efficiency\",\n          \"content\": \"Inflationary pressures are being offset by productivity gains from digital transformation.\n\n[Chunk 8] (Score: 1.021)\n\"Hybrid Cloud\",\n        \"Client Migration\"\n      ],\n      \"questions\": [\n        \"How is the dynamic on the client side regarding workload migration to the cloud affecting server and tools growth? Is the pendulum swinging back towards on-premises deployments?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2022-03-31T16:30:00.000Z\",\n    \"company_ticker\": \"MSFT\",\n    \"source\": \"earnings_call_transcript\"\n  }\n}\n\n[Chunk 9] (Score: 0.989)\n\"content\": \"With Xbox Game Pass Ultimate and xCloud, we're expanding our gaming reach beyond traditional consoles and PCs. These initiatives position us to tap into new markets and enhance the gaming experience through cloud-based services.\"\n        },\n        {\n          \"topic\": \"Dynamics 365 Market Share and Growth\",\n          \"content\": \"Dynamics 365 is gaining significant market share in both ERP and CRM segments by integrating deeply with Teams, Azure, and other Microsoft services. This integration facilitates comprehensive digital transformation for our customers.\"\n        },\n        {\n          \"topic\": \"Security and Zero Trust Architecture\",\n          \"content\": \"Security remains a top priority.\n\n[Chunk 10] (Score: 0.314)\n\"content\": \"Azure's seasonality has decreased as consumption grows consistently, especially in high-growth and premium SKUs. Operating expenses are expected to align with headcount growth, and gross margins will benefit from a shift towards higher-margin services.\"\n        },\n        {\n          \"topic\": \"PC OEM Performance\",\n          \"content\": \"Despite supply chain challenges, Windows OEM numbers exceeded guidance due to strong demand in the commercial segment.\n\n[Chunk 11] (Score: 0.283)\n\"content\": \"We are witnessing a shift towards hybrid cloud with customers migrating tier one workloads to Azure. Our focus on integrating server products with cloud services like Azure Purview and Azure Arc reinforces our hybrid cloud strength.\"\n        },\n        {\n          \"topic\": \"Gaming Strategy and xCloud\",\n          \"content\": \"With Xbox Game Pass Ultimate and xCloud, we're expanding our gaming reach beyond traditional consoles and PCs.\n\n[Chunk 12] (Score: 1.200)\n{ \"company_name\": \"Microsoft\", \"quarter\": \"Q1\", \"fiscal_year\": \"2022\", \"financials\": { \"total_revenue\": { \"value\": 45.3, \"unit\": \"billion USD\", \"year_over_year_change\": \"+22%\", \"constant_currency_growth\": \"+20%\", \"context\": \"Q1 2\n\n[Chunk 13] (Score: 1.200)\n, \"firm\": \"UBS\", \"topics\": [ \"Windows OEM Performance\", \"Supply Chain\" ], \"questions\": [ \"How did Microsoft exceed guidance in the Windows OEM segment despite unit shipment and supply chain issues, and what is your outlook for the second half of the fiscal year?\" ] }, { \"analyst\": \"Mark Moerdler\", \"firm\": \"Bernstein Research\", \"topics\": [ \"Azure Seasonality\", \"Cloud OpEx\" ], \"questions\": [",
+  "created_at": "2025-12-10T04:30:10.074Z",
+  "category": "unanswerable"
+}

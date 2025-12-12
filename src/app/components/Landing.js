@@ -196,6 +196,7 @@ const LandingPage = () => {
   const [showStrategyOptions, setShowStrategyOptions] = useState(false);
   const router = useRouter();
   const primaryPost = blogPosts[0];
+  const secondaryPost = blogPosts[1];
 
   useEffect(() => {
     setMounted(true);
@@ -212,7 +213,7 @@ const LandingPage = () => {
   const selectedColors = colorClasses[selectedStrategyData?.color || 'amber'];
 
   const exampleQueries = [
-    { text: "What is NVIDIA&apos;s data center growth strategy?", color: "blue" },
+    { text: "What is NVIDIA's data center growth strategy?", color: "blue" },
     { text: "Apple gross margin trend over last 4 quarters", color: "emerald" },
     { text: "How is Google monetizing AI?", color: "violet" },
   ];
@@ -530,6 +531,33 @@ const LandingPage = () => {
                   Measure before optimizing: retrieval was only ~5% of total time, so fixing latency mattered more. Trade-offs are everywhere: hybrid re-indexing takes time, Sonnet is faster but slightly less capable, observability adds frontend code, and defensive extraction adds edge-case handling—be intentional. Preserve optionality: new index for hybrid and env-configurable LLMs keep escape hatches open. Real-world data is messy: build strict-yet-flexible fallbacks. Observability is not optional: metrics and behind-the-scenes views transform trust and debugging. UX matters as much as performance: status messages alone improved perceived speed.
                 </p>
               </div>
+
+              {/* Secondary post (requested): appears under the main highlight */}
+              {secondaryPost && (
+                <div className="pt-6 mt-6 border-t border-slate-200">
+                  <div className="space-y-2">
+                    <p className="text-xs font-mono uppercase tracking-wider text-slate-400">
+                      Next read
+                    </p>
+                    <h4 className="text-xl font-serif font-semibold text-slate-900">
+                      {secondaryPost.title}
+                    </h4>
+                    {secondaryPost.summary && (
+                      <p className="text-sm text-slate-700">
+                        {secondaryPost.summary}
+                      </p>
+                    )}
+                    <div className="pt-1">
+                      <Link
+                        href={`/blog/${secondaryPost.id}`}
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800"
+                      >
+                        Read: RAG strategy for this app <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

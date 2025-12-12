@@ -1,0 +1,64 @@
+{
+  "id": "unanswerable-1",
+  "run_id": "2025-12-10T16-28-35-648Z",
+  "strategy_id": "baseline",
+  "question": "What was Tesla's automotive revenue in Q2 2019?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Not found in provided sources.",
+  "duration_ms": 4453,
+  "metrics": {
+    "relevance": {
+      "score": 0.3,
+      "reasoning": "The answer acknowledges the question but fails to provide the requested information. While it's honest about not finding the data in available sources, it doesn't actually answer the question about Tesla's Q2 2019 automotive revenue. A partially relevant response would at least attempt to provide context or suggest where such information might be found."
+    },
+    "faithfulness": {
+      "score": 1,
+      "reasoning": "The answer 'Not found in provided sources' is completely faithful to the context, which states 'No context retrieved.' The response appropriately acknowledges the lack of available information without introducing any hallucinated content or claims not supported by the context."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer exactly matches the ground truth. Both indicate that the information was not found in the provided sources, which is a consistent and accurate response."
+    }
+  },
+  "context_count": 0,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3784,
+      "embeddingMs": 254,
+      "pineconeMs": 403,
+      "financialMs": 1,
+      "keywordMs": 9,
+      "llmMs": 0,
+      "totalMs": 4453
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 0,
+      "keywordMatches": 0,
+      "combinedContext": 0,
+      "filtersApplied": {
+        "company": "TSLA",
+        "fiscal_year": "2019",
+        "quarter": "Q2"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": false,
+      "financialQuery": true,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "Q2 2019",
+      "company_name": "TSLA",
+      "isComparisonQuery": false,
+      "primaryTicker": "TSLA"
+    },
+    "llm": null
+  },
+  "context": [],
+  "formatted_context": "No context retrieved.",
+  "created_at": "2025-12-10T16:50:09.921Z",
+  "category": "unanswerable"
+}

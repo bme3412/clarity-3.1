@@ -154,12 +154,45 @@ function streamData(controller: ReadableStreamDefaultController, data: StreamDat
   controller.enqueue(new TextEncoder().encode(`data: ${JSON.stringify(data)}\n\n`));
 }
 
-// Enhanced system prompt that limits tool usage
+function detectTickerFromMessage(msg: string): string | null {
+  const text = msg.toLowerCase();
+  const tickers = [
+    { key: 'nvda', aliases: ['nvda', 'nvidia'] },
+    { key: 'aapl', aliases: ['aapl', 'apple'] },
+    { key: 'amd', aliases: ['amd', 'advanced micro devices'] },
+    { key: 'amzn', aliases: ['amzn', 'amazon', 'aws'] },
+    { key: 'msft', aliases: ['msft', 'microsoft', 'azure'] },
+    { key: 'meta', aliases: ['meta', 'facebook', 'fb'] },
+    { key: 'googl', aliases: ['googl', 'google', 'alphabet', 'goog'] },
+    { key: 'avgo', aliases: ['avgo', 'broadcom'] },
+    { key: 'crm', aliases: ['crm', 'salesforce'] },
+    { key: 'orcl', aliases: ['orcl', 'oracle'] }
+  ];
+  for (const t of tickers) {
+    if (t.aliases.some((a) => text.includes(a))) return t.key.toUpperCase();
+  }
+  return null;
+}
+
+function isLikelyFinancial(msg: string): boolean {
+  const text = msg.toLowerCase();
+  return ['revenue', 'growth', 'margin', 'guidance', 'data center', 'datacenter', 'earnings'].some((k) =>
+    text.includes(k)
+  );
+}
+
+// Enhanced system prompt with strict grounding + tool limits
 const ENHANCED_SYSTEM_PROMPT = `You are Clarity 3.0, a disciplined financial analyst for Big Tech companies.
 
 **CURRENT DATE: December 2025**
 
 ${TOOL_SYSTEM_PROMPT}
+
+## HARD RULES (GROUNDING + CITATIONS)
+- Use ONLY data returned by tools in this conversation. If a fact/number is not in tool results, respond "Not found in provided sources."
+- Every number must come from tool output (no guessing). Do NOT extrapolate from memory.
+- If tools return empty/opaque values (e.g., missing metrics, [object Object]), say "Not found in provided sources."
+- Be concise: 2–5 lines for financial answers, each line with inline references like [C1], [C2] mapping to tool results you saw.
 
 ## CRITICAL: Fiscal Year Handling
 - Different companies have different fiscal year calendars!
@@ -226,6 +259,50 @@ export async function POST(request: NextRequest): Promise<Response> {
           let messages: AnthropicMessage[] = toAnthropicMessages(chatHistory, message);
           let loopCount = 0;
           let totalToolCalls = 0;
+
+          // Proactive financial fetch for numeric intents (prevents empty context)
+          const detectedTicker = detectTickerFromMessage(message);
+          const wantsFinancials = isLikelyFinancial(message);
+          if (detectedTicker && wantsFinancials) {
+            const autoInput = {
+              ticker: detectedTicker,
+              periods: [{ fiscalYear: 'latest' }],
+              metrics: ['revenue', 'revenue_segments', 'operating_income', 'net_income']
+            };
+            streamData(controller, { type: 'status', message: `Fetching latest ${detectedTicker} financials...` });
+            const autoExec = await executeToolCallWithTracing('get_multi_quarter_metrics', autoInput, trace);
+
+            // Stream to client
+            streamData(controller, {
+              type: 'tool_result',
+              tool: 'get_multi_quarter_metrics',
+              id: 'auto-financials',
+              success: autoExec.success,
+              result: autoExec.result,
+              error: autoExec.error,
+              latencyMs: autoExec.latencyMs
+            });
+
+            // Provide concise summary back to the model
+            const safeSummary = (() => {
+              if (!autoExec.success || !autoExec.result) return 'No data.';
+              const r = autoExec.result as any;
+              if (typeof r === 'string') return r;
+              if (r.periods && Array.isArray(r.periods)) {
+                return r.periods
+                  .map((p: any) => `${p.period}: ${JSON.stringify(p.metrics || {})}`)
+                  .join(' | ');
+              }
+              if (r.summaries?.length) return r.summaries.join(' | ');
+              return JSON.stringify(r);
+            })();
+
+            // Feed a plain-text summary back to the model (tool_result blocks must be in user role)
+            messages.push({
+              role: 'user',
+              content: `Auto-fetched latest financials for ${detectedTicker}: ${safeSummary}`
+            });
+          }
 
           while (loopCount < MAX_TOOL_LOOPS) {
             const genSpan = trace?.span ? trace.span({ name: 'llm:anthropic', input: { messages } }) : null;
@@ -347,15 +424,31 @@ export async function POST(request: NextRequest): Promise<Response> {
                 tool: tu.name,
                 id: tu.id,
                 success: execResult.success,
-                result: execResult.result,
+              result: execResult.result,
                 error: execResult.error,
                 latencyMs: execResult.latencyMs
               });
 
+              // Provide a compact, human-readable summary to the model instead of raw objects
+              const safeSummary = (() => {
+                if (!execResult.success || !execResult.result) return 'No data.';
+                const r = execResult.result as any;
+                if (typeof r === 'string') return r;
+                if (r.metrics && r.period) return `${r.period}: ${JSON.stringify(r.metrics)}`;
+                if (r.periods && Array.isArray(r.periods)) {
+                  return r.periods
+                    .map((p: any) => `${p.period}: ${JSON.stringify(p.metrics || {})}`)
+                    .join(' | ');
+                }
+                if (r.summary) return r.summary;
+                if (Array.isArray(r.summaries) && r.summaries.length) return r.summaries.join(' | ');
+                return JSON.stringify(r);
+              })();
+
               toolResultsForUser.push({
                 type: 'tool_result',
                 tool_use_id: tu.id,
-                content: JSON.stringify(execResult)
+                content: safeSummary
               });
             }
 

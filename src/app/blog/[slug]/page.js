@@ -1,13 +1,98 @@
-'use client';
-
 import Link from 'next/link';
-import { use } from 'react';
 import { ArrowLeft, Clock, Tag, ListChecks, Lightbulb } from 'lucide-react';
 import { blogPosts } from '../../lib/data/blogPosts';
+import fs from 'fs';
+import path from 'path';
+
+export const dynamic = 'force-static';
+
+function readMarkdownContent(contentPath) {
+  if (!contentPath) return null;
+  try {
+    const fullPath = path.join(process.cwd(), contentPath);
+    if (!fs.existsSync(fullPath)) return null;
+    return fs.readFileSync(fullPath, 'utf8');
+  } catch {
+    return null;
+  }
+}
+
+function MarkdownBlock({ markdown }) {
+  if (!markdown) return null;
+  // Minimal markdown rendering without adding new deps:
+  // - headings (#, ##, ###)
+  // - paragraphs
+  // - unordered lists
+  const lines = markdown.split('\n');
+  const blocks = [];
+  let list = [];
+
+  const flushList = () => {
+    if (list.length) {
+      blocks.push({ type: 'ul', items: list });
+      list = [];
+    }
+  };
+
+  for (const line of lines) {
+    const trimmed = line.trimEnd();
+    if (!trimmed.trim()) {
+      flushList();
+      continue;
+    }
+    if (trimmed.startsWith('### ')) {
+      flushList();
+      blocks.push({ type: 'h3', text: trimmed.slice(4) });
+      continue;
+    }
+    if (trimmed.startsWith('## ')) {
+      flushList();
+      blocks.push({ type: 'h2', text: trimmed.slice(3) });
+      continue;
+    }
+    if (trimmed.startsWith('# ')) {
+      flushList();
+      blocks.push({ type: 'h1', text: trimmed.slice(2) });
+      continue;
+    }
+    if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+      list.push(trimmed.slice(2));
+      continue;
+    }
+    flushList();
+    blocks.push({ type: 'p', text: trimmed });
+  }
+  flushList();
+
+  return (
+    <section className="space-y-4">
+      <h2 className="text-sm font-semibold text-slate-900 uppercase tracking-wide">Article</h2>
+      <div className="rounded-xl border border-slate-200 bg-white shadow-sm p-5">
+        <div className="prose prose-slate max-w-none">
+          {blocks.map((b, i) => {
+            if (b.type === 'h1') return <h2 key={i}>{b.text}</h2>;
+            if (b.type === 'h2') return <h3 key={i}>{b.text}</h3>;
+            if (b.type === 'h3') return <h4 key={i}>{b.text}</h4>;
+            if (b.type === 'ul')
+              return (
+                <ul key={i}>
+                  {b.items.map((it, j) => (
+                    <li key={j}>{it}</li>
+                  ))}
+                </ul>
+              );
+            return <p key={i}>{b.text}</p>;
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function BlogPostPage({ params }) {
-  const { slug } = use(params);
+  const { slug } = params;
   const post = blogPosts.find((p) => p.id === slug);
+  const markdown = post?.contentPath ? readMarkdownContent(post.contentPath) : null;
 
   if (!post) {
     return (
@@ -161,6 +246,9 @@ export default function BlogPostPage({ params }) {
             </div>
           </section>
         )}
+
+        {/* Render markdown article content when available */}
+        <MarkdownBlock markdown={markdown} />
       </div>
     </div>
   );

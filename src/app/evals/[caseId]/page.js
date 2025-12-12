@@ -42,6 +42,13 @@ export default function EvalCasePage({ params, searchParams }) {
   const runId = searchParams.run || report?.run_id;
   const datasetLabel = report?.dataset || report?.summary?.dataset || 'unknown';
 
+  const orderedIds = (report?.details || []).map((c) => c.id).filter(Boolean);
+  const currentIdx = orderedIds.indexOf(caseId);
+  const prevId = currentIdx > 0 ? orderedIds[currentIdx - 1] : null;
+  const nextId = currentIdx >= 0 && currentIdx < orderedIds.length - 1 ? orderedIds[currentIdx + 1] : null;
+  const baseQuery =
+    strategyId && runId ? `?run=${encodeURIComponent(runId)}&strategy=${encodeURIComponent(strategyId)}` : '';
+
   if (!strategyId || !runId) {
     return (
       <NotFound message="Missing run/strategy. Re-run evals to generate evaluation_report.json." />
@@ -72,12 +79,30 @@ export default function EvalCasePage({ params, searchParams }) {
               Run {runId} · Strategy {strategyId} · {caseData.category || 'uncategorized'} · Dataset {datasetLabel}
             </p>
           </div>
-          <Link
-            href="/evals"
-            className="px-4 py-2 rounded-lg border border-slate-200 text-sm font-medium hover:border-blue-300 hover:text-blue-700 transition-colors"
-          >
-            ← Back to evals
-          </Link>
+          <div className="flex items-center gap-2">
+            {prevId && (
+              <Link
+                href={`/evals/${encodeURIComponent(prevId)}${baseQuery}`}
+                className="px-3 py-2 rounded-lg border border-slate-200 text-sm font-medium hover:border-slate-300 transition-colors"
+              >
+                ← Prev
+              </Link>
+            )}
+            {nextId && (
+              <Link
+                href={`/evals/${encodeURIComponent(nextId)}${baseQuery}`}
+                className="px-3 py-2 rounded-lg border border-slate-200 text-sm font-medium hover:border-slate-300 transition-colors"
+              >
+                Next →
+              </Link>
+            )}
+            <Link
+              href="/evals"
+              className="px-4 py-2 rounded-lg border border-slate-200 text-sm font-medium hover:border-blue-300 hover:text-blue-700 transition-colors"
+            >
+              ← Back to evals
+            </Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
@@ -97,6 +122,19 @@ export default function EvalCasePage({ params, searchParams }) {
             <Chip label={`Category ${caseData.category || 'uncategorized'}`} />
             <Chip label={`Dataset ${datasetLabel}`} />
             {caseData.context_count !== undefined && <Chip label={`Context ${caseData.context_count}`} />}
+          </div>
+        </Section>
+
+        <Section title="Key signals">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
+              <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-2">Retrieval</p>
+              <MetricList data={retrieval} />
+            </div>
+            <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
+              <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-2">Fallbacks</p>
+              <MetricList data={fallbacks} />
+            </div>
           </div>
         </Section>
 
@@ -125,12 +163,18 @@ export default function EvalCasePage({ params, searchParams }) {
                       {item.metadata?.quarter && <Chip label={`Q ${item.metadata.quarter}`} />}
                       {item.metadata?.fiscalYear && <Chip label={`FY ${item.metadata.fiscalYear}`} />}
                       {item.metadata?.type && <Chip label={item.metadata.type} />}
+                      {item.metadata?.retrieval && <Chip label={`retrieval:${item.metadata.retrieval}`} />}
                     </div>
                     <div className="text-xs text-slate-500">Score: {item.score ?? 'N/A'}</div>
                   </div>
-                  <p className="text-sm text-slate-800 whitespace-pre-wrap line-clamp-4">
-                    {item.metadata?.text || JSON.stringify(item.metadata || {}, null, 2)}
-                  </p>
+                  <details>
+                    <summary className="text-sm text-blue-700 cursor-pointer select-none">
+                      View text
+                    </summary>
+                    <pre className="text-xs text-slate-800 bg-slate-50 border border-slate-200 rounded-lg p-3 overflow-x-auto whitespace-pre-wrap mt-2">
+                      {item.metadata?.text || JSON.stringify(item.metadata || {}, null, 2)}
+                    </pre>
+                  </details>
                   {item.metadata?.source && (
                     <p className="text-[11px] text-slate-500 mt-1">Source: {item.metadata.source}</p>
                   )}

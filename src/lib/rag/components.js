@@ -5,6 +5,7 @@ import { anthropicCompletion } from '../../app/lib/llm/anthropicClient.js';
 import { embedText } from '../../app/lib/llm/voyageClient.js';
 import { extractAndParseJSON } from '../../app/utils/jsonParser.js';
 import { SparseVectorizer } from './sparseVectorizer.js';
+import { COMPANY_ALIASES } from '../../config/rag.js';
 import {
   INTENT_CLASSIFICATION_PROMPT,
   buildAnalystSystemPrompt,
@@ -133,12 +134,18 @@ export class PineconeRetriever extends BaseRetriever {
     super();
     this.index = pineconeIndex;
     this.embedder = embedder;
-    this.hybridAlpha = options.hybridAlpha ?? 0.5;
+    this.hybridAlpha = options.hybridAlpha ?? 0.85; // Rebalance: prefer dense (85%) over sparse (15%) to prevent sparse overpowering
     this.vectorizer = new SparseVectorizer(options.vectorizer);
     this.supportsSparse =
       typeof options.supportsSparse === 'boolean'
         ? options.supportsSparse
         : process.env.PINECONE_SUPPORTS_SPARSE !== 'false';
+    this.scoreFloor = options.scoreFloor ?? 0.25;
+    this.maxResults = options.maxResults ?? 8;
+    // simple in-memory cache for repeated queries
+    this.cacheTtlMs = options.cacheTtlMs ?? 3 * 60 * 1000; // 3 minutes
+    this.maxCacheEntries = options.maxCacheEntries ?? 200;
+    this.cache = new Map(); // key -> { expires, result }
   }
 
   /**
@@ -163,7 +170,8 @@ export class PineconeRetriever extends BaseRetriever {
 
     const queryParams = {
       vector: queryVector,
-      topK: 40, // Increased for Hybrid/Reranking pool
+      // Pull a healthy pool, then trim after rerank/dedup
+      topK: Math.max(topK, 35),
       includeMetadata: true,
     };
 
@@ -175,22 +183,32 @@ export class PineconeRetriever extends BaseRetriever {
       queryParams.filter = filters;
     }
 
+    // Cache key
+    const cacheKey = this.buildCacheKey({ query, filters, topK });
+    const cached = this.getFromCache(cacheKey);
+    if (cached) {
+      return cached;
+    }
+
     try {
       const result = await this.index.query(queryParams);
       
       // Perform Hybrid Reranking (TF-IDF Boosting)
       const rankedMatches = this.hybridRerank(result.matches, query);
       const normalizedMatches = rankedMatches.map((match) => this.normalizeMetadata(match));
+      const filtered = this.filterAndDedupMatches(normalizedMatches);
       
       console.log('Pinecone query result:', JSON.stringify({
         ...result,
-        matches: normalizedMatches.slice(0, 3) // Log top 3
+        matches: filtered.slice(0, 3) // Log top 3
       }, null, 2));
-      
-      return {
+
+      const finalRes = {
         ...result,
-        matches: normalizedMatches
+        matches: filtered
       };
+      this.setCache(cacheKey, finalRes);
+      return finalRes;
     } catch (error) {
       const sparseUnsupported =
         typeof error?.message === 'string' &&
@@ -205,10 +223,13 @@ export class PineconeRetriever extends BaseRetriever {
         const retryResult = await this.index.query(queryParams);
         const rankedMatches = this.hybridRerank(retryResult.matches, query);
         const normalizedMatches = rankedMatches.map((match) => this.normalizeMetadata(match));
-        return {
+        const filtered = this.filterAndDedupMatches(normalizedMatches);
+        const finalRes = {
           ...retryResult,
-          matches: normalizedMatches
+          matches: filtered
         };
+        this.setCache(cacheKey, finalRes);
+        return finalRes;
       }
 
       console.error('Pinecone retrieval error:', error);
@@ -216,12 +237,37 @@ export class PineconeRetriever extends BaseRetriever {
     }
   }
 
+  buildCacheKey({ query, filters, topK }) {
+    const filterStr = JSON.stringify(filters || {});
+    return `${query}::${filterStr}::${topK}`;
+  }
+
+  getFromCache(key) {
+    const entry = this.cache.get(key);
+    if (!entry) return null;
+    if (Date.now() > entry.expires) {
+      this.cache.delete(key);
+      return null;
+    }
+    return entry.result;
+  }
+
+  setCache(key, result) {
+    const expires = Date.now() + this.cacheTtlMs;
+    // evict oldest if over capacity
+    if (this.cache.size >= this.maxCacheEntries) {
+      const oldestKey = this.cache.keys().next().value;
+      if (oldestKey) this.cache.delete(oldestKey);
+    }
+    this.cache.set(key, { expires, result });
+  }
+
   // New Hybrid Reranking Method
   hybridRerank(matches, query) {
     if (!matches || matches.length === 0) return [];
 
     const queryTerms = query.toLowerCase().split(/\s+/).filter(t => t.length > 2);
-    if (queryTerms.length === 0) return matches.slice(0, 10);
+    if (queryTerms.length === 0) return matches.slice(0, 12);
 
     const scoredMatches = matches.map(match => {
       const text = (match.metadata?.text || '').toLowerCase();
@@ -241,21 +287,71 @@ export class PineconeRetriever extends BaseRetriever {
       // Normalize sparse score (cap at 1.0 for sanity)
       sparseScore = Math.min(sparseScore, 1.0);
 
-      // Linear Combination: 0.7 Dense + 0.3 Sparse
-      // Note: Pinecone scores are usually 0.7-0.9 range for good matches
-      const hybridScore = (match.score * 0.7) + (sparseScore * 0.3);
+      // Penalize legal boilerplate / risk factors
+      // These sections often contain many keywords but have low information density
+      const boilerplateMarkers = [
+        'forward-looking statements',
+        'risk factors',
+        'actual results to differ',
+        'safe harbor',
+        'litigation',
+        'unknown risks',
+        'material factors that could cause'
+      ];
+      
+      const isBoilerplate = boilerplateMarkers.some(marker => text.includes(marker));
+      let penalty = isBoilerplate ? 0.35 : 0.0;
+
+      // Linear Combination: 0.85 Dense + 0.15 Sparse (rebalance to favor dense semantics)
+      // Apply penalty to the final score
+      const hybridScore = ((match.score * 0.85) + (sparseScore * 0.15)) - penalty;
 
       return {
         ...match,
         original_score: match.score,
         sparse_score: sparseScore,
-        score: hybridScore
+        score: Math.max(0, hybridScore) // Ensure non-negative
       };
     });
 
     return scoredMatches
       .sort((a, b) => b.score - a.score)
-      .slice(0, 10); // Return top 10 re-ranked
+      .slice(0, 12); // Keep a small pool for downstream filtering
+  }
+
+  filterAndDedupMatches(matches = []) {
+    const seen = new Set();
+    const filtered = [];
+    for (const m of matches || []) {
+      if (typeof m.score === 'number' && m.score < this.scoreFloor) continue;
+      const md = m.metadata || {};
+      const key = [
+        md.company || md.company_name || md.ticker || '',
+        md.fiscalYear || md.fiscal_year || '',
+        md.quarter || '',
+        md.type || md.file_type || '',
+        md.source || md.source_file || ''
+      ].join('|');
+      if (seen.has(key)) continue;
+      seen.add(key);
+      filtered.push(m);
+      if (filtered.length >= this.maxResults) break;
+    }
+    // If we over-filtered and lost everything, fall back to the top few by score
+    if (filtered.length === 0 && matches?.length) {
+      return [...matches]
+        .sort((a, b) => (b.score || 0) - (a.score || 0))
+        .slice(0, this.maxResults);
+    }
+    // If we have just 1 result but more are available, backfill a couple more to give context
+    if (filtered.length < 2 && matches?.length > filtered.length) {
+      const extras = [...matches]
+        .filter((m) => !filtered.includes(m))
+        .sort((a, b) => (b.score || 0) - (a.score || 0))
+        .slice(0, this.maxResults - filtered.length);
+      return [...filtered, ...extras];
+    }
+    return filtered;
   }
 
   preprocessQuery(query) {
@@ -604,44 +700,110 @@ export class FinancialJSONRetriever {
 }
 
 export class QueryIntentAnalyzer {
-  async analyze(query) {
-    const userPrompt = `User query: "${query}"`;
+  detectTicker(query) {
+    const lower = query.toLowerCase();
+    for (const [alias, ticker] of Object.entries(COMPANY_ALIASES)) {
+      if (lower.includes(alias)) return ticker;
+    }
+    const tickerMatch = lower.match(/\b[A-Z]{2,5}\b/);
+    return tickerMatch ? tickerMatch[0].toUpperCase() : null;
+  }
 
-    const rawContent = await anthropicCompletion({
-      model: 'claude-opus-4-5-20251101',
-      systemPrompt: INTENT_CLASSIFICATION_PROMPT,
-      userPrompt,
-      temperature: 0,
-      maxTokens: 500,
-    });
+  detectTimeframe(query) {
+    const lower = query.toLowerCase();
+    const qMatch = lower.match(/q([1-4])\s*(20\d{2})/i);
+    if (qMatch) return `Q${qMatch[1]} ${qMatch[2]}`;
+    const fyMatch = lower.match(/fy\s*(20\d{2})/i);
+    if (fyMatch) return `FY${fyMatch[1]}`;
+    if (lower.includes('past year') || lower.includes('last year')) return 'past year';
+    if (lower.includes('recent') || lower.includes('latest')) return 'recent';
+    return 'all';
+  }
 
-    let classification = extractAndParseJSON(rawContent);
+  detectAnalysisType(query) {
+    const lower = query.toLowerCase();
+    const financialWords = ['revenue', 'eps', 'margin', 'cash flow', 'guidance', 'financial'];
+    const guidanceWords = ['guidance', 'outlook', 'forecast'];
+    const comparisonWords = [' vs ', ' versus ', 'compare', 'comparison'];
+    const techWords = ['ai', 'ml', 'roadmap', 'product', 'technology', 'infrastructure'];
+    const marketWords = ['market', 'share', 'competition'];
 
-    if (!classification) {
-      console.error('Could not parse classification JSON. Raw content:', rawContent);
-      // Fallback
-      classification = {
-        analysis_type: 'general',
-        topics: ['general'],
-        timeframe: 'all',
+    if (guidanceWords.some((w) => lower.includes(w))) return 'guidance';
+    if (comparisonWords.some((w) => lower.includes(w))) return 'comparison';
+    if (financialWords.some((w) => lower.includes(w))) return 'financial';
+    if (marketWords.some((w) => lower.includes(w))) return 'market';
+    if (techWords.some((w) => lower.includes(w))) return 'technology';
+    return 'general';
+  }
+
+  heuristicIntent(query) {
+    const ticker = this.detectTicker(query);
+    const timeframe = this.detectTimeframe(query);
+    const analysisType = this.detectAnalysisType(query);
+    const topics = query.split(/\s+/).slice(0, 8);
+    const confident = !!ticker || analysisType !== 'general';
+    return {
+      intent: {
+        analysis_type: analysisType,
+        topics,
+        timeframe,
         content_type: 'all',
-        company_name: null,
-      };
+        company_name: ticker,
+        explicit_periods: [],
+        style: 'neutral',
+        raw_query: query,
+      },
+      confident,
+    };
+  }
+
+  async analyze(query) {
+    const heuristic = this.heuristicIntent(query);
+    if (heuristic.confident) {
+      return heuristic.intent;
     }
 
-    // Optional style handling
-    classification.style = classification.style || 'neutral';
-    classification.explicit_periods = Array.isArray(classification.explicit_periods)
-      ? classification.explicit_periods
-      : [];
-    classification.raw_query = query;
+    const userPrompt = `User query: "${query}"`;
+    try {
+      const rawContent = await anthropicCompletion({
+        model: 'claude-opus-4-5-20251101',
+        systemPrompt: INTENT_CLASSIFICATION_PROMPT,
+        userPrompt,
+        temperature: 0,
+        maxTokens: 500,
+      });
 
-    console.log('Analyzed query intent:', classification);
-    return classification;
+      let classification = extractAndParseJSON(rawContent);
+
+      if (!classification) {
+        console.error('Could not parse classification JSON. Raw content:', rawContent);
+        classification = heuristic.intent;
+      }
+
+      classification.style = classification.style || 'neutral';
+      classification.explicit_periods = Array.isArray(classification.explicit_periods)
+        ? classification.explicit_periods
+        : [];
+      classification.raw_query = query;
+
+      console.log('Analyzed query intent:', classification);
+      return classification;
+    } catch (err) {
+      console.error('Intent LLM failed, using heuristic intent:', err?.message || err);
+      return heuristic.intent;
+    }
   }
 }
 
 export class EnhancedFinancialAnalyst extends BaseAnalyzer {
+
+  constructor(modelOverride) {
+    super();
+    this.analysisModel =
+      modelOverride ||
+      process.env.ANTHROPIC_ANALYSIS_MODEL ||
+      'claude-sonnet-4-20250514';
+  }
 
   // Reuse the normalization logic to handle quarter/year sorting
   normalize(data) {
@@ -684,7 +846,26 @@ export class EnhancedFinancialAnalyst extends BaseAnalyzer {
           type: m.metadata.type || 'Unknown',
         };
       })
-      .filter(Boolean);
+      .filter(Boolean)
+      // Ensure financial_data items come first so numeric facts are seen early
+      .sort((a, b) => {
+        const aFin = a.type === 'financial_data';
+        const bFin = b.type === 'financial_data';
+        if (aFin && !bFin) return -1;
+        if (bFin && !aFin) return 1;
+        return 0;
+      });
+  }
+
+  sliceSpan(text, maxChars = 700) {
+    if (!text) return '';
+    if (text.length <= maxChars) return text;
+    const numMatch = text.search(/\d[\d,\.]/);
+    if (numMatch === -1) return text.slice(0, maxChars);
+    const half = Math.floor(maxChars / 2);
+    const start = Math.max(0, numMatch - half);
+    const end = Math.min(text.length, start + maxChars);
+    return text.slice(start, end);
   }
 
   // Remove markdown formatting while preserving text
@@ -703,53 +884,77 @@ export class EnhancedFinancialAnalyst extends BaseAnalyzer {
     const relevantData = this.extractText(normalized);
     let llmUsage = null;
 
-    // If no data found, use general knowledge with a disclaimer
+    // If no grounded data, explicitly return not found to avoid hallucinations
     if (!relevantData.length) {
-       return this.generalKnowledgeAnalysis(queryIntent, company, style);
+      return this.emptyAnalysis(queryIntent);
     }
 
     const systemPrompt = buildAnalystSystemPrompt({ company, queryIntent, style });
 
-    // Timeline emphasis for strategy/technology/market asks
     const isStrategy =
       ['strategic', 'technology', 'market'].includes(queryIntent.analysis_type) ||
       (queryIntent.topics || []).some((t) => t.toLowerCase().includes('ai') || t.toLowerCase().includes('strategy'));
 
-    const timelineBlock = isStrategy
-      ? `Provide a concise, year-by-year timeline (2022, 2023, 2024, 2025) of AI strategy/investment/product moves. For each year, note key launches, infra/capex signals, monetization angles, and include 2–3 short quotes/snippets with fiscal year/quarter tags. If a year lacks retrieved evidence, say so explicitly.`
-      : `Focus on the most relevant financial metrics and trends. If discussing cash flow, emphasize operating cash flow, free cash flow, and cash generation. If discussing revenue, highlight growth rates and segment performance.`;
+    const contextRows = relevantData
+      // Keep a larger slice to retain numeric details (revenues, margins, guidance)
+      .map((d, idx) => `[C${idx + 1}] (${d.fiscalYear} ${d.quarter} | ${d.type}) ${this.sliceSpan(d.content, 600)}...`)
+      .join('\n');
+
+    const formatBlock = isStrategy
+      ? `Output format:
+- Bullet list, each bullet = single claim with [C#].
+- If a requested fact is absent, write "Not found in provided sources."
+- No speculation. No extra commentary.`
+      : `Output format (financial):
+- Revenue/metric: $X (YoY +Y% / QoQ +Z%) [C#]
+- Margin/segment if asked: value + change [C#]
+- Optional one supporting note ONLY if directly in context [C#]
+- If data missing: "Not found in provided sources."`;
 
     const userPrompt = `
-Query: ${queryIntent.topics.join(', ')} for ${queryIntent.timeframe}
+Question: ${queryIntent.topics.join(', ')} for ${queryIntent.timeframe}
 
-${timelineBlock}
+Instructions:
+- First, list atomic facts with citations [C#].
+- Then write the final answer using ONLY those facts.
+- CRITICAL: Do NOT invent guidance figures. If guidance for a specific future period is not explicitly in the text, say "Not found".
+- CRITICAL: Do not confuse Fiscal Years (FY) with Calendar Years. Use the dates in the context.
+- Ignore general "Risk Factors" or "Forward-Looking Statements" disclaimers unless they describe specific strategic initiatives.
+- If a fact is not in the context, respond "Not found in provided sources."
 
-Data sources:
-${relevantData
-  .map((d) => `[${d.fiscalYear} ${d.quarter} | ${d.type}] ${d.content.substring(0, 700)}...`)
-  .join('\n\n')}
+${formatBlock}
+
+Context (use as citations):
+${contextRows}
 `;
 
     try {
       const answer = await anthropicCompletion({
-        model: 'claude-opus-4-5-20251101',
+        model: this.analysisModel,
         systemPrompt,
         userPrompt,
-        temperature: 0.7,
-        maxTokens: 1500,
+        temperature: 0.1,
+        maxTokens: 550,
         onUsage: (usage) => {
           llmUsage = usage;
         }
       });
+      const cleaned = this.removeMarkdown(answer);
+      // Verify numeric claims appear in the provided context to reduce hallucinations
+      const contextBlob = relevantData.map((d) => d.content.toLowerCase()).join('\n');
+      const { unmatched, matched } = this.findUnmatchedNumbers(cleaned, contextBlob);
+      // Soft-fail: if unmatched numbers exist, return answer but flag partial verification
+      const partialVerification = matched.length === 0 && unmatched.length > 0;
 
       return {
-        analysis: this.removeMarkdown(answer),
+        analysis: cleaned,
         metadata: {
           data_points: relevantData.length,
           analysis_type: queryIntent.analysis_type,
           timeframe: queryIntent.timeframe,
           topics_covered: queryIntent.topics,
           quantitative_focus: true,
+          partial_verification: partialVerification || undefined,
         },
         llm_usage: llmUsage,
       };
@@ -759,48 +964,64 @@ ${relevantData
     }
   }
 
-  async generalKnowledgeAnalysis(queryIntent, company, style) {
-    const userPrompt = `User Query: ${queryIntent.topics.join(', ')} for ${company} (${queryIntent.timeframe})`;
-
-    let llmUsage = null;
-    try {
-      const answer = await anthropicCompletion({
-        model: 'claude-opus-4-5-20251101',
-        systemPrompt: buildGeneralKnowledgePrompt({ company, queryIntent, style }),
-        userPrompt,
-        temperature: 0.7,
-        maxTokens: 1000,
-        onUsage: (usage) => {
-          llmUsage = usage;
-        }
-      });
-
-      return {
-        analysis: this.removeMarkdown(answer),
-        metadata: {
-          data_points: 0,
-          analysis_type: queryIntent.analysis_type,
-          timeframe: queryIntent.timeframe,
-          topics_covered: queryIntent.topics,
-          quantitative_focus: false,
-          source: 'general_knowledge'
-        },
-        llm_usage: llmUsage,
-      };
-    } catch (error) {
-      return this.emptyAnalysis(queryIntent);
-    }
-  }
-
   emptyAnalysis(queryIntent) {
     return {
-      analysis: 'No relevant data found for this query. The information might be outside our available transcripts or financials.',
+      analysis: 'Not found in provided sources.',
       metadata: {
         query_type: queryIntent.analysis_type,
         data_points: 0,
         quantitative_focus: true
       },
     };
+  }
+
+  findUnmatchedNumbers(answerText, contextBlob) {
+    if (!answerText) return [];
+    const answerNums = this.extractNumericValues(answerText);
+    const contextNums = this.extractNumericValues(contextBlob || '');
+    if (contextNums.length === 0) {
+      return { unmatched: answerNums.map((n) => n.raw), matched: [] };
+    }
+
+    const unmatched = [];
+    const matched = [];
+    const withinTolerance = (a, b) => {
+      if (!Number.isFinite(a) || !Number.isFinite(b)) return false;
+      const denom = Math.max(Math.abs(a), Math.abs(b), 1);
+      return Math.abs(a - b) / denom <= 0.05; // 5% tolerance
+    };
+
+    for (const a of answerNums) {
+      const match = contextNums.some((c) => withinTolerance(a.value, c.value));
+      if (!match) unmatched.push(a.raw);
+      else matched.push(a.raw);
+    }
+    return { unmatched, matched };
+  }
+
+  extractNumericValues(text) {
+    const regex = /(?:\$?\d[\d,]*\.?\d*\s?(?:b|bn|billion|m|mm|million)?|\d+\s?bps|\d+%)/gi;
+    const matches = text.match(regex) || [];
+    const parsed = [];
+
+    matches.forEach((raw) => {
+      const clean = raw.replace(/[,]/g, '').trim().toLowerCase();
+      // percentages and bps are not critical for faithfulness check; skip them
+      if (clean.endsWith('%') || clean.endsWith('bps')) {
+        return;
+      }
+      let num = parseFloat(clean.replace(/[^0-9.]/g, ''));
+      if (!Number.isFinite(num)) return;
+      if (/\b(b|bn|billion)\b/.test(clean)) {
+        num = num * 1000; // store in millions
+      } else if (/\b(m|mm|million)\b/.test(clean)) {
+        // already in millions
+      }
+      // If the value looks like an integer in millions already (e.g., 6819), keep as is
+      parsed.push({ raw, value: num });
+    });
+
+    return parsed;
   }
 }
 

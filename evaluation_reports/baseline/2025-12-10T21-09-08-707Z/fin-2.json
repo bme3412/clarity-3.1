@@ -1,0 +1,207 @@
+{
+  "id": "fin-2",
+  "run_id": "2025-12-10T21-09-08-707Z",
+  "strategy_id": "baseline",
+  "question": "How did the AMD Data Center segment perform in Q3 2024?",
+  "ground_truth": "The Data Center segment revenue reached a record $3.5 billion in Q3 2024, up 122% year-over-year, driven by strong sales of AMD Instinct GPUs and EPYC CPUs.",
+  "generated_answer": "Atomic Facts with Citations:\n• AMD Data Center segment had a very strong Q3 2024 quarter overall, especially for the Instinct product portfolio [C2][C5]\n• Data Center GPU revenue was approaching the size of AMD's compute business, which was around $1.7 billion [C6]\n• September actuals for Data Center GPU were in the $1.5 billion range [C4]\n• AMD completed important customer milestones and ramped above initial expectations in Q3 [C5]\n• AMD raised full-year Data Center GPU guidance from exceeding $4.5 billion to exceeding $5 billion [C5]\n• The guidance increase was based on completion of customer milestones [C5]\n Final Answer:\nAMD's Data Center segment delivered very strong performance in Q3 2024, particularly driven by the Instinct GPU portfolio [C2][C5]. Data Center GPU revenue approached approximately $1.5 billion, nearing the size of AMD's compute business which was around $1.7 billion [C4][C6].\nThe segment exceeded initial expectations as AMD completed important customer milestones and ramped production above original plans [C5]. This strong performance led AMD to raise its full-year Data Center GPU guidance by $500 million, from exceeding $4.5 billion to exceeding $5 billion [C5].\nThe guidance increase was specifically attributed to the successful completion of customer milestones during the quarter [C5]. AMD expressed confidence in the trajectory through the end of 2024 based on this momentum [C5].\nSpecific quarterly revenue growth rates, margins, and detailed segment breakdowns were not found in provided sources.",
+  "duration_ms": 10426,
+  "metrics": {
+    "relevance": {
+      "score": 0.95,
+      "reasoning": "The answer is highly relevant and directly addresses the question about AMD's Data Center segment performance in Q3 2024. It provides specific details including revenue figures (~$1.5 billion for Data Center GPU), comparison to compute business ($1.7 billion), raised guidance (from $4.5B to $5B), and qualitative performance indicators (strong quarter, exceeded expectations, completed customer milestones). The answer includes citations and acknowledges limitations where specific data wasn't available. The response comprehensively covers the segment's Q3 2024 performance."
+    },
+    "faithfulness": {
+      "score": 0.95,
+      "reasoning": "The answer is highly faithful to the provided context. All key claims are properly supported: (1) Strong Q3 2024 Data Center performance, especially Instinct portfolio - directly from C2/C5; (2) Data Center GPU revenue approaching $1.5 billion and compute business around $1.7 billion - from C4/C6; (3) Exceeded initial expectations and completed customer milestones - from C5; (4) Guidance raised from $4.5B to $5B - from C5; (5) Guidance increase attributed to customer milestones - from C5. The answer appropriately notes that specific quarterly growth rates, margins, and detailed breakdowns were not found in sources. The only minor issue is that C4 mentions '$1.5 billion range' as an analyst's estimate/question rather than a confirmed figure, but the answer presents it as factual. This is a slight overstatement but the information is still derived from the context."
+    },
+    "accuracy": {
+      "score": 0.2,
+      "reasoning": "The generated answer fails to provide the key facts from the ground truth. The ground truth states Data Center segment revenue was $3.5 billion (a record), up 122% year-over-year. The generated answer instead focuses on Data Center GPU revenue being approximately $1.5 billion and discusses guidance increases, but never mentions the total segment revenue of $3.5 billion or the 122% YoY growth. The answer also doesn't mention EPYC CPUs as a driver. While some information about strong performance and Instinct GPUs is consistent, the core quantitative facts (total revenue figure and growth rate) are missing, and the generated answer even admits 'Specific quarterly revenue growth rates... were not found.' This is a significant factual gap."
+    }
+  },
+  "context_count": 9,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 0,
+      "embeddingMs": 254,
+      "pineconeMs": 549,
+      "llmMs": 9619,
+      "totalMs": 10426
+    },
+    "retrieval": {
+      "pineconeMatches": 8,
+      "financialMatches": 1,
+      "keywordMatches": 0,
+      "combinedContext": 9,
+      "filtersApplied": {
+        "company": "AMD",
+        "fiscal_year": "2024",
+        "quarter": "Q3"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": true,
+      "usedKeywordFallback": false,
+      "financialQuery": false,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "general",
+      "timeframe": "Q3 2024",
+      "company_name": "AMD",
+      "isComparisonQuery": false,
+      "primaryTicker": "AMD"
+    },
+    "llm": {
+      "input_tokens": 2150,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 377,
+      "service_tier": "standard"
+    },
+    "retrievalTrace": {
+      "financialSegments": [
+        "financial_data_segment"
+      ],
+      "financial": 1,
+      "transcripts": [
+        "AMD-2024-Q3-full-0",
+        "AMD-2024-Q3-full-37",
+        "AMD-2024-Q3-full-21",
+        "AMD-2024-Q3-full-1",
+        "AMD-2024-Q3-full-29",
+        "AMD-2024-Q3-full-20",
+        "AMD-2024-Q3-full-23",
+        "AMD-2024-Q3-full-16"
+      ],
+      "keyword": []
+    }
+  },
+  "context": [
+    {
+      "id": "context-0",
+      "score": 1,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "financial_data_segment",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"revenueSegments\": {\n    \"composition\": null\n  }\n}"
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-0",
+      "score": 5.2309815155,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "{\n  \"company_name\": \"Advanced Micro Devices (AMD)\",\n  \"quarter\": \"Q3\",\n  \"fiscal_year\": \"2024\",\n  \"speakers\": {\n    \"lisa_su\": {\n      \"role\": \"President and Chief Executive Officer\",\n      \"responses\": [\n        {\n          \"topic\": \"Data Center GPU Revenue Incremental Growth\",\n          \"content\": \"Sure. Toshiya, thank you for the question. So first of all, we had a very strong quarter for the Data Center overall in Q3 and especially for the Instinct product portfolio."
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-37",
+      "score": 4.1351171265,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "dropping a little bit for Q3. Why is that happening? And then just a follow-up on another part of the gross margin angle.\\n\\nHave you changed your gross margin expectations for the MI300? Has the accretion point moved out a little bit?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2024-09-XXT00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q3 2024 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\",\n      \"Inventory optimization and management challenges\",\n      \"Potential supply chain bottlenecks for MI300X production\",\n      \"Weakness in communications end market within Embedded segment\",\n      \"Seasonal declines in Gaming and Embedded segments\"\n    ],\n    \"executive_changes\": {}\n  }\n}"
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-21",
+      "score": 3.6057587165,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "a quick one and then a more intensive question. So the first one is I wanted to ask about the September actuals for Data Center GPU. It seems like it was in the $1.5 billion range. And that would put December in kind of the $2 billion range.\\n\\nIs that about right?\"\n      ]\n    },\n    {\n      \"analyst\": \"Ross Seymore\",\n      \"firm\": \"Deutsche Bank\",\n      \"topics\": [\n        \"AI PC Positioning\",\n        \"ARM-Based Systems Competition\"\n      ],\n      \"questions\": [\n        \"Lisa, congrats on the 10-year anniversary. Jean, when you gave the segment guidance kind of playing off the last question, you didn't mention Embedded as being up. And then, Lisa, you just talked about it being up left."
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-1",
+      "score": 3.524967959,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "we had a very strong quarter for the Data Center overall in Q3 and especially for the Instinct product portfolio. We actually completed some important customer milestones, and we were able to ramp a bit above our initial expectations.\\n\\nSo Data Center GPU was very strong in the third quarter, and we raised overall guidance for the year from exceeding $4.5 billion to exceeding $5 billion based on the completion of some of those customer milestones. So we feel good about the trajectory as we go through the end of this year. And then to your overall question about 2025."
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-29",
+      "score": 3.476238156,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "\"Data Center GPU vs. EPYC Growth\"\n      ],\n      \"questions\": [\n        \"Hi, guys. Thanks for taking my question. But the first one, I wanted to go back to what you said about the size of the Data Center GPUs in the quarter. You said it was approaching the size of Your compute business which you put around what under $1.7 billion, maybe a little more.\\n\\nIs that right? And like if that is right, it implies that at $5 billion for the year, you'd actually be down in Q4. So I'd probably got to be $5.2 billion or $5.3 billion for the full year, just to be flat sequentially and more than that to get growth. So I guess the question is number one, is that the size of the business that you're talking about in Q3? And is that the kind of level of growth you're thinking into Q4?"
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-20",
+      "score": 3.4448021895,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "I guess maybe building on the latter point that you just made, I'm curious of how you would characterize your supply chain having evolved now talking about $5-plus billion. How do we think about what you've been doing on the supply side, given the lead times, the production cycles of these MI300 and MI325 GPUs as we look out into 2025.\\n\\nAnd I have another question.\"\n      ]\n    },\n    {\n      \"analyst\": \"Timothy Arcuri\",\n      \"firm\": \"UBS\",\n      \"topics\": [\n        \"Data Center GPU Roadmap\",\n        \"Rack-Scale Systems Integration\"\n      ],\n      \"questions\": [\n        \"I had a quick one and then a more intensive question. So the first one is I wanted to ask about the September actuals for Data Center GPU. It seems like it was in the $1.5 billion range."
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-23",
+      "score": 3.4153619805,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "\"questions\": [\n        \"Hey, guys. Thanks for taking my question. I'll keep it to 1 since I'm new here. On the Data Center GPU side, I realize everyone wants new customer announcements and 2025 guidance, but we're not going to get that, certainly not today.\\n\\nThat maybe you could speak to how much of a runway you think exists at existing customers? And how much of a catalyst MI325X on CDNA3 and then MI355 on the new architecture can be to growing revenue and workload breadth internally and externally at these existing customers as we think about growth into next year at the Data Center GPU side?\"\n      ]\n    },\n    {\n      \"analyst\": \"Joe Moore\",\n      \"firm\": \"Morgan Stanley\",\n      \"topics\": [\n        \"MI300 Training vs."
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-16",
+      "score": 3.4070921210000003,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "},\n        {\n          \"topic\": \"Final Remarks\",\n          \"content\": \"Great. That concludes today's call. Thanks to all of you for joining us today.\"\n        }\n      ]\n    }\n  },\n  \"analyst_questions\": [\n    {\n      \"analyst\": \"Toshiya Hari\",\n      \"firm\": \"Goldman Sachs\",\n      \"topics\": [\n        \"Data Center GPU Revenue Incremental Growth\",\n        \"Instinct Customer Growth\"\n      ],\n      \"questions\": [\n        \"Hi. Good afternoon. My first one is on the Data Center GPU business. Lisa, you took up your '24 outlook by $500 million.\\n\\nCurious what drove the change there? And more importantly, as you look forward into calendar '25, I doubt you're going to give us quantitative guidance on this call."
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 1.000)\n{\n  \"revenueSegments\": {\n    \"composition\": null\n  }\n}\n\n[Chunk 2] (Score: 5.231)\n{\n  \"company_name\": \"Advanced Micro Devices (AMD)\",\n  \"quarter\": \"Q3\",\n  \"fiscal_year\": \"2024\",\n  \"speakers\": {\n    \"lisa_su\": {\n      \"role\": \"President and Chief Executive Officer\",\n      \"responses\": [\n        {\n          \"topic\": \"Data Center GPU Revenue Incremental Growth\",\n          \"content\": \"Sure. Toshiya, thank you for the question. So first of all, we had a very strong quarter for the Data Center overall in Q3 and especially for the Instinct product portfolio.\n\n[Chunk 3] (Score: 4.135)\ndropping a little bit for Q3. Why is that happening? And then just a follow-up on another part of the gross margin angle.\\n\\nHave you changed your gross margin expectations for the MI300? Has the accretion point moved out a little bit?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2024-09-XXT00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q3 2024 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\",\n      \"Inventory optimization and management challenges\",\n      \"Potential supply chain bottlenecks for MI300X production\",\n      \"Weakness in communications end market within Embedded segment\",\n      \"Seasonal declines in Gaming and Embedded segments\"\n    ],\n    \"executive_changes\": {}\n  }\n}\n\n[Chunk 4] (Score: 3.606)\na quick one and then a more intensive question. So the first one is I wanted to ask about the September actuals for Data Center GPU. It seems like it was in the $1.5 billion range. And that would put December in kind of the $2 billion range.\\n\\nIs that about right?\"\n      ]\n    },\n    {\n      \"analyst\": \"Ross Seymore\",\n      \"firm\": \"Deutsche Bank\",\n      \"topics\": [\n        \"AI PC Positioning\",\n        \"ARM-Based Systems Competition\"\n      ],\n      \"questions\": [\n        \"Lisa, congrats on the 10-year anniversary. Jean, when you gave the segment guidance kind of playing off the last question, you didn't mention Embedded as being up. And then, Lisa, you just talked about it being up left.\n\n[Chunk 5] (Score: 3.525)\nwe had a very strong quarter for the Data Center overall in Q3 and especially for the Instinct product portfolio. We actually completed some important customer milestones, and we were able to ramp a bit above our initial expectations.\\n\\nSo Data Center GPU was very strong in the third quarter, and we raised overall guidance for the year from exceeding $4.5 billion to exceeding $5 billion based on the completion of some of those customer milestones. So we feel good about the trajectory as we go through the end of this year. And then to your overall question about 2025.\n\n[Chunk 6] (Score: 3.476)\n\"Data Center GPU vs. EPYC Growth\"\n      ],\n      \"questions\": [\n        \"Hi, guys. Thanks for taking my question. But the first one, I wanted to go back to what you said about the size of the Data Center GPUs in the quarter. You said it was approaching the size of Your compute business which you put around what under $1.7 billion, maybe a little more.\\n\\nIs that right? And like if that is right, it implies that at $5 billion for the year, you'd actually be down in Q4. So I'd probably got to be $5.2 billion or $5.3 billion for the full year, just to be flat sequentially and more than that to get growth. So I guess the question is number one, is that the size of the business that you're talking about in Q3? And is that the kind of level of growth you're thinking into Q4?\n\n[Chunk 7] (Score: 3.445)\nI guess maybe building on the latter point that you just made, I'm curious of how you would characterize your supply chain having evolved now talking about $5-plus billion. How do we think about what you've been doing on the supply side, given the lead times, the production cycles of these MI300 and MI325 GPUs as we look out into 2025.\\n\\nAnd I have another question.\"\n      ]\n    },\n    {\n      \"analyst\": \"Timothy Arcuri\",\n      \"firm\": \"UBS\",\n      \"topics\": [\n        \"Data Center GPU Roadmap\",\n        \"Rack-Scale Systems Integration\"\n      ],\n      \"questions\": [\n        \"I had a quick one and then a more intensive question. So the first one is I wanted to ask about the September actuals for Data Center GPU. It seems like it was in the $1.5 billion range.\n\n[Chunk 8] (Score: 3.415)\n\"questions\": [\n        \"Hey, guys. Thanks for taking my question. I'll keep it to 1 since I'm new here. On the Data Center GPU side, I realize everyone wants new customer announcements and 2025 guidance, but we're not going to get that, certainly not today.\\n\\nThat maybe you could speak to how much of a runway you think exists at existing customers? And how much of a catalyst MI325X on CDNA3 and then MI355 on the new architecture can be to growing revenue and workload breadth internally and externally at these existing customers as we think about growth into next year at the Data Center GPU side?\"\n      ]\n    },\n    {\n      \"analyst\": \"Joe Moore\",\n      \"firm\": \"Morgan Stanley\",\n      \"topics\": [\n        \"MI300 Training vs.\n\n[Chunk 9] (Score: 3.407)\n},\n        {\n          \"topic\": \"Final Remarks\",\n          \"content\": \"Great. That concludes today's call. Thanks to all of you for joining us today.\"\n        }\n      ]\n    }\n  },\n  \"analyst_questions\": [\n    {\n      \"analyst\": \"Toshiya Hari\",\n      \"firm\": \"Goldman Sachs\",\n      \"topics\": [\n        \"Data Center GPU Revenue Incremental Growth\",\n        \"Instinct Customer Growth\"\n      ],\n      \"questions\": [\n        \"Hi. Good afternoon. My first one is on the Data Center GPU business. Lisa, you took up your '24 outlook by $500 million.\\n\\nCurious what drove the change there? And more importantly, as you look forward into calendar '25, I doubt you're going to give us quantitative guidance on this call.",
+  "created_at": "2025-12-10T21:12:36.392Z",
+  "category": "financial"
+}

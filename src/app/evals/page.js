@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import EvalsDashboardClient from './components/EvalsDashboard.client';
 
 function loadReport() {
   const reportPath = path.join(process.cwd(), 'evaluation_report.json');
@@ -23,9 +24,20 @@ export default function EvalsPage() {
   const runId = report?.run_id;
   const strategyId = report?.strategy_id;
   const cases = report?.details || [];
-  const showCount = Math.min(cases.length, 100); // keep page light
-  const sampleCases = cases.slice(0, showCount);
   const datasetLabel = report?.dataset || report?.summary?.dataset || 'unknown';
+
+  // Keep client payload small: send only what /evals list needs, not full answers/context.
+  const caseSummaries = (cases || []).map((c) => ({
+    id: c.id,
+    question: c.question,
+    category: c.category || 'uncategorized',
+    duration_ms: c.duration_ms ?? null,
+    scores: {
+      relevance: c.metrics?.relevance?.score ?? null,
+      faithfulness: c.metrics?.faithfulness?.score ?? null,
+      accuracy: c.metrics?.accuracy?.score ?? null
+    }
+  }));
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -74,24 +86,12 @@ export default function EvalsPage() {
               />
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
-              <div className="px-4 py-3 border-b border-slate-100 flex items-center justify-between">
-                <div>
-                  <h2 className="text-lg font-semibold">Eval cases</h2>
-                  <p className="text-sm text-slate-500">
-                    Showing {sampleCases.length} of {cases.length} total cases
-                  </p>
-                </div>
-                <div className="text-sm text-slate-500">
-                  Dataset: {datasetLabel}
-                </div>
-              </div>
-              <div className="divide-y divide-slate-100">
-                {sampleCases.map((c) => (
-                  <CaseRow key={c.id} item={c} runId={runId} strategyId={strategyId} />
-                ))}
-              </div>
-            </div>
+            <EvalsDashboardClient
+              caseSummaries={caseSummaries}
+              runId={runId}
+              strategyId={strategyId}
+              datasetLabel={datasetLabel}
+            />
           </>
         )}
       </div>
@@ -105,46 +105,6 @@ function MetricCard({ label, value }) {
       <p className="text-sm text-slate-500">{label}</p>
       <p className="text-2xl font-semibold text-slate-900 mt-1">{value}</p>
     </div>
-  );
-}
-
-function CaseRow({ item, runId, strategyId }) {
-  const href =
-    runId && strategyId
-      ? `/evals/${encodeURIComponent(item.id)}?run=${encodeURIComponent(runId)}&strategy=${encodeURIComponent(strategyId)}`
-      : undefined;
-
-  return (
-    <div className="px-4 py-3">
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          {href ? (
-            <Link href={href} className="text-sm font-medium text-blue-700 hover:underline">
-              {item.question}
-            </Link>
-          ) : (
-            <p className="text-sm font-medium text-slate-900">{item.question}</p>
-          )}
-          <p className="text-xs text-slate-500 mt-1">
-            {item.category || 'uncategorized'} · {item.duration_ms ? `${item.duration_ms} ms` : ''}
-          </p>
-        </div>
-        <div className="flex gap-3 text-sm text-slate-700">
-          <Badge label="Rel" value={formatPercent(item.metrics?.relevance?.score)} />
-          <Badge label="Faith" value={formatPercent(item.metrics?.faithfulness?.score)} />
-          <Badge label="Acc" value={formatPercent(item.metrics?.accuracy?.score)} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Badge({ label, value }) {
-  return (
-    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-slate-100 text-slate-700">
-      <span className="text-[11px] uppercase tracking-wide font-semibold">{label}</span>
-      <span className="text-[12px] font-semibold">{value}</span>
-    </span>
   );
 }
 

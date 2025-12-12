@@ -1,0 +1,100 @@
+{
+  "id": "unanswerable-6",
+  "run_id": "2025-12-10T14-59-38-338Z",
+  "strategy_id": "baseline",
+  "question": "What was Nvidia’s gaming revenue in FY2015?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts with Citations:\n- Gaming revenue for FY2015: Not found in provided sources.\n- Total segment revenue breakdown for FY2015: Not found in provided sources.\n- Gaming segment performance metrics for FY2015: Not found in provided sources.\n- Year-over-year growth rates for gaming in FY2015: Not found in provided sources.\n- Sequential growth rates for gaming in FY2015: Not found in provided sources.\n Final Answer:\nGaming Revenue FY2015: Not found in provided sources.\nThe provided context contains financial data from Q3 FY2026, including total revenue of $57.0B (+62% YoY / +22% QoQ) [C2], but does not include any gaming segment revenue data or total segment revenue breakdown for FY2015.\nSegment Revenue FY2015: Not found in provided sources.\nNo FY2015 segment-level financial data is available in the provided context to analyze gaming or other business segment performance for that fiscal year.",
+  "duration_ms": 12161,
+  "metrics": {
+    "relevance": {
+      "score": 0.8,
+      "reasoning": "The answer is relevant to the question as it directly addresses the query about Nvidia's gaming revenue in FY2015. While it doesn't provide the actual figure, it honestly and transparently states that the information was not found in the provided sources. The answer demonstrates a genuine attempt to find the information and explains why it couldn't be provided (the available data was from a different time period - Q3 FY2026). This is a relevant and appropriate response when the requested information is not available in the source documents."
+    },
+    "faithfulness": {
+      "score": 1,
+      "reasoning": "The answer is completely faithful to the provided context. The context only contains information about Q3 FY2026 financials (total revenue of $57.006 billion with +62% YoY and +22% QoQ changes) and analyst questions about future AI infrastructure. There is absolutely no information about FY2015 gaming revenue or segment breakdowns in the provided chunks. The answer correctly identifies that the requested FY2015 data is not found in the provided sources and accurately cites the Q3 FY2026 data that is present. The answer does not hallucinate or fabricate any FY2015 figures."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer correctly identifies that the information is not found in the provided sources, which matches the ground truth. The generated answer provides additional context about what data IS available (Q3 FY2026 data) and explains why the FY2015 data cannot be found, but this additional detail is consistent with and does not contradict the ground truth statement that the information was not found."
+    }
+  },
+  "context_count": 2,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 4245,
+      "embeddingMs": 339,
+      "pineconeMs": 411,
+      "financialMs": 1,
+      "keywordMs": 7,
+      "llmMs": 7158,
+      "totalMs": 12161
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 0,
+      "keywordMatches": 2,
+      "combinedContext": 2,
+      "filtersApplied": {
+        "company": "NVDA",
+        "fiscal_year": "2015"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "FY2015",
+      "company_name": "NVDA",
+      "isComparisonQuery": false,
+      "primaryTicker": "NVDA"
+    },
+    "llm": {
+      "input_tokens": 901,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 234,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "keyword-2026-Q3-qa",
+      "score": 1.0333333333333334,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q3",
+        "fiscalYear": "2026",
+        "type": "transcript_qa",
+        "source": "data/transcripts/NVDA/FY_2026/Q3/parsed_earnings/NVDA_FY2026_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": "king and compute growth over the next year?\" ] }, { \"analyst\": \"Vivek Arya\", \"firm\": \"Bank of America Securities\", \"topics\": [ \"Gigawatt assumptions\", \"Financing\" ], \"questions\": [ \"What $/GW assumptions underpin the $500B number and how much of the future AI infrastructure needs vendor financing versus customer cash?\" ] }, { \"analyst\": \"Benjamin Reitzes\", \"firm\": \"Melius Research\", \"topics\": ["
+      }
+    },
+    {
+      "id": "keyword-2026-Q3-earnings",
+      "score": 0.8333333333333334,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q3",
+        "fiscalYear": "2026",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/NVDA/FY_2026/Q3/parsed_earnings/NVDA_FY2026_Q3_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"NVIDIA\", \"quarter\": \"Q3\", \"fiscal_year\": \"2026\", \"financials\": { \"gaap\": { \"revenue\": { \"value\": 57.006, \"unit\": \"billion USD\", \"year_over_year_change\": \"+62%\", \"quarter_over_quarter_change\": \"+22%\","
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 1.033)\nking and compute growth over the next year?\" ] }, { \"analyst\": \"Vivek Arya\", \"firm\": \"Bank of America Securities\", \"topics\": [ \"Gigawatt assumptions\", \"Financing\" ], \"questions\": [ \"What $/GW assumptions underpin the $500B number and how much of the future AI infrastructure needs vendor financing versus customer cash?\" ] }, { \"analyst\": \"Benjamin Reitzes\", \"firm\": \"Melius Research\", \"topics\": [\n\n[Chunk 2] (Score: 0.833)\n{ \"company_name\": \"NVIDIA\", \"quarter\": \"Q3\", \"fiscal_year\": \"2026\", \"financials\": { \"gaap\": { \"revenue\": { \"value\": 57.006, \"unit\": \"billion USD\", \"year_over_year_change\": \"+62%\", \"quarter_over_quarter_change\": \"+22%\",",
+  "created_at": "2025-12-10T15:34:27.416Z",
+  "category": "unanswerable"
+}

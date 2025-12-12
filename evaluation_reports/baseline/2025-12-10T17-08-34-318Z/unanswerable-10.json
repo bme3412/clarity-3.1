@@ -1,0 +1,101 @@
+{
+  "id": "unanswerable-10",
+  "run_id": "2025-12-10T17-08-34-318Z",
+  "strategy_id": "baseline",
+  "question": "What was Salesforce’s Slack revenue in Q3 2018?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts with Citations:\nNot found in provided sources - The context provided contains information about Salesforce Q2 2026 results, but no data about Slack revenue or product revenue for Q3 2018.\n Final Answer:\nNot found in provided sources.\nThe provided context contains Salesforce financial data from Q2 2026, but does not include any information about Slack revenue or product revenue for Q3 2018.",
+  "duration_ms": 8440,
+  "metrics": {
+    "relevance": {
+      "score": 0.8,
+      "reasoning": "The answer is relevant to the question in that it directly addresses the user's query about Slack revenue in Q3 2018. The response correctly acknowledges that the requested information is not available in the provided sources and explains why (the sources contain Q2 2026 data, not Q3 2018 data). This is an appropriate and honest response when the information is not available, rather than fabricating an answer. The score is not 1.0 because the answer doesn't provide the actual requested information, but it's appropriately responsive given the limitations of the source material."
+    },
+    "faithfulness": {
+      "score": 1,
+      "reasoning": "The generated answer is completely faithful to the provided context. The answer correctly identifies that the context contains Salesforce Q2 2026 financial data and does not contain any information about Slack revenue or Q3 2018 product revenue. The model appropriately responded with 'Not found in provided sources' rather than hallucinating information that wasn't present in the context. This demonstrates perfect faithfulness - the answer makes no claims beyond what can be verified from the provided chunks."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer correctly identifies that the requested information (Slack revenue or product revenue for Q3 2018) is not found in the provided sources. This matches the ground truth answer of 'Not found in provided sources.' The generated answer provides additional context explaining why the information wasn't found (the sources contain Q2 2026 data, not Q3 2018 data), which is helpful but doesn't contradict the ground truth."
+    }
+  },
+  "context_count": 2,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3593,
+      "embeddingMs": 330,
+      "pineconeMs": 409,
+      "financialMs": 0,
+      "keywordMs": 5,
+      "llmMs": 4102,
+      "totalMs": 8440
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 0,
+      "keywordMatches": 2,
+      "combinedContext": 2,
+      "filtersApplied": {
+        "company": "CRM",
+        "fiscal_year": "2018",
+        "quarter": "Q3"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "Q3 2018",
+      "company_name": "CRM",
+      "isComparisonQuery": false,
+      "primaryTicker": "CRM"
+    },
+    "llm": {
+      "input_tokens": 915,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 100,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "keyword-2026-Q2-earnings",
+      "score": 1.0333333333333332,
+      "metadata": {
+        "company": "CRM",
+        "quarter": "Q2",
+        "fiscalYear": "2026",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/CRM/FY_2026/Q2/parsed_earnings/CRM_FY2026_Q2_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Salesforce\", \"quarter\": \"Q2\", \"fiscal_year\": \"2026\", \"financials\": { \"total_revenue\": { \"value\": 10.2, \"unit\": \"billion USD\", \"year_over_year_change\": \"+10%\", \"context\": \"Q2 FY26 revenue of $10.2 billion, up 10% year"
+      }
+    },
+    {
+      "id": "keyword-2026-Q2-qa",
+      "score": 0.5666666666666667,
+      "metadata": {
+        "company": "CRM",
+        "quarter": "Q2",
+        "fiscalYear": "2026",
+        "type": "transcript_qa",
+        "source": "data/transcripts/CRM/FY_2026/Q2/parsed_earnings/CRM_FY2026_Q2_qa.json",
+        "retrieval": "keyword",
+        "text": "es the agentic enterprise compare to pure consumption plays?\" ] }, { \"analyst\": \"Keith Weiss\", \"firm\": \"Morgan Stanley\", \"topics\": [ \"Growth Drivers\", \"Execution\" ], \"questions\": [ \"What catalyzed the 60% increase in pilot-to-production conversions, and how should we think about what production deals look like versus pilots?\" ] }, { \"analyst\": \"Brent Thill\", \"firm\": \"Jefferies\", \"topics\": ["
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 1.033)\n{ \"company_name\": \"Salesforce\", \"quarter\": \"Q2\", \"fiscal_year\": \"2026\", \"financials\": { \"total_revenue\": { \"value\": 10.2, \"unit\": \"billion USD\", \"year_over_year_change\": \"+10%\", \"context\": \"Q2 FY26 revenue of $10.2 billion, up 10% year\n\n[Chunk 2] (Score: 0.567)\nes the agentic enterprise compare to pure consumption plays?\" ] }, { \"analyst\": \"Keith Weiss\", \"firm\": \"Morgan Stanley\", \"topics\": [ \"Growth Drivers\", \"Execution\" ], \"questions\": [ \"What catalyzed the 60% increase in pilot-to-production conversions, and how should we think about what production deals look like versus pilots?\" ] }, { \"analyst\": \"Brent Thill\", \"firm\": \"Jefferies\", \"topics\": [",
+  "created_at": "2025-12-10T17:47:32.577Z",
+  "category": "unanswerable"
+}

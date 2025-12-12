@@ -1,0 +1,100 @@
+{
+  "id": "unanswerable-6",
+  "run_id": "2025-12-10T17-08-34-318Z",
+  "strategy_id": "baseline",
+  "question": "What was Nvidia’s gaming revenue in FY2015?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts with Citations:\n- FY2015 gaming revenue: Not found in provided sources.\n- FY2015 segment revenue breakdown: Not found in provided sources.\n- FY2015 total revenue: Not found in provided sources.\n- FY2015 gaming segment performance metrics: Not found in provided sources.\n Final Answer:\nGaming Revenue FY2015: Not found in provided sources.\nSegment Revenue FY2015: Not found in provided sources.\nThe provided context contains only Q3 FY2026 financial data, including total revenue of $57.0B (+62% YoY / +22% QoQ) [C2]. No FY2015 gaming revenue, segment revenue breakdown, or historical financial data for fiscal year 2015 is available in the provided sources.",
+  "duration_ms": 8749,
+  "metrics": {
+    "relevance": {
+      "score": 0.7,
+      "reasoning": "The answer is relevant to the question as it directly addresses the query about Nvidia's gaming revenue in FY2015. While it doesn't provide the actual figure, it correctly acknowledges that the information is not available in the provided sources and explains why (the sources only contain Q3 FY2026 data). This is a valid and honest response when the requested information isn't in the available context, though it doesn't fully answer the question with the actual data."
+    },
+    "faithfulness": {
+      "score": 1,
+      "reasoning": "The answer is completely faithful to the provided context. The system correctly identified that the context only contains Q3 FY2026 financial data (specifically mentioning the $57.006 billion revenue figure from Chunk 2) and does not contain any FY2015 gaming revenue or segment breakdown information. The answer appropriately states 'Not found in provided sources' for all FY2015-related queries rather than hallucinating information. The citation [C2] correctly references the Q3 FY2026 data that is actually present in the context."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer correctly identifies that the FY2015 information is not found in the provided sources, which matches the ground truth. The generated answer provides additional context explaining why (the sources only contain Q3 FY2026 data), but this extra detail is consistent with and supports the core finding that the requested information is unavailable. The answer is accurate and does not contradict the ground truth."
+    }
+  },
+  "context_count": 2,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3196,
+      "embeddingMs": 262,
+      "pineconeMs": 381,
+      "financialMs": 0,
+      "keywordMs": 6,
+      "llmMs": 4904,
+      "totalMs": 8749
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 0,
+      "keywordMatches": 2,
+      "combinedContext": 2,
+      "filtersApplied": {
+        "company": "NVDA",
+        "fiscal_year": "2015"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "FY2015",
+      "company_name": "NVDA",
+      "isComparisonQuery": false,
+      "primaryTicker": "NVDA"
+    },
+    "llm": {
+      "input_tokens": 901,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 188,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "keyword-2026-Q3-qa",
+      "score": 1.0333333333333334,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q3",
+        "fiscalYear": "2026",
+        "type": "transcript_qa",
+        "source": "data/transcripts/NVDA/FY_2026/Q3/parsed_earnings/NVDA_FY2026_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": "king and compute growth over the next year?\" ] }, { \"analyst\": \"Vivek Arya\", \"firm\": \"Bank of America Securities\", \"topics\": [ \"Gigawatt assumptions\", \"Financing\" ], \"questions\": [ \"What $/GW assumptions underpin the $500B number and how much of the future AI infrastructure needs vendor financing versus customer cash?\" ] }, { \"analyst\": \"Benjamin Reitzes\", \"firm\": \"Melius Research\", \"topics\": ["
+      }
+    },
+    {
+      "id": "keyword-2026-Q3-earnings",
+      "score": 0.8333333333333334,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q3",
+        "fiscalYear": "2026",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/NVDA/FY_2026/Q3/parsed_earnings/NVDA_FY2026_Q3_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"NVIDIA\", \"quarter\": \"Q3\", \"fiscal_year\": \"2026\", \"financials\": { \"gaap\": { \"revenue\": { \"value\": 57.006, \"unit\": \"billion USD\", \"year_over_year_change\": \"+62%\", \"quarter_over_quarter_change\": \"+22%\","
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 1.033)\nking and compute growth over the next year?\" ] }, { \"analyst\": \"Vivek Arya\", \"firm\": \"Bank of America Securities\", \"topics\": [ \"Gigawatt assumptions\", \"Financing\" ], \"questions\": [ \"What $/GW assumptions underpin the $500B number and how much of the future AI infrastructure needs vendor financing versus customer cash?\" ] }, { \"analyst\": \"Benjamin Reitzes\", \"firm\": \"Melius Research\", \"topics\": [\n\n[Chunk 2] (Score: 0.833)\n{ \"company_name\": \"NVIDIA\", \"quarter\": \"Q3\", \"fiscal_year\": \"2026\", \"financials\": { \"gaap\": { \"revenue\": { \"value\": 57.006, \"unit\": \"billion USD\", \"year_over_year_change\": \"+62%\", \"quarter_over_quarter_change\": \"+22%\",",
+  "created_at": "2025-12-10T17:40:56.925Z",
+  "category": "unanswerable"
+}

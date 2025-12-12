@@ -18,6 +18,12 @@ dotenv.config();
 const DEFAULT_DATASET = path.join(process.cwd(), 'data', 'evaluation', 'dataset.json');
 const REPORTS_BASE = path.join(process.cwd(), 'evaluation_reports');
 
+const PASS_THRESHOLDS = {
+  relevance: 0.8,
+  faithfulness: 0.8,
+  accuracy: 0.8,
+};
+
 function ensureDir(dirPath) {
   if (!fs.existsSync(dirPath)) {
     fs.mkdirSync(dirPath, { recursive: true });
@@ -62,6 +68,17 @@ function formatContext(contextItems) {
 }
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+function percentile(values = [], p = 50) {
+  if (!values.length) return null;
+  const sorted = [...values].sort((a, b) => a - b);
+  const idx = (p / 100) * (sorted.length - 1);
+  const lower = Math.floor(idx);
+  const upper = Math.ceil(idx);
+  if (lower === upper) return sorted[lower];
+  const weight = idx - lower;
+  return sorted[lower] * (1 - weight) + sorted[upper] * weight;
+}
 
 // Dynamic imports to ensure env vars are loaded first
 const {
@@ -164,6 +181,38 @@ async function run() {
 
     const metrics = { relevance, faithfulness, accuracy };
 
+    // Pass/Fail rubric including unanswerable handling
+    const isUnanswerable =
+      (item.category && item.category.toLowerCase() === 'unanswerable') ||
+      (item.ground_truth || '').toLowerCase().includes('not found in provided sources');
+    const normalizedAnswer = (answer || '').toLowerCase();
+    const failReasons = [];
+    let passed = false;
+
+    if (isUnanswerable) {
+      const hasNotFound =
+        normalizedAnswer.includes('not found in provided sources') ||
+        normalizedAnswer.includes('not found');
+      passed = hasNotFound;
+      if (!hasNotFound) {
+        failReasons.push('Unanswerable: expected "Not found in provided sources."');
+      }
+    } else {
+      if (relevance.score < PASS_THRESHOLDS.relevance) {
+        failReasons.push(`Relevance below ${PASS_THRESHOLDS.relevance}`);
+      }
+      if (faithfulness.score < PASS_THRESHOLDS.faithfulness) {
+        failReasons.push(`Faithfulness below ${PASS_THRESHOLDS.faithfulness}`);
+      }
+      if (accuracy.score < PASS_THRESHOLDS.accuracy) {
+        failReasons.push(`Accuracy below ${PASS_THRESHOLDS.accuracy}`);
+      }
+      passed =
+        relevance.score >= PASS_THRESHOLDS.relevance &&
+        faithfulness.score >= PASS_THRESHOLDS.faithfulness &&
+        accuracy.score >= PASS_THRESHOLDS.accuracy;
+    }
+
     results.push({
       id: item.id,
       strategy_id: strategyId,
@@ -175,6 +224,8 @@ async function run() {
       duration_ms: duration,
       pipeline_metrics: pipelineMetrics,
       category: item.category,
+      pass: passed,
+      fail_reasons: failReasons,
     });
 
     const serializedContext = serializeContext(context);
@@ -206,6 +257,7 @@ async function run() {
       pipeline_metrics: pipelineMetrics,
       file: `${item.id}.json`,
       category: item.category,
+      pass: passed,
     });
   }
 
@@ -214,6 +266,20 @@ async function run() {
   const avgRelevance = avg(results, (r) => r.metrics.relevance.score);
   const avgFaithfulness = avg(results, (r) => r.metrics.faithfulness.score);
   const avgAccuracy = avg(results, (r) => r.metrics.accuracy.score);
+
+  const durations = results.map((r) => r.duration_ms).filter((d) => Number.isFinite(d));
+  const latencyP50 = percentile(durations, 50);
+  const latencyP95 = percentile(durations, 95);
+
+  const unanswerableCases = results.filter(
+    (r) =>
+      (r.category && r.category.toLowerCase() === 'unanswerable') ||
+      (r.ground_truth || '').toLowerCase().includes('not found in provided sources')
+  );
+  const unanswerablePassRate =
+    unanswerableCases.length > 0
+      ? unanswerableCases.filter((r) => r.pass).length / unanswerableCases.length
+      : null;
 
   const timingTotals = {};
   const retrievalTotals = { pineconeMatches: 0, financialMatches: 0, keywordMatches: 0, combinedContext: 0 };
@@ -272,6 +338,17 @@ async function run() {
   console.log(`Avg Relevance:      ${avgRelevance.toFixed(2)}`);
   console.log(`Avg Faithfulness:   ${avgFaithfulness.toFixed(2)}`);
   console.log(`Avg Accuracy:       ${avgAccuracy.toFixed(2)}`);
+  const totalPasses = results.filter((r) => r.pass).length;
+  console.log(`Pass Rate:          ${(results.length ? (totalPasses / results.length) * 100 : 0).toFixed(1)}%`);
+  if (latencyP50 !== null) {
+    console.log(`Latency P50:        ${latencyP50.toFixed(1)} ms`);
+  }
+  if (latencyP95 !== null) {
+    console.log(`Latency P95:        ${latencyP95.toFixed(1)} ms`);
+  }
+  if (unanswerablePassRate !== null) {
+    console.log(`Unanswerable Pass:  ${(unanswerablePassRate * 100).toFixed(1)}% (${unanswerableCases.length} cases)`);
+  }
   if (avgTimings.totalMs) {
     console.log(`Avg Total Latency:  ${avgTimings.totalMs.toFixed(2)} ms`);
   }
@@ -283,6 +360,7 @@ async function run() {
     created_at: runTimestamp,
     dataset: path.relative(process.cwd(), datasetPath),
     total_cases: results.length,
+    pass_rate: results.length ? totalPasses / results.length : 0,
     summary: {
       avg_relevance: avgRelevance,
       avg_faithfulness: avgFaithfulness,
@@ -291,6 +369,15 @@ async function run() {
       retrieval: avgRetrieval,
       fallback_rates: fallbackRates,
       llm_usage: avgLlmUsage,
+      latency_ms: {
+        p50: latencyP50,
+        p95: latencyP95,
+        avg_total: avgTimings.totalMs || avg(durations, (d) => d),
+      },
+      unanswerable: {
+        cases: unanswerableCases.length,
+        pass_rate: unanswerablePassRate,
+      },
     },
     cases: caseSummaries,
   };

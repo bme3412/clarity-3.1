@@ -200,6 +200,24 @@ export class ExtendedRAGPipeline extends RAGPipeline {
     this.keywordRetriever = keywordRetriever;
   }
 
+  isSegmentQuery(query, intent) {
+    const text = (query || intent?.raw_query || '').toLowerCase();
+    const segmentTerms = ['segment', 'business unit', 'performance', 'data center', 'datacenter', 'cloud', 'gaming', 'automotive'];
+    return segmentTerms.some((t) => text.includes(t));
+  }
+
+  isStrategyQuery(query, intent) {
+    const text = (query || intent?.raw_query || '').toLowerCase();
+    const terms = ['strategy', 'strategic', 'roadmap', 'priorities', 'ai focus', 'positioning', 'long-term plan'];
+    return terms.some((t) => text.includes(t));
+  }
+
+  isGuidanceQuery(query, intent) {
+    const text = (query || intent?.raw_query || '').toLowerCase();
+    const terms = ['guidance', 'outlook', 'forecast', 'midpoint', 'expects'];
+    return terms.some((t) => text.includes(t)) || intent?.analysis_type === 'guidance';
+  }
+
   async process(query) {
     console.log('Processing query:', query);
     const wallStart = Date.now();
@@ -240,12 +258,40 @@ export class ExtendedRAGPipeline extends RAGPipeline {
     // 4) Build filters
     const filters = useCompanyFilter ? this.buildFilters(intent, primaryTicker) : {};
 
-    // 5) Retrieve transcripts from Pinecone
+    // Strategy/segment/guidance flags
+    const isStrategy =
+      ['strategic', 'technology', 'market'].includes(intent.analysis_type) ||
+      (intent.topics || []).some((t) =>
+        ['strategy', 'roadmap', 'ai focus', 'priorities'].some((kw) => t.toLowerCase().includes(kw))
+      ) ||
+      this.isStrategyQuery(query, intent);
+    const isSegment = this.isSegmentQuery(query, intent);
+    const isGuidance = this.isGuidanceQuery(query, intent);
+
+    // 5) Retrieve transcripts (with comparison handling)
     const pineconeStart = Date.now();
-    const pineconeRes = await this.retriever.retrieve(vector, { filters, query });
-    metrics.timings.pineconeMs = Date.now() - pineconeStart;
-    const transcripts = pineconeRes.matches || [];
-    console.log('Transcript matches:', transcripts.length);
+    let transcripts = [];
+    if (isComparisonQuery && Array.isArray(intent.company_name)) {
+      // fetch per-ticker to keep balanced evidence
+      const tickerList = intent.company_name.map((c) => this.detectCompany(c));
+      for (const tk of tickerList) {
+        const f = this.buildFilters(intent, tk);
+        const res = await this.retriever.retrieve(vector, { filters: f, query });
+        const withTicker = (res.matches || []).map((m) => ({
+          ...m,
+          metadata: { ...m.metadata, comparison_ticker: tk },
+        }));
+        transcripts = transcripts.concat(withTicker);
+      }
+      // simple rerank by score, keep top 12 combined
+      transcripts = transcripts.sort((a, b) => (b.score || 0) - (a.score || 0)).slice(0, 12);
+      metrics.timings.pineconeMs = Date.now() - pineconeStart;
+    } else {
+      const pineconeRes = await this.retriever.retrieve(vector, { filters, query });
+      transcripts = pineconeRes.matches || [];
+      metrics.timings.pineconeMs = Date.now() - pineconeStart;
+      console.log('Transcript matches:', transcripts.length);
+    }
 
     // 6) Optionally retrieve local financial data
     let finMatches = [];
@@ -381,7 +427,8 @@ export class ExtendedRAGPipeline extends RAGPipeline {
 
     // 7) Keyword-based fallback retrieval for descriptive context
     let keywordMatches = [];
-    if (this.keywordRetriever) {
+    const haveEnoughContext = transcripts.length >= 3 || finMatches.length > 0;
+    if (this.keywordRetriever && !haveEnoughContext) {
       const missingNarrative = transcripts.length === 0 || transcripts.every(match => (match.metadata?.type || '').includes('financial_data'));
       if (missingNarrative || isFinQuery) {
         const keywordStart = Date.now();
@@ -391,8 +438,89 @@ export class ExtendedRAGPipeline extends RAGPipeline {
       }
     }
 
-    // 8) Merge transcripts + keyword + financial data
-    const combined = [...transcripts, ...keywordMatches, ...finMatches];
+    // Strategy fallback re-retrieval if risk/low-score
+    const riskDetector = (m) => {
+      const txt = (m.metadata?.text || '').toLowerCase();
+      return txt.includes('forward-looking statements') || txt.includes('risk factors');
+    };
+    const hasStrategyKeywords = (m) => {
+      const txt = (m.metadata?.text || '').toLowerCase();
+      return ['ai', 'roadmap', 'platform', 'architecture', 'infrastructure', 'strategy', 'product'].some((kw) => txt.includes(kw));
+    };
+    const meaningfulStrategyHits = transcripts.filter(hasStrategyKeywords);
+    const missingStrategy = isStrategy && meaningfulStrategyHits.length === 0;
+    if (missingStrategy) {
+      console.log('Strategy fallback: retrying prepared remarks/press releases');
+      const retryFilters = useCompanyFilter ? { ...filters, file_type: 'earnings' } : { file_type: 'earnings' };
+      const retryRes = await this.retriever.retrieve(vector, { filters: retryFilters, query: `${query} strategy prepared remarks` });
+      const retryMatches = retryRes.matches || [];
+      transcripts = [...retryMatches, ...transcripts]
+        .sort((a, b) => (b.score || 0) - (a.score || 0))
+        .slice(0, 12);
+    }
+
+    // Segment override: inject segment financials first but keep transcripts
+    if (isSegment && !isComparisonQuery) {
+      const fy = intent.explicit_periods?.[0]?.fiscal_year || intent.explicit_periods?.[0]?.fiscalYear || finMatches[0]?.metadata?.fiscalYear || '2024';
+      const qtr = intent.explicit_periods?.[0]?.quarter || finMatches[0]?.metadata?.quarter || 'Q3';
+      const segmentData = await financials.getQuarter(primaryTicker, fy, qtr);
+      if (segmentData?.revenueSegments) {
+        const segText = JSON.stringify({ revenueSegments: segmentData.revenueSegments }, null, 2);
+        finMatches.unshift({
+          metadata: {
+            company: primaryTicker,
+            fiscalYear: fy,
+            quarter: qtr,
+            type: 'financial_data_segment',
+            text: segText
+          },
+          score: 1
+        });
+      } else if (transcripts.length === 0) {
+        // Rescue: trigger an extra transcript retrieval if none exist
+        const rescueRes = await this.retriever.retrieve(vector, { filters, query: `${query} segment performance earnings transcript` });
+        transcripts = [...(rescueRes.matches || []), ...transcripts]
+          .sort((a, b) => (b.score || 0) - (a.score || 0))
+          .slice(0, 12);
+      }
+    }
+
+    // Comparison queries: ensure consolidated + segment for each ticker
+    if (isComparisonQuery && Array.isArray(intent.company_name)) {
+      const tickerList = intent.company_name.map((c) => this.detectCompany(c));
+      for (const tk of tickerList) {
+        const fy = intent.explicit_periods?.[0]?.fiscal_year || '2024';
+        const qtr = intent.explicit_periods?.[0]?.quarter || 'Q3';
+        const data = await financials.getQuarter(tk, fy, qtr);
+        if (data) {
+          finMatches.unshift({
+            metadata: {
+              company: tk,
+              fiscalYear: fy,
+              quarter: qtr,
+              type: 'financial_data_comparison',
+              text: JSON.stringify(data, null, 2)
+            },
+            score: 1
+          });
+        }
+        if (data?.revenueSegments) {
+          finMatches.unshift({
+            metadata: {
+              company: tk,
+              fiscalYear: fy,
+              quarter: qtr,
+              type: 'financial_data_segment',
+              text: JSON.stringify({ revenueSegments: data.revenueSegments }, null, 2)
+            },
+            score: 1
+          });
+        }
+      }
+    }
+
+    // 8) Merge context with financial data first (for numeric fidelity), then transcripts, then keyword fallbacks
+    const combined = [...finMatches, ...transcripts, ...keywordMatches];
     
     // 9) Final text from EnhancedFinancialAnalyst
     // Pass empty array if no data found, letting analyzer handle it with general knowledge
@@ -414,6 +542,12 @@ export class ExtendedRAGPipeline extends RAGPipeline {
       keywordMatches: keywordMatches.length,
       combinedContext: combined.length,
       filtersApplied: filters
+    };
+    metrics.retrievalTrace = {
+      financialSegments: finMatches.filter((m) => (m.metadata?.type || '').includes('segment')).map((m) => m.metadata?.source || m.metadata?.type),
+      financial: finMatches.length,
+      transcripts: transcripts.map((m) => m.id || m.metadata?.source_file || m.metadata?.source),
+      keyword: keywordMatches.map((m) => m.id || m.metadata?.source),
     };
     metrics.fallbacks = {
       usedFinancialData: finMatches.length > 0,

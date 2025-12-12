@@ -51,22 +51,7 @@ export type ChatMessage = z.infer<typeof ChatMessageSchema>;
 /**
  * Schema for /api/chat/financial POST request
  */
-export const FinancialChatRequestSchema = z.object({
-  query: z
-    .string()
-    .min(1, 'Query cannot be empty')
-    .max(2000, 'Query too long (max 2000 characters)')
-    .transform(s => s.trim()),
-  strategy: z
-    .enum(RETRIEVAL_STRATEGIES)
-    .default('auto'),
-  chatHistory: z
-    .array(ChatMessageSchema)
-    .optional()
-    .default([])
-});
-
-export type FinancialChatRequest = z.infer<typeof FinancialChatRequestSchema>;
+// (Removed) FinancialChatRequestSchema - was used only by the workbook /api/chat/financial route.
 
 /**
  * Schema for /api/chat/stream POST request
@@ -251,28 +236,6 @@ export type ListAvailableDataInput = z.infer<typeof ListAvailableDataInputSchema
 // =============================================================================
 // REPORTS API SCHEMAS
 // =============================================================================
-
-/**
- * Schema for /api/reports/earnings-digest POST request
- */
-export const EarningsDigestRequestSchema = z.object({
-  ticker: TickerSchema,
-  fiscalYear: FiscalYearSchema,
-  quarter: QuarterSchema
-});
-
-export type EarningsDigestRequest = z.infer<typeof EarningsDigestRequestSchema>;
-
-/**
- * Schema for /api/reports/transcript GET request params
- */
-export const TranscriptRequestSchema = z.object({
-  ticker: TickerSchema,
-  fiscalYear: FiscalYearSchema,
-  quarter: QuarterSchema
-});
-
-export type TranscriptRequest = z.infer<typeof TranscriptRequestSchema>;
 
 // =============================================================================
 // EVALUATION SCHEMAS

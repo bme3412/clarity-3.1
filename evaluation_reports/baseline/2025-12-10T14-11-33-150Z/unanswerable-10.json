@@ -1,0 +1,101 @@
+{
+  "id": "unanswerable-10",
+  "run_id": "2025-12-10T14-11-33-150Z",
+  "strategy_id": "baseline",
+  "question": "What was Salesforce’s Slack revenue in Q3 2018?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts Extracted\n- Not found in provided sources: Slack revenue for Q3 2018\n- Not found in provided sources: Product revenue for Q3 2018\nThe provided context contains only Q2 FY26 data showing total revenue of $10.2B (+10% YoY) [C1], with no information about Slack-specific revenue or product revenue breakdowns, and no data from Q3 2018.\n---\nSlack Revenue Q3 2018: Not found in provided sources.\nProduct Revenue Q3 2018: Not found in provided sources.\nThe available context covers Salesforce Q2 FY26 results only [C1][C2], which does not include historical Q3 2018 data or Slack-specific revenue figures. Note that Salesforce acquired Slack in July 2021, so Q3 2018 would predate the acquisition entirely.",
+  "duration_ms": 10596,
+  "metrics": {
+    "relevance": {
+      "score": 0.7,
+      "reasoning": "The answer is relevant to the question as it directly addresses the query about Slack revenue in Q3 2018. While it doesn't provide the specific revenue figure, it correctly explains why the information isn't available: (1) the data sources only contain Q2 FY26 information, and (2) importantly, it provides valuable context that Salesforce acquired Slack in July 2021, meaning Q3 2018 predates the acquisition entirely. This is a helpful and informative response that explains the limitations rather than providing incorrect information."
+    },
+    "faithfulness": {
+      "score": 1,
+      "reasoning": "The answer is completely faithful to the provided context. The response correctly identifies that the requested information (Slack revenue and product revenue for Q3 2018) is not present in the provided chunks. The context only contains Q2 FY26 Salesforce data showing $10.2B total revenue with +10% YoY change, and some analyst information. The answer accurately states this limitation and appropriately notes that the context doesn't contain the requested historical data. The additional context about Slack's acquisition date (July 2021) is factually accurate general knowledge that helps explain why such data wouldn't be in Salesforce documents, but the core answer correctly acknowledges the information is not in the provided sources."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer correctly identifies that the information was not found in the provided sources, which matches the ground truth. While the generated answer provides significantly more detail and context (explaining why the data isn't available, noting the Slack acquisition timeline, and mentioning what data IS available), the core factual claim is consistent with the ground truth. The additional context about Q2 FY26 data and the Slack acquisition date in 2021 is accurate supplementary information that doesn't contradict the ground truth."
+    }
+  },
+  "context_count": 2,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3368,
+      "embeddingMs": 262,
+      "pineconeMs": 506,
+      "financialMs": 2,
+      "keywordMs": 6,
+      "llmMs": 6450,
+      "totalMs": 10596
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 0,
+      "keywordMatches": 2,
+      "combinedContext": 2,
+      "filtersApplied": {
+        "company": "CRM",
+        "fiscal_year": "2018",
+        "quarter": "Q3"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "Q3 2018",
+      "company_name": "CRM",
+      "isComparisonQuery": false,
+      "primaryTicker": "CRM"
+    },
+    "llm": {
+      "input_tokens": 915,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 208,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "keyword-2026-Q2-earnings",
+      "score": 1.0333333333333332,
+      "metadata": {
+        "company": "CRM",
+        "quarter": "Q2",
+        "fiscalYear": "2026",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/CRM/FY_2026/Q2/parsed_earnings/CRM_FY2026_Q2_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Salesforce\", \"quarter\": \"Q2\", \"fiscal_year\": \"2026\", \"financials\": { \"total_revenue\": { \"value\": 10.2, \"unit\": \"billion USD\", \"year_over_year_change\": \"+10%\", \"context\": \"Q2 FY26 revenue of $10.2 billion, up 10% year"
+      }
+    },
+    {
+      "id": "keyword-2026-Q2-qa",
+      "score": 0.5666666666666667,
+      "metadata": {
+        "company": "CRM",
+        "quarter": "Q2",
+        "fiscalYear": "2026",
+        "type": "transcript_qa",
+        "source": "data/transcripts/CRM/FY_2026/Q2/parsed_earnings/CRM_FY2026_Q2_qa.json",
+        "retrieval": "keyword",
+        "text": "es the agentic enterprise compare to pure consumption plays?\" ] }, { \"analyst\": \"Keith Weiss\", \"firm\": \"Morgan Stanley\", \"topics\": [ \"Growth Drivers\", \"Execution\" ], \"questions\": [ \"What catalyzed the 60% increase in pilot-to-production conversions, and how should we think about what production deals look like versus pilots?\" ] }, { \"analyst\": \"Brent Thill\", \"firm\": \"Jefferies\", \"topics\": ["
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 1.033)\n{ \"company_name\": \"Salesforce\", \"quarter\": \"Q2\", \"fiscal_year\": \"2026\", \"financials\": { \"total_revenue\": { \"value\": 10.2, \"unit\": \"billion USD\", \"year_over_year_change\": \"+10%\", \"context\": \"Q2 FY26 revenue of $10.2 billion, up 10% year\n\n[Chunk 2] (Score: 0.567)\nes the agentic enterprise compare to pure consumption plays?\" ] }, { \"analyst\": \"Keith Weiss\", \"firm\": \"Morgan Stanley\", \"topics\": [ \"Growth Drivers\", \"Execution\" ], \"questions\": [ \"What catalyzed the 60% increase in pilot-to-production conversions, and how should we think about what production deals look like versus pilots?\" ] }, { \"analyst\": \"Brent Thill\", \"firm\": \"Jefferies\", \"topics\": [",
+  "created_at": "2025-12-10T14:56:34.301Z",
+  "category": "unanswerable"
+}

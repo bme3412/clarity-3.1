@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { 
   ArrowLeft, Database, Brain, Search, Zap, 
   FileText, Code, GitBranch, Layers, ChevronDown, ChevronRight,
-  ExternalLink, Check
+  ExternalLink, Check, AlertTriangle, ShieldCheck, Gauge, ListChecks
 } from 'lucide-react';
 
 // Code snippet component with syntax highlighting simulation
@@ -81,9 +81,48 @@ export default function HowItWorks() {
             How Clarity 3.0 Works
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            A deep dive into the RAG architecture, embedding strategy, and agentic LLM patterns 
-            powering financial intelligence.
+            A practical deep dive into the RAG architecture, retrieval strategies, and streaming UX
+            behind Clarity’s “earnings intelligence” answers.
           </p>
+        </div>
+
+        {/* What happens when you ask a question */}
+        <div className="bg-white rounded-2xl border border-slate-200 p-8 mb-12 shadow-sm">
+          <h2 className="text-2xl font-bold text-slate-800 mb-2">What happens when you ask a question?</h2>
+          <p className="text-slate-600 mb-6">
+            Clarity is designed to behave like a disciplined analyst: it <strong>retrieves sources first</strong>,
+            then answers using only retrieved evidence, and streams progress in real-time.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="rounded-xl border border-slate-200 p-5 bg-slate-50">
+              <div className="flex items-center gap-2 mb-3">
+                <ListChecks className="w-4 h-4 text-blue-600" />
+                <h3 className="font-semibold text-slate-800">Runtime flow (high level)</h3>
+              </div>
+              <ol className="text-sm text-slate-600 space-y-2 list-decimal list-inside">
+                <li><strong>Validate</strong> request (input schema + limits).</li>
+                <li><strong>Detect</strong> likely ticker + intent (numbers vs narrative).</li>
+                <li><strong>Retrieve</strong> evidence (tools: financial metrics + transcript search).</li>
+                <li><strong>Assemble</strong> a grounded context block with citations.</li>
+                <li><strong>Generate</strong> an answer and stream tokens to the UI.</li>
+                <li><strong>Emit</strong> metrics (latencies, retrieval stats) at the end.</li>
+              </ol>
+            </div>
+
+            <div className="rounded-xl border border-slate-200 p-5 bg-white">
+              <div className="flex items-center gap-2 mb-3">
+                <Gauge className="w-4 h-4 text-emerald-600" />
+                <h3 className="font-semibold text-slate-800">What you see in the UI</h3>
+              </div>
+              <ul className="text-sm text-slate-600 space-y-2">
+                <li><strong>Status updates</strong> like “Analyzing…” / “Searching…” to reduce dead time.</li>
+                <li><strong>Retrieved sources panel</strong> showing which chunks/metrics were used.</li>
+                <li><strong>Streaming response</strong> (token-by-token) instead of waiting for a full block.</li>
+                <li><strong>Pipeline metrics</strong> (e.g., time-to-first-token, tool latency, avg score).</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* Architecture Overview */}
@@ -108,7 +147,7 @@ export default function HowItWorks() {
                                   │
                                   ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    CLAUDE OPUS (Agentic LLM)                         │
+│                 CLAUDE (Agentic LLM, configurable)                   │
 │                                                                      │
 │   Tool Selection:                                                    │
 │   ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐    │
@@ -145,6 +184,68 @@ export default function HowItWorks() {
         <div className="space-y-4 mb-12">
           <h2 className="text-2xl font-bold text-slate-800 mb-6">Technical Deep Dive</h2>
           
+          <ExpandableSection title="Grounding, Citations, and 'Not found in sources'" icon={FileText} defaultOpen={false}>
+            <div className="space-y-4">
+              <p className="text-slate-600">
+                Clarity optimizes for <strong>trust</strong>. The system prompt and tool layer enforce a simple rule:
+                <strong> if a number/fact is not present in tool results, it should not be stated</strong>.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Check className="w-4 h-4 text-emerald-600" />
+                    <h4 className="font-semibold text-emerald-800">What “good” looks like</h4>
+                  </div>
+                  <ul className="text-sm text-emerald-700 space-y-1">
+                    <li>• Every claim is backed by retrieved context</li>
+                    <li>• Numbers only come from tools (no guesswork)</li>
+                    <li>• The UI shows sources so you can verify quickly</li>
+                  </ul>
+                </div>
+                <div className="bg-amber-50 rounded-xl p-4 border border-amber-100">
+                  <div className="flex items-center gap-2 mb-2">
+                    <AlertTriangle className="w-4 h-4 text-amber-700" />
+                    <h4 className="font-semibold text-amber-900">Why you might see “Not found”</h4>
+                  </div>
+                  <ul className="text-sm text-amber-800 space-y-1">
+                    <li>• Missing quarter/year in the dataset</li>
+                    <li>• The question is too broad (needs ticker/timeframe)</li>
+                    <li>• A metric isn’t available in the structured JSON</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <h4 className="font-semibold text-slate-800 mb-2 flex items-center gap-2">
+                  <Code className="w-4 h-4 text-slate-600" />
+                  Tip: ask like an analyst
+                </h4>
+                <p className="text-sm text-slate-600">
+                  Include a <strong>ticker</strong> and a <strong>timeframe</strong> when you want numbers (e.g., “AAPL Q3 FY2025 revenue and gross margin”).
+                  For strategy questions, include a focus area (e.g., “NVDA Blackwell demand + supply constraints”).
+                </p>
+              </div>
+            </div>
+          </ExpandableSection>
+
+          <ExpandableSection title="Fiscal year (FY) handling & 'latest' behavior" icon={GitBranch} defaultOpen={false}>
+            <div className="space-y-4">
+              <p className="text-slate-600">
+                Different companies use different fiscal calendars. That means “FY2025” is not always comparable across tickers.
+                For “latest/recent/current” questions, the system prefers fetching the most recent available quarter per ticker.
+              </p>
+
+              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <h4 className="font-semibold text-slate-800 mb-2">How to ask for clean comparisons</h4>
+                <ul className="text-sm text-slate-600 space-y-1">
+                  <li>• If you want <strong>the latest per company</strong>: say “latest” explicitly (it will auto-pick each ticker’s newest quarter).</li>
+                  <li>• If you want <strong>apples-to-apples</strong>: specify an exact fiscal quarter/year for each company (or constrain the analysis period).</li>
+                </ul>
+              </div>
+            </div>
+          </ExpandableSection>
+
           <ExpandableSection title="Hybrid Search Strategy" icon={Search} defaultOpen={true}>
             <div className="space-y-4">
               <p className="text-slate-600">
@@ -192,6 +293,43 @@ function vectorize(text) {
   return { indices, values }; // Sparse format
 }`}
               />
+            </div>
+          </ExpandableSection>
+
+          <ExpandableSection title="Modes (Smart / Precision / Concepts / Exploratory / Deep Dive)" icon={Brain} defaultOpen={false}>
+            <div className="space-y-4">
+              <p className="text-slate-600">
+                On the landing page you can choose a retrieval “mode”. Under the hood these map to different retrieval strategies
+                optimized for different question shapes.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white rounded-xl border border-slate-200 p-4">
+                  <h4 className="font-semibold text-slate-800 mb-2">Smart Mode (auto)</h4>
+                  <p className="text-sm text-slate-600">
+                    Picks a strategy automatically based on whether your query looks numeric, conceptual, vague, or multi-part.
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl border border-slate-200 p-4">
+                  <h4 className="font-semibold text-slate-800 mb-2">Precision (hybrid + keywords)</h4>
+                  <p className="text-sm text-slate-600">
+                    Best when you include specific terms (quarters, product names, metrics) that must match exactly.
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl border border-slate-200 p-4">
+                  <h4 className="font-semibold text-slate-800 mb-2">Concepts (dense-only)</h4>
+                  <p className="text-sm text-slate-600">
+                    Best for thematic questions: strategy shifts, positioning, management commentary.
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl border border-slate-200 p-4">
+                  <h4 className="font-semibold text-slate-800 mb-2">Exploratory (HyDE) / Deep Dive (multi-query)</h4>
+                  <p className="text-sm text-slate-600">
+                    HyDE helps vague questions by generating a “hypothetical” doc to retrieve better context.
+                    Multi-query expands your question into variations and fuses results for coverage.
+                  </p>
+                </div>
+              </div>
             </div>
           </ExpandableSection>
           
@@ -350,6 +488,34 @@ data: {"type":"end"}`}
               </div>
             </div>
           </ExpandableSection>
+
+          <ExpandableSection title="Reliability, safety checks, and operational notes" icon={ShieldCheck} defaultOpen={false}>
+            <div className="space-y-4">
+              <p className="text-slate-600">
+                This app leans on production patterns that keep responses predictable under real-world conditions:
+                validated inputs, tool limits, and explicit failure states.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                  <h4 className="font-semibold text-slate-800 mb-2">Guardrails</h4>
+                  <ul className="text-sm text-slate-600 space-y-1">
+                    <li>• Request validation (Zod) and sane limits on message sizes</li>
+                    <li>• Bounded tool usage (prevents runaway loops)</li>
+                    <li>• If retrieval returns nothing: answer transparently (no hallucinated numbers)</li>
+                  </ul>
+                </div>
+                <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                  <h4 className="font-semibold text-slate-800 mb-2">Troubleshooting</h4>
+                  <ul className="text-sm text-slate-600 space-y-1">
+                    <li>• If answers look thin, add ticker + quarter/year</li>
+                    <li>• If retrieval is slow, check Pinecone health endpoint</li>
+                    <li>• If you see dev build weirdness, delete <code className="font-mono">.next/</code> and restart</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </ExpandableSection>
           
           <ExpandableSection title="Data Coverage" icon={Database}>
             <div className="space-y-4">
@@ -476,7 +642,7 @@ data: {"type":"end"}`}
       {/* Footer */}
       <footer className="border-t border-slate-200 py-8 mt-12">
         <div className="max-w-5xl mx-auto px-6 text-center text-sm text-slate-500">
-          Built with Next.js, Claude Opus, Voyage AI, and Pinecone
+          Built with Next.js, Claude, Voyage AI, and Pinecone
         </div>
       </footer>
     </div>

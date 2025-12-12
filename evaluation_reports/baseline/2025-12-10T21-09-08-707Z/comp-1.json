@@ -1,0 +1,190 @@
+{
+  "id": "comp-1",
+  "run_id": "2025-12-10T21-09-08-707Z",
+  "strategy_id": "baseline",
+  "question": "How do AMD and Nvidia compare in the AI accelerator market?",
+  "ground_truth": "Nvidia dominates the AI accelerator market with CUDA ecosystem lock-in, while AMD is competing with MI300 series and open ROCm software stack, gaining traction in cloud deployments.",
+  "generated_answer": "Atomic Facts with Citations:\n• NVIDIA announced collaboration with Intel to develop multiple generations of custom data center and PC products, connecting NVIDIA and Intel's ecosystems using NVLink [C1]\n• NVIDIA integrates with Fujitsu's CPUs and GPUs via NVLink Fusion [C1]\n• ARM announced integration of NVLink IP for customers to build CPU SoCs that connect with NVIDIA [C1]\n• NVLink is currently on its fifth generation and described as \"the only proven scale of technology available on the market today\" [C1]\n• Blackwell Ultra delivered 5x faster performance in latest MLPerf training results [C1]\n• NVIDIA unveiled Blackwell architecture-powered systems with top computer manufacturers at Computex [C3]\n• OEMs and ODM partners are building more than 100 Blackwell-based systems using NVIDIA MGX modular reference architecture [C3]\n• NVIDIA RTX described as \"a massive PC platform for generative AI enjoyed by 100 million gamers and creators\" [C5]\n Final Answer:\nNot found in provided sources for AMD comparison data.\nThe context contains extensive information about NVIDIA's partnerships, product developments, and market positioning, but lacks any specific information about AMD's comparable metrics, partnerships, or competitive positioning. NVIDIA demonstrates strong ecosystem integration through collaborations with Intel [C1], Fujitsu [C1], and ARM [C1], with NVLink technology on its fifth generation [C1]. The company's Blackwell architecture powers over 100 systems from OEM/ODM partners [C3], and RTX serves 100 million users [C5]. However, without AMD's corresponding financial metrics, partnership details, or market share data in the provided sources, a meaningful comparison cannot be established.",
+  "duration_ms": 12171,
+  "metrics": {
+    "relevance": {
+      "score": 0.6,
+      "reasoning": "The answer partially addresses the question by providing detailed information about NVIDIA's position in the AI accelerator market, including partnerships, technologies, and products. However, it explicitly acknowledges that it cannot provide AMD comparison data from the sources, which is half of what the question asks for. The answer is honest about its limitations and provides useful context about NVIDIA, but fails to deliver a complete comparison as requested. The transparency about missing AMD data is appropriate, but the answer only addresses one side of the comparison."
+    },
+    "faithfulness": {
+      "score": 0.85,
+      "reasoning": "The answer is largely faithful to the provided context. The atomic facts cited are accurately extracted from the chunks: the Intel collaboration and NVLink details come from Chunk 4 (labeled C1), the Fujitsu and ARM partnerships are from Chunk 4, the Blackwell systems and MGX architecture information comes from Chunk 3, and the RTX 100 million users claim comes from Chunk 2. The answer correctly acknowledges that AMD comparison data is not found in the sources, which is accurate - the context contains no AMD information. The slight deduction is because the citation system (C1, C3, C5) doesn't perfectly align with the chunk numbering provided, which could cause minor confusion, but the factual content itself is derived from the context without hallucination."
+    },
+    "accuracy": {
+      "score": 0.3,
+      "reasoning": "The generated answer focuses heavily on NVIDIA's partnerships, NVLink technology, and Blackwell architecture details, but fails to address the key comparative elements in the ground truth. The ground truth specifically mentions: (1) NVIDIA's CUDA ecosystem lock-in as a dominance factor, (2) AMD's MI300 series as a competitive product, (3) AMD's ROCm software stack, and (4) AMD gaining traction in cloud deployments. The generated answer acknowledges it cannot provide AMD comparison data and explicitly states 'Not found in provided sources for AMD comparison data.' While it provides accurate NVIDIA information, it misses the core competitive dynamics and AMD-specific details that are central to the ground truth answer. The answer is not factually incorrect about what it does state, but it's incomplete on the key comparison being asked about."
+    }
+  },
+  "context_count": 8,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 0,
+      "embeddingMs": 264,
+      "pineconeMs": 721,
+      "llmMs": 11185,
+      "totalMs": 12171
+    },
+    "retrieval": {
+      "pineconeMatches": 8,
+      "financialMatches": 0,
+      "keywordMatches": 0,
+      "combinedContext": 8,
+      "filtersApplied": {
+        "company": "NVDA"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": false,
+      "financialQuery": false,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "comparison",
+      "timeframe": "all",
+      "company_name": "NVDA",
+      "isComparisonQuery": false,
+      "primaryTicker": "NVDA"
+    },
+    "llm": {
+      "input_tokens": 1889,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 404,
+      "service_tier": "standard"
+    },
+    "retrievalTrace": {
+      "financialSegments": [],
+      "financial": 0,
+      "transcripts": [
+        "NVDA-2024-Q3-transcript-83",
+        "NVDA-2024-Q4-press_release-16",
+        "NVDA-2025-Q2-transcript-8",
+        "NVDA-2026-Q3-transcript-19",
+        "NVDA-2024-Q1-press_release-16",
+        "NVDA-2025-Q1-press_release-16",
+        "NVDA-2024-Q2-press_release-16",
+        "NVDA-2025-Q3-transcript-16"
+      ],
+      "keyword": []
+    }
+  },
+  "context": [
+    {
+      "id": "NVDA-2024-Q3-transcript-83",
+      "score": 3.8247599159999996,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "NVDA-Q3-2024-transcript.txt",
+        "retrieval": null,
+        "text": "-- generative AI to enterprise is something nobody has ever done before. And we're right now in the process of going to market with all of that. And so the complexity includes, of course, all the technologies and segments and the pace. It includes the fact that we are architecturally compatible across every single one of those. It includes all of the domain-specific libraries that we create. The reason why you -- every computer company without thinking can integrate NVIDIA into their road map and take it to market and the reason for that is because there's market demand for it. There's market demand in health care. There's market demand in manufacturing. There's market demand, and of course, in AI, in financial services and supercomputing and quantum computing."
+      }
+    },
+    {
+      "id": "NVDA-2024-Q4-press_release-16",
+      "score": 3.7991177995,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q4",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "NVDA-Q4-2024-press-release.txt",
+        "retrieval": null,
+        "text": "computing infrastructure company with data-center-scale offerings that are reshaping industry. More information at https://nvidianews.nvidia.com/. For further information, contact:\n \t \nSimona Jankowski\tMylene Mangalindan\nInvestor Relations\tCorporate Communications\nNVIDIA Corporation\tNVIDIA Corporation\nsjankowski@nvidia.com\tmmangalindan@nvidia.com\n \t \nCertain statements in this press release including, but not limited to, statements as to: demand for accelerated computing and generative AI surging worldwide across companies, industries and nations; our Data Center platform being powered by increasingly diverse drivers, including demand for data processing, training and inference from large cloud-service providers and GPU-specialized ones, as well as from enterprise software and consumer internet companies; vertical industries led by auto, financial, services and healthcare now at a multibillion-dollar level; NVIDIA RTX becoming a massive PC platform for generative AI enjoyed by 100 million gamers and creators; the year ahead bringing major new product cycles with exceptional innovations to help propel our industry forward; our upcoming conference at GTC, where we and our rich ecosystem will reveal the exciting future ahead; NVIDIA’s next quarterly cash dividend; NVIDIA’s financial outlook and expected tax rates for the first quarter of fiscal 2025; the benefits, impact, performance, features and availability of NVIDIA’s products and technologies, including NVIDIA AI platforms, NVIDIA DGX Cloud, NVIDIA DGX SuperPOD, NVIDIA NeMo Retriever, NVIDIA MONAI cloud APIs, NVIDIA Hopper architecture GPUs, NVIDIA GeForce RTX 40 SUPER Series GPUs, NVIDIA DLSS 3.5 Ray Reconstruction, NVIDIA Reflex, NVIDIA TensorRT-LLM, Chat with RTX, microservices for the NVIDIA Avatar Cloud Engine, NVIDIA DLSS, ray tracing and other NVIDIA RTX technologies, NVIDIA Omniverse, NVIDIA RTX 2000 Ada Generation GPU, NVIDIA DRIVE platform, NVIDIA DRIVE Orin and NVIDIA DRIVE Thor; and our collaborations with third parties are forward-looking statements that are subject to risks and uncertainties that could cause results to be materially different than expectations."
+      }
+    },
+    {
+      "id": "NVDA-2025-Q2-transcript-8",
+      "score": 3.688161805,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q2",
+        "fiscalYear": "2025",
+        "type": null,
+        "source": "NVDA-Q2-2025-transcript.txt",
+        "retrieval": null,
+        "text": "levels seen prior to the imposition of export controls. We continue to expect the China market to be very competitive going forward. The latest round of MLPerf inference benchmarks highlighted NVIDIA's inference leadership with both NVIDIA Hopper and Blackwell platform combining to win gold medals on all tasks. At Computex, NVIDIA, with the top computer manufacturers, unveiled an array of Blackwell architecture-powered systems and NVIDIA networking for building AI factories and data centers. With the NVIDIA MGX modular reference architecture, our OEMs and ODM partners are building more than 100 Blackwell-based systems designed quickly and cost effectively."
+      }
+    },
+    {
+      "id": "NVDA-2026-Q3-transcript-19",
+      "score": 3.669444516,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q3",
+        "fiscalYear": "2026",
+        "type": null,
+        "source": "NVDA-Q3-2026-transcript.txt",
+        "retrieval": null,
+        "text": "in October, where we will integrate Fujitsu's CPUs and NVIDIA GPUs, via and NVLink Fusion, connecting our large ecosystems. We also announced a collaboration with Intel to develop multiple generations of custom data center and PC products, connecting NVIDIA and Intel's ecosystems using NVLink. This week at Supercomputing 25, ARM announced that it will be integrating NVLink IP for customers to build CPU SoCs that connect with NVIDIA currently on its fifth generation. NVLink is the only proven scale of technology available on the market today. In the latest MLPerf training results, Blackwell Ultra delivered 5x faster time to train than hopper, NVIDIA swept every benchmark. Notably, NVIDIA is the only training platform to led the bridge while meeting the MLPerf strict accuracy standards."
+      }
+    },
+    {
+      "id": "NVDA-2024-Q1-press_release-16",
+      "score": 3.4902245779999994,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q1",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "NVDA-Q1-2024-press-release.txt",
+        "retrieval": null,
+        "text": "full-stack computing company with data-center-scale offerings that are reshaping industry. More information at https://nvidianews.nvidia.com/. For further information, contact:\n\nSimona Jankowski\t \tRobert Sherbin\nInvestor Relations\t \tCorporate Communications\nNVIDIA Corporation\t \tNVIDIA Corporation\nsjankowski@nvidia.com\t \trsherbin@nvidia.com\nCertain statements in this press release including, but not limited to, statements as to: the computer industry going through two simultaneous transitions – accelerated computing and generative AI; installed global data center infrastructure transitioning from general purpose to accelerated computing as companies race to apply generative AI into every product, service and business process; NVIDIA’s entire data center family of products being in production; NVIDIA significantly increasing supply to meet surging demand; NVIDIA’s next quarterly cash dividend; NVIDIA’s financial outlook and expected tax rates for the second quarter of fiscal 2024; the benefits, impact, performance, features and availability of our products and technologies, including NVIDIA Ada, NVIDIA Hopper, NVIDIA Grace Hopper CPU, NVIDIA L4 Tensor Core GPU, NVIDIA AI Foundations, NVIDIA cuLitho software library, NVIDIA H100 Tensor Core GPU, NVIDIA AI Enterprise, GeForce RTX GPUs, DLSS 3, GeForce NOW, NVIDIA Omniverse Cloud, Omniverse, NVIDIA RTX GPUs, and NVIDIA DRIVE Orin; and the benefits and impact of our collaborations, including with Google Cloud, Amazon Web Services, Microsoft Azure, Oracle Cloud Infrastructure, ServiceNow, Medtronic, Dell Technologies, CD PROJEKT RED, Microsoft, and BYD are forward-looking statements that are subject to risks and uncertainties that could cause results to be materially different than expectations."
+      }
+    },
+    {
+      "id": "NVDA-2025-Q1-press_release-16",
+      "score": 3.4902245779999994,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q1",
+        "fiscalYear": "2025",
+        "type": null,
+        "source": "NVDA-Q1-2025-press-release.txt",
+        "retrieval": null,
+        "text": "full-stack computing company with data-center-scale offerings that are reshaping industry. More information at https://nvidianews.nvidia.com/. For further information, contact:\n\nSimona Jankowski\t \tRobert Sherbin\nInvestor Relations\t \tCorporate Communications\nNVIDIA Corporation\t \tNVIDIA Corporation\nsjankowski@nvidia.com\t \trsherbin@nvidia.com\nCertain statements in this press release including, but not limited to, statements as to: the computer industry going through two simultaneous transitions – accelerated computing and generative AI; installed global data center infrastructure transitioning from general purpose to accelerated computing as companies race to apply generative AI into every product, service and business process; NVIDIA’s entire data center family of products being in production; NVIDIA significantly increasing supply to meet surging demand; NVIDIA’s next quarterly cash dividend; NVIDIA’s financial outlook and expected tax rates for the second quarter of fiscal 2024; the benefits, impact, performance, features and availability of our products and technologies, including NVIDIA Ada, NVIDIA Hopper, NVIDIA Grace Hopper CPU, NVIDIA L4 Tensor Core GPU, NVIDIA AI Foundations, NVIDIA cuLitho software library, NVIDIA H100 Tensor Core GPU, NVIDIA AI Enterprise, GeForce RTX GPUs, DLSS 3, GeForce NOW, NVIDIA Omniverse Cloud, Omniverse, NVIDIA RTX GPUs, and NVIDIA DRIVE Orin; and the benefits and impact of our collaborations, including with Google Cloud, Amazon Web Services, Microsoft Azure, Oracle Cloud Infrastructure, ServiceNow, Medtronic, Dell Technologies, CD PROJEKT RED, Microsoft, and BYD are forward-looking statements that are subject to risks and uncertainties that could cause results to be materially different than expectations."
+      }
+    },
+    {
+      "id": "NVDA-2024-Q2-press_release-16",
+      "score": 3.4902245779999994,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q2",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "NVDA-Q2-2024-press-release.txt",
+        "retrieval": null,
+        "text": "full-stack computing company with data-center-scale offerings that are reshaping industry. More information at https://nvidianews.nvidia.com/. For further information, contact:\n\nSimona Jankowski\t \tRobert Sherbin\nInvestor Relations\t \tCorporate Communications\nNVIDIA Corporation\t \tNVIDIA Corporation\nsjankowski@nvidia.com\t \trsherbin@nvidia.com\nCertain statements in this press release including, but not limited to, statements as to: the computer industry going through two simultaneous transitions – accelerated computing and generative AI; installed global data center infrastructure transitioning from general purpose to accelerated computing as companies race to apply generative AI into every product, service and business process; NVIDIA’s entire data center family of products being in production; NVIDIA significantly increasing supply to meet surging demand; NVIDIA’s next quarterly cash dividend; NVIDIA’s financial outlook and expected tax rates for the second quarter of fiscal 2024; the benefits, impact, performance, features and availability of our products and technologies, including NVIDIA Ada, NVIDIA Hopper, NVIDIA Grace Hopper CPU, NVIDIA L4 Tensor Core GPU, NVIDIA AI Foundations, NVIDIA cuLitho software library, NVIDIA H100 Tensor Core GPU, NVIDIA AI Enterprise, GeForce RTX GPUs, DLSS 3, GeForce NOW, NVIDIA Omniverse Cloud, Omniverse, NVIDIA RTX GPUs, and NVIDIA DRIVE Orin; and the benefits and impact of our collaborations, including with Google Cloud, Amazon Web Services, Microsoft Azure, Oracle Cloud Infrastructure, ServiceNow, Medtronic, Dell Technologies, CD PROJEKT RED, Microsoft, and BYD are forward-looking statements that are subject to risks and uncertainties that could cause results to be materially different than expectations."
+      }
+    },
+    {
+      "id": "NVDA-2025-Q3-transcript-16",
+      "score": 3.468830678,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": null,
+        "source": "NVDA-Q3-2025-transcript.txt",
+        "retrieval": null,
+        "text": "market in China to remain very competitive going forward. We will continue to comply with export controls while serving our customers. Our sovereign AI initiatives continue to gather momentum as countries embrace NVIDIA accelerated computing for a new industrial revolution powered by AI. India's leading CSPs include product communications and Yotta Data Services are building AI factories for tens of thousands of NVIDIA GPUs. By year-end, they will have boosted NVIDIA GPU deployments in the country by nearly 10x. Infosys, TSE (sic) [ TCS ], Wipro are adopting NVIDIA AI enterprise and upskilling nearly 0.5 million developers and consultants to help clients build and run AI agents on our platform."
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 3.825)\n-- generative AI to enterprise is something nobody has ever done before. And we're right now in the process of going to market with all of that. And so the complexity includes, of course, all the technologies and segments and the pace. It includes the fact that we are architecturally compatible across every single one of those. It includes all of the domain-specific libraries that we create. The reason why you -- every computer company without thinking can integrate NVIDIA into their road map and take it to market and the reason for that is because there's market demand for it. There's market demand in health care. There's market demand in manufacturing. There's market demand, and of course, in AI, in financial services and supercomputing and quantum computing.\n\n[Chunk 2] (Score: 3.799)\ncomputing infrastructure company with data-center-scale offerings that are reshaping industry. More information at https://nvidianews.nvidia.com/. For further information, contact:\n \t \nSimona Jankowski\tMylene Mangalindan\nInvestor Relations\tCorporate Communications\nNVIDIA Corporation\tNVIDIA Corporation\nsjankowski@nvidia.com\tmmangalindan@nvidia.com\n \t \nCertain statements in this press release including, but not limited to, statements as to: demand for accelerated computing and generative AI surging worldwide across companies, industries and nations; our Data Center platform being powered by increasingly diverse drivers, including demand for data processing, training and inference from large cloud-service providers and GPU-specialized ones, as well as from enterprise software and consumer internet companies; vertical industries led by auto, financial, services and healthcare now at a multibillion-dollar level; NVIDIA RTX becoming a massive PC platform for generative AI enjoyed by 100 million gamers and creators; the year ahead bringing major new product cycles with exceptional innovations to help propel our industry forward; our upcoming conference at GTC, where we and our rich ecosystem will reveal the exciting future ahead; NVIDIA’s next quarterly cash dividend; NVIDIA’s financial outlook and expected tax rates for the first quarter of fiscal 2025; the benefits, impact, performance, features and availability of NVIDIA’s products and technologies, including NVIDIA AI platforms, NVIDIA DGX Cloud, NVIDIA DGX SuperPOD, NVIDIA NeMo Retriever, NVIDIA MONAI cloud APIs, NVIDIA Hopper architecture GPUs, NVIDIA GeForce RTX 40 SUPER Series GPUs, NVIDIA DLSS 3.5 Ray Reconstruction, NVIDIA Reflex, NVIDIA TensorRT-LLM, Chat with RTX, microservices for the NVIDIA Avatar Cloud Engine, NVIDIA DLSS, ray tracing and other NVIDIA RTX technologies, NVIDIA Omniverse, NVIDIA RTX 2000 Ada Generation GPU, NVIDIA DRIVE platform, NVIDIA DRIVE Orin and NVIDIA DRIVE Thor; and our collaborations with third parties are forward-looking statements that are subject to risks and uncertainties that could cause results to be materially different than expectations.\n\n[Chunk 3] (Score: 3.688)\nlevels seen prior to the imposition of export controls. We continue to expect the China market to be very competitive going forward. The latest round of MLPerf inference benchmarks highlighted NVIDIA's inference leadership with both NVIDIA Hopper and Blackwell platform combining to win gold medals on all tasks. At Computex, NVIDIA, with the top computer manufacturers, unveiled an array of Blackwell architecture-powered systems and NVIDIA networking for building AI factories and data centers. With the NVIDIA MGX modular reference architecture, our OEMs and ODM partners are building more than 100 Blackwell-based systems designed quickly and cost effectively.\n\n[Chunk 4] (Score: 3.669)\nin October, where we will integrate Fujitsu's CPUs and NVIDIA GPUs, via and NVLink Fusion, connecting our large ecosystems. We also announced a collaboration with Intel to develop multiple generations of custom data center and PC products, connecting NVIDIA and Intel's ecosystems using NVLink. This week at Supercomputing 25, ARM announced that it will be integrating NVLink IP for customers to build CPU SoCs that connect with NVIDIA currently on its fifth generation. NVLink is the only proven scale of technology available on the market today. In the latest MLPerf training results, Blackwell Ultra delivered 5x faster time to train than hopper, NVIDIA swept every benchmark. Notably, NVIDIA is the only training platform to led the bridge while meeting the MLPerf strict accuracy standards.\n\n[Chunk 5] (Score: 3.490)\nfull-stack computing company with data-center-scale offerings that are reshaping industry. More information at https://nvidianews.nvidia.com/. For further information, contact:\n\nSimona Jankowski\t \tRobert Sherbin\nInvestor Relations\t \tCorporate Communications\nNVIDIA Corporation\t \tNVIDIA Corporation\nsjankowski@nvidia.com\t \trsherbin@nvidia.com\nCertain statements in this press release including, but not limited to, statements as to: the computer industry going through two simultaneous transitions – accelerated computing and generative AI; installed global data center infrastructure transitioning from general purpose to accelerated computing as companies race to apply generative AI into every product, service and business process; NVIDIA’s entire data center family of products being in production; NVIDIA significantly increasing supply to meet surging demand; NVIDIA’s next quarterly cash dividend; NVIDIA’s financial outlook and expected tax rates for the second quarter of fiscal 2024; the benefits, impact, performance, features and availability of our products and technologies, including NVIDIA Ada, NVIDIA Hopper, NVIDIA Grace Hopper CPU, NVIDIA L4 Tensor Core GPU, NVIDIA AI Foundations, NVIDIA cuLitho software library, NVIDIA H100 Tensor Core GPU, NVIDIA AI Enterprise, GeForce RTX GPUs, DLSS 3, GeForce NOW, NVIDIA Omniverse Cloud, Omniverse, NVIDIA RTX GPUs, and NVIDIA DRIVE Orin; and the benefits and impact of our collaborations, including with Google Cloud, Amazon Web Services, Microsoft Azure, Oracle Cloud Infrastructure, ServiceNow, Medtronic, Dell Technologies, CD PROJEKT RED, Microsoft, and BYD are forward-looking statements that are subject to risks and uncertainties that could cause results to be materially different than expectations.\n\n[Chunk 6] (Score: 3.490)\nfull-stack computing company with data-center-scale offerings that are reshaping industry. More information at https://nvidianews.nvidia.com/. For further information, contact:\n\nSimona Jankowski\t \tRobert Sherbin\nInvestor Relations\t \tCorporate Communications\nNVIDIA Corporation\t \tNVIDIA Corporation\nsjankowski@nvidia.com\t \trsherbin@nvidia.com\nCertain statements in this press release including, but not limited to, statements as to: the computer industry going through two simultaneous transitions – accelerated computing and generative AI; installed global data center infrastructure transitioning from general purpose to accelerated computing as companies race to apply generative AI into every product, service and business process; NVIDIA’s entire data center family of products being in production; NVIDIA significantly increasing supply to meet surging demand; NVIDIA’s next quarterly cash dividend; NVIDIA’s financial outlook and expected tax rates for the second quarter of fiscal 2024; the benefits, impact, performance, features and availability of our products and technologies, including NVIDIA Ada, NVIDIA Hopper, NVIDIA Grace Hopper CPU, NVIDIA L4 Tensor Core GPU, NVIDIA AI Foundations, NVIDIA cuLitho software library, NVIDIA H100 Tensor Core GPU, NVIDIA AI Enterprise, GeForce RTX GPUs, DLSS 3, GeForce NOW, NVIDIA Omniverse Cloud, Omniverse, NVIDIA RTX GPUs, and NVIDIA DRIVE Orin; and the benefits and impact of our collaborations, including with Google Cloud, Amazon Web Services, Microsoft Azure, Oracle Cloud Infrastructure, ServiceNow, Medtronic, Dell Technologies, CD PROJEKT RED, Microsoft, and BYD are forward-looking statements that are subject to risks and uncertainties that could cause results to be materially different than expectations.\n\n[Chunk 7] (Score: 3.490)\nfull-stack computing company with data-center-scale offerings that are reshaping industry. More information at https://nvidianews.nvidia.com/. For further information, contact:\n\nSimona Jankowski\t \tRobert Sherbin\nInvestor Relations\t \tCorporate Communications\nNVIDIA Corporation\t \tNVIDIA Corporation\nsjankowski@nvidia.com\t \trsherbin@nvidia.com\nCertain statements in this press release including, but not limited to, statements as to: the computer industry going through two simultaneous transitions – accelerated computing and generative AI; installed global data center infrastructure transitioning from general purpose to accelerated computing as companies race to apply generative AI into every product, service and business process; NVIDIA’s entire data center family of products being in production; NVIDIA significantly increasing supply to meet surging demand; NVIDIA’s next quarterly cash dividend; NVIDIA’s financial outlook and expected tax rates for the second quarter of fiscal 2024; the benefits, impact, performance, features and availability of our products and technologies, including NVIDIA Ada, NVIDIA Hopper, NVIDIA Grace Hopper CPU, NVIDIA L4 Tensor Core GPU, NVIDIA AI Foundations, NVIDIA cuLitho software library, NVIDIA H100 Tensor Core GPU, NVIDIA AI Enterprise, GeForce RTX GPUs, DLSS 3, GeForce NOW, NVIDIA Omniverse Cloud, Omniverse, NVIDIA RTX GPUs, and NVIDIA DRIVE Orin; and the benefits and impact of our collaborations, including with Google Cloud, Amazon Web Services, Microsoft Azure, Oracle Cloud Infrastructure, ServiceNow, Medtronic, Dell Technologies, CD PROJEKT RED, Microsoft, and BYD are forward-looking statements that are subject to risks and uncertainties that could cause results to be materially different than expectations.\n\n[Chunk 8] (Score: 3.469)\nmarket in China to remain very competitive going forward. We will continue to comply with export controls while serving our customers. Our sovereign AI initiatives continue to gather momentum as countries embrace NVIDIA accelerated computing for a new industrial revolution powered by AI. India's leading CSPs include product communications and Yotta Data Services are building AI factories for tens of thousands of NVIDIA GPUs. By year-end, they will have boosted NVIDIA GPU deployments in the country by nearly 10x. Infosys, TSE (sic) [ TCS ], Wipro are adopting NVIDIA AI enterprise and upskilling nearly 0.5 million developers and consultants to help clients build and run AI agents on our platform.",
+  "created_at": "2025-12-10T21:21:48.688Z",
+  "category": "comparison"
+}

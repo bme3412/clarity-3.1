@@ -97,17 +97,28 @@ class FinancialDataCache {
       if (!incomeStatement) return null;
       
       // Extract revenue - handle different field names
-      let revenue = 0;
+      let revenue = null;
       let revenueSegments = {};
-      if (incomeStatement.revenue?.total?.value) {
+      if (incomeStatement.revenue?.total?.value !== undefined) {
         revenue = incomeStatement.revenue.total.value;
         revenueSegments.composition = incomeStatement.revenue?.composition || incomeStatement.revenue?.by_segment || null;
-      } else if (incomeStatement.net_sales?.total?.value) {
+      } else if (incomeStatement.net_sales?.total?.value !== undefined) {
         revenue = incomeStatement.net_sales.total.value;
         revenueSegments.composition = incomeStatement.net_sales?.composition || null;
-      } else if (incomeStatement.revenues?.total?.value) {
+      } else if (incomeStatement.revenues?.total?.value !== undefined) {
         revenue = incomeStatement.revenues.total.value;
         revenueSegments.composition = incomeStatement.revenues?.composition || incomeStatement.revenues?.by_segment || null;
+      }
+
+      // Segment splits (data_center etc.)
+      const seg = incomeStatement.revenue?.by_segment || incomeStatement.revenues?.by_segment;
+      if (seg) {
+        revenueSegments.data_center = seg.data_center?.value ?? seg.dataCenter?.value ?? seg.data_center ?? seg.dataCenter ?? null;
+        revenueSegments.gaming = seg.gaming?.value ?? seg.gaming ?? null;
+      }
+      const comps = incomeStatement.revenue?.total?.components;
+      if (comps) {
+        revenueSegments.data_center = revenueSegments.data_center ?? comps.data_center ?? comps.dataCenter ?? null;
       }
 
       // Product/category splits
@@ -142,19 +153,25 @@ class FinancialDataCache {
       }
       
       // Extract operating income - handle different structures
-      let profit = 0;
-      if (incomeStatement.operating_income?.total) {
+      let profit = null;
+      if (typeof incomeStatement.operating_income === 'number') {
+        profit = incomeStatement.operating_income;
+      } else if (incomeStatement.operating_income?.total !== undefined) {
         profit = incomeStatement.operating_income.total;
-      } else if (incomeStatement.operating_income?.value) {
+      } else if (incomeStatement.operating_income?.value !== undefined) {
         profit = incomeStatement.operating_income.value;
-      } else if (incomeStatement.operating_income?.gaap?.value) {
+      } else if (incomeStatement.operating_income?.gaap?.value !== undefined) {
         profit = incomeStatement.operating_income.gaap.value;
-      } else if (incomeStatement.operating_income?.non_gaap?.value) {
+      } else if (typeof incomeStatement.operating_income?.gaap === 'number') {
+        profit = incomeStatement.operating_income.gaap;
+      } else if (incomeStatement.operating_income?.non_gaap?.value !== undefined) {
         profit = incomeStatement.operating_income.non_gaap.value;
-      } else if (incomeStatement.margins?.operating_margin?.gaap?.operating_income) {
+      } else if (typeof incomeStatement.operating_income?.non_gaap === 'number') {
+        profit = incomeStatement.operating_income.non_gaap;
+      } else if (incomeStatement.margins?.operating_margin?.gaap?.operating_income !== undefined) {
         // NVDA structure
         profit = incomeStatement.margins.operating_margin.gaap.operating_income;
-      } else if (incomeStatement.margins?.operating_margin?.non_gaap?.operating_income) {
+      } else if (incomeStatement.margins?.operating_margin?.non_gaap?.operating_income !== undefined) {
         // NVDA non-GAAP structure
         profit = incomeStatement.margins.operating_margin.non_gaap.operating_income;
       }
@@ -200,9 +217,14 @@ class FinancialDataCache {
       }
       
       // Extract net income
-      const netIncome = incomeStatement.net_income?.gaap?.value ||
-                       incomeStatement.net_income?.non_gaap?.value ||
-                       incomeStatement.net_income?.value || 0;
+      const netIncome =
+        (typeof incomeStatement.net_income === 'number' && incomeStatement.net_income) ||
+        incomeStatement.net_income?.gaap?.value ||
+        incomeStatement.net_income?.non_gaap?.value ||
+        incomeStatement.net_income?.value ||
+        incomeStatement.net_income?.gaap ||
+        incomeStatement.net_income?.non_gaap ||
+        0;
       
       // Extract EPS - handle different structures
       let eps = 0;

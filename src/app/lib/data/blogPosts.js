@@ -106,6 +106,27 @@ export const blogPosts = [
     contentPath: 'docs/blog/building-a-production-rag-system.md',
   },
   {
+    id: 'clarity-3-rag-strategy',
+    title: 'Clarity 3.0 RAG Strategy: How Answers Are Built',
+    subtitle: 'A practical guide to retrieval modes, grounding rules, and why we mix transcripts with structured financials.',
+    date: '2025-12-12',
+    status: 'published',
+    readingTime: '7 min',
+    tags: ['RAG', 'Hybrid Search', 'Tool Use', 'Grounding'],
+    summary: 'An end-to-end walkthrough of Clarity 3.0’s retrieval strategy: how questions are classified, how evidence is retrieved from transcripts + structured financial JSON, and how the app stays honest when data is missing.',
+
+    tldr: [
+      'Two sources: structured financial JSON for numbers + transcript retrieval for narrative',
+      'Modes exist because “exact metrics” and “strategy analysis” require different retrieval',
+      'Grounding rule: no evidence, no claim (otherwise “Not found in provided sources”)',
+      'Streaming UX surfaces tools, sources, and timing so answers are debuggable'
+    ],
+
+    coreInsight: 'RAG quality is mostly determined before generation. The job is not “make the model smarter” — it’s “put the right evidence on the desk, then force the model to cite it.”',
+
+    contentPath: 'docs/blog/clarity-3-rag-strategy.md',
+  },
+  {
     id: 'dense-vs-hybrid-search',
     title: 'Dense vs Hybrid Search: What We Actually Learned',
     subtitle: 'Spoiler: It\'s not as simple as "hybrid is better"',

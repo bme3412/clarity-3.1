@@ -1,0 +1,101 @@
+{
+  "id": "unanswerable-7",
+  "run_id": "2025-12-10T15-45-58-667Z",
+  "strategy_id": "baseline",
+  "question": "What were Oracle's capital expenditures in Q4 2016?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts with Citations\n- No Q4 2016 capital expenditure data found in provided sources\n- Available context covers Q1 2026 only [C1, C2]\n- Q4 2016 capex figures: Not found in provided sources\n Final Answer\nCapital Expenditures Q4 2016: Not found in provided sources.\nThe provided context contains Oracle financial data for Q1 2026 [C1, C2] but does not include any capital expenditure information for Q4 2016. To provide accurate capex figures for that specific quarter, additional source materials covering Oracle's Q4 2016 financial results would be required.",
+  "duration_ms": 8807,
+  "metrics": {
+    "relevance": {
+      "score": 0.7,
+      "reasoning": "The answer is relevant to the question as it directly addresses the query about Oracle's Q4 2016 capital expenditures. While it doesn't provide the actual figure, it appropriately acknowledges that the information is not available in the provided sources and explains why (the sources only cover Q1 2026). This is a valid and honest response when the requested data isn't available, though it doesn't fully answer the question with the actual capex figure."
+    },
+    "faithfulness": {
+      "score": 1,
+      "reasoning": "The answer is completely faithful to the provided context. The context only contains information about Oracle's Q1 FY2026 financial data, and the answer correctly states that Q4 2016 capital expenditure data is not found in the provided sources. The answer appropriately acknowledges the limitation of the available context (covering Q1 2026 only) and does not fabricate any information about Q4 2016 capex figures. This is an honest and accurate response given the context provided."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer correctly identifies that the Q4 2016 capital expenditure data was not found in the provided sources, which matches the ground truth. While the generated answer provides more detail (explaining that the available context covers Q1 2026 and suggesting what additional materials would be needed), it is factually consistent with the ground truth's conclusion that the information was not found."
+    }
+  },
+  "context_count": 2,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3040,
+      "embeddingMs": 258,
+      "pineconeMs": 407,
+      "financialMs": 1,
+      "keywordMs": 5,
+      "llmMs": 5094,
+      "totalMs": 8806
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 0,
+      "keywordMatches": 2,
+      "combinedContext": 2,
+      "filtersApplied": {
+        "company": "ORCL",
+        "fiscal_year": "2016",
+        "quarter": "Q4"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "Q4 2016",
+      "company_name": "ORCL",
+      "isComparisonQuery": false,
+      "primaryTicker": "ORCL"
+    },
+    "llm": {
+      "input_tokens": 878,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 152,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "keyword-2026-Q1-qa",
+      "score": 0.5800000000000001,
+      "metadata": {
+        "company": "ORCL",
+        "quarter": "Q1",
+        "fiscalYear": "2026",
+        "type": "transcript_qa",
+        "source": "data/transcripts/ORCL/FY_2026/Q1/parsed_earnings/ORCL_FY2026_Q1_qa.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Oracle\", \"quarter\": \"Q1\", \"fiscal_year\": \"2026\", \"speakers\": { \"ken_bond\": { \"role\": \"Head of Investor Relations\", \"responses\": [ { \"topic\": \"Call logistics\", \"content\": \"Replay of the conference call"
+      }
+    },
+    {
+      "id": "keyword-2026-Q1-earnings",
+      "score": 0.42000000000000004,
+      "metadata": {
+        "company": "ORCL",
+        "quarter": "Q1",
+        "fiscalYear": "2026",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/ORCL/FY_2026/Q1/parsed_earnings/ORCL_FY2026_Q1_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Oracle\", \"quarter\": \"Q1\", \"fiscal_year\": \"2026\", \"financials\": { \"total_revenue\": { \"value\": 14.9, \"unit\": \"billion USD\", \"yoy_growth_usd\": \"+12%\", \"yoy_growth_constant_currency\": \"+11%\", \"context\": \"Q1 FY26 wh"
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 0.580)\n{ \"company_name\": \"Oracle\", \"quarter\": \"Q1\", \"fiscal_year\": \"2026\", \"speakers\": { \"ken_bond\": { \"role\": \"Head of Investor Relations\", \"responses\": [ { \"topic\": \"Call logistics\", \"content\": \"Replay of the conference call\n\n[Chunk 2] (Score: 0.420)\n{ \"company_name\": \"Oracle\", \"quarter\": \"Q1\", \"fiscal_year\": \"2026\", \"financials\": { \"total_revenue\": { \"value\": 14.9, \"unit\": \"billion USD\", \"yoy_growth_usd\": \"+12%\", \"yoy_growth_constant_currency\": \"+11%\", \"context\": \"Q1 FY26 wh",
+  "created_at": "2025-12-10T16:18:32.727Z",
+  "category": "unanswerable"
+}

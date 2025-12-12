@@ -1,0 +1,100 @@
+{
+  "id": "unanswerable-9",
+  "run_id": "2025-12-10T16-28-35-648Z",
+  "strategy_id": "baseline",
+  "question": "Did Broadcom report FY2016 networking segment revenue?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts with Citations\n- FY2016 networking segment revenue: Not found in provided sources.\n- FY2016 total segment revenue breakdown: Not found in provided sources.\n- FY2016 year-over-year growth rates: Not found in provided sources.\n- FY2016 segment margins: Not found in provided sources.\n Final Answer\nFY2016 networking segment revenue and segment revenue data: Not found in provided sources.\nThe provided context contains only Q3 2025 financial information for Broadcom, including total revenue of $15.95B (+22% YoY) [C2]. No FY2016 segment-level revenue data, networking segment performance, or historical segment breakdowns are available in the provided sources.",
+  "duration_ms": 12026,
+  "metrics": {
+    "relevance": {
+      "score": 0.8,
+      "reasoning": "The answer is relevant to the question as it directly addresses whether Broadcom reported FY2016 networking segment revenue. The answer clearly states that this information was not found in the provided sources and explains why (the sources only contain Q3 2025 data). While the answer doesn't provide the actual FY2016 data, it appropriately responds to the question by indicating the information is not available in the given context, which is a valid and relevant response."
+    },
+    "faithfulness": {
+      "score": 1,
+      "reasoning": "The answer is completely faithful to the provided context. The generated answer correctly states that FY2016 data is not found in the provided sources, which is accurate since the context only contains Q3 2025 financial information for Broadcom. The answer appropriately cites the Q3 2025 revenue figure ($15.95B, +22% YoY) from the context and explicitly acknowledges that no FY2016 segment-level data is available. The answer does not hallucinate or fabricate any information not present in the context."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer correctly identifies that the FY2016 networking segment revenue information is not found in the provided sources, which matches the ground truth. The generated answer provides additional context explaining why (the sources only contain Q3 2025 data), but this additional detail is consistent with and supports the 'not found' conclusion. The answer is accurate and does not contradict the ground truth."
+    }
+  },
+  "context_count": 2,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3221,
+      "embeddingMs": 247,
+      "pineconeMs": 410,
+      "financialMs": 1,
+      "keywordMs": 5,
+      "llmMs": 8142,
+      "totalMs": 12026
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 0,
+      "keywordMatches": 2,
+      "combinedContext": 2,
+      "filtersApplied": {
+        "company": "AVGO",
+        "fiscal_year": "2016"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "FY2016",
+      "company_name": "AVGO",
+      "isComparisonQuery": false,
+      "primaryTicker": "AVGO"
+    },
+    "llm": {
+      "input_tokens": 874,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 173,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "keyword-2025-Q3-qa",
+      "score": 1.2,
+      "metadata": {
+        "company": "AVGO",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AVGO/FY_2025/Q3/parsed_earnings/AVGO_FY2025_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Broadcom\", \"quarter\": \"Q3\", \"fiscal_year\": \"2025\", \"speakers\": { \"hock_tan\": { \"role\": \"President and CEO\", \"responses\": [ { \"topic\": \"Q3 2025 Financial Highlights\", \"content\": \"Q3 revenue was a recor"
+      }
+    },
+    {
+      "id": "keyword-2025-Q3-earnings",
+      "score": 0.6142857142857143,
+      "metadata": {
+        "company": "AVGO",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/AVGO/FY_2025/Q3/parsed_earnings/AVGO_FY2025_Q3_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Broadcom Inc.\", \"quarter\": \"Q3\", \"fiscal_year\": \"2025\", \"financials\": { \"total_revenue\": { \"value\": 15952, \"unit\": \"million USD\", \"year_over_year_change\": \"+22%\", \"constant_currency_growth\": \"N/A\", \"context\": \""
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 1.200)\n{ \"company_name\": \"Broadcom\", \"quarter\": \"Q3\", \"fiscal_year\": \"2025\", \"speakers\": { \"hock_tan\": { \"role\": \"President and CEO\", \"responses\": [ { \"topic\": \"Q3 2025 Financial Highlights\", \"content\": \"Q3 revenue was a recor\n\n[Chunk 2] (Score: 0.614)\n{ \"company_name\": \"Broadcom Inc.\", \"quarter\": \"Q3\", \"fiscal_year\": \"2025\", \"financials\": { \"total_revenue\": { \"value\": 15952, \"unit\": \"million USD\", \"year_over_year_change\": \"+22%\", \"constant_currency_growth\": \"N/A\", \"context\": \"",
+  "created_at": "2025-12-10T17:03:50.025Z",
+  "category": "unanswerable"
+}
