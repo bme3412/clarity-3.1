@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import EvalsDashboardClient from './components/EvalsDashboard.client';
 
 function loadReport() {
@@ -86,12 +87,20 @@ export default function EvalsPage() {
               />
             </div>
 
-            <EvalsDashboardClient
-              caseSummaries={caseSummaries}
-              runId={runId}
-              strategyId={strategyId}
-              datasetLabel={datasetLabel}
-            />
+            <Suspense
+              fallback={
+                <div className="rounded-xl border border-slate-200 bg-white shadow-sm p-6 text-slate-600">
+                  Loading evals…
+                </div>
+              }
+            >
+              <EvalsDashboardClient
+                caseSummaries={caseSummaries}
+                runId={runId}
+                strategyId={strategyId}
+                datasetLabel={datasetLabel}
+              />
+            </Suspense>
           </>
         )}
       </div>
