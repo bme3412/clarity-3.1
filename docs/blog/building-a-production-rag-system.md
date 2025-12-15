@@ -1,377 +1,291 @@
-# Building Production-Grade RAG: Engineering Trade-offs in Clarity 3.0
+# Building Production-Grade RAG in Clarity 3.0
 
-*How we improved an AI-powered financial intelligence platform by fixing retrieval, latency, and trust—one bottleneck at a time.*
+**The engineering decisions that moved accuracy, faithfulness, and latency in a financial-intelligence RAG system**
+
+*10 min read · RAG · Evaluation · Hybrid Search · Latency · Grounding*
 
 ---
+
+Clarity 3.0 is a financial-intelligence RAG system 
+This post is about the engineering decisions that made Clarity feel production-grade: fewer hallucinations, faster responses, and better transparency. Not based on vibes, but grounded in an evaluation loop.
 
 ## TL;DR
 
-- Four levers moved faithfulness from **73% → 94%**: reranking, hierarchical chunking, intent-aware filtering, and hybrid dense+sparse retrieval.
-- Latency dropped from **16.8s → 8.2s** after query-aware filtering reduced candidate sets and model swaps cut TTFT.
-- Reranking is the single highest-ROI change (+7.8% faithfulness for ~$0.001 and +180ms).
-- Hybrid (dense + BM25) is non-negotiable for exact numbers and ticker/metric lookups.
+- **Treat faithfulness as the north star** — if retrieval is wrong, the model is forced to guess
+- **Split evidence into two lanes** — structured financial JSON for numbers + transcript chunks for narrative
+- **Hybrid retrieval matters for exactness** — quarters, tickers, metric terms, product names
+- **Latency is two projects** — real speed (TTFT/total time) and perceived speed (streaming + observability)
 
-### Latest Eval Snapshot
+## Current Performance
 
-| Run | Relevance | Faithfulness | Accuracy | Avg Latency |
-|-----|-----------|--------------|----------|-------------|
-| `2025-12-08T01-52-04-686Z` | 0.90 | 0.64 | 0.94 | 15.7s |
-| First baseline (`2025-11-26T23-37-10-506Z`) | 0.98 | 0.63 | 0.95 | 14.9s |
-| Δ (latest vs first) | -0.09 | +0.01 | -0.01 | +0.8s |
+**Latest evaluation run** (December 10, 2025):
 
----
+| Metric | Score |
+|--------|-------|
+| Relevance | 82.1% |
+| Faithfulness | 89.5% |
+| Accuracy | 79.5% |
+| Avg Latency | 8.8s |
 
-## Table of Contents
+This represents significant improvement from the baseline documented in early iterations:
 
-1. [Problem & Goal](#problem--goal)
-2. [Baseline: Architecture & Metrics](#baseline-architecture--metrics)
-3. [Diagnostics: Why It Failed](#diagnostics-why-it-failed)
-4. [Experiment 1: Reranking](#experiment-1-reranking)
-5. [Experiment 2: Hierarchical Chunking](#experiment-2-hierarchical-chunking)
-6. [Experiment 3: Query-Aware Retrieval](#experiment-3-query-aware-retrieval)
-7. [Experiment 4: Hybrid Search](#experiment-4-hybrid-search)
-8. [Performance & UX Tune-Ups](#performance--ux-tune-ups)
-9. [Final Architecture](#final-architecture)
-10. [Final Metrics & Attribution](#final-metrics--attribution)
-11. [Lessons Learned](#lessons-learned)
-12. [What's Next](#whats-next)
-13. [Closing Thoughts](#closing-thoughts)
-14. [Resources](#resources)
-15. [Appendix: Evaluation Framework](#appendix-evaluation-framework)
+| Metric | Baseline | Current | Change |
+|--------|----------|---------|--------|
+| Relevance | 77.3% | 82.1% | +4.8pp |
+| Faithfulness | 77.0% | 89.5% | +12.5pp |
+| Accuracy | 65.0% | 79.5% | +14.5pp |
+| Latency | 19.5s | 8.8s | 55% faster |
 
----
+But the numbers alone don't tell the story. The real wins came from understanding *which questions fail and why*.
 
-## Problem & Goal
+## What "Production-Grade" Meant for This Project
 
-I needed reliable answers to complex questions about public company earnings—numbers, strategy, guidance—without hallucinations. Earnings transcripts are dense and lengthy; traditional search misses nuance. The goal: production-grade RAG with **high faithfulness, fast responses, and transparent behavior**.
+For Clarity, "production-grade" wasn't about deployment scale. It meant:
 
----
+1. **Measurable quality** — relevance, faithfulness, accuracy scored on a golden dataset
+2. **Measurable performance** — time-to-first-token (TTFT) + total latency tracked per query
+3. **Operational trust** — show what was retrieved, which tools ran, and why the system is confident
 
-## Baseline: Architecture & Metrics
+The key realization: **RAG quality is mostly decided before the model starts generating.** If retrieval is wrong, prompting can't save you.
 
-**Architecture v1.0**
-```
-User Query → Voyage Embedding → Pinecone (Dense) → Top-12 Chunks → Claude → Answer
-```
-- Stack: Voyage AI `voyage-3.5`, Pinecone Serverless, 1500-token chunks (200 overlap), dense top-12, Claude Sonnet 4.
+## The Evaluation Loop (The Thing That Made Progress Real)
 
-**Baseline Metrics (50 Qs across financial, strategic, trend, comparison, quotes)**
+Early on, I kept "fixing" the system and then arguing with myself about whether it got better. The fix was boring but decisive:
 
-| Metric | Score | Target |
-|--------|-------|--------|
-| Relevance | 91.2% | >95% |
-| Faithfulness | 73.4% | >90% |
-| Accuracy | 84.6% | >90% |
-| Avg Latency | 16.8s | <8s |
+- A golden dataset of 21 questions + ground truth (`data/evaluation/dataset.json`)
+- Repeatable runs that store artifacts in `evaluation_reports/<strategy>/<run_id>/`
+- A summary snapshot (`evaluation_report.json`) for quick comparisons
+- Strategy versioning so changes are testable and reversible
 
-Hallucinations in ~1 of 4 responses and ~17s latency made this unusable.
+Looking at the current eval breakdown by category:
 
----
+- **Unanswerable queries** (10/21) — mostly 80-100% accuracy, properly refusing to hallucinate
+- **Financial queries** (3/21) — 85-100% accuracy when data exists
+- **Strategy queries** (3/21) — 75-100% accuracy on narrative questions
+- **Market/comparison** (3/21) — 30-60% accuracy, still the weakest category
+- **Executive/guidance** (2/21) — 20-60% accuracy, needs improvement
 
-## Diagnostics: Why It Failed
+**Why this matters:** Without a fixed dataset and repeatable runs, "improvements" are just anecdotes. The eval dashboard became the single source of truth.
 
-Example miss:
-```
-Question: "What is AMD's AI strategy for 2025?"
-Context: Three financial-summary chunks.
-Answer: Strategic claims not in context → hallucination.
-```
+## Baseline Failure Modes (And Why Prompting Didn't Save It)
 
-| Failure Type | % | Cause |
-|--------------|----|-------|
-| Wrong content type | 42% | Financials retrieved for strategy questions |
-| Insufficient context | 28% | Relevant info existed but not in top-12 |
-| Chunk boundary issues | 18% | Key info split across chunks |
-| True data gaps | 12% | Info absent from corpus |
+The early evaluation exposed a pattern in failures:
 
-Retrieval quality—not prompting—was the bottleneck.
+### Wrong Content Type Retrieved
 
----
+Strategic questions like "What did AMD's CEO say about AI demand?" pulled financial context, and the model "filled in" missing narrative → faithfulness collapsed to 60%.
 
-## Experiment 1: Reranking
+### Coverage Gaps
 
-**Hypothesis**
-> Cross-encoder reranking will filter out irrelevant semantic hits and raise faithfulness.
+Missing embeddings meant some companies returned zero semantic matches → accuracy dropped below 50% on those queries.
 
-**Implementation**
-```
-Query → Voyage (Top-50) → Cohere rerank-english-v3.0 → Top-8 → Claude
-```
-- Cost: ~$0.001/query
-- Latency: +180ms
+### Exactness Failures
 
-**Results**
+Dense embeddings are great at meaning, terrible at "Q3 FY2025" vs "Q2 FY2025." Questions like "What was AMD's total revenue in Q3 2024?" would retrieve Q2 data and confidently report wrong numbers.
 
-| Metric | Baseline | + Reranking | Δ |
-|--------|----------|-------------|---|
-| Relevance | 91.2% | 93.1% | +1.9% |
-| Faithfulness | 73.4% | **81.2%** | **+7.8%** |
-| Accuracy | 84.6% | 87.3% | +2.7% |
-| Latency | 16.8s | 17.0s | +0.2s |
+### Fiscal Calendar Traps
 
-**Verdict:** ✅ Ship it. Retrieve more, then filter aggressively.
+"Latest quarter" isn't universal across companies. Asking "Compare NVDA vs AMD latest quarter" could silently answer with stale quarters for one company.
 
----
+**Diagnosis:** Retrieval—not prompting—was the bottleneck.
 
-## Experiment 2: Hierarchical Chunking
+## Decision #1: Two Evidence Lanes (Numbers vs Narrative)
 
-**Hypothesis**
-> Retrieve with small chunks; deliver context with larger parents to avoid boundary cuts.
+Clarity ended up with a simple rule: **use the best source for the type of claim**.
 
-**Implementation**
-- Leaf chunks: 400 tokens (retrieval)
-- Parent chunks: 1600 tokens (context)
-- Each leaf stores `parent_id`; dedupe parents before LLM.
+### Lane A — Structured Financial JSON for Numbers
 
-**Results**
+- **Source:** `data/financials/`
+- **Best for:** revenue, margins, EPS, cash flow, segment metrics
+- **Property:** deterministic retrieval (less hallucination pressure)
 
-| Metric | + Reranking | + Hierarchical | Δ |
-|--------|-------------|----------------|---|
-| Relevance | 93.1% | 94.2% | +1.1% |
-| Faithfulness | 81.2% | **85.7%** | **+4.5%** |
-| Accuracy | 87.3% | **91.4%** | **+4.1%** |
-| Latency | 17.0s | 17.3s | +0.3s |
+### Lane B — Transcript Retrieval for Narrative
 
-**Verdict:** ✅ Ship it. Precision to find; completeness to reason.
+- **Source:** embedded transcript chunks (with ticker/year/quarter metadata)
+- **Best for:** strategy, risks, guidance commentary, competitive positioning
 
----
+**Trade-off:** Two retrieval paths and two schemas to maintain.
 
-## Experiment 3: Query-Aware Retrieval
+**Payoff:** Numbers stop being "best guesses," and qualitative answers become auditable.
 
-**Hypothesis**
-> Use intent to search only the right content types (financials vs strategy vs guidance).
+**Evidence from evals:** Financial queries now achieve 85-100% accuracy when the data exists in the structured lane. Before this split, the system would try to extract numbers from transcript text, leading to extraction errors and hallucinations.
 
-**Implementation**
-- Intent classifier drives filters (`content_type`, ticker, timeframe).
-- Requires rich ingestion metadata (e.g., `prepared_remarks`, `guidance`, `has_metrics`).
+## Decision #2: Hybrid Retrieval (Dense + Sparse) to Fix Keyword Blindness
 
-**Results**
+Dense embeddings answer: *"What does this mean?"*
 
-| Metric | + Hierarchical | + Query-Aware | Δ |
-|--------|----------------|---------------|---|
-| Relevance | 94.2% | 95.8% | +1.6% |
-| Faithfulness | 85.7% | **90.3%** | **+4.6%** |
-| Accuracy | 91.4% | 92.1% | +0.7% |
-| Latency | 17.3s | **16.1s** | -1.2s |
+Finance questions often require: *"Where is this exact string?"*
 
-**Verdict:** ✅ Ship it. Metadata at ingestion pays off at query time.
+So hybrid became non-optional:
 
----
+- **Dense vectors** for semantic understanding ("How is Meta investing in AI infrastructure?")
+- **Sparse/BM25-style** for exact matching ("Q3 2024," "MI325X," "Data Center segment")
+- **Blended scoring** in Pinecone
 
-## Experiment 4: Hybrid Search
+The core lesson:
 
-**Hypothesis**
-> Combine dense semantics with BM25 exact match to catch numbers, tickers, and periods.
+- Hybrid helps where you expect (exact numbers/exact terms)
+- Dense still wins many conceptual queries
+- **Coverage parity matters more than the algorithm** — a smaller index loses even if retrieval is "better"
 
-**Implementation**
-- Dense (Voyage) top-30 + Sparse (BM25) top-30
-- Reciprocal Rank Fusion (k=60), then Cohere rerank on top-50
+**Trade-off:** Index migration and re-embedding work.
 
-**Results**
+**Payoff:** Better recall for exact terms, and in practice, hybrid can be faster at retrieval.
 
-| Metric | + Query-Aware | + Hybrid | Δ |
-|--------|---------------|----------|---|
-| Relevance | 95.8% | **97.2%** | +1.4% |
-| Faithfulness | 90.3% | 92.1% | +1.8% |
-| Accuracy | 92.1% | **94.8%** | +2.7% |
-| Latency | 16.1s | 16.8s | +0.7s |
+**Evidence from evals:** Questions with exact terms like "What was AMD's total revenue in Q3 2024?" now score 100% relevance and 85% faithfulness. Before hybrid, these would often retrieve adjacent quarters or miss entirely.
 
-**Verdict:** ✅ Ship it. Dense finds meaning; sparse nails exact terms.
+## Decision #3: Fiscal-Year Intelligence ("Latest" Must Mean Latest Per Company)
 
----
+Financial apps have a hidden landmine: fiscal calendars differ. If you treat "latest" as a single global period, cross-company comparisons silently go wrong.
 
-## Performance & UX Tune-Ups
+Clarity introduced `fiscalYear: "latest"` so "latest" resolves per ticker.
 
-Starting point: TTFT 22.8s, dense-only search, no observability, Opus 4.5. Tackled bottlenecks in order: retrieval quality → model latency → user perception.
+**Trade-off:** Extra lookup/caching complexity.
 
-**Changes**
+**Payoff:** Eliminates a class of silent wrong-quarter answers.
 
-1) Hybrid search via sparse vectors → retrieval 1716ms → 985ms (43% faster); rollback-safe new index.  
-2) Model swap (Opus 4.5 → Sonnet 4.5) → TTFT 22.8s → 16.5s; total 30.0s → 20.9s; model is env-configurable.  
-3) Fiscal-year intelligence → auto-detect calendars; `fiscalYear: "latest"` aligns comparisons.  
-4) Observability → real-time status, behind-the-scenes panel (tools, chunks, scores), lightweight metrics (TTFT, latency).  
-5) Data extraction hardening → fallbacks for margin paths; derived metrics (gross_profit, net_margin, diluted EPS).  
-6) UX polish → chat-style layout, streaming with status, example queries only prefill.
+**Evidence from evals:** Before this, comparison questions like "Compare NVDA vs AMD latest quarter" scored 30% accuracy because one company would be months behind. Still a weak point in current evals, but at least now the system *knows* when quarters don't align.
 
-**Before / After (baseline strategy run)**
+## Decision #4: Schema Hardening for Real-World Financial JSON
 
-| Metric | Before | After | Impact |
-|--------|--------|-------|--------|
-| TTFT | 22.8s | 16.5s | 28% faster |
-| Total time | 30.0s | 20.9s | 30% faster |
-| Retrieval | 1716ms | 985ms | 43% faster |
-| Relevance | 51% | 65% | Better matches |
-| Faithfulness | 0.63 | 0.94 | +49% |
-| Search type | Dense only | Hybrid | Semantic + keyword |
-| Observability | None | Full | Full transparency |
+Even "structured" data is messy. Margin fields appear under different paths depending on company/source/version.
 
-Takeaway: measure, make trade-offs explicit, preserve optionality, and treat observability/UX as first-class.
+Clarity moved to explicit fallback chains so metrics like gross margin are consistently found.
 
----
+**Trade-off:** More code paths to maintain.
 
-## Final Architecture
+**Payoff:** Fewer false "not found" responses and fewer brittle failures as schemas drift.
 
-After the four experiments, the flow moved from simple embed→retrieve→generate to a layered pipeline:
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                         USER QUERY                               │
-└─────────────────────────────────────────────────────────────────┘
-                                │
-                                ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    INTENT CLASSIFICATION                         │
-│  • Query type (financial/strategic/comparison/guidance)          │
-│  • Company detection                                             │
-│  • Timeframe extraction                                          │
-└─────────────────────────────────────────────────────────────────┘
-                                │
-                                ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                      HYBRID RETRIEVAL                            │
-│  ┌─────────────┐    ┌─────────────┐                             │
-│  │   Dense     │    │   Sparse    │                             │
-│  │  (Voyage)   │    │   (BM25)    │                             │
-│  │   Top-30    │    │   Top-30    │                             │
-│  └──────┬──────┘    └──────┬──────┘                             │
-│         │                  │                                     │
-│         └────────┬─────────┘                                     │
-│                  ▼                                               │
-│         Reciprocal Rank Fusion (Top-50)                          │
-└─────────────────────────────────────────────────────────────────┘
-                                │
-                                ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    METADATA FILTERING                            │
-│  • content_type matches intent                                   │
-│  • company = detected ticker                                     │
-│  • timeframe = detected period                                   │
-└─────────────────────────────────────────────────────────────────┘
-                                │
-                                ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                      RERANKING                                   │
-│  Cohere rerank-english-v3.0 (50 → 8)                             │
-└─────────────────────────────────────────────────────────────────┘
-                                │
-                                ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                  PARENT CHUNK EXPANSION                          │
-│  Leaf chunks → Parent chunks (4x context)                        │
-│  Deduplicate overlapping parents                                 │
-└─────────────────────────────────────────────────────────────────┘
-                                │
-                                ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                      LLM SYNTHESIS                               │
-│  Claude claude-sonnet-4-5-20250929 (streaming)                   │
-│  System prompt with query-specific instructions                  │
-└─────────────────────────────────────────────────────────────────┘
-                                │
-                                ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                         RESPONSE                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+## Decision #5: Latency Was Two Separate Projects
 
----
+### Part A — Real Latency Improvements
 
-## Final Metrics & Attribution
+Documented improvements:
 
-| Metric | Baseline | Final | Improvement |
-|--------|----------|-------|-------------|
-| Relevance | 91.2% | 97.2% | +6.0% |
-| **Faithfulness** | 73.4% | **94.1%** | **+20.7%** |
-| Accuracy | 84.6% | 94.8% | +10.2% |
-| Latency | 16.8s | 8.2s | -51% |
+- **TTFT:** 22.8s → 16.5s (28% faster) → now typically sub-10s
+- **Total time:** 30.0s → 20.9s (30% faster) → now averaging 8.8s
+- **Retrieval:** 1.7s → 0.98s (42% faster)
 
-**Cumulative Faithfulness Gains**
+These came from pragmatic choices:
 
-| Change | Δ | Cumulative |
-|--------|---|------------|
-| Baseline | — | 73.4% |
-| + Reranking | +7.8% | 81.2% |
-| + Hierarchical Chunks | +4.5% | 85.7% |
-| + Query-Aware Filtering | +4.6% | 90.3% |
-| + Hybrid Search | +1.8% | 92.1% |
-| + Prompt Tuning | +2.0% | 94.1% |
+- **Model selection** that matched the use case (interactive analysis favors lower TTFT)
+- **Less wasted work** (query routing, fewer unnecessary tool loops)
+- **Faster retrieval paths** (hybrid, narrower candidate sets)
+
+### Part B — Perceived Latency and Trust (Observability)
+
+Users don't just care about latency—they care about *what's happening* during the wait.
+
+So Clarity added:
+
+- **Pipeline stages** ("analyzing," "searching," "generating")
+- **Tool start/result events** (which tools ran, what they returned)
+- **Behind-the-scenes panel** (retrieved chunks, tool inputs/outputs, config)
+- **Lightweight metrics** (TTFT, total time, chunk counts, average relevance score)
+
+**Trade-off:** More UI state complexity and more streamed payload.
+
+**Payoff:** Less abandonment, easier debugging, and more trust.
+
+**Evidence from evals:** Latency is now consistent across query types. Financial queries (10-12s) are slightly slower than unanswerable queries (5-7s) due to structured data lookups, which is acceptable given the accuracy gains.
+
+## Decision #6: Retrieval Modes Instead of One-Size-Fits-All
+
+No single retrieval strategy is best for every question, so Clarity supports multiple modes:
+
+- **Precision/hybrid** for exact terms (quarters, tickers, products, metric names)
+- **Concept/dense** for thematic questions ("AI strategy," "monetization")
+- **Deep-dive patterns** for multi-part questions (multi-query + fusion)
+
+**Trade-off:** More branching, more strategy configs to evaluate.
+
+**Payoff:** Each query type gets a strategy designed for its failure mode.
+
+**Evidence from evals:** Strategy questions ("What is Apple's approach to AI and machine learning?") now score 95% relevance and 95% faithfulness using concept/dense. Executive quotes ("What did AMD's CEO say...") still struggle at 60% relevance because they need better speaker attribution in chunks.
+
+## The Meta-Trade-off: Flexibility vs Simplicity
+
+Clarity consistently chose optionality over hard commitments:
+
+- Strategies are versioned and comparable
+- Model selection is environment-configurable
+- Retrieval is routed by query type instead of "one best method"
+
+**Trade-off:** More moving parts.
+
+**Payoff:** Safer iteration, fewer regressions, and easier explanations when something changes.
+
+## Current Strengths and Weaknesses (From the Evals)
+
+### What Works Well (80%+ scores)
+
+1. **Unanswerable queries** — system properly refuses to hallucinate when data doesn't exist
+2. **Financial fundamentals** — revenue, margins, segment performance when data is indexed
+3. **Strategy/infrastructure** — narrative questions about company approaches and investments
+
+### What Still Needs Work (< 70% scores)
+
+1. **Executive attribution** — "What did [CEO] say about X?" struggles with speaker-level retrieval (60% relevance)
+2. **Cross-company comparisons** — fiscal calendar misalignment still causes issues (30-40% accuracy)
+3. **Guidance questions** — forward-looking statements need better chunk boundaries (60% accuracy)
+
+### Interesting Edge Cases
+
+- **"How did the AMD Data Center segment perform in Q3 2024?"** — 95% relevance/faithfulness but only 20% accuracy. The system found the right context but extracted wrong numbers. This points to extraction logic issues, not retrieval.
+
+- **"How is the cloud computing market affecting Microsoft's business?"** — 85% on all metrics. Market context questions work when they're about indexed companies, but struggle when they require general market knowledge.
+
+## Key Lessons (What Actually Mattered)
+
+### 1. Retrieval > Prompting
+
+Most answer quality is determined before the LLM sees anything. Think of the model as a brilliant analyst who can only work with documents on their desk—your job is putting the right documents there.
+
+**Proof point:** The 12.5pp improvement in faithfulness came almost entirely from better retrieval (two-lane split + hybrid), not from prompt engineering.
+
+### 2. Measure Everything (Separately)
+
+Every hour spent on evaluation infrastructure saves multiple hours of "mysterious quality" debugging. You need faithfulness AND accuracy measured separately—they fail in different ways.
+
+**Proof point:** High faithfulness (89.5%) with lower accuracy (79.5%) tells you the system is grounded but sometimes retrieves wrong context. This is fixable. High accuracy with low faithfulness would mean lucky guessing—much harder to fix.
+
+### 3. Coverage > Cleverness
+
+The best retrieval algorithm can't retrieve data that isn't embedded or indexed. Before debating dense vs hybrid vs rerankers, ensure coverage parity.
+
+**Proof point:** Several 20-30% accuracy scores in comparisons trace back to missing earnings calls or incomplete indexing, not algorithmic failures.
+
+### 4. Latency is Two Projects
+
+Real latency is compute and routing (8.8s average). Perceived latency is transparency (streaming status, tool traces, metrics). You need both for an interactive product.
+
+**Proof point:** Users tolerate 10-12s waits for complex financial queries when they can see "Analyzing financial data for AMD Q3 2024..." vs immediately giving up on a blank screen.
+
+### 5. Grounding is a Product Feature
+
+A finance tool must prefer "Not found in provided sources" over confident guesses. Users forgive missing data; they don't forgive fake certainty.
+
+**Proof point:** All 10 unanswerable queries score 70-100% accuracy by properly refusing to answer. This is a feature, not a bug.
+
+## What's Next (Based on Evals, Not Guessing)
+
+The current evaluation clearly points toward:
+
+1. **Increase embedding coverage** — several accuracy failures trace to missing companies or periods
+2. **Better executive/speaker attribution** — chunk metadata needs speaker labels for "CEO said" queries
+3. **Reranking for comparisons** — cross-company queries need better relevance scoring
+4. **Smarter guidance chunking** — forward-looking statements span multiple paragraphs poorly
+
+## Closing Thought
+
+The lesson from Clarity 3.0 isn't "hybrid search is best" or "use model X."
+
+It's this: **RAG is systems engineering.**
+
+Quality comes from coverage, retrieval, grounding rules, and evaluation discipline. Once those are strong, the model gets to be what it should be: a synthesis engine—not a guesser.
+
+The jump from 65% to 79.5% accuracy, and 77% to 89.5% faithfulness didn't come from better prompts. It came from better infrastructure.
 
 ---
 
-## Lessons Learned
-
-1. **Retrieval > Prompting.** 80% of quality is set before the LLM sees context.
-2. **Measure Everything.** Faithfulness and accuracy are distinct; both matter.
-3. **Metadata Compounds.** Tag at ingestion (content type, metrics, strategy signals).
-4. **Reranking is Underrated.** Cheapest, fastest quality lift.
-5. **Hybrid is Mandatory for Numbers.** Dense ≠ answer containment; BM25 finds exacts.
-6. **Chunking is a Trade-off.** Small to find, large to understand; use hierarchy.
-7. **Observability Builds Trust.** Status + behind-the-scenes makes latency tolerable.
-
----
-
-## What's Next
-
-- **Query Decomposition** for comparisons and multi-part asks.  
-- **Confidence Scoring** to decline when retrieval is weak.  
-- **Streaming Citations** surfaced inline as they arrive.  
-- **Fine-tuned Embeddings** on finance corpora for incremental lift.
-
----
-
-## Closing Thoughts
-
-RAG is a systems problem. The jump from 73% to 94% faithfulness came from systematic diagnosis, incremental changes, and constant measurement—not a single breakthrough. Fix retrieval first, add complexity only when it proves value, and document the trade-offs.
-
----
-
-## Resources
-
-- **Code**: [github.com/example/clarity-rag](https://github.com/example/clarity-rag) *(placeholder)*
-- **Evaluation Dataset**: 50 curated Q&A pairs for financial RAG
-- **Strategy Registry**: Version-controlled configs for reproducibility
-
-Thanks for reading! If you're building RAG for a specialized domain, I'd love to hear what's working for you. Find me on Twitter [@example](https://twitter.com/example).
-
----
-
-## Appendix: Evaluation Framework
-
-### Metrics Definitions
-
-| Metric | What It Measures | How It's Scored |
-|--------|------------------|-----------------|
-| **Relevance** | Does the answer address the question? | LLM judge (0-1) |
-| **Faithfulness** | Is the answer grounded in context? | LLM judge (0-1) |
-| **Accuracy** | Does the answer match ground truth? | LLM judge (0-1) |
-| **Latency** | End-to-end response time | Wall clock (ms) |
-
-### Sample Test Cases
-
-```json
-[
-  {
-    "id": "fin-1",
-    "question": "What was AMD's total revenue in Q3 2024?",
-    "ground_truth": "AMD's total revenue in Q3 2024 was $6.8 billion, up 18% YoY.",
-    "category": "financial_specific",
-    "difficulty": "easy"
-  },
-  {
-    "id": "strat-3",
-    "question": "How does Nvidia's AI moat compare to AMD's?",
-    "ground_truth": "Nvidia's moat is CUDA ecosystem lock-in; AMD competes with open ROCm.",
-    "category": "comparison",
-    "difficulty": "hard"
-  }
-]
-```
-
-### Running Evaluations
-
-```bash
-# Run evaluation with specific strategy
-RAG_STRATEGY_ID=v1.4-hybrid node scripts/evaluate-rag.js
-
-# Generate comparison report
-node scripts/generate-eval-report.js --format=markdown
-```
+*Clarity 3.0 is an open-source financial RAG system. Evaluation framework and metrics available at [repository link].*

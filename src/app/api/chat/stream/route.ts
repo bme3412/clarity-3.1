@@ -6,6 +6,7 @@ import { createTrace, flush } from '../../../../lib/observability/langfuse.js';
 import { StreamChatRequestSchema, formatValidationError, type ChatMessage } from '../../../../lib/schemas/api';
 import { sanitizeText, summarizeViolations } from '../../../../lib/prompts/guardrails.js';
 import { getDataFreshness } from '../../../../lib/data/freshness.js';
+import { withRetry } from '../../../../lib/utils/resilience';
 
 // =============================================================================
 // TYPES
@@ -54,6 +55,9 @@ const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 //   - claude-sonnet-4-20250514 (fast, great quality - RECOMMENDED)
 //   - claude-opus-4-5-20251101 (slow, best quality)
 const MODEL = process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-20250514';
+// Optional: fallback model used ONLY when Anthropic is overloaded (529).
+// Keep this unset unless you want automatic fallback behavior.
+const FALLBACK_MODEL = process.env.ANTHROPIC_FALLBACK_MODEL;
 
 // Limits to prevent excessive tool usage
 const MAX_TOOL_LOOPS = 4;  // Reduced from 8
@@ -68,38 +72,72 @@ if (!ANTHROPIC_API_KEY) {
 // =============================================================================
 
 async function callAnthropic(payload: Record<string, unknown>): Promise<AnthropicResponse> {
-  const res = await fetch(ANTHROPIC_URL, {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'x-api-key': ANTHROPIC_API_KEY!,
-      'anthropic-version': '2023-06-01'
-    },
-    body: JSON.stringify({ ...payload, model: MODEL })
-  });
-  
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Anthropic error ${res.status}: ${text}`);
+  const run = (model: string) =>
+    withRetry(async () => {
+      const res = await fetch(ANTHROPIC_URL, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-api-key': ANTHROPIC_API_KEY!,
+          'anthropic-version': '2023-06-01'
+        },
+        body: JSON.stringify({ ...payload, model })
+      });
+      
+      if (!res.ok) {
+        const text = await res.text();
+        // Preserve status + body in message so retry logic can match patterns like "overloaded"
+        throw new Error(`Anthropic error ${res.status}: ${text}`);
+      }
+      
+      return res.json();
+    }, { maxAttempts: 3, baseDelayMs: 800 });
+
+  try {
+    return await run(MODEL);
+  } catch (err) {
+    const e = err as Error;
+    const isOverloaded = /Anthropic error 529/i.test(e.message) || /overloaded/i.test(e.message);
+    if (isOverloaded && FALLBACK_MODEL && FALLBACK_MODEL !== MODEL) {
+      console.warn(`[api/chat/stream] Anthropic overloaded on ${MODEL}; retrying with fallback model ${FALLBACK_MODEL}`);
+      return await run(FALLBACK_MODEL);
+    }
+    throw err;
   }
-  
-  return res.json();
 }
 
 async function* streamAnthropicResponse(payload: Record<string, unknown>): AsyncGenerator<string> {
-  const res = await fetch(ANTHROPIC_URL, {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'x-api-key': ANTHROPIC_API_KEY!,
-      'anthropic-version': '2023-06-01'
-    },
-    body: JSON.stringify({ ...payload, model: MODEL, stream: true })
-  });
-  
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Anthropic error ${res.status}: ${text}`);
+  const initStream = (model: string) =>
+    withRetry(async () => {
+      const r = await fetch(ANTHROPIC_URL, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-api-key': ANTHROPIC_API_KEY!,
+          'anthropic-version': '2023-06-01'
+        },
+        body: JSON.stringify({ ...payload, model, stream: true })
+      });
+      
+      if (!r.ok) {
+        const text = await r.text();
+        throw new Error(`Anthropic error ${r.status}: ${text}`);
+      }
+      return r;
+    }, { maxAttempts: 3, baseDelayMs: 800 });
+
+  let res: Response;
+  try {
+    res = await initStream(MODEL);
+  } catch (err) {
+    const e = err as Error;
+    const isOverloaded = /Anthropic error 529/i.test(e.message) || /overloaded/i.test(e.message);
+    if (isOverloaded && FALLBACK_MODEL && FALLBACK_MODEL !== MODEL) {
+      console.warn(`[api/chat/stream] Anthropic overloaded on ${MODEL}; retrying stream with fallback model ${FALLBACK_MODEL}`);
+      res = await initStream(FALLBACK_MODEL);
+    } else {
+      throw err;
+    }
   }
   
   if (!res.body) {
@@ -179,6 +217,50 @@ function isLikelyFinancial(msg: string): boolean {
   return ['revenue', 'growth', 'margin', 'guidance', 'data center', 'datacenter', 'earnings'].some((k) =>
     text.includes(k)
   );
+}
+
+function detectRequestedFinancialMetrics(msg: string): string[] {
+  const text = msg.toLowerCase();
+  const metrics = new Set<string>();
+  if (text.includes('gross margin') || text.includes('gross_margin')) metrics.add('gross_margin');
+  if (text.includes('operating margin') || text.includes('operating_margin')) metrics.add('operating_margin');
+  if (text.includes('net margin') || text.includes('net_margin')) metrics.add('net_margin');
+  if (text.includes('gross profit') || text.includes('gross_profit')) metrics.add('gross_profit');
+  if (text.includes('operating income') || text.includes('operating_income') || text.includes('opinc')) metrics.add('operating_income');
+  if (text.includes('net income') || text.includes('net_income')) metrics.add('net_income');
+  if (text.includes('eps')) metrics.add('eps');
+  if (text.includes('free cash flow') || text.includes('fcf') || text.includes('free_cash_flow')) metrics.add('free_cash_flow');
+  if (text.includes('operating cash flow') || text.includes('ocf') || text.includes('operating_cash_flow')) metrics.add('operating_cash_flow');
+  if (text.includes('revenue')) metrics.add('revenue');
+
+  // If the user asked for a "trend" but didn't name a metric, default to revenue + margins.
+  const askedForTrend = text.includes('trend') || text.includes('last 4') || text.includes('last four') || text.includes('past 4') || text.includes('past four');
+  if (askedForTrend && metrics.size === 0) {
+    metrics.add('revenue');
+    metrics.add('gross_margin');
+  }
+
+  // Always include revenue for context when we have margin asks.
+  if ((metrics.has('gross_margin') || metrics.has('operating_margin') || metrics.has('net_margin')) && !metrics.has('revenue')) {
+    metrics.add('revenue');
+  }
+
+  return Array.from(metrics);
+}
+
+function formatPercent(val: unknown): string | null {
+  const n = typeof val === 'number' ? val : Number(val);
+  if (!Number.isFinite(n)) return null;
+  const pct = n <= 1 ? n * 100 : n; // tolerate 0-1 vs 0-100 representations
+  return `${pct.toFixed(1)}%`;
+}
+
+function formatMoneyCompact(val: unknown): string | null {
+  const n = typeof val === 'number' ? val : Number(val);
+  if (!Number.isFinite(n)) return null;
+  // Data is stored in millions in this project (see tool executor), keep that convention.
+  if (Math.abs(n) >= 1000) return `$${(n / 1000).toFixed(1)}B`;
+  return `$${n.toFixed(1)}M`;
 }
 
 // Enhanced system prompt with strict grounding + tool limits
@@ -493,8 +575,121 @@ export async function POST(request: NextRequest): Promise<Response> {
           controller.close();
         } catch (err) {
           const error = err as Error;
-          console.error('[stream] Error:', error.message);
-          streamData(controller, { type: 'error', error: error.message });
+          const msg = error.message || 'Unknown error';
+          const isOverloaded = /Anthropic error 529/i.test(msg) || /overloaded/i.test(msg);
+
+          // Degraded mode: if Claude is overloaded, try answering common financial trend questions
+          // directly from the structured financial dataset, so the UI still gets a response.
+          if (isOverloaded) {
+            try {
+              const detectedTicker = detectTickerFromMessage(message);
+              const wantsFinancials = isLikelyFinancial(message);
+              const requestedMetrics = detectRequestedFinancialMetrics(message);
+
+              if (detectedTicker && wantsFinancials && requestedMetrics.length) {
+                console.warn(`[stream] Anthropic overloaded; generating degraded-mode answer for ${detectedTicker}`);
+                streamData(controller, { type: 'status', message: 'Claude is overloaded — generating an answer from structured financial data…' });
+
+                const toolInput = {
+                  ticker: detectedTicker,
+                  periods: [{ fiscalYear: 'latest' }],
+                  metrics: requestedMetrics
+                };
+
+                const exec = await executeToolCallWithTracing('get_multi_quarter_metrics', toolInput, trace);
+
+                // Stream tool result for UI citations/source panel compatibility
+                streamData(controller, {
+                  type: 'tool_result',
+                  tool: 'get_multi_quarter_metrics',
+                  id: 'degraded-financials',
+                  success: exec.success,
+                  result: exec.result,
+                  error: exec.error,
+                  latencyMs: exec.latencyMs
+                });
+
+                if (exec.success && exec.result && typeof exec.result === 'object') {
+                  const r = exec.result as any;
+                  const periods = Array.isArray(r.periods) ? r.periods : [];
+
+                  // Build a compact, deterministic answer
+                  const lines: string[] = [];
+                  lines.push(`**Degraded mode (Claude overloaded):** ${detectedTicker} last 4 quarters`);
+
+                  for (const p of periods) {
+                    const periodLabel = p?.period || 'Unknown period';
+                    const m = p?.metrics || {};
+                    const parts: string[] = [];
+                    if (m.revenue != null) {
+                      const fm = formatMoneyCompact(m.revenue);
+                      if (fm) parts.push(`Revenue ${fm}`);
+                    }
+                    if (m.gross_margin != null) {
+                      const fp = formatPercent(m.gross_margin);
+                      if (fp) parts.push(`Gross margin ${fp}`);
+                    }
+                    if (m.operating_margin != null) {
+                      const fp = formatPercent(m.operating_margin);
+                      if (fp) parts.push(`Op margin ${fp}`);
+                    }
+                    if (m.net_margin != null) {
+                      const fp = formatPercent(m.net_margin);
+                      if (fp) parts.push(`Net margin ${fp}`);
+                    }
+                    if (m.eps != null) {
+                      const en = typeof m.eps === 'number' ? m.eps : Number(m.eps);
+                      if (Number.isFinite(en)) parts.push(`EPS ${en.toFixed(2)}`);
+                    }
+                    if (m.free_cash_flow != null) {
+                      const fm = formatMoneyCompact(m.free_cash_flow);
+                      if (fm) parts.push(`FCF ${fm}`);
+                    }
+                    if (m.operating_cash_flow != null) {
+                      const fm = formatMoneyCompact(m.operating_cash_flow);
+                      if (fm) parts.push(`OCF ${fm}`);
+                    }
+
+                    lines.push(`- ${periodLabel}: ${parts.length ? parts.join(' | ') : 'Not found in provided sources.'}`);
+                  }
+
+                  // Simple gross margin trend callout if present
+                  const grossMargins = periods
+                    .map((p: any) => p?.metrics?.gross_margin)
+                    .map((v: any) => (typeof v === 'number' ? v : Number(v)))
+                    .filter((v: number) => Number.isFinite(v));
+                  if (grossMargins.length >= 2) {
+                    const first = grossMargins[grossMargins.length - 1];
+                    const last = grossMargins[0];
+                    const firstPct = Number(first) <= 1 ? Number(first) * 100 : Number(first);
+                    const lastPct = Number(last) <= 1 ? Number(last) * 100 : Number(last);
+                    const delta = lastPct - firstPct;
+                    lines.push('');
+                    lines.push(`Trend: gross margin changed by ${delta >= 0 ? '+' : ''}${delta.toFixed(1)}pp over the last 4 quarters.`);
+                  }
+
+                  // Stream as content
+                  const answer = lines.join('\n');
+                  streamData(controller, { type: 'content', content: answer });
+                } else {
+                  streamData(controller, { type: 'content', content: 'Claude is overloaded and the degraded-mode data fetch failed. Please retry.' });
+                }
+
+                // Close out like a normal response
+                streamData(controller, { type: 'end', requestId });
+                await flush();
+                controller.close();
+                return;
+              }
+            } catch (fallbackErr) {
+              const fe = fallbackErr as Error;
+              console.error('[stream] Degraded-mode fallback failed:', fe.message);
+              // Fall through to normal error handling below
+            }
+          }
+
+          console.error('[stream] Error:', msg);
+          streamData(controller, { type: 'error', error: msg });
           await flush();
           controller.close();
         }

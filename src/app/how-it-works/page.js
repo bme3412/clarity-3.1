@@ -1,14 +1,10 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
 import { 
   ArrowLeft, Database, Brain, Search, Zap, 
-  FileText, Code, GitBranch, Layers, ChevronDown, ChevronRight,
+  FileText, Code, GitBranch, Layers,
   ExternalLink, Check, AlertTriangle, ShieldCheck, Gauge, ListChecks
 } from 'lucide-react';
 
-// Code snippet component with syntax highlighting simulation
 function CodeBlock({ title, language, code }) {
   return (
     <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-900">
@@ -19,37 +15,6 @@ function CodeBlock({ title, language, code }) {
       <pre className="p-4 text-sm text-slate-300 overflow-x-auto">
         <code>{code}</code>
       </pre>
-    </div>
-  );
-}
-
-// Expandable section component
-function ExpandableSection({ title, icon: Icon, children, defaultOpen = false }) {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-  
-  return (
-    <div className="border border-slate-200 rounded-xl overflow-hidden">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between px-6 py-4 bg-slate-50 hover:bg-slate-100 transition-colors"
-      >
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-            <Icon className="w-5 h-5 text-blue-600" />
-          </div>
-          <span className="font-semibold text-slate-800">{title}</span>
-        </div>
-        {isOpen ? (
-          <ChevronDown className="w-5 h-5 text-slate-400" />
-        ) : (
-          <ChevronRight className="w-5 h-5 text-slate-400" />
-        )}
-      </button>
-      {isOpen && (
-        <div className="p-6 bg-white">
-          {children}
-        </div>
-      )}
     </div>
   );
 }
@@ -108,6 +73,10 @@ export default function HowItWorks() {
                 <li><strong>Generate</strong> an answer and stream tokens to the UI.</li>
                 <li><strong>Emit</strong> metrics (latencies, retrieval stats) at the end.</li>
               </ol>
+              <div className="mt-4 text-xs text-slate-500 leading-relaxed">
+                <strong className="text-slate-700">Important:</strong> Clarity intentionally limits tool usage per request
+                to keep latency predictable and to avoid “runaway agent” behavior.
+              </div>
             </div>
 
             <div className="rounded-xl border border-slate-200 p-5 bg-white">
@@ -121,522 +90,365 @@ export default function HowItWorks() {
                 <li><strong>Streaming response</strong> (token-by-token) instead of waiting for a full block.</li>
                 <li><strong>Pipeline metrics</strong> (e.g., time-to-first-token, tool latency, avg score).</li>
               </ul>
+              <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-600">
+                The goal is simple: you should be able to answer “why did I get this answer?” by looking at sources and tool outputs,
+                without guessing what happened inside the model.
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Architecture Overview */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 mb-12 shadow-sm">
-          <h2 className="text-2xl font-bold text-slate-800 mb-6">System Architecture</h2>
-          
-          <div className="bg-slate-900 rounded-xl p-6 font-mono text-sm text-slate-300 overflow-x-auto">
-            <pre>{`
-┌─────────────────────────────────────────────────────────────────────┐
-│                         USER QUERY                                   │
-│              "What is NVIDIA's AI strategy?"                        │
-└─────────────────────────────────┬───────────────────────────────────┘
-                                  │
-                                  ▼
-┌─────────────────────────────────────────────────────────────────────┐
-│                      NEXT.JS API LAYER                               │
-│  ┌───────────────────────────────────────────────────────────────┐  │
-│  │ /api/chat/stream                                               │  │
-│  │ • Zod validation • SSE streaming • Tool orchestration         │  │
-│  └───────────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────┬───────────────────────────────────┘
-                                  │
-                                  ▼
-┌─────────────────────────────────────────────────────────────────────┐
-│                 CLAUDE (Agentic LLM, configurable)                   │
-│                                                                      │
-│   Tool Selection:                                                    │
-│   ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐    │
-│   │ get_financial_  │  │ search_earnings_│  │ compute_growth_ │    │
-│   │    metrics      │  │   transcript    │  │     rate        │    │
-│   └────────┬────────┘  └────────┬────────┘  └────────┬────────┘    │
-└────────────┼────────────────────┼────────────────────┼──────────────┘
-             │                    │                    │
-             ▼                    ▼                    ▼
-┌───────────────────┐  ┌─────────────────────────────────────────────┐
-│  LOCAL JSON DATA  │  │           PINECONE VECTOR DB                │
-│                   │  │  ┌─────────────────────────────────────┐   │
-│  data/financials/ │  │  │     11,929 vectors                  │   │
-│  • Revenue        │  │  │  ┌─────────┐  ┌─────────┐           │   │
-│  • EPS            │  │  │  │ Dense   │  │ Sparse  │           │   │
-│  • Margins        │  │  │  │ Voyage  │  │ BM25    │           │   │
-│  • Segments       │  │  │  │ 1024-dim│  │Keywords │           │   │
-│                   │  │  │  └─────────┘  └─────────┘           │   │
-└───────────────────┘  │  │      HYBRID SEARCH                  │   │
-                       │  └─────────────────────────────────────┘   │
-                       └─────────────────────────────────────────────┘
-                                         │
-                                         ▼
-                       ┌─────────────────────────────────┐
-                       │     STREAMING RESPONSE          │
-                       │  ───────────────────────▶       │
-                       │  Token-by-token via SSE         │
-                       └─────────────────────────────────┘
+        {/* Single-article technical deep dive (no accordions) */}
+        <div className="space-y-10 mb-12">
+          <h2 className="text-2xl font-bold text-slate-800">Technical deep dive</h2>
+
+          {/* Architecture Overview */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <Layers className="w-5 h-5 text-blue-600" />
+              <h3 className="text-xl font-bold text-slate-800">System architecture (end-to-end)</h3>
+            </div>
+            <p className="text-slate-600 mb-6">
+              Clarity’s core idea is simple: route questions to the right evidence source, keep tool usage bounded,
+              and stream progress so the system feels responsive and debuggable.
+            </p>
+
+            <div className="bg-slate-900 rounded-xl p-6 font-mono text-sm text-slate-300 overflow-x-auto">
+              <pre>{`
+User → /api/chat/stream (SSE)
+  → validate input
+  → infer intent + ticker/timeframe
+  → run tools (financial JSON + transcript retrieval)
+  → compile grounded context
+  → generate answer (stream tokens)
+  → emit metrics (TTFT, total time, tool timings, retrieval stats)
 `}</pre>
-          </div>
-        </div>
-
-        {/* Key Components */}
-        <div className="space-y-4 mb-12">
-          <h2 className="text-2xl font-bold text-slate-800 mb-6">Technical Deep Dive</h2>
-          
-          <ExpandableSection title="Grounding, Citations, and 'Not found in sources'" icon={FileText} defaultOpen={false}>
-            <div className="space-y-4">
-              <p className="text-slate-600">
-                Clarity optimizes for <strong>trust</strong>. The system prompt and tool layer enforce a simple rule:
-                <strong> if a number/fact is not present in tool results, it should not be stated</strong>.
-              </p>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Check className="w-4 h-4 text-emerald-600" />
-                    <h4 className="font-semibold text-emerald-800">What “good” looks like</h4>
-                  </div>
-                  <ul className="text-sm text-emerald-700 space-y-1">
-                    <li>• Every claim is backed by retrieved context</li>
-                    <li>• Numbers only come from tools (no guesswork)</li>
-                    <li>• The UI shows sources so you can verify quickly</li>
-                  </ul>
-                </div>
-                <div className="bg-amber-50 rounded-xl p-4 border border-amber-100">
-                  <div className="flex items-center gap-2 mb-2">
-                    <AlertTriangle className="w-4 h-4 text-amber-700" />
-                    <h4 className="font-semibold text-amber-900">Why you might see “Not found”</h4>
-                  </div>
-                  <ul className="text-sm text-amber-800 space-y-1">
-                    <li>• Missing quarter/year in the dataset</li>
-                    <li>• The question is too broad (needs ticker/timeframe)</li>
-                    <li>• A metric isn’t available in the structured JSON</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
-                <h4 className="font-semibold text-slate-800 mb-2 flex items-center gap-2">
-                  <Code className="w-4 h-4 text-slate-600" />
-                  Tip: ask like an analyst
-                </h4>
-                <p className="text-sm text-slate-600">
-                  Include a <strong>ticker</strong> and a <strong>timeframe</strong> when you want numbers (e.g., “AAPL Q3 FY2025 revenue and gross margin”).
-                  For strategy questions, include a focus area (e.g., “NVDA Blackwell demand + supply constraints”).
-                </p>
-              </div>
             </div>
-          </ExpandableSection>
+          </div>
 
-          <ExpandableSection title="Fiscal year (FY) handling & 'latest' behavior" icon={GitBranch} defaultOpen={false}>
-            <div className="space-y-4">
-              <p className="text-slate-600">
-                Different companies use different fiscal calendars. That means “FY2025” is not always comparable across tickers.
-                For “latest/recent/current” questions, the system prefers fetching the most recent available quarter per ticker.
+          {/* Grounding */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <FileText className="w-5 h-5 text-blue-600" />
+              <h3 className="text-xl font-bold text-slate-800">Grounding & citations: “no evidence, no claim”</h3>
+            </div>
+
+            <div className="space-y-4 text-slate-600">
+              <p>
+                Clarity optimizes for <strong>trust</strong>. The prompt and tool layer enforce a simple constraint:
+                <strong> if a number or factual claim isn’t present in tool output, it shouldn’t be stated</strong>.
+                Practically, this means you’ll sometimes see <em>“Not found in provided sources”</em>—and that’s intentional.
               </p>
 
-              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
-                <h4 className="font-semibold text-slate-800 mb-2">How to ask for clean comparisons</h4>
-                <ul className="text-sm text-slate-600 space-y-1">
-                  <li>• If you want <strong>the latest per company</strong>: say “latest” explicitly (it will auto-pick each ticker’s newest quarter).</li>
-                  <li>• If you want <strong>apples-to-apples</strong>: specify an exact fiscal quarter/year for each company (or constrain the analysis period).</li>
+              <p className="text-sm">
+                <strong className="text-slate-800">What “good” looks like:</strong> every claim is anchored to retrieved context
+                or a tool result; numeric values come from structured tools (no guessing); and sources/tool traces are visible in the UI.
+              </p>
+
+              <p className="text-sm">
+                <strong className="text-slate-800">Why you might see “Not found”:</strong> the requested quarter/year isn’t present
+                in the dataset, the question is underspecified (missing ticker or timeframe), or the metric doesn’t exist in the structured JSON.
+              </p>
+
+              <p className="text-sm">
+                <strong className="text-slate-800">How to ask for numbers (best practice):</strong> include a ticker and timeframe
+                (example: <span className="font-mono">“AAPL latest quarter revenue and gross margin”</span>). For strategy questions,
+                include a focus area (example: <span className="font-mono">“NVDA Blackwell demand + supply constraints”</span>).
+              </p>
+            </div>
+          </div>
+
+          {/* Evidence sources */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <Database className="w-5 h-5 text-blue-600" />
+              <h3 className="text-xl font-bold text-slate-800">Evidence sources: structured numbers + narrative transcripts</h3>
+            </div>
+            <p className="text-slate-600 mb-6">
+              Clarity answers questions from two complementary sources. This separation is intentional: financial answers
+              often require exact numbers, while strategy answers require grounded narrative context.
+            </p>
+
+            <div className="space-y-5 text-slate-600">
+              <div className="space-y-2">
+                <h4 className="text-sm font-semibold text-slate-800">Structured financial JSON (numbers)</h4>
+                <p className="text-sm">
+                  Use this lane for exact metrics (revenue, EPS, margins, segment figures). Deterministic retrieval reduces extraction
+                  errors and hallucination pressure.
+                </p>
+                <ul className="text-sm list-disc pl-5 space-y-1">
+                  <li>
+                    <strong className="text-slate-800">Source:</strong> <code className="font-mono">data/financials/</code>
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">Tools:</strong> <code className="font-mono">get_financial_metrics</code>,{' '}
+                    <code className="font-mono">get_multi_quarter_metrics</code>
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">“Latest” handling:</strong> resolves most recent available quarter per ticker for up-to-date answers.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="text-sm font-semibold text-slate-800">Embedded earnings transcripts (narrative)</h4>
+                <p className="text-sm">
+                  Use this lane for strategy, guidance, risks, and product positioning. Retrieval is chunk-based and metadata-filtered to
+                  keep the context grounded and auditable.
+                </p>
+                <ul className="text-sm list-disc pl-5 space-y-1">
+                  <li>
+                    <strong className="text-slate-800">Source:</strong> <code className="font-mono">data/transcripts/</code>
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">Tool:</strong> <code className="font-mono">search_earnings_transcript</code>
+                  </li>
+                  <li>
+                    <strong className="text-slate-800">Retrieval:</strong> hybrid search (dense + sparse) to capture both meaning and exact terms.
+                  </li>
                 </ul>
               </div>
             </div>
-          </ExpandableSection>
+          </div>
 
-          <ExpandableSection title="Hybrid Search Strategy" icon={Search} defaultOpen={true}>
-            <div className="space-y-4">
-              <p className="text-slate-600">
-                We combine <strong>dense vectors</strong> (semantic similarity) with <strong>sparse vectors</strong> 
-                (keyword matching) for optimal retrieval. This catches both conceptual matches and exact terms.
+          {/* Fiscal year handling */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <GitBranch className="w-5 h-5 text-blue-600" />
+              <h3 className="text-xl font-bold text-slate-800">Fiscal-year handling (and why “latest” is tricky)</h3>
+            </div>
+            <p className="text-slate-600 mb-6">
+              Different companies have different fiscal calendars, so “FY2025” doesn’t always line up across tickers.
+              For “latest/recent/current” questions, Clarity prefers fetching the most recent available quarter per ticker.
+            </p>
+
+            <p className="text-sm text-slate-600">
+              <strong className="text-slate-800">How to ask for clean comparisons:</strong> if you want the latest quarter per company, say
+              <span className="font-mono"> “latest”</span> explicitly. If you want apples-to-apples, specify an exact fiscal quarter/year (or constrain
+              the analysis window) so the system doesn’t silently compare mismatched periods.
+            </p>
+          </div>
+
+          {/* Retrieval strategy */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <Search className="w-5 h-5 text-blue-600" />
+              <h3 className="text-xl font-bold text-slate-800">Retrieval strategy: hybrid (dense + sparse)</h3>
+            </div>
+            <p className="text-slate-600 mb-6">
+              Clarity combines <strong>dense vectors</strong> (semantic similarity) with <strong>sparse vectors</strong> (keyword matching).
+              This catches both conceptual matches (“AI strategy”) and exact terms (“Q3 FY2025”, “gross margin”, “Blackwell”).
+            </p>
+
+            <div className="space-y-3 mb-6 text-slate-600">
+              <p className="text-sm">
+                <strong className="text-slate-800">Dense vectors:</strong> capture semantic meaning and work well for thematic questions, but they’re
+                weak at exact quarter/term matching.
               </p>
-              
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-blue-50 rounded-xl p-4">
-                  <h4 className="font-semibold text-blue-800 mb-2">Dense Vectors (Voyage 3.5)</h4>
-                  <ul className="text-sm text-blue-700 space-y-1">
-                    <li>• 1024 dimensions</li>
-                    <li>• Captures semantic meaning</li>
-                    <li>• &quot;AI strategy&quot; ≈ &quot;machine learning initiatives&quot;</li>
-                  </ul>
-                </div>
-                <div className="bg-emerald-50 rounded-xl p-4">
-                  <h4 className="font-semibold text-emerald-800 mb-2">Sparse Vectors (BM25)</h4>
-                  <ul className="text-sm text-emerald-700 space-y-1">
-                    <li>• Keyword frequency-based</li>
-                    <li>• Catches exact matches</li>
-                    <li>• &quot;MI300&quot;, &quot;Blackwell&quot;, &quot;Q3 FY2025&quot;</li>
-                  </ul>
-                </div>
-              </div>
-              
-              <CodeBlock 
-                title="sparseVectorizer.js" 
-                language="JavaScript"
-                code={`// BM25-style sparse vector generation
+              <p className="text-sm">
+                <strong className="text-slate-800">Sparse vectors (BM25-style):</strong> catch exact tokens (tickers, quarters, product names) and
+                improve precision for metrics and dates. They complement dense retrieval rather than replacing it.
+              </p>
+            </div>
+
+            <CodeBlock
+              title="sparseVectorizer.js (conceptual)"
+              language="JavaScript"
+              code={`// BM25-style sparse vector generation (conceptual)
 const boostTerms = {
-  'revenue': 1.5, 'margin': 1.5, 'growth': 1.5,
-  'earnings': 1.5, 'guidance': 1.5, 'outlook': 1.5
+  revenue: 1.5, margin: 1.5, growth: 1.5,
+  earnings: 1.5, guidance: 1.5, outlook: 1.5
 };
 
 function vectorize(text) {
   const tokens = tokenize(text);
   const tf = computeTermFrequency(tokens);
-  
-  // Apply financial term boosting
   for (const [term, boost] of Object.entries(boostTerms)) {
     if (tf[term]) tf[term] *= boost;
   }
-  
-  return { indices, values }; // Sparse format
+  return { indices, values };
 }`}
-              />
+            />
+          </div>
+
+          {/* Tool use */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <Brain className="w-5 h-5 text-blue-600" />
+              <h3 className="text-xl font-bold text-slate-800">Tool orchestration (bounded, evidence-first)</h3>
             </div>
-          </ExpandableSection>
+            <p className="text-slate-600 mb-6">
+              The model doesn’t “browse the whole dataset.” Instead it calls a small set of tools.
+              Tool selection is driven by intent: numeric questions pull structured metrics; narrative questions search transcripts.
+            </p>
 
-          <ExpandableSection title="Modes (Smart / Precision / Concepts / Exploratory / Deep Dive)" icon={Brain} defaultOpen={false}>
-            <div className="space-y-4">
-              <p className="text-slate-600">
-                On the landing page you can choose a retrieval “mode”. Under the hood these map to different retrieval strategies
-                optimized for different question shapes.
-              </p>
+            <div className="overflow-x-auto border border-slate-200 rounded-xl">
+              <table className="w-full text-sm bg-white">
+                <thead>
+                  <tr className="border-b border-slate-100 bg-slate-50 text-slate-600">
+                    <th className="text-left py-3 px-4 font-semibold">Query type</th>
+                    <th className="text-left py-3 px-4 font-semibold">Typical tools</th>
+                    <th className="text-left py-3 px-4 font-semibold">Evidence source</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  <tr>
+                    <td className="py-3 px-4 text-slate-700">Exact metric lookup</td>
+                    <td className="py-3 px-4 font-mono text-blue-700">get_financial_metrics</td>
+                    <td className="py-3 px-4 text-slate-600">Structured financial JSON</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 text-slate-700">Trends (“last 4 quarters”)</td>
+                    <td className="py-3 px-4 font-mono text-blue-700">get_multi_quarter_metrics</td>
+                    <td className="py-3 px-4 text-slate-600">Structured financial JSON</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 text-slate-700">Strategy / guidance / narrative</td>
+                    <td className="py-3 px-4 font-mono text-blue-700">search_earnings_transcript</td>
+                    <td className="py-3 px-4 text-slate-600">Transcript chunks (vector search)</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 text-slate-700">Growth deltas (YoY/QoQ)</td>
+                    <td className="py-3 px-4 font-mono text-blue-700">compute_growth_rate</td>
+                    <td className="py-3 px-4 text-slate-600">Computed from structured metrics</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-white rounded-xl border border-slate-200 p-4">
-                  <h4 className="font-semibold text-slate-800 mb-2">Smart Mode (auto)</h4>
-                  <p className="text-sm text-slate-600">
-                    Picks a strategy automatically based on whether your query looks numeric, conceptual, vague, or multi-part.
-                  </p>
-                </div>
-                <div className="bg-white rounded-xl border border-slate-200 p-4">
-                  <h4 className="font-semibold text-slate-800 mb-2">Precision (hybrid + keywords)</h4>
-                  <p className="text-sm text-slate-600">
-                    Best when you include specific terms (quarters, product names, metrics) that must match exactly.
-                  </p>
-                </div>
-                <div className="bg-white rounded-xl border border-slate-200 p-4">
-                  <h4 className="font-semibold text-slate-800 mb-2">Concepts (dense-only)</h4>
-                  <p className="text-sm text-slate-600">
-                    Best for thematic questions: strategy shifts, positioning, management commentary.
-                  </p>
-                </div>
-                <div className="bg-white rounded-xl border border-slate-200 p-4">
-                  <h4 className="font-semibold text-slate-800 mb-2">Exploratory (HyDE) / Deep Dive (multi-query)</h4>
-                  <p className="text-sm text-slate-600">
-                    HyDE helps vague questions by generating a “hypothetical” doc to retrieve better context.
-                    Multi-query expands your question into variations and fuses results for coverage.
-                  </p>
+          {/* Streaming */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <Zap className="w-5 h-5 text-blue-600" />
+              <h3 className="text-xl font-bold text-slate-800">Streaming UX (Server-Sent Events)</h3>
+            </div>
+            <p className="text-slate-600 mb-6">
+              Clarity uses Server-Sent Events (SSE) so the UI can show progress and stream tokens as they’re generated.
+              This reduces “dead time” and makes the pipeline observable.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6 items-start">
+              <div>
+                <h4 className="text-sm font-semibold text-slate-800 mb-3">Event types (high-level)</h4>
+                <div className="space-y-2 text-sm">
+                  {[
+                    { type: 'metadata', desc: 'Request ID + dataset freshness' },
+                    { type: 'status', desc: 'Human-readable progress (“Analyzing…”)' },
+                    { type: 'tool_start', desc: 'A tool began running' },
+                    { type: 'tool_result', desc: 'Tool output + latency' },
+                    { type: 'content', desc: 'Text tokens/chunks' },
+                    { type: 'metrics', desc: 'TTFT, total time, retrieval stats' },
+                    { type: 'end', desc: 'Stream complete' }
+                  ].map((e) => (
+                    <div key={e.type} className="flex items-center gap-2">
+                      <code className="text-blue-700 bg-white px-2 py-0.5 rounded border border-slate-200">{e.type}</code>
+                      <span className="text-slate-600">{e.desc}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
-          </ExpandableSection>
-          
-          <ExpandableSection title="Chunking & Embedding Strategy" icon={Layers}>
-            <div className="space-y-4">
-              <p className="text-slate-600">
-                Documents are split into overlapping chunks to preserve context across boundaries, 
-                particularly important for earnings call Q&A where speaker transitions matter.
-              </p>
-              
-              <div className="bg-slate-100 rounded-xl p-4 font-mono text-sm">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-slate-600">Chunk Size:</span>
-                  <span className="font-bold text-slate-800">800 characters</span>
-                </div>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-slate-600">Overlap:</span>
-                  <span className="font-bold text-slate-800">150 characters</span>
-                </div>
-                <div className="bg-white rounded-lg p-3 text-xs">
-                  <span className="text-blue-600">[Chunk 1: 800 chars]</span>
-                  <span className="text-amber-500 mx-1">◀──150──▶</span>
-                  <span className="text-emerald-600">[Chunk 2: 800 chars]</span>
-                  <span className="text-amber-500 mx-1">◀──150──▶</span>
-                  <span className="text-violet-600">[Chunk 3...]</span>
-                </div>
-              </div>
-              
-              <CodeBlock 
-                title="embed-all-voyage.js" 
-                language="JavaScript"
-                code={`// Chunking with overlap
-const CHUNK_SIZE = 800;
-const CHUNK_OVERLAP = 150;
 
-function chunkText(text) {
-  const chunks = [];
-  let start = 0;
-  
-  while (start < text.length) {
-    const end = Math.min(start + CHUNK_SIZE, text.length);
-    chunks.push(text.slice(start, end));
-    start += CHUNK_SIZE - CHUNK_OVERLAP;
-  }
-  
-  return chunks;
-}`}
-              />
-            </div>
-          </ExpandableSection>
-          
-          <ExpandableSection title="Agentic Tool Use" icon={Brain}>
-            <div className="space-y-4">
-              <p className="text-slate-600">
-                Claude dynamically selects and executes tools based on query intent. 
-                The model decides whether to fetch structured data, search transcripts, or compute metrics.
-              </p>
-              
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-slate-200">
-                      <th className="text-left py-3 px-4 font-semibold text-slate-700">Query Type</th>
-                      <th className="text-left py-3 px-4 font-semibold text-slate-700">Tool Selected</th>
-                      <th className="text-left py-3 px-4 font-semibold text-slate-700">Data Source</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-100">
-                    <tr>
-                      <td className="py-3 px-4 text-slate-600">&quot;What was AMD&apos;s revenue?&quot;</td>
-                      <td className="py-3 px-4"><code className="text-blue-600">get_financial_metrics</code></td>
-                      <td className="py-3 px-4 text-slate-500">Local JSON</td>
-                    </tr>
-                    <tr>
-                      <td className="py-3 px-4 text-slate-600">&quot;NVIDIA&apos;s AI strategy?&quot;</td>
-                      <td className="py-3 px-4"><code className="text-blue-600">search_earnings_transcript</code></td>
-                      <td className="py-3 px-4 text-slate-500">Pinecone vectors</td>
-                    </tr>
-                    <tr>
-                      <td className="py-3 px-4 text-slate-600">&quot;YoY growth rate?&quot;</td>
-                      <td className="py-3 px-4"><code className="text-blue-600">compute_growth_rate</code></td>
-                      <td className="py-3 px-4 text-slate-500">Calculated</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              
-              <CodeBlock 
-                title="tools/definitions.js" 
-                language="JavaScript"
-                code={`export const FINANCIAL_TOOLS = [
-  {
-    name: 'search_earnings_transcript',
-    description: 'Semantic search over earnings call transcripts',
-    input_schema: {
-      type: 'object',
-      properties: {
-        ticker: { type: 'string', description: 'Stock ticker' },
-        query: { type: 'string', description: 'Search query' },
-        fiscalYear: { type: 'string', description: 'e.g., 2025' },
-        topK: { type: 'number', description: 'Results to return' }
-      },
-      required: ['ticker', 'query']
-    }
-  },
-  // ... more tools
-];`}
-              />
-            </div>
-          </ExpandableSection>
-          
-          <ExpandableSection title="Streaming Architecture" icon={Zap}>
-            <div className="space-y-4">
-              <p className="text-slate-600">
-                Server-Sent Events (SSE) enable token-by-token streaming for real-time responses. 
-                The UI updates progressively as data arrives.
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-semibold text-slate-700 mb-2">Event Types</h4>
-                  <div className="space-y-2">
-                    {[
-                      { type: 'metadata', desc: 'Request ID, detected tickers' },
-                      { type: 'tool_start', desc: 'Tool execution begins' },
-                      { type: 'tool_result', desc: 'Tool output with latency' },
-                      { type: 'content', desc: 'Response text tokens' },
-                      { type: 'metrics', desc: 'Pipeline performance data' },
-                      { type: 'end', desc: 'Stream complete' }
-                    ].map(e => (
-                      <div key={e.type} className="flex items-center gap-2 text-sm">
-                        <code className="text-blue-600 bg-blue-50 px-2 py-0.5 rounded">{e.type}</code>
-                        <span className="text-slate-500">{e.desc}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                <CodeBlock 
-                  title="SSE Format" 
-                  language="plaintext"
-                  code={`data: {"type":"metadata","requestId":"abc123"}
+              <CodeBlock
+                title="SSE format (example)"
+                language="plaintext"
+                code={`data: {"type":"status","message":"Analyzing your question..."}
 
-data: {"type":"tool_start","tool":"search_earnings_transcript"}
+data: {"type":"tool_start","tool":"get_multi_quarter_metrics","id":"auto-financials"}
 
-data: {"type":"tool_result","success":true,"latencyMs":342}
+data: {"type":"tool_result","tool":"get_multi_quarter_metrics","success":true,"latencyMs":312}
 
-data: {"type":"content","content":"NVIDIA's AI"}
-data: {"type":"content","content":" strategy focuses"}
-data: {"type":"content","content":" on data centers..."}
+data: {"type":"content","content":"Here’s the trend..."}
 
-data: {"type":"metrics","metrics":{...}}
+data: {"type":"metrics","metrics":{"timeToFirstTokenMs":16500,"totalTimeMs":20900}}
 
 data: {"type":"end"}`}
-                />
-              </div>
+              />
             </div>
-          </ExpandableSection>
-
-          <ExpandableSection title="Reliability, safety checks, and operational notes" icon={ShieldCheck} defaultOpen={false}>
-            <div className="space-y-4">
-              <p className="text-slate-600">
-                This app leans on production patterns that keep responses predictable under real-world conditions:
-                validated inputs, tool limits, and explicit failure states.
-              </p>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
-                  <h4 className="font-semibold text-slate-800 mb-2">Guardrails</h4>
-                  <ul className="text-sm text-slate-600 space-y-1">
-                    <li>• Request validation (Zod) and sane limits on message sizes</li>
-                    <li>• Bounded tool usage (prevents runaway loops)</li>
-                    <li>• If retrieval returns nothing: answer transparently (no hallucinated numbers)</li>
-                  </ul>
-                </div>
-                <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
-                  <h4 className="font-semibold text-slate-800 mb-2">Troubleshooting</h4>
-                  <ul className="text-sm text-slate-600 space-y-1">
-                    <li>• If answers look thin, add ticker + quarter/year</li>
-                    <li>• If retrieval is slow, check Pinecone health endpoint</li>
-                    <li>• If you see dev build weirdness, delete <code className="font-mono">.next/</code> and restart</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </ExpandableSection>
-          
-          <ExpandableSection title="Data Coverage" icon={Database}>
-            <div className="space-y-4">
-              <p className="text-slate-600">
-                Comprehensive coverage of Big Tech earnings data from FY2020 to FY2025.
-              </p>
-              
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-                {['AAPL', 'AMD', 'AMZN', 'AVGO', 'CRM', 'GOOGL', 'META', 'MSFT', 'NVDA', 'ORCL'].map(ticker => (
-                  <div key={ticker} className="bg-slate-100 rounded-lg p-3 text-center">
-                    <span className="font-mono font-bold text-slate-800">{ticker}</span>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="grid md:grid-cols-3 gap-4 mt-4">
-                <div className="bg-blue-50 rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold text-blue-700">11,929</div>
-                  <div className="text-sm text-blue-600">Total Vectors</div>
-                </div>
-                <div className="bg-emerald-50 rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold text-emerald-700">571</div>
-                  <div className="text-sm text-emerald-600">Transcript Files</div>
-                </div>
-                <div className="bg-violet-50 rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold text-violet-700">5+</div>
-                  <div className="text-sm text-violet-600">Years of Data</div>
-                </div>
-              </div>
-            </div>
-          </ExpandableSection>
-        </div>
-
-        {/* Performance Benchmarks */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 mb-12 shadow-sm">
-          <h2 className="text-2xl font-bold text-slate-800 mb-6">Performance Benchmarks</h2>
-          
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left py-3 px-4 font-semibold text-slate-700">Metric</th>
-                  <th className="text-left py-3 px-4 font-semibold text-slate-700">Target</th>
-                  <th className="text-left py-3 px-4 font-semibold text-slate-700">Actual</th>
-                  <th className="text-left py-3 px-4 font-semibold text-slate-700">Status</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                <tr>
-                  <td className="py-3 px-4 text-slate-600">Retrieval Latency</td>
-                  <td className="py-3 px-4 text-slate-500">&lt;500ms</td>
-                  <td className="py-3 px-4 font-mono text-slate-800">200-400ms</td>
-                  <td className="py-3 px-4"><span className="text-emerald-600">✓ Passing</span></td>
-                </tr>
-                <tr>
-                  <td className="py-3 px-4 text-slate-600">Time to First Token</td>
-                  <td className="py-3 px-4 text-slate-500">&lt;3s</td>
-                  <td className="py-3 px-4 font-mono text-slate-800">1.5-2.5s</td>
-                  <td className="py-3 px-4"><span className="text-emerald-600">✓ Passing</span></td>
-                </tr>
-                <tr>
-                  <td className="py-3 px-4 text-slate-600">Full Response Time</td>
-                  <td className="py-3 px-4 text-slate-500">&lt;15s</td>
-                  <td className="py-3 px-4 font-mono text-slate-800">8-12s</td>
-                  <td className="py-3 px-4"><span className="text-emerald-600">✓ Passing</span></td>
-                </tr>
-                <tr>
-                  <td className="py-3 px-4 text-slate-600">Retrieval Precision@10</td>
-                  <td className="py-3 px-4 text-slate-500">&gt;70%</td>
-                  <td className="py-3 px-4 font-mono text-slate-800">~75%</td>
-                  <td className="py-3 px-4"><span className="text-emerald-600">✓ Passing</span></td>
-                </tr>
-              </tbody>
-            </table>
           </div>
-        </div>
 
-        {/* Trade-off Decisions */}
-        <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 text-white mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Design Decisions</h2>
-          
-          <div className="space-y-6">
-            <div>
-              <h3 className="font-semibold text-blue-300 mb-2">Why Voyage for dense embeddings?</h3>
-              <p className="text-slate-300">
-                Voyage <code className="text-emerald-300">voyage-3.5</code> outperforms our legacy dense baseline on 
-                domain-specific retrieval tasks. In our testing, it achieved ~5% higher precision@10 
-                on financial transcripts.
-              </p>
+          {/* Reliability */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <ShieldCheck className="w-5 h-5 text-blue-600" />
+              <h3 className="text-xl font-bold text-slate-800">Reliability & operational guardrails</h3>
             </div>
-            
-            <div>
-              <h3 className="font-semibold text-blue-300 mb-2">Why hybrid search over dense-only?</h3>
-              <p className="text-slate-300">
-                Financial queries often contain specific terms (tickers, product names, quarters) that 
-                dense embeddings can miss. BM25 sparse vectors ensure exact keyword matches while 
-                dense vectors capture semantic meaning.
-              </p>
+            <p className="text-slate-600 mb-6">
+              Clarity leans on production patterns that keep responses predictable: validated inputs, bounded tool usage,
+              and explicit failure states (including transparent “not found” answers).
+            </p>
+
+            <div className="space-y-4 text-slate-600">
+              <div className="space-y-2">
+                <p className="text-sm">
+                  <strong className="text-slate-800">Guardrails:</strong>
+                </p>
+                <ul className="text-sm list-disc pl-5 space-y-1">
+                  <li>Input validation and size limits</li>
+                  <li>Tool loop bounds (prevents runaway agent loops)</li>
+                  <li>Grounding rules that prefer refusal over hallucination</li>
+                </ul>
+              </div>
+
+              <div className="space-y-2">
+                <p className="text-sm">
+                  <strong className="text-slate-800">Troubleshooting tips:</strong>
+                </p>
+                <ul className="text-sm list-disc pl-5 space-y-1">
+                  <li>If an answer is thin, add ticker + quarter/year</li>
+                  <li>If you want metrics, name the metric explicitly (“gross margin”, “EPS”)</li>
+                  <li>If a provider is overloaded, retry (or the system may fall back to data-only answers)</li>
+                </ul>
+              </div>
             </div>
-            
-            <div>
-              <h3 className="font-semibold text-blue-300 mb-2">Why 800-char chunks with 150-char overlap?</h3>
-              <p className="text-slate-300">
-                Smaller chunks (800 chars) enable precise retrieval, while overlap (150 chars) preserves 
-                context across speaker transitions in earnings Q&A sections. This balance was determined 
-                through iterative testing.
-              </p>
+          </div>
+
+          {/* Metrics (grounded in repo docs) */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <Gauge className="w-5 h-5 text-blue-600" />
+              <h3 className="text-xl font-bold text-slate-800">Measured performance</h3>
+            </div>
+            <p className="text-slate-600 mb-6">
+              These are the concrete performance improvements documented during development (see the project’s improvement notes).
+            </p>
+
+            <div className="overflow-x-auto border border-slate-200 rounded-xl">
+              <table className="w-full text-sm bg-white">
+                <thead>
+                  <tr className="border-b border-slate-100 bg-slate-50 text-slate-600">
+                    <th className="text-left py-3 px-4 font-semibold">Metric</th>
+                    <th className="text-left py-3 px-4 font-semibold">Before</th>
+                    <th className="text-left py-3 px-4 font-semibold">After</th>
+                    <th className="text-left py-3 px-4 font-semibold">Change</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  <tr>
+                    <td className="py-3 px-4 text-slate-700">Time to first token (TTFT)</td>
+                    <td className="py-3 px-4 font-mono text-slate-700">22.8s</td>
+                    <td className="py-3 px-4 font-mono text-slate-700">16.5s</td>
+                    <td className="py-3 px-4 text-emerald-700 font-semibold">28% faster</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 text-slate-700">Total response time</td>
+                    <td className="py-3 px-4 font-mono text-slate-700">30.0s</td>
+                    <td className="py-3 px-4 font-mono text-slate-700">20.9s</td>
+                    <td className="py-3 px-4 text-emerald-700 font-semibold">30% faster</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-4 text-slate-700">Retrieval time</td>
+                    <td className="py-3 px-4 font-mono text-slate-700">1716ms</td>
+                    <td className="py-3 px-4 font-mono text-slate-700">985ms</td>
+                    <td className="py-3 px-4 text-emerald-700 font-semibold">~42% faster</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="text-center">
-          <Link
-            href="/chat"
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
-          >
-            Try Clarity 3.0
-            <ExternalLink className="w-4 h-4" />
-          </Link>
-        </div>
+        
       </section>
 
       {/* Footer */}

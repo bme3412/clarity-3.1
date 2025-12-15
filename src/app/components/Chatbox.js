@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ChatResponse from './ChatResponse';
-import StrategySelector from './StrategySelector';
 import OnboardingModal from './OnboardingModal';
 import { 
   AlertCircle, Loader2, Bot, Send, FileText, 
@@ -581,6 +580,7 @@ const [dataFreshness, setDataFreshness] = useState(null);
       let citations = [];
       let metrics = null;
       let buffer = '';
+      let encounteredStreamError = null;
       
       while (true) {
         const { done, value } = await reader.read();
@@ -750,7 +750,13 @@ const [dataFreshness, setDataFreshness] = useState(null);
                   setActiveTools([]);
                   break;
                 case 'error':
-                  throw new Error(data.error);
+                  // Server-side streaming errors should render in the UI (not crash the app)
+                  encounteredStreamError = typeof data.error === 'string' ? data.error : 'Unknown error';
+                  setError(encounteredStreamError);
+                  setStatusMessage('');
+                  setActiveTools([]);
+                  setLoading(false);
+                  try { await reader.cancel(); } catch {}
                 default:
                   break;
               }
@@ -759,9 +765,14 @@ const [dataFreshness, setDataFreshness] = useState(null);
             }
           }
         }
+
+        if (encounteredStreamError) break;
       }
       
-      setQuery('');
+      // Clear the input only on success; keep the query on error so the user can retry/edit quickly.
+      if (!encounteredStreamError) {
+        setQuery('');
+      }
     } catch (err) {
       setError(err.message);
     } finally {
@@ -824,11 +835,6 @@ const [dataFreshness, setDataFreshness] = useState(null);
             <HelpCircle className="w-4 h-4" />
             <span>How it Works</span>
           </Link>
-          <StrategySelector 
-            selectedStrategy={selectedStrategy}
-            onStrategyChange={setSelectedStrategy}
-            compact={true}
-          />
         </div>
       </header>
       
@@ -884,30 +890,7 @@ const [dataFreshness, setDataFreshness] = useState(null);
                   ))}
                 </div>
                 
-                {/* What you can ask */}
-                <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
-                  <div className="bg-blue-50 rounded-xl p-4 text-left">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Database className="w-4 h-4 text-blue-600" />
-                      <span className="text-sm font-semibold text-blue-800">Financial Metrics</span>
-                    </div>
-                    <p className="text-xs text-blue-600">Revenue, EPS, margins, cash flow, segment breakdowns</p>
-                  </div>
-                  <div className="bg-emerald-50 rounded-xl p-4 text-left">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Search className="w-4 h-4 text-emerald-600" />
-                      <span className="text-sm font-semibold text-emerald-800">Strategy &amp; Guidance</span>
-                    </div>
-                    <p className="text-xs text-emerald-600">AI initiatives, market positioning, executive commentary</p>
-                  </div>
-                  <div className="bg-violet-50 rounded-xl p-4 text-left">
-                    <div className="flex items-center gap-2 mb-2">
-                      <TrendingUp className="w-4 h-4 text-violet-600" />
-                      <span className="text-sm font-semibold text-violet-800">Comparisons</span>
-                    </div>
-                    <p className="text-xs text-violet-600">Cross-company analysis, YoY growth, trend analysis</p>
-                  </div>
-                </div>
+                {/* What you can ask (removed per landing simplification) */}
                 
                 {/* Powered by */}
                 <div className="flex items-center gap-4 text-xs text-slate-400 mb-4">
@@ -926,9 +909,7 @@ const [dataFreshness, setDataFreshness] = useState(null);
                   </div>
                 )}
                 
-                <p className="text-xs text-slate-400">
-                  11,929 vectors • FY2020-FY2026 • Hybrid search (dense + sparse)
-                </p>
+                
               </div>
             )}
             
