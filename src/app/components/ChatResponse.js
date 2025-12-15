@@ -392,9 +392,9 @@ function FollowUpSuggestions({ query, onAsk }) {
 
 // Source citations component
 function SourceCitations({ sources }) {
-  const safeSources = sources || [];
   // Deduplicate and organize sources
   const organizedSources = useMemo(() => {
+    const safeSources = sources ?? [];
     const byType = {
       financial: [],
       transcript: [],
@@ -408,7 +408,7 @@ function SourceCitations({ sources }) {
     });
     
     return byType;
-  }, [safeSources]);
+  }, [sources]);
   
   const getIcon = (type) => {
     switch (type) {

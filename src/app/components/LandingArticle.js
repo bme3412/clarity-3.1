@@ -247,7 +247,7 @@ export default function LandingArticle() {
         </section>
 
         <section className="space-y-3">
-          <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Baseline failure modes - why prompting didn't help:</h3>
+          <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Baseline failure modes - why prompting didn&apos;t help:</h3>
           <p className="text-slate-700">
             In early versions, most failures traced back to evidence selection, not generation. When the model was shown the wrong type of context — or no context at all —
             it did what models do: it tried to be helpful. In finance, “helpful guessing” is the enemy.
