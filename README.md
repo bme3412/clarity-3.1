@@ -7,7 +7,7 @@ A production-grade RAG system for financial analysis, demonstrating advanced ret
 ![Claude](https://img.shields.io/badge/LLM-Claude_Opus_4-7C3AED?style=flat-square)
 ![Next.js](https://img.shields.io/badge/Framework-Next.js_15-000000?style=flat-square)
 
-**Live demo:** https://bme-investment-copilot-vectorDB.vercel.app/
+**Live demo:** https://bme-clarity-3.vercel.app/
 
 ---
 
@@ -176,31 +176,19 @@ clarity-3.0/
 ├── data/
 │   ├── financials/              # Structured JSON (by ticker/FY/Q)
 │   └── transcripts/             # Earnings call transcripts
-├── scripts/
-│   └── embed-all-voyage.js      # Embedding pipeline
-└── docs/                        # Technical documentation
+├── public/                      # Static assets served by Next.js
+└── _cleanup/                    # Non-core dev artifacts (kept out of repo root)
+    ├── docs/                    # Moved documentation + blog drafts
+    ├── scripts/                 # Embedding + evaluation + maintenance scripts
+    ├── evals/
+    │   ├── evaluation_report.json
+    │   └── evaluation_reports/  # Per-case eval artifacts
+    └── dev-artifacts/           # Logs, scratch outputs
 ```
 
 ---
 
-## 🛠️ Local Development
 
-```bash
-# Install dependencies
-npm install
-
-# Set up environment
-cp .env.example .env
-# Add: VOYAGE_API_KEY, PINECONE_API_KEY, ANTHROPIC_API_KEY
-
-# Check embedding status
-node scripts/embed-all-voyage.js --status
-
-# Run development server
-npm run dev
-```
-
----
 
 ## ✨ Features
 
@@ -234,6 +222,3 @@ The system includes an evaluation framework comparing RAG strategies:
 
 ---
 
-## 📄 License
-
-MIT
