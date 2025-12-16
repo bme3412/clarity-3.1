@@ -534,28 +534,29 @@ const [dataFreshness, setDataFreshness] = useState(null);
   }, [loading, currentResponse]);
   
   const handleSubmit = useCallback(async (e, customQuery = null) => {
-    e.preventDefault();
-    const queryToSubmit = customQuery || query;
-    console.log('[Chatbox] handleSubmit called with query:', queryToSubmit);
-    if (!queryToSubmit.trim()) {
-      console.log('[Chatbox] Empty query, returning');
-      return;
-    }
-    
-    setLoading(true);
-    setError(null);
-    setCurrentResponse(null);
-    setCurrentCitations([]);
-    setCurrentMetadata(null);
-    setCurrentMetrics(null);
-    setIsFirstQuery(false);
-    setActiveTools([]);
-    setDataSources([]);
-    setRagMetrics(null);
-    setShowBehindScenes(false);
-    setStatusMessage('');
-    
     try {
+      e?.preventDefault?.();
+
+      const queryToSubmit = customQuery || query;
+      console.log('[Chatbox] handleSubmit called with query:', queryToSubmit);
+      if (!queryToSubmit.trim()) {
+        console.log('[Chatbox] Empty query, returning');
+        return;
+      }
+      
+      setLoading(true);
+      setError(null);
+      setCurrentResponse(null);
+      setCurrentCitations([]);
+      setCurrentMetadata(null);
+      setCurrentMetrics(null);
+      setIsFirstQuery(false);
+      setActiveTools([]);
+      setDataSources([]);
+      setRagMetrics(null);
+      setShowBehindScenes(false);
+      setStatusMessage('');
+
       console.log('[Chatbox] Sending request to /api/chat/stream');
       const response = await fetch('/api/chat/stream', {
         method: 'POST',
@@ -774,7 +775,10 @@ const [dataFreshness, setDataFreshness] = useState(null);
         setQuery('');
       }
     } catch (err) {
-      setError(err.message);
+      // Ensure non-Error rejections (e.g., Event) don't show up as blank/undefined.
+      const message = err?.message || String(err);
+      console.error('[Chatbox] Submission failed:', err);
+      setError(message);
     } finally {
       setLoading(false);
     }
@@ -786,7 +790,10 @@ const [dataFreshness, setDataFreshness] = useState(null);
       hasHandledInitialQuery.current = true;
       setQuery(initialQuery);
       setTimeout(() => {
-        handleSubmit({ preventDefault: () => {} }, initialQuery);
+        // Fire-and-forget, but never allow an unhandled rejection to bubble to Next's overlay.
+        void handleSubmit({ preventDefault: () => {} }, initialQuery).catch((err) => {
+          console.error('[Chatbox] Initial query failed:', err);
+        });
       }, 100);
     }
   }, [initialQuery, handleSubmit]);
@@ -794,7 +801,9 @@ const [dataFreshness, setDataFreshness] = useState(null);
   const handleFollowUpQuestion = (question) => {
     setQuery(question);
     setTimeout(() => {
-      handleSubmit({ preventDefault: () => {} }, question);
+      void handleSubmit({ preventDefault: () => {} }, question).catch((err) => {
+        console.error('[Chatbox] Follow-up query failed:', err);
+      });
     }, 100);
   };
 

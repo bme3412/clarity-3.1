@@ -8,8 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "eval:full": "node scripts/run-evals.js --strategy baseline",
-    "eval:smoke": "node scripts/run-evals.js --smoke --strategy baseline"
+    "eval:full": "node _cleanup/scripts/run-evals.js --strategy baseline",
+    "eval:smoke": "node _cleanup/scripts/run-evals.js --smoke --strategy baseline"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.70.1",

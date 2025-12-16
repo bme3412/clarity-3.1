@@ -27,7 +27,7 @@ export const ragStrategies = [
         description: 'Ticker alias map and embedding configuration used by the pipeline.'
       },
       {
-        path: 'RAG_IMPROVEMENT_PLAN.md',
+        path: '_cleanup/docs/RAG_IMPROVEMENT_PLAN.md',
         description: 'Living strategy doc outlining upcoming observability, reranking, and evaluation upgrades.'
       }
     ],
@@ -57,8 +57,8 @@ export const ragStrategies = [
         'Financial revenue + data center prompts hit faithfulness 0.95 with both transcript + JSON cited.',
         'AI strategy prompt remains faithfulness 0.30 because only financial sections are indexed; need strategic/QA content ingestion.'
       ],
-      logPath: 'evaluation_reports/baseline/2025-11-26T23-51-11-174Z/run.json',
-      command: 'RAG_STRATEGY_ID=baseline node scripts/evaluate-rag.js'
+      logPath: '_cleanup/evals/evaluation_reports/baseline/2025-11-26T23-51-11-174Z/run.json',
+      command: 'RAG_STRATEGY_ID=baseline node _cleanup/scripts/evaluate-rag.js'
     }
   }
 ];

@@ -3,7 +3,7 @@ import path from 'path';
 import Link from 'next/link';
 
 function loadReport() {
-  const reportPath = path.join(process.cwd(), 'evaluation_report.json');
+  const reportPath = path.join(process.cwd(), '_cleanup', 'evals', 'evaluation_report.json');
   try {
     const raw = fs.readFileSync(reportPath, 'utf8');
     return JSON.parse(raw);
@@ -15,6 +15,8 @@ function loadReport() {
 function loadCase({ strategyId, runId, caseId }) {
   const casePath = path.join(
     process.cwd(),
+    '_cleanup',
+    'evals',
     'evaluation_reports',
     strategyId,
     runId,

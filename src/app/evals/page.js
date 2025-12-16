@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 import EvalsDashboardClient from './components/EvalsDashboard.client';
 
 function loadReport() {
-  const reportPath = path.join(process.cwd(), 'evaluation_report.json');
+  const reportPath = path.join(process.cwd(), '_cleanup', 'evals', 'evaluation_report.json');
   try {
     const raw = fs.readFileSync(reportPath, 'utf8');
     return JSON.parse(raw);

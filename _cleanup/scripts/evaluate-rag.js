@@ -6,7 +6,7 @@ import { Pinecone } from '@pinecone-database/pinecone';
 // Load env vars immediately
 dotenv.config();
 
-const REPORTS_BASE = path.join(process.cwd(), 'evaluation_reports');
+const REPORTS_BASE = path.join(process.cwd(), '_cleanup', 'evals', 'evaluation_reports');
 const STRATEGY_ID = process.env.RAG_STRATEGY_ID || process.argv[2] || 'baseline';
 
 function ensureDir(dirPath) {
@@ -42,10 +42,10 @@ const {
   QueryIntentAnalyzer,
   EnhancedFinancialAnalyst,
   KeywordTranscriptRetriever
-} = await import('../src/lib/rag/components.js');
+} = await import('../../src/lib/rag/components.js');
 
-const { ExtendedRAGPipeline } = await import('../src/lib/rag/pipeline.js');
-const { RAGEvaluator } = await import('../src/lib/evaluation/evaluator.js');
+const { ExtendedRAGPipeline } = await import('../../src/lib/rag/pipeline.js');
+const { RAGEvaluator } = await import('../../src/lib/evaluation/evaluator.js');
 
 // Factory to recreate pipeline in script context
 function createPipeline() {
@@ -287,7 +287,7 @@ async function runEvaluation() {
   console.log(`Run artifacts saved to ${runDir}`);
 
   // Backwards-compatible summary file
-  const reportPath = path.join(process.cwd(), 'evaluation_report.json');
+  const reportPath = path.join(process.cwd(), '_cleanup', 'evals', 'evaluation_report.json');
   fs.writeFileSync(reportPath, JSON.stringify({
     run_id: runId,
     strategy_id: STRATEGY_ID,

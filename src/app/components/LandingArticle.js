@@ -110,29 +110,17 @@ export default function LandingArticle() {
 
       <div className="mt-8 space-y-6 text-slate-700 leading-relaxed">
         <p className="text-base md:text-lg">
-          Clarity 3.0 is a financial‑intelligence RAG system I built for investment research: earnings calls, quarterly financials, and the
-          kinds of “small” factual details that quietly decide whether an analysis is usable. In this domain, the hard part isn’t generating
-          fluent prose — it’s earning trust. A system that’s occasionally brilliant but sometimes returns the wrong quarter, the wrong segment,
-          or a made‑up margin number is worse than useless because it trains you to doubt everything it says.
+          Approximately 5,000 publicly traded companies report quarterly earnings, generating 20,000 earnings calls annually—representing 20,000 hours of strategic commentary (833 days of continuous listening, or 2.28 years). Each call contains two distinct but interconnected data streams: structured financial results (revenue, margins, guidance) and unstructured narrative commentary (management insights, market positioning, risk factors, strategic priorities). Traditionally, investors manually sift through both quantitative metrics and qualitative discourse to build investment theses—a process that&apos;s time-intensive and doesn&apos;t scale.
         </p>
         <p className="text-base md:text-lg">
-          That constraint shaped the entire architecture: <span className="font-semibold text-slate-900">faithfulness first</span> (every claim must be supported by retrieved evidence),
-          then optimize for accuracy and latency. The rest of this article is the set of engineering decisions — and trade‑offs — that made that
-          possible.
+          This massive corpus of financial data and strategic commentary can be transformed into embeddings and semantically analyzed at scale. Clarity 3.0 demonstrates this approach: it&apos;s an enterprise-grade RAG application that has ingested 200+ MegaCap Tech earnings calls—both the structured financials and full transcript narratives—parsed, cleaned, and converted into vector embeddings stored in a Pinecone database. Users can query both dimensions of the data: &quot;What were NVIDIA&apos;s data center revenues last quarter?&quot; (quantitative) or &quot;How is management describing competitive positioning in AI chips?&quot; (qualitative narrative analysis).
         </p>
-
-        <section className="space-y-3">
-          <h3 className="text-2xl font-bold text-slate-900 tracking-tight">TL;DR</h3>
-          <p className="text-slate-700">
-            The “needle movers” were almost all upstream of generation: better evidence selection, better routing, and better visibility.
-          </p>
-          <ul className="list-disc pl-5 space-y-1.5 text-slate-700">
-            <li><span className="font-semibold text-slate-900">Faithfulness is the constraint</span>: retrieval quality sets the ceiling.</li>
-            <li><span className="font-semibold text-slate-900">Two evidence lanes</span>: structured financial JSON for numbers + transcripts for narrative.</li>
-            <li><span className="font-semibold text-slate-900">Hybrid retrieval for exactness</span>: quarters, tickers, metric terms, product names.</li>
-            <li><span className="font-semibold text-slate-900">Latency is two projects</span>: real speed + perceived speed (observability).</li>
-          </ul>
-        </section>
+        <p className="text-base md:text-lg">
+          The goal is simple: save time and leverage AI to write semantically robust queries that retrieve precise information from the vector database—whether that&apos;s specific financial metrics, thematic commentary patterns, or cross-company competitive analysis—in seconds rather than hours of manual review.
+        </p>
+        <p className="text-base md:text-lg">
+          Key focuses for the app include: accuracy first—ensuring the right context is retrieved from 200+ earnings calls and correctly incorporated into generated responses—then optimize for speed. I built comprehensive evaluation systems to continuously monitor retrieval quality and response accuracy, catching hallucinations or misattributed data before they reach users. But latency matters too: enterprise users expect sub-3-second responses, not 30-second waits. The rest of this article covers the engineering decisions—and trade-offs—that balance these competing demands: maximizing retrieval precision while maintaining production-grade response times.
+        </p>
 
         <section className="space-y-4">
           <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Current performance</h3>

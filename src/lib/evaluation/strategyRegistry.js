@@ -9,7 +9,7 @@ import fs from 'fs';
 import path from 'path';
 
 const STRATEGIES_DIR = path.join(process.cwd(), 'src', 'lib', 'evaluation', 'strategies');
-const REPORTS_DIR = path.join(process.cwd(), 'evaluation_reports');
+const REPORTS_DIR = path.join(process.cwd(), '_cleanup', 'evals', 'evaluation_reports');
 
 export class StrategyRegistry {
   constructor() {
