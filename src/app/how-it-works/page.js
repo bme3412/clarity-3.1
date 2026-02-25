@@ -34,7 +34,7 @@ export default function HowItWorks() {
           </Link>
           <div className="flex items-center gap-2">
             <span className="text-xl font-bold text-slate-800">Clarity</span>
-            <span className="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full font-medium">3.0</span>
+            <span className="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full font-medium">3.1</span>
           </div>
         </div>
       </header>
@@ -43,7 +43,7 @@ export default function HowItWorks() {
       <section className="max-w-5xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">
-            How Clarity 3.0 Works
+            How Clarity 3.1 Works
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
             A practical deep dive into the RAG architecture, retrieval strategies, and streaming UX

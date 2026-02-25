@@ -27,7 +27,7 @@ const newsreader = Newsreader({
 });
 
 export const metadata = {
-  title: "Clarity 3.0 - Financial Intelligence",
+  title: "Clarity 3.1 - Financial Intelligence",
   description: "AI-powered analysis of Big Tech earnings calls, guidance, and strategic initiatives",
 };
 

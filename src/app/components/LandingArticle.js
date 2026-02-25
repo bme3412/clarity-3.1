@@ -68,7 +68,7 @@ export default function LandingArticle() {
           className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight leading-tight"
           style={{ fontFamily: 'var(--font-serif)' }}
         >
-          Building Production-Grade RAG in Clarity 3.0
+          Building Production-Grade RAG in Clarity 3.1
         </h2>
         <p className="text-base md:text-lg font-semibold text-slate-800">
           The engineering decisions that moved accuracy, faithfulness, and latency in a financial-intelligence RAG system
@@ -88,7 +88,7 @@ export default function LandingArticle() {
           5,000 public companies report quarterly earnings. That&apos;s 20,000 earnings calls a year — 20,000 hours of strategic commentary from management teams explaining what happened, why it happened, and what they think comes next. Each call has two layers that matter: the structured numbers (revenue, margins, guidance) and the narrative around them (competitive positioning, product bets, hedged language about risks). Investors manually reconcile both to build a thesis. It doesn&apos;t scale.
         </p>
         <p className="text-base md:text-lg">
-          Clarity 3.0 is an attempt to fix that. It&apos;s a RAG application built on 200+ MegaCap Tech earnings calls — transcripts parsed, cleaned, and embedded in Pinecone alongside structured financial JSON. Instead of reading through filings to find one number or one management quote, you ask a question and get the answer with a source you can verify. &quot;What were NVIDIA&apos;s data center revenues last quarter?&quot; Pull it from structured JSON. &quot;How is management framing competitive positioning in AI chips?&quot; Retrieve the actual transcript chunks. Both in seconds rather than hours.
+          Clarity 3.1 is an attempt to fix that. It&apos;s a RAG application built on 200+ MegaCap Tech earnings calls — transcripts parsed, cleaned, and embedded in Pinecone alongside structured financial JSON. Instead of reading through filings to find one number or one management quote, you ask a question and get the answer with a source you can verify. &quot;What were NVIDIA&apos;s data center revenues last quarter?&quot; Pull it from structured JSON. &quot;How is management framing competitive positioning in AI chips?&quot; Retrieve the actual transcript chunks. Both in seconds rather than hours.
         </p>
         <p className="text-base md:text-lg">
           The interesting part isn&apos;t the architecture. It&apos;s what breaks.

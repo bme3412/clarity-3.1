@@ -830,7 +830,7 @@ const [dataFreshness, setDataFreshness] = useState(null);
           </div>
           <div>
             <h1 className="font-bold text-slate-900">
-              Clarity <span className="text-blue-600">3.0</span>
+              Clarity <span className="text-blue-600">3.1</span>
             </h1>
             <p className="text-xs text-slate-500">Financial Intelligence</p>
           </div>
@@ -881,7 +881,7 @@ const [dataFreshness, setDataFreshness] = useState(null);
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
                 <h2 className="text-2xl font-bold text-slate-800 mb-2">
-                  Clarity <span className="text-blue-600">3.0</span>
+                  Clarity <span className="text-blue-600">3.1</span>
                 </h2>
                 <p className="text-slate-500 text-center mb-6">
                   AI-powered analysis of Big Tech earnings calls, financial metrics, and strategic initiatives

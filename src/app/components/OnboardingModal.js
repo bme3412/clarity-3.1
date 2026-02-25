@@ -107,7 +107,7 @@ export default function OnboardingModal({ onComplete }) {
               </div>
               
               <h2 className="text-2xl font-bold text-slate-900 mb-3">
-                Welcome to Clarity 3.0
+                Welcome to Clarity 3.1
               </h2>
               
               <p className="text-slate-600 mb-6 max-w-sm mx-auto">

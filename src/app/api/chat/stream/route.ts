@@ -264,7 +264,7 @@ function formatMoneyCompact(val: unknown): string | null {
 }
 
 // Enhanced system prompt with strict grounding + tool limits
-const ENHANCED_SYSTEM_PROMPT = `You are Clarity 3.0, a disciplined financial analyst for Big Tech companies.
+const ENHANCED_SYSTEM_PROMPT = `You are Clarity 3.1, a disciplined financial analyst for Big Tech companies.
 
 **CURRENT DATE: December 2025**
 

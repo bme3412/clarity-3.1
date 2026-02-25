@@ -7,7 +7,7 @@ const WelcomeGuide = ({ onStartAnalysis }) => {
   const steps = [
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "Welcome to Clarity 3.0",
+      title: "Welcome to Clarity 3.1",
       description: "Your AI-powered investment analysis assistant for Big Tech companies.",
       examples: [
         "Compare the AI chip strategies of Nvidia, AMD, and Intel",
@@ -74,7 +74,7 @@ const WelcomeGuide = ({ onStartAnalysis }) => {
           <Sparkles className="w-10 h-10 text-blue-400" />
         </div>
         <h1 className="text-3xl font-bold text-white mb-4">
-          Get Started with Clarity 3.0
+          Get Started with Clarity 3.1
         </h1>
         <p className="text-gray-400 text-lg">
           Learn how to get the most out of your AI investment analysis
