@@ -1,0 +1,129 @@
+{
+  "company_name": "Oracle",
+  "quarter": "Q3",
+  "fiscal_year": "2020",
+  "speakers": {
+    "safra_ada_catz": {
+      "role": "Chief Executive Officer",
+      "responses": [
+        {
+          "topic": "Revenue Rebound and Database Business",
+          "content": "Okay. So, I will start and then, Larry, you can add what you like. Obviously, the power of having great products is what overwhelms everything and the momentum we have with Autonomous Database and the more and more success, all of these projects start as small projects and expand very dramatically. Our average consumption rate is just increasing dramatically and it's a result of Autonomous Database being incredibly powerful and very, very popular with our customers.\n\nIn addition, the database itself, the database license, the data of the technology business, which I have mentioned earlier in the year, we had a little reorg in North America, a few things like that, that is really chugging. In fact, it probably would have been even better, but for this coronavirus showing up at the end of the quarter, basically the last week in February, market was down a lot. And so, I expected, but for this coronavirus for Q4 to be really impressive by assuming that we have some stability in the economy globally, I will be sharing with you the fact that it's a bigger and bigger number, that consumption revenue is going way way up. And that this entire subscription side of the business, the infrastructure subscription side of the business is just getting bigger and grows and grows. So overall, good products, good services lead to success for our customers and then adoption takes care of itself. I don't know, Larry, if you want to add anything to that?"
+        },
+        {
+          "topic": "License Revenue Performance and Q3 Outlook",
+          "content": "I generally feel very good about the Q3 License number. As you said, it is lumpy. The one thing we do have is that the GBUs, which are of course, not a giant part of our License business, but are significant. They have moved and their cloud products have become available. And I do expect that most of the orders for new services in the GBUs will come through as cloud services instead of just plain license. But I don't think that will be as significant. I do expect that licenses in fact will be just fine in Q3, other than GBU piece."
+        },
+        {
+          "topic": "Leadership Transition and Executive Responsibilities",
+          "content": "Yeah. This quarter EMEA only grew in the single-digits. Some of the other regions did grow in the high-double-digits, some very high double-digits. And I think there is nothing really special going on one way or the other. Sometimes it's just the way the quarter falls out for them. But overall, our business remains very strong and I think that next quarter could be completely different. So it was -- it's really nothing. We're not seeing a massive change, even month-over-month or quarter-over-quarter from what it's looked like. Obviously, there are some regions doing very, very well for a number of different reasons as they get to roll out new capabilities. We've got a lot of -- we've got data centers opening and have opened very, very successfully in Latin America, and in Asia and in Japan. And so we've got a lot of usage and increase in some of those areas, which help to explain some of the big growth in some of those areas. But EMEA, I think we'll see there is nothing special in particular. I have no real color to add and we'll see what happens after today's election in the UK."
+        }
+      ]
+    },
+    "lawrence_j_ellison": {
+      "role": "Chairman of the Board and Chief Technology Officer",
+      "responses": [
+        {
+          "topic": "Autonomous Database Sales Strategy and Growth",
+          "content": "Yeah, I want to amplify on what Safra means by great products. So Autonomous Database really is a unique product. There is no human labor. Therefore, there is no human error. So, it's a combination of -- Autonomous Database costs a lot less to run, because human beings don't do to driving. The Autonomous Database drives itself, so there is no labor associated with running the Autonomous Database. And if there is no human labor, humans can't make mistakes that cause security vulnerabilities. That's one big thing.\n\nBut another thing that people may not know about Autonomous Database, it is both the server list and elastic. What I mean by that is, when your application isn't running on the Oracle Public Cloud, you don't pay for any CPUs. You've got no CPUs dedicated to you. When your application isn't running, there -- you're not paying for servers. That is not true of Amazon databases, if you have Redshift, you pay for any Redshift processors. If you have their MySQL implementation, you pay for those processors. We're not only serverless, we're instantaneously elastic. So if you suddenly need to go from two servers or two cores to 20 cores, we do that instantaneously, while the database is still running. And then when you no longer need the 20 cores, we automatically go back to the two. So, it literally is the promise of the cloud. It's serverless when it's not running. And it's fully elastic, so you only pay for what you use.\n\nWhat this has translated to is, people benchmark us. They actually bring an application to Oracle and they bring an application to AWS. They are shocked to find that we are much, much less expensive than AWS, even though we're more secure and we're faster. And once they discover that, once they do a trial and they do a comparison and they discover that, they are picking us. And some of the interesting ones that are picking us are some of the SaaS application providers. And that's their business. Their business is to run applications. And they try all of the different clouds. And we are the most secure cloud, the highest performing cloud, but maybe most importantly, the most economical cloud. So we're winning more and more business, and we expect this trend to continue."
+        },
+        {
+          "topic": "Search for Second CEO and Leadership Strategy",
+          "content": "No. I mean there -- either in terms of the technological breakthrough. Well, yeah, I guess we had the first commercial relational database at the very beginning. I mean that's kind of created Oracle Corporation, right? So we had the very first commercial relational database. We had one before IBM did or anyone else did. So that created -- that turned this company from an idea into the company that manages most of the world's information. So I would say Autonomous Database is that same kind of things. It is so much different, so much safer to use, so much more reliable than anything else that's in the market. I think everyone is going to use it, virtually everyone is going to use it. Now that said, it is -- it takes a while, when you introduce an all-new product. The good news is we’re having a huge installed base here, it takes a while for that -- for us to ship in, if you will, a next-gen technology and get people comfortable with it and using it. And that first year we've seen a lot of early adopters, but the early adopters are now in the thousands. And we think eventually the only database we'll offer is Autonomous Database. It will replace everything else.\n\nAnd by the way, our Autonomous Database is only available in two forms. If we put a cloud in -- if we put our cloud in your data center, that's our Exadata machine and our Middleware machines and all of that's in our storage in your data center and in our public cloud. So we think it'll be consumed in one of those two ways and that will replace our entire base. So it means that our existing database business, from a financial standpoint, will more than double or triple, triple probably is a reasonable estimate to look at. Now, of course, when you're in your business, it's all about timing. And I wish I could tell you exactly how much we'll sell over the next 18 months. That's kind of tricky. Now, we don't have that many data points. We have four quarters of data points. And the first couple of quarters, it was still new. So we really only have a couple of quarters of data points. All I’ve been saying is, none of us ever seen an adoption rate like this before."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Heather Bellini",
+      "firm": "Goldman Sachs",
+      "topics": ["Database Business Rebound", "OCI Impact", "Macro Stability and Acceleration"],
+      "questions": [
+        {
+          "question_text": "Thank you so much for taking the question. I was just wondering Safra, Larry, if you could talk a little bit about the rebound that you mentioned and that you can start seeing show up in the numbers, in particular, around your database business. I know in Q1 you called out a little bit of dislocation and it looks like things are starting to progress in the direction that you've been telling us about. But is there anything you could share with us to kind of give us more detail about what exactly you think is driving this is? Is it things like OCI, for example as well. And then how -- Safra, you mentioned that you might be able to share with us in May, when you get a little more stability in the picture from a macro perspective, kind of how you see this progressing, but any high-level thoughts you would be comfortable sharing with us now about kind of the acceleration that you're seeing in terms of how we should think about it going forward? Thank you."
+        }
+      ]
+    },
+    {
+      "analyst": "Brad Zelnick",
+      "firm": "Credit Suisse",
+      "topics": ["Hardware Supply Constraints", "Cloud at Customer Availability", "Autonomous Database Impact"],
+      "questions": [
+        {
+          "question_text": "Can you give us any sort of update on the impact that supply constraints might be having on the hardware business? And in any way cannot impact the availability of Autonomous to be shipping on Cloud at Customer? Thanks."
+        }
+      ]
+    },
+    {
+      "analyst": "Phil Winslow",
+      "firm": "Wells Fargo",
+      "topics": ["Applications Business Growth Drivers", "ERP Adoption", "Competition"],
+      "questions": [
+        {
+          "question_text": "Hey, guys. Thanks a lot for taking my question and congrats on great Q3. I just wanted to focus in on the apps business, obviously, Safra you called out the acceleration there, but also some pretty strong growth rates, ERP Cloud 38%, HCM Cloud Fusion 27%. So three questions here. First, what's actually driving this growth? Is this existing customers flipping over from on-premise to the cloud? Or is it net new customers to Oracle? And I guess a question for Larry too, what are you hearing on sort of why customers are choosing you? How much does the breadth of your ERP suite, impact that buying decision?"
+        }
+      ]
+    },
+    {
+      "analyst": "Raimo Lenschow",
+      "firm": "Barclays Capital",
+      "topics": ["Recurring Revenue Comparison", "Renewals on Database and Cloud"],
+      "questions": [
+        {
+          "question_text": "Hey, thank you. Can you talk a little bit like we are obviously in uncertain times, but you guys have been in uncertain times before. So can you maybe contrast a little bit, Oracle today, with its recurring revenue stream versus where we were at 2008 and where we were in 2001? And then, also talk a little bit about what you see on renewals around the database, but also the cloud? Thank you."
+        }
+      ]
+    },
+    {
+      "analyst": "Mark Moerdler",
+      "firm": "Sanford Bernstein",
+      "topics": ["Autonomous Database Adoption", "Revenue Lift Trends"],
+      "questions": [
+        {
+          "question_text": "Thank you very much and congratulations on the quarter. You increased your buyback authorization this quarter, how should we think about how you will use the buyback given the market downturn? Also, how should we think about your ability to support the dividend, expanded dividend, given the economic downturn? It seems to be a very positive statement you're making. I'd like to get whatever color you can on that?"
+        }
+      ]
+    },
+    {
+      "analyst": "Michael Turits",
+      "firm": "Raymond James",
+      "topics": ["Applications Business Rebound", "Fiscal '21 Outlook"],
+      "questions": [
+        {
+          "question_text": "Hey, everybody, good evening, and nice to see. Strong and good results, particularly in a tough time. I want to come back to the applications, applications accelerated this quarter and Fusion apps, continue to grow at high rates. Is there anything left in terms of headwinds that could keep you from seeing further acceleration in app subscription this year and into next? And so where do you think that growth rate could end up for this year?"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2020-09-15T00:00:00Z",
+    "company_ticker": "ORCL",
+    "source": "Q3 2020 Earnings Call Transcript",
+    "operating_environment_challenges": [
+      "Impact of COVID-19 on hardware component supply",
+      "Sales force reorganization",
+      "Global economic instability",
+      "Supply chain constraints due to coronavirus in China",
+      "Transition of GBUs to cloud services"
+    ],
+    "executive_changes": {
+      "new_leadership": {
+        "name": "N/A",
+        "role": "N/A",
+        "start_date": "N/A",
+        "context": "N/A"
+      },
+      "leadership_transition": {
+        "name": "Mark [Last Name]",
+        "role": "Former CEO",
+        "end_date": "N/A",
+        "successor": {
+          "name": "N/A",
+          "role": "N/A",
+          "context": "N/A"
+        }
+      }
+    }
+  }
+}

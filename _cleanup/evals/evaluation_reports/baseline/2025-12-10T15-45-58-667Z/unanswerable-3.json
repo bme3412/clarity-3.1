@@ -1,0 +1,139 @@
+{
+  "id": "unanswerable-3",
+  "run_id": "2025-12-10T15-45-58-667Z",
+  "strategy_id": "baseline",
+  "question": "Did Amazon provide 2026 AWS revenue guidance?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts with Citations:\n- AWS growth momentum mentioned but no specific 2026 revenue guidance provided [C1]\n- AWS operating margins fluctuated from 39.5% in Q1 2025 to 32.9% in Q2 2025 [C2]\n- Historical AWS revenue data available through Q4 2024 but no forward guidance to 2026 [C3, C4, C5]\n- No specific 2026 AWS revenue targets or guidance found in provided transcripts [C1-C5]\n Final Answer:\nAWS 2026 revenue guidance: Not found in provided sources.\nThe provided context contains AWS performance data through Q3 2025, including operating margins of 32.9% in Q2 2025 [C2] and mentions of strong growth momentum [C1], but does not include specific revenue guidance or targets for 2026. Historical revenue data is available through Q4 2024 [C3, C4], but forward-looking 2026 guidance is not found in provided sources.",
+  "duration_ms": 11713,
+  "metrics": {
+    "relevance": {
+      "score": 0.95,
+      "reasoning": "The answer directly addresses the question about whether Amazon provided 2026 AWS revenue guidance. It clearly states that no such guidance was found in the provided sources, and supports this conclusion with relevant context about what information IS available (historical data, operating margins, growth momentum mentions). The answer is thorough, well-cited, and appropriately acknowledges the limitations of the available information. It loses a small amount because it could have been slightly more concise, but it is highly relevant and responsive to the question."
+    },
+    "faithfulness": {
+      "score": 0.75,
+      "reasoning": "The answer correctly states that no 2026 AWS revenue guidance is found in the provided context, which is accurate. However, there are some issues with the citations: (1) The answer claims AWS operating margins of 39.5% in Q1 2025 and 32.9% in Q2 2025, but the context actually states these are Q1 and Q2 figures without specifying 2025 - the context mentions Q3 2024 and Q4 2024 fiscal years in other chunks, and the margin data appears to be from an unspecified period. (2) The answer attributes 'growth momentum' to C1, but C1 discusses segment margins, not growth momentum - C2 actually mentions AWS growth momentum. (3) The context does mention Q3 2025 data in C2, but the answer's citation mapping has some inaccuracies. The core conclusion about no 2026 guidance is faithful to the context, but some specific attributions are slightly misaligned."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer correctly concludes that AWS 2026 revenue guidance is 'Not found in provided sources,' which matches the ground truth exactly. While the generated answer provides additional context about available AWS data (operating margins, historical revenue, growth momentum), this extra detail is consistent with and supports the core finding that no 2026 guidance exists in the sources. The answer is accurate and does not contradict the ground truth."
+    }
+  },
+  "context_count": 5,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3271,
+      "embeddingMs": 251,
+      "pineconeMs": 470,
+      "financialMs": 1,
+      "keywordMs": 9,
+      "llmMs": 7711,
+      "totalMs": 11713
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 0,
+      "keywordMatches": 5,
+      "combinedContext": 5,
+      "filtersApplied": {
+        "company": "AMZN",
+        "fiscal_year": "2026"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "guidance",
+      "timeframe": "2026",
+      "company_name": "AMZN",
+      "isComparisonQuery": false,
+      "primaryTicker": "AMZN"
+    },
+    "llm": {
+      "input_tokens": 1209,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 241,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "keyword-2025-Q2-qa",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMZN",
+        "quarter": "Q2",
+        "fiscalYear": "2025",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AMZN/FY_2025/Q2/parsed_earnings/AMZN_FY2025_Q2_qa.json",
+        "retrieval": "keyword",
+        "text": "\"topic\": \"Segment Margins\", \"content\": \"North America operating margin was 7.5%, up 190 basis points year-over-year. International operating margin was 4.1%, up 320 basis points year-over-year... AWS operating income was $10.2 billion. We did see AWS segment margins decline from a record high of 39.5% in Q1 to 32.9% in Q2. The largest quarter-over-quarter driver... is due to the seasonal step-up in stock-based compensation expense.\" }, { \"topic\": \"Capital Exp"
+      }
+    },
+    {
+      "id": "keyword-2025-Q3-qa",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMZN",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AMZN/FY_2025/Q3/parsed_earnings/AMZN_FY2025_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Amazon\", \"quarter\": \"Q3\", \"fiscal_year\": \"2025\", \"speakers\": { \"andrew_jassy\": { \"role\": \"CEO\", \"responses\": [ { \"topic\": \"AWS Growth and Momentum\", \"content\": \"AWS is growing at a pace we haven't see"
+      }
+    },
+    {
+      "id": "keyword-2024-Q3-earnings",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMZN",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/AMZN/FY_2024/Q3/parsed_earnings/AMZN_FY2024_Q3_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Amazon.com, Inc.\", \"quarter\": \"Q3\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 158.9, \"unit\": \"billion USD\", \"year_over_year_change\": \"+11%\", \"constant_currency_growth\": \"+11%\", \"context"
+      }
+    },
+    {
+      "id": "keyword-2024-Q3-qa",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMZN",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AMZN/FY_2024/Q3/parsed_earnings/AMZN_FY2024_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Amazon\", \"quarter\": \"Q3\", \"fiscal_year\": \"2024\", \"speakers\": { \"andrew_jassy\": { \"role\": \"CEO\", \"responses\": [ { \"topic\": \"Revenue, Operating Income, and Free Cash Flow\", \"content\": \"Thanks, Dave. Tod"
+      }
+    },
+    {
+      "id": "keyword-2024-Q4-earnings",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMZN",
+        "quarter": "Q4",
+        "fiscalYear": "2024",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/AMZN/FY_2024/Q4/parsed_earnings/AMZN_FY2024_Q4_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Amazon.com, Inc.\", \"quarter\": \"Q4\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 187.8, \"unit\": \"billion USD\", \"year_over_year_change\": \"+10%\", \"constant_currency_growth\": \"+11%\", \"context"
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 1.200)\n\"topic\": \"Segment Margins\", \"content\": \"North America operating margin was 7.5%, up 190 basis points year-over-year. International operating margin was 4.1%, up 320 basis points year-over-year... AWS operating income was $10.2 billion. We did see AWS segment margins decline from a record high of 39.5% in Q1 to 32.9% in Q2. The largest quarter-over-quarter driver... is due to the seasonal step-up in stock-based compensation expense.\" }, { \"topic\": \"Capital Exp\n\n[Chunk 2] (Score: 1.200)\n{ \"company_name\": \"Amazon\", \"quarter\": \"Q3\", \"fiscal_year\": \"2025\", \"speakers\": { \"andrew_jassy\": { \"role\": \"CEO\", \"responses\": [ { \"topic\": \"AWS Growth and Momentum\", \"content\": \"AWS is growing at a pace we haven't see\n\n[Chunk 3] (Score: 1.200)\n{ \"company_name\": \"Amazon.com, Inc.\", \"quarter\": \"Q3\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 158.9, \"unit\": \"billion USD\", \"year_over_year_change\": \"+11%\", \"constant_currency_growth\": \"+11%\", \"context\n\n[Chunk 4] (Score: 1.200)\n{ \"company_name\": \"Amazon\", \"quarter\": \"Q3\", \"fiscal_year\": \"2024\", \"speakers\": { \"andrew_jassy\": { \"role\": \"CEO\", \"responses\": [ { \"topic\": \"Revenue, Operating Income, and Free Cash Flow\", \"content\": \"Thanks, Dave. Tod\n\n[Chunk 5] (Score: 1.200)\n{ \"company_name\": \"Amazon.com, Inc.\", \"quarter\": \"Q4\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 187.8, \"unit\": \"billion USD\", \"year_over_year_change\": \"+10%\", \"constant_currency_growth\": \"+11%\", \"context",
+  "created_at": "2025-12-10T16:11:51.234Z",
+  "category": "unanswerable"
+}

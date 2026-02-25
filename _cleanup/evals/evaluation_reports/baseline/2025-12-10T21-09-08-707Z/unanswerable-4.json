@@ -1,0 +1,110 @@
+{
+  "id": "unanswerable-4",
+  "run_id": "2025-12-10T21-09-08-707Z",
+  "strategy_id": "baseline",
+  "question": "What was Meta's Reality Labs operating loss in Q1 2017?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts with Citations:\n- Reality Labs operating loss for Q1 2017: Not found in provided sources [C1, C2]\n- Available Reality Labs data shows Q3 2025 revenue of $0.47B (+74% YoY) [C2]\n- Context covers 2025 Q3 period, not Q1 2017 [C1, C2]\n Final Answer:\nNot found in provided sources. The available context covers Meta's Reality Labs performance for Q3 2025, showing revenue of $0.47B (+74% YoY) [C2], but does not contain operating loss data for Q1 2017.",
+  "duration_ms": 5738,
+  "metrics": {
+    "relevance": {
+      "score": 0.8,
+      "reasoning": "The answer is relevant and appropriately addresses the question by clearly stating that the requested information (Q1 2017 Reality Labs operating loss) is not available in the provided sources. It explains why (sources cover 2025, not 2017) and provides context about what data is available. While it doesn't provide the specific answer requested, it correctly identifies the limitation and is transparent about it, which is a relevant and helpful response to the question."
+    },
+    "faithfulness": {
+      "score": 0.95,
+      "reasoning": "The answer is highly faithful to the provided context. It correctly states that Q1 2017 operating loss data is not found in the sources, accurately cites the Reality Labs revenue figure of $0.47B with +74% YoY change from Chunk 2, and appropriately notes that the context covers a different time period. The answer avoids hallucination by explicitly acknowledging what information is and isn't available in the context. The only minor issue is that the answer mentions 'Q3 2025' as the time period, but the chunks don't explicitly state this is Q3 2025 - they just show the data without a clear quarter designation. However, this is a minor inference rather than a significant hallucination."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer correctly identifies that the information is not found in the provided sources, which matches the ground truth. The answer provides additional context about what data is available (Q3 2025 Reality Labs data) while maintaining factual accuracy. The core answer aligns with the ground truth that Q1 2017 Reality Labs operating loss data is not available in the sources."
+    }
+  },
+  "context_count": 2,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 1,
+      "embeddingMs": 268,
+      "pineconeMs": 414,
+      "financialMs": 2,
+      "keywordMs": 7,
+      "llmMs": 5046,
+      "totalMs": 5738
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 0,
+      "keywordMatches": 2,
+      "combinedContext": 2,
+      "filtersApplied": {
+        "company": "META",
+        "fiscal_year": "2017",
+        "quarter": "Q1"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": true,
+      "financialQuery": false,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "general",
+      "timeframe": "Q1 2017",
+      "company_name": "META",
+      "isComparisonQuery": false,
+      "primaryTicker": "META"
+    },
+    "llm": {
+      "input_tokens": 1054,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 154,
+      "service_tier": "standard"
+    },
+    "retrievalTrace": {
+      "financialSegments": [],
+      "financial": 0,
+      "transcripts": [],
+      "keyword": [
+        "keyword-2025-Q3-qa",
+        "keyword-2025-Q3-earnings"
+      ]
+    }
+  },
+  "context": [
+    {
+      "id": "keyword-2025-Q3-qa",
+      "score": 1.2,
+      "metadata": {
+        "company": "META",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": "transcript_qa",
+        "source": "data/transcripts/META/FY_2025/Q3/parsed_earnings/META_FY2025_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": ".\" }, { \"topic\": \"Meta AI / business AI\", \"content\": \"Meta AI reaches over 1B monthly actives and continues to drive new content formats (Vibes), while business AI pilots are automating the full sale funnel across WhatsApp, Messenger, and websites, and we expect frontier models to unlock even more utility and monetization over time.\" }, { \"topic\": \"AI devices and Reality Labs\", \"content\": \"AI glasses are front and center—lat"
+      }
+    },
+    {
+      "id": "keyword-2025-Q3-earnings",
+      "score": 0.8000000000000002,
+      "metadata": {
+        "company": "META",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/META/FY_2025/Q3/parsed_earnings/META_FY2025_Q3_earnings.json",
+        "retrieval": "keyword",
+        "text": "onal_breakdown\": { \"europe\": \"+24%\", \"rest_of_world\": \"+23%\", \"north_america\": \"+21%\", \"asia_pacific\": \"+18%\" }, \"other_revenue\": { \"value\": 0.69, \"unit\": \"billion USD\", \"context\": \"WhatsApp paid messaging and Meta Verified subscriptions grew 59%.\" } }, \"reality_labs\": { \"revenue\": { \"value\": 0.47, \"unit\": \"billion USD\", \"year_over_year_change\": \"+74%\", \"context\": \"AI glasses a"
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 1.200)\n.\" }, { \"topic\": \"Meta AI / business AI\", \"content\": \"Meta AI reaches over 1B monthly actives and continues to drive new content formats (Vibes), while business AI pilots are automating the full sale funnel across WhatsApp, Messenger, and websites, and we expect frontier models to unlock even more utility and monetization over time.\" }, { \"topic\": \"AI devices and Reality Labs\", \"content\": \"AI glasses are front and center—lat\n\n[Chunk 2] (Score: 0.800)\nonal_breakdown\": { \"europe\": \"+24%\", \"rest_of_world\": \"+23%\", \"north_america\": \"+21%\", \"asia_pacific\": \"+18%\" }, \"other_revenue\": { \"value\": 0.69, \"unit\": \"billion USD\", \"context\": \"WhatsApp paid messaging and Meta Verified subscriptions grew 59%.\" } }, \"reality_labs\": { \"revenue\": { \"value\": 0.47, \"unit\": \"billion USD\", \"year_over_year_change\": \"+74%\", \"context\": \"AI glasses a",
+  "created_at": "2025-12-10T21:38:11.801Z",
+  "category": "unanswerable"
+}

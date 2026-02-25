@@ -1,0 +1,118 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q1",
+  "fiscal_year": "2026",
+  "speakers": {
+    "jensen_huang": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "Reasoning inference scaling",
+          "content": "We now have inference time scaling joining pretraining and post-training as a third set of exponential growth laws; reasoning agents generate 100x more tokens, and Blackwell NVLink72 (GB200) is specifically built to deliver 25x throughput and 20x lower cost for those workloads."
+        },
+        {
+          "topic": "GB200/GB300 ramp",
+          "content": "GB200 NVLink72 shipments are rocketing with hyperscalers deploying thousands of racks weekly, GB300 samples are rolling out, and AI factories across sovereigns and enterprises are accelerating token-generation capacity as we prepare for Blackwell Ultra."
+        },
+        {
+          "topic": "Export controls and China",
+          "content": "The new H20 licensing requirement effectively cut off the Chinese Hopper business, but we continue to look for compliant options while building onshore manufacturing partners and enabling AI factories worldwide."
+        },
+        {
+          "topic": "Networking and NVLink Fusion",
+          "content": "Spectrum-X, Quantum-X, NVLink Fusion, NVLink switches, and BlueField are creating the full-stack networking foundation for AI factories with 130 TB/sec NVLink 72 domains and Ethernet that handles bursty, inference-era traffic."
+        }
+      ]
+    },
+    "colette_kress": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "H20 charge and margin recovery",
+          "content": "We recognized $4.5B write-down on H20 inventory/purchase obligations as export controls hit, limiting our ability to ship $2.5B of backlog; excluding that charge the quarter would have delivered 71.3% non-GAAP gross margin."
+        },
+        {
+          "topic": "CapEx and cash returns",
+          "content": "CapEx remains elevated at >$30B, prioritizing short-lived GPUs/CPUs plus finance leases; cash flow supported $14.3B returned through buybacks and dividends while keeping Blackwell ramp on track."
+        },
+        {
+          "topic": "Guidance and China headwinds",
+          "content": "Q2 assumes an ~$8B China revenue drop because Hopper/H20 can’t ship; we are modeling the headwind actively while continuing to build supply chain capacity and focus on serviceable markets."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Joseph Moore",
+      "firm": "Morgan Stanley",
+      "topics": [
+        "Inference demand",
+        "NVL72 scaling"
+      ],
+      "questions": [
+        "How much of the surging reasoning inference demand are you able to serve today, and do you need more NVL72 rack-scale deployments?"
+      ]
+    },
+    {
+      "analyst": "Vivek Arya",
+      "firm": "Bank of America",
+      "topics": [
+        "China headwind",
+        "AI spending"
+      ],
+      "questions": [
+        "Is the $15B China impact still baked into future quarters and how should we think about modeling the build-out toward the trillion-dollar AI investment idea?"
+      ]
+    },
+    {
+      "analyst": "Christopher Muse",
+      "firm": "Cantor Fitzgerald",
+      "topics": [
+        "Order visibility",
+        "AI factories"
+      ],
+      "questions": [
+        "Are there additional large-scale AI factory orders beyond the published ones and how are these orders affecting your Blackwell lead times?"
+      ]
+    },
+    {
+      "analyst": "Ben Reitzes",
+      "firm": "Melius Research",
+      "topics": [
+        "Guidance math",
+        "Growth confidence"
+      ],
+      "questions": [
+        "Does your guidance imply the portion of the business outside China accelerated to offset the H20 loss, and does the renewed AI diffusion policy give you more confidence in sequential momentum?"
+      ]
+    },
+    {
+      "analyst": "Timothy Arcuri",
+      "firm": "UBS",
+      "topics": [
+        "Export controls",
+        "China strategy"
+      ],
+      "questions": [
+        "Is NVIDIA building a licensed H20 replacement for China, and how quickly could you return to pre-control quarterly revenue run rates once a compliant product is ready?"
+      ]
+    },
+    {
+      "analyst": "Jacob Wilhelm",
+      "firm": "Wells Fargo",
+      "topics": [
+        "Networking",
+        "Adoption"
+      ],
+      "questions": [
+        "Can you expand on the momentum in networking, specifically Spectrum-X adoption by CSPs and any change in network attachment rates?"
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-05-28T00:00:00Z",
+    "source": "NVIDIA FY2026 Q1 earnings call transcript"
+  }
+}
+

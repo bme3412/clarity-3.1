@@ -1,0 +1,197 @@
+{
+  "company_name": "Salesforce",
+  "quarter": "Q1",
+  "fiscal_year": "2026",
+  "financials": {
+    "total_revenue": {
+      "value": 9.83,
+      "unit": "billion USD",
+      "year_over_year_change": "+8%",
+      "context": "Q1 revenue of $9.83 billion, up 8% year-over-year and in constant currency."
+    },
+    "subscription_support_revenue": {
+      "value": 9.3,
+      "unit": "billion USD",
+      "growth": "+8% nominal / +9% CC",
+      "context": "Subscription & support revenue of $9.3 billion, up 8% nominal and 9% CC."
+    },
+    "profitability": {
+      "gaap_operating_margin": {
+        "value": 19.8,
+        "unit": "percent",
+        "context": "Q1 GAAP operating margin was 19.8%."
+      },
+      "non_gaap_operating_margin": {
+        "value": 32.3,
+        "unit": "percent",
+        "context": "Q1 non-GAAP operating margin of 32.3%, a 20-bp expansion year-over-year."
+      },
+      "gaap_eps": {
+        "value": 1.59,
+        "unit": "USD per share",
+        "context": "Q1 GAAP diluted EPS of $1.59."
+      },
+      "non_gaap_eps": {
+        "value": 2.58,
+        "unit": "USD per share",
+        "context": "Q1 non-GAAP diluted EPS of $2.58."
+      }
+    },
+    "cash_flow": {
+      "operating_cash_flow": {
+        "value": 6.5,
+        "unit": "billion USD",
+        "context": "Q1 operating cash flow of $6.5 billion, up 4% year-over-year."
+      },
+      "free_cash_flow": {
+        "value": 6.3,
+        "unit": "billion USD",
+        "context": "Q1 free cash flow of $6.3 billion, up 4% year-over-year."
+      }
+    },
+    "capital_allocation": {
+      "share_repurchases": {
+        "value": 2.7,
+        "unit": "billion USD",
+        "context": "Repurchased $2.7 billion of stock in Q1."
+      },
+      "dividends": {
+        "value": 0.4,
+        "unit": "billion USD",
+        "context": "Paid $402 million in dividends and increased the payout by 4%."
+      },
+      "total_returns": {
+        "value": 3.1,
+        "unit": "billion USD",
+        "context": "Returned $3.1 billion to shareholders in the quarter."
+      }
+    }
+  },
+  "operating_metrics": {
+    "agentforce_data_cloud": {
+      "arr": {
+        "value": 1.0,
+        "unit": "billion USD",
+        "context": "Data Cloud and AI ARR surpassed $1 billion, up over 120% year-over-year."
+      },
+      "agentforce_deals": {
+        "value": 8000,
+        "context": "Salesforce closed over 8,000 Agentforce deals since launch, with roughly 4,000 paid."
+      },
+      "agentforce_cases": {
+        "value": 750000,
+        "context": "Agentforce processed 750,000 help portal cases, cutting volume by 7% year-over-year."
+      },
+      "records_ingested": {
+        "value": 22,
+        "unit": "trillion",
+        "context": "Data Cloud ingested 22 trillion records in Q1, up 175% year-over-year."
+      }
+    },
+    "rpo": {
+      "current_rpo": {
+        "value": 29.6,
+        "unit": "billion USD",
+        "context": "CRPO ended the quarter at $29.6 billion, up 12% year-over-year."
+      },
+      "total_rpo": {
+        "value": 60.9,
+        "unit": "billion USD",
+        "context": "Total RPO of $60.9 billion, up 13% year-over-year."
+      }
+    },
+    "bookings_mix": {
+      "multi_cloud": {
+        "context": "Over half of the Q1 top 100 deals included 6+ clouds, Tableau featured in 70% of $1M+ wins, and MuleSoft in nearly half."
+      }
+    }
+  },
+  "strategic_updates": {
+    "informatica": {
+      "description": "Announced Informatica acquisition to expand enterprise data capabilities.",
+      "key_points": [
+        "Expected to close early FY27 (Feb 2026) and be accretive to non-GAAP EPS and free cash flow by year two.",
+        "Financed through cash and debt with no dilution or disruption to capital return strategy.",
+        "Accelerates data harmonization necessary for large-scale agent deployments."
+      ]
+    },
+    "ecosystem": {
+      "description": "Operational excellence + partnerships fueling AI adoption.",
+      "highlights": [
+        "Partners participated in 7 of the top 10 deals; Salesforce is the fastest-growing ISV on AWS Marketplace.",
+        "Forward-deployed engineering teams working with customers and partners daily to accelerate consumption and trust.",
+        "Industry clouds continued momentum: U.S. Air Force, University of Chicago Medicine, Pfizer, Takeda."
+      ]
+    }
+  },
+  "outlook": {
+    "q2_fy26": {
+      "revenue_guidance": {
+        "value": "10.11 - 10.16",
+        "unit": "billion USD",
+        "growth": "8-9% nominal, 7-8% CC",
+        "context": "Q2 revenue guidance."
+      },
+      "gaap_eps": {
+        "value": "1.80 - 1.82",
+        "unit": "USD per share",
+        "context": "Q2 GAAP EPS guidance."
+      },
+      "non_gaap_eps": {
+        "value": "2.76 - 2.78",
+        "unit": "USD per share",
+        "context": "Q2 non-GAAP EPS guidance."
+      },
+      "crpo_growth": {
+        "value": 10,
+        "unit": "percent",
+        "context": "CRPO growth guidance; $300M FX tailwind."
+      }
+    },
+    "fy26": {
+      "revenue_guidance": {
+        "value": "41.0 - 41.3",
+        "unit": "billion USD",
+        "growth": "8-9% nominal, ~8% CC",
+        "context": "Raised FY26 revenue guidance (up $400M)."
+      },
+      "subscription_support_growth": {
+        "value": "9.5% nominal / 9% CC",
+        "context": "Subscription & support guidance."
+      },
+      "gaap_operating_margin": {
+        "value": 21.6,
+        "unit": "percent",
+        "context": "GAAP margin guidance reiterated."
+      },
+      "non_gaap_operating_margin": {
+        "value": 34.0,
+        "unit": "percent",
+        "context": "Non-GAAP margin guidance unchanged."
+      },
+      "cash_flow_growth": {
+        "value": "10-11%",
+        "context": "Operating cash flow growth guidance."
+      },
+      "free_cash_flow_growth": {
+        "value": "9-10%",
+        "context": "Free cash flow growth guidance."
+      },
+      "gaap_eps": {
+        "value": "7.15 - 7.21",
+        "unit": "USD per share",
+        "context": "GAAP EPS guidance."
+      },
+      "non_gaap_eps": {
+        "value": "11.27 - 11.33",
+        "unit": "USD per share",
+        "context": "Non-GAAP EPS guidance."
+      }
+    }
+  },
+  "metadata": {
+    "parsed_date": "2025-05-28",
+    "company_ticker": "CRM",
+    "source": "Q1 2026 earnings call transcript & press release"
+  }
+}

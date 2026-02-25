@@ -1,0 +1,111 @@
+{
+  "id": "strat-1",
+  "run_id": "2025-12-10T16-28-35-648Z",
+  "strategy_id": "baseline",
+  "question": "What are AMD's strategic priorities for AI as of late 2024?",
+  "ground_truth": "AMD is focusing on expanding its Instinct data center GPU portfolio (specifically MI300), enhancing the ROCm software stack to compete with CUDA, and driving adoption across cloud and enterprise markets.",
+  "generated_answer": "Atomic Facts with Citations:\n• Not found in provided sources - specific AI strategy details for 2024\n• Not found in provided sources - strategic priorities for 2024\n• Supply constraints exist in wafers, substrates, and backend components [C2][C3]\n• MI300 gross margin expectations and accretion timing discussed but specific details not provided [C1]\n• Customer ramping challenges mentioned but specific hurdles not detailed [C2]\n Final Answer:\nNot found in provided sources for AMD's specific AI strategy and strategic priorities for 2024. The provided context contains only fragmented earnings call excerpts that reference operational challenges including supply constraints in wafers, substrates, and backend components [C2][C3], discussions about MI300 gross margin expectations [C1], and customer ramping hurdles [C2], but lacks comprehensive strategic information or forward-looking AI strategy details for 2024.",
+  "duration_ms": 12859,
+  "metrics": {
+    "relevance": {
+      "score": 0.4,
+      "reasoning": "The answer acknowledges it cannot find specific AI strategic priorities in the provided sources, which is honest and relevant. It does provide some tangentially related information about AMD's AI-related operations (MI300, supply constraints, customer ramping) that gives partial context. However, it fails to directly answer the question about strategic priorities. The response is relevant in that it addresses the topic area and explains why a complete answer cannot be provided, but it doesn't deliver the substantive information requested."
+    },
+    "faithfulness": {
+      "score": 0.85,
+      "reasoning": "The answer demonstrates high faithfulness to the context by correctly identifying that specific AI strategy details and strategic priorities for 2024 are not present in the provided sources. The answer accurately cites information that IS present: supply constraints in wafers, substrates, and back-end assembly (found in metadata of all chunks), MI300 gross margin discussions (referenced in Chunk 3), and customer ramping challenges (mentioned in Chunk 1). The answer appropriately acknowledges the limitations of the provided context rather than hallucinating information. A small deduction is made because the citation format [C1][C2][C3] doesn't perfectly align with the chunk numbering, and some minor details like 'backend components' vs 'back-end assembly' show slight paraphrasing, but overall the answer stays faithful to what is and isn't in the context."
+    },
+    "accuracy": {
+      "score": 0.3,
+      "reasoning": "The generated answer claims the information was 'not found in provided sources' and fails to identify AMD's key AI strategic priorities. However, it does mention MI300 (one of the key elements from the ground truth) in the context of gross margins and customer ramping. It completely misses the core strategic elements: expanding the Instinct data center GPU portfolio, enhancing the ROCm software stack to compete with CUDA, and driving adoption across cloud and enterprise markets. The answer is overly focused on operational challenges rather than strategic priorities, and its 'not found' conclusion contradicts the ground truth which clearly states AMD's AI strategy. The partial mention of MI300 prevents a score of 0.0."
+    }
+  },
+  "context_count": 3,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3410,
+      "embeddingMs": 268,
+      "pineconeMs": 503,
+      "llmMs": 8677,
+      "totalMs": 12859
+    },
+    "retrieval": {
+      "pineconeMatches": 3,
+      "financialMatches": 0,
+      "keywordMatches": 0,
+      "combinedContext": 3,
+      "filtersApplied": {
+        "company": "AMD",
+        "fiscal_year": "2024"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": false,
+      "financialQuery": false,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "strategic",
+      "timeframe": "2024",
+      "company_name": "AMD",
+      "isComparisonQuery": false,
+      "primaryTicker": "AMD"
+    },
+    "llm": {
+      "input_tokens": 1064,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 201,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "AMD-2024-Q2-full-36",
+      "score": 2.4099345649999995,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q2",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q2_qa.json",
+        "retrieval": null,
+        "text": "and such, but then you're investing in software.\\n\\nI'm sure that's a big challenge, too. Just kind of curious what the biggest hurdle is for you to kind of get that next wave of customers ramp.\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2024-06-XXT00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q2 2024 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\",\n      \"Inventory optimization and management challenges\",\n      \"Potential supply chain bottlenecks for MI300X production\",\n      \"Weakness in communications end market within Embedded segment\",\n      \"Seasonal declines in Gaming and Embedded segments\"\n    ],\n    \"executive_changes\": {}\n  }\n}"
+      }
+    },
+    {
+      "id": "AMD-2024-Q1-full-37",
+      "score": 2.3751681039999997,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q1",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q1_qa.json",
+        "retrieval": null,
+        "text": "of years. I mean, do you think Intel is going to close the gap somewhat with what you've found here over the next couple of years? Do you think they'll be able to maintain the lead?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2024-03-XXT00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q1 2024 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\",\n      \"Inventory optimization and management challenges\",\n      \"Potential supply chain bottlenecks for MI300X production\",\n      \"Weakness in communications end market within Embedded segment\",\n      \"Seasonal declines in Gaming and Embedded segments\"\n    ],\n    \"executive_changes\": {}\n  }\n}"
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-37",
+      "score": 2.354572172,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "dropping a little bit for Q3. Why is that happening? And then just a follow-up on another part of the gross margin angle.\\n\\nHave you changed your gross margin expectations for the MI300? Has the accretion point moved out a little bit?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2024-09-XXT00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q3 2024 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\",\n      \"Inventory optimization and management challenges\",\n      \"Potential supply chain bottlenecks for MI300X production\",\n      \"Weakness in communications end market within Embedded segment\",\n      \"Seasonal declines in Gaming and Embedded segments\"\n    ],\n    \"executive_changes\": {}\n  }\n}"
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 2.410)\nand such, but then you're investing in software.\\n\\nI'm sure that's a big challenge, too. Just kind of curious what the biggest hurdle is for you to kind of get that next wave of customers ramp.\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2024-06-XXT00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q2 2024 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\",\n      \"Inventory optimization and management challenges\",\n      \"Potential supply chain bottlenecks for MI300X production\",\n      \"Weakness in communications end market within Embedded segment\",\n      \"Seasonal declines in Gaming and Embedded segments\"\n    ],\n    \"executive_changes\": {}\n  }\n}\n\n[Chunk 2] (Score: 2.375)\nof years. I mean, do you think Intel is going to close the gap somewhat with what you've found here over the next couple of years? Do you think they'll be able to maintain the lead?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2024-03-XXT00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q1 2024 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\",\n      \"Inventory optimization and management challenges\",\n      \"Potential supply chain bottlenecks for MI300X production\",\n      \"Weakness in communications end market within Embedded segment\",\n      \"Seasonal declines in Gaming and Embedded segments\"\n    ],\n    \"executive_changes\": {}\n  }\n}\n\n[Chunk 3] (Score: 2.355)\ndropping a little bit for Q3. Why is that happening? And then just a follow-up on another part of the gross margin angle.\\n\\nHave you changed your gross margin expectations for the MI300? Has the accretion point moved out a little bit?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2024-09-XXT00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q3 2024 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\",\n      \"Inventory optimization and management challenges\",\n      \"Potential supply chain bottlenecks for MI300X production\",\n      \"Weakness in communications end market within Embedded segment\",\n      \"Seasonal declines in Gaming and Embedded segments\"\n    ],\n    \"executive_changes\": {}\n  }\n}",
+  "created_at": "2025-12-10T16:35:48.881Z",
+  "category": "strategy"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "fin-2",
+  "run_id": "2025-12-10T02-48-59-907Z",
+  "strategy_id": "baseline",
+  "question": "How did the AMD Data Center segment perform in Q3 2024?",
+  "ground_truth": "The Data Center segment revenue reached a record $3.5 billion in Q3 2024, up 122% year-over-year, driven by strong sales of AMD Instinct GPUs and EPYC CPUs.",
+  "generated_answer": "Not found in provided sources.",
+  "duration_ms": 12664,
+  "metrics": {
+    "relevance": {
+      "score": 0.1,
+      "reasoning": "The answer does not provide any information about AMD's Data Center segment performance in Q3 2024. While 'Not found in provided sources' is an honest response indicating the information wasn't available in the given context, it does not address the user's question about the actual performance metrics, revenue, growth, or any other relevant details about the Data Center segment."
+    },
+    "faithfulness": {
+      "score": 0.8,
+      "reasoning": "The answer 'Not found in provided sources' is a conservative and faithful response. While the context does contain substantial information about AMD's Q3 2024 performance - including data center GPU revenue discussion, total revenue of $6.8 billion, financial metrics, and mentions of Instinct product portfolio - the answer indicates the specific information requested was not found. Without knowing the original question, it's difficult to fully assess if this is accurate. However, the answer does not hallucinate or fabricate information, which is the key criterion for faithfulness. The slight deduction is because the context does contain meaningful financial and business information that could potentially answer many questions, so depending on what was asked, this response might be overly conservative."
+    },
+    "accuracy": {
+      "score": 0,
+      "reasoning": "The generated answer states 'Not found in provided sources' which provides no factual information about AMD's Data Center segment revenue. The ground truth contains specific details including the exact revenue figure ($3.5 billion), the time period (Q3 2024), the year-over-year growth rate (122%), and the drivers of growth (AMD Instinct GPUs and EPYC CPUs). The generated answer fails to provide any of this information, making it completely unhelpful and factually empty compared to the ground truth."
+    }
+  },
+  "context_count": 4,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3580,
+      "embeddingMs": 221,
+      "pineconeMs": 656,
+      "financialMs": 3,
+      "keywordMs": 6,
+      "llmMs": 8197,
+      "totalMs": 12663
+    },
+    "retrieval": {
+      "pineconeMatches": 1,
+      "financialMatches": 1,
+      "keywordMatches": 2,
+      "combinedContext": 4,
+      "filtersApplied": {
+        "company": "AMD",
+        "fiscal_year": "2024",
+        "quarter": "Q3"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": true,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "Q3 2024",
+      "company_name": "AMD",
+      "isComparisonQuery": false,
+      "primaryTicker": "AMD"
+    },
+    "llm": null
+  },
+  "context": [
+    {
+      "id": "AMD-2024-Q3-full-0",
+      "score": 4.449043601,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "{\n  \"company_name\": \"Advanced Micro Devices (AMD)\",\n  \"quarter\": \"Q3\",\n  \"fiscal_year\": \"2024\",\n  \"speakers\": {\n    \"lisa_su\": {\n      \"role\": \"President and Chief Executive Officer\",\n      \"responses\": [\n        {\n          \"topic\": \"Data Center GPU Revenue Incremental Growth\",\n          \"content\": \"Sure. Toshiya, thank you for the question. So first of all, we had a very strong quarter for the Data Center overall in Q3 and especially for the Instinct product portfolio."
+      }
+    },
+    {
+      "id": "keyword-2024-Q3-earnings",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/AMD/FY_2024/Q3/parsed_earnings/AMD_FY2024_Q3_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"AMD\", \"quarter\": \"Q3\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 6.8, \"unit\": \"billion USD\", \"year_over_year_change\": \"+18%\", \"quarter_over_quarter_change\": \"+17%\", \"context\": \"Q3 2024\""
+      }
+    },
+    {
+      "id": "keyword-2024-Q3-qa",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AMD/FY_2024/Q3/parsed_earnings/AMD_FY2024_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": "business. Lisa, you took up your '24 outlook by $500 million.\\n\\nCurious what drove the change there? And more importantly, as you look forward into calendar '25, I doubt you're going to give us quantitative guidance on this call. But conceptually, how are you thinking about growth in your Instinct between your large cloud customers and your enterprise customers? And if you can speak to the possibility of adding new customers within cloud, again, specific to Instinct, that would be really helpf"
+      }
+    },
+    {
+      "id": "context-3",
+      "score": 0,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"revenue\": 6819,\n  \"gross_profit\": 3419,\n  \"gross_margin\": 50,\n  \"operating_income\": 724,\n  \"operating_margin\": 10.6,\n  \"net_income\": 771,\n  \"net_margin\": 11.306643202815662,\n  \"operating_cash_flow\": 628,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 17.6,\n  \"eps\": 0.48,\n  \"eps_diluted\": 0.47,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 724,\n  \"margin\": 10.6,\n  \"growth\": 17.6,\n  \"netIncome\": 771,\n  \"grossMargin\": 50,\n  \"grossProfit\": 3419,\n  \"operatingCashFlow\": 628,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 9.209561519284353\n}"
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 4.449)\n{\n  \"company_name\": \"Advanced Micro Devices (AMD)\",\n  \"quarter\": \"Q3\",\n  \"fiscal_year\": \"2024\",\n  \"speakers\": {\n    \"lisa_su\": {\n      \"role\": \"President and Chief Executive Officer\",\n      \"responses\": [\n        {\n          \"topic\": \"Data Center GPU Revenue Incremental Growth\",\n          \"content\": \"Sure. Toshiya, thank you for the question. So first of all, we had a very strong quarter for the Data Center overall in Q3 and especially for the Instinct product portfolio.\n\n[Chunk 2] (Score: 1.200)\n{ \"company_name\": \"AMD\", \"quarter\": \"Q3\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 6.8, \"unit\": \"billion USD\", \"year_over_year_change\": \"+18%\", \"quarter_over_quarter_change\": \"+17%\", \"context\": \"Q3 2024\"\n\n[Chunk 3] (Score: 1.200)\nbusiness. Lisa, you took up your '24 outlook by $500 million.\\n\\nCurious what drove the change there? And more importantly, as you look forward into calendar '25, I doubt you're going to give us quantitative guidance on this call. But conceptually, how are you thinking about growth in your Instinct between your large cloud customers and your enterprise customers? And if you can speak to the possibility of adding new customers within cloud, again, specific to Instinct, that would be really helpf\n\n[Chunk 4] (Score: 0.000)\n{\n  \"revenue\": 6819,\n  \"gross_profit\": 3419,\n  \"gross_margin\": 50,\n  \"operating_income\": 724,\n  \"operating_margin\": 10.6,\n  \"net_income\": 771,\n  \"net_margin\": 11.306643202815662,\n  \"operating_cash_flow\": 628,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 17.6,\n  \"eps\": 0.48,\n  \"eps_diluted\": 0.47,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 724,\n  \"margin\": 10.6,\n  \"growth\": 17.6,\n  \"netIncome\": 771,\n  \"grossMargin\": 50,\n  \"grossProfit\": 3419,\n  \"operatingCashFlow\": 628,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 9.209561519284353\n}",
+  "created_at": "2025-12-10T02:52:26.670Z",
+  "category": "financial"
+}

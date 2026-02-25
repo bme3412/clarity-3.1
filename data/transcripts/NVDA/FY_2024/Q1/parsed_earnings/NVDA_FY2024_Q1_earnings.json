@@ -1,0 +1,128 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q1",
+  "fiscal_year": "2024",
+  "financials": {
+    "total_revenue": {
+      "value": 7.19,
+      "unit": "billion USD",
+      "year_over_year_change": "-13%",
+      "quarter_over_quarter_change": "+19%"
+    },
+    "operating_income": {
+      "value": 2.14,
+      "unit": "billion USD",
+      "yoy_change": "+15%",
+      "qoq_change": "+70%"
+    },
+    "net_income": {
+      "gaap": 2.04,
+      "non_gaap": 2.71,
+      "gaap_yoy": "+26%",
+      "non_gaap_yoy": "-21%"
+    },
+    "eps": {
+      "gaap": 0.82,
+      "non_gaap": 1.09,
+      "gaap_yoy": "+28%",
+      "non_gaap_yoy": "-20%"
+    },
+    "gross_margin": {
+      "gaap": "64.6%",
+      "non_gaap": "66.8%"
+    },
+    "operating_expenses": {
+      "gaap": 2.51,
+      "non_gaap": 1.75
+    },
+    "cash_flow": {
+      "operating": 2.91,
+      "investing": -0.84,
+      "financing": -0.38
+    },
+    "dividends_and_repurchases": {
+      "dividends": 0.10,
+      "share_repurchases": 0.00,
+      "cash_returned": 0.10
+    }
+  },
+  "segments": {
+    "data_center": {
+      "revenue": 4.28,
+      "unit": "billion USD",
+      "quarter_over_quarter_change": "+18%",
+      "year_over_year_change": "+14%",
+      "highlights": [
+        "Record revenue from accelerated computing and generative AI demand",
+        "New inference platforms (L4, L40, H100 NVL, Grace Hopper)",
+        "DGX Cloud partnerships with Azure, GCP, OCI supporting AI Foundations"
+      ]
+    },
+    "gaming": {
+      "revenue": 2.24,
+      "unit": "billion USD",
+      "qoq_change": "+22%",
+      "yoy_change": "-38%",
+      "highlights": [
+        "RTX 40 Series laptop momentum, RTX 4070 ramp, RTX 4060 family launch",
+        "GeForce NOW expansion with Xbox titles"
+      ]
+    },
+    "professional_visualization": {
+      "revenue": 0.295,
+      "unit": "billion USD",
+      "qoq_change": "+31%",
+      "yoy_change": "-53%",
+      "highlights": [
+        "Omniverse Cloud on Azure and new Ada RTX GPUs for workstations"
+      ]
+    },
+    "automotive": {
+      "revenue": 0.296,
+      "unit": "billion USD",
+      "yoy_change": "+114%",
+      "highlights": [
+        "DRIVE Orin ramp, $14B design win pipeline, BYD expansion"
+      ]
+    }
+  },
+  "guidance": {
+    "q2": {
+      "revenue": 11.00,
+      "unit": "billion USD",
+      "plus_minus": 0.22,
+      "gross_margin": {
+        "gaap": "68.6%",
+        "non_gaap": "70.0%",
+        "plus_minus": "±0.5 pts"
+      },
+      "operating_expenses": {
+        "gaap": 2.71,
+        "non_gaap": 1.90
+      },
+      "other_income": 0.09,
+      "tax_rate": "14% ±1%",
+      "capex": "0.30-0.35"
+    }
+  },
+  "audit_highlights": {
+    "data_center": [
+      "Record 4.28B in revenue with 14% YoY growth",
+      "DGX H100, DGX Cloud partnerships accelerate deployments",
+      "NVIDIA AI Foundations and omniverse collaborations (ServiceNow, Medtronic, Dell, Microsoft, Adobe)"
+    ],
+    "networking": [
+      "400G Quantum-2 InfiniBand and Spectrum-4/BlueField-3 adoption",
+      "Partnerships with Azure, Oracle, CoreWeave, Baidu to scale generative AI infrastructure"
+    ],
+    "software": [
+      "NVIDIA AI Enterprise, Omniverse Cloud, AI Foundations powering enterprise adoption",
+      "Microsoft collaboration delivering Omniverse integration with 365 applications"
+    ]
+  },
+  "metadata": {
+    "source": "Q1 FY2024 NVIDIA transcript and press release",
+    "parsed_date": "2023-05-24T00:00:00Z"
+  }
+}
+

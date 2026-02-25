@@ -1,0 +1,241 @@
+{
+  "run_id": "2025-11-26T23-37-10-506Z",
+  "strategy_id": "baseline",
+  "created_at": "2025-11-26T23:37:10.506Z",
+  "dataset": "data/evaluation/dataset.json",
+  "total_cases": 3,
+  "summary": {
+    "avg_relevance": 0.9833333333333334,
+    "avg_faithfulness": 0.6333333333333333,
+    "avg_accuracy": 0.9500000000000001,
+    "timings_ms": {
+      "intentMs": 3404.6666666666665,
+      "embeddingMs": 246,
+      "pineconeMs": 876,
+      "financialMs": 2,
+      "keywordMs": 8,
+      "llmMs": 10352,
+      "totalMs": 14890.333333333334
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 1,
+      "keywordMatches": 3,
+      "combinedContext": 4
+    },
+    "fallback_rates": {
+      "usedFinancialData": 1,
+      "usedKeywordFallback": 1,
+      "financialQuery": 0.6666666666666666,
+      "hadTranscriptMatches": 0
+    },
+    "llm_usage": {
+      "input_tokens": 821,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 354.6666666666667
+    }
+  },
+  "cases": [
+    {
+      "id": "1",
+      "question": "What was AMD's total revenue in Q3 2024?",
+      "duration_ms": 14149,
+      "context_count": 3,
+      "metrics": {
+        "relevance": {
+          "score": 1,
+          "reasoning": "The answer directly and completely addresses the question by providing AMD's total revenue in Q3 2024 as $6.8 billion in the first line. It then goes beyond the basic question to provide valuable context including year-over-year growth (+18%), quarter-over-quarter growth (+17%), and a detailed breakdown by business segment. The answer is highly relevant, accurate, and comprehensive."
+        },
+        "faithfulness": {
+          "score": 0.85,
+          "reasoning": "The answer is largely faithful to the provided context with some concerns. ACCURATE elements: Total revenue of $6.8B with +18% YoY and +17% QoQ growth (Chunk 1, Chunk 3), Data Center revenue of $3.5B with +122% YoY growth (Chunk 3), MI300 and MI325 product mentions and timing (Chunk 2), and the calculation that Data Center represents ~52% of total revenue (3.5/6.8). ISSUES: (1) The answer provides specific characterizations like 'Strongest Performer' and 'clear growth driver' which, while reasonable inferences, go slightly beyond the data. (2) Claims about Client segment ('Strong growth driven by Ryzen processors', 'AI PC positioning') are not supported by the context - Chunk 3 shows Client at $1.881B with 29.5% YoY growth, but no mention of Ryzen or AI PCs. (3) Gaming 'Sequential improvement' and Embedded 'normalization' claims lack direct support. (4) The note correctly states specific figures weren't provided for some segments, but Chunk 3 actually contains all segment revenues. The answer demonstrates good faith representation of the core financial data but includes some unsupported characterizations and misses that complete segment data was available."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer correctly states AMD's total revenue in Q3 2024 was $6.8 billion with an 18% year-over-year increase, which exactly matches the ground truth. While the generated answer provides significantly more detail (including segment breakdowns, sequential growth, and additional context), all information is consistent with and builds upon the core facts in the ground truth. The key numerical facts ($6.8 billion and 18% YoY) are accurate and prominently featured."
+        }
+      },
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 3106,
+          "embeddingMs": 288,
+          "pineconeMs": 1334,
+          "financialMs": 2,
+          "keywordMs": 6,
+          "llmMs": 9410,
+          "totalMs": 14148
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 1,
+          "keywordMatches": 2,
+          "combinedContext": 3,
+          "filtersApplied": {
+            "company": "AMD",
+            "fiscalYear": "2024",
+            "quarter": "Q3"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": true,
+          "financialQuery": true,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "financial",
+          "timeframe": "Q3 2024",
+          "company_name": "AMD",
+          "isComparisonQuery": false,
+          "primaryTicker": "AMD"
+        },
+        "llm": {
+          "input_tokens": 714,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 314,
+          "service_tier": "standard"
+        }
+      },
+      "file": "1.json"
+    },
+    {
+      "id": "2",
+      "question": "What are AMD's strategic priorities for AI as of late 2024?",
+      "duration_ms": 15861,
+      "context_count": 6,
+      "metrics": {
+        "relevance": {
+          "score": 0.95,
+          "reasoning": "The answer is highly relevant and directly addresses AMD's strategic priorities for AI as of late 2024. It provides comprehensive coverage of key strategic areas including: (1) Product roadmap with specific MI300/MI325/MI350/MI450 series details, (2) Customer deployment and qualification priorities, (3) Diversified customer base across hyperscalers and AI-native companies, (4) Supply chain and infrastructure planning for 2026, and (5) Product differentiation strategies. The information is well-organized, specific to the late 2024 timeframe, and directly answers what AMD's strategic priorities are in the AI space. The only minor limitation is that it could potentially include more forward-looking strategic initiatives beyond product launches, but overall it provides a thorough and relevant response to the question."
+        },
+        "faithfulness": {
+          "score": 0.3,
+          "reasoning": "The answer contains significant hallucinations and information not supported by the provided context. While some elements are faithful (MI300 progress, MI325 Q4 launch, MI350 series with multiple SKUs, customer names like Microsoft/Meta/Oracle/Amazon/Google/Netflix/Uber/Cloudflare/Essential AI/Fireworks AI/Luma AI/Databricks, and mentions of power constraints), the answer makes several unsupported claims: (1) Claims MI300 is 'primary revenue driver in 2024' - context only shows it's progressing well, not revenue data; (2) States 'MI325 launched in Q4 2024' when context only mentions it will 'start in the fourth quarter'; (3) Claims 'MI450 with Helios' when context discusses these separately; (4) Fabricates specific strategic priority frameworks not present in chunks; (5) The financial data in Chunk 6 is from Q1 2024 but isn't referenced in the answer despite being the most substantial context piece; (6) Creates organizational structure ('AI Strategic Focus', 'Key Strategic Priorities') not present in source material. The answer appears to synthesize and extrapolate beyond what's explicitly stated, adding interpretive layers that constitute hallucinations."
+        },
+        "accuracy": {
+          "score": 0.85,
+          "reasoning": "The generated answer is largely accurate and consistent with the ground truth, covering all three main points: (1) Instinct GPU portfolio expansion with specific MI300 series details, (2) software stack improvements (though ROCm is not explicitly mentioned, the focus on workload qualification and customer deployment implies software enablement), and (3) cloud and enterprise adoption with specific customer examples. The answer provides significantly more detail than the ground truth, including specific product variants (MI325, MI350, MI450), customer names, and strategic priorities. However, it loses some points for not explicitly mentioning ROCm or the direct CUDA competition angle, which is a key element of the ground truth. The additional detail is consistent and valuable, but the omission of the ROCm/CUDA competitive dynamic is a minor gap in completeness relative to the ground truth's emphasis."
+        }
+      },
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 3322,
+          "embeddingMs": 210,
+          "pineconeMs": 645,
+          "financialMs": 2,
+          "keywordMs": 13,
+          "llmMs": 11667,
+          "totalMs": 15861
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 1,
+          "keywordMatches": 5,
+          "combinedContext": 6,
+          "filtersApplied": {
+            "company": "AMD",
+            "fiscalYear": "2024"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": true,
+          "financialQuery": false,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "strategic",
+          "timeframe": "recent",
+          "company_name": "AMD",
+          "isComparisonQuery": false,
+          "primaryTicker": "AMD"
+        },
+        "llm": {
+          "input_tokens": 1040,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 383,
+          "service_tier": "standard"
+        }
+      },
+      "file": "2.json"
+    },
+    {
+      "id": "3",
+      "question": "How did the AMD Data Center segment perform in Q3 2024?",
+      "duration_ms": 14662,
+      "context_count": 3,
+      "metrics": {
+        "relevance": {
+          "score": 1,
+          "reasoning": "The answer is highly relevant and directly addresses the question about AMD's Data Center segment performance in Q3 2024. It provides comprehensive information including specific revenue figures ($3.55 billion), growth rates (+122% YoY), market position (became AMD's largest segment), key drivers (Instinct AI accelerators, cloud expansion), and strategic context. The answer is well-structured, factual, and completely responsive to what was asked."
+        },
+        "faithfulness": {
+          "score": 0.75,
+          "reasoning": "The answer is largely faithful to the context but contains some issues: (1) ACCURATE: Data Center revenue of $3.55B and 122% YoY growth are correctly cited from Chunk 3. (2) ACCURATE: Total AMD revenue of $6.8B with +18% YoY and +17% QoQ matches Chunk 1 and 3. (3) ACCURATE: The calculation that Data Center represents ~52% of total revenue is mathematically correct (3.55/6.8). (4) PARTIALLY SUPPORTED: The statement about management raising 2024 outlook by $500M appears in Chunk 2, but the chunk is incomplete and doesn't confirm Data Center was the 'primary contributor.' (5) UNSUPPORTED SPECULATION: Claims about 'key drivers' (Instinct AI accelerators, cloud expansion, market share gains) are reasonable inferences but not explicitly stated in the provided context. (6) UNSUPPORTED: The 'Strategic Importance' bullet points about growing Instinct adoption and adding new cloud customers are mentioned as questions in Chunk 2, not as confirmed facts or management statements. (7) ACCURATE: The note about segment-specific cash flow not being available is correct. The answer demonstrates good use of the financial data but includes interpretive statements and presents questions from earnings calls as confirmed strategic focuses, which reduces faithfulness to the source material."
+        },
+        "accuracy": {
+          "score": 1,
+          "reasoning": "The generated answer is factually accurate and consistent with the ground truth. It correctly states the Data Center segment revenue as $3.55 billion (which rounds to $3.5 billion mentioned in ground truth), accurately reports the 122% year-over-year growth, and confirms the key drivers were AMD Instinct GPUs (referred to as 'AI accelerators' in the generated answer) and EPYC CPUs (implied in 'data center processor market'). The generated answer provides significantly more detail and context than the ground truth, including percentage of total revenue, strategic importance, and outlook, but all information is consistent with and expands upon the core facts in the ground truth. There are no contradictions or factual errors."
+        }
+      },
+      "pipeline_metrics": {
+        "timings": {
+          "intentMs": 3786,
+          "embeddingMs": 240,
+          "pineconeMs": 649,
+          "financialMs": 2,
+          "keywordMs": 5,
+          "llmMs": 9979,
+          "totalMs": 14662
+        },
+        "retrieval": {
+          "pineconeMatches": 0,
+          "financialMatches": 1,
+          "keywordMatches": 2,
+          "combinedContext": 3,
+          "filtersApplied": {
+            "company": "AMD",
+            "fiscalYear": "2024",
+            "quarter": "Q3"
+          }
+        },
+        "fallbacks": {
+          "usedFinancialData": true,
+          "usedKeywordFallback": true,
+          "financialQuery": true,
+          "hadTranscriptMatches": false
+        },
+        "intent": {
+          "analysis_type": "financial",
+          "timeframe": "Q3 2024",
+          "company_name": "AMD",
+          "isComparisonQuery": false,
+          "primaryTicker": "AMD"
+        },
+        "llm": {
+          "input_tokens": 709,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "output_tokens": 367,
+          "service_tier": "standard"
+        }
+      },
+      "file": "3.json"
+    }
+  ]
+}

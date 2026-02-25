@@ -1,0 +1,146 @@
+{
+  "company_name": "Broadcom",
+  "quarter": "Q1",
+  "fiscal_year": "2025",
+  "speakers": {
+    "hock_tan": {
+      "role": "President and CEO",
+      "responses": [
+        {
+          "topic": "AI Customer Engagement",
+          "content": "We have 3 hyperscale customers shipping in volume today. Beyond that, we have deeply engaged with 4 additional hyperscalers (partners) to develop custom accelerators to train their next-generation frontier models. These 4 are not included in our estimated SAM of $60B-$90B in fiscal 2027. These engagements take time; typically 1.5 years from engagement to the first chip, and another 6 months to a year to reach scale production."
+        },
+        {
+          "topic": "AI Revenue & Guidance",
+          "content": "Q1 AI revenue was $4.1B, up 77% YoY, beating guidance of $3.8B driven by stronger networking shipments. We expect Q2 AI revenue to grow to $4.4B, up 44% YoY. Total semiconductor revenue for Q2 is expected to be $8.4B, up 17% YoY."
+        },
+        {
+          "topic": "Semiconductor R&D Focus",
+          "content": "We are stepping up R&D on two fronts: 1) Pushing technology for next-gen accelerators, taping out the industry's first 2nm AI XPU with 3.5D packaging targeting 10,000 teraflops. 2) Scaling clusters to 1 million XPUs by doubling the radix capacity of Tomahawk 5 and taping out the 100T Tomahawk 6 switch with 1.6T bandwidth."
+        },
+        {
+          "topic": "Non-AI Semiconductor Recovery",
+          "content": "Non-AI semiconductor revenue was $4.1B in Q1, down 9% sequentially due to seasonal wireless decline. Broadband showed double-digit sequential recovery from a bottom in Q4 '24. Server storage expected to be up high single digits in Q2. Enterprise networking remains flattish working through inventory. Wireless expected to be flat YoY in Q2."
+        },
+        {
+          "topic": "Infrastructure Software & VMware",
+          "content": "Software revenue was $6.7B, up 47% YoY. Growth driven by converting perpetual licenses to subscriptions (over 60% done) and upselling to full stack VMware Cloud Foundation (VCF). 70% of our largest 10,000 customers have adopted VCF. VCF also enables on-prem AI workloads via VMware Private AI Foundation (39 customers)."
+        },
+        {
+          "topic": "Definition of Design Win",
+          "content": "We define a design win or customer only when the product is produced and deployed at scale (volume production), not just small pilots (e.g., 5,000 units). We limit ourselves to partners who need large volume for training frontier models."
+        },
+        {
+          "topic": "AI Inference vs. Training",
+          "content": "Our XPUs address both training and inference, which have different architectures. The $60B-$90B SAM includes both, though the larger portion of dollars currently comes from training."
+        },
+        {
+          "topic": "Networking vs. Compute Mix",
+          "content": "In Q1, there was a surge in networking, shifting the mix slightly, but the long-term norm within our AI revenue is approximately 70% XPUs (accelerators) and 30% connectivity/networking. Networking is driven by performance (Ethernet, optical) to scale out clusters."
+        },
+        {
+          "topic": "Geopolitical Regulations",
+          "content": "We do not have concerns regarding new regulations or AI diffusion rules impacting our 3 volume hyperscale customers."
+        },
+        {
+          "topic": "M&A Strategy",
+          "content": "We are too busy focusing on AI and VMware execution at this point to consider M&A."
+        }
+      ]
+    },
+    "kirsten_spears": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Financial Performance Q1 2025",
+          "content": "Consolidated revenue $14.9B (+25% YoY). Adjusted EBITDA $10.1B (68% margin). Semiconductor revenue $8.2B (+11% YoY), Gross Margin 68%. Infrastructure Software revenue $6.7B (+47% YoY), Operating Margin 76%."
+        },
+        {
+          "topic": "R&D Investment",
+          "content": "Consolidated R&D spend was $1.4B in Q1 and will increase in Q2, focused on 2nm AI XPU packaging and next-gen Tomahawk switches to enable scaling."
+        },
+        {
+          "topic": "Cash Flow & Capital Allocation",
+          "content": "Free cash flow was $6.0B (40% of revenue). Paid $2.8B in dividends and repurchased $2B shares for tax withholding. Debt reduced by net $1.1B to $68.8B gross."
+        },
+        {
+          "topic": "Q2 2025 Guidance",
+          "content": "Consolidated revenue ~$14.9B (+19% YoY). Semiconductor ~$8.4B (+17% YoY). Software ~$6.5B (+23% YoY). Adjusted EBITDA ~66%."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Benjamin Reitzes",
+      "firm": "Melius",
+      "question": "Can you talk about the trend with the 4 new customers/partners? Can they be as big as the current 3? What does it say about the custom silicon trend?",
+      "topics": ["Custom Silicon", "New Customers"]
+    },
+    {
+      "analyst": "Harlan Sur",
+      "firm": "JPMorgan",
+      "question": "Can you profile the second half step-up in AI revenue relative to the first half? Has the profile changed favorably or less favorably?",
+      "topics": ["AI Revenue", "Guidance"]
+    },
+    {
+      "analyst": "William Stein",
+      "firm": "Truist Securities",
+      "question": "Are you seeing disruption from tariffs or DeepSeek dynamics? Should we expect bigger changes from Broadcom as a result?",
+      "topics": ["Geopolitics", "Market Disruption", "DeepSeek"]
+    },
+    {
+      "analyst": "Ross Seymore",
+      "firm": "Deutsche Bank",
+      "question": "How do you view the conversion ratio from design/engagement to actual deployment at scale?",
+      "topics": ["Design Wins", "Deployment"]
+    },
+    {
+      "analyst": "Stacy Rasgon",
+      "firm": "Bernstein Research",
+      "question": "Is there any concern about new AI diffusion rules impacting your 3 volume customers?",
+      "topics": ["Regulations", "China"]
+    },
+    {
+      "analyst": "Vivek Arya",
+      "firm": "Bank of America",
+      "question": "What happens to your opportunity if the mix moves more towards inference? Does it favor GPUs over XPUs?",
+      "topics": ["Inference vs Training", "TAM"]
+    },
+    {
+      "analyst": "Harsh Kumar",
+      "firm": "Piper Sandler",
+      "question": "When customers select between switch ASIC providers vs compute providers for networking, what are the key decision points? Why Ethernet?",
+      "topics": ["Networking", "Ethernet"]
+    },
+    {
+      "analyst": "Timothy Arcuri",
+      "firm": "UBS",
+      "question": "Do the 4 new engagements add to the 7 million XPU unit number previously mentioned for 2027, or do they just fill it?",
+      "topics": ["XPU Units", "SAM"]
+    },
+    {
+      "analyst": "Christopher Muse",
+      "firm": "Cantor Fitzgerald",
+      "question": "How do you manage differentiation/IP sharing across 6+ mega scale customers who all want to differentiate?",
+      "topics": ["Optimization", "IP Protection"]
+    },
+    {
+      "analyst": "Christopher Rolland",
+      "firm": "Susquehanna",
+      "question": "How do you see greenfield scale-up opportunities playing out (optical vs copper)? Where are OpEx dollars going?",
+      "topics": ["Connectivity", "OpEx"]
+    },
+    {
+      "analyst": "Vijay Rakesh",
+      "firm": "Mizuho",
+      "question": "How much was networking up sequentially? Any thoughts on M&A?",
+      "topics": ["Networking Mix", "M&A"]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-03-06",
+    "company_ticker": "AVGO",
+    "source": "earnings_call_transcript"
+  }
+}

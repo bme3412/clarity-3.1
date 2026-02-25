@@ -1,0 +1,201 @@
+{
+  "id": "comp-1",
+  "run_id": "2025-12-03T14-21-47-811Z",
+  "strategy_id": "baseline",
+  "question": "How do AMD and Nvidia compare in the AI accelerator market?",
+  "ground_truth": "Nvidia dominates the AI accelerator market with CUDA ecosystem lock-in, while AMD is competing with MI300 series and open ROCm software stack, gaining traction in cloud deployments.",
+  "generated_answer": "AMD AI Accelerator Competitive Position\nBased on AMD's Q3 2024 disclosures, here's the competitive landscape for AI accelerators:\n Market Position & Growth\nData Center GPU Performance:\n- AMD raised 2024 Data Center GPU guidance from >$4.5B to >$5B, demonstrating strong momentum\n- Q3 showed \"very strong\" performance with customer milestone completions\n- Data Center business now represents >50% of total revenue mix, driving gross margin improvement\n Product Portfolio Strength\nCurrent & Near-Term Roadmap:\n- MI300 Series: Primary revenue driver in 2024\n- MI325X: Launching Q4 2024 with small Q4 revenue contribution, ramping in H1 2025\n- MI350 Series: Planned for H2 2025 with multiple SKUs (air-cooled to liquid-cooled)\nCompetitive Advantages:\n- Annual product cadence vs. competitors\n- Expanding from cloud to enterprise customers\n- \"Very positive\" product reviews and customer feedback\n Customer Traction\nBroadening Adoption:\n- Largest cloud customers expanding AMD Instinct workloads\n- Growing enterprise customer base (both new and existing)\n- Increased third-party cloud instance adoption\n Differentiation Strategy\n- Open ecosystem support: Active in Ultra Ethernet Consortium\n- System-level integration: Moving toward rack-level solutions\n- Flexible cooling options: Air and liquid-cooled variants\nMarket Outlook: Management expressed confidence in 2025 growth based on \"significant investment\" trends in AI infrastructure buildout.\nNote: Specific competitive comparisons to NVIDIA or other vendors' financial metrics were not found in the retrieved context.",
+  "duration_ms": 18309,
+  "metrics": {
+    "relevance": {
+      "score": 0.7,
+      "reasoning": "The answer provides substantial relevant information about AMD's position in the AI accelerator market, including market performance, product portfolio, customer traction, and competitive advantages. However, it falls short of fully addressing the comparison aspect of the question. While the question explicitly asks 'How do AMD and Nvidia compare,' the answer focuses almost entirely on AMD's position and capabilities, with only a brief acknowledgment at the end that 'specific competitive comparisons to NVIDIA... were not found.' A complete answer would include Nvidia's market position, product offerings, and direct comparative metrics (market share, performance benchmarks, pricing, customer adoption rates, etc.). The answer is relevant and informative about AMD but only partially addresses the comparative nature of the question."
+    },
+    "faithfulness": {
+      "score": 0.95,
+      "reasoning": "The answer is highly faithful to the provided context with only minor issues. All major claims are directly supported: (1) Data Center GPU guidance increase from >$4.5B to >$5B is in Chunk 1, (2) >50% revenue mix and gross margin impact is in Chunk 7, (3) MI325X Q4 launch with small Q4 contribution is in Chunk 9, (4) MI350 Series H2 2025 timeline with multiple SKUs is in Chunk 6, (5) customer broadening and workload expansion is in Chunk 3, (6) Ultra Ethernet Consortium support is in Chunk 5, (7) rack-level solutions is in Chunk 6, and (8) 2025 confidence based on infrastructure investment is in Chunk 1. The answer appropriately notes that specific competitive comparisons weren't found in the context. The only minor concern is the phrase 'Q3 2024 disclosures' which isn't explicitly stated but is reasonably inferred. The answer demonstrates excellent faithfulness by staying within the bounds of provided information."
+    },
+    "accuracy": {
+      "score": 0.3,
+      "reasoning": "The generated answer provides extensive detail about AMD's market position, product portfolio, and growth metrics, but it fundamentally fails to address the core comparative claims in the ground truth. The ground truth makes two key assertions: (1) Nvidia dominates the AI accelerator market with CUDA ecosystem lock-in, and (2) AMD is competing with MI300 series and open ROCm software stack. The generated answer completely omits any mention of Nvidia's dominance or CUDA, and while it discusses MI300 series, it fails to mention ROCm (the open software stack that is central to AMD's competitive strategy mentioned in the ground truth). The generated answer reads more like an AMD investor brief rather than a competitive analysis. The note at the end explicitly states 'Specific competitive comparisons to NVIDIA or other vendors' financial metrics were not found,' which confirms the answer doesn't address the competitive dynamics that are the essence of the ground truth statement. While the information provided about AMD is detailed and likely accurate, it misses the comparative context that makes the ground truth meaningful."
+    }
+  },
+  "context_count": 10,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 5528,
+      "embeddingMs": 321,
+      "pineconeMs": 728,
+      "llmMs": 11732,
+      "totalMs": 18309
+    },
+    "retrieval": {
+      "pineconeMatches": 10,
+      "financialMatches": 0,
+      "keywordMatches": 0,
+      "combinedContext": 10,
+      "filtersApplied": {}
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": false,
+      "financialQuery": false,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "market",
+      "timeframe": "all",
+      "company_name": [
+        "AMD",
+        "NVDA"
+      ],
+      "isComparisonQuery": true,
+      "primaryTicker": "AMD"
+    },
+    "llm": {
+      "input_tokens": 1363,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 400,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_0_1",
+      "score": 0.5950101105,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "So Data Center GPU was very strong in the third quarter, and we raised overall guidance for the year from exceeding $4.5 billion to exceeding $5 billion based on the completion of some of those customer milestones. So we feel good about the trajectory as we go through the end of this year. And then to your overall question about 2025. At a high level, look, we feel very good about the market from everything that we see, talking to customers, there's significant investment in trying to build out the infrastructure required across all of the AI workloads."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_1_1",
+      "score": 0.5906068262999999,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "First of all, in terms of competitive positioning and just the traction in the market, our fourth-gen EPYC between Gen 1 Bergamo is really doing very well. We've seen broad adoption across cloud. And then we've been very focused on enterprise as well as third-party cloud instances. And as I said in the prepared remarks, we're starting to see very nice traction in enterprise with both new customers as well as existing customers, and then for third-party cloud adoption, also a good pickup there as well."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_0_2",
+      "score": 0.5631315442,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "And then within that, our product portfolio is getting stronger with the annual cadence, launching 325 later this quarter and 355 in the second half of next year. And then in terms of customers, our customer engagements are actually broadening quite well. So, certainly, cloud -- our largest cloud customers are broadening the set of workloads that they're running on AMD Instinct."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_3_2",
+      "score": 0.5516753807,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "You may have seen some of the reviews. The reviews are very positive. Our view of this is the AI PC is an important add to the overall PC category. As we go into the second half of the year, I think we have better seasonality in general, and we think we can do, let's call it, above-typical seasonality, given the strength of our product launches and when we're launching."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_4_0",
+      "score": 0.5399240703999999,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "Speaker: lisa_su (President and Chief Executive Officer)\nTopic: Open Ethernet Consortium and System Integration\nContext: undefined\nResponse: Yeah, I think it's very important to say we are very supportive of the open ecosystem. We're very supportive of the ultra Ethernet consortium. But I don't believe that that is a limiter to our ability to build large-scale systems. I think Ethernet is something that many in the industry feel will be the long-term answer for networking in these systems."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_2_1",
+      "score": 0.5168020456,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "And 325 will start in the fourth quarter and then ramp more in the first half of next year. And then as we look at the 350 Series, what we're seeing and the reason we call it a series is because there will be multiple SKUs in that series that we'll go through the range of, let's call it, air-cooled to liquid-cooled. In spending time with our customers. I think there are people who certainly want more rack-level solutions, and we're certainly doing much more in terms of system-level integration for our products."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_5_1",
+      "score": 0.49962410170000005,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "In general, when you look at 2024, our gross margin improvement has been primarily driven by the mix, especially Data Center business continue to be the strong growth driver of our business, it's accounting for more than 50% of our revenue mix, that helps us to improve gross margin. Going to 2025, we're not going to guide specifically. But as you mentioned, there are puts and takes that will help us going forward I would say first is, going forward, the largest growth driver is our Data Center business, both the CPU side, the GPU side, and you are absolutely right, we see our Enterprise Server business continue to expand. That will be a tailwind on gross margin side."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_1_3",
+      "score": 0.48589479999999996,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "And so, I think those are positive market trends. And then in addition to that, we are in the process of launching Turin. So, we started production here in the second quarter and we're on track to launch broadly in the second half of the year. We'll see some revenue of Turin in the second half of the year contributing as well."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_2_0",
+      "score": 0.4610451714,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "Speaker: lisa_su (President and Chief Executive Officer)\nTopic: Data Center GPU Roadmap and Rack-Scale Systems\nContext: undefined\nResponse: Yeah, absolutely. So, you know, let me start with your original question. I mean, I think looking at 325X, we are on track to launch later this year. From a revenue standpoint, there will be a small contribution in the fourth quarter, but it really is still mostly the MI300 capabilities."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_3_1",
+      "score": 0.460917646,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "The Zen 5-based products, we're launching both notebook and desktop in this -- in the middle of this year. What we've seen is actually very positive feedback on the product. So, we just actually launched the first Strix-based notebooks over the weekend. They went on sale."
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 0.595)\nSo Data Center GPU was very strong in the third quarter, and we raised overall guidance for the year from exceeding $4.5 billion to exceeding $5 billion based on the completion of some of those customer milestones. So we feel good about the trajectory as we go through the end of this year. And then to your overall question about 2025. At a high level, look, we feel very good about the market from everything that we see, talking to customers, there's significant investment in trying to build out the infrastructure required across all of the AI workloads.\n\n[Chunk 2] (Score: 0.591)\nFirst of all, in terms of competitive positioning and just the traction in the market, our fourth-gen EPYC between Gen 1 Bergamo is really doing very well. We've seen broad adoption across cloud. And then we've been very focused on enterprise as well as third-party cloud instances. And as I said in the prepared remarks, we're starting to see very nice traction in enterprise with both new customers as well as existing customers, and then for third-party cloud adoption, also a good pickup there as well.\n\n[Chunk 3] (Score: 0.563)\nAnd then within that, our product portfolio is getting stronger with the annual cadence, launching 325 later this quarter and 355 in the second half of next year. And then in terms of customers, our customer engagements are actually broadening quite well. So, certainly, cloud -- our largest cloud customers are broadening the set of workloads that they're running on AMD Instinct.\n\n[Chunk 4] (Score: 0.552)\nYou may have seen some of the reviews. The reviews are very positive. Our view of this is the AI PC is an important add to the overall PC category. As we go into the second half of the year, I think we have better seasonality in general, and we think we can do, let's call it, above-typical seasonality, given the strength of our product launches and when we're launching.\n\n[Chunk 5] (Score: 0.540)\nSpeaker: lisa_su (President and Chief Executive Officer)\nTopic: Open Ethernet Consortium and System Integration\nContext: undefined\nResponse: Yeah, I think it's very important to say we are very supportive of the open ecosystem. We're very supportive of the ultra Ethernet consortium. But I don't believe that that is a limiter to our ability to build large-scale systems. I think Ethernet is something that many in the industry feel will be the long-term answer for networking in these systems.\n\n[Chunk 6] (Score: 0.517)\nAnd 325 will start in the fourth quarter and then ramp more in the first half of next year. And then as we look at the 350 Series, what we're seeing and the reason we call it a series is because there will be multiple SKUs in that series that we'll go through the range of, let's call it, air-cooled to liquid-cooled. In spending time with our customers. I think there are people who certainly want more rack-level solutions, and we're certainly doing much more in terms of system-level integration for our products.\n\n[Chunk 7] (Score: 0.500)\nIn general, when you look at 2024, our gross margin improvement has been primarily driven by the mix, especially Data Center business continue to be the strong growth driver of our business, it's accounting for more than 50% of our revenue mix, that helps us to improve gross margin. Going to 2025, we're not going to guide specifically. But as you mentioned, there are puts and takes that will help us going forward I would say first is, going forward, the largest growth driver is our Data Center business, both the CPU side, the GPU side, and you are absolutely right, we see our Enterprise Server business continue to expand. That will be a tailwind on gross margin side.\n\n[Chunk 8] (Score: 0.486)\nAnd so, I think those are positive market trends. And then in addition to that, we are in the process of launching Turin. So, we started production here in the second quarter and we're on track to launch broadly in the second half of the year. We'll see some revenue of Turin in the second half of the year contributing as well.\n\n[Chunk 9] (Score: 0.461)\nSpeaker: lisa_su (President and Chief Executive Officer)\nTopic: Data Center GPU Roadmap and Rack-Scale Systems\nContext: undefined\nResponse: Yeah, absolutely. So, you know, let me start with your original question. I mean, I think looking at 325X, we are on track to launch later this year. From a revenue standpoint, there will be a small contribution in the fourth quarter, but it really is still mostly the MI300 capabilities.\n\n[Chunk 10] (Score: 0.461)\nThe Zen 5-based products, we're launching both notebook and desktop in this -- in the middle of this year. What we've seen is actually very positive feedback on the product. So, we just actually launched the first Strix-based notebooks over the weekend. They went on sale.",
+  "created_at": "2025-12-03T14:30:13.866Z"
+}

@@ -1,0 +1,129 @@
+{
+  "company_name": "Google",
+  "quarter": "Q3",
+  "fiscal_year": "2025",
+  "speakers": {
+    "sundar_pichai": {
+      "role": "Chief Executive Officer",
+      "responses": [
+        {
+          "topic": "Generative AI Era",
+          "content": "Q3 delivered our first $100B quarter, with every major business growing double digits. Gemini processes 7B tokens per minute, the Gemini App now has over 650M MAUs with queries tripling since Q2, and AI Overviews/AI Mode keep unlocking new search behaviors while reinforcing our full-stack AI infrastructure."
+        },
+        {
+          "topic": "Infra & Compute Leadership",
+          "content": "We are scaling the widest range of chips (Ironwood TPUs, NVIDIA GB-300) and shipping A4X MAX instances. Anthropic, other AI labs, and cloud customers depend on our unique AI Hypercomputer, while Willow Quantum and future Gemini 3 keep pushing frontier research."
+        },
+        {
+          "topic": "Product Pullthrough",
+          "content": "New launches—Android XR, Pixel 8/8 Pro, Chrome + Gemini, AI Mode expansions, and Pixel AI Pro—are all connected to Gemini, demonstrating how AI flows from infrastructure to Search, Cloud, YouTube, Waymo, and consumer hardware."
+        }
+      ]
+    },
+    "philipp_schindler": {
+      "role": "Senior Vice President & Chief Business Officer",
+      "responses": [
+        {
+          "topic": "Search + Ads Plus AI Overlays",
+          "content": "Search & YouTube ads grew 15%, driven by AI Overviews and AI Mode opening new commercial queries, while AI MAX, demand gen, and Imagen 4 in Asset Studio help advertisers scale. Retail, financial services, and health were notable contributors, and the dual ad/subscription flywheel keeps strengthening."
+        },
+        {
+          "topic": "YouTube & Cloud Execution",
+          "content": "Shorts now earn more revenue per view in key markets, and creator tools boost engagement. Cloud revenue rose 34%, backlog hit $155B (+46% q/q), and >70% of customers now use our AI products, including Gemini Enterprise agents (2M+ subscribers)."
+        }
+      ]
+    },
+    "anat_ashkenazi": {
+      "role": "Senior Vice President & Chief Financial Officer",
+      "responses": [
+        {
+          "topic": "Financial Performance & CE",
+          "content": "Q3 revenue reached $102.3B (+16%), operating income $31.2B, EPS $2.87, free cash flow $24.5B (TTM $73.6B). We booked a $3.5B EC fine, yet adjusted margin ex-fine was 33.9%. Cash + investments topped $98B after capital returns."
+        },
+        {
+          "topic": "CapEx & Outlook",
+          "content": "$24B CapEx in Q3 reflects accelerated AI infrastructure; we now guide FY25 CapEx to $91-93B. Depreciation up $1.6B y/y; we continue to balance investments with productivity tools (e.g., AI-generated engineering code) and a disciplined capital allocation framework."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Brian Nowak",
+      "firm": "Morgan Stanley",
+      "topics": [
+        "Agentic Expansion",
+        "Waymo"
+      ],
+      "questions": [
+        "How do you ensure the new agentic commerce/travel experiences monetize without disrupting Search, and how close are you to integrating Waymo with Gemini user profiles?"
+      ]
+    },
+    {
+      "analyst": "Douglas Anmuth",
+      "firm": "J.P. Morgan",
+      "topics": [
+        "AI Mode",
+        "Efficiency"
+      ],
+      "questions": [
+        "With AI Mode shaping longer queries, what is the impact on clicks, CPCs, and how is the cost base being managed as CapEx and depreciation keep climbing?"
+      ]
+    },
+    {
+      "analyst": "Eric Sheridan",
+      "firm": "Goldman Sachs",
+      "topics": [
+        "Custom Silicon",
+        "Subscriptions"
+      ],
+      "questions": [
+        "How do successive TPU generations drive internal efficiencies and external monetization, and how is the twin engine of Ads plus growing subscriptions fueling YouTube economics?"
+      ]
+    },
+    {
+      "analyst": "Ross Sandler",
+      "firm": "Barclays",
+      "topics": [
+        "Search CTR",
+        "OpenAI"
+      ],
+      "questions": [
+        "Can AI Overviews sustain CTRs and monetization, and how will the OpenAI partnership evolve on Google Cloud?"
+      ]
+    },
+    {
+      "analyst": "Ken Gawrelski",
+      "firm": "Wells Fargo",
+      "topics": [
+        "Discovery",
+        "Product Surface Strategy"
+      ],
+      "questions": [
+        "How do the new modes expand the addressable monetizable search base, and will users eventually choose between Search, AI Mode, and Gemini or will the experience be blended?"
+      ]
+    },
+    {
+      "analyst": "Michael Nathanson",
+      "firm": "MoffettNathanson",
+      "topics": [
+        "AI Device",
+        "Cloud Economics"
+      ],
+      "questions": [
+        "How much are new hardware form factors mission-critical to scale AI experiences, and are the economics on large cloud deals improving as you scale?"
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-10-29T00:00:00Z",
+    "company_ticker": "GOOGL",
+    "source": "Q3 2025 earnings call transcript",
+    "operating_environment_challenges": [
+      "European Commission fine of $3.5B",
+      "Accelerating depreciation from AI infrastructure CapEx",
+      "Tight server/data center supply",
+      "Macro and FX volatility"
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "id": "unanswerable-2",
+  "run_id": "2025-12-10T19-34-23-331Z",
+  "strategy_id": "baseline",
+  "question": "What was Apple’s gross margin in FY2018?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts with Citations:\n- Not found in provided sources: Apple's gross margin for FY2018\n Final Answer:\nApple's gross margin for FY2018: Not found in provided sources.\nThe provided context contains financial data from 2025 Q4 but does not include gross margin information for fiscal year 2018.",
+  "duration_ms": 4374,
+  "metrics": {
+    "relevance": {
+      "score": 0.3,
+      "reasoning": "The answer acknowledges the question but fails to provide the requested information. It correctly identifies that the data wasn't found in the provided sources, which shows the system understood the question. However, it doesn't actually answer what Apple's gross margin was in FY2018. The response is honest about its limitations but ultimately non-responsive to the actual query."
+    },
+    "faithfulness": {
+      "score": 1,
+      "reasoning": "The answer is completely faithful to the provided context. The generated answer correctly states that Apple's gross margin for FY2018 is not found in the provided sources. This is accurate because the context only contains information about Q4 FY2025 (revenue data, analyst questions about Services and iPhone) and does not contain any gross margin data from FY2018. The answer appropriately acknowledges the limitation of the available context rather than hallucinating information."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer correctly identifies that the information about Apple's gross margin for FY2018 is not found in the provided sources, which matches the ground truth. The answer also provides additional context explaining that the available data is from 2025 Q4 and doesn't include FY2018 gross margin information, which is consistent with and more detailed than the ground truth."
+    }
+  },
+  "context_count": 2,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 1,
+      "embeddingMs": 254,
+      "pineconeMs": 413,
+      "financialMs": 2,
+      "keywordMs": 4,
+      "llmMs": 3691,
+      "totalMs": 4374
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 0,
+      "keywordMatches": 2,
+      "combinedContext": 2,
+      "filtersApplied": {
+        "company": "AAPL",
+        "fiscal_year": "2018"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "FY2018",
+      "company_name": "AAPL",
+      "isComparisonQuery": false,
+      "primaryTicker": "AAPL"
+    },
+    "llm": {
+      "input_tokens": 932,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 78,
+      "service_tier": "standard"
+    },
+    "retrievalTrace": {
+      "financialSegments": [],
+      "financial": 0,
+      "transcripts": [],
+      "keyword": [
+        "keyword-2025-Q4-qa",
+        "keyword-2025-Q4-earnings"
+      ]
+    }
+  },
+  "context": [
+    {
+      "id": "keyword-2025-Q4-qa",
+      "score": 1.2,
+      "metadata": {
+        "company": "AAPL",
+        "quarter": "Q4",
+        "fiscalYear": "2025",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AAPL/FY_2025/Q4/parsed_earnings/AAPL_FY2025_Q4_qa.json",
+        "retrieval": "keyword",
+        "text": "e or one-time factors like antitrust rulings?\" ] }, { \"analyst\": \"Michael Ng\", \"firm\": \"Goldman Sachs\", \"topics\": [ \"Services Acceleration\", \"iPhone Sell-through\" ], \"questions\": [ \"What drove the acceleration in Services revenue? Was it cross-selling or installed base growth?\", \"Are there shifts between upgraders and switchers? How is channel inventory?\" ] }, { \"analyst\": \"Amit Daryanani\", \"fir"
+      }
+    },
+    {
+      "id": "keyword-2025-Q4-earnings",
+      "score": 0.3666666666666667,
+      "metadata": {
+        "company": "AAPL",
+        "quarter": "Q4",
+        "fiscalYear": "2025",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/AAPL/FY_2025/Q4/parsed_earnings/AAPL_FY2025_Q4_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Apple Inc.\", \"quarter\": \"Q4\", \"fiscal_year\": \"2025\", \"total_revenue\": { \"value\": 102.5, \"unit\": \"billion\", \"context\": \"Up 8% year-over-year, September quarter record\", \"period\": \"Q4 FY2025\", \"performance_details\": { \"f"
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 1.200)\ne or one-time factors like antitrust rulings?\" ] }, { \"analyst\": \"Michael Ng\", \"firm\": \"Goldman Sachs\", \"topics\": [ \"Services Acceleration\", \"iPhone Sell-through\" ], \"questions\": [ \"What drove the acceleration in Services revenue? Was it cross-selling or installed base growth?\", \"Are there shifts between upgraders and switchers? How is channel inventory?\" ] }, { \"analyst\": \"Amit Daryanani\", \"fir\n\n[Chunk 2] (Score: 0.367)\n{ \"company_name\": \"Apple Inc.\", \"quarter\": \"Q4\", \"fiscal_year\": \"2025\", \"total_revenue\": { \"value\": 102.5, \"unit\": \"billion\", \"context\": \"Up 8% year-over-year, September quarter record\", \"period\": \"Q4 FY2025\", \"performance_details\": { \"f",
+  "created_at": "2025-12-10T19:57:22.402Z",
+  "category": "unanswerable"
+}

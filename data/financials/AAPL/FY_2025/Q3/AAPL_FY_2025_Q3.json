@@ -1,0 +1,192 @@
+{
+  "financial_report": {
+    "period": {
+      "fiscal_quarter": "Q3 2025",
+      "calendar_quarter": "Q2 2025",
+      "fiscal_end_date": "June 28, 2025",
+      "comparison_period": {
+        "fiscal_quarter": "Q3 2024",
+        "calendar_quarter": "Q2 2024",
+        "fiscal_end_date": "June 29, 2024"
+      },
+      "sequential_quarter": {
+        "current_date": "June 28, 2025",
+        "comparison_date": "March 29, 2025",
+        "type": "Sequential Quarter"
+      }
+    },
+    "income_statement": {
+      "net_sales": {
+        "products": {
+          "value": 66600,
+          "yoy_growth": 8.0
+        },
+        "services": {
+          "value": 27400,
+          "yoy_growth": 13.0
+        },
+        "total": {
+          "value": 94000,
+          "yoy_growth": 10.0
+        }
+      },
+      "margins": {
+        "gross_margin": {
+          "current_value": 46.5,
+          "previous_value": 47.1,
+          "yoy_change": -0.6,
+          "gross_profit": 43700
+        },
+        "operating_margin": {
+          "current_value": 30.0,
+          "previous_value": 31.0,
+          "yoy_change": -1.0,
+          "operating_income": 28200
+        }
+      },
+      "cost_of_sales": {
+        "products": {
+          "value": 43600,
+          "yoy_growth": 0
+        },
+        "services": {
+          "value": 6700,
+          "yoy_growth": 0
+        },
+        "total": {
+          "value": 50300,
+          "yoy_growth": 0
+        }
+      },
+      "operating_expenses": {
+        "research_and_development": {
+          "value": 0,
+          "yoy_growth": 0
+        },
+        "selling_general_and_administrative": {
+          "value": 0,
+          "yoy_growth": 0
+        },
+        "total": {
+          "value": 15500,
+          "yoy_growth": 8.0
+        }
+      },
+      "operating_income": {
+        "value": 28200,
+        "yoy_growth": 0
+      },
+      "net_income": {
+        "value": 23400,
+        "yoy_growth": 0
+      },
+      "earnings_per_share": {
+        "basic": {
+          "value": 1.57,
+          "yoy_growth": 12.0
+        },
+        "diluted": {
+          "value": 1.57,
+          "yoy_growth": 12.0
+        }
+      },
+      "sales_by_segment": {
+        "americas": { "value": 0, "yoy_growth": 0 },
+        "europe": { "value": 0, "yoy_growth": 0 },
+        "greater_china": {
+          "value": 0,
+          "yoy_growth": 4.0
+        },
+        "japan": { "value": 0, "yoy_growth": 0 },
+        "rest_of_asia_pacific": { "value": 0, "yoy_growth": 0 },
+        "total": {
+          "value": 94000,
+          "yoy_growth": 10.0
+        }
+      },
+      "sales_by_category": {
+        "iphone": {
+          "value": 44600,
+          "yoy_growth": 13.0
+        },
+        "mac": {
+          "value": 8000,
+          "yoy_growth": 15.0
+        },
+        "ipad": {
+          "value": 6600,
+          "yoy_growth": -8.0
+        },
+        "wearables_home_and_accessories": {
+          "value": 7400,
+          "yoy_growth": -9.0
+        },
+        "services": {
+          "value": 27400,
+          "yoy_growth": 13.0
+        },
+        "total": {
+          "value": 94000,
+          "yoy_growth": 10.0
+        }
+      }
+    },
+    "balance_sheet": {
+      "assets": {
+        "current_assets": {
+          "cash_and_equivalents": {
+            "value": 133000,
+            "previous": 0,
+            "change_pct": 0
+          }
+        },
+        "non_current_assets": {
+        },
+        "total_assets": {
+          "value": 0,
+          "previous": 0,
+          "change_pct": 0
+        }
+      },
+      "liabilities": {
+        "current_liabilities": {
+        },
+        "non_current_liabilities": {
+          "term_debt": {
+            "value": 102000,
+            "previous": 0,
+            "change_pct": 0
+          }
+        },
+        "total_liabilities": {
+          "value": 0,
+          "previous": 0,
+          "change_pct": 0
+        }
+      },
+      "shareholders_equity": {
+      }
+    },
+    "cash_flow": {
+      "operating_cash_flow": 27900,
+      "capital_expenditures": 2700,
+      "free_cash_flow": 25200
+    },
+    "metrics": {
+      "key_metrics": {
+        "operating_cash_flow_margin": {
+          "value": 29.7,
+          "description": "Operating Cash Flow as % of Revenue"
+        },
+        "free_cash_flow": {
+          "value": 25200,
+          "description": "Operating Cash Flow minus Capex"
+        },
+        "capex_to_revenue": {
+          "value": 2.9,
+          "description": "Capital Expenditure as % of Revenue"
+        }
+      }
+    }
+  }
+}

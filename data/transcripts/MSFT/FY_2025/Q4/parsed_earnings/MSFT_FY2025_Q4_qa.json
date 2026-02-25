@@ -1,0 +1,128 @@
+{
+  "company_name": "Microsoft",
+  "quarter": "Q4",
+  "fiscal_year": "2025",
+  "speakers": {
+    "satya_nadella": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "Azure growth and AI infra",
+          "content": "Azure topped $75B revenue with 34% growth, we opened 400 data centers and over 2 gigawatts of new capacity, every region is AI-first and tuned for liquid cooling to keep the fleet fungible."
+        },
+        {
+          "topic": "Platform stack",
+          "content": "Alongside AI infra we are layering Fabric, Cosmos DB, PostgreSQL, Foundry, Copilot and agents, processing 500T tokens on Foundry and delivering multi-model customers across OpenAI, DeepSeek, Mistral, Meta, Grok and others."
+        },
+        {
+          "topic": "Copilot and agents",
+          "content": "Copilot apps reached 100M MAUs with 800M users touching AI; we launched major updates combining chat, search, create, notebooks and agents, saw record seat adds, and customers built 3M agents this year."
+        },
+        {
+          "topic": "AI experimentation and workloads",
+          "content": "We are seeing new stateful application patterns that blend storage, context engineering and UI; GitHub Copilot evolves through completions, chat, Agent Mode and async agents while driving repo growth."
+        }
+      ]
+    },
+    "amy_hood": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Record quarter dynamics",
+          "content": "Q4 revenue $76.4B (+18%) with $46.7B Microsoft Cloud (+27%); operating income grew 23%, EPS $3.65; commercial bookings exceeded $100B with annuity mix 98%."
+        },
+        {
+          "topic": "CapEx and outlook",
+          "content": "CapEx $24.2B including $6.5B finance leases, more than half long-lived assets; FY26 CapEx growth moderates with short-lived mix, but Q1 guide >$30B with FX tailwinds."
+        },
+        {
+          "topic": "Margin management",
+          "content": "Operating margins expand by focusing on product-led revenue growth plus compounding efficiency S-curves; we continue automating internally while investing in high-opportunity areas."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Keith Weiss",
+      "firm": "Morgan Stanley",
+      "topics": [
+        "AI labs",
+        "Strategic risks"
+      ],
+      "questions": [
+        "How do you think about the risk/reward in supporting fast-growing AI labs that may become competitors, and how do you manage the capital accordingly?"
+      ]
+    },
+    {
+      "analyst": "Mark Moerdler",
+      "firm": "Bernstein Research",
+      "topics": [
+        "AI monetization",
+        "Margins"
+      ],
+      "questions": [
+        "What are the best routes for software companies to monetize AI in SaaS, and how should we think about SaaS AI margins over time?"
+      ]
+    },
+    {
+      "analyst": "Karl Keirstead",
+      "firm": "UBS",
+      "topics": [
+        "Azure migration",
+        "Durability"
+      ],
+      "questions": [
+        "What catalysts are driving the migration acceleration (e.g., Nestlé SAP migration) and how durable is that trend?"
+      ]
+    },
+    {
+      "analyst": "Brent Thill",
+      "firm": "Jefferies",
+      "topics": [
+        "Surprises"
+      ],
+      "questions": [
+        "Any particular surprises in the quarter that explained the magnitude of the upside this time around?"
+      ]
+    },
+    {
+      "analyst": "Raimo Lenschow",
+      "firm": "Barclays",
+      "topics": [
+        "Copilot evolution",
+        "Agent platform"
+      ],
+      "questions": [
+        "How are customers articulating that Copilot is just the beginning, and how is it expanding into broader agentic workflows?"
+      ]
+    },
+    {
+      "analyst": "Kasthuri Rangan",
+      "firm": "Goldman Sachs",
+      "topics": [
+        "CapEx trajectory",
+        "Efficiency"
+      ],
+      "questions": [
+        "You said you could accelerate Azure while slowing CapEx—what’s the outlook for CapEx vs Azure growth as demand and infrastructure keep rising?"
+      ]
+    },
+    {
+      "analyst": "Michael Turrin",
+      "firm": "Wells Fargo",
+      "topics": [
+        "Margins",
+        "AI leverage"
+      ],
+      "questions": [
+        "How are you managing trade-offs to keep operating margin stable while scaling Azure and AI, and what productivity gains from internal AI usage support that?"
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-07-30T00:00:00Z",
+    "source": "Microsoft FY 2025 Q4 earnings call transcript"
+  }
+}
+

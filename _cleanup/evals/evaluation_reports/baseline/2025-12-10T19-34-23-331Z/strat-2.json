@@ -1,0 +1,162 @@
+{
+  "id": "strat-2",
+  "run_id": "2025-12-10T19-34-23-331Z",
+  "strategy_id": "baseline",
+  "question": "What is Apple's approach to AI and machine learning in their products?",
+  "ground_truth": "Apple emphasizes on-device AI processing through Apple Intelligence, focusing on privacy-first ML capabilities, custom silicon (Neural Engine), and integration across the ecosystem.",
+  "generated_answer": "Atomic Facts with Citations:\n• Apple Intelligence emphasizes on-device foundation models that power private AI experiences across iPhone, iPad, Mac, Apple Watch, and Vision Pro [C2]\n• Apple expanded its Apple Intelligence suite at WWDC 2025, providing developers with new tools to integrate AI models into apps [C2]\n• Apple signaled a roadmap toward more personalized Siri and cross-device intelligence features expected to roll out over the following year [C2]\n• AI and machine learning are at the core of Apple Watch health features including heart-rate monitoring, fall detection, and crash detection [C1]\n• Apple introduced Hypertension notifications developed using large-scale machine learning models in their latest Apple Watch lineup [C1]\n• Apple released iOS 18.4 which brought Apple Intelligence to more languages including French, German, Italian, Portuguese, Spanish, Japanese, Korean, and Simplified Chinese [C3]\n• Apple designed Apple Silicon with a neural engine that powers AI features across their products [C3]\n• AI and machine learning are described as \"core to so many profound features\" rolled out over the years to help users [C3]\n Final Answer:\nApple's AI approach centers on privacy-first, on-device processing through Apple Intelligence, which runs foundation models locally across iPhone, iPad, Mac, Apple Watch, and Vision Pro [C2]. The company expanded this suite at WWDC 2025, giving developers tools to integrate AI models into apps while signaling plans for more personalized Siri and cross-device intelligence features [C2].\nApple embeds AI and machine learning into core product experiences, particularly health features like heart-rate monitoring, fall detection, and crash detection on Apple Watch [C1]. The company developed Hypertension notifications using large-scale machine learning models [C1]. Apple Intelligence supports multiple languages including French, German, Italian, Portuguese, Spanish, Japanese, Korean, and Simplified Chinese as of iOS 18.4 [C3].\nThe strategy leverages custom Apple Silicon with dedicated neural engines to power AI features across the product ecosystem [C3]. Apple positions AI and machine learning as \"core to so many profound features\" designed to help users in their daily lives [C3].",
+  "duration_ms": 10790,
+  "metrics": {
+    "relevance": {
+      "score": 0.95,
+      "reasoning": "The answer is highly relevant and directly addresses the question about Apple's approach to AI and machine learning in their products. It covers multiple key aspects: (1) the privacy-first, on-device processing philosophy through Apple Intelligence, (2) specific product implementations across iPhone, iPad, Mac, Apple Watch, and Vision Pro, (3) health-related AI features like heart-rate monitoring and fall detection, (4) the hardware foundation with Apple Silicon and neural engines, (5) developer tools and language expansion, and (6) Apple's overall positioning of AI as core to user-helping features. The answer is comprehensive, well-organized with atomic facts and citations, and thoroughly addresses the question from multiple angles."
+    },
+    "faithfulness": {
+      "score": 0.85,
+      "reasoning": "The answer is largely faithful to the provided context, with most claims properly supported by the chunks. However, there are some issues: 1) The answer attributes information about WWDC 2025 and Apple Intelligence expansion to [C2], but Chunk 2 actually discusses Apple Watch health features - the WWDC 2025 information is in Chunk 6. 2) The answer cites [C3] for iOS 18.4 and Apple Silicon information, but this content is actually in Chunk 1. 3) The answer cites [C1] for Apple Watch health features, but this information is in Chunk 2. Despite the citation mismatches, the factual content itself is present in the context - the answer doesn't contain hallucinated information, just incorrectly labeled citations. The core claims about Apple Intelligence, on-device processing, health features, language support, and Apple Silicon are all verifiable from the provided chunks."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer accurately captures all key facts from the ground truth: (1) on-device AI processing through Apple Intelligence, (2) privacy-first approach (mentioned as 'private AI experiences' and 'privacy-first, on-device processing'), (3) custom silicon with Neural Engine (explicitly mentioned as 'Apple Silicon with dedicated neural engines'), and (4) integration across the ecosystem (mentioned with specific devices: iPhone, iPad, Mac, Apple Watch, Vision Pro). The generated answer provides significantly more detail than the ground truth, including specific features, language support, and WWDC 2025 announcements, but all information is consistent with and expands upon the ground truth's core claims."
+    }
+  },
+  "context_count": 6,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 0,
+      "embeddingMs": 258,
+      "pineconeMs": 811,
+      "llmMs": 9719,
+      "totalMs": 10790
+    },
+    "retrieval": {
+      "pineconeMatches": 6,
+      "financialMatches": 0,
+      "keywordMatches": 0,
+      "combinedContext": 6,
+      "filtersApplied": {
+        "company": "AAPL"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": false,
+      "financialQuery": false,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "technology",
+      "timeframe": "all",
+      "company_name": "AAPL",
+      "isComparisonQuery": false,
+      "primaryTicker": "AAPL"
+    },
+    "llm": {
+      "input_tokens": 1517,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 485,
+      "service_tier": "standard"
+    },
+    "retrievalTrace": {
+      "financialSegments": [],
+      "financial": 0,
+      "transcripts": [
+        "AAPL-2025-Q2-transcript-11",
+        "AAPL-2025-Q4-transcript-12",
+        "AAPL-2019-Q2-full-5",
+        "AAPL-2022-Q4-full-4",
+        "AAPL-2020-Q3-full-32",
+        "AAPL-2025-Q4-full-23"
+      ],
+      "keyword": []
+    }
+  },
+  "context": [
+    {
+      "id": "AAPL-2025-Q2-transcript-11",
+      "score": 5.814728101,
+      "metadata": {
+        "company": "AAPL",
+        "quarter": "Q2",
+        "fiscalYear": "2025",
+        "type": null,
+        "source": "AAPL-Q2-2025-transcript.txt",
+        "retrieval": null,
+        "text": "on their local team with MLS Season Pass, to following the results of every Grand Prix with Formula One now on the Apple Sports app. Turning to software, we just released iOS 18.4, which brought Apple Intelligence to more languages, including French, German, Italian, Portuguese, Spanish, Japanese, Korean, and Simplified Chinese, as well as localized English to Singapore and India. AI and machine learning are core to so many profound features we’ve rolled out over the years to help our users live a better day. It’s why we designed Apple Silicon with a neural engine that powers so many AI features across our products and third-party apps. It’s also what makes Apple products the best devices for generative AI."
+      }
+    },
+    {
+      "id": "AAPL-2025-Q4-transcript-12",
+      "score": 5.6274099365,
+      "metadata": {
+        "company": "AAPL",
+        "quarter": "Q4",
+        "fiscalYear": "2025",
+        "type": null,
+        "source": "AAPL-Q4-2025-transcript.txt",
+        "retrieval": null,
+        "text": "Apple Watch Ultra 3, with the largest display ever in an Apple Watch, improved battery life, and Emergency SOS via Satellite. Apple Watch Series 11 brings our users the most comprehensive set of health features yet, and Apple Watch SE 3 delivers advanced capabilities at an incredible value. AI and advanced machine learning are at the core of powerful health features like heart-rate monitoring, fall detection, crash detection, and more. With our latest Apple Watch lineup, we were proud to introduce Hypertension notifications, developed using large-scale machine learning models. Hypertension is one of the leading risk factors for heart attack and stroke, affecting more than one billion adults worldwide, and we expect to notify more than a million users of this life-threatening condition."
+      }
+    },
+    {
+      "id": "AAPL-2019-Q2-full-5",
+      "score": 4.232738803999999,
+      "metadata": {
+        "company": "AAPL",
+        "quarter": "Q2",
+        "fiscalYear": "2019",
+        "type": null,
+        "source": "AAPL_FY2019_Q2_qa.json",
+        "retrieval": null,
+        "text": "many people in literally every market that we've tried this in, there is a reasonable number of people that want to take and pay for something on installments instead of all at once. And so, it's a little different in each market in terms of what the elasticity is, but you can bet that we're learning quickly on all of those.\"\n        },\n        {\n          \"topic\": \"Apple TV+ and Other Services\",\n          \"content\": \"We're always working on new things. And -- but we're right now we're really focused on getting these four out there. We have the News+ in the market today. We'll have the Apple Arcade and the Apple TV+ products in the market in the fall and Apple Card will go out in the summer timeframe."
+      }
+    },
+    {
+      "id": "AAPL-2022-Q4-full-4",
+      "score": 3.712679103,
+      "metadata": {
+        "company": "AAPL",
+        "quarter": "Q4",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "AAPL_FY2022_Q4_qa.json",
+        "retrieval": null,
+        "text": "the individual pieces of that, Apple Watch was a contributor. And in particular, the new lineup was a contributor, including the Apple Watch Ultra and the Apple Watch Series 8 and the SE. The Ultra was supply constrained and continues to be supply constrained during this quarter thus far. And so we're working hard to satisfy the demand, get those products to customers. We also announced and launched the AirPods Pro in September. And the reviews for the product have just been off the charts in terms of the noise cancellation features and the sound quality. We're getting great, great reviews from there. In terms of what played the other way, the headwinds, obviously, FX was a headwind that affected Wearables, Home and Accessories, just like it affected the rest of our products and services."
+      }
+    },
+    {
+      "id": "AAPL-2020-Q3-full-32",
+      "score": 3.66760662,
+      "metadata": {
+        "company": "AAPL",
+        "quarter": "Q3",
+        "fiscalYear": "2020",
+        "type": null,
+        "source": "AAPL_FY2020_Q3_qa.json",
+        "retrieval": null,
+        "text": "Silicon Monetization\"\n      ],\n      \"questions\": [\n        \"Can you maybe comment on the penetration of Apple Card users in the iOS installed base? And have you seen any change in the buying behavior of Apple Card users in terms of accelerating spend on more Apple products and services?\",\n        \"Now that Apple has Apple Silicon for Macs. Would you ever consider monetizing this as a merchant silicon vendor or is this going to be forever for Apple use?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2020-10-30T10:30:00.000Z\",\n    \"company_ticker\": \"AAPL\",\n    \"source\": \"earnings_call_transcript\"\n  }\n}"
+      }
+    },
+    {
+      "id": "AAPL-2025-Q4-full-23",
+      "score": 3.458347647,
+      "metadata": {
+        "company": "AAPL",
+        "quarter": "Q4",
+        "fiscalYear": "2025",
+        "type": null,
+        "source": "AAPL-Q4-2025-news.json",
+        "retrieval": null,
+        "text": "announcement that shapes AI positioning, developer ecosystem, and product differentiation during Q4.\",\n      \"summary\": \"At WWDC 2025, Apple expanded its Apple Intelligence suite, detailing on-device foundation models that power private AI experiences on iPhone, iPad, Mac, Apple Watch, and Vision Pro. Developers gained new tools to integrate these models into apps, and Apple signaled a roadmap toward more personalized Siri and cross-device intelligence features expected to roll out over the following year.\",\n      \"key_points\": [\n        \"Apple Intelligence emphasizes on-device and privacy-preserving AI for core experiences.\",\n        \"Developers can access Apple’s on-device foundation model APIs to build intelligent, context-aware apps.\",\n        \"Features span summarization, writing assistance, image tools, and personal context awareness across Apple’s OSes.\",\n        \"Roadmap points to a more capable, personalized Siri release after FY25.\",\n        \"Announcement frames Apple’s AI strategy in contrast to cloud-only LLM competitors.\"\n      ],\n      \"embeddings_text\": \"In June 2025, just before the start of Apple’s fiscal Q4, the company used WWDC to detail Apple Intelligence, a suite of on-device AI capabilities integrated into iOS, macOS, and other platforms."
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 5.815)\non their local team with MLS Season Pass, to following the results of every Grand Prix with Formula One now on the Apple Sports app. Turning to software, we just released iOS 18.4, which brought Apple Intelligence to more languages, including French, German, Italian, Portuguese, Spanish, Japanese, Korean, and Simplified Chinese, as well as localized English to Singapore and India. AI and machine learning are core to so many profound features we’ve rolled out over the years to help our users live a better day. It’s why we designed Apple Silicon with a neural engine that powers so many AI features across our products and third-party apps. It’s also what makes Apple products the best devices for generative AI.\n\n[Chunk 2] (Score: 5.627)\nApple Watch Ultra 3, with the largest display ever in an Apple Watch, improved battery life, and Emergency SOS via Satellite. Apple Watch Series 11 brings our users the most comprehensive set of health features yet, and Apple Watch SE 3 delivers advanced capabilities at an incredible value. AI and advanced machine learning are at the core of powerful health features like heart-rate monitoring, fall detection, crash detection, and more. With our latest Apple Watch lineup, we were proud to introduce Hypertension notifications, developed using large-scale machine learning models. Hypertension is one of the leading risk factors for heart attack and stroke, affecting more than one billion adults worldwide, and we expect to notify more than a million users of this life-threatening condition.\n\n[Chunk 3] (Score: 4.233)\nmany people in literally every market that we've tried this in, there is a reasonable number of people that want to take and pay for something on installments instead of all at once. And so, it's a little different in each market in terms of what the elasticity is, but you can bet that we're learning quickly on all of those.\"\n        },\n        {\n          \"topic\": \"Apple TV+ and Other Services\",\n          \"content\": \"We're always working on new things. And -- but we're right now we're really focused on getting these four out there. We have the News+ in the market today. We'll have the Apple Arcade and the Apple TV+ products in the market in the fall and Apple Card will go out in the summer timeframe.\n\n[Chunk 4] (Score: 3.713)\nthe individual pieces of that, Apple Watch was a contributor. And in particular, the new lineup was a contributor, including the Apple Watch Ultra and the Apple Watch Series 8 and the SE. The Ultra was supply constrained and continues to be supply constrained during this quarter thus far. And so we're working hard to satisfy the demand, get those products to customers. We also announced and launched the AirPods Pro in September. And the reviews for the product have just been off the charts in terms of the noise cancellation features and the sound quality. We're getting great, great reviews from there. In terms of what played the other way, the headwinds, obviously, FX was a headwind that affected Wearables, Home and Accessories, just like it affected the rest of our products and services.\n\n[Chunk 5] (Score: 3.668)\nSilicon Monetization\"\n      ],\n      \"questions\": [\n        \"Can you maybe comment on the penetration of Apple Card users in the iOS installed base? And have you seen any change in the buying behavior of Apple Card users in terms of accelerating spend on more Apple products and services?\",\n        \"Now that Apple has Apple Silicon for Macs. Would you ever consider monetizing this as a merchant silicon vendor or is this going to be forever for Apple use?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2020-10-30T10:30:00.000Z\",\n    \"company_ticker\": \"AAPL\",\n    \"source\": \"earnings_call_transcript\"\n  }\n}\n\n[Chunk 6] (Score: 3.458)\nannouncement that shapes AI positioning, developer ecosystem, and product differentiation during Q4.\",\n      \"summary\": \"At WWDC 2025, Apple expanded its Apple Intelligence suite, detailing on-device foundation models that power private AI experiences on iPhone, iPad, Mac, Apple Watch, and Vision Pro. Developers gained new tools to integrate these models into apps, and Apple signaled a roadmap toward more personalized Siri and cross-device intelligence features expected to roll out over the following year.\",\n      \"key_points\": [\n        \"Apple Intelligence emphasizes on-device and privacy-preserving AI for core experiences.\",\n        \"Developers can access Apple’s on-device foundation model APIs to build intelligent, context-aware apps.\",\n        \"Features span summarization, writing assistance, image tools, and personal context awareness across Apple’s OSes.\",\n        \"Roadmap points to a more capable, personalized Siri release after FY25.\",\n        \"Announcement frames Apple’s AI strategy in contrast to cloud-only LLM competitors.\"\n      ],\n      \"embeddings_text\": \"In June 2025, just before the start of Apple’s fiscal Q4, the company used WWDC to detail Apple Intelligence, a suite of on-device AI capabilities integrated into iOS, macOS, and other platforms.",
+  "created_at": "2025-12-10T19:43:40.327Z",
+  "category": "strategy"
+}

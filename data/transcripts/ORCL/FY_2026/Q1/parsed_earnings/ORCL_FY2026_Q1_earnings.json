@@ -1,0 +1,127 @@
+{
+  "company_name": "Oracle",
+  "quarter": "Q1",
+  "fiscal_year": "2026",
+  "financials": {
+    "total_revenue": {
+      "value": 14.9,
+      "unit": "billion USD",
+      "yoy_growth_usd": "+12%",
+      "yoy_growth_constant_currency": "+11%",
+      "context": "Q1 FY26 while software revenues dipped slightly"
+    },
+    "cloud_revenue": {
+      "value": 7.2,
+      "unit": "billion USD",
+      "yoy_growth_usd": "+28%",
+      "yoy_growth_constant_currency": "+27%",
+      "notes": "Balanced SaaS and OCI demand lift cloud revenue"
+    },
+    "cloud_breakdown": {
+      "infrastructure_iaas": {
+        "value": 3.3,
+        "unit": "billion USD",
+        "yoy_growth_usd": "+55%",
+        "yoy_growth_constant_currency": "+54%",
+        "notes": "OCI consumption demand continues to outstrip supply"
+      },
+      "applications_saas": {
+        "value": 3.8,
+        "unit": "billion USD",
+        "yoy_growth_usd": "+11%",
+        "yoy_growth_constant_currency": "+10%",
+        "notes": "Strategic SaaS platforms expand with AI agent integration"
+      }
+    },
+    "remaining_performance_obligations": {
+      "value": 455,
+      "unit": "billion USD",
+      "yoy_growth": "+359%",
+      "context": "RPO explosion driven by AI infrastructure contracts"
+    },
+    "profitability": {
+      "gaap": {
+        "operating_income": 4.3,
+        "net_income": 2.9,
+        "diluted_eps": 1.01,
+        "operating_margin": "29%",
+        "notes": "GAAP EPS down 2% due to tax timing and restructuring"
+      },
+      "non_gaap": {
+        "operating_income": 6.2,
+        "net_income": 4.3,
+        "diluted_eps": 1.47,
+        "operating_margin": "42%",
+        "notes": "Non-GAAP removes OBBBA impact and comp charges"
+      }
+    },
+    "cash_flow": {
+      "operating_cash_flow": 8.1,
+      "capital_expenditures": 8.5,
+      "free_cash_flow": -0.4,
+      "unit": "billion USD",
+      "notes": "Capex elevated due to ramping OCI capacity"
+    },
+    "capital_return": {
+      "share_repurchase": {
+        "value": 0.095,
+        "unit": "billion USD",
+        "notes": "Repurchased 440k shares this quarter"
+      },
+      "dividend": {
+        "value": 0.50,
+        "unit": "USD per share",
+        "notes": "Quarterly dividend maintained"
+      }
+    },
+    "strategic_highlights": {
+      "ai_pipeline": [
+        "Signed multiple multi-billion dollar AI contracts; RPO now $455B and expecting >$0.5T soon",
+        "Oracle AI Infrastructure forecast grows to $18B in FY26 and $32B/$73B/$114B/$144B in subsequent years"
+      ],
+      "multi_cloud": [
+        "MultiCloud database revenue skyrocketed 1,529% in Q1; 34 regions live inside AWS/Azure/GCP with 37 more being built",
+        "Oracle AI Database allows enterprises to vectorize private data and query it through Gemini, ChatGPT, Grok, and others securely"
+      ],
+      "applications": [
+        "Strategic SaaS revenue annualized near $2.8B and growing 16% as AI agents automate ERP/EPM processes",
+        "Fusion and NetSuite continue to benefit from the move-to-cloud wave plus AI capabilities"
+      ],
+      "infrastructure": [
+        "OCI consumption revenue up 57%, infrastructure revenue up 55%, and non‑GPU infrastructure keeps growing faster than hyperscalers",
+        "Oracle builds gigawatt-scale data centers with special networking, earning rapid acceptance (one hall accepted in one week) and warranties capacity to customers fast"
+      ]
+    },
+    "outlook": {
+      "q2_guidance": {
+        "revenue_constant_currency": "+12% to +14%",
+        "revenue_usd": "+14% to +16%",
+        "cloud_growth_constant_currency": "+32% to +36%",
+        "cloud_growth_usd": "+33% to +37%",
+        "non_gaap_eps_constant_currency": "$1.58 to $1.62",
+        "non_gaap_eps_usd": "$1.61 to $1.65",
+        "tax_rate_assumption": "19%",
+        "currency_impact": {
+          "revenue": "+1%",
+          "eps": "+$0.03"
+        }
+      },
+      "long_range": {
+        "fy26_total_revenue": 67,
+        "unit": "billion USD",
+        "fy26_cloud_growth": ">40%",
+        "iaas_growth": ">70%",
+        "rpo_growth": ">100%",
+        "capex": 35,
+        "capex_unit": "billion USD",
+        "notes": "FY26 plans already backed by booked RPO and heavy AI demand"
+      }
+    },
+    "metadata": {
+      "parsed_date": "2025-09-09T00:00:00Z",
+      "source": "Q1 FY26 press release + transcript",
+      "ticker": "ORCL"
+    }
+  }
+}
+

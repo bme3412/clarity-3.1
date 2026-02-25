@@ -1,0 +1,682 @@
+{
+  "financial_report": {
+    "quarters": {
+      "Q2_2025": {
+        "fiscal_quarter": "Q2 2025",
+        "fiscal_end_date": "December 31, 2024",
+        "income_statement": {
+          "revenue": {
+            "total": {
+              "value": 69632,
+              "components": {
+                "product": 16219,
+                "service_and_other": 53413
+              }
+            },
+            "by_segment": {
+              "productivity_and_business_processes": 29437,
+              "intelligent_cloud": 25544,
+              "more_personal_computing": 14651
+            }
+          },
+          "cost_of_revenue": {
+            "total": 21799,
+            "components": {
+              "product": 3856,
+              "service_and_other": 17943
+            }
+          },
+          "gross_margin": {
+            "value": 47833
+          },
+          "operating_expenses": {
+            "research_and_development": 7917,
+            "sales_and_marketing": 6440,
+            "general_and_administrative": 1823,
+            "total": 16180
+          },
+          "operating_income": {
+            "total": 31653,
+            "by_segment": {
+              "productivity_and_business_processes": 16885,
+              "intelligent_cloud": 10851,
+              "more_personal_computing": 3917
+            }
+          },
+          "other_income_expense": -2288,
+          "income_before_taxes": 29365,
+          "provision_for_income_taxes": 5257,
+          "net_income": 24108,
+          "earnings_per_share": {
+            "basic": 3.24,
+            "diluted": 3.23,
+            "weighted_average_shares": {
+              "basic": 7435,
+              "diluted": 7468
+            }
+          }
+        },
+        "balance_sheet": {
+          "assets": {
+            "current_assets": {
+              "cash_and_equivalents": {
+                "value": 17482,
+                "previous": 20840
+              },
+              "short_term_investments": {
+                "value": 54073,
+                "previous": 57588
+              },
+              "total_cash_and_investments": {
+                "value": 71555,
+                "previous": 78428
+              },
+              "accounts_receivable_net": {
+                "value": 48188,
+                "previous": 44148,
+                "allowance_doubtful_accounts": 662
+              },
+              "inventories": {
+                "value": 909,
+                "previous": 1626
+              },
+              "other_current_assets": {
+                "value": 26428,
+                "previous": 25724
+              },
+              "total_current_assets": {
+                "value": 147080,
+                "previous": 149926
+              }
+            },
+            "non_current_assets": {
+              "property_and_equipment_net": {
+                "value": 166902,
+                "previous": 152863,
+                "accumulated_depreciation": 82820
+              },
+              "operating_lease_right_of_use": {
+                "value": 22816,
+                "previous": 20528
+              },
+              "equity_investments": {
+                "value": 15581,
+                "previous": 15778
+              },
+              "goodwill": {
+                "value": 119191,
+                "previous": 119374
+              },
+              "intangible_assets_net": {
+                "value": 25385,
+                "previous": 26751
+              },
+              "other_long_term_assets": {
+                "value": 36943,
+                "previous": 37793
+              }
+            },
+            "total_assets": {
+              "value": 533898,
+              "previous": 523013
+            }
+          },
+          "liabilities": {
+            "current_liabilities": {
+              "accounts_payable": {
+                "value": 22608,
+                "previous": 22768
+              },
+              "short_term_debt": {
+                "value": 0,
+                "previous": 0
+              },
+              "current_portion_long_term_debt": {
+                "value": 5248,
+                "previous": 2249
+              },
+              "accrued_compensation": {
+                "value": 9176,
+                "previous": 8326
+              },
+              "short_term_income_taxes": {
+                "value": 6056,
+                "previous": 9717
+              },
+              "short_term_unearned_revenue": {
+                "value": 45508,
+                "previous": 53026
+              },
+              "other_current_liabilities": {
+                "value": 20286,
+                "previous": 19114
+              },
+              "total_current_liabilities": {
+                "value": 108882,
+                "previous": 115200
+              }
+            },
+            "non_current_liabilities": {
+              "long_term_debt": {
+                "value": 39722,
+                "previous": 42868
+              },
+              "long_term_income_taxes": {
+                "value": 24389,
+                "previous": 24452
+              },
+              "long_term_unearned_revenue": {
+                "value": 2537,
+                "previous": 2663
+              },
+              "deferred_income_taxes": {
+                "value": 2513,
+                "previous": 2581
+              },
+              "operating_lease_liabilities": {
+                "value": 17254,
+                "previous": 16361
+              },
+              "other_long_term_liabilities": {
+                "value": 35906,
+                "previous": 31165
+              }
+            },
+            "total_liabilities": {
+              "value": 231203,
+              "previous": 235290
+            }
+          },
+          "stockholders_equity": {
+            "common_stock_and_paid_in_capital": {
+              "value": 104829,
+              "previous": 102976,
+              "shares_outstanding": 7435
+            },
+            "retained_earnings": {
+              "value": 203482,
+              "previous": 188929
+            },
+            "accumulated_other_comprehensive_loss": {
+              "value": -5616,
+              "previous": -4182
+            },
+            "total_stockholders_equity": {
+              "value": 302695,
+              "previous": 287723
+            }
+          },
+          "total_liabilities_and_equity": {
+            "value": 533898,
+            "previous": 523013
+          }
+        },
+        "cash_flow": {
+          "cash_position": {
+            "beginning_balance": {
+              "value": 20840,
+              "previous": 80452
+            },
+            "ending_balance": {
+              "value": 17482,
+              "previous": 17305
+            },
+            "net_change": {
+              "value": -3358,
+              "previous": -63147
+            }
+          },
+          "cash_flow_from_operations": {
+            "net_income": {
+              "value": 24108,
+              "previous": 21870
+            },
+            "non_cash_adjustments": {
+              "depreciation_amortization_and_other": {
+                "value": 6827,
+                "previous": 5959
+              },
+              "stock_based_compensation": {
+                "value": 3089,
+                "previous": 2828
+              },
+              "investment_and_derivative_gains_losses": {
+                "value": 976,
+                "previous": 198
+              },
+              "deferred_income_taxes": {
+                "value": -1158,
+                "previous": -1702
+              }
+            },
+            "working_capital_changes": {
+              "accounts_receivable": {
+                "value": -5978,
+                "previous": -2951
+              },
+              "inventories": {
+                "value": 711,
+                "previous": 1474
+              },
+              "other_current_assets": {
+                "value": -353,
+                "previous": 725
+              },
+              "other_long_term_assets": {
+                "value": -1089,
+                "previous": -1427
+              },
+              "accounts_payable": {
+                "value": 958,
+                "previous": -2521
+              },
+              "unearned_revenue": {
+                "value": -6338,
+                "previous": -5538
+              },
+              "income_taxes": {
+                "value": -3395,
+                "previous": -1554
+              },
+              "other_current_liabilities": {
+                "value": 3217,
+                "previous": 1518
+              },
+              "other_long_term_liabilities": {
+                "value": 716,
+                "previous": -26
+              }
+            },
+            "total_operating_cash_flow": {
+              "value": 22291,
+              "previous": 18853
+            }
+          },
+          "cash_flow_from_investing": {
+            "capital_expenditure": {
+              "value": -15804,
+              "previous": -9735
+            },
+            "business_combinations": {
+              "value": -1405,
+              "previous": -65029
+            },
+            "investments": {
+              "purchases": {
+                "value": -2050,
+                "previous": -4258
+              },
+              "maturities": {
+                "value": 2604,
+                "previous": 4150
+              },
+              "sales": {
+                "value": 2559,
+                "previous": 1600
+              }
+            },
+            "other_investing": {
+              "value": -16,
+              "previous": 1347
+            },
+            "total_investing_cash_flow": {
+              "value": -14112,
+              "previous": -71925
+            }
+          },
+          "cash_flow_from_financing": {
+            "debt_activities": {
+              "proceeds_short_term": {
+                "value": 0,
+                "previous": -8490
+              },
+              "proceeds_long_term": {
+                "value": 0,
+                "previous": 10773
+              },
+              "repayments": {
+                "value": 0,
+                "previous": -2916
+              }
+            },
+            "equity_activities": {
+              "common_stock_issued": {
+                "value": 256,
+                "previous": 261
+              },
+              "common_stock_repurchased": {
+                "value": -4986,
+                "previous": -4000
+              },
+              "common_stock_dividends": {
+                "value": -6170,
+                "previous": -5574
+              }
+            },
+            "other_financing": {
+              "value": -343,
+              "previous": -201
+            },
+            "total_financing_cash_flow": {
+              "value": -11243,
+              "previous": -10147
+            }
+          },
+          "effect_of_exchange_rate": {
+            "value": -294,
+            "previous": 72
+          }
+        },
+        "metrics": {
+          "financial_performance_reconciliation": {
+            "consolidated_results": {
+              "revenue": {
+                "current": 69632,
+                "previous": 62020,
+                "yoy_change": 12,
+                "constant_currency_impact": 171,
+                "constant_currency_growth": 12
+              },
+              "operating_income": {
+                "current": 31653,
+                "previous": 27032,
+                "yoy_change": 17,
+                "constant_currency_impact": 206,
+                "constant_currency_growth": 16
+              },
+              "net_income": {
+                "current": 24108,
+                "previous": 21870,
+                "yoy_change": 10,
+                "constant_currency_impact": 14,
+                "constant_currency_growth": 10
+              },
+              "diluted_earnings_per_share": {
+                "current": 3.23,
+                "previous": 2.93,
+                "yoy_change": 10,
+                "constant_currency_impact": 0.00,
+                "constant_currency_growth": 10
+              }
+            },
+            "segment_revenue": {
+              "productivity_and_business_processes": {
+                "current": 29437,
+                "previous": 25854,
+                "yoy_change": 14,
+                "constant_currency_impact": 142,
+                "constant_currency_growth": 13
+              },
+              "intelligent_cloud": {
+                "current": 25544,
+                "previous": 21525,
+                "yoy_change": 19,
+                "constant_currency_impact": -22,
+                "constant_currency_growth": 19
+              },
+              "more_personal_computing": {
+                "current": 14651,
+                "previous": 14641,
+                "yoy_change": 0,
+                "constant_currency_impact": 51,
+                "constant_currency_growth": 0
+              }
+            },
+            "product_performance": {
+              "microsoft_cloud": {
+                "yoy_change": 21,
+                "constant_currency_impact": 0,
+                "constant_currency_growth": 21
+              },
+              "microsoft_365_commercial": {
+                "yoy_change": 15,
+                "constant_currency_impact": 0,
+                "constant_currency_growth": 15
+              },
+              "microsoft_365_commercial_cloud": {
+                "yoy_change": 16,
+                "constant_currency_impact": -1,
+                "constant_currency_growth": 15
+              },
+              "microsoft_365_consumer": {
+                "yoy_change": 8,
+                "constant_currency_impact": 0,
+                "constant_currency_growth": 8
+              },
+              "microsoft_365_consumer_cloud": {
+                "yoy_change": 8,
+                "constant_currency_impact": 0,
+                "constant_currency_growth": 8
+              },
+              "linkedin": {
+                "yoy_change": 9,
+                "constant_currency_impact": 0,
+                "constant_currency_growth": 9
+              },
+              "dynamics": {
+                "yoy_change": 15,
+                "constant_currency_impact": -1,
+                "constant_currency_growth": 14
+              },
+              "dynamics_365": {
+                "yoy_change": 19,
+                "constant_currency_impact": -1,
+                "constant_currency_growth": 18
+              },
+              "server_products": {
+                "yoy_change": 21,
+                "constant_currency_impact": 0,
+                "constant_currency_growth": 21
+              },
+              "azure": {
+                "yoy_change": 31,
+                "constant_currency_impact": 0,
+                "constant_currency_growth": 31
+              },
+              "windows_oem_and_devices": {
+                "yoy_change": 4,
+                "constant_currency_impact": 0,
+                "constant_currency_growth": 4
+              },
+              "xbox_content_and_services": {
+                "yoy_change": 2,
+                "constant_currency_impact": 0,
+                "constant_currency_growth": 2
+              },
+              "search_and_news": {
+                "yoy_change": 21,
+                "constant_currency_impact": -1,
+                "constant_currency_growth": 20
+              }
+            }
+          },
+          "working_capital_metrics": {
+            "days_sales_outstanding": {
+              "value": "62.3",
+              "description": "Average number of days to collect receivables",
+              "calculation": "Accounts Receivable / (Revenue / 90 days)",
+              "components": {
+                "accounts_receivable": 48188,
+                "quarterly_revenue": 69632
+              }
+            },
+            "days_payable_outstanding": {
+              "value": "93.4",
+              "description": "Average number of days to pay suppliers",
+              "calculation": "Accounts Payable / (Cost of Revenue / 90 days)",
+              "components": {
+                "accounts_payable": 22608,
+                "quarterly_cost_of_revenue": 21799
+              }
+            },
+            "deferred_revenue_days": {
+              "value": "58.9",
+              "description": "Average number of days of unearned revenue",
+              "calculation": "Unearned Revenue / (Revenue / 90 days)",
+              "components": {
+                "unearned_revenue": 45508,
+                "quarterly_revenue": 69632
+              }
+            }
+          },
+          "turnover_metrics": {
+            "receivables_turnover": {
+              "value": "5.8",
+              "description": "Number of times receivables are collected annually (annualized)",
+              "calculation": "Annualized Revenue / Average Accounts Receivable",
+              "components": {
+                "annualized_revenue": 278528,
+                "average_accounts_receivable": 48188
+              }
+            },
+            "asset_turnover": {
+              "value": "0.52",
+              "description": "Revenue generated per dollar of assets (annualized)",
+              "calculation": "Annualized Revenue / Average Total Assets",
+              "components": {
+                "annualized_revenue": 278528,
+                "average_total_assets": 533898
+              }
+            }
+          },
+          "key_highlights": {
+            "ai_business_annual_run_rate": {
+              "value": 13000,
+              "description": "AI business annual revenue run rate in millions",
+              "yoy_change": 175
+            },
+            "microsoft_cloud_revenue": {
+              "value": 40900,
+              "description": "Quarterly Microsoft Cloud revenue in millions",
+              "yoy_change": 21
+            },
+            "capital_returned_to_shareholders": {
+              "value": 9700,
+              "description": "Total dividends and share repurchases in millions (quarterly)"
+            }
+          }
+        },
+        "sequential_analysis": {
+          "revenue_trends": {
+            "total_revenue": {
+              "q2_2025": 69632,
+              "q1_2025": 65585,
+              "sequential_change": 4047,
+              "sequential_change_percent": 6.2
+            },
+            "product_revenue": {
+              "q2_2025": 16219,
+              "q1_2025": 15272,
+              "sequential_change": 947,
+              "sequential_change_percent": 6.2
+            },
+            "service_revenue": {
+              "q2_2025": 53413,
+              "q1_2025": 50313,
+              "sequential_change": 3100,
+              "sequential_change_percent": 6.2
+            }
+          },
+          "profitability_trends": {
+            "gross_margin": {
+              "q2_2025": 47833,
+              "q1_2025": 45486,
+              "sequential_change": 2347,
+              "gross_margin_percent_q2": 68.7,
+              "gross_margin_percent_q1": 69.4
+            },
+            "operating_income": {
+              "q2_2025": 31653,
+              "q1_2025": 30552,
+              "sequential_change": 1101,
+              "operating_margin_percent_q2": 45.5,
+              "operating_margin_percent_q1": 46.6
+            },
+            "net_income": {
+              "q2_2025": 24108,
+              "q1_2025": 24667,
+              "sequential_change": -559,
+              "net_margin_percent_q2": 34.6,
+              "net_margin_percent_q1": 37.6
+            }
+          },
+          "segment_trends": {
+            "productivity_and_business_processes": {
+              "revenue_q2_2025": 29437,
+              "revenue_q1_2025": 28317,
+              "sequential_revenue_change": 1120,
+              "operating_income_q2_2025": 16885,
+              "operating_income_q1_2025": 16516,
+              "sequential_oi_change": 369
+            },
+            "intelligent_cloud": {
+              "revenue_q2_2025": 25544,
+              "revenue_q1_2025": 24092,
+              "sequential_revenue_change": 1452,
+              "operating_income_q2_2025": 10851,
+              "operating_income_q1_2025": 10503,
+              "sequential_oi_change": 348
+            },
+            "more_personal_computing": {
+              "revenue_q2_2025": 14651,
+              "revenue_q1_2025": 13176,
+              "sequential_revenue_change": 1475,
+              "operating_income_q2_2025": 3917,
+              "operating_income_q1_2025": 3533,
+              "sequential_oi_change": 384
+            }
+          },
+          "cash_flow_trends": {
+            "operating_cash_flow": {
+              "q2_2025": 22291,
+              "q1_2025": 34180,
+              "sequential_change": -11889
+            },
+            "capital_expenditure": {
+              "q2_2025": 15804,
+              "q1_2025": 14923,
+              "sequential_change": 881
+            },
+            "free_cash_flow": {
+              "q2_2025": 6487,
+              "q1_2025": 19257,
+              "sequential_change": -12770
+            }
+          },
+          "balance_sheet_trends": {
+            "total_cash_and_investments": {
+              "q2_2025": 71555,
+              "q1_2025": 78428,
+              "sequential_change": -6873
+            },
+            "property_and_equipment_net": {
+              "q2_2025": 166902,
+              "q1_2025": 152863,
+              "sequential_change": 14039
+            },
+            "total_debt": {
+              "q2_2025": 44970,
+              "q1_2025": 45117,
+              "sequential_change": -147
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "fiscal_period": "Q2 FY2025",
+      "period_ended": "December 31, 2024",
+      "report_generated": "January 29, 2025",
+      "key_takeaways": [
+        "Revenue increased 12% YoY to $69.6 billion, driven by strong cloud and AI adoption",
+        "AI business surpassed $13 billion annual run rate, up 175% year-over-year",
+        "Microsoft Cloud revenue reached $40.9 billion, up 21% year-over-year",
+        "Operating income grew 17% YoY to $31.7 billion with 45.5% operating margin",
+        "Azure revenue growth accelerated to 31% YoY, driven by AI services",
+        "Capital expenditure increased to $15.8 billion as company invests in AI infrastructure",
+        "Returned $9.7 billion to shareholders through dividends and buybacks",
+        "Intelligent Cloud segment maintained strongest growth at 19% YoY revenue increase"
+      ]
+    }
+  }
+}

@@ -1,0 +1,151 @@
+import fs from 'fs';
+import path from 'path';
+import { financialDataCache } from '../../utils/financialDataCache.js';
+import { FinancialDataProcessor } from '../../utils/financialDataProcessor.js';
+
+const BASE_DIR = path.join(process.cwd(), 'data', 'financials');
+const processor = new FinancialDataProcessor(BASE_DIR);
+
+function normalizeQuarterName(q) {
+  if (!q) return null;
+  return q.startsWith('Q') ? q : `Q${q}`;
+}
+
+async function loadQuarter(ticker, fiscalYear, quarter) {
+  const qName = normalizeQuarterName(quarter || 'Q1');
+  const data = await financialDataCache.loadFromFile?.(ticker, fiscalYear, qName);
+  if (data) return data;
+
+  // Fallback to cache API to populate then return
+  const [first] = await financialDataCache.getMultipleQuarters(ticker, fiscalYear, [qName]);
+  return first || null;
+}
+
+export const financials = {
+  async getQuarter(ticker, fiscalYear, quarter) {
+    const data = await loadQuarter(ticker, fiscalYear, quarter);
+    return data || null;
+  },
+
+  async getMultipleQuarters(ticker, periodsOrFiscalYear) {
+    // Support legacy signature (ticker, fiscalYear)
+    if (!Array.isArray(periodsOrFiscalYear)) {
+      return financialDataCache.getMultipleQuarters(ticker, periodsOrFiscalYear);
+    }
+
+    const grouped = periodsOrFiscalYear.reduce((acc, { fiscalYear, quarter }) => {
+      if (!fiscalYear || !quarter) return acc;
+      const qName = normalizeQuarterName(quarter);
+      acc[fiscalYear] = acc[fiscalYear] || [];
+      acc[fiscalYear].push(qName);
+      return acc;
+    }, {});
+
+    // Fetch each fiscal-year group in parallel
+    const allData = await Promise.all(
+      Object.entries(grouped).map(([fy, quarters]) =>
+        financialDataCache.getMultipleQuarters(ticker, fy, quarters)
+      )
+    );
+    return allData.flat();
+  },
+
+  async computeGrowth(ticker, metric, basePeriod, comparisonPeriod) {
+    const base = await this.getQuarter(ticker, basePeriod.fiscalYear, basePeriod.quarter);
+    const cmp = await this.getQuarter(ticker, comparisonPeriod.fiscalYear, comparisonPeriod.quarter);
+    if (!base || !cmp) return null;
+
+    const baseVal = base[metric];
+    const cmpVal = cmp[metric];
+    if (!baseVal || !cmpVal || baseVal === 0) return null;
+    return ((cmpVal - baseVal) / baseVal) * 100;
+  },
+
+  async getTimeSeries(ticker, metric, periods) {
+    if (Array.isArray(periods) && periods.length) {
+      const dataList = await Promise.all(
+        periods.map(({ fiscalYear, quarter }) => this.getQuarter(ticker, fiscalYear, quarter))
+      );
+      return periods.map(({ fiscalYear, quarter }, i) => ({
+        fiscalYear,
+        quarter: normalizeQuarterName(quarter),
+        value: dataList[i] ? dataList[i][metric] ?? null : null,
+      }));
+    }
+
+    // Fallback to processor helper (latest quarters)
+    const series = await processor.getTimeSeriesData(ticker, [metric], 6);
+    return series.datasets?.[metric]?.map((v, idx) => ({
+      label: series.labels[idx],
+      value: v,
+    })) || [];
+  },
+
+  listAvailable(ticker) {
+    if (!ticker) {
+      if (!fs.existsSync(BASE_DIR)) return [];
+      return fs.readdirSync(BASE_DIR).filter((d) => fs.statSync(path.join(BASE_DIR, d)).isDirectory());
+    }
+
+    const tickerDir = path.join(BASE_DIR, ticker);
+    if (!fs.existsSync(tickerDir)) return [];
+
+    const fiscalYears = fs.readdirSync(tickerDir).filter((dir) => dir.startsWith('FY_'));
+    return fiscalYears.map((fy) => {
+      const fyPath = path.join(tickerDir, fy);
+      const quarters = fs.readdirSync(fyPath).filter((q) => q.startsWith('Q'));
+      return { fiscalYear: fy.replace('FY_', ''), quarters };
+    });
+  },
+  
+  // Get the most recent quarter available for a ticker
+  getMostRecentQuarter(ticker) {
+    const available = this.listAvailable(ticker);
+    if (!available.length) return null;
+    
+    // Sort fiscal years descending (2026, 2025, 2024...)
+    const sorted = available.sort((a, b) => parseInt(b.fiscalYear) - parseInt(a.fiscalYear));
+    
+    // Find the most recent quarter in the most recent fiscal year
+    for (const fy of sorted) {
+      if (fy.quarters.length > 0) {
+        // Sort quarters descending (Q4, Q3, Q2, Q1)
+        const sortedQs = fy.quarters.sort((a, b) => {
+          const qA = parseInt(a.replace('Q', ''));
+          const qB = parseInt(b.replace('Q', ''));
+          return qB - qA;
+        });
+        return {
+          fiscalYear: fy.fiscalYear,
+          quarter: sortedQs[0]
+        };
+      }
+    }
+    return null;
+  },
+  
+  // Get the N most recent quarters for a ticker
+  getMostRecentQuarters(ticker, count = 4) {
+    const available = this.listAvailable(ticker);
+    if (!available.length) return [];
+    
+    // Flatten all quarters with their fiscal years
+    const allQuarters = [];
+    available.forEach(fy => {
+      fy.quarters.forEach(q => {
+        allQuarters.push({
+          fiscalYear: fy.fiscalYear,
+          quarter: q,
+          // Create sortable value: FY2026Q3 = 20263
+          sortKey: parseInt(fy.fiscalYear) * 10 + parseInt(q.replace('Q', ''))
+        });
+      });
+    });
+    
+    // Sort descending and take top N
+    return allQuarters
+      .sort((a, b) => b.sortKey - a.sortKey)
+      .slice(0, count)
+      .map(({ fiscalYear, quarter }) => ({ fiscalYear, quarter }));
+  },
+};

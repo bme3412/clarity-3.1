@@ -1,0 +1,124 @@
+{
+  "id": "unanswerable-9",
+  "run_id": "2025-12-10T18-46-29-853Z",
+  "strategy_id": "baseline",
+  "question": "Did Broadcom report FY2016 networking segment revenue?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts with Citations:\n- No FY2016 networking segment revenue data found in provided sources\n- Available context only covers 2024-2025 periods [C1, C2, C3]\n- FY2016 financial information not present in any provided documents\n Final Answer:\nNetworking segment revenue for FY2016: Not found in provided sources.\nThe provided context contains only financial data from 2024-2025 periods [C1, C2, C3]. No FY2016 segment revenue information, including networking segment performance, is available in the source materials.",
+  "duration_ms": 6433,
+  "metrics": {
+    "relevance": {
+      "score": 0.8,
+      "reasoning": "The answer is relevant to the question as it directly addresses whether Broadcom reported FY2016 networking segment revenue. While it doesn't provide the actual revenue figure, it appropriately explains that the information is not available in the provided sources and clarifies what time periods are covered. This is a valid and helpful response to the question, though it doesn't contain the actual data requested (which may not be available)."
+    },
+    "faithfulness": {
+      "score": 1,
+      "reasoning": "The answer is completely faithful to the provided context. The generated answer correctly states that FY2016 networking segment revenue data is not found in the provided sources, and accurately notes that the available context only covers 2024-2025 periods. The chunks provided indeed only contain information about Q3 2025 (Chunks 2 and 3) with no FY2016 data present. The answer does not hallucinate any information and appropriately acknowledges the limitations of the available context."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer correctly identifies that the FY2016 networking segment revenue data is not found in the provided sources, which matches the ground truth. The generated answer provides additional context explaining why (the sources only cover 2024-2025 periods), but this extra detail is consistent with and supports the core finding that the information is not available."
+    }
+  },
+  "context_count": 3,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 0,
+      "embeddingMs": 241,
+      "pineconeMs": 400,
+      "financialMs": 0,
+      "keywordMs": 5,
+      "llmMs": 5787,
+      "totalMs": 6433
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 1,
+      "keywordMatches": 2,
+      "combinedContext": 3,
+      "filtersApplied": {
+        "company": "AVGO",
+        "fiscal_year": "2016"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": true,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "FY2016",
+      "company_name": "AVGO",
+      "isComparisonQuery": false,
+      "primaryTicker": "AVGO"
+    },
+    "llm": {
+      "input_tokens": 942,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 137,
+      "service_tier": "standard"
+    },
+    "retrievalTrace": {
+      "financialSegments": [
+        "financial_data_segment"
+      ],
+      "financial": 1,
+      "transcripts": [],
+      "keyword": [
+        "keyword-2025-Q3-qa",
+        "keyword-2025-Q3-earnings"
+      ]
+    }
+  },
+  "context": [
+    {
+      "id": "context-0",
+      "score": 1,
+      "metadata": {
+        "company": "AVGO",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "financial_data_segment",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"revenueSegments\": {\n    \"composition\": null\n  }\n}"
+      }
+    },
+    {
+      "id": "keyword-2025-Q3-qa",
+      "score": 1.2,
+      "metadata": {
+        "company": "AVGO",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AVGO/FY_2025/Q3/parsed_earnings/AVGO_FY2025_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Broadcom\", \"quarter\": \"Q3\", \"fiscal_year\": \"2025\", \"speakers\": { \"hock_tan\": { \"role\": \"President and CEO\", \"responses\": [ { \"topic\": \"Q3 2025 Financial Highlights\", \"content\": \"Q3 revenue was a recor"
+      }
+    },
+    {
+      "id": "keyword-2025-Q3-earnings",
+      "score": 0.6142857142857143,
+      "metadata": {
+        "company": "AVGO",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/AVGO/FY_2025/Q3/parsed_earnings/AVGO_FY2025_Q3_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"Broadcom Inc.\", \"quarter\": \"Q3\", \"fiscal_year\": \"2025\", \"financials\": { \"total_revenue\": { \"value\": 15952, \"unit\": \"million USD\", \"year_over_year_change\": \"+22%\", \"constant_currency_growth\": \"N/A\", \"context\": \""
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 1.000)\n{\n  \"revenueSegments\": {\n    \"composition\": null\n  }\n}\n\n[Chunk 2] (Score: 1.200)\n{ \"company_name\": \"Broadcom\", \"quarter\": \"Q3\", \"fiscal_year\": \"2025\", \"speakers\": { \"hock_tan\": { \"role\": \"President and CEO\", \"responses\": [ { \"topic\": \"Q3 2025 Financial Highlights\", \"content\": \"Q3 revenue was a recor\n\n[Chunk 3] (Score: 0.614)\n{ \"company_name\": \"Broadcom Inc.\", \"quarter\": \"Q3\", \"fiscal_year\": \"2025\", \"financials\": { \"total_revenue\": { \"value\": 15952, \"unit\": \"million USD\", \"year_over_year_change\": \"+22%\", \"constant_currency_growth\": \"N/A\", \"context\": \"",
+  "created_at": "2025-12-10T19:20:02.263Z",
+  "category": "unanswerable"
+}

@@ -1,0 +1,174 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q3",
+  "fiscal_year": "2025",
+  "financials": {
+    "gaap": {
+      "revenue": {
+        "value": 35.082,
+        "unit": "billion USD",
+        "year_over_year_change": "+94%",
+        "quarter_over_quarter_change": "+17%",
+        "notes": "Record quarterly revenue driven by accelerating Data Center demand"
+      },
+      "gross_margin": {
+        "value": 74.6,
+        "unit": "percent",
+        "change": "-0.5 pts vs Q2"
+      },
+      "operating_income": {
+        "value": 21.869,
+        "unit": "billion USD",
+        "year_over_year_change": "+110%",
+        "quarter_over_quarter_change": "+17%"
+      },
+      "net_income": {
+        "value": 19.309,
+        "unit": "billion USD",
+        "year_over_year_change": "+109%",
+        "quarter_over_quarter_change": "+16%"
+      },
+      "eps": {
+        "diluted": 0.78,
+        "basic": 0.79,
+        "year_over_year_change": "+111%",
+        "quarter_over_quarter_change": "+16%"
+      }
+    },
+    "non_gaap": {
+      "gross_margin": {
+        "value": 75.0,
+        "unit": "percent",
+        "notes": "Lower by 0.7 pts QoQ"
+      },
+      "operating_income": {
+        "value": 23.276,
+        "unit": "billion USD",
+        "year_over_year_change": "+101%",
+        "quarter_over_quarter_change": "+17%"
+      },
+      "net_income": {
+        "value": 20.010,
+        "unit": "billion USD",
+        "year_over_year_change": "+100%",
+        "quarter_over_quarter_change": "+18%"
+      },
+      "eps": {
+        "diluted": 0.81,
+        "year_over_year_change": "+103%",
+        "quarter_over_quarter_change": "+19%"
+      }
+    }
+  },
+  "segment_revenue": {
+    "Data_Center": {
+      "value": 30.8,
+      "unit": "billion USD",
+      "year_over_year_change": "+112%",
+      "quarter_over_quarter_change": "+17%",
+      "highlights": [
+        "Exceptional Hopper/H200 demand with sequential double-digit billions in H200 sales",
+        "Customers deployed tens of thousands of GPUs for training, inference, and sovereign AI build-outs",
+        "Blackwell in production – initial private preview instances with Microsoft, Oracle’s Zettascale clusters, and partner offerings around the world"
+      ]
+    },
+    "Gaming": {
+      "value": 3.3,
+      "unit": "billion USD",
+      "year_over_year_change": "+15%",
+      "quarter_over_quarter_change": "+14%",
+      "highlights": [
+        "Strong back-to-school demand, healthy channel inventory, and new RTX AI PC launches with Copilot+ features",
+        "GeForce RTX AI PCs shipping from ASUS and MSI with 321 AI TOPS"
+      ]
+    },
+    "Professional_Visualization": {
+      "value": 0.486,
+      "unit": "billion USD",
+      "year_over_year_change": "+17%",
+      "quarter_over_quarter_change": "+7%",
+      "highlights": [
+        "AI, autonomous-vehicle simulation, and digital twin workloads continue to lift workstation demand"
+      ]
+    },
+    "Automotive_and_Robotics": {
+      "value": 0.449,
+      "unit": "billion USD",
+      "year_over_year_change": "+72%",
+      "quarter_over_quarter_change": "+30%",
+      "highlights": [
+        "Record Orin revenue as Volvo ramps electric SUV programs and new automotive AI deployments gain traction"
+      ]
+    }
+  },
+  "cash_flow": {
+    "from_operations": {
+      "value": 17.629,
+      "unit": "billion USD",
+      "notes": "Driven by the record profit quarter"
+    },
+    "free_cash_flow": {
+      "value": 16.787,
+      "unit": "billion USD"
+    },
+    "capital_returns": {
+      "share_repurchases": {
+        "value": 10.998,
+        "unit": "billion USD"
+      },
+      "dividends": {
+        "value": 0.245,
+        "unit": "billion USD"
+      }
+    }
+  },
+  "capital_expenditures": {
+    "cash_paid_PP&E": {
+      "value": 0.813,
+      "unit": "billion USD",
+      "notes": "Investing in continued data center and AI capacity build-out"
+    }
+  },
+  "operational_highlights": {
+    "data_center": [
+      "H200 powered cloud instances expanded across AWS, CoreWeave, and Azure with Google Cloud and OCI coming soon",
+      "Blackwell achieved production scale with early deployments from Oracle, Microsoft, Google, and sovereign customers"
+    ],
+    "ai_integration": [
+      "Blackwell debuted on MLPerf Training with 2.2x performance vs Hopper and a 4x cost reduction on GPT-3 benchmarks",
+      "NVIDIA NIM now deployed by ~1,000 customers and AI enterprise software revenue annualizing at $1.5B, marching toward $2B"
+    ],
+    "networking_and_inference": [
+      "Spectrum-X Ethernet revenue grew 3x YoY while InfiniBand, SmartNICs, and BlueField DPUs remained in heavy demand",
+      "Networking sequential dip attributed to mix while pipeline stays strong ahead of Blackwell availability"
+    ],
+    "gaming_and_edge": [
+      "RTX content expansion and Copilot+ PCs propelled gaming revenue up 15% YoY while supply tightness eased into holiday season",
+      "Copilot+ PCs with Windows 11 and AI experiences (Recall, Click to Do, Windows Search) proliferated alongside premium notebooks"
+    ],
+    "sovereign_and_partner": [
+      "Sovereign AI programs in India, Japan, and Europe continued to adopt Omniverse, AI Aerial, and InfiniBand-powered supercomputers",
+      "Consulting partners like Accenture and Deloitte trained thousands of professionals on NVIDIA AI Technology for new enterprise deployments"
+    ]
+  },
+  "outlook": {
+    "q4_guidance": {
+      "revenue": "37.5 ±2% billion USD",
+      "gaap_gross_margin": "73.0% ±0.5 pts",
+      "non_gaap_gross_margin": "73.5% ±0.5 pts",
+      "gaap_operating_expenses": "≈4.8 billion USD",
+      "non_gaap_operating_expenses": "≈3.4 billion USD",
+      "other_income": "Income of ≈0.4 billion USD excluding non-affiliated investment volatility",
+      "tax_rate": "16.5% ±1%"
+    },
+    "longer_term": {
+      "capex": "Investments accelerate to support continued Blackwell/NIM ramps while margin mix improves as the product family scales",
+      "gross_margin_direction": "Expect low-70s spreading into mid-70s as Blackwell mix settles"
+    }
+  },
+  "metadata": {
+    "parsed_date": "2024-11-20T00:00:00Z",
+    "source": "NVIDIA Q3 FY2025 earnings release and transcript"
+  }
+}
+

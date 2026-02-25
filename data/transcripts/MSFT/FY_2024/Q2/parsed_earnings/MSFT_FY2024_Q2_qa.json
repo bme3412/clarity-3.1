@@ -1,0 +1,139 @@
+{
+  "company_name": "Microsoft",
+  "quarter": "Q2",
+  "fiscal_year": "2024",
+  "speakers": {
+    "satya_nadella": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "AI Development Stack and Azure GPU Usage",
+          "content": "You want me to go first? Yeah, just on the inferencing and training, what you’re seeing, for the most part, is all inferencing. None of the large model training stuff is in any of our either numbers at all. Small bot batch training, so somebody doing finetuning or what have you, that will be there, but that’s sort of a minor part. Most of what you see in the Azure number is broadly inferencing.\n\nAnd Mark, I think it may be helpful to sort of think about what is the new workload in AI. The new workload in AI, obviously in our case, starts with one of the frontier – starts with the frontier model, Azure OpenAI. But it’s not just about just one model, right?\n\nFirst, you take that model. You do RLHF. You may do some fine tuning. You do retrieval, which means you’re sort of either hitting some storage meter or you’re hitting some compute meters. And by the way, you’ll also distill a large model to a small model, and that would be a training, perhaps, but that’s a small batch training that uses essentially, inference infrastructure. I think that’s what’s happening.\n\nYou could even say these AI workloads themselves will have a life cycle, which is they’ll get built, and they’ll be continuously optimized over time. That’s sort of one side.\n\nAnd I think if I understand your question, what’s happening with the traditional optimization, and I think last quarter, we said, one, we are going to continue to have these cycles where people will build new workloads, they will optimize the workloads, and then they’ll start new workloads. I think that that’s what we continue to see.\n\nBut that period of massive, I’ll call it, optimization only and no new workload start, that I think has ended at this point. What you’re seeing is much more of that continuous cycles by customers, both with when it comes to AI or whether it comes to the traditional workloads."
+        },
+        {
+          "topic": "Generative AI Impact on Tech Stack",
+          "content": "Yeah, I think it’s going to have a very, very foundational impact. In fact, you could say the core compute architecture itself changes. Everything from power, power density to the datacenter design to what used to be the accelerator now is sort of the main CPU, so to speak, or the main compute unit. And so, I think – and the network, the memory architecture, all of it. So, the core computer architecture changes. I think every workload changes.\n\nAnd so, yeah, take our data layer. The most exciting thing for me in the last year has been to see how our data layer has evolved to be built for AI, right? If you think about Fabric, one of the genius of Fabric is to be able to say, let’s separate out storage from the compute layer. In compute, we’ll have traditional SQL. We’ll have Spark. And by the way, you can have an Azure AI job on top of the same data lake, so to speak, or the lake house pattern. And then the business model, you can combine all of those different computes.\n\nThat’s the type of compute architecture. That’s just one example. The tool stuff is changing. Office, I mean if you think about what – if you look at Copilot, Copilot extensibility with GPT, Copilot apps through the Copilot stack, that’s another sort of part of what’s happening to the tech stack.\n\nYeah, I mean, I definitely builds. I mean, I do believe being in the cloud has been very helpful to build AI, but now AI is just redefining what it means to have – what the cloud looks like, both at the infrastructure level and the app model."
+        },
+        {
+          "topic": "Microsoft 365 Copilot Adoption and RPU",
+          "content": "No, thank you for the question, Brad. And so, a couple things.\n\nIn my comments, I said, at least in relation to our previous suites, like let’s say E3 or E5, whatever, two months in, it’s definitely much faster than that. And so, from that perspective, it’s exciting to see, I’ll say, the demand signal, the deployment signal. I was looking at by tenant, even. usage, it’s faster than anything else. because it’s easier, right? I mean, it sort of shows up in your apps, you click on it like any ribbon thing, and it becomes a daily habit.\n\nIn fact, it reminds me a little bit of sort of back in the day of PC adoption, right? I think it first starts off with few people having access. There are many companies that are doing standard issue, right? Just like PCs became standard issue, at some point after PCs being adopted by early adopters, I think that’s the cycle that, at least, we expect.\n\nIn terms of what we’re seeing, it’s actually interesting. If you look at the data we have, summarization, right? That’s what is number one. I’m doing summarization of Teams meetings, inside of Teams, during the meeting, after the meeting, Word documents summarization. I get something in e-mail, I’m summarizing. Summarization has become a big deal.\n\nDrafts, right, you’re drafting e-mails, drafting documents. Anytime you want to start something, the blank page thing goes away and you start by prompting and drafting.\n\nChat, to me, the most powerful feature is now, you have the most important database in your company, which happens to be the database of your documents and communications, is now query-able by natural language in a powerful way, right? I can go and say, what are all the things Amy said I should be watching out for next quarter, and it’ll come out with great detail.\n\nAnd so, chat, summarization, draft, also, by the way, actions, one of the most used thing is here’s the Word document, go complete, create a PowerPoint for me. Those are the stuff that’s also beginning.\n\nI feel like these all become – but fundamentally what happens is you remember the PC adoption cycle, what it did was work, work artifact and workflow changed, right? You can imagine what forecasting was before Excel and e-mail, and what it was after. Similarly, you’ll see work and workflow change as people summarize faster, draft regulatory submissions faster, chat to get knowledge across different parts of the organization faster, and so on.\n\nAnd so, those are the things that we are seeing as overall patterns."
+        },
+        {
+          "topic": "GitHub Copilot Pricing and RPU",
+          "content": "No, thank you for the question, Brad. And so, a couple things.\n\nIn my comments, I said, at least in relation to our previous suites, like let’s say E3 or E5, whatever, two months in, it’s definitely much faster than that. And so, from that perspective, it’s exciting to see, I’ll say, the demand signal, the deployment signal. I was looking at by tenant, even. usage, it’s faster than anything else. because it’s easier, right? I mean, it sort of shows up in your apps, you click on it like any ribbon thing, and it becomes a daily habit.\n\nIn fact, it reminds me a little bit of sort of back in the day of PC adoption, right? I think it first starts off with few people having access. There are many companies that are doing standard issue, right? Just like PCs became standard issue, at some point after PCs being adopted by early adopters, I think that’s the cycle that, at least, we expect.\n\nIn terms of what we’re seeing, it’s actually interesting. If you look at the data we have, summarization, right? That’s what is number one. I’m doing summarization of Teams meetings, inside of Teams, during the meeting, after the meeting, Word documents summarization. I get something in e-mail, I’m summarizing. Summarization has become a big deal.\n\nDrafts, right, you’re drafting e-mails, drafting documents. Anytime you want to start something, the blank page thing goes away and you start by prompting and drafting.\n\nChat, to me, the most powerful feature is now, you have the most important database in your company, which happens to be the database of your documents and communications, is now query-able by natural language in a powerful way, right? I can go and say, what are all the things Amy said I should be watching out for next quarter, and it’ll come out with great detail.\n\nAnd so, chat, summarization, draft, also, by the way, actions, one of the most used thing is here’s the Word document, go complete, create a PowerPoint for me. Those are the stuff that’s also beginning.\n\nI feel like these all become – but fundamentally what happens is you remember the PC adoption cycle, what it did was work, work artifact and workflow changed, right? You can imagine what forecasting was before Excel and e-mail, and what it was after. Similarly, you’ll see work and workflow change as people summarize faster, draft regulatory submissions faster, chat to get knowledge across different parts of the organization faster, and so on.\n\nAnd so, those are the things that we are seeing as overall patterns."
+        }
+      ]
+    },
+    "amy_hood": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Operational Margins and OpEx Efficiency",
+          "content": "We continue to focus on moving resources to high-growth, differentiated areas, driving operating leverage and margin improvements. Our strategy ensures that operating expenses grow in line with headcount growth and strategic investments."
+        },
+        {
+          "topic": "Commercial Growth in Volatile Environment",
+          "content": "In general, we saw very consistent execution from Q4 to Q1, and that’s what we’re talking about into Q2. I think that speaks to our value prop, which is where Satya went. It speaks to making sure that customers are getting a very quick return on value, real productivity improvement, real savings so that when we’re asking at renewal or talking about E5 upgrades or talking about AI services, those come with real promises of high value scenarios. And so, I think that is an important piece as you think about stability and commercial demand."
+        },
+        {
+          "topic": "Operating Margins and AI Investments",
+          "content": "Thanks, Brent. First of all, thanks for the question. The teams have obviously been hard at work on this topic. We do point out that Q2, because of the impact of the charge a year ago, you’re seeing larger margin improvement than I would say is sort of a run rate margin improvement. Let me first say that.\n\nSecondly, the absolute margin improvement is also been very good. And it speaks of, I think, one of the things Satya talked about and I reiterated a bit, which is that we want, really, to make sure when we’re making investments, we’re making them in consistency across the tech stack.\n\nThe tech stack we’re building, no matter what team it’s on, is inclusive of AI enablement. And so, think about it as building that consistency without needing to add a lot of resources to do that. It’s been a real pivot of our entire investment infrastructure to be working on this work. And I think that’s important, because it means you’re shifting to an AI-first position, not just in the language we use, but in what people are working on, day to day. That does obviously, create a leverage opportunity.\n\nThere’s also been really good work put in by many teams on improving the gross margin of the products. We talked about it with Office 365. We talked about it in Azure Core. We even talked about it across our devices portfolio, where we’ve seen materially, improvements over the course of the year.\n\nAnd so, when you kind of take improvements at the gross margin level, plus this consistency of re-pivoting a workforce toward the AI-first work we’re doing without adding material number of people to the workforce, you end up with that type of leverage. And we still need to be investing. And so, the important part, invest toward the thing that’s going to shape the next decade and continue to stay focused on being able to deliver your day-to-day commitments.\n\nAnd so, it’s a great question, and hopefully that helps piece apart a few of the components."
+        },
+        {
+          "topic": "AI Services Growth and Infrastructure Scaling",
+          "content": "Karl, I think we feel really good about where we have been in terms of adding capacity. You started to see the acceleration in our capital expense starting almost a year ago, and you’ve seen it scale through that process. And that is going toward, as we talked about, servers and also new datacenter footprints to be able to meet what we see as this demand, and really changing demand, as we look forward.\n\nAnd so, I do feel like the teams have done a very good job. I feel like primarily, obviously, this is being built by us, but we’ve also used third-party capacity to help when we could have that help us, in terms of meeting customer demand. And I tend to think, looking forward, you’ll tend to see, and I guided toward it, accelerating capital expense to continue to be able to add capacity in the coming quarters, given what we see in terms of pipeline."
+        },
+        {
+          "topic": "AI Services Tailwind",
+          "content": "And maybe I’ll just add just a few things to that. I think whether you use the word “lapping” these optimization comparables or the comparables easing, it’s all sort of the same thing. That we’re getting to that point in H2, that’s absolutely true. We’d like to talk about the contribution of AI, specifically for the reasons Satya talked about.\n\nThis is starting to see the application of AI at scale, and we want to be able to show people this is how that’s going to look. It’s inferencing workloads. Where people are expecting productivity gains, other benefits that grow revenue. And so, I do think about those as both related.\n\nAnd ultimately, the TAM that we go after is best thought of as across both of those, both AI workload and, I guess, quote unquote, non-AI workload, although, to Satya’s point, you need all of it."
+        },
+        {
+          "topic": "Office 365 Seat Growth and RPU",
+          "content": "That’s a great question, Brad. And maybe I’ll split apart the components, and then we can come back to whether they should equalize or just go on sort of a bit, actually, believe it or not, somewhat independent trajectories. And I’ll explain why I say that.\n\nSeat growth as we talk about is primarily from, at this point, small medium-sized businesses and really, frontline workers scenarios. And to your point, on occasion, those are lower RPU seats, but they’re also new seats. And so, you see that in the seat count number. And as we get through, and we’ve seen that come down a little bit, quarter over quarter, and we’ve guided for that really to happen again next quarter.\n\nBut a very separate thing is being able to add RPU. And traditionally, and again this quarter, right, that’s come over time from E3, then from E5. And we’re continuing to see very healthy suite momentum, and you heard very good renewals. All of that, right, completely independent in some way from seat growth.\n\nThen the next thing that actually, we just talked about, maybe in Brad’s question, I’m trying to recall, is that you’re going to see Copilot revenue will land there as RPU, right? That won’t show a seat growth. You’ll have E3, E5 transitions, Copilot all show up in RPU over time. And then you’ll have the seat growth be primarily still small business and frontline worker and maybe new industry scenarios.\n\nI tend to not really, Brad, think about them as related lines. Believe it or not, I think about them as sort of unique, independent motions where we run. And there’s still room for seat growth, and obviously, with the levers we’ve talked about, there’s room for RPU growth as well."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Brett Iversen",
+      "firm": "Piper Sandler",
+      "topics": ["Commercial Growth", "Investment Strategy"],
+      "questions": [
+        "Based on the new products and innovation, do you think you can sustain the type of commercial growth that we saw in Q1 as we go through the year, or is the environment too tricky for that?",
+        "Regarding investment, you've been able to keep overall OpEx growth very low this quarter. At some point, should we be thinking about a return to a more aggressive investment behind all this product innovation?"
+      ]
+    },
+    {
+      "analyst": "Mark Moerdler",
+      "firm": "Bernstein Research",
+      "topics": ["AI Development Stack", "Azure GPU Usage"],
+      "questions": [
+        "AI has been far stronger than expected, beating your guidance for Azure this quarter. Has the fact that Microsoft has a full AI dev stack, copilot reference architecture, and plug-in architecture been a meaningful factor, not just from a revenue perspective, but also potentially from a margin perspective?",
+        "Can you give us any color on whether Azure GPUs are predominantly used for model training, or are we seeing a lot of inferencing yet from clients?"
+      ]
+    },
+    {
+      "analyst": "Brent Thill",
+      "firm": "Jefferies",
+      "topics": ["Operating Margins", "Intelligent Cloud"],
+      "questions": [
+        "The Intelligent Cloud segment operating margins are at their highest level in six years, despite elevated AI investments. Is this due to a one-time tailwind, or has Azure reached a scale where high margins are sustainable even with ambitious AI investment cycles?"
+      ]
+    },
+    {
+      "analyst": "Kash Rangan",
+      "firm": "Goldman Sachs",
+      "topics": ["Generative AI Impact", "Tech Stack"],
+      "questions": [
+        "Cloud computing changed the tech stack in ways that we could not imagine 10 years back, the nature of the database layer or the operating system layer. Every layer just changed dramatically. How do you foresee generative AI changing the tech stack as we know it?"
+      ]
+    },
+    {
+      "analyst": "Karl Keirstead",
+      "firm": "UBS",
+      "topics": ["AI Services Growth", "Infrastructure Scaling"],
+      "questions": [
+        "Congrats on the 28% constant currency Azure growth. What is your outlook for Azure in the second half of the fiscal year, especially considering the increasing AI contributions and GPU capacity?",
+        "Is it possible to unpack the six-point AI services tailwind? It’s just to help us understand which elements ramped up by the three incremental points. For instance, is it more the OpenAI inferencing GitHub Copilot, other Copilots, the Azure OpenAI service, third-party LLMs running on Azure? I’m just wondering where did you see the strongest step up in that activity?"
+      ]
+    },
+    {
+      "analyst": "Brad Zelnick",
+      "firm": "Deutsche Bank",
+      "topics": ["Microsoft 365 Copilot Adoption", "RPU"],
+      "questions": [
+        "The early market feedback that we’re all hearing on Microsoft 365 Copilot is very powerful. Can you provide more granularity on what you’re seeing in terms of adoption trends versus perhaps other new product introductions in the past? What, if anything, is holding it back, and how much of a priority is it to get it in the hands of customers? To what lengths might you go to, to incentivize just getting it out in the market?"
+      ]
+    },
+    {
+      "analyst": "Mark Murphy",
+      "firm": "JP Morgan",
+      "topics": ["AI Services Tailwind"],
+      "questions": [
+        "Is it possible to unpack the six-point AI services tailwind? It’s just to help us understand which elements ramped up by the three incremental points. For instance, is it more the OpenAI inferencing GitHub Copilot, other Copilots, the Azure OpenAI service, third-party LLMs running on Azure? I’m just wondering where did you see the strongest step up in that activity?"
+      ]
+    },
+    {
+      "analyst": "Brad Reback",
+      "firm": "Stifel",
+      "topics": ["Office 365 Seat Growth", "RPU"],
+      "questions": [
+        "For many, many years in Commercial Office 365, seat growth has far outpaced RPU. And over the last couple of quarters, we’re getting a convergence, obviously, as the seat count gets really large. As we look forward, should they run even for a period of time, or should we expect RPU to outpace growth here in the short term?"
+      ]
+    },
+    {
+      "analyst": "Tyler Radke",
+      "firm": "Citi",
+      "topics": ["GitHub Copilot Pricing and RPU", "New Releases"],
+      "questions": [
+        "Satya, your enthusiasm about GitHub Copilot was noticeable on the conference call and at the AI Summit in New York last week. I’m wondering how you’re thinking about pricing. Obviously, this is driving pretty incredible breakthroughs in productivity for developers, but how do you think about your ability to drive RPU on the GitHub Copilot over time? And just talk us through how you’re thinking about the next phase of new releases there."
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2024-06-30T00:00:00Z",
+    "company_ticker": "MSFT",
+    "source": "Q2 2024 Earnings Call Transcript"
+  }
+}

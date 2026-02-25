@@ -1,0 +1,117 @@
+{
+  "id": "fin-1",
+  "run_id": "2025-12-10T02-48-59-907Z",
+  "strategy_id": "baseline",
+  "question": "What was AMD's total revenue in Q3 2024?",
+  "ground_truth": "AMD's total revenue in Q3 2024 was $6.8 billion, representing an 18% increase year-over-year.",
+  "generated_answer": "Not found in provided sources.",
+  "duration_ms": 14646,
+  "metrics": {
+    "relevance": {
+      "score": 0.2,
+      "reasoning": "The answer acknowledges the question but fails to provide the requested information. While it's honest about not finding the data in the sources, it doesn't actually answer the question about AMD's Q3 2024 revenue. A slightly higher score than 0.0 is given because the response is at least relevant to the topic and indicates an attempt was made to find the answer."
+    },
+    "faithfulness": {
+      "score": 0.8,
+      "reasoning": "The answer 'Not found in provided sources' is technically faithful to the context in the sense that it doesn't hallucinate any information. However, the context does contain substantial information about AMD's Q3 2024 performance, including data center GPU revenue discussion, total revenue of $6.8 billion with +18% YoY growth, financial metrics like gross margin of 50%, operating income of $724M, and product roadmap details about MI300, 325, and 350 series. The answer appears to be responding to a question that wasn't provided, but since it doesn't fabricate information, it maintains faithfulness. The score is not 1.0 because a more helpful response could have acknowledged what information IS available in the context."
+    },
+    "accuracy": {
+      "score": 0,
+      "reasoning": "The generated answer states 'Not found in provided sources' which fails to provide any factual information about AMD's Q3 2024 revenue. The ground truth clearly states AMD's total revenue was $6.8 billion with an 18% year-over-year increase. The generated answer completely fails to capture this information."
+    }
+  },
+  "context_count": 4,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3634,
+      "embeddingMs": 719,
+      "pineconeMs": 3991,
+      "financialMs": 2,
+      "keywordMs": 5,
+      "llmMs": 6292,
+      "totalMs": 14646
+    },
+    "retrieval": {
+      "pineconeMatches": 1,
+      "financialMatches": 1,
+      "keywordMatches": 2,
+      "combinedContext": 4,
+      "filtersApplied": {
+        "company": "AMD",
+        "fiscal_year": "2024",
+        "quarter": "Q3"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": true,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "Q3 2024",
+      "company_name": "AMD",
+      "isComparisonQuery": false,
+      "primaryTicker": "AMD"
+    },
+    "llm": null
+  },
+  "context": [
+    {
+      "id": "AMD-2024-Q3-full-0",
+      "score": 2.9354456689999995,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "{\n  \"company_name\": \"Advanced Micro Devices (AMD)\",\n  \"quarter\": \"Q3\",\n  \"fiscal_year\": \"2024\",\n  \"speakers\": {\n    \"lisa_su\": {\n      \"role\": \"President and Chief Executive Officer\",\n      \"responses\": [\n        {\n          \"topic\": \"Data Center GPU Revenue Incremental Growth\",\n          \"content\": \"Sure. Toshiya, thank you for the question. So first of all, we had a very strong quarter for the Data Center overall in Q3 and especially for the Instinct product portfolio."
+      }
+    },
+    {
+      "id": "keyword-2024-Q3-earnings",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/AMD/FY_2024/Q3/parsed_earnings/AMD_FY2024_Q3_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"AMD\", \"quarter\": \"Q3\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 6.8, \"unit\": \"billion USD\", \"year_over_year_change\": \"+18%\", \"quarter_over_quarter_change\": \"+17%\", \"context\": \"Q3 2024\""
+      }
+    },
+    {
+      "id": "keyword-2024-Q3-qa",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AMD/FY_2024/Q3/parsed_earnings/AMD_FY2024_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": "nt, there will be a small contribution in the fourth quarter, but it really is still mostly the MI300 capabilities.\\n\\nAnd 325 will start in the fourth quarter and then ramp more in the first half of next year. And then as we look at the 350 Series, what we're seeing and the reason we call it a series is because there will be multiple SKUs in that series that we'll go through the range of, let's call it, air-cooled to liquid-cooled. In spending time with our customers. I think there are people w"
+      }
+    },
+    {
+      "id": "context-3",
+      "score": 0,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"revenue\": 6819,\n  \"gross_profit\": 3419,\n  \"gross_margin\": 50,\n  \"operating_income\": 724,\n  \"operating_margin\": 10.6,\n  \"net_income\": 771,\n  \"net_margin\": 11.306643202815662,\n  \"operating_cash_flow\": 628,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 17.6,\n  \"eps\": 0.48,\n  \"eps_diluted\": 0.47,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 724,\n  \"margin\": 10.6,\n  \"growth\": 17.6,\n  \"netIncome\": 771,\n  \"grossMargin\": 50,\n  \"grossProfit\": 3419,\n  \"operatingCashFlow\": 628,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 9.209561519284353\n}"
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 2.935)\n{\n  \"company_name\": \"Advanced Micro Devices (AMD)\",\n  \"quarter\": \"Q3\",\n  \"fiscal_year\": \"2024\",\n  \"speakers\": {\n    \"lisa_su\": {\n      \"role\": \"President and Chief Executive Officer\",\n      \"responses\": [\n        {\n          \"topic\": \"Data Center GPU Revenue Incremental Growth\",\n          \"content\": \"Sure. Toshiya, thank you for the question. So first of all, we had a very strong quarter for the Data Center overall in Q3 and especially for the Instinct product portfolio.\n\n[Chunk 2] (Score: 1.200)\n{ \"company_name\": \"AMD\", \"quarter\": \"Q3\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 6.8, \"unit\": \"billion USD\", \"year_over_year_change\": \"+18%\", \"quarter_over_quarter_change\": \"+17%\", \"context\": \"Q3 2024\"\n\n[Chunk 3] (Score: 1.200)\nnt, there will be a small contribution in the fourth quarter, but it really is still mostly the MI300 capabilities.\\n\\nAnd 325 will start in the fourth quarter and then ramp more in the first half of next year. And then as we look at the 350 Series, what we're seeing and the reason we call it a series is because there will be multiple SKUs in that series that we'll go through the range of, let's call it, air-cooled to liquid-cooled. In spending time with our customers. I think there are people w\n\n[Chunk 4] (Score: 0.000)\n{\n  \"revenue\": 6819,\n  \"gross_profit\": 3419,\n  \"gross_margin\": 50,\n  \"operating_income\": 724,\n  \"operating_margin\": 10.6,\n  \"net_income\": 771,\n  \"net_margin\": 11.306643202815662,\n  \"operating_cash_flow\": 628,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 17.6,\n  \"eps\": 0.48,\n  \"eps_diluted\": 0.47,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 724,\n  \"margin\": 10.6,\n  \"growth\": 17.6,\n  \"netIncome\": 771,\n  \"grossMargin\": 50,\n  \"grossProfit\": 3419,\n  \"operatingCashFlow\": 628,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 9.209561519284353\n}",
+  "created_at": "2025-12-10T02:50:43.563Z",
+  "category": "financial"
+}

@@ -1,0 +1,413 @@
+{
+  "company_name": "AMD",
+  "quarter": "Q1",
+  "fiscal_year": "2024",
+  "financials": {
+    "total_revenue": {
+      "value": 5.5,
+      "unit": "billion USD",
+      "year_over_year_change": "+2%",
+      "quarter_over_quarter_change": "N/A",
+      "context": "Q1 2024",
+      "composition": {
+        "data_center": {
+          "value": 2.3,
+          "unit": "billion USD",
+          "year_over_year_change": "+80%",
+          "quarter_over_quarter_change": "+2%",
+          "context": "Includes AMD Instinct™ GPUs and 4th Gen AMD EPYC™ CPUs",
+          "breakdown": {
+            "instinct_gpus": {
+              "value": 1.0,
+              "unit": "billion USD",
+              "revenue_growth_year_over_year": "+80%",
+              "revenue_growth_quarter_over_quarter": "+2%",
+              "drivers": [
+                "Ramp of MI300 AI accelerator shipments",
+                "Adoption of AMD Instinct™ GPUs by cloud and enterprise customers"
+              ],
+              "details": {
+                "MI300X": {
+                  "description": "AMD Instinct™ MI300X GPUs",
+                  "performance_improvement": "Leading inferencing performance",
+                  "impact": "Accelerated AI deployments across multiple platforms",
+                  "customers": [
+                    "Microsoft",
+                    "Meta",
+                    "Oracle",
+                    "Amazon",
+                    "Google"
+                  ]
+                }
+              }
+            },
+            "epyc_cpus": {
+              "value": 1.3,
+              "unit": "billion USD",
+              "revenue_growth_year_over_year": "N/A",
+              "revenue_growth_quarter_over_quarter": "N/A",
+              "drivers": [
+                "Ramp of 4th Gen AMD EPYC™ CPUs",
+                "Increased enterprise and cloud deployments"
+              ],
+              "details": {
+                "EPYC_4th_Gen": {
+                  "description": "4th Gen AMD EPYC™ CPUs",
+                  "performance_improvement": "High core counts and energy efficiency",
+                  "impact": "Increased adoption in enterprise and cloud environments",
+                  "customers": [
+                    "Amazon",
+                    "Microsoft",
+                    "Google",
+                    "Oracle",
+                    "Tencent"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "client": {
+          "value": 1.4,
+          "unit": "billion USD",
+          "year_over_year_change": "+85%",
+          "quarter_over_quarter_change": "-6%",
+          "context": "Includes AMD Ryzen™ 8000 Series processors",
+          "breakdown": {
+            "ryzen_8000_series": {
+              "revenue_growth_year_over_year": "+85%",
+              "revenue_growth_quarter_over_quarter": "-6%",
+              "drivers": [
+                "Strong demand for Ryzen™ 8000 Series processors",
+                "Increased sales of Ryzen AI on-chip accelerators"
+              ],
+              "details": {
+                "ryzen_mobile": {
+                  "description": "Ryzen™ 8000 Series mobile CPUs",
+                  "performance_improvement": "Enhanced performance and AI capabilities",
+                  "impact": "Growth in notebook designs from OEMs",
+                  "customers": [
+                    "Acer",
+                    "Asus",
+                    "HP",
+                    "Lenovo",
+                    "Others"
+                  ]
+                },
+                "ryzen_desktop": {
+                  "description": "Ryzen™ 8000 Series desktop CPUs",
+                  "performance_improvement": "Dedicated AI accelerators",
+                  "impact": "Increased sales in commercial desktop PCs",
+                  "customers": [
+                    "OEM Partners",
+                    "Channel Partners"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "gaming": {
+          "value": 0.922,
+          "unit": "billion USD",
+          "year_over_year_change": "-48%",
+          "quarter_over_quarter_change": "-33%",
+          "context": "Includes discrete graphics processors and semi-custom game console products",
+          "breakdown": {
+            "semi_custom": {
+              "value": 0.3,
+              "unit": "billion USD",
+              "revenue_growth_year_over_year": "-48%",
+              "revenue_growth_quarter_over_quarter": "-33%",
+              "drivers": [
+                "Decrease in semi-custom revenue due to console cycle"
+              ],
+              "details": {
+                "so_c_sales": {
+                  "description": "Semi-custom SoC sales",
+                  "impact": "Decline due to being in the fifth year of the console cycle",
+                  "customers": [
+                    "Microsoft",
+                    "Sony"
+                  ]
+                }
+              }
+            },
+            "graphics": {
+              "value": 0.622,
+              "unit": "billion USD",
+              "revenue_growth_year_over_year": "-48%",
+              "revenue_growth_quarter_over_quarter": "-33%",
+              "context": "Decrease in Radeon™ GPU sales",
+              "drivers": [
+                "Lower semi-custom sales",
+                "Lower Radeon™ GPU sales"
+              ],
+              "details": {
+                "radeon": {
+                  "description": "Radeon™ GPUs",
+                  "performance_improvement": "N/A",
+                  "impact": "Lower sales impacting overall gaming revenue",
+                  "future_plans": "Expansion of Radeon™ 7000 series with new technologies"
+                }
+              }
+            }
+          }
+        },
+        "embedded": {
+          "value": 0.846,
+          "unit": "billion USD",
+          "year_over_year_change": "-46%",
+          "quarter_over_quarter_change": "-20%",
+          "context": "Includes embedded products and adaptive computing solutions",
+          "breakdown": {
+            "embedded_products": {
+              "value": 0.846,
+              "unit": "billion USD",
+              "revenue_growth_year_over_year": "-46%",
+              "revenue_growth_quarter_over_quarter": "-20%",
+              "drivers": [
+                "Customers managing inventory levels",
+                "Decrease in communications market revenue"
+              ],
+              "details": {
+                "versal_gen_two": {
+                  "description": "Versal™ Premium VP1902 Adaptive SoC Gen Two",
+                  "performance_improvement": "3x increase in AI TOPS per watt",
+                  "impact": "Enhanced AI capabilities across a broad range of products",
+                  "customers": [
+                    "Subaru",
+                    "Others"
+                  ]
+                },
+                "spartan_ultrascale": {
+                  "description": "Spartan™ UltraScale+™ FPGAs",
+                  "performance_improvement": "High IO counts and power efficiency",
+                  "impact": "Strong pipeline for embedded markets",
+                  "customers": [
+                    "Industrial",
+                    "Vision",
+                    "Healthcare",
+                    "Automotive"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "expenses": {
+      "total_expenses": {
+        "value": 1.7,
+        "unit": "billion USD",
+        "year_over_year_change": "+10%",
+        "context": "Operating expenses including R&D, marketing, amortization of intangible assets, and acquisition-related costs",
+        "key_factors": [
+          "Higher R&D investments to support AI growth opportunities",
+          "Enhanced marketing and go-to-market activities",
+          "Higher operating expenses to scale the business"
+        ]
+      },
+      "operating_expenses_breakdown": {
+        "R&D": {
+          "value": "N/A",
+          "context": "Increased investments in research and development to support product roadmaps and AI initiatives"
+        },
+        "marketing": {
+          "value": "N/A",
+          "context": "Enhanced go-to-market activities to support product launches and growth initiatives"
+        },
+        "variable_compensation": {
+          "value": "N/A",
+          "context": "Higher variable employee compensation-related expenses"
+        },
+        "amortization": {
+          "value": "N/A",
+          "context": "Amortization of intangible assets associated with acquisitions"
+        },
+        "acquisition_related_costs": {
+          "value": "N/A",
+          "context": "Costs related to strategic acquisitions, including Xilinx and Nod.ai"
+        }
+      }
+    },
+    "profitability": {
+      "operating_income": {
+        "value": 0.036,
+        "unit": "billion USD",
+        "year_over_year_change": "+$0.7 billion",
+        "quarter_over_quarter_change": "+$0.2 billion",
+        "context": "Operating income for Q1 2024",
+        "operating_margin": "0.7%",
+        "drivers": [
+          "Higher revenue in Data Center and Client segments",
+          "Stronger product mix",
+          "Disciplined operating expense management",
+          "Increased R&D investments"
+        ]
+      },
+      "non_gaap_operating_income": {
+        "value": 1.1,
+        "unit": "billion USD",
+        "year_over_year_change": "N/A",
+        "quarter_over_quarter_change": "N/A",
+        "context": "Non-GAAP operating income for Q1 2024"
+      },
+      "net_income": {
+        "value": 0.123,
+        "unit": "billion USD",
+        "year_over_year_change": "N/A",
+        "quarter_over_quarter_change": "N/A",
+        "context": "Net income for Q1 2024"
+      },
+      "non_gaap_net_income": {
+        "value": 1.0,
+        "unit": "billion USD",
+        "year_over_year_change": "N/A",
+        "quarter_over_quarter_change": "N/A",
+        "context": "Non-GAAP net income for Q1 2024"
+      },
+      "eps": {
+        "value": 0.07,
+        "unit": "USD per share",
+        "year_over_year_change": "+N/A",
+        "quarter_over_quarter_change": "+N/A",
+        "context": "Diluted earnings per share for Q1 2024",
+        "notes": "Includes better-than-expected revenue and operating expenses"
+      },
+      "non_gaap_eps": {
+        "value": 0.62,
+        "unit": "USD per share",
+        "year_over_year_change": "N/A",
+        "quarter_over_quarter_change": "N/A",
+        "context": "Non-GAAP diluted earnings per share for Q1 2024"
+      },
+      "tax_rate": {
+        "current_quarter": "13%",
+        "full_year_guidance": "13%",
+        "context": "Effective tax rate for Q1 2024 and full year 2024"
+      },
+      "cash_flow": {
+        "free_cash_flow": {
+          "value": 0.379,
+          "unit": "billion USD",
+          "year_over_year_change": "N/A",
+          "context": "Free cash flow for Q1 2024",
+          "notes": "Includes strategic investments and stock repurchases"
+        },
+        "cash_from_operations": {
+          "value": 0.521,
+          "unit": "billion USD",
+          "year_over_year_change": "N/A",
+          "context": "Cash from operations for Q1 2024",
+          "notes": "Reflects strong financial model despite mixed demand environment"
+        }
+      }
+    },
+    "capital_expenditures": {
+      "value": "N/A",
+      "unit": "billion USD",
+      "context": "Not explicitly detailed for Q1 2024",
+      "details": {}
+    },
+    "capital_return": {
+      "share_repurchase": {
+        "value": 0.511,
+        "unit": "billion USD",
+        "context": "Repurchased $511 million of common stock during Q1 2024"
+      },
+      "dividends": {
+        "value": "N/A",
+        "unit": "billion USD",
+        "context": "Not explicitly detailed"
+      }
+    },
+    "guidance": {
+      "second_quarter_2024": {
+        "revenue": {
+          "value": 5.7,
+          "unit": "billion USD",
+          "range": "+/-0.3",
+          "year_over_year_change": "+6%",
+          "quarter_over_quarter_change": "+4%",
+          "context": "Expected for Q2 2024"
+        },
+        "non_gaap_gross_margin": {
+          "value": 53,
+          "unit": "percent",
+          "context": "Expected for Q2 2024"
+        },
+        "non_gaap_operating_expenses": {
+          "value": 1.8,
+          "unit": "billion USD",
+          "percentage_of_revenue": "N/A",
+          "context": "Expected for Q2 2024"
+        },
+        "non_gaap_interest_expense_taxes_other": {
+          "value": 0.175,
+          "unit": "billion USD",
+          "context": "Including effective tax rate of 13%"
+        },
+        "diluted_share_count": {
+          "value": 1.64,
+          "unit": "billion shares",
+          "context": "Expected for Q2 2024"
+        }
+      },
+      "full_year_2024": {
+        "revenue_growth_year_over_year": "Expected based on roadmaps and strategic priorities",
+        "context": "Led by growth in Embedded and Data Center segments",
+        "revenue": {
+          "value": "Not specified",
+          "unit": "billion USD",
+          "context": "Expected for full year 2024"
+        },
+        "non_gaap_gross_margin": {
+          "value": 50,
+          "unit": "percent",
+          "context": "Expected for full year 2024"
+        }
+      }
+    },
+    "recent_pr_highlights": {
+      "product_introductions": [
+        "Ryzen™ 8000 Series processors",
+        "MI300 AI accelerators",
+        "Versal™ Premium VP1902 Adaptive SoC Gen Two",
+        "Spartan™ UltraScale+™ FPGAs",
+        "Radeon™ 7000 series GPUs",
+        "Strix Ryzen mobile processors"
+      ],
+      "partnerships_and_adoptions": [
+        "Microsoft adopting 4th Gen EPYC™ and MI300 GPUs",
+        "Meta deploying MI300 in AI workloads",
+        "Oracle deploying MI300 for database solutions",
+        "Subaru adopting Versal™ Premium VP1902 for EyeSight ADAS system"
+      ],
+      "ecosystem_support": [
+        "Added support for OpenAI Triton compiler",
+        "Released ROCm software stack update",
+        "Collaborations with major AI software and cloud providers"
+      ],
+      "corporate_responsibility": [
+        "Investments in sustainable technological and scientific advancements"
+      ]
+    },
+    "metadata": {
+      "parsed_date": "2024-03-31T00:00:00Z",
+      "company_ticker": "AMD",
+      "source": "Q1 2024 Earnings Call Transcript",
+      "operating_environment_challenges": [
+        "Softening PC market",
+        "Substantial inventory reduction across the PC supply chain",
+        "Managing supply chain constraints",
+        "Navigating macroeconomic uncertainties"
+      ]
+    }
+  },
+  "executive_comments": {
+    "ceo_statement": "“We delivered strong first quarter results with our Data Center and Client segments each growing more than 80% year-over-year driven by the ramp of MI300 AI accelerator shipments and the adoption of our Ryzen and EPYC processors,” said AMD Chair and CEO Dr. Lisa Su. “This is an incredibly exciting time for the industry as widespread deployment of AI is driving demand for significantly more compute across a broad range of markets. We are executing very well as we ramp our data center business and enable AI capabilities across our product portfolio.”",
+    "cfo_statement": "“AMD started the year strong, delivering record quarterly Data Center segment revenue,” said AMD EVP, CFO and Treasurer Jean Hu. “In addition, we drove solid gross margin expansion. Moving forward, we are well positioned to continue driving revenue growth and margin improvement while investing in the large AI opportunities ahead.”"
+  }
+}

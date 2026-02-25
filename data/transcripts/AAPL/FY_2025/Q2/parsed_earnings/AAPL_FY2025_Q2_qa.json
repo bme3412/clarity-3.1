@@ -1,0 +1,150 @@
+{
+  "company_name": "Apple",
+  "quarter": "Q2",
+  "fiscal_year": "2025",
+  "speakers": {
+    "tim_cook": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "Tariffs and Supply Chain",
+          "content": "For the June quarter, we expect the majority of iPhones sold in the U.S. will have India as their country of origin. Vietnam will be the origin for almost all iPad, Mac, Apple Watch, and AirPods sold in the U.S. China continues to be the origin for the vast majority of sales outside the U.S. We estimate the tariff impact to add $900 million to our costs in the June quarter, assuming current rates and policies don't change. We are optimizing our supply chain and inventory."
+        },
+        {
+          "topic": "China Performance",
+          "content": "Greater China revenue was down 2% year-over-year, but roughly flat excluding foreign exchange. This is a sequential improvement from the December quarter (down 11%). Channel inventory was consistent. Government subsidies likely played a favorable role. iPhone had the top two models in urban China."
+        },
+        {
+          "topic": "U.S. Investment",
+          "content": "We announced plans to spend $500 billion in the U.S. over the next four years. This includes expanding teams and facilities across several states, opening a new factory for advanced server manufacturing in Texas, and sourcing over 19 billion chips from a dozen states in 2025. We are also the first customer for TSMC's Arizona facility."
+        },
+        {
+          "topic": "Apple Intelligence and Siri",
+          "content": "We have delivered many Apple Intelligence features like Writing Tools, Genmoji, and ChatGPT integration. We expanded to more languages recently. However, the more personal Siri features need more time to meet our high-quality bar. We are making progress and are excited to release them."
+        },
+        {
+          "topic": "AI Strategy",
+          "content": "We have a hybrid strategy for data centers, using both our own investments and third parties. We work on our own foundation models and also partner (e.g., ChatGPT). We are shipping LLMs on iPhone 16 today."
+        },
+        {
+          "topic": "Legal and Regulatory",
+          "content": "We strongly disagree with the recent Epic case injunction and will appeal. We are monitoring the DOJ case with Google. The Digital Markets Act has been in effect in Europe for over a year, and the impact is embedded in our results."
+        }
+      ]
+    },
+    "kevan_parekh": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Gross Margin Drivers",
+          "content": "Product gross margin decreased 340 basis points sequentially due to mix, seasonal loss of leverage, and foreign exchange, partly offset by cost savings. Year-over-year, it was down 70 basis points. Company gross margin was 47.1%."
+        },
+        {
+          "topic": "June Quarter Outlook",
+          "content": "We expect June quarter total company revenue to grow low to mid single digits year-over-year. We expect gross margin to be between 45.5% and 46.5%, including the estimated $900 million tariff impact. Services revenue color is not being provided at the category level due to uncertainty."
+        },
+        {
+          "topic": "Capital Return",
+          "content": "Board authorized an additional $100 billion for share repurchases. Dividend raised by 4% to $0.26 per share."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Eric Woodring",
+      "firm": "Morgan Stanley",
+      "topics": ["Tariffs", "Supply Chain Mix", "Pull Forward Demand"],
+      "questions": [
+        "Where do you expect the mix of India-sourced iPhones for the U.S. to be by year-end? Is the goal 100%?",
+        "Did you pull forward sell-in to get ahead of tariffs? Do you believe consumers are accelerating purchases?"
+      ]
+    },
+    {
+      "analyst": "Ben Reitzes",
+      "firm": "Mellius",
+      "topics": ["Tariff Impact Outlook", "China Trajectory"],
+      "questions": [
+        "Could the tariff impact be a multiple of the $900 million figure after June?",
+        "Can China performance keep improving given geopolitical tensions and subsidies?"
+      ]
+    },
+    {
+      "analyst": "Michael Ng",
+      "firm": "Goldman Sachs",
+      "topics": ["Trade Policy Response", "Product Gross Margins"],
+      "questions": [
+        "Will you continue to build ahead inventory? What is your philosophy on pricing and passing on costs?",
+        "Can you provide more color on the factors impacting product gross margins in the quarter?"
+      ]
+    },
+    {
+      "analyst": "Amit Daryanani",
+      "firm": "Evercore",
+      "topics": ["Tariff Offsets", "Services Growth"],
+      "questions": [
+        "What are the unique factors benefiting the June quarter that offset some tariff impact?",
+        "Do you expect Services growth to remain double-digit in the June quarter?"
+      ]
+    },
+    {
+      "analyst": "Wamsi Mohan",
+      "firm": "Bank of America",
+      "topics": ["Gross Margin Trajectory", "Developer Behavior in Europe"],
+      "questions": [
+        "How should we think about gross margin trajectory as you source more from the U.S. and India?",
+        "What have you seen in developer behavior in Europe regarding alternate app stores?"
+      ]
+    },
+    {
+      "analyst": "David Vogt",
+      "firm": "UBS",
+      "topics": ["Supply Chain Resiliency", "Demand Backdrop"],
+      "questions": [
+        "How do you think about supply chain resiliency and redundancy 2-3 years out?",
+        "Is there any impact on demand in your outlook for the June quarter?"
+      ]
+    },
+    {
+      "analyst": "Samik Chatterjee",
+      "firm": "J.P. Morgan",
+      "topics": ["Apple Intelligence Impact", "US Consumer Health"],
+      "questions": [
+        "Do you continue to see Apple Intelligence impacting iPhone sales as it rolls out to more countries?",
+        "What are you seeing from the U.S. consumer regarding macro and tariff impacts?"
+      ]
+    },
+    {
+      "analyst": "Krish Sankar",
+      "firm": "TD Cowen",
+      "topics": ["US Investment Composition", "Edge AI Hardware"],
+      "questions": [
+        "What is the composition (Capex vs R&D) of the $500 billion U.S. investment?",
+        "Are current smartphone specs good enough for future Edge LLM inference?"
+      ]
+    },
+    {
+      "analyst": "Richard Kramer",
+      "firm": "Arete Research",
+      "topics": ["Siri Delay", "Legal Risks"],
+      "questions": [
+        "What are the learnings from the delay in personal Siri features? Is it organizational or R&D related?",
+        "Do you have ways to mitigate potential negative impacts on Services from legal cases (Epic, DOJ)?"
+      ]
+    },
+    {
+      "analyst": "Aaron Rakers",
+      "firm": "Wells Fargo",
+      "topics": ["Foundation Models", "Modem Strategy"],
+      "questions": [
+        "How important is it for Apple to have its own foundation models? How does this impact data center spend?",
+        "How do you see the modem strategy playing out with the launch of the C1 modem?"
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-05-02",
+    "company_ticker": "AAPL",
+    "source": "earnings_call_transcript"
+  }
+}

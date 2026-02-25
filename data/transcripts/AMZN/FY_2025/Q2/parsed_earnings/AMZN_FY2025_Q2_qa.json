@@ -1,0 +1,112 @@
+{
+  "company_name": "Amazon",
+  "quarter": "Q2",
+  "fiscal_year": "2025",
+  "speakers": {
+    "andrew_jassy": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "Stores Business and Prime Day",
+          "content": "We feel good about both the inputs and outputs of the business... We've taken another step forward in selection these past few months headlined by the much requested return of Nike's products to Amazon's retail store... This year's Prime Day was our biggest ever with record sales, number of items sold and number of prime sign-ups in the 3 weeks leading up to the Prime Day."
+        },
+        {
+          "topic": "Delivery Speed and Network Efficiency",
+          "content": "We increased the share of orders moving through direct lanes where packages go straight from fulfillment to delivery without extra stops by over 40% year-over-year. We've also reduced the average distance packages traveled by 12%... In the U.S., we delivered 30% more items same day or next day than during the same period last year."
+        },
+        {
+          "topic": "AWS Growth and AI",
+          "content": "AWS grew 17.5% year-over-year and now has over $123 billion annualized revenue run rate... In the rapidly evolving world of generative AI, AWS continues to build a large, fast-growing triple-digit year-over-year percentage multibillion-dollar business with more demand than we have supplied for at the moment."
+        },
+        {
+          "topic": "AI Hardware (Trainium)",
+          "content": "Our custom AI chip, Trainium2 is landing capacity in larger quantities and has impressively emerged as the backbone for Anthropic's newest generation Claude models and many of our most essential offerings like Amazon Bedrock... I think a lot of the inference is going to ultimately be run on top of Trainium2. And I think that price performance [30-40% better than other GPUs] is going to matter to people as they get to scale."
+        },
+        {
+          "topic": "Generative AI Agents",
+          "content": "We've also just released Kiro, our new Agentic integrated development environment coding agent... What struck a cord for developers is that Kiro allows them to do Vibe coding where developers use natural language to chat with a coding agent to build code... It seems clear we're on to something customers love and Kiro has a chance to transform how developers build software."
+        },
+        {
+          "topic": "Alexa Plus",
+          "content": "Alexa Plus can take a lot of action for you... I can ask Alexa to play music for me... or if I have guests coming over, I can say, Alexa draw the curtains, put the light on the porch... and she does all that just through using natural language... We're seeing very positive feedback, and we'll continue to iterate on the experience."
+        },
+        {
+          "topic": "Project Kuiper",
+          "content": "We recently completed our third successful launch of Project Kuiper... We haven't launched this service commercially yet but already have an impressive amount of enterprise and government customers who have signed agreements to use Kuiper."
+        },
+        {
+          "topic": "Tariffs",
+          "content": "It's hard to know where the tariffs are going to settle, particularly in China... If costs end up being higher, who will absorb them... through the first half of the year, we haven't yet seen diminishing demand nor price is meaningfully appreciating."
+        },
+        {
+          "topic": "Internal AI Adoption",
+          "content": "AI is the biggest technology transformation for a lifetime... It's going to not only change every customer experience... but it's also going to change very substantially the way we work... We are going to embrace it. We're going to try and shape it."
+        }
+      ]
+    },
+    "brian_olsavsky": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Financial Overview",
+          "content": "Worldwide revenue was $167.7 billion, a 12% increase year-over-year, excluding the impact of foreign exchange... Worldwide operating income was $19.2 billion, which was $1.7 billion above the high end of our guidance range."
+        },
+        {
+          "topic": "Segment Margins",
+          "content": "North America operating margin was 7.5%, up 190 basis points year-over-year. International operating margin was 4.1%, up 320 basis points year-over-year... AWS operating income was $10.2 billion. We did see AWS segment margins decline from a record high of 39.5% in Q1 to 32.9% in Q2. The largest quarter-over-quarter driver... is due to the seasonal step-up in stock-based compensation expense."
+        },
+        {
+          "topic": "Capital Expenditures",
+          "content": "Cash CapEx was $31.4 billion in Q2... AWS continues to be the primary driver as we invest to support demand for our AI services and increasingly in custom silicon, like Trainium."
+        },
+        {
+          "topic": "Q3 Guidance",
+          "content": "Q3 net sales are expected to be between $174 billion and $179.5 billion... Q3 operating income is expected to be between $15.5 billion and $20.5 billion."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Douglas Anmuth",
+      "firm": "JPMorgan",
+      "question": "Can you help us understand how tariffs are being absorbed... and on AWS, we're seeing significantly faster cloud growth among the #2 and #3 players... is the output gap due more to customer demand or infrastructure supply?",
+      "response_summary": "On tariffs: Too early to know long-term impact, but no diminished demand seen in H1. On AWS: Growth percentages depend on base size (AWS is much larger). AWS has advantages in operational performance, security, and functionality. Currently have more demand than supply."
+    },
+    {
+      "analyst": "Mark Stephen Mahaney",
+      "firm": "Evercore",
+      "question": "Could you disclose the backlog number? And regarding supply constraints, is it still your intention they resolve by back half? Also, thoughts on Alexa Plus potential financial impact.",
+      "response_summary": "AWS Backlog is $195B (+25% YoY). Supply constraints (power, chips) will take several quarters to fully resolve but improving. Alexa Plus seeing high engagement; potential monetization via shopping, advertising, and subscription."
+    },
+    {
+      "analyst": "Colin Sebastian",
+      "firm": "Baird",
+      "question": "Color on International segment margin drivers... and update on Project Kuiper launch timing.",
+      "response_summary": "International margins driven by established countries (UK, DE, JP) matching US profiles and productivity gains. Kuiper has differentiation in performance/price; commercial data launch expected later this year or early next year."
+    },
+    {
+      "analyst": "Brian Nowak",
+      "firm": "Morgan Stanley",
+      "question": "Is AWS falling behind in Gen AI (share loss concerns)? And should AWS accelerate in back half/2026?",
+      "response_summary": "It's early in AI. AWS has full stack advantage: Custom silicon (Trainium2) for price/performance, Bedrock for models, and Agents (Kiro, Agent Core). 85-90% IT still on-prem, expecting flip. Optimistic about acceleration due to modernization resuming + AI apps scaling + capacity coming online."
+    },
+    {
+      "analyst": "Ron Josey",
+      "firm": "Citi",
+      "question": "How is Amazon adopting generative AI internally and improving speed to market?",
+      "response_summary": "AI is biggest transformation in lifetime. Amazon is embracing it to reshape how they work (coding agents, customer service, business process automation) to invent faster for customers."
+    },
+    {
+      "analyst": "Justin Post",
+      "firm": "Bank of America",
+      "question": "Q3 revenue guidance drivers and tariff contingencies?",
+      "response_summary": "Guided $174.0-179.5B. Feel good about Q2 growth and Prime Day. Cautiously optimistic despite tariff uncertainty. Focus on inputs: price, selection, speed."
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-07-31",
+    "company_ticker": "AMZN",
+    "source": "earnings_call_transcript_q2_2025"
+  }
+}

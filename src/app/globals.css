@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Base Colors - Light Theme */
+  --background: #f8fafc; /* Slate-50 */
+  --foreground: #0f172a; /* Slate-900 */
+  
+  /* Surface Colors */
+  --card: rgba(255, 255, 255, 0.8);
+  --card-hover: rgba(255, 255, 255, 0.95);
+  --card-foreground: #1e293b;
+  
+  /* Accent Colors - "Professional Blue" */
+  --primary: #2563eb;      /* Blue-600 */
+  --primary-glow: rgba(37, 99, 235, 0.15);
+  --secondary: #0891b2;    /* Cyan-600 */
+  --secondary-glow: rgba(8, 145, 178, 0.15);
+  --accent: #e11d48;       /* Rose-600 */
+  --accent-glow: rgba(225, 29, 72, 0.15);
+  
+  /* UI Elements */
+  --border: rgba(148, 163, 184, 0.2);
+  --input: rgba(255, 255, 255, 0.9);
+  --ring: rgba(37, 99, 235, 0.4);
+  
+  /* Fonts */
+  --font-heading: var(--font-syne), sans-serif;
+  --font-body: var(--font-manrope), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+  --font-serif: var(--font-newsreader), Georgia, serif;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-body);
+  /* Subtle mesh gradient on white */
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.04), transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(8, 145, 178, 0.04), transparent 35%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl border border-slate-200 shadow-xl;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-slate-200/60 shadow-sm transition-all duration-300 hover:border-blue-200 hover:bg-white hover:shadow-md;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px var(--primary-glow);
+  }
+  
+  .font-mono-numbers {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum";
+  }
+}
+
+/* Animations */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(20px); filter: blur(10px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes draw {
+  from { stroke-dasharray: 1000; stroke-dashoffset: 1000; }
+  to { stroke-dasharray: 1000; stroke-dashoffset: 0; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-reveal {
+  animation: reveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Markdown / Content Styling - Light Mode Adjustments */
+.prose-invert {
+  --tw-prose-body: #334155;      /* Slate-700 */
+  --tw-prose-headings: #0f172a;  /* Slate-900 */
+  --tw-prose-links: #2563eb;     /* Blue-600 */
+  --tw-prose-bold: #0f172a;      /* Slate-900 */
+  --tw-prose-counters: #475569;  /* Slate-600 */
+  --tw-prose-bullets: #64748b;   /* Slate-500 */
+  --tw-prose-hr: #e2e8f0;        /* Slate-200 */
+  --tw-prose-quotes: #1e293b;    /* Slate-800 */
+  --tw-prose-quote-borders: #cbd5e1; /* Slate-300 */
+  --tw-prose-captions: #64748b;  /* Slate-500 */
+  --tw-prose-code: #0f172a;      /* Slate-900 */
+  --tw-prose-pre-code: #e2e8f0;  /* Slate-200 (for code block text, usually on dark bg) */
+  --tw-prose-pre-bg: #1e293b;    /* Slate-800 (code block bg) */
+  --tw-prose-th-borders: #cbd5e1; /* Slate-300 */
+  --tw-prose-td-borders: #e2e8f0; /* Slate-200 */
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.6);
+}

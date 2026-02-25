@@ -1,0 +1,140 @@
+{
+  "company_name": "Meta",
+  "quarter": "Q4",
+  "fiscal_year": "2024",
+  "speakers": {
+    "mark_zuckerberg": {
+      "role": "Chief Executive Officer",
+      "responses": [
+        {
+          "topic": "Meta AI and Personalization",
+          "content": "Meta AI is scaling toward one billion people, with a focus on highly personalized experiences and multimodal agents, while Llama 4 prepares to deliver agentic capabilities, omni-model reasoning, and the foundation for future AI engineering agents."
+        },
+        {
+          "topic": "AI Glasses and Long-term Platforms",
+          "content": "Ray-Ban Meta AI glasses validate the glasses form factor for AI, and we are investing billions in infrastructure—almost a gigawatt of capacity this year and multi-gigawatt campuses—to fund AI and core services while keeping product momentum across Family apps."
+        },
+        {
+          "topic": "Product Momentum and Ecosystem",
+          "content": "Family apps continue to grow (3.3B+ DAP) and we are experimenting with new feeds, Reels features, Threads growth, and creator tools, while making our social apps more culturally influential and preparing for a metaverse- and AI-infused future."
+        }
+      ]
+    },
+    "susan_li": {
+      "role": "Chief Financial Officer",
+      "responses": [
+        {
+          "topic": "Q4 Results and Capital Allocation",
+          "content": "Total revenue was $48.4B (+21%), total expenses $25B (+5%) after favorable legal accrual adjustments, operating income $23.4B (48% margin), net income $20.8B, and free cash flow $13.2B. We returned capital with $1.3B in dividends and ended the year with $77.8B in cash and equivalents."
+        },
+        {
+          "topic": "Family of Apps Execution",
+          "content": "Family of Apps revenue grew 21% to $47.3B, with ads up 21% aided by higher video time and improved ad performance; advertising growth was strongest in Rest-of-World (+27%), Asia Pacific (+23%), and Europe (+22%), while ad impressions rose 6% and average price per ad +14%."
+        },
+        {
+          "topic": "Reality Labs and Infrastructure",
+          "content": "Reality Labs revenue was $1.1B (+1%) while expenses rose 6% to $6B, reflecting continued content, hardware, and infrastructure investments as we scale Quest and Horizon; RL operating loss remained near $5B."
+        },
+        {
+          "topic": "CapEx and Compute Outlook",
+          "content": "CapEx was $14.8B; full-year 2025 guidance is $60-65B with the biggest growth in servers, followed by data centers and networking, supporting generative AI, core AI, and long-term infrastructure; we expect to keep using servers ~5.5 years to lower depreciation."
+        },
+        {
+          "topic": "Meta AI adoption and monetization path",
+          "content": "Meta AI logged 700M MAUs, with WhatsApp leading usage for info, education, and emotional support; we are enhancing memory, personalization, and content recommendations while keeping monetization experiments focused on a great consumer experience and saving revenue ramps for once the product reaches massive scale."
+        },
+        {
+          "topic": "Headcount and Productivity",
+          "content": "Headcount grew 10% to ~74K, with nearly 90% of new hires in R&D and infrastructure; we expect additional technical hiring for infrastructure, monetization, Reality Labs, generative AI, and compliance while keeping business function hiring constrained, and we continue ramping AI coding assistants to boost engineer productivity."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Brian Nowak",
+      "firm": "Morgan Stanley",
+      "topics": ["Meta AI interactions", "Custom silicon", "Headcount"],
+      "questions": [
+        "Mark, how are Meta AI interactions evolving and do they extend to commercial intent? Are you still partnering with external search providers instead of building in-house?",
+        "Susan, how should we think about headcount investments going into 2025 to support infrastructure and AI initiatives?"
+      ]
+    },
+    {
+      "analyst": "Eric Sheridan",
+      "firm": "Goldman Sachs",
+      "topics": ["AI opportunity sets", "Business planning"],
+      "questions": [
+        "Mark, what are the biggest opportunity sets for applying AI across products and internal processes, and what learnings are emerging from the business planning cycle?"
+      ]
+    },
+    {
+      "analyst": "Douglas Anmuth",
+      "firm": "JPMorgan",
+      "topics": ["Meta AI functionality", "CapEx"],
+      "questions": [
+        "Mark, how do you expect Meta AI agentic capabilities to expand beyond longer queries?",
+        "Susan, is the $15B-17B Q4 CapEx run rate sustainable into 2025?"
+      ]
+    },
+    {
+      "analyst": "Justin Post",
+      "firm": "BAML",
+      "topics": ["AI productivity", "Headcount"],
+      "questions": [
+        "Mark, how is AI improving R&D productivity?",
+        "Susan, how flexible is headcount planning as you manage cost growth?"
+      ]
+    },
+    {
+      "analyst": "Mark Shmulik",
+      "firm": "AllianceBernstein",
+      "topics": ["Ad market", "Reels/Threads"],
+      "questions": [
+        "Susan, can you describe the health of the digital ad market and how you're balancing pricing versus impressions?",
+        "Mark, what’s the next wave of monetization for Reels and Threads beyond basic ad units?"
+      ]
+    },
+    {
+      "analyst": "Ken Gawrelski",
+      "firm": "Wells Fargo",
+      "topics": ["Revenue vs. cost", "G&A"],
+      "questions": [
+        "How should we weigh Family of Apps revenue growth vs. cost growth going forward?",
+        "Can you explain the drivers behind elevated Q1 G&A, particularly legal expenses?"
+      ]
+    },
+    {
+      "analyst": "Ross Sandler",
+      "firm": "Barclays",
+      "topics": ["Open source", "AI infrastructure"],
+      "questions": [
+        "Mark, how do you leverage third-party Llama updates and open-source work to incubate ideas internally?",
+        "Susan, with Llama 3.1 training on 16K H100s and planning 600K, how are you structuring the CapEx roadmap for training vs. inference?"
+      ]
+    },
+    {
+      "analyst": "Youssef Squali",
+      "firm": "Truist Securities",
+      "topics": ["Llama 3.1", "Ray-Ban partnership"],
+      "questions": [
+        "Do you plan to open Llama 3.1 to broader web developers, and could it link to commercial search?",
+        "Can you detail the opportunity to deepen the Ray-Ban Meta Glasses partnership?"
+      ]
+    },
+    {
+      "analyst": "Mark Mahaney",
+      "firm": "Evercore ISI",
+      "topics": ["Event impact", "WhatsApp monetization"],
+      "questions": [
+        "Susan, how much revenue hinges on election/sports events and how do those impact comps?",
+        "How far is WhatsApp monetization from reaching its potential?"
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-01-29T00:00:00Z",
+    "company_ticker": "META",
+    "source": "Q4 2024 earnings call transcript"
+  }
+}

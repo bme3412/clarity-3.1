@@ -1,0 +1,201 @@
+{
+  "id": "comp-2",
+  "run_id": "2025-12-03T14-21-47-811Z",
+  "strategy_id": "baseline",
+  "question": "Compare Apple and Google's approaches to AI in their consumer products.",
+  "ground_truth": "Apple focuses on on-device AI processing for privacy, while Google leverages cloud-based AI with Gemini models across Search, Photos, and other services.",
+  "generated_answer": "AI and Consumer Products: Key Insights\nBased on the available data, here's what we know about AI positioning and product strategy:\n AI Product Portfolio & Competitive Positioning\nData Center AI (MI Series)\n- MI325 launching Q4 2024, ramping in H1 2025\n- MI350 Series planned for H2 2025 with multiple SKUs (air-cooled to liquid-cooled)\n- MI350 compatible with MI300 infrastructure, enabling faster adoption\n- Strong 4th-gen EPYC traction across cloud and enterprise segments\n- Broadening customer base beyond largest cloud providers\nAI PC Market\n- Positive early reviews noted\n- AI PC viewed as \"important add to the overall PC category\"\n- Expected above-typical seasonality in H2 2024 due to product launch timing\n- Strong client business roadmap highlighted\n Customer Engagement\n- Expanding workload adoption among largest cloud customers\n- Active optimization work with large cloud and enterprise customers\n- Growing enterprise customer base (both new and existing)\n- Increased third-party cloud instance adoption\n Strategic Approach\n- Annual product cadence maintained\n- Increased focus on system-level integration\n- Flexible solutions (rack-level to infrastructure-compatible options)\n- Strong OEM and ecosystem partnerships\nThe specific financial metrics (revenue, cash flow, growth rates) for AI and consumer products were not found in the retrieved context. The data focuses on product positioning, competitive landscape, and go-to-market strategy rather than detailed financial performance metrics.",
+  "duration_ms": 15839,
+  "metrics": {
+    "relevance": {
+      "score": 0,
+      "reasoning": "The answer is completely irrelevant to the question. The question asks for a comparison between Apple and Google's approaches to AI in their consumer products. However, the answer discusses AMD's AI products (MI Series data center chips, AI PCs, EPYC processors) and their market strategy. There is no mention of Apple or Google whatsoever. The answer appears to be responding to an entirely different question about AMD's AI product portfolio and competitive positioning. This is a complete mismatch between the question and the answer provided."
+    },
+    "faithfulness": {
+      "score": 0.95,
+      "reasoning": "The answer is highly faithful to the provided context with only minor organizational differences. All key facts are accurately derived from the chunks: MI325 Q4 launch and H1 2025 ramp (Chunk 4), MI350 H2 2025 with multiple SKUs (Chunk 4), infrastructure compatibility (Chunk 9), 4th-gen EPYC traction (Chunk 6), AI PC positive reviews and seasonality (Chunk 1), client business strength (Chunk 2), customer engagement details (Chunks 3, 6, 7), and strategic approach elements (Chunks 4, 5, 8, 9, 10). The answer appropriately notes that specific financial metrics were not found in the context, which is accurate. The only reason for not scoring 1.0 is the slight interpretive framing in section headers and the summary statement about 'important add' being presented as a direct quote when it's paraphrased from Chunk 1, though the meaning is preserved."
+    },
+    "accuracy": {
+      "score": 0,
+      "reasoning": "The generated answer is completely unrelated to the ground truth. The ground truth discusses Apple's on-device AI approach versus Google's cloud-based AI strategy with Gemini models across consumer services. The generated answer instead discusses AMD's data center AI products (MI series chips), AI PCs, and enterprise customer engagement. There is no mention of Apple, Google, privacy considerations, on-device vs cloud processing, or consumer AI services like Search and Photos. The generated answer appears to be responding to an entirely different question about semiconductor/hardware AI products rather than consumer tech company AI strategies."
+    }
+  },
+  "context_count": 10,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 4497,
+      "embeddingMs": 229,
+      "pineconeMs": 832,
+      "llmMs": 10281,
+      "totalMs": 15839
+    },
+    "retrieval": {
+      "pineconeMatches": 10,
+      "financialMatches": 0,
+      "keywordMatches": 0,
+      "combinedContext": 10,
+      "filtersApplied": {}
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": false,
+      "financialQuery": false,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "technology",
+      "timeframe": "all",
+      "company_name": [
+        "AAPL",
+        "GOOGL"
+      ],
+      "isComparisonQuery": true,
+      "primaryTicker": "AAPL"
+    },
+    "llm": {
+      "input_tokens": 1088,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 350,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_3_2",
+      "score": 0.32175099999999995,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "You may have seen some of the reviews. The reviews are very positive. Our view of this is the AI PC is an important add to the overall PC category. As we go into the second half of the year, I think we have better seasonality in general, and we think we can do, let's call it, above-typical seasonality, given the strength of our product launches and when we're launching."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_3_0",
+      "score": 0.3189532,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "Speaker: lisa_su (President and Chief Executive Officer)\nTopic: AI PC Positioning and Competitive Landscape\nContext: undefined\nResponse: Yeah. So, first, you know, we're very pleased with our client business results. I think we have a very strong road map, so I'm very pleased with the road map."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_0_3",
+      "score": 0.3173977004,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "And we're also very engaged with a number of large cloud and enterprise customers that are actively working with us and optimizing their workloads, and we would expect those would be good opportunities for us over the next couple of quarters as well."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_2_1",
+      "score": 0.313591843,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "And 325 will start in the fourth quarter and then ramp more in the first half of next year. And then as we look at the 350 Series, what we're seeing and the reason we call it a series is because there will be multiple SKUs in that series that we'll go through the range of, let's call it, air-cooled to liquid-cooled. In spending time with our customers. I think there are people who certainly want more rack-level solutions, and we're certainly doing much more in terms of system-level integration for our products."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_4_1",
+      "score": 0.2869351,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "And we have a lot of work that we're doing with internally as well as with our customers and partners to enable that."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_1_1",
+      "score": 0.2820651347,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "First of all, in terms of competitive positioning and just the traction in the market, our fourth-gen EPYC between Gen 1 Bergamo is really doing very well. We've seen broad adoption across cloud. And then we've been very focused on enterprise as well as third-party cloud instances. And as I said in the prepared remarks, we're starting to see very nice traction in enterprise with both new customers as well as existing customers, and then for third-party cloud adoption, also a good pickup there as well."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_0_2",
+      "score": 0.2581373596,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "And then within that, our product portfolio is getting stronger with the annual cadence, launching 325 later this quarter and 355 in the second half of next year. And then in terms of customers, our customer engagements are actually broadening quite well. So, certainly, cloud -- our largest cloud customers are broadening the set of workloads that they're running on AMD Instinct."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_3_4",
+      "score": 0.25797519849999995,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "And we're working very closely with both the ecosystem partners as well as our OEM partners to have strong launches here into the second half of the year."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_2_2",
+      "score": 0.24653631219999997,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "You'll see us invest more in system-level integration. But we also have many customers who want to use their current infrastructure. I think the beauty of the MI350 series is it actually fits into the same infrastructure as the MI300 series. And so, it would lend itself to, let's call it, a pretty fast ramp if you've already invested in 300 or 325."
+      }
+    },
+    {
+      "id": "Advanced Micro Devices (AMD)_2024_Q3_qa_2_3",
+      "score": 0.2394326976,
+      "metadata": {
+        "company": "Advanced Micro Devices (AMD)",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "qa",
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "So, we see the range of options, and that's part of the expansion of the road map that we're planning."
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 0.322)\nYou may have seen some of the reviews. The reviews are very positive. Our view of this is the AI PC is an important add to the overall PC category. As we go into the second half of the year, I think we have better seasonality in general, and we think we can do, let's call it, above-typical seasonality, given the strength of our product launches and when we're launching.\n\n[Chunk 2] (Score: 0.319)\nSpeaker: lisa_su (President and Chief Executive Officer)\nTopic: AI PC Positioning and Competitive Landscape\nContext: undefined\nResponse: Yeah. So, first, you know, we're very pleased with our client business results. I think we have a very strong road map, so I'm very pleased with the road map.\n\n[Chunk 3] (Score: 0.317)\nAnd we're also very engaged with a number of large cloud and enterprise customers that are actively working with us and optimizing their workloads, and we would expect those would be good opportunities for us over the next couple of quarters as well.\n\n[Chunk 4] (Score: 0.314)\nAnd 325 will start in the fourth quarter and then ramp more in the first half of next year. And then as we look at the 350 Series, what we're seeing and the reason we call it a series is because there will be multiple SKUs in that series that we'll go through the range of, let's call it, air-cooled to liquid-cooled. In spending time with our customers. I think there are people who certainly want more rack-level solutions, and we're certainly doing much more in terms of system-level integration for our products.\n\n[Chunk 5] (Score: 0.287)\nAnd we have a lot of work that we're doing with internally as well as with our customers and partners to enable that.\n\n[Chunk 6] (Score: 0.282)\nFirst of all, in terms of competitive positioning and just the traction in the market, our fourth-gen EPYC between Gen 1 Bergamo is really doing very well. We've seen broad adoption across cloud. And then we've been very focused on enterprise as well as third-party cloud instances. And as I said in the prepared remarks, we're starting to see very nice traction in enterprise with both new customers as well as existing customers, and then for third-party cloud adoption, also a good pickup there as well.\n\n[Chunk 7] (Score: 0.258)\nAnd then within that, our product portfolio is getting stronger with the annual cadence, launching 325 later this quarter and 355 in the second half of next year. And then in terms of customers, our customer engagements are actually broadening quite well. So, certainly, cloud -- our largest cloud customers are broadening the set of workloads that they're running on AMD Instinct.\n\n[Chunk 8] (Score: 0.258)\nAnd we're working very closely with both the ecosystem partners as well as our OEM partners to have strong launches here into the second half of the year.\n\n[Chunk 9] (Score: 0.247)\nYou'll see us invest more in system-level integration. But we also have many customers who want to use their current infrastructure. I think the beauty of the MI350 series is it actually fits into the same infrastructure as the MI300 series. And so, it would lend itself to, let's call it, a pretty fast ramp if you've already invested in 300 or 325.\n\n[Chunk 10] (Score: 0.239)\nSo, we see the range of options, and that's part of the expansion of the road map that we're planning.",
+  "created_at": "2025-12-03T14:31:22.986Z"
+}

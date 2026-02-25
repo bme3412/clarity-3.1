@@ -1,0 +1,153 @@
+{
+  "company_name": "Microsoft",
+  "quarter": "Q2",
+  "fiscal_year": "2025",
+  "speakers": {
+    "satya_nadella": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "Balancing non-AI scale motions",
+          "content": "AI growth is better than expected, and we are rebalancing the scale motions that reach customers through partners so we can lean into the new workloads without just protecting the past."
+        },
+        {
+          "topic": "DeepSeek and inference efficiency",
+          "content": "DeepSeek is one example of the software-driven gains that bend the compute-cost curve, layering Moore's Law with AI scaling laws to make inference much cheaper and fuel broader adoption, including local PCs running models that once needed massive cloud infrastructure."
+        },
+        {
+          "topic": "OpenAI partnership and fungible fleet",
+          "content": "We remain committed to OpenAI while building a fungible, globally distributed fleet that balances training and inference, so our CapEx investments serve the entire platform without overbuying ahead of every next-efficiency leap."
+        },
+        {
+          "topic": "Copilot as an expanded UI",
+          "content": "Copilot Chat plus Copilot Studio lets IT turn on grounded chat and agent-building tools across the installed base, while Think Deeper powered by o1 and other Copilot experiences expand the consumer reach."
+        },
+        {
+          "topic": "Inference model diversity",
+          "content": "Every AI workload stitches together many models—frontier, fine-tuned, distilled, open source—so our app server investment keeps applications evergreen as the best model or mix evolves."
+        },
+        {
+          "topic": "Copilot collaboration patterns",
+          "content": "Copilot strength begins with productivity-centric teams but quickly spreads through collaboration, as people move from chat to shared Pages and naturally scale usage across cohorts."
+        }
+      ]
+    },
+    "amy_hood": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Azure non-AI execution",
+          "content": "The non-AI scale motions that primarily go through partners are working through the balance between AI workloads and the migrations customers have been executing; we are adjusting coverage, marketing and incentives so those motions return to the right mix."
+        },
+        {
+          "topic": "AI revenue beat",
+          "content": "Azure AI beat our expectations thanks to pulled-forward delivery dates, while Microsoft Copilot contributed through seat growth, usage intensity and disciplined pricing, which underpins durable value."
+        },
+        {
+          "topic": "CapEx cycle and fungibility",
+          "content": "We are investing against nearly $300 billion of RPO and shifting the mix from long-lived facilities to the CPUs and GPUs that directly correlate with contracted revenue, keeping the entire fleet fungible across inference, training and commercial workloads."
+        },
+        {
+          "topic": "Commercial bookings breadth",
+          "content": "Bookings strength was broad-based—renewals, upsells (Copilot suite momentum) and large Azure commitments from both expansion and new customers—so it wasn’t just the OpenAI tranche."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Keith Weiss",
+      "firm": "Morgan Stanley",
+      "topics": [
+        "Azure guidance",
+        "Execution",
+        "Scale motions"
+      ],
+      "questions": [
+        "Looking at the quarter, another really solid quarter when it comes to commercial bookings. But again, we were a little bit disappointed on Azure coming in at the bottom end of the guidance range. Amy, I was hoping you could dig into perhaps what some of those execution issues were, what the resolution to those issues were? And do we still feel comfortable in the acceleration into the back half of the year that you were talking about after the June quarter and after last quarter?"
+      ]
+    },
+    {
+      "analyst": "Mark Moerdler",
+      "firm": "Bernstein",
+      "topics": [
+        "Microsoft AI revenue",
+        "Copilot"
+      ],
+      "questions": [
+        "Can you give more color on what drove the far larger-than-expected Microsoft AI revenue? We talked a bit about the Azure AI component of it. But can you give more color on that? And our estimates are that the Copilot was much bigger than we had expected and growing much faster. Any more details on the breakdown of what that Microsoft AI beat would be great."
+      ]
+    },
+    {
+      "analyst": "Brent Thill",
+      "firm": "Jefferies",
+      "topics": [
+        "DeepSeek",
+        "AI cost curve"
+      ],
+      "questions": [
+        "Satya, you mentioned DeepSeek a couple of times in your prepared remarks. I think everyone would love your thoughts on what you're seeing there. And are we seeing AI scale now at a lower cost? Are we reaching a mark where you can see that? Or do we still have some time to go?"
+      ]
+    },
+    {
+      "analyst": "Karl Keirstead",
+      "firm": "UBS",
+      "topics": [
+        "OpenAI partnership",
+        "CapEx"
+      ],
+      "questions": [
+        "Maybe this one is well for Satya, and it's also away from the numbers. But Satya, I wanted to ask you about the Stargate news and the announced changes in the OpenAI relationship last week. It seems that most of your investors have interpreted this as Microsoft, for sure, remaining very committed to OpenAI's success, but electing to take more of a backseat in terms of funding OpenAI's future training CapEx needs. I was hoping you might frame your strategic decision here around Stargate, and Amy, whether there's any takeaway for investors from that decision in terms of how you're thinking about CapEx needs over the next several years."
+      ]
+    },
+    {
+      "analyst": "Brad Zelnick",
+      "firm": "Deutsche Bank",
+      "topics": [
+        "Copilot go-to-market",
+        "Product packaging"
+      ],
+      "questions": [
+        "I'll echo my congrats and gratitude to Brett as well. Satya, as we think about Microsoft's very rich Copilot portfolio, now having been in market for over a year, with the products and precision only getting better and the cost of inference coming down, how do you think about the journey from here and perhaps the ability to package and evolve the go-to-market to address the broadest range of customers and customer requirements out there?"
+      ]
+    },
+    {
+      "analyst": "Brad Reback",
+      "firm": "Stifel",
+      "topics": [
+        "Inference model mix",
+        "Open models"
+      ],
+      "questions": [
+        "Satya, if you look out several years, any sense of what percent of inference done on Azure will be done on proprietary models versus open models? And with that said, does it matter to Microsoft at the end of the day?"
+      ]
+    },
+    {
+      "analyst": "Bradley Sills",
+      "firm": "Bank of America",
+      "topics": [
+        "Copilot usage",
+        "Enterprise monetization"
+      ],
+      "questions": [
+        "Wonderful. Great to hear about the strength you're seeing in Copilot. Would love to get some color as to where you're seeing that strength. Is it departmental deals, customers moving from proof of concept to departmental deals, maybe multiple departmental deals in the enterprise? And you mentioned some uptick in usage trends. Would love to get some color on just the common use cases that you're seeing that give you that confidence that, that will ramp into monetization later."
+      ]
+    },
+    {
+      "analyst": "Brent Bracelin",
+      "firm": "Piper Sandler",
+      "topics": [
+        "Commercial bookings",
+        "Large deals"
+      ],
+      "questions": [
+        "I wanted to go back to commercial bookings. Commercial RPO, I think, increased $39 billion sequentially. That's the most we've ever seen on a sequential basis. Commercial bookings growth, 75% constant currency, that's 2x higher than we've seen in the last decade. I appreciate there's some volatility with this metric, but it does feel like this quarter, there was a bit of a sea change relative to momentum on backlog and bookings. Can you just talk about maybe the breadth of where that strength came from? Was it broad-based? Was there a couple of large deals? Any color there would be helpful."
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-01-29T00:00:00Z",
+    "source": "Microsoft FY 2025 Q2 earnings call transcript"
+  }
+}
+

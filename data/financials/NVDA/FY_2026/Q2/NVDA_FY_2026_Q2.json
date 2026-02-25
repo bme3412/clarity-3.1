@@ -1,0 +1,227 @@
+{
+  "financial_report": {
+    "period": {
+      "fiscal_quarter": "Q2 2026",
+      "fiscal_end_date": "July 27, 2025",
+      "year_ago_quarter": {
+        "date": "July 30, 2024",
+        "type": "Year-over-Year Quarter"
+      }
+    },
+    "income_statement": {
+      "revenue": {
+        "total": {
+          "value": 46743,
+          "qoq_growth": "6%",
+          "yoy_growth": "56%",
+          "components": {
+            "data_center": 41100,
+            "gaming": 4300,
+            "professional_visualization": 601,
+            "automotive": 586,
+            "oem_and_other": 156
+          }
+        },
+        "by_segment": {
+          "data_center": {
+            "value": 41100,
+            "qoq_growth": "5%",
+            "yoy_growth": "56%",
+            "highlight": "Blackwell Data Center revenue grew 17% sequentially"
+          },
+          "gaming": {
+            "value": 4300,
+            "qoq_growth": "14%",
+            "yoy_growth": "49%"
+          },
+          "professional_visualization": {
+            "value": 601,
+            "qoq_growth": "18%",
+            "yoy_growth": "32%"
+          },
+          "automotive": {
+            "value": 586,
+            "qoq_growth": "3%",
+            "yoy_growth": "69%"
+          },
+          "oem_and_other": {
+            "value": 156,
+            "qoq_growth": "77%",
+            "yoy_growth": "77%"
+          }
+        }
+      },
+      "margins": {
+        "gross_margin": {
+          "gaap": {
+            "value": "72.4%",
+            "notes": "Includes $180M release of previously reserved H20 inventory"
+          },
+          "non_gaap": {
+            "value": "72.7%",
+            "adjusted_value": "72.3%",
+            "notes": "Excludes H20 release/charge impact"
+          }
+        },
+        "operating_margin": {
+          "gaap": {
+            "value": "60.9%",
+            "operating_income": 28440
+          },
+          "non_gaap": {
+            "value": "64.5%",
+            "operating_income": 30165
+          }
+        }
+      },
+      "operating_expenses": {
+        "research_and_development": {
+          "gaap": 4291
+        },
+        "sales_general_administrative": {
+          "gaap": 1122
+        },
+        "total": {
+          "gaap": 5413,
+          "non_gaap": 3795
+        }
+      },
+      "net_income": {
+        "gaap": {
+          "value": 26422,
+          "yoy_growth": "59%",
+          "notes": "Includes non-recurring H20 reserve release"
+        },
+        "non_gaap": {
+          "value": 25783,
+          "yoy_growth": "52%"
+        },
+        "adjusted_non_gaap": {
+          "value": 25595,
+          "notes": "Excludes H20 related charges/releases and the associated tax impact"
+        }
+      },
+      "earnings_per_share": {
+        "gaap": {
+          "diluted": 1.08
+        },
+        "non_gaap": {
+          "diluted": 1.05,
+          "adjusted_diluted": 1.04
+        }
+      }
+    },
+    "non_gaap_reconciliation": {
+      "h20_related": {
+        "charges_releases_net": -180,
+        "notes": "Release stems from excess H20 inventory; no H20 sales to China in the quarter"
+      },
+      "other_items": [
+        "Stock-based compensation and acquisition-related costs are excluded from the non-GAAP totals",
+        "Gains/losses from investments and debt amortization are the remaining reconciling items"
+      ]
+    },
+    "outlook": {
+      "revenue": {
+        "value": 54000,
+        "range_pct": "±2%",
+        "notes": "Assumes no H20 shipments to China"
+      },
+      "gross_margin": {
+        "gaap": "73.3%",
+        "non_gaap": "73.5%",
+        "range_bps": "±50"
+      },
+      "operating_expenses": {
+        "gaap": 5900,
+        "non_gaap": 4200,
+        "notes": "Full-year operating expense growth expected in the high-30% range"
+      },
+      "other_income_expense": {
+        "expected_income": 500,
+        "notes": "Excludes gains/losses from non-marketable and publicly-held equity securities"
+      },
+      "tax_rate": {
+        "value": "16.5%",
+        "range": "±1%",
+        "notes": "Excludes discrete items"
+      }
+    },
+    "cash_flow": {
+      "operating_cash_flow": 15365,
+      "investing_cash_flow": -7126,
+      "financing_cash_flow": -11834,
+      "capital_expenditures": -1894,
+      "free_cash_flow": 13450
+    }
+  },
+  "balance_sheet": {
+    "assets": {
+      "current_assets": {
+        "cash_and_marketable_securities": 56791,
+        "accounts_receivable_net": 27808,
+        "inventories": 14962,
+        "prepaid_and_other_current_assets": 2658,
+        "total_current_assets": 102219
+      },
+      "non_current_assets": {
+        "property_and_equipment_net": 9141,
+        "operating_lease_assets": 2084,
+        "goodwill": 5755,
+        "intangible_assets_net": 755,
+        "deferred_income_tax_assets": 13570,
+        "other_assets": 7216,
+        "total_non_current_assets": 38521
+      },
+      "total_assets": 140740
+    },
+    "liabilities": {
+      "current_liabilities": {
+        "accounts_payable": 9064,
+        "accrued_and_other_current_liabilities": 15193,
+        "total_current_liabilities": 24257
+      },
+      "non_current_liabilities": {
+        "long_term_debt": 8466,
+        "long_term_operating_lease_liabilities": 1831,
+        "other_long_term_liabilities": 6055,
+        "total_non_current_liabilities": 16352
+      },
+      "total_liabilities": 40609
+    },
+    "stockholders_equity": {
+      "total_stockholders_equity": 100131
+    },
+    "total_liabilities_and_equity": 140740
+  },
+  "highlights": {
+    "data_center": [
+      "Blackwell Ultra production is ramping with extraordinary demand and NVLink rack-scale computing is enabling large-scale reasoning workloads",
+      "Introduced Spectrum-XGS Ethernet and expanded partnerships to build NVIDIA Blackwell AI infrastructure across France, Germany, Italy, Spain, and the U.K.",
+      "Collaborated on sovereign supercomputers such as Doudna, JUPITER, Blue Lion, Isambard, and FugakuNEXT",
+      "Delivered 1.5M tokens/sec for OpenAI’s gpt-oss-120b on NVL72 rack-scale systems",
+      "Partnered with Novo Nordisk and DCAI to advance drug discovery"
+    ],
+    "gaming": [
+      "Launched the Blackwell-powered GeForce RTX 5060, NVIDIA’s fastest-ramping x60-class GPU ever",
+      "DLSS 4 now available in over 175 games and apps, and GeForce NOW doubled its library to 4,500 titles via Install-to-Play",
+      "Collaborated with OpenAI to optimize new open-weight models for RTX GPUs and enable fast local inference through tools such as Ollama and llama.cpp"
+    ],
+    "professional_visualization": [
+      "Announced NVIDIA RTX PRO 4000 SFF Edition and RTX PRO 2000 Blackwell GPUs",
+      "Expanded the Siemens partnership to help digitalize the next-generation factory",
+      "Released new Omniverse libraries and SDKs to accelerate physical AI development"
+    ],
+    "automotive_robotics": [
+      "Delivered full production of the NVIDIA DRIVE AV platform and commenced initial shipments of NVIDIA DRIVE AGX Thor SoCs",
+      "Launched the NVIDIA Jetson AGX Thor developer kit and production modules for robotics at scale",
+      "Introduced the NVIDIA Halos full-stack safety platform and announced new NVIDIA Cosmos world foundation models for robotics"
+    ],
+    "shareholder_actions": [
+      "$24.3B returned to shareholders year-to-date via share repurchases and dividends",
+      "$14.7B remaining on the authorization; Board approved an additional $60B buyback without expiration",
+      "Next quarterly cash dividend of $0.01 per share scheduled for October 2, 2025"
+    ]
+  }
+}
+

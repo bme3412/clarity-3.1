@@ -1,0 +1,83 @@
+{
+  "id": "prod-2",
+  "run_id": "2025-12-03T14-21-47-811Z",
+  "strategy_id": "baseline",
+  "question": "What is AMD's MI300 series and why is it significant?",
+  "ground_truth": "The MI300 series is AMD's flagship AI accelerator lineup, including MI300X for inference and MI300A APU combining CPU and GPU. It's significant as AMD's main competitor to Nvidia's data center GPUs.",
+  "generated_answer": "MI300 Series Product Significance\n Financial Impact\nThe MI300 series has been transformational for AMD's financial performance:\nData Center Revenue Surge:\n- Data Center segment: $3.5B in Q3 2024 (+122% YoY)\n- MI300 series is the primary driver of this exceptional growth\n- Data Center now represents 51% of total AMD revenue (vs. 28% prior year)\n Product Performance & Market Position\nRevenue Achievement:\n- MI300 accelerators achieved over $1.5B in revenue in a single quarter (Q3 2024)\n- On track for $5B+ in MI300 revenue for full year 2024\n- Represents fastest product ramp to multi-billion dollar revenue in AMD history\nCustomer Adoption:\n- Deployed across major cloud providers and enterprises\n- Strong demand from both cloud hyperscalers and enterprise AI customers\n- Multiple Fortune 500 companies adopting MI300 for AI workloads\n Strategic Significance\nMarket Positioning:\n- Establishes AMD as credible 2 player in AI accelerator market\n- Competing directly with NVIDIA in high-growth AI infrastructure\n- MI300X optimized for AI inference and training workloads\nTechnology Leadership:\n- Industry-leading memory capacity and bandwidth\n- Integrated CPU-GPU architecture provides differentiation\n- Strong software ecosystem development (ROCm platform improvements)\nFuture Growth Driver:\n- Next-generation MI325X launching Q4 2024\n- MI350 series planned for 2025\n- Positions AMD for sustained participation in $400B+ AI infrastructure market through 2027\nThe MI300 series has fundamentally repositioned AMD from primarily a PC/gaming semiconductor company to a major AI infrastructure provider.",
+  "duration_ms": 24955,
+  "metrics": {
+    "relevance": {
+      "score": 1,
+      "reasoning": "The answer is highly relevant and comprehensive. It directly addresses both parts of the question: (1) What is AMD's MI300 series - identified as AI accelerators optimized for AI inference and training workloads with industry-leading memory capacity and integrated CPU-GPU architecture, and (2) Why it is significant - extensively detailed through financial impact ($1.5B+ quarterly revenue, $5B+ annual target), market positioning (establishing AMD as #2 player in AI accelerator market competing with NVIDIA), customer adoption (major cloud providers and Fortune 500 companies), and strategic importance (fastest product ramp in AMD history, future growth driver). The answer provides specific metrics, context, and forward-looking information that fully satisfies the user's question."
+    },
+    "faithfulness": {
+      "score": 0.3,
+      "reasoning": "The answer contains significant hallucinations and information not present in the provided context. While the Data Center revenue of $3.5B and +122% YoY growth is accurate, the following claims are NOT supported by the context: (1) MI300 achieving $1.5B in revenue in Q3 2024, (2) $5B+ MI300 revenue target for 2024, (3) specific customer adoption details about Fortune 500 companies, (4) MI300X product specifications, (5) MI325X launching Q4 2024, (6) MI350 series plans for 2025, (7) $400B+ AI infrastructure market projection through 2027, and (8) claims about 'fastest product ramp' in AMD history. The context only provides high-level financial data for Q3 2024 and does not mention MI300 series at all. The answer appears to draw from external knowledge rather than being faithful to the provided context."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer is factually accurate and highly consistent with the ground truth. It correctly identifies the MI300 series as AMD's flagship AI accelerator lineup and confirms its significance as a competitor to Nvidia in the data center GPU market. While the ground truth mentions MI300X for inference and MI300A APU combining CPU and GPU, the generated answer acknowledges MI300X for 'AI inference and training workloads' and references 'integrated CPU-GPU architecture,' which aligns with the MI300A's design. The generated answer provides extensive additional detail about financial performance, market positioning, and strategic significance, but this supplementary information does not contradict the ground truth—it expands upon it. All core facts from the ground truth are preserved and accurately represented."
+    }
+  },
+  "context_count": 1,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 4165,
+      "embeddingMs": 242,
+      "pineconeMs": 639,
+      "llmMs": 19909,
+      "totalMs": 24955
+    },
+    "retrieval": {
+      "pineconeMatches": 1,
+      "financialMatches": 0,
+      "keywordMatches": 0,
+      "combinedContext": 1,
+      "filtersApplied": {
+        "company": "AMD"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": false,
+      "financialQuery": false,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "technology",
+      "timeframe": "all",
+      "company_name": "AMD",
+      "isComparisonQuery": false,
+      "primaryTicker": "AMD"
+    },
+    "llm": {
+      "input_tokens": 481,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 413,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "AMD_2024_Q3_earnings_0_0",
+      "score": 0.22520609079999998,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "earnings",
+        "source": "AMD_FY2024_Q3_earnings.json",
+        "retrieval": null,
+        "text": "Financials:\nTotal Revenue: 6.8 billion USD (Q3 2024)\nYear-over-Year Change: +18%\nRevenue Composition:\n  Data Center: 3.5 billion USD\n    Year-over-Year Change: +122%\n  Client: 1.9 billion USD\n    Year-over-Year Change: +29%\n  Gaming: 0.462 billion USD\n    Year-over-Year Change: -69%\n  Embedded: 0.927 billion USD\n    Year-over-Year Change: -25%\nTotal Expenses: 1.96 billion USD (Operating expenses including R&D, marketing, and other activities)\nYear-over-Year Change: +15%\nOperating Expenses Breakdown:\n  R&D:\n  Marketing:\n  Variable Compensation:\n  Amortization:\n  Acquisition Related Costs:\nOperating Income: 0.724 billion USD (Operating income for Q3 2024)\nOperating Margin: 10.6%\nNet Income: 0.771 billion USD\nEPS: 0.47 USD per share\nTax Rate: [object Object]\nFree Cash Flow: [object Object] undefined\nCapital Expenditures: N/A billion USD\nContext: Not explicitly detailed for Q3 2024"
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 0.225)\nFinancials:\nTotal Revenue: 6.8 billion USD (Q3 2024)\nYear-over-Year Change: +18%\nRevenue Composition:\n  Data Center: 3.5 billion USD\n    Year-over-Year Change: +122%\n  Client: 1.9 billion USD\n    Year-over-Year Change: +29%\n  Gaming: 0.462 billion USD\n    Year-over-Year Change: -69%\n  Embedded: 0.927 billion USD\n    Year-over-Year Change: -25%\nTotal Expenses: 1.96 billion USD (Operating expenses including R&D, marketing, and other activities)\nYear-over-Year Change: +15%\nOperating Expenses Breakdown:\n  R&D:\n  Marketing:\n  Variable Compensation:\n  Amortization:\n  Acquisition Related Costs:\nOperating Income: 0.724 billion USD (Operating income for Q3 2024)\nOperating Margin: 10.6%\nNet Income: 0.771 billion USD\nEPS: 0.47 USD per share\nTax Rate: [object Object]\nFree Cash Flow: [object Object] undefined\nCapital Expenditures: N/A billion USD\nContext: Not explicitly detailed for Q3 2024",
+  "created_at": "2025-12-03T14:33:56.641Z"
+}

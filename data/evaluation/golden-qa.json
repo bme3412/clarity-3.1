@@ -1,0 +1,56 @@
+[
+  {
+    "id": "single_metric_1",
+    "question": "What was NVDA's revenue in Q3 FY2024?",
+    "ground_truth": "",
+    "expected_tool": ["get_financial_metrics"],
+    "category": "single_metric",
+    "ticker": "NVDA",
+    "difficulty": "medium"
+  },
+  {
+    "id": "growth_rate_1",
+    "question": "What was AMD's year-over-year revenue growth in Q2 FY2024?",
+    "ground_truth": "",
+    "expected_tool": ["compute_growth_rate"],
+    "category": "growth_rate",
+    "ticker": "AMD",
+    "difficulty": "medium"
+  },
+  {
+    "id": "trend_1",
+    "question": "Show Apple’s operating margin trend over the last 4 quarters.",
+    "ground_truth": "",
+    "expected_tool": ["get_multi_quarter_metrics"],
+    "category": "trend",
+    "ticker": "AAPL",
+    "difficulty": "easy"
+  },
+  {
+    "id": "qualitative_1",
+    "question": "What did Jensen Huang say about AI demand?",
+    "ground_truth": "",
+    "expected_tool": ["search_earnings_transcript"],
+    "category": "qualitative",
+    "ticker": "NVDA",
+    "difficulty": "easy"
+  },
+  {
+    "id": "hybrid_1",
+    "question": "What was NVDA's data center revenue and what drove the growth?",
+    "ground_truth": "",
+    "expected_tool": ["get_financial_metrics", "search_earnings_transcript"],
+    "category": "hybrid",
+    "ticker": "NVDA",
+    "difficulty": "hard"
+  },
+  {
+    "id": "edge_1",
+    "question": "What was Tesla's revenue in Q1 2024?",
+    "ground_truth": "",
+    "expected_tool": ["list_available_data"],
+    "category": "edge_cases",
+    "ticker": "TSLA",
+    "difficulty": "easy"
+  }
+]

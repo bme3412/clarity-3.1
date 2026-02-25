@@ -1,0 +1,406 @@
+{
+  "company_name": "AMD",
+  "quarter": "Q4",
+  "fiscal_year": "2022",
+  "financials": {
+    "total_revenue": {
+      "value": 5.6,
+      "unit": "billion USD",
+      "year_over_year_change": "+16%",
+      "quarter_over_quarter_change": "-",
+      "context": "Q4 2022",
+      "annual": {
+        "value": 23.6,
+        "unit": "billion USD",
+        "year_over_year_change": "+44%",
+        "context": "Full Year 2022"
+      },
+      "composition": {
+        "data_center": {
+          "value": 1.7,
+          "unit": "billion USD",
+          "year_over_year_change": "+42%",
+          "quarter_over_quarter_change": "-",
+          "context": "Includes EPYC™ server processors and Data Center GPU sales",
+          "breakdown": {
+            "server_processors": {
+              "revenue_growth_year_over_year": "+42%",
+              "revenue_growth_quarter_over_quarter": "-",
+              "drivers": [
+                "Strong sales of third-generation EPYC server processors",
+                "Early ramp of fourth-generation EPYC processors"
+              ],
+              "details": {
+                "epyc_generations": {
+                  "third_gen": {
+                    "description": "Third-generation EPYC processors",
+                    "performance_improvement": "Highest performance and most energy-efficient x86 server CPUs",
+                    "impact": "Strong demand from hyperscalers and enterprise customers"
+                  },
+                  "fourth_gen": {
+                    "description": "Fourth-generation EPYC processors",
+                    "performance_improvement": "Up to two times faster performance and up to 80% more energy efficient",
+                    "impact": "Supports initial cloud deployments and future processor platforms"
+                  }
+                }
+              }
+            },
+            "data_center_gpu": {
+              "revenue_growth_year_over_year": "-7%",
+              "revenue_growth_quarter_over_quarter": "-",
+              "context": "Decline due to reduced Frontier supercomputer shipments",
+              "drivers": [
+                "Decrease in Data Center GPU sales compared to the previous year"
+              ],
+              "details": {
+                "frontier_supercomputer": {
+                  "description": "Frontier exascale supercomputer",
+                  "impact": "Reduced shipments led to lower Data Center GPU revenue"
+                },
+                "mi300_accelerator": {
+                  "description": "Next-generation MI300 accelerator",
+                  "performance_improvement": "Combines CPU, GPU, and memory into a single design",
+                  "impact": "Delivers eight times more performance and five times better efficiency for HPC and AI workloads",
+                  "future_plans": "Sampling to lead customers later in the quarter and launch in the second half of 2023"
+                }
+              }
+            },
+            "dpus_and_fpgas": {
+              "revenue_growth_year_over_year": "+",
+              "revenue_growth_quarter_over_quarter": "+",
+              "drivers": [
+                "Record sales of Xilinx data center and networking products",
+                "Increased sales of Pensando DPUs driven by supply chain improvements and demand"
+              ],
+              "details": {
+                "pensando_dp_us": {
+                  "description": "Pensando DPUs",
+                  "impact": "Significant ramp-up in sales supporting cloud deployments"
+                },
+                "xilinx_fpgas": {
+                  "description": "Xilinx FPGA and networking products",
+                  "impact": "Strong demand from financial services and other sectors"
+                }
+              }
+            }
+          }
+        },
+        "client": {
+          "value": 0.903,
+          "unit": "billion USD",
+          "year_over_year_change": "-51%",
+          "quarter_over_quarter_change": "-",
+          "context": "Includes desktop and notebook PC processors and chipsets",
+          "breakdown": {
+            "desktop_processors": {
+              "revenue_growth_year_over_year": "-51%",
+              "revenue_growth_quarter_over_quarter": "-",
+              "drivers": [
+                "Reduced processor shipments due to weak PC market",
+                "Significant inventory correction across the PC supply chain"
+              ],
+              "details": {
+                "ryzen_series": {
+                  "description": "Ryzen™ 7000 series notebook processors",
+                  "performance_improvement": "Leadership performance in battery life with Ryzen AI",
+                  "impact": "Increased demand for Ryzen 7000 Series and launch of Ryzen 7045 series CPUs"
+                },
+                "am5_platform": {
+                  "description": "AM5 platform",
+                  "impact": "Supports the launch of Ryzen 7000 Series processors"
+                }
+              }
+            }
+          }
+        },
+        "gaming": {
+          "value": 1.6,
+          "unit": "billion USD",
+          "year_over_year_change": "-7%",
+          "quarter_over_quarter_change": "-",
+          "context": "Includes discrete graphics processors and semi-custom game console products",
+          "breakdown": {
+            "semi_custom": {
+              "revenue_growth_year_over_year": "+",
+              "revenue_growth_quarter_over_quarter": "+",
+              "drivers": [
+                "Higher semi-custom product revenue",
+                "Strong demand for game consoles during the holidays"
+              ],
+              "details": {
+                "so_c_sales": {
+                  "description": "Semi-custom SoC sales",
+                  "impact": "Driven by demand for latest game consoles"
+                }
+              }
+            },
+            "graphics": {
+              "revenue_growth_year_over_year": "-7%",
+              "revenue_growth_quarter_over_quarter": "-",
+              "context": "Decline due to soft consumer demand and inventory reduction",
+              "drivers": [
+                "Lower gaming graphics revenue",
+                "Inventory, pricing, and related charges in the graphics business"
+              ],
+              "details": {
+                "rdna_3": {
+                  "description": "Next-generation RDNA 3 GPUs",
+                  "performance_improvement": "Enhanced performance and performance per watt with 5nm chiplet design",
+                  "impact": "Supports high-resolution, high-frame-rate gaming",
+                  "future_plans": "Launch RDNA 3 GPUs with advanced architecture and 5nm chiplet designs"
+                },
+                "mobile_gpus": {
+                  "description": "RDNA 3 mobile GPUs",
+                  "impact": "Selected to power new gaming notebooks from major manufacturers",
+                  "future_plans": "Begin shipping in the first half of 2023"
+                }
+              }
+            }
+          }
+        },
+        "embedded": {
+          "value": 1.4,
+          "unit": "billion USD",
+          "year_over_year_change": "+1868%",
+          "quarter_over_quarter_change": "-",
+          "context": "Includes Xilinx embedded products and other adaptive computing solutions",
+          "breakdown": {
+            "xilinx_embedded": {
+              "revenue_growth_year_over_year": "+1868%",
+              "revenue_growth_quarter_over_quarter": "-",
+              "drivers": [
+                "Inclusion of Xilinx embedded product revenue",
+                "Strong demand from communications, automotive, industrial, healthcare, aerospace, and defense sectors"
+              ],
+              "details": {
+                "communications": {
+                  "description": "Communications",
+                  "impact": "Expanded 5G wireless installations and wired infrastructure deployments"
+                },
+                "automotive": {
+                  "description": "Automotive",
+                  "impact": "Ramps of new automotive grade Zynq UltraScale+ platforms and design wins with major suppliers"
+                },
+                "industrial_healthcare_aerospace_defense": {
+                  "description": "Industrial, Healthcare, Aerospace, and Defense",
+                  "impact": "Strong growth driven by SAM expansion, new design wins, and increased supply across multiple nodes"
+                }
+              }
+            }
+          }
+        }
+      },
+      "expenses": {
+        "total_expenses": {
+          "value": 1.6,
+          "unit": "billion USD",
+          "year_over_year_change": "+45%",
+          "context": "Operating expenses including R&D, marketing, amortization of intangible assets, and acquisition-related costs",
+          "key_factors": [
+            "Amortization of intangible assets associated with the Xilinx acquisition",
+            "Increased R&D investments",
+            "Additional go-to-market investments to support revenue growth"
+          ]
+        },
+        "operating_expenses_breakdown": {
+          "R&D": {
+            "value": "N/A",
+            "context": "Increased investments in research and development to support product roadmaps"
+          },
+          "marketing": {
+            "value": "N/A",
+            "context": "Enhanced go-to-market activities to support product launches and growth initiatives"
+          },
+          "variable_compensation": {
+            "value": "N/A",
+            "context": "Higher variable employee compensation-related expenses"
+          },
+          "amortization": {
+            "value": "N/A",
+            "context": "Amortization of intangible assets associated with the Xilinx acquisition"
+          },
+          "acquisition_related_costs": {
+            "value": "N/A",
+            "context": "Costs related to strategic acquisitions, including Xilinx and Pensando"
+          }
+        }
+      },
+      "profitability": {
+        "operating_income": {
+          "value": -149,
+          "unit": "million USD",
+          "year_over_year_change": "-",
+          "quarter_over_quarter_change": "-",
+          "context": "Operating loss for Q4 2022",
+          "operating_margin": "-2.66%",
+          "drivers": [
+            "Amortization of intangible assets from Xilinx acquisition",
+            "Lower revenue in Client segment"
+          ]
+        },
+        "non_gaap_operating_income": {
+          "value": 1.3,
+          "unit": "billion USD",
+          "year_over_year_change": "-",
+          "quarter_over_quarter_change": "-",
+          "context": "Non-GAAP operating income for Q4 2022",
+          "drivers": [
+            "Higher revenue and gross margin",
+            "Partial offset from higher operating expenses"
+          ]
+        },
+        "net_income": {
+          "value": 21,
+          "unit": "million USD",
+          "year_over_year_change": "-",
+          "quarter_over_quarter_change": "-",
+          "context": "Net income for Q4 2022",
+          "notes": "Includes amortization of intangible assets and increased R&D investments, partially offset by a tax benefit"
+        },
+        "non_gaap_net_income": {
+          "value": 1.1,
+          "unit": "billion USD",
+          "year_over_year_change": "0%",
+          "quarter_over_quarter_change": "-",
+          "context": "Non-GAAP net income for Q4 2022",
+          "drivers": [
+            "Higher revenue and gross margin",
+            "Partial offset from higher operating expenses"
+          ]
+        },
+        "eps": {
+          "value": 0.01,
+          "unit": "USD per share",
+          "year_over_year_change": "-",
+          "quarter_over_quarter_change": "-",
+          "context": "Diluted earnings per share for Q4 2022",
+          "notes": "Includes a $154 million tax benefit"
+        },
+        "non_gaap_eps": {
+          "value": 0.69,
+          "unit": "USD per share",
+          "year_over_year_change": "-",
+          "quarter_over_quarter_change": "-",
+          "context": "Non-GAAP diluted earnings per share for Q4 2022"
+        },
+        "tax_rate": {
+          "current_quarter": "13%",
+          "full_year_guidance": "13%",
+          "context": "Effective tax rate for Q4 2022 and full year 2022"
+        },
+        "cash_flow": {
+          "free_cash_flow": {
+            "value": 443,
+            "unit": "million USD",
+            "year_over_year_change": "-",
+            "context": "Free cash flow for Q4 2022",
+            "notes": "Includes strategic investments and share repurchases"
+          }
+        }
+      },
+      "capital_expenditures": {
+        "value": 1.0,
+        "unit": "billion USD",
+        "context": "Invested in long-term supply chain capacity to support future growth",
+        "details": {}
+      },
+      "capital_return": {
+        "share_repurchase": {
+          "value": 0.25,
+          "unit": "billion USD",
+          "context": "Repurchased $250 million of common stock during Q4 2022"
+        },
+        "dividends": {
+          "value": "N/A",
+          "unit": "billion USD",
+          "context": "Not explicitly detailed"
+        }
+      },
+      "guidance": {
+        "first_quarter_2023": {
+          "revenue": {
+            "value": 5.3,
+            "unit": "billion USD",
+            "range": "+/-0.3",
+            "year_over_year_change": "-10%",
+            "quarter_over_quarter_change": "-5%",
+            "context": "Driven by Embedded and Data Center segments growth, offset by declines in Client and Gaming"
+          },
+          "non_gaap_gross_margin": {
+            "value": 50,
+            "unit": "percent",
+            "context": "Expected for Q1 2023"
+          },
+          "non_gaap_operating_expenses": {
+            "value": 1.6,
+            "unit": "billion USD",
+            "percentage_of_revenue": "28.57%",
+            "context": "Expected for Q1 2023"
+          },
+          "non_gaap_interest_expense_taxes_other": {
+            "value": 0.146,
+            "unit": "billion USD",
+            "context": "Including effective tax rate of 13%"
+          },
+          "diluted_share_count": {
+            "value": 1.62,
+            "unit": "billion shares",
+            "context": "Expected for Q1 2023"
+          }
+        },
+        "full_year_2023": {
+          "revenue_growth_year_over_year": "+",
+          "context": "Led by growth in Embedded and Data Center segments",
+          "revenue": {
+            "value": "N/A",
+            "unit": "billion USD",
+            "context": "Not specifically detailed"
+          },
+          "non_gaap_gross_margin": {
+            "value": "50-52",
+            "unit": "percent",
+            "context": "Expected to be approximately 50% flattish in the first half and expand in the second half of the year"
+          }
+        }
+      },
+      "recent_pr_highlights": {
+        "product_introductions": [
+          "Ryzen™ 7000 series notebook processors with Ryzen AI",
+          "Ryzen 7045 series mobile processors",
+          "RDNA 3 GPUs",
+          "Fourth-generation EPYC processors",
+          "MI300 accelerator"
+        ],
+        "partnerships_and_adoptions": [
+          "New gaming notebooks from Dell, Alienware, ASUS",
+          "EPYC processors powering more than 600 publicly available instances globally",
+          "MI300 selected to power El Capitan exascale supercomputer at Lawrence Livermore National Laboratories"
+        ],
+        "ecosystem_support": [
+          "Integration of Xilinx embedded products with AMD's compute products",
+          "Collaborations with major cloud providers and enterprise customers"
+        ],
+        "corporate_responsibility": [
+          "Investments in sustainable technological and scientific advancements",
+          "Support for community initiatives amidst COVID-19"
+        ]
+      },
+      "metadata": {
+        "parsed_date": "2022-12-31T00:00:00Z",
+        "company_ticker": "AMD",
+        "source": "Q4 2022 Earnings Call Transcript",
+        "operating_environment_challenges": [
+          "Weak PC market",
+          "Significant inventory correction across the PC supply chain",
+          "Mixed demand environment",
+          "Managing supply chain constraints",
+          "Navigating macroeconomic uncertainties"
+        ]
+      }
+    },
+    "executive_comments": {
+      "ceo_statement": "2022 was a strong year for AMD as we delivered best-in-class growth and record revenue despite the weak PC environment in the second half of the year. We accelerated our data center momentum and closed our strategic acquisition of Xilinx, significantly diversifying our business and strengthening our financial model. Although the demand environment is mixed, we are confident in our ability to gain market share in 2023 and deliver long-term growth based on our differentiated product portfolio.",
+      "cfo_statement": "“2022 was a very strong year for AMD. We had a record revenue, gross margin, profitability, and we generated significant free cash flow. The year was also highlighted by our strategic acquisitions of Xilinx and Pensando, expanding and diversifying our business portfolio.\n\nFourth quarter 2022 revenue of $5.6 billion was up 16% from a year ago, driven by higher revenue in the embedded and data center segments, partially offset by lower client and gaming segment revenue. Gross margin was 51%, up 70 basis points from a year ago, primarily driven by a richer product mix with higher revenue in the embedded and data center segments, partially offset by lower client segment revenue. Operating expenses were $1.6 billion compared to $1.1 billion a year ago, driven by the inclusion of Xilinx operating expenses and additional R&D and go-to-market investments to support the next phase of our revenue growth. Operating income declined to $1.3 billion, down from $1.2 billion a year ago, resulting in an operating margin of 23%, compared to 25% in the prior year.\n\nNet income was $21 million, down from $974 million a year ago, primarily due to the amortization of intangible assets associated with the Xilinx acquisition, partially offset by a $154 million tax benefit in the quarter. Non-GAAP net income was $1.1 billion, flat year over year.\n\n[Detailed segment analysis as provided in the summary.]"
+    }
+  }
+}

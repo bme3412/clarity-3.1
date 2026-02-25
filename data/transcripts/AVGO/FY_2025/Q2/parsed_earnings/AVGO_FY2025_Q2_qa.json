@@ -1,0 +1,164 @@
+{
+  "company_name": "Broadcom",
+  "quarter": "Q2",
+  "fiscal_year": "2025",
+  "speakers": {
+    "hock_tan": {
+      "role": "President and CEO",
+      "responses": [
+        {
+          "topic": "Q2 2025 Financial Highlights",
+          "content": "Q2 2025 revenue was a record $15 billion, up 20% YoY (all organic). Adjusted EBITDA was $10 billion, up 35% YoY. Semiconductor revenue was $8.4 billion, up 17% YoY, driven by AI revenue of over $4.4 billion (up 46% YoY). Custom AI accelerators grew double digits YoY, while AI networking grew over 170% YoY and represented 40% of AI revenue."
+        },
+        {
+          "topic": "AI Growth and Outlook",
+          "content": "We expect fiscal 2025 growth rate of AI semiconductor revenue to sustain into fiscal 2026. We forecast AI semiconductor revenue to be $5.1 billion in Q3, up 60% YoY. We see acceleration of demand into the back half of 2026 to meet urgent demand for inference on top of training."
+        },
+        {
+          "topic": "Infrastructure Software",
+          "content": "Infrastructure software revenue was $6.6 billion, up 25% YoY. VCF (VMware Cloud Foundation) adoption is strong, with over 87% of our 10,000 largest customers now adopting it. ARR growth is double digits. We expect Q3 Infrastructure software revenue to be approximately $6.7 billion, up 16% YoY."
+        },
+        {
+          "topic": "Non-AI Semiconductors",
+          "content": "Non-AI semiconductor revenue was $4 billion, down 5% YoY. Broadband, enterprise networking, and server storage revenues were up sequentially in Q2. Industrial and wireless were down. For Q3, we expect non-AI semiconductor revenue to stay around $4 billion."
+        },
+        {
+          "topic": "AI Clusters and Networking",
+          "content": "We expect at least 3 customers to deploy 1 million AI-accelerated clusters in 2027. AI networking is robust, with Ethernet remaining the preferred choice for hyperscale customers. We announced a next-gen 102.4T Tomahawk switch enabling clusters of >100k accelerators in just 2 tiers."
+        },
+        {
+          "topic": "Inference vs Training",
+          "content": "Hyperscalers are doubling down on inference to monetize their platforms. We are seeing much more inference now, which is driving acceleration in demand. There is no differentiation between training and inference in using merchant vs custom accelerators; custom allows optimizing software algorithms to hardware for higher performance."
+        },
+        {
+          "topic": "Scale-Up Networking",
+          "content": "Scale-up is rapidly converting to Ethernet. As clusters get larger (beyond 72 GPU-to-GPU interconnects), we expect a push towards optical interconnects to replace copper, potentially using co-packaged optics or pluggable optics."
+        },
+        {
+          "topic": "Gross Margin Impact",
+          "content": "Q3 consolidated gross margin expected to be down ~130 bps sequentially, primarily reflecting a higher mix of XPUs (which have slightly lower margins than the rest of the business other than wireless) within AI revenue."
+        },
+        {
+          "topic": "Capital Allocation",
+          "content": "We are committed to returning excess cash to shareholders. In Q2, we returned $7.0 billion ($2.8B dividends, $4.2B buybacks). We prioritize dividends (half of prior year FCF) and debt reduction, but will buy back shares opportunistically."
+        }
+      ]
+    },
+    "kirsten_spears": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Q2 Financial Details",
+          "content": "Consolidated revenue $15.0B (+20% YoY). Gross margin 79.4%. Adjusted EBITDA $10.0B (67% of revenue). Free cash flow $6.4B (43% of revenue), up 44% YoY. Repurchased $4.2B of stock in Q2."
+        },
+        {
+          "topic": "Q3 Guidance",
+          "content": "Q3 revenue guidance ~$15.8B (+21% YoY). Semiconductor revenue ~$9.1B (+25% YoY), with AI revenue ~$5.1B (+60% YoY). Infrastructure software revenue ~$6.7B (+16% YoY). Adjusted EBITDA at least 66%."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Ross Seymore",
+      "firm": "Deutsche Bank",
+      "question": "Can you give more color on the inference commentary and confidence in matching growth rates next year? Is it XPU or connectivity driven?",
+      "topics": ["Inference", "Growth Confidence", "XPU vs Connectivity"]
+    },
+    {
+      "analyst": "Harlan Sur",
+      "firm": "JPMorgan",
+      "question": "Do you see sustaining the 60% YoY growth rate exiting this year and into fiscal '26?",
+      "topics": ["Growth Sustainability", "Fiscal '26 Outlook"]
+    },
+    {
+      "analyst": "Benjamin Reitzes",
+      "firm": "Melius Research",
+      "question": "What caused the strength in AI networking? When does Tomahawk kick in?",
+      "topics": ["AI Networking", "Tomahawk"]
+    },
+    {
+      "analyst": "Blayne Curtis",
+      "firm": "Jefferies",
+      "question": "What is the timing for shipping switched Ethernet scale-up networks?",
+      "topics": ["Scale-up", "Ethernet"]
+    },
+    {
+      "analyst": "Stacy Rasgon",
+      "firm": "Bernstein",
+      "question": "Trying to clarify the math on 2026 AI revenue - does 60% growth imply $30B+? Is the SAM going up?",
+      "topics": ["AI Revenue", "SAM"]
+    },
+    {
+      "analyst": "Vivek Arya",
+      "firm": "Bank of America",
+      "question": "Was XPU softer if networking was strong? What milestones should we watch for new customers?",
+      "topics": ["XPU Performance", "New Customers"]
+    },
+    {
+      "analyst": "Christopher Muse",
+      "firm": "Cantor Fitzgerald",
+      "question": "What workloads are optimal for custom silicon (inference vs training)? What percentage will be inference over time?",
+      "topics": ["Workloads", "Inference Mix"]
+    },
+    {
+      "analyst": "Karl Ackerman",
+      "firm": "BNP Paribas",
+      "question": "How important is co-packaged optics for scale-up networks vs Tomahawk?",
+      "topics": ["Co-packaged Optics", "Scale-up"]
+    },
+    {
+      "analyst": "Joshua Buchalter",
+      "firm": "TD Cowen",
+      "question": "Why is gross profit fall-through lower in the guide? How to think about custom silicon margin profile?",
+      "topics": ["Gross Margin", "Custom Silicon Margins"]
+    },
+    {
+      "analyst": "Timothy Arcuri",
+      "firm": "UBS",
+      "question": "Does opening up NVLink change the landscape? Do you view AI networking growth driven by scale-up or scale-out?",
+      "topics": ["NVLink", "Scale-up vs Scale-out"]
+    },
+    {
+      "analyst": "Christopher Rolland",
+      "firm": "Susquehanna",
+      "question": "What is driving the acceleration in AI demand? Improvement in ASICs or inference economics?",
+      "topics": ["AI Demand Drivers", "Inference"]
+    },
+    {
+      "analyst": "Vijay Rakesh",
+      "firm": "Mizuho",
+      "question": "Will growth accelerate into fiscal '26 given new customers? Do you expect scale-up to move to Ethernet?",
+      "topics": ["Fiscal '26 Growth", "Scale-up Ethernet"]
+    },
+    {
+      "analyst": "Aaron Rakers",
+      "firm": "Wells Fargo",
+      "question": "How do you think about capital return vs M&A strategy going forward?",
+      "topics": ["Capital Allocation", "M&A"]
+    },
+    {
+      "analyst": "Srinivas Pajjuri",
+      "firm": "Raymond James",
+      "question": "Are you assuming contribution from 4 prospects in 2026? Is 40% networking mix the right expectation going forward?",
+      "topics": ["Prospects", "Networking Mix"]
+    },
+    {
+      "analyst": "Joseph Moore",
+      "firm": "Morgan Stanley",
+      "question": "Are you still not impacted by export controls on AI given recent industry changes?",
+      "topics": ["Export Controls", "Geopolitics"]
+    },
+    {
+      "analyst": "William Stein",
+      "firm": "Truist Securities",
+      "question": "How far along is the VMware subscription conversion process?",
+      "topics": ["VMware", "Subscription Transition"]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-06-05",
+    "company_ticker": "AVGO",
+    "source": "earnings_call_transcript"
+  }
+}

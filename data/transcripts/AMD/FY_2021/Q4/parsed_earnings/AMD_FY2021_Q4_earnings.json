@@ -1,0 +1,378 @@
+{
+  "company_name": "AMD",
+  "quarter": "Q4",
+  "fiscal_year": "2021",
+  "financials": {
+    "total_revenue": {
+      "value": 4.8,
+      "unit": "billion USD",
+      "year_over_year_change": "+49%",
+      "quarter_over_quarter_change": "+12%",
+      "context": "Q4 2021",
+      "annual": {
+        "value": 16.4,
+        "unit": "billion USD",
+        "year_over_year_change": "+68%",
+        "context": "Full Year 2021"
+      },
+      "composition": {
+        "computing_and_graphics": {
+          "value": 2.6,
+          "unit": "billion USD",
+          "year_over_year_change": "+32%",
+          "quarter_over_quarter_change": "+8%",
+          "context": "Includes Ryzen™ and Radeon™ processor sales",
+          "breakdown": {
+            "desktop_processors": {
+              "revenue_growth_year_over_year": "Double-digit",
+              "revenue_growth_quarter_over_quarter": "Double-digit",
+              "drivers": [
+                "Strong demand for Ryzen 5000 processors in desktops",
+                "Increased market share in premium consumer and gaming segments"
+              ],
+              "details": {
+                "ryzen_5000": {
+                  "description": "Featuring Zen 3 architecture",
+                  "performance_improvement": "+19% instructions per clock compared to Zen 2",
+                  "impact": "Enhanced performance and energy efficiency leading to higher adoption rates"
+                }
+              }
+            },
+            "mobile_processors": {
+              "revenue_growth_year_over_year": "Double-digit",
+              "revenue_growth_quarter_over_quarter": "Double-digit",
+              "unit_shipments_growth_year_over_year": "Double-digit",
+              "unit_shipments_growth_quarter_over_quarter": "Double-digit",
+              "drivers": [
+                "Record quarterly and annual mobile processor unit shipments",
+                "Increased adoption of Ryzen 5000 mobile processors in notebooks"
+              ],
+              "details": {
+                "ryzen_5000_mobile": {
+                  "description": "Optimized for ultra-thin gaming in commercial notebooks",
+                  "performance_improvement": "+23% performance compared to previous generation",
+                  "battery_life": "17.5 hours",
+                  "impact": "Extended performance and battery life leadership in mobile segment",
+                  "future_plans": "Increase notebook designs powered by Ryzen 5000 by 50% compared to prior generation"
+                }
+              }
+            },
+            "graphics": {
+              "revenue_growth_year_over_year": "+100%",
+              "revenue_growth_quarter_over_quarter": "+Double-digit",
+              "context": "Revenue more than doubled YoY, increased QoQ",
+              "drivers": [
+                "Ramp of Radeon 6000 series GPUs with RDNA 2 architecture",
+                "Strong demand for Radeon 6000 series, fastest selling high-end GPUs",
+                "Increased shipments of AMD CDNA 2 data center GPUs"
+              ],
+              "details": {
+                "rdna_2": {
+                  "description": "Next-generation Radeon RX 6000 graphics cards",
+                  "performance_improvement": "Up to twice the performance and 65% more performance per watt",
+                  "impact": "Return to high-end graphics market",
+                  "future_plans": "Expand Radeon 6000 GPU portfolio in the first half of 2021"
+                },
+                "cdna_2_gpu": {
+                  "description": "AMD CDNA 2 data center GPUs",
+                  "performance_improvement": "Significant gains in HPC and AI compute performance",
+                  "impact": "Powering Frontier exascale supercomputer and other HPC applications",
+                  "future_outlook": "Further deployments in scientific and enterprise environments"
+                }
+              }
+            }
+          }
+        },
+        "enterprise_embedded_and_semi_custom": {
+          "value": 2.2,
+          "unit": "billion USD",
+          "year_over_year_change": "+75%",
+          "quarter_over_quarter_change": "+17%",
+          "context": "Includes EPYC™ and semi-custom processor sales",
+          "breakdown": {
+            "semi_custom": {
+              "revenue_growth_year_over_year": "+75%",
+              "revenue_growth_quarter_over_quarter": "+17%",
+              "drivers": [
+                "Strong demand for next-generation Sony and Microsoft consoles",
+                "Increased ramp of semi-custom SoC sales compared to last console cycle",
+                "Higher than typical seasonal sales in Q4 2021"
+              ]
+            },
+            "server_processors": {
+              "revenue_growth_year_over_year": "Double-digit",
+              "revenue_growth_quarter_over_quarter": "Double-digit",
+              "drivers": [
+                "Record quarterly server processor revenue",
+                "Strong growth in cloud and enterprise adoption",
+                "Expansion of EPYC processor deployments by major hyperscalers"
+              ],
+              "key_customers": [
+                "Google",
+                "Microsoft",
+                "Tencent",
+                "Alibaba",
+                "AWS",
+                "Oracle"
+              ],
+              "future_outlook": {
+                "milan_processors": {
+                  "description": "Third-generation EPYC Milan processors with Zen 3",
+                  "production_status": "Ramp significantly in Q4 2021",
+                  "shipments": "Initial shipments to cloud and HPC customers",
+                  "performance_improvement": "68% better performance compared to high-end dual-socket processors",
+                  "launch_plan": "Public launch in March 2021",
+                  "ecosystem_support": "Very strong support"
+                }
+              }
+            }
+          }
+        },
+        "expenses": {
+          "total_expenses": {
+            "value": 1.1,
+            "unit": "billion USD",
+            "year_over_year_change": "+48%",
+            "context": "Operating expenses including R&D, go-to-market activities, and higher variable compensation-related expenses",
+            "key_factors": [
+              "Increased investments in R&D",
+              "Enhanced go-to-market activities",
+              "Higher variable employee compensation-related expenses"
+            ]
+          },
+          "operating_expenses_breakdown": {
+            "R&D": {
+              "value": "N/A",
+              "context": "Increased investments in research and development"
+            },
+            "marketing": {
+              "value": "N/A",
+              "context": "Enhanced go-to-market activities to support product launches and growth"
+            },
+            "variable_compensation": {
+              "value": "N/A",
+              "context": "Higher variable employee compensation-related expenses"
+            }
+          }
+        },
+        "profitability": {
+          "operating_income": {
+            "value": 1.2,
+            "unit": "billion USD",
+            "year_over_year_change": "+135%",
+            "quarter_over_quarter_change": "+28%",
+            "context": "Non-GAAP operating income for Q4 2021",
+            "operating_margin": "25%",
+            "drivers": [
+              "Significant revenue growth",
+              "Higher Ryzen, EPYC, and semi-custom product sales",
+              "Improved product mix"
+            ]
+          },
+          "non_gaap_operating_income": {
+            "value": 1.3,
+            "unit": "billion USD",
+            "year_over_year_change": "+96%",
+            "quarter_over_quarter_change": "+18%",
+            "context": "Non-GAAP operating income for Q4 2021"
+          },
+          "net_income": {
+            "value": 974,
+            "unit": "million USD",
+            "year_over_year_change": "-46%",
+            "context": "Non-GAAP net income for Q4 2021",
+            "notes": "Includes a $1.3 billion income tax benefit associated with a valuation allowance release"
+          },
+          "non_gaap_net_income": {
+            "value": 1.1,
+            "unit": "billion USD",
+            "year_over_year_change": "+73%",
+            "context": "Non-GAAP net income for Q4 2021"
+          },
+          "eps": {
+            "value": 0.80,
+            "unit": "USD per share",
+            "year_over_year_change": "-45%",
+            "context": "Non-GAAP diluted earnings per share for Q4 2021",
+            "notes": "Includes a $1.06 per share income tax benefit"
+          },
+          "non_gaap_eps": {
+            "value": 0.92,
+            "unit": "USD per share",
+            "year_over_year_change": "+78%",
+            "context": "Non-GAAP diluted earnings per share for Q4 2021"
+          },
+          "tax_rate": {
+            "current_quarter": "15%",
+            "full_year_guidance": "15%",
+            "context": "Effective tax rate for Q4 2021 and full year 2021"
+          },
+          "cash_flow": {
+            "free_cash_flow": {
+              "value": 736,
+              "unit": "million USD",
+              "year_over_year_change": "+54%",
+              "context": "Free cash flow for Q4 2021",
+              "notes": "Included strategic investments in long-term supply chain capacity to support future revenue growth"
+            }
+          }
+        },
+        "capital_expenditures": {
+          "value": "1.0",
+          "unit": "billion USD",
+          "context": "Invested in long-term supply chain capacity to support future growth",
+          "details": {}
+        },
+        "capital_return": {
+          "share_repurchase": {
+            "value": 0.756,
+            "unit": "billion USD",
+            "context": "Repurchased $756 million of common stock during Q4 2021"
+          },
+          "dividends": {
+            "value": "N/A",
+            "unit": "billion USD",
+            "context": "Not explicitly detailed"
+          }
+        },
+        "guidance": {
+          "first_quarter_2022": {
+            "revenue": {
+              "value": 5.0,
+              "unit": "billion USD",
+              "range": "+/-0.1",
+              "year_over_year_change": "+45%",
+              "quarter_over_quarter_change": "+4%",
+              "context": "Driven by growth across all businesses and higher server and client processor revenue"
+            },
+            "non_gaap_gross_margin": {
+              "value": 50.5,
+              "unit": "percent",
+              "context": "Expected for Q1 2022"
+            },
+            "non_gaap_operating_expenses": {
+              "value": 1.15,
+              "unit": "billion USD",
+              "context": "Expected for Q1 2022"
+            },
+            "non_gaap_interest_expense_taxes_other": {
+              "value": 0.17,
+              "unit": "billion USD",
+              "context": "Including effective tax rate of 15%"
+            },
+            "diluted_share_count": {
+              "value": 1.22,
+              "unit": "billion shares",
+              "context": "Expected for Q1 2022"
+            }
+          },
+          "full_year_2022": {
+            "revenue_growth_year_over_year": "+31%",
+            "context": "Driven by growth across all businesses",
+            "revenue": {
+              "value": 21.5,
+              "unit": "billion USD",
+              "context": "Expected for full year 2022"
+            },
+            "non_gaap_gross_margin": {
+              "value": 51,
+              "unit": "percent",
+              "context": "Expected for full year 2022"
+            },
+            "non_gaap_operating_expenses_percentage": {
+              "value": 26,
+              "unit": "percent of revenue",
+              "context": "Expected for full year 2022"
+            },
+            "non_gaap_effective_tax_rate": {
+              "value": 15,
+              "unit": "percent",
+              "context": "Expected for full year 2022"
+            },
+            "cash_tax_rate": {
+              "value": 3,
+              "unit": "percent",
+              "context": "Expected for full year 2022"
+            }
+          }
+        },
+        "recent_pr_highlights": {
+          "product_introductions": [
+            "AMD EPYC 7003 series processors including EPYC 7763",
+            "Radeon 6700 XT GPU with RDNA 2 architecture",
+            "AMD CDNA 2 data center GPUs powering Frontier supercomputer"
+          ],
+          "partnerships_and_adoptions": [
+            "Argonne National Labs selected AMD EPYC processors for Polaris supercomputer",
+            "Google Cloud announced N2D Virtual Machines powered by AMD EPYC™ 7003 Series processors",
+            "Amazon EC2 G4ad instances powered by 2nd Gen AMD EPYC CPUs and Radeon Pro V520 GPUs",
+            "Cloudflare chose 3rd Gen AMD EPYC processors for its 11th Gen servers",
+            "Microsoft partnered with AMD to enhance Windows 11 with Ryzen processors and Radeon graphics",
+            "Lenovo started shipments of Ryzen-based Thinkbook and Thinkpad E series laptops",
+            "HP released two AiO devices with Ryzen processors",
+            "ASUS unveiled Ryzen 5000 Series-based Zenbook, Zenbook PRO, ProArt StudioBook, and VivoBook",
+            "Dell Technologies PowerEdge servers with EPYC 7003",
+            "HPE ProLiant and Apollo systems with EPYC 7003",
+            "Supermicro systems with EPYC 7003"
+          ],
+          "ecosystem_support": [
+            "HPE and KTH Royal Institute of Technology in Sweden announced a new pre-exascale supercomputer using EPYC and Instinct GPUs",
+            "EPYC CPUs and Instinct GPUs powering expanded cloud-based HPC solutions including Siemens NX and PTC Creo on Microsoft Azure NVv4 instances",
+            "Over 100 new AMD-powered server platforms announced by Cisco, Dell, HPE, Lenovo, and Supermicro"
+          ],
+          "corporate_responsibility": [
+            "Investments in sustainable technological and scientific advancements",
+            "Support for community initiatives amidst COVID-19"
+          ]
+        },
+        "metadata": {
+          "parsed_date": "2021-12-31T00:00:00Z",
+          "company_ticker": "AMD",
+          "source": "Q4 2021 Earnings Call Transcript",
+          "operating_environment_challenges": [
+            "Navigating ongoing COVID-19 related disruptions",
+            "Managing supply chain constraints",
+            "Meeting strong demand amidst pandemic-related challenges",
+            "Integration challenges with strategic acquisitions",
+            "Maintaining high growth rates in competitive markets"
+          ]
+        }
+      }
+    },
+    "guidance": {
+      "first_quarter_2022": {
+        "revenue": {
+          "value": 5.0,
+          "unit": "billion USD",
+          "range": "+/-0.1",
+          "year_over_year_change": "+45%",
+          "quarter_over_quarter_change": "+4%",
+          "context": "Driven by growth across all businesses and higher server and client processor revenue"
+        },
+        "non_gaap_gross_margin": {
+          "value": 50.5,
+          "unit": "percent",
+          "context": "Expected for Q1 2022"
+        }
+      },
+      "full_year_2022": {
+        "revenue_growth_year_over_year": "+31%",
+        "context": "Driven by growth across all businesses",
+        "revenue": {
+          "value": 21.5,
+          "unit": "billion USD",
+          "context": "Expected for full year 2022"
+        },
+        "non_gaap_gross_margin": {
+          "value": 51,
+          "unit": "percent",
+          "context": "Expected for full year 2022"
+        }
+      }
+    }
+  },
+  "executive_comments": {
+    "ceo_statement": "“2021 was an outstanding year for AMD with record annual revenue and profitability,” said AMD President and CEO Dr. Lisa Su. “Each of our businesses performed extremely well, with data center revenue doubling year-over-year driven by growing adoption of AMD EPYC processors across cloud and enterprise customers. We expect another year of significant growth in 2022 as we ramp our current portfolio and launch our next generation of PC, gaming and data center products.”",
+    "cfo_statement": "“We had a very strong 2021, with increased demand for our products, excellent execution resulting in record annual revenue, continued gross margin expansion, record profitability, and significant cash flow generation,” said Devinder Kumar, Executive Vice President, Chief Financial Officer, and Treasurer."
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q1",
+  "fiscal_year": "2026",
+  "financials": {
+    "gaap": {
+      "revenue": {
+        "value": 44.062,
+        "unit": "billion USD",
+        "year_over_year_change": "+69%",
+        "quarter_over_quarter_change": "+12%",
+        "notes": "Record Data Center run despite export-control headwinds on H20"
+      },
+      "gross_margin": {
+        "value": 60.5,
+        "unit": "percent",
+        "change": "-12.5 pts YoY",
+        "notes": "Includes $4.5B H20 inventory/purchase obligation charge tied to China export controls"
+      },
+      "operating_expenses": {
+        "value": 5.030,
+        "unit": "billion USD",
+        "year_over_year_change": "+44%",
+        "notes": "R&D and SG&A rose on continued AI infrastructure investments"
+      },
+      "operating_income": {
+        "value": 21.638,
+        "unit": "billion USD",
+        "year_over_year_change": "+28%"
+      },
+      "net_income": {
+        "value": 18.775,
+        "unit": "billion USD",
+        "year_over_year_change": "+26%",
+        "notes": "Includes $4.5B non-cash write-down tied to H20 export restriction"
+      },
+      "eps": {
+        "diluted": 0.76,
+        "basic": 0.77,
+        "year_over_year_change": "+27%"
+      }
+    },
+    "non_gaap": {
+      "gross_margin": {
+        "value": 61.0,
+        "unit": "percent",
+        "adjusted_for": "Excludes H20 charge (71.3% margin would have been achieved)"
+      },
+      "operating_expenses": {
+        "value": 3.583,
+        "unit": "billion USD",
+        "notes": "Adjusts out stock-based comp and acquisition-related costs"
+      },
+      "operating_income": {
+        "value": 23.275,
+        "unit": "billion USD",
+        "year_over_year_change": "+29%"
+      },
+      "net_income": {
+        "value": 19.894,
+        "unit": "billion USD",
+        "year_over_year_change": "+31%"
+      },
+      "eps": {
+        "diluted": 0.81,
+        "notes": "0.96 adjusted excluding H20 charge & tax impact"
+      }
+    },
+    "segment_revenue": {
+      "Data_Center": {
+        "value": 39.1,
+        "unit": "billion USD",
+        "year_over_year_change": "+73%",
+        "quarter_over_quarter_change": "+10%",
+        "highlights": [
+          "Blackwell NVLink72 ramps fastest in company history with GB200 systems powering inference-heavy workloads",
+          "Inference token generation skyrocketing tenfold year-over-year and AI factories scaling globally",
+          "Export control on H20 trimmed ~$8B revenue run-rate because licensing now required for China"
+        ]
+      },
+      "Gaming": {
+        "value": 3.8,
+        "unit": "billion USD",
+        "year_over_year_change": "+42%",
+        "quarter_over_quarter_change": "+48%",
+        "highlights": [
+          "Record gaming revenue as RTX 5070/5060 families and DLSS 4 drive adoption; Nintendo Switch 2 uses NVIDIA AI chips"
+        ]
+      },
+      "Professional_Visualization": {
+        "value": 0.509,
+        "unit": "billion USD",
+        "year_over_year_change": "+19%",
+        "notes": "DGX Spark/Station and RTX Pro Blackwell demand staying resilient"
+      },
+      "Automotive_and_Robotics": {
+        "value": 0.567,
+        "unit": "billion USD",
+        "year_over_year_change": "+72%",
+        "notes": "Partnerships with GM, Hyundai, and humanoid initiatives (Isaac GR00T) fueling growth"
+      }
+    },
+    "operations": {
+      "cash_flow": {
+        "from_operations": {
+          "value": 27.414,
+          "unit": "billion USD"
+        },
+        "free_cash_flow": {
+          "value": 26.135,
+          "unit": "billion USD"
+        }
+      },
+      "capital_return": {
+        "share_repurchases": 14.095,
+        "dividends": 0.244
+      }
+    },
+    "capital_expenditures": {
+      "cash_paid_pp&e": {
+        "value": 1.227,
+        "unit": "billion USD"
+      }
+    },
+    "expenses": {
+      "cost_of_revenue": 17.394,
+      "research_and_development": 3.989,
+      "sales_general_and_administrative": 1.041
+    }
+  },
+  "operational_highlights": {
+    "Blackwell_and_inference": [
+      "GB200 NVL72 systems accessible to CSPs, sovereigns, and enterprise AI factories with NVLink 72 delivering 130 TB/sec bandwidth",
+      "GB300 samples started shipping while GB200 remains the large-scale inference workhorse delivering 30x MLPerf lift"
+    ],
+    "networking": [
+      "Spectrum-X/Ethernet is annualizing >$8B with new CSP wins (Google Cloud, Meta) plus Quantum-X photonics switches",
+      "NVLink Fusion, NVLink switches, and BlueField DPUs expand scale-up/scale-out control planes"
+    ],
+    "gaming_and_consumer": [
+      "Blackwell-powered RTX 50-series desktops and laptops expand AI/graphics experiences; DLSS 4 running in 125+ titles"
+    ],
+    "sovereign_and_physical_ai": [
+      "Announced AI factories with Saudi Arabia, UAE, Foxconn, and Singapore partners plus Omniverse blueprints for industrial operations",
+      "Automotive/robotics wins include GM collaboration, Mercedes-Benz deployment, and Isaac GR00T humanoid models"
+    ]
+  },
+  "outlook": {
+    "q2_guidance": {
+      "revenue": "45.0 ±2% billion USD (reflects ~$8B China H20 loss)",
+      "gaap_gross_margin": "71.8% ±0.5 pts (mid-70s goal later in FY26)",
+      "non_gaap_gross_margin": "72.0% ±0.5 pts",
+      "gaap_operating_expenses": "≈5.7 billion USD",
+      "non_gaap_operating_expenses": "≈4.0 billion USD",
+      "other_income": "≈0.45 billion USD income excluding non-marketable equity volatility",
+      "tax_rate": "≈16.5% ±1%"
+    },
+    "longer_term": {
+      "capex": "Mid-30% growth rate for FY26 with >$30B Q1 guide; mix shifts toward short-lived assets and finance leases",
+      "geography": "China data center revenue will meaningfully decline next quarter due to export controls; onshore manufacturing and partnerships accelerate to offset",
+      "networking": "Expectation that NVLink/Spectrum-X adoption continues to grow double digits"
+    }
+  },
+  "metadata": {
+    "parsed_date": "2025-05-28T00:00:00Z",
+    "source": "NVIDIA FY 2026 Q1 press release"
+  }
+}
+

@@ -1,0 +1,87 @@
+{
+  "version": "v1.0",
+  "codename": "baseline",
+  "created_at": "2024-12-03",
+  "status": "active",
+  
+  "description": "Initial RAG implementation using Voyage 3.5 embeddings with Pinecone vector search. Baseline for measuring future improvements.",
+  
+  "embedding": {
+    "model": "voyage-3.5",
+    "provider": "Voyage AI",
+    "dimensions": 1024,
+    "input_types": {
+      "documents": "document",
+      "queries": "query"
+    },
+    "batch_size": 10,
+    "rate_limit_delay_ms": 21000
+  },
+  
+  "chunking": {
+    "strategy": "semantic",
+    "chunk_size": 1500,
+    "overlap": 200,
+    "special_handling": {
+      "financial_data": "JSON structured extraction",
+      "transcripts": "Section-aware chunking (prepared_remarks, qa_section)",
+      "news": "Article-level chunking"
+    }
+  },
+  
+  "retrieval": {
+    "vector_db": "Pinecone",
+    "index_name": "clarity-openai",
+    "search_type": "dense",
+    "top_k": 12,
+    "hybrid_alpha": 0.6,
+    "sparse_vectorizer": "BM25-style (SparseVectorizer)",
+    "reranking": "none",
+    "filters": ["company", "fiscalYear", "quarter", "type"]
+  },
+  
+  "query_enhancement": {
+    "preprocessing": true,
+    "financial_term_expansion": true,
+    "timeframe_boosting": true,
+    "cfo_commentary_boost": true
+  },
+  
+  "synthesis": {
+    "model": "claude-opus-4-5-20251101",
+    "provider": "Anthropic",
+    "max_tokens": 800,
+    "temperature": 0.7,
+    "streaming": true
+  },
+  
+  "known_limitations": [
+    "Vector search may miss exact financial terms (e.g., specific revenue figures)",
+    "No cross-encoder reranking - top results may include noise",
+    "Complex multi-entity queries (comparisons) not well optimized",
+    "No parent-child chunking - context can be fragmented"
+  ],
+  
+  "target_improvements": [
+    "Add cross-encoder reranking (Cohere or BGE)",
+    "Implement true hybrid search with sparse vectors",
+    "Add query decomposition for complex queries",
+    "Implement hierarchical chunking"
+  ],
+  
+  "key_metrics_baseline": {
+    "avg_relevance": 0.983,
+    "avg_faithfulness": 0.733,
+    "avg_accuracy": 0.900,
+    "avg_latency_ms": 16835,
+    "evaluation_date": "2025-11-26",
+    "test_cases": 3,
+    "breakdown": {
+      "intent_analysis_ms": 3937,
+      "embedding_ms": 261,
+      "pinecone_retrieval_ms": 1349,
+      "llm_synthesis_ms": 11282
+    }
+  }
+}
+

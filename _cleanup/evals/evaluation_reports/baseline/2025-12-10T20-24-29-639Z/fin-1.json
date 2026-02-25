@@ -1,0 +1,206 @@
+{
+  "id": "fin-1",
+  "run_id": "2025-12-10T20-24-29-639Z",
+  "strategy_id": "baseline",
+  "question": "What was AMD's total revenue in Q3 2024?",
+  "ground_truth": "AMD's total revenue in Q3 2024 was $6.8 billion, representing an 18% increase year-over-year.",
+  "generated_answer": "Atomic Facts with Citations:\n• AMD's total revenue in Q3 2024 was $6,819 million [C1]\n• Revenue grew 17.6% year-over-year [C1]\n• Quarter-over-quarter growth rate: Not found in provided sources\n• Gross margin was 50% [C1]\n• Operating margin was 10.6% [C1]\n Final Answer:\nRevenue: $6.82B (YoY +17.6% / QoQ not available) [C1]\nAMD delivered strong Q3 2024 performance with gross margin of 50% and operating margin of 10.6% [C1]. Quarter-over-quarter growth comparison not found in provided sources.",
+  "duration_ms": 5999,
+  "metrics": {
+    "relevance": {
+      "score": 0.95,
+      "reasoning": "The answer directly addresses the question about AMD's total revenue in Q3 2024, providing the specific figure of $6,819 million ($6.82B). It also includes additional relevant context such as year-over-year growth (17.6%), gross margin (50%), and operating margin (10.6%). The answer is well-cited and comprehensive. Minor deduction because some requested information (QoQ growth) was not available, though this is appropriately noted."
+    },
+    "faithfulness": {
+      "score": 0.85,
+      "reasoning": "The answer is largely faithful to the provided context. The revenue figure of $6,819 million ($6.82B), YoY growth of 17.6%, gross margin of 50%, and operating margin of 10.6% are all directly supported by Chunk 1. The answer correctly acknowledges that QoQ growth is not available in the sources. However, there's a minor issue: Chunk 4 mentions gross margin was 53.6% in Q3, which contradicts the 50% figure from Chunk 1. The answer uses the 50% figure without acknowledging this discrepancy. The answer is mostly faithful but could have noted the conflicting gross margin data between chunks."
+    },
+    "accuracy": {
+      "score": 0.9,
+      "reasoning": "The generated answer correctly identifies AMD's Q3 2024 revenue as $6,819 million ($6.82B), which matches the ground truth of $6.8 billion. The year-over-year growth is stated as 17.6% in the generated answer versus 18% in the ground truth - this is a minor discrepancy (likely due to rounding differences, as 17.6% rounds to 18%). The generated answer provides additional accurate details (gross margin, operating margin) that are consistent with being more detailed. The slight difference in the YoY percentage prevents a perfect score."
+    }
+  },
+  "context_count": 9,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 1,
+      "embeddingMs": 376,
+      "pineconeMs": 895,
+      "financialMs": 3,
+      "llmMs": 4722,
+      "totalMs": 5998
+    },
+    "retrieval": {
+      "pineconeMatches": 8,
+      "financialMatches": 1,
+      "keywordMatches": 0,
+      "combinedContext": 9,
+      "filtersApplied": {
+        "company": "AMD",
+        "fiscal_year": "2024",
+        "quarter": "Q3"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": true,
+      "usedKeywordFallback": false,
+      "financialQuery": true,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "Q3 2024",
+      "company_name": "AMD",
+      "isComparisonQuery": false,
+      "primaryTicker": "AMD"
+    },
+    "llm": {
+      "input_tokens": 2295,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 173,
+      "service_tier": "standard"
+    },
+    "retrievalTrace": {
+      "financialSegments": [],
+      "financial": 1,
+      "transcripts": [
+        "AMD-2024-Q3-full-0",
+        "AMD-2024-Q3-full-37",
+        "AMD-2024-Q3-full-13",
+        "AMD-2024-Q3-full-16",
+        "AMD-2024-Q3-full-28",
+        "AMD-2024-Q3-full-11",
+        "AMD-2024-Q3-full-22",
+        "AMD-2024-Q3-full-23"
+      ],
+      "keyword": []
+    }
+  },
+  "context": [
+    {
+      "id": "context-0",
+      "score": 0,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"revenue\": 6819,\n  \"gross_profit\": 3419,\n  \"gross_margin\": 50,\n  \"operating_income\": 724,\n  \"operating_margin\": 10.6,\n  \"net_income\": 771,\n  \"net_margin\": 11.306643202815662,\n  \"operating_cash_flow\": 628,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 17.6,\n  \"eps\": 0.48,\n  \"eps_diluted\": 0.47,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 724,\n  \"margin\": 10.6,\n  \"growth\": 17.6,\n  \"netIncome\": 771,\n  \"grossMargin\": 50,\n  \"grossProfit\": 3419,\n  \"operatingCashFlow\": 628,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 9.209561519284353\n}"
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-0",
+      "score": 3.5430411695,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "{\n  \"company_name\": \"Advanced Micro Devices (AMD)\",\n  \"quarter\": \"Q3\",\n  \"fiscal_year\": \"2024\",\n  \"speakers\": {\n    \"lisa_su\": {\n      \"role\": \"President and Chief Executive Officer\",\n      \"responses\": [\n        {\n          \"topic\": \"Data Center GPU Revenue Incremental Growth\",\n          \"content\": \"Sure. Toshiya, thank you for the question. So first of all, we had a very strong quarter for the Data Center overall in Q3 and especially for the Instinct product portfolio."
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-37",
+      "score": 2.770152686,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "dropping a little bit for Q3. Why is that happening? And then just a follow-up on another part of the gross margin angle.\\n\\nHave you changed your gross margin expectations for the MI300? Has the accretion point moved out a little bit?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2024-09-XXT00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q3 2024 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\",\n      \"Inventory optimization and management challenges\",\n      \"Potential supply chain bottlenecks for MI300X production\",\n      \"Weakness in communications end market within Embedded segment\",\n      \"Seasonal declines in Gaming and Embedded segments\"\n    ],\n    \"executive_changes\": {}\n  }\n}"
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-13",
+      "score": 2.5657238855,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "{\n          \"topic\": \"Gross Margin Expectations and Drivers\",\n          \"content\": \"Yes. Thank you for that question. First, we are very pleased with our Q3 gross margin performance. We delivered 53.6% and we are guiding approximately 54% in Q4.\\n\\nIn general, when you look at 2024, our gross margin improvement has been primarily driven by the mix, especially Data Center business continue to be the strong growth driver of our business, it's accounting for more than 50% of our revenue mix, that helps us to improve gross margin. Going to 2025, we're not going to guide specifically."
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-16",
+      "score": 1.789186027,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "},\n        {\n          \"topic\": \"Final Remarks\",\n          \"content\": \"Great. That concludes today's call. Thanks to all of you for joining us today.\"\n        }\n      ]\n    }\n  },\n  \"analyst_questions\": [\n    {\n      \"analyst\": \"Toshiya Hari\",\n      \"firm\": \"Goldman Sachs\",\n      \"topics\": [\n        \"Data Center GPU Revenue Incremental Growth\",\n        \"Instinct Customer Growth\"\n      ],\n      \"questions\": [\n        \"Hi. Good afternoon. My first one is on the Data Center GPU business. Lisa, you took up your '24 outlook by $500 million.\\n\\nCurious what drove the change there? And more importantly, as you look forward into calendar '25, I doubt you're going to give us quantitative guidance on this call."
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-28",
+      "score": 1.7607852649999998,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "my question. Lisa, on your core EPYC business, you did start to see recovery in enterprise last quarter. It was broad-based across many verticals.\\n\\nYou've got -- you've also got a growing share dynamic as well, right? And it sounds like that trend continued in the September quarter. Do you anticipate continued follow-through in terms of quarter-on-quarter growth this quarter for enterprise? And then maybe what sort of enterprise and general cloud demand trends are you seeing out of China?\"\n      ]\n    },\n    {\n      \"analyst\": \"Stacy Rasgon\",\n      \"firm\": \"AllianceBernstein\",\n      \"topics\": [\n        \"Q3 Revenue Breakdown\",\n        \"Data Center GPU vs. EPYC Growth\"\n      ],\n      \"questions\": [\n        \"Hi, guys. Thanks for taking my question."
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-11",
+      "score": 1.7551047679999996,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "when we're launching.\\n\\nAnd then into 2025, you're going to see AI PCs across sort of a larger set of price points, which will also open up more opportunities. So, overall, I would say the PC market is a good revenue growth opportunity for us. The business is performing well. The products are strong.\\n\\nAnd we're working very closely with both the ecosystem partners as well as our OEM partners to have strong launches here into the second half of the year.\"\n        },\n        {\n          \"topic\": \"Open Ethernet Consortium and System Integration\",\n          \"content\": \"Yeah, I think it's very important to say we are very supportive of the open ecosystem. We're very supportive of the ultra Ethernet consortium."
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-22",
+      "score": 1.725078704,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "anniversary. Jean, when you gave the segment guidance kind of playing off the last question, you didn't mention Embedded as being up. And then, Lisa, you just talked about it being up left. Just curious, I know it's kind of a muted recovery.\\n\\nBut what's happening in the Embedded business implied in your fourth quarter guidance? And how are you thinking about 2025 just directionally?\"\n      ]\n    },\n    {\n      \"analyst\": \"Joshua Buchalter\",\n      \"firm\": \"TD Cowen & Company\",\n      \"topics\": [\n        \"Instinct Revenue Growth and Workload Expansion\"\n      ],\n      \"questions\": [\n        \"Hey, guys. Thanks for taking my question. I'll keep it to 1 since I'm new here."
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-23",
+      "score": 1.7116002465,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "\"questions\": [\n        \"Hey, guys. Thanks for taking my question. I'll keep it to 1 since I'm new here. On the Data Center GPU side, I realize everyone wants new customer announcements and 2025 guidance, but we're not going to get that, certainly not today.\\n\\nThat maybe you could speak to how much of a runway you think exists at existing customers? And how much of a catalyst MI325X on CDNA3 and then MI355 on the new architecture can be to growing revenue and workload breadth internally and externally at these existing customers as we think about growth into next year at the Data Center GPU side?\"\n      ]\n    },\n    {\n      \"analyst\": \"Joe Moore\",\n      \"firm\": \"Morgan Stanley\",\n      \"topics\": [\n        \"MI300 Training vs."
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 0.000)\n{\n  \"revenue\": 6819,\n  \"gross_profit\": 3419,\n  \"gross_margin\": 50,\n  \"operating_income\": 724,\n  \"operating_margin\": 10.6,\n  \"net_income\": 771,\n  \"net_margin\": 11.306643202815662,\n  \"operating_cash_flow\": 628,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 17.6,\n  \"eps\": 0.48,\n  \"eps_diluted\": 0.47,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 724,\n  \"margin\": 10.6,\n  \"growth\": 17.6,\n  \"netIncome\": 771,\n  \"grossMargin\": 50,\n  \"grossProfit\": 3419,\n  \"operatingCashFlow\": 628,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 9.209561519284353\n}\n\n[Chunk 2] (Score: 3.543)\n{\n  \"company_name\": \"Advanced Micro Devices (AMD)\",\n  \"quarter\": \"Q3\",\n  \"fiscal_year\": \"2024\",\n  \"speakers\": {\n    \"lisa_su\": {\n      \"role\": \"President and Chief Executive Officer\",\n      \"responses\": [\n        {\n          \"topic\": \"Data Center GPU Revenue Incremental Growth\",\n          \"content\": \"Sure. Toshiya, thank you for the question. So first of all, we had a very strong quarter for the Data Center overall in Q3 and especially for the Instinct product portfolio.\n\n[Chunk 3] (Score: 2.770)\ndropping a little bit for Q3. Why is that happening? And then just a follow-up on another part of the gross margin angle.\\n\\nHave you changed your gross margin expectations for the MI300? Has the accretion point moved out a little bit?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2024-09-XXT00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q3 2024 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\",\n      \"Inventory optimization and management challenges\",\n      \"Potential supply chain bottlenecks for MI300X production\",\n      \"Weakness in communications end market within Embedded segment\",\n      \"Seasonal declines in Gaming and Embedded segments\"\n    ],\n    \"executive_changes\": {}\n  }\n}\n\n[Chunk 4] (Score: 2.566)\n{\n          \"topic\": \"Gross Margin Expectations and Drivers\",\n          \"content\": \"Yes. Thank you for that question. First, we are very pleased with our Q3 gross margin performance. We delivered 53.6% and we are guiding approximately 54% in Q4.\\n\\nIn general, when you look at 2024, our gross margin improvement has been primarily driven by the mix, especially Data Center business continue to be the strong growth driver of our business, it's accounting for more than 50% of our revenue mix, that helps us to improve gross margin. Going to 2025, we're not going to guide specifically.\n\n[Chunk 5] (Score: 1.789)\n},\n        {\n          \"topic\": \"Final Remarks\",\n          \"content\": \"Great. That concludes today's call. Thanks to all of you for joining us today.\"\n        }\n      ]\n    }\n  },\n  \"analyst_questions\": [\n    {\n      \"analyst\": \"Toshiya Hari\",\n      \"firm\": \"Goldman Sachs\",\n      \"topics\": [\n        \"Data Center GPU Revenue Incremental Growth\",\n        \"Instinct Customer Growth\"\n      ],\n      \"questions\": [\n        \"Hi. Good afternoon. My first one is on the Data Center GPU business. Lisa, you took up your '24 outlook by $500 million.\\n\\nCurious what drove the change there? And more importantly, as you look forward into calendar '25, I doubt you're going to give us quantitative guidance on this call.\n\n[Chunk 6] (Score: 1.761)\nmy question. Lisa, on your core EPYC business, you did start to see recovery in enterprise last quarter. It was broad-based across many verticals.\\n\\nYou've got -- you've also got a growing share dynamic as well, right? And it sounds like that trend continued in the September quarter. Do you anticipate continued follow-through in terms of quarter-on-quarter growth this quarter for enterprise? And then maybe what sort of enterprise and general cloud demand trends are you seeing out of China?\"\n      ]\n    },\n    {\n      \"analyst\": \"Stacy Rasgon\",\n      \"firm\": \"AllianceBernstein\",\n      \"topics\": [\n        \"Q3 Revenue Breakdown\",\n        \"Data Center GPU vs. EPYC Growth\"\n      ],\n      \"questions\": [\n        \"Hi, guys. Thanks for taking my question.\n\n[Chunk 7] (Score: 1.755)\nwhen we're launching.\\n\\nAnd then into 2025, you're going to see AI PCs across sort of a larger set of price points, which will also open up more opportunities. So, overall, I would say the PC market is a good revenue growth opportunity for us. The business is performing well. The products are strong.\\n\\nAnd we're working very closely with both the ecosystem partners as well as our OEM partners to have strong launches here into the second half of the year.\"\n        },\n        {\n          \"topic\": \"Open Ethernet Consortium and System Integration\",\n          \"content\": \"Yeah, I think it's very important to say we are very supportive of the open ecosystem. We're very supportive of the ultra Ethernet consortium.\n\n[Chunk 8] (Score: 1.725)\nanniversary. Jean, when you gave the segment guidance kind of playing off the last question, you didn't mention Embedded as being up. And then, Lisa, you just talked about it being up left. Just curious, I know it's kind of a muted recovery.\\n\\nBut what's happening in the Embedded business implied in your fourth quarter guidance? And how are you thinking about 2025 just directionally?\"\n      ]\n    },\n    {\n      \"analyst\": \"Joshua Buchalter\",\n      \"firm\": \"TD Cowen & Company\",\n      \"topics\": [\n        \"Instinct Revenue Growth and Workload Expansion\"\n      ],\n      \"questions\": [\n        \"Hey, guys. Thanks for taking my question. I'll keep it to 1 since I'm new here.\n\n[Chunk 9] (Score: 1.712)\n\"questions\": [\n        \"Hey, guys. Thanks for taking my question. I'll keep it to 1 since I'm new here. On the Data Center GPU side, I realize everyone wants new customer announcements and 2025 guidance, but we're not going to get that, certainly not today.\\n\\nThat maybe you could speak to how much of a runway you think exists at existing customers? And how much of a catalyst MI325X on CDNA3 and then MI355 on the new architecture can be to growing revenue and workload breadth internally and externally at these existing customers as we think about growth into next year at the Data Center GPU side?\"\n      ]\n    },\n    {\n      \"analyst\": \"Joe Moore\",\n      \"firm\": \"Morgan Stanley\",\n      \"topics\": [\n        \"MI300 Training vs.",
+  "created_at": "2025-12-10T20:26:05.426Z",
+  "category": "financial"
+}

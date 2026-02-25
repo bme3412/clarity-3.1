@@ -1,0 +1,143 @@
+{
+  "company_name": "Microsoft",
+  "quarter": "Q1",
+  "fiscal_year": "2026",
+  "financials": {
+    "total_revenue": {
+      "value": 77.7,
+      "unit": "billion USD",
+      "year_over_year_change": "+18%",
+      "constant_currency_growth": "+17%",
+      "notes": "Microsoft Cloud and AI strength drove the start of FY26"
+    },
+    "operating_income": {
+      "value": 38.0,
+      "unit": "billion USD",
+      "year_over_year_change": "+24%",
+      "constant_currency_growth": "+22%"
+    },
+    "net_income": {
+      "value": 27.7,
+      "unit": "billion USD",
+      "year_over_year_change": "+12%",
+      "constant_currency_growth": "+11%",
+      "non_gaap_value": 30.8
+    },
+    "eps": {
+      "gaap": 3.72,
+      "non_gaap": 4.13,
+      "gaap_yoy": "+13%",
+      "non_gaap_yoy": "+23%"
+    }
+  },
+  "segment_revenue": {
+    "Productivity_and_Business_Processes": {
+      "value": 33.0,
+      "growth": "+17%",
+      "constant_currency_growth": "+14%",
+      "highlights": [
+        "Microsoft 365 Commercial cloud +17% (15% CC)",
+        "Consumer cloud +26% (25% CC)",
+        "LinkedIn +10% (9% CC)",
+        "Dynamics 365 +18% (16% CC)"
+      ]
+    },
+    "Intelligent_Cloud": {
+      "value": 30.9,
+      "growth": "+28%",
+      "constant_currency_growth": "+27%",
+      "highlights": [
+        "Azure and other cloud services +40% (39% CC)"
+      ]
+    },
+    "More_Personal_Computing": {
+      "value": 13.8,
+      "growth": "+4%",
+      "highlights": [
+        "Windows OEM and Devices +6%",
+        "Xbox content and services +1%",
+        "Search ex-TAC +16% (15% CC)"
+      ]
+    }
+  },
+  "cloud_metrics": {
+    "Microsoft_Cloud": {
+      "value": 49.1,
+      "unit": "billion USD",
+      "growth": "+26%",
+      "constant_currency_growth": "+25%",
+      "notes": "Microsoft Cloud gross margin 68%"
+    },
+    "Azure": {
+      "growth": "+37% guidance for Q2",
+      "notes": "New data center investments, OpenAI deal and multi-workload adoption underpin growth"
+    }
+  },
+  "operations": {
+    "bookings": {
+      "value": "112%",
+      "constant_currency": "111%",
+      "notes": "Driven by Azure commitments (including OpenAI) and $100M+ contracts"
+    },
+    "rpo": {
+      "value": 392,
+      "unit": "billion USD",
+      "growth": "+51%",
+      "notes": "Weighted average duration ~2 years; ~35% recognized in next 12 months"
+    },
+    "capex": {
+      "value": 34.9,
+      "unit": "billion USD",
+      "notes": "Roughly half short-lived GPUs/CPUs, $11.1B finance leases; cash paid for PP&E $19.4B"
+    },
+    "cash_flow": {
+      "from_operations": 45.1,
+      "free_cash_flow": 25.7,
+      "capital_return": 10.7
+    }
+  },
+  "expenses": {
+    "cost_of_revenue": 24.043,
+    "r&d": 8.146,
+    "sales_and_marketing": 5.717,
+    "g&a": 1.806
+  },
+  "strategic_highlights": {
+    "infrastructure": [
+      "Adding 80% more AI capacity this year, doubling footprint over two years, launching Fairwater (2GW) and GB300 clusters, and increasing token throughput for GPT-4.1/5 by 30%."
+    ],
+    "platform": [
+      "Azure AI Foundry serves 80K customers with 11K models (including GPT-5, Grok 4); launched Microsoft Agent Framework, MAI models and Phi SLMs with 60M downloads."
+    ],
+    "copilots_agents": [
+      "Copilot family reached 150M MAUs; introduced Agent Mode, Teams mode, App Builder; agent users doubled QoQ; GitHub Copilot now 26M+ users and launched Agent HQ."
+    ],
+    "security_health_consumer": [
+      "Security Copilot now integrates Entra/Defender/Purview/Intune with 3 dozen agents; Dragon Copilot documented 17M patient encounters; Windows 11 Copilot fronted by wake word plus Copilot Mode in Edge; Xbox Ally launch records."
+    ],
+    "gaming_linkedin": [
+      "Gaming reached 155M MAUs, 500M hours streaming, new titles like Keeper and Ninja Gaiden 4. LinkedIn nearly 1.3B members with double-digit growth and AI hiring tools."
+    ]
+  },
+  "outlook": {
+    "q2_guidance": {
+      "revenue": "79.5-80.6B (+14-16% CC)",
+      "cogs": "26.35-26.55B (+21-22% CC)",
+      "opex": "17.3-17.4B (+7-8% CC)",
+      "other_income": "Roughly $100M positive (non-OpenAI)",
+      "tax_rate": "≈19%"
+    },
+    "segment_guidance": {
+      "Productivity_and_Business_Processes": "33.3-33.6B (+13-14% CC); M365 Commercial cloud 13-14% CC; Consumer cloud mid-20s",
+      "Intelligent_Cloud": "32.25-32.55B (+26-27% CC); Azure ~37% CC with continued capacity constraints",
+      "More_Personal_Computing": "13.95-14.45B; Windows OEM/devices down mid-single digits; search low-double digits; Xbox content down low-mid single digits"
+    },
+    "capex": ">30B driven by delivery timing and finance leases; FY26 growth rate higher than FY25",
+    "fx": "Assuming current rates, +2 points to revenue growth, +1 point to COGS/opex; Microsoft Cloud GM ~66%."
+  },
+  "metadata": {
+    "parsed_date": "2025-10-29T00:00:00Z",
+    "source": "Microsoft FY 2026 Q1 press release & transcript"
+  }
+}
+

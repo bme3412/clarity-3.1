@@ -1,0 +1,131 @@
+{
+  "company_name": "Meta",
+  "quarter": "Q4",
+  "fiscal_year": "2020",
+  "speakers": {
+    "mark_zuckerberg": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "Interoperability of Messaging Services",
+          "content": "Messenger and WhatsApp will remain distinct as they serve different user expectations and have different levels of complexity. WhatsApp will remain more utilitarian and simple, while Messenger will continue offering more expressive features. Over time, we’ll enable interoperability so people can choose their preferred messaging app and still reach everyone."
+        },
+        {
+          "topic": "Communities and Groups",
+          "content": "We want to support more meaningful and durable communities beyond just feeds and basic group features. Over time, we’ll add more tools to help organizations and local communities build stronger connections. While groups and communities already contribute significantly to engagement and indirectly to monetization, we see further potential for meaningful services that can help them become more robust ‘community institutions’ on our platforms."
+        }
+      ]
+    },
+    "sheryl_sandberg": {
+      "role": "COO",
+      "responses": [
+        {
+          "topic": "Commerce and Instagram Shopping",
+          "content": "We launched the Instagram Shop tab in Q4. It’s early, but we’re pleased with initial results. Instagram Shopping helps businesses, both large and small, connect with people and move from product discovery to purchase. By integrating commerce features, we aim to create a seamless experience for both consumers and advertisers."
+        },
+        {
+          "topic": "Impact of iOS 14 and IDFA on SMBs",
+          "content": "Small businesses depend on personalized ads to reach interested customers. Restrictions like those in iOS 14 and IDFA may limit their ability to target effectively, risking a significant reduction in sales. We’re concerned about how these changes will impact SMBs and the broader economic growth they drive."
+        },
+        {
+          "topic": "Reels Monetization",
+          "content": "We’re pleased with consumption trends on Reels. Following our approach with other formats like Stories, we first focus on product-market fit and user engagement. We introduced branded content tags and shopping in Reels. Ads will come later, once the product is more established and we can ensure a good experience for users and advertisers."
+        }
+      ]
+    },
+    "dave_wehner": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Forward Outlook and Tough Comparisons",
+          "content": "Q4 was exceptionally strong due to the shift to online commerce and product spending. As we move through 2021, we’ll face tougher comps, especially in the second half. Factors include possible reversion of consumer spending from products back to services, as well as privacy-related headwinds (iOS 14) affecting ad targeting."
+        },
+        {
+          "topic": "IDFA and iOS 14 Changes",
+          "content": "Our view on iOS 14 hasn’t changed. We still expect it to be a headwind as Apple’s policies will require user permission for third-party data usage. High opt-out rates will reduce ad targeting efficacy. While Audience Network will be hit hardest, the impact will also be felt across our core ads business on iOS. Over time, commerce initiatives and on-site conversion tools may help mitigate some effects."
+        },
+        {
+          "topic": "Advertiser Base and Diversification",
+          "content": "We’re aware of shifts in consumer spending from services to products benefiting our platform. Over time, we’ll continue investing in ad products to better serve service-based verticals. With 10 million advertisers as of last quarter, we remain focused on broadening our appeal and tools to suit various advertiser needs."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Brian Nowak",
+      "firm": "Morgan Stanley",
+      "topics": ["Instagram Shopping Progress", "Advertiser Base Expansion"],
+      "questions": [
+        "What signposts in Instagram Shopping give you confidence in building out commerce opportunities?",
+        "How do you plan to broaden the advertiser base, especially for service verticals, given the shift in consumer spending?"
+      ]
+    },
+    {
+      "analyst": "Doug Anmuth",
+      "firm": "JPMorgan",
+      "topics": ["IDFA Impact and Mitigation"],
+      "questions": [
+        "Has your view on IDFA changed? How might new APIs, conversion tools, or other data sources offset the impact, and what’s the outlook for Audience Network and core ads?"
+      ]
+    },
+    {
+      "analyst": "Eric Sheridan",
+      "firm": "UBS",
+      "topics": ["VR/AR Investments", "2021 Comparisons and Headwinds"],
+      "questions": [
+        "Mark, what unlocks are needed for VR/AR’s growth, given Quest 2’s success?",
+        "How should we interpret the back-half headwinds related to tough comps and privacy changes?"
+      ]
+    },
+    {
+      "analyst": "Justin Post",
+      "firm": "Bank of America Merrill Lynch",
+      "topics": ["Competition with Apple", "FTC Case and Regulation"],
+      "questions": [
+        "Mark, besides IDFA, are there other ways Apple’s moves put you in more direct competition?",
+        "Any thoughts on the FTC case or regulatory environment?"
+      ]
+    },
+    {
+      "analyst": "Ross Sandler",
+      "firm": "Barclays",
+      "topics": ["Ads Pricing Trends", "Stories vs. Feed Pricing"],
+      "questions": [
+        "Pricing turned positive year-over-year. How has the gap between Stories and Feed pricing evolved, and which DR advertisers are driving Stories ad growth?"
+      ]
+    },
+    {
+      "analyst": "Colin Sebastian",
+      "firm": "Baird",
+      "topics": ["Differentiation of Messenger and WhatsApp", "Reels Uptake"],
+      "questions": [
+        "How will Messenger and WhatsApp remain distinct given interoperability?",
+        "Any Reels engagement update and thoughts on monetization timing?"
+      ]
+    },
+    {
+      "analyst": "Youssef Squali",
+      "firm": "Truist Securities",
+      "topics": ["Civic and Political Content", "Section 230"],
+      "questions": [
+        "How significant is civic/political content on the platform, and does emphasizing less of it create a headwind?",
+        "How would changes to Section 230 affect Facebook and the broader internet ecosystem?"
+      ]
+    },
+    {
+      "analyst": "John Blackledge",
+      "firm": "Cowen",
+      "topics": ["Community Services Enhancement", "iOS 14 Impact by Advertiser Size"],
+      "questions": [
+        "Mark, how will adding more services for Facebook Groups evolve communities, and can it drive monetization?",
+        "Will iOS 14 changes affect smaller advertisers more than larger ones?"
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2021-01-27T16:30:00.000Z",
+    "company_ticker": "FB",
+    "source": "earnings_call_transcript"
+  }
+}

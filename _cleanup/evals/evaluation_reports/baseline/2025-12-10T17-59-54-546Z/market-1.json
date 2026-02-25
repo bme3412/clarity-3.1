@@ -1,0 +1,149 @@
+{
+  "id": "market-1",
+  "run_id": "2025-12-10T17-59-54-546Z",
+  "strategy_id": "baseline",
+  "question": "How is the cloud computing market affecting Microsoft's business?",
+  "ground_truth": "Microsoft Azure continues to show strong growth driven by AI services and enterprise cloud adoption, contributing significantly to overall revenue growth.",
+  "generated_answer": "Atomic Facts with Citations:\n• Microsoft 365 Commercial cloud revenue increased 17% (up 15% in constant currency) in 2026 Q1 [C1]\n• Microsoft 365 Commercial cloud revenue increased 18% (up 16% in constant currency) in 2025 Q4 [C2]\n• Microsoft 365 Commercial cloud revenue increased 12% (up 15% in constant currency) in 2025 Q3 [C3]\n• Microsoft 365 Commercial cloud revenue increased 16% (up 15% in constant currency) in 2025 Q2 [C4]\n• Commercial remaining performance obligation increased 51% to $392 billion in 2026 Q1 [C1]\n• Azure is architected for distributed computing fabric, emphasizing hybrid and multi-cloud infrastructures [C5]\n• Microsoft 365 Consumer cloud revenue increased 26% (up 25% in constant currency) in 2026 Q1 [C1]\n• Productivity and Business Processes revenue was $33.0 billion in 2026 Q1, up 17% [C1]\n Final Answer:\nCloud computing is driving strong growth across Microsoft's key segments. Microsoft 365 Commercial cloud revenue has shown consistent double-digit growth: 16% in Q2 2025, 12% in Q3 2025, 18% in Q4 2025, and 17% in Q1 2026 [C4][C3][C2][C1]. This momentum contributed to Productivity and Business Processes revenue reaching $33.0 billion in Q1 2026, up 17% [C1].\nThe cloud transition is evident in Microsoft's expanding customer commitments, with commercial remaining performance obligation surging 51% to $392 billion [C1]. Microsoft's strategic positioning emphasizes hybrid and multi-cloud infrastructures through Azure's distributed computing fabric, supporting low-latency applications across factory floors, hospitals, and gaming [C5].\nConsumer cloud adoption is also accelerating, with Microsoft 365 Consumer cloud revenue growing 26% in Q1 2026 [C1]. The sustained growth across both commercial and consumer cloud segments demonstrates how the broader cloud computing market expansion is translating into consistent revenue acceleration for Microsoft's core productivity and infrastructure offerings.",
+  "duration_ms": 12296,
+  "metrics": {
+    "relevance": {
+      "score": 0.95,
+      "reasoning": "The answer is highly relevant and directly addresses the question about how the cloud computing market is affecting Microsoft's business. It provides specific, quantified evidence of cloud computing's impact including: revenue growth percentages for Microsoft 365 Commercial and Consumer cloud services across multiple quarters, the growth in commercial remaining performance obligation ($392 billion, up 51%), and strategic positioning in hybrid/multi-cloud infrastructure. The answer demonstrates clear cause-and-effect relationships between cloud market trends and Microsoft's business performance with supporting citations. The only minor limitation is that it focuses primarily on Microsoft 365 and doesn't extensively cover Azure's direct revenue impact, though Azure is mentioned strategically."
+    },
+    "faithfulness": {
+      "score": 0.85,
+      "reasoning": "The answer is largely faithful to the provided context, with most claims properly supported by the chunks. However, there are some citation mismatches: The answer cites [C4] for Q2 2025 data but the actual Q2 2025 data (16% growth) comes from Chunk 1, not Chunk 4. Similarly, [C3] is cited for Q3 2025 but that data (12% growth) is in Chunk 2, and [C2] for Q4 2025 but that data (18% growth) is in Chunk 3. The content itself is accurate - the percentages and facts match what's in the context - but the citation numbering appears to be off. The statement about Azure's distributed computing fabric supporting 'factory floors, hospitals, and gaming' is correctly derived from Chunk 5/6. The $392 billion commercial remaining performance obligation and 51% increase is correctly from Chunk 4. The 26% consumer cloud growth is correctly stated. The main issue is citation accuracy rather than factual hallucination."
+    },
+    "accuracy": {
+      "score": 0.3,
+      "reasoning": "The ground truth specifically mentions Microsoft Azure's strong growth driven by AI services and enterprise cloud adoption. The generated answer focuses primarily on Microsoft 365 cloud revenue (both Commercial and Consumer) rather than Azure specifically. While it mentions Azure briefly in the context of distributed computing fabric and hybrid/multi-cloud infrastructure, it does not address Azure's growth metrics, AI services contribution, or Azure's specific role in revenue growth. The answer discusses cloud computing broadly and Microsoft 365 extensively, but largely misses the core subject (Azure) and key driver (AI services) mentioned in the ground truth."
+    }
+  },
+  "context_count": 6,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 0,
+      "embeddingMs": 249,
+      "pineconeMs": 509,
+      "llmMs": 11536,
+      "totalMs": 12295
+    },
+    "retrieval": {
+      "pineconeMatches": 6,
+      "financialMatches": 0,
+      "keywordMatches": 0,
+      "combinedContext": 6,
+      "filtersApplied": {
+        "company": "MSFT"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": false,
+      "financialQuery": false,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "market",
+      "timeframe": "all",
+      "company_name": "MSFT",
+      "isComparisonQuery": false,
+      "primaryTicker": "MSFT"
+    },
+    "llm": {
+      "input_tokens": 1579,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 520,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "MSFT-2025-Q2-press_release-2",
+      "score": 8.32659291,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q2",
+        "fiscalYear": "2025",
+        "type": null,
+        "source": "MSFT-Q2-2025-press-release.txt",
+        "retrieval": null,
+        "text": "year-over-year,” said Amy Hood, executive vice president and chief financial officer of Microsoft. ”We remain committed to balancing operational discipline with continued investments in our cloud and AI infrastructure.”\n\nBusiness Highlights\n\nRevenue in Productivity and Business Processes was $29.4 billion and increased 14% (up 13% in constant currency), with the following business highlights:\n\n·         Microsoft 365 Commercial products and cloud services revenue increased 15% driven by Microsoft 365 Commercial cloud revenue growth of 16% (up 15% in constant currency)\n\n·         Microsoft 365 Consumer products and cloud services revenue increased 8% driven by Microsoft 365 Consumer cloud revenue growth of 8%\n\n·         LinkedIn revenue increased 9%\n\n·         Dynamics products and cloud services revenue increased 15% (up 14% in constant currency) driven by Dynamics 365 revenue growth of 19% (up 18% in constant currency)\n\nRevenue in Intelligent Cloud was $25.5 billion and increased 19%, with the following business highlights:\n\n·         Server products and cloud services revenue increased 21% driven by Azure and other cloud services revenue growth of 31%\n\nRevenue in More Personal Computing was $14.7 billion and was relatively unchanged, with the following business highlights:\n\n·         Windows OEM and Devices revenue increased 4%\n\n·         Xbox content and services revenue increased 2%\n\n·         Search and news advertising revenue excluding traffic acquisition costs increased 21% (up 20% in constant currency)\n\nMicrosoft returned $9.7 billion to shareholders in the form of dividends and share repurchases in the second quarter of fiscal year 2025."
+      }
+    },
+    {
+      "id": "MSFT-2025-Q3-press_release-3",
+      "score": 8.19866679,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": null,
+        "source": "MSFT-Q3-2025-press-release.txt",
+        "retrieval": null,
+        "text": "for our differentiated offerings,” said Amy Hood, executive vice president and chief financial officer of Microsoft. Business Highlights\n\nRevenue in Productivity and Business Processes was $29.9 billion and increased 10% (up 13% in constant currency), with the following business highlights:\n\n·        Microsoft 365 Commercial products and cloud services revenue increased 11% (up 14% in constant currency) driven by Microsoft 365 Commercial cloud revenue growth of 12% (up 15% in constant currency)\n\n·        Microsoft 365 Consumer products and cloud services revenue increased 10% (up 12% in constant currency) driven by Microsoft 365 Consumer cloud revenue growth of 10% (up 12% in constant currency)\n\n·        LinkedIn revenue increased 7% (up 8% in constant currency)\n\n·        Dynamics products and cloud services revenue increased 11% (up 13% in constant currency) driven by Dynamics 365 revenue growth of 16% (up 18% in constant currency)\n\nRevenue in Intelligent Cloud was $26.8 billion and increased 21% (up 22% in constant currency), with the following business highlights:\n\n·        Server products and cloud services revenue increased 22% (up 24% in constant currency) driven by Azure and other cloud services revenue growth of 33% (up 35% in constant currency)\n\nRevenue in More Personal Computing was $13.4 billion and increased 6% (up 7% in constant currency), with the following business highlights:\n\n·        Windows OEM and Devices revenue increased 3%\n\n·        Xbox content and services revenue increased 8% (up 9% in constant currency)\n\n·        Search and news advertising revenue excluding traffic acquisition costs increased 21% (up 23% in constant currency)\n\nMicrosoft returned $9.7 billion to shareholders in the form of dividends and share repurchases in the third quarter of fiscal year 2025."
+      }
+    },
+    {
+      "id": "MSFT-2025-Q4-press_release-2",
+      "score": 8.19714667,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q4",
+        "fiscalYear": "2025",
+        "type": null,
+        "source": "MSFT-Q4-2025-press-release.txt",
+        "retrieval": null,
+        "text": "up 27% (up 25% in constant currency) year-over-year,” said Amy Hood, executive vice president and chief financial officer of Microsoft. Business Highlights\n\nRevenue in Productivity and Business Processes was $33.1 billion and increased 16% (up 14% in constant currency), with the following business highlights:\n\n·        Microsoft 365 Commercial products and cloud services revenue increased 16% (up 15% in constant currency) driven by Microsoft 365 Commercial cloud revenue growth of 18% (up 16% in constant currency)\n\n·        Microsoft 365 Consumer products and cloud services revenue increased 21% driven by Microsoft 365 Consumer cloud revenue growth of 20%\n\n·        LinkedIn revenue increased 9% (up 8% in constant currency)\n\n·        Dynamics products and cloud services revenue increased 18% (up 17% in constant currency) driven by Dynamics 365 revenue growth of 23% (up 21% in constant currency)\n\nRevenue in Intelligent Cloud was $29.9 billion and increased 26% (up 25% in constant currency), with the following business highlights:\n\n·        Server products and cloud services revenue increased 27% driven by Azure and other cloud services revenue growth of 39%\n\nRevenue in More Personal Computing was $13.5 billion and increased 9%, with the following business highlights:\n\n·        Windows OEM and Devices revenue increased 3%\n\n·        Xbox content and services revenue increased 13% (up 12% in constant currency)\n\n·        Search and news advertising revenue excluding traffic acquisition costs increased 21% (up 20% in constant currency)\n\nMicrosoft returned $9.4 billion to shareholders in the form of dividends and share repurchases in the fourth quarter of fiscal year 2025."
+      }
+    },
+    {
+      "id": "MSFT-2026-Q1-press_release-5",
+      "score": 6.96802311,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2026",
+        "type": null,
+        "source": "MSFT-Q1-2026-press-release.txt",
+        "retrieval": null,
+        "text": "and increased 26% (up 25% in constant currency), and commercial remaining performance obligation increased 51% to $392 billion. Revenue in Productivity and Business Processes was $33.0 billion and increased 17% (up 14% in constant currency), with the following business highlights:\n\n·        Microsoft 365 Commercial cloud revenue increased 17% (up 15% in constant currency)\n\n·        Microsoft 365 Consumer cloud revenue increased 26% (up 25% in constant currency)\n\n·        LinkedIn revenue increased 10% (up 9% in constant currency)\n\n·        Dynamics 365 revenue increased 18% (up 16% in constant currency)\n\nRevenue in Intelligent Cloud was $30.9 billion and increased 28% (up 27% in constant currency), with the following business highlights:\n\n·        Azure and other cloud services revenue increased 40% (up 39% in constant currency)\n\nRevenue in More Personal Computing was $13.8 billion and increased 4%, with the following business highlights:\n\n·        Windows OEM and Devices revenue increased 6%\n\n·        Xbox content and services revenue increased 1% (relatively unchanged in constant currency)\n\n·        Search and news advertising revenue excluding traffic acquisition costs increased 16% (up 15% in constant currency)\n\nMicrosoft returned $10.7 billion to shareholders in the form of dividends and share repurchases in the first quarter of fiscal year 2026."
+      }
+    },
+    {
+      "id": "MSFT-2019-Q4-full-3",
+      "score": 6.408436911,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q4",
+        "fiscalYear": "2019",
+        "type": null,
+        "source": "MSFT_FY2019_Q4_qa.json",
+        "retrieval": null,
+        "text": "computing models, supporting both lift-and-shift and modern cloud-native applications. This benefit enhances our business model by aligning with customer needs for operational sovereignty and compliance. As customers utilize these hybrid benefits, the revenue impact transitions from on-premises KPIs to Azure consumption, reflecting our integrated cloud strategy.\"\n        },\n        {\n          \"topic\": \"Microsoft 365 as the New Operating System\",\n          \"content\": \"Microsoft 365 is evolving into the new operating system by expanding its Total Addressable Market (TAM) to include first-line workers and various business segments. With features like Teams for First-Line Workers and HoloLens for specialized roles, Microsoft 365 is driving seat growth and increasing revenue per user."
+      }
+    },
+    {
+      "id": "MSFT-2022-Q1-full-0",
+      "score": 5.853456957,
+      "metadata": {
+        "company": "MSFT",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "MSFT_FY2022_Q1_qa.json",
+        "retrieval": null,
+        "text": "{\n  \"company_name\": \"Microsoft\",\n  \"quarter\": \"Q1\",\n  \"fiscal_year\": \"2022\",\n  \"speakers\": {\n    \"satya_nadella\": {\n      \"role\": \"CEO\",\n      \"responses\": [\n        {\n          \"topic\": \"Edge Computing Opportunity and Differentiation\",\n          \"content\": \"We have architected Azure for a distributed computing fabric, emphasizing hybrid and multi-cloud infrastructures. This approach supports low latency access for applications like factory floors, hospitals, and gaming, ensuring our position in a multi-cloud, multi-edge world remains strong.\"\n        },\n        {\n          \"topic\": \"Microsoft Cloud Strategy\",\n          \"content\": \"Our Microsoft Cloud integrates Azure, Dynamics 365, Microsoft 365, Power Platform, GitHub, and VS Code, offering a comprehensive stack."
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 8.327)\nyear-over-year,” said Amy Hood, executive vice president and chief financial officer of Microsoft. ”We remain committed to balancing operational discipline with continued investments in our cloud and AI infrastructure.”\n\nBusiness Highlights\n\nRevenue in Productivity and Business Processes was $29.4 billion and increased 14% (up 13% in constant currency), with the following business highlights:\n\n·         Microsoft 365 Commercial products and cloud services revenue increased 15% driven by Microsoft 365 Commercial cloud revenue growth of 16% (up 15% in constant currency)\n\n·         Microsoft 365 Consumer products and cloud services revenue increased 8% driven by Microsoft 365 Consumer cloud revenue growth of 8%\n\n·         LinkedIn revenue increased 9%\n\n·         Dynamics products and cloud services revenue increased 15% (up 14% in constant currency) driven by Dynamics 365 revenue growth of 19% (up 18% in constant currency)\n\nRevenue in Intelligent Cloud was $25.5 billion and increased 19%, with the following business highlights:\n\n·         Server products and cloud services revenue increased 21% driven by Azure and other cloud services revenue growth of 31%\n\nRevenue in More Personal Computing was $14.7 billion and was relatively unchanged, with the following business highlights:\n\n·         Windows OEM and Devices revenue increased 4%\n\n·         Xbox content and services revenue increased 2%\n\n·         Search and news advertising revenue excluding traffic acquisition costs increased 21% (up 20% in constant currency)\n\nMicrosoft returned $9.7 billion to shareholders in the form of dividends and share repurchases in the second quarter of fiscal year 2025.\n\n[Chunk 2] (Score: 8.199)\nfor our differentiated offerings,” said Amy Hood, executive vice president and chief financial officer of Microsoft. Business Highlights\n\nRevenue in Productivity and Business Processes was $29.9 billion and increased 10% (up 13% in constant currency), with the following business highlights:\n\n·        Microsoft 365 Commercial products and cloud services revenue increased 11% (up 14% in constant currency) driven by Microsoft 365 Commercial cloud revenue growth of 12% (up 15% in constant currency)\n\n·        Microsoft 365 Consumer products and cloud services revenue increased 10% (up 12% in constant currency) driven by Microsoft 365 Consumer cloud revenue growth of 10% (up 12% in constant currency)\n\n·        LinkedIn revenue increased 7% (up 8% in constant currency)\n\n·        Dynamics products and cloud services revenue increased 11% (up 13% in constant currency) driven by Dynamics 365 revenue growth of 16% (up 18% in constant currency)\n\nRevenue in Intelligent Cloud was $26.8 billion and increased 21% (up 22% in constant currency), with the following business highlights:\n\n·        Server products and cloud services revenue increased 22% (up 24% in constant currency) driven by Azure and other cloud services revenue growth of 33% (up 35% in constant currency)\n\nRevenue in More Personal Computing was $13.4 billion and increased 6% (up 7% in constant currency), with the following business highlights:\n\n·        Windows OEM and Devices revenue increased 3%\n\n·        Xbox content and services revenue increased 8% (up 9% in constant currency)\n\n·        Search and news advertising revenue excluding traffic acquisition costs increased 21% (up 23% in constant currency)\n\nMicrosoft returned $9.7 billion to shareholders in the form of dividends and share repurchases in the third quarter of fiscal year 2025.\n\n[Chunk 3] (Score: 8.197)\nup 27% (up 25% in constant currency) year-over-year,” said Amy Hood, executive vice president and chief financial officer of Microsoft. Business Highlights\n\nRevenue in Productivity and Business Processes was $33.1 billion and increased 16% (up 14% in constant currency), with the following business highlights:\n\n·        Microsoft 365 Commercial products and cloud services revenue increased 16% (up 15% in constant currency) driven by Microsoft 365 Commercial cloud revenue growth of 18% (up 16% in constant currency)\n\n·        Microsoft 365 Consumer products and cloud services revenue increased 21% driven by Microsoft 365 Consumer cloud revenue growth of 20%\n\n·        LinkedIn revenue increased 9% (up 8% in constant currency)\n\n·        Dynamics products and cloud services revenue increased 18% (up 17% in constant currency) driven by Dynamics 365 revenue growth of 23% (up 21% in constant currency)\n\nRevenue in Intelligent Cloud was $29.9 billion and increased 26% (up 25% in constant currency), with the following business highlights:\n\n·        Server products and cloud services revenue increased 27% driven by Azure and other cloud services revenue growth of 39%\n\nRevenue in More Personal Computing was $13.5 billion and increased 9%, with the following business highlights:\n\n·        Windows OEM and Devices revenue increased 3%\n\n·        Xbox content and services revenue increased 13% (up 12% in constant currency)\n\n·        Search and news advertising revenue excluding traffic acquisition costs increased 21% (up 20% in constant currency)\n\nMicrosoft returned $9.4 billion to shareholders in the form of dividends and share repurchases in the fourth quarter of fiscal year 2025.\n\n[Chunk 4] (Score: 6.968)\nand increased 26% (up 25% in constant currency), and commercial remaining performance obligation increased 51% to $392 billion. Revenue in Productivity and Business Processes was $33.0 billion and increased 17% (up 14% in constant currency), with the following business highlights:\n\n·        Microsoft 365 Commercial cloud revenue increased 17% (up 15% in constant currency)\n\n·        Microsoft 365 Consumer cloud revenue increased 26% (up 25% in constant currency)\n\n·        LinkedIn revenue increased 10% (up 9% in constant currency)\n\n·        Dynamics 365 revenue increased 18% (up 16% in constant currency)\n\nRevenue in Intelligent Cloud was $30.9 billion and increased 28% (up 27% in constant currency), with the following business highlights:\n\n·        Azure and other cloud services revenue increased 40% (up 39% in constant currency)\n\nRevenue in More Personal Computing was $13.8 billion and increased 4%, with the following business highlights:\n\n·        Windows OEM and Devices revenue increased 6%\n\n·        Xbox content and services revenue increased 1% (relatively unchanged in constant currency)\n\n·        Search and news advertising revenue excluding traffic acquisition costs increased 16% (up 15% in constant currency)\n\nMicrosoft returned $10.7 billion to shareholders in the form of dividends and share repurchases in the first quarter of fiscal year 2026.\n\n[Chunk 5] (Score: 6.408)\ncomputing models, supporting both lift-and-shift and modern cloud-native applications. This benefit enhances our business model by aligning with customer needs for operational sovereignty and compliance. As customers utilize these hybrid benefits, the revenue impact transitions from on-premises KPIs to Azure consumption, reflecting our integrated cloud strategy.\"\n        },\n        {\n          \"topic\": \"Microsoft 365 as the New Operating System\",\n          \"content\": \"Microsoft 365 is evolving into the new operating system by expanding its Total Addressable Market (TAM) to include first-line workers and various business segments. With features like Teams for First-Line Workers and HoloLens for specialized roles, Microsoft 365 is driving seat growth and increasing revenue per user.\n\n[Chunk 6] (Score: 5.853)\n{\n  \"company_name\": \"Microsoft\",\n  \"quarter\": \"Q1\",\n  \"fiscal_year\": \"2022\",\n  \"speakers\": {\n    \"satya_nadella\": {\n      \"role\": \"CEO\",\n      \"responses\": [\n        {\n          \"topic\": \"Edge Computing Opportunity and Differentiation\",\n          \"content\": \"We have architected Azure for a distributed computing fabric, emphasizing hybrid and multi-cloud infrastructures. This approach supports low latency access for applications like factory floors, hospitals, and gaming, ensuring our position in a multi-cloud, multi-edge world remains strong.\"\n        },\n        {\n          \"topic\": \"Microsoft Cloud Strategy\",\n          \"content\": \"Our Microsoft Cloud integrates Azure, Dynamics 365, Microsoft 365, Power Platform, GitHub, and VS Code, offering a comprehensive stack.",
+  "created_at": "2025-12-10T18:13:33.872Z",
+  "category": "market"
+}

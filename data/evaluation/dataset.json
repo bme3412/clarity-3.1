@@ -1,0 +1,149 @@
+[
+  {
+    "id": "fin-1",
+    "question": "What was AMD's total revenue in Q3 2024?",
+    "ground_truth": "AMD's total revenue in Q3 2024 was $6.8 billion, representing an 18% increase year-over-year.",
+    "category": "financial",
+    "expected_context_ids": []
+  },
+  {
+    "id": "fin-2",
+    "question": "How did the AMD Data Center segment perform in Q3 2024?",
+    "ground_truth": "The Data Center segment revenue reached a record $3.5 billion in Q3 2024, up 122% year-over-year, driven by strong sales of AMD Instinct GPUs and EPYC CPUs.",
+    "category": "financial",
+    "expected_context_ids": []
+  },
+  {
+    "id": "fin-3",
+    "question": "How has Nvidia's data center revenue changed over the past year?",
+    "ground_truth": "Nvidia's data center revenue has grown significantly, driven by AI GPU demand. The segment has shown consistent triple-digit growth rates throughout FY2024-2025.",
+    "category": "financial",
+    "expected_context_ids": []
+  },
+  {
+    "id": "strat-1",
+    "question": "What are AMD's strategic priorities for AI as of late 2024?",
+    "ground_truth": "AMD is focusing on expanding its Instinct data center GPU portfolio (specifically MI300), enhancing the ROCm software stack to compete with CUDA, and driving adoption across cloud and enterprise markets.",
+    "category": "strategy",
+    "expected_context_ids": []
+  },
+  {
+    "id": "strat-2",
+    "question": "What is Apple's approach to AI and machine learning in their products?",
+    "ground_truth": "Apple emphasizes on-device AI processing through Apple Intelligence, focusing on privacy-first ML capabilities, custom silicon (Neural Engine), and integration across the ecosystem.",
+    "category": "strategy",
+    "expected_context_ids": []
+  },
+  {
+    "id": "strat-3",
+    "question": "How is Meta investing in AI infrastructure?",
+    "ground_truth": "Meta is investing heavily in AI infrastructure, including building large GPU clusters, developing custom AI chips, and expanding data center capacity to support AI model training and inference.",
+    "category": "strategy",
+    "expected_context_ids": []
+  },
+  {
+    "id": "comp-1",
+    "question": "How do AMD and Nvidia compare in the AI accelerator market?",
+    "ground_truth": "Nvidia dominates the AI accelerator market with CUDA ecosystem lock-in, while AMD is competing with MI300 series and open ROCm software stack, gaining traction in cloud deployments.",
+    "category": "comparison",
+    "expected_context_ids": []
+  },
+  {
+    "id": "market-1",
+    "question": "How is the cloud computing market affecting Microsoft's business?",
+    "ground_truth": "Microsoft Azure continues to show strong growth driven by AI services and enterprise cloud adoption, contributing significantly to overall revenue growth.",
+    "category": "market",
+    "expected_context_ids": []
+  },
+  {
+    "id": "segment-1",
+    "question": "How is Amazon's AWS performing compared to overall company growth?",
+    "ground_truth": "AWS continues to be a key profit driver for Amazon, with growth rates driven by cloud adoption and AI services, though facing competitive pressure from Azure and Google Cloud.",
+    "category": "market",
+    "expected_context_ids": []
+  },
+  {
+    "id": "exec-1",
+    "question": "What did AMD's CEO say about AI demand in recent earnings?",
+    "ground_truth": "AMD CEO Lisa Su emphasized strong AI demand, particularly for MI300 accelerators, and outlined plans to expand AI product portfolio to capture growing market opportunity.",
+    "category": "executive",
+    "expected_context_ids": []
+  },
+  {
+    "id": "guidance-1",
+    "question": "What is Nvidia's revenue guidance for upcoming quarters?",
+    "ground_truth": "Nvidia has provided optimistic guidance driven by continued AI infrastructure demand, expecting sustained growth in data center revenue.",
+    "category": "guidance",
+    "expected_context_ids": []
+  },
+  {
+    "id": "unanswerable-1",
+    "question": "What was Tesla's automotive revenue in Q2 2019?",
+    "ground_truth": "Not found in provided sources.",
+    "category": "unanswerable",
+    "expected_context_ids": []
+  },
+  {
+    "id": "unanswerable-2",
+    "question": "What was Apple’s gross margin in FY2018?",
+    "ground_truth": "Not found in provided sources.",
+    "category": "unanswerable",
+    "expected_context_ids": []
+  },
+  {
+    "id": "unanswerable-3",
+    "question": "Did Amazon provide 2026 AWS revenue guidance?",
+    "ground_truth": "Not found in provided sources.",
+    "category": "unanswerable",
+    "expected_context_ids": []
+  },
+  {
+    "id": "unanswerable-4",
+    "question": "What was Meta's Reality Labs operating loss in Q1 2017?",
+    "ground_truth": "Not found in provided sources.",
+    "category": "unanswerable",
+    "expected_context_ids": []
+  },
+  {
+    "id": "unanswerable-5",
+    "question": "How many MI325X units did AMD ship in 2022?",
+    "ground_truth": "Not found in provided sources.",
+    "category": "unanswerable",
+    "expected_context_ids": []
+  },
+  {
+    "id": "unanswerable-6",
+    "question": "What was Nvidia’s gaming revenue in FY2015?",
+    "ground_truth": "Not found in provided sources.",
+    "category": "unanswerable",
+    "expected_context_ids": []
+  },
+  {
+    "id": "unanswerable-7",
+    "question": "What were Oracle's capital expenditures in Q4 2016?",
+    "ground_truth": "Not found in provided sources.",
+    "category": "unanswerable",
+    "expected_context_ids": []
+  },
+  {
+    "id": "unanswerable-8",
+    "question": "What was Microsoft’s Copilot revenue in Q1 2022?",
+    "ground_truth": "Not found in provided sources.",
+    "category": "unanswerable",
+    "expected_context_ids": []
+  },
+  {
+    "id": "unanswerable-9",
+    "question": "Did Broadcom report FY2016 networking segment revenue?",
+    "ground_truth": "Not found in provided sources.",
+    "category": "unanswerable",
+    "expected_context_ids": []
+  },
+  {
+    "id": "unanswerable-10",
+    "question": "What was Salesforce’s Slack revenue in Q3 2018?",
+    "ground_truth": "Not found in provided sources.",
+    "category": "unanswerable",
+    "expected_context_ids": []
+  }
+]

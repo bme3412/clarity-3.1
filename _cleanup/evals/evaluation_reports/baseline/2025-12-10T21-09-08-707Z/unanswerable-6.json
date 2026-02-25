@@ -1,0 +1,124 @@
+{
+  "id": "unanswerable-6",
+  "run_id": "2025-12-10T21-09-08-707Z",
+  "strategy_id": "baseline",
+  "question": "What was Nvidia’s gaming revenue in FY2015?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts with Citations:\n- Gaming revenue data for FY2015 is not found in provided sources [C1, C2, C3]\n- Available context covers Q3 2024, Q3 2026, but no FY2015 data [C1, C2, C3]\n- Gaming segment revenue shown for Q3 2024: $2.856B (+81% YoY, +15% QoQ) [C3]\n Final Answer:\nNot found in provided sources.\nThe provided context contains gaming revenue data for Q3 2024 ($2.856B) [C3] and other recent quarters, but does not include any financial information for FY2015.",
+  "duration_ms": 5908,
+  "metrics": {
+    "relevance": {
+      "score": 0.8,
+      "reasoning": "The answer is relevant to the question as it directly addresses the query about Nvidia's gaming revenue in FY2015. While it doesn't provide the specific number requested, it honestly acknowledges that the information is not available in the provided sources and explains what data is available instead. This is a responsible and relevant response given the limitations of the source material, rather than fabricating an answer or being completely non-responsive."
+    },
+    "faithfulness": {
+      "score": 0.85,
+      "reasoning": "The answer is largely faithful to the context. It correctly states that FY2015 data is not found in the provided sources, and accurately cites the gaming revenue figure of $2.856B from the context (though the citation says [C3] when it should be [C1] based on the chunk numbering). The answer correctly identifies that the context covers recent quarters (Q3 2024, Q3 2026) rather than FY2015. The gaming segment data cited ($2.856B, +81% YoY, +15% QoQ) matches Chunk 1 exactly. The minor deduction is for the citation inconsistency where the answer attributes data to [C3] when it actually comes from [C1], but the factual content itself is accurate and derived from the context."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer correctly identifies that FY2015 gaming revenue data is not found in the provided sources, which matches the ground truth. The answer provides additional helpful context about what data IS available (Q3 2024 gaming revenue), but this extra detail is consistent with and does not contradict the ground truth. The core factual claim - that the requested information is not available - is accurate."
+    }
+  },
+  "context_count": 3,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 1,
+      "embeddingMs": 267,
+      "pineconeMs": 468,
+      "financialMs": 2,
+      "keywordMs": 6,
+      "llmMs": 5163,
+      "totalMs": 5908
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 1,
+      "keywordMatches": 2,
+      "combinedContext": 3,
+      "filtersApplied": {
+        "company": "NVDA",
+        "fiscal_year": "2015"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": true,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "FY2015",
+      "company_name": "NVDA",
+      "isComparisonQuery": false,
+      "primaryTicker": "NVDA"
+    },
+    "llm": {
+      "input_tokens": 1262,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 163,
+      "service_tier": "standard"
+    },
+    "retrievalTrace": {
+      "financialSegments": [
+        "financial_data_segment"
+      ],
+      "financial": 1,
+      "transcripts": [],
+      "keyword": [
+        "keyword-2026-Q3-qa",
+        "keyword-2026-Q3-earnings"
+      ]
+    }
+  },
+  "context": [
+    {
+      "id": "context-0",
+      "score": 1,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "financial_data_segment",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"revenueSegments\": {\n    \"composition\": {\n      \"data_center\": {\n        \"value\": 14514,\n        \"qoq_growth\": \"41\",\n        \"yoy_growth\": \"279\"\n      },\n      \"gaming\": {\n        \"value\": 2856,\n        \"qoq_growth\": \"15\",\n        \"yoy_growth\": \"81\"\n      },\n      \"professional_visualization\": {\n        \"value\": 416,\n        \"qoq_growth\": \"10\",\n        \"yoy_growth\": \"108\"\n      },\n      \"automotive\": {\n        \"value\": 261,\n        \"qoq_growth\": \"3\",\n        \"yoy_growth\": \"4\"\n      },\n      \"oem_and_other\": {\n        \"value\": 73,\n        \"qoq_growth\": \"11\",\n        \"yoy_growth\": \"0\"\n      }\n    },\n    \"data_center\": 14514,\n    \"gaming\": 2856\n  }\n}"
+      }
+    },
+    {
+      "id": "keyword-2026-Q3-qa",
+      "score": 1.0333333333333334,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q3",
+        "fiscalYear": "2026",
+        "type": "transcript_qa",
+        "source": "data/transcripts/NVDA/FY_2026/Q3/parsed_earnings/NVDA_FY2026_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": "king and compute growth over the next year?\" ] }, { \"analyst\": \"Vivek Arya\", \"firm\": \"Bank of America Securities\", \"topics\": [ \"Gigawatt assumptions\", \"Financing\" ], \"questions\": [ \"What $/GW assumptions underpin the $500B number and how much of the future AI infrastructure needs vendor financing versus customer cash?\" ] }, { \"analyst\": \"Benjamin Reitzes\", \"firm\": \"Melius Research\", \"topics\": ["
+      }
+    },
+    {
+      "id": "keyword-2026-Q3-earnings",
+      "score": 0.8333333333333334,
+      "metadata": {
+        "company": "NVDA",
+        "quarter": "Q3",
+        "fiscalYear": "2026",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/NVDA/FY_2026/Q3/parsed_earnings/NVDA_FY2026_Q3_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"NVIDIA\", \"quarter\": \"Q3\", \"fiscal_year\": \"2026\", \"financials\": { \"gaap\": { \"revenue\": { \"value\": 57.006, \"unit\": \"billion USD\", \"year_over_year_change\": \"+62%\", \"quarter_over_quarter_change\": \"+22%\","
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 1.000)\n{\n  \"revenueSegments\": {\n    \"composition\": {\n      \"data_center\": {\n        \"value\": 14514,\n        \"qoq_growth\": \"41\",\n        \"yoy_growth\": \"279\"\n      },\n      \"gaming\": {\n        \"value\": 2856,\n        \"qoq_growth\": \"15\",\n        \"yoy_growth\": \"81\"\n      },\n      \"professional_visualization\": {\n        \"value\": 416,\n        \"qoq_growth\": \"10\",\n        \"yoy_growth\": \"108\"\n      },\n      \"automotive\": {\n        \"value\": 261,\n        \"qoq_growth\": \"3\",\n        \"yoy_growth\": \"4\"\n      },\n      \"oem_and_other\": {\n        \"value\": 73,\n        \"qoq_growth\": \"11\",\n        \"yoy_growth\": \"0\"\n      }\n    },\n    \"data_center\": 14514,\n    \"gaming\": 2856\n  }\n}\n\n[Chunk 2] (Score: 1.033)\nking and compute growth over the next year?\" ] }, { \"analyst\": \"Vivek Arya\", \"firm\": \"Bank of America Securities\", \"topics\": [ \"Gigawatt assumptions\", \"Financing\" ], \"questions\": [ \"What $/GW assumptions underpin the $500B number and how much of the future AI infrastructure needs vendor financing versus customer cash?\" ] }, { \"analyst\": \"Benjamin Reitzes\", \"firm\": \"Melius Research\", \"topics\": [\n\n[Chunk 3] (Score: 0.833)\n{ \"company_name\": \"NVIDIA\", \"quarter\": \"Q3\", \"fiscal_year\": \"2026\", \"financials\": { \"gaap\": { \"revenue\": { \"value\": 57.006, \"unit\": \"billion USD\", \"year_over_year_change\": \"+62%\", \"quarter_over_quarter_change\": \"+22%\",",
+  "created_at": "2025-12-10T21:41:23.597Z",
+  "category": "unanswerable"
+}

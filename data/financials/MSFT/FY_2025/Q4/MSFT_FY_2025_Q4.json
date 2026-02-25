@@ -1,0 +1,179 @@
+{
+  "financial_report": {
+    "quarters": {
+      "Q4_2025": {
+        "fiscal_quarter": "Q4 2025",
+        "fiscal_end_date": "June 30, 2025",
+        "income_statement": {
+          "revenue": {
+            "total": {
+              "value": 76441,
+              "components": {
+                "product": 17136,
+                "service_and_other": 59405
+              }
+            },
+            "by_segment": {
+              "productivity_and_business_processes": 33112,
+              "intelligent_cloud": 29878,
+              "more_personal_computing": 13451
+            }
+          },
+          "cost_of_revenue": {
+            "total": 24014,
+            "components": {
+              "product": 3314,
+              "service_and_other": 20700
+            }
+          },
+          "gross_margin": {
+            "value": 52427
+          },
+          "operating_expenses": {
+            "research_and_development": 8829,
+            "sales_and_marketing": 7285,
+            "general_and_administrative": 1990,
+            "total": 18104
+          },
+          "operating_income": {
+            "total": 34323,
+            "by_segment": {
+              "productivity_and_business_processes": 18993,
+              "intelligent_cloud": 12140,
+              "more_personal_computing": 3190
+            }
+          },
+          "other_income_expense": -1707,
+          "income_before_taxes": 32616,
+          "provision_for_income_taxes": 5383,
+          "net_income": 27233,
+          "earnings_per_share": {
+            "basic": 3.66,
+            "diluted": 3.65,
+            "weighted_average_shares": {
+              "basic": 7432,
+              "diluted": 7461
+            }
+          }
+        },
+        "balance_sheet": {
+          "assets": {
+            "current_assets": {
+              "cash_and_equivalents": 30242,
+              "short_term_investments": 64323,
+              "total_cash_and_investments": 94565,
+              "accounts_receivable_net": 69905,
+              "inventories": 938,
+              "other_current_assets": 25723,
+              "total_current_assets": 191131
+            },
+            "non_current_assets": {
+              "property_and_equipment_net": 204966,
+              "operating_lease_right_of_use": 24823,
+              "equity_investments": 15405,
+              "goodwill": 119509,
+              "intangible_assets_net": 22604,
+              "other_long_term_assets": 40565
+            },
+            "total_assets": 619003
+          },
+          "liabilities": {
+            "current_liabilities": {
+              "accounts_payable": 27724,
+              "short_term_debt": 0,
+              "current_portion_long_term_debt": 2999,
+              "accrued_compensation": 13709,
+              "short_term_income_taxes": 7211,
+              "short_term_unearned_revenue": 64555,
+              "other_current_liabilities": 25020,
+              "total_current_liabilities": 141218
+            },
+            "non_current_liabilities": {
+              "long_term_debt": 40152,
+              "long_term_income_taxes": 25986,
+              "long_term_unearned_revenue": 2710,
+              "deferred_income_taxes": 2835,
+              "operating_lease_liabilities": 17437,
+              "other_long_term_liabilities": 45186
+            },
+            "total_liabilities": 275524
+          },
+          "stockholders_equity": {
+            "common_stock_and_paid_in_capital": 109095,
+            "retained_earnings": 237731,
+            "accumulated_other_comprehensive_loss": -3347,
+            "total_stockholders_equity": 343479
+          },
+          "total_liabilities_and_equity": 619003
+        },
+        "cash_flow": {
+          "cash_position": {
+            "beginning_balance": 28828,
+            "ending_balance": 30242,
+            "net_change": 1414
+          },
+          "operating_cash_flow": {
+            "value": 42647,
+            "components": {
+              "net_income": 27233,
+              "depreciation_amortization_and_other": 11203,
+              "stock_based_compensation": 3073,
+              "investment_gains": 56,
+              "deferred_income_taxes": -2221,
+              "working_capital_changes": {
+                "accounts_receivable": -16179,
+                "inventories": -81,
+                "other_current_assets": -3686,
+                "other_long_term_assets": 418,
+                "accounts_payable": -652,
+                "unearned_revenue": 18361,
+                "income_taxes": 1043,
+                "other_current_liabilities": 5346,
+                "other_long_term_liabilities": -1267
+              }
+            }
+          },
+          "investing_cash_flow": {
+            "value": -30572,
+            "components": {
+              "capital_expenditures": -17079,
+              "business_combinations": -1743,
+              "investments": {
+                "purchases": -21631,
+                "maturities": 4618,
+                "sales": 2621
+              },
+              "other_investing": 2642
+            }
+          },
+          "financing_cash_flow": {
+            "value": -10844,
+            "components": {
+              "common_stock_issued": 548,
+              "common_stock_repurchased": -4546,
+              "dividends": -6169,
+              "other_financing": -677
+            }
+          },
+          "effect_of_exchange_rate": 183
+        },
+        "summary": {
+          "fiscal_period": "Q4 FY2025",
+          "period_ended": "June 30, 2025",
+          "report_generated": "July 30, 2025",
+          "key_takeaways": [
+            "Revenue $76.4B (+18% YoY, +17% CC); Microsoft Cloud $46.7B (+27% YoY, +25% CC)",
+            "Operating income $34.3B (+23% YoY, +22% CC) with 45% operating margin expansion",
+            "Net income $27.2B (+24% YoY, +22% CC) and diluted EPS $3.65 (+24% YoY, +22% CC)",
+            "Azure surpassed $75B annual revenue (+34% YoY) and server/cloud services +27%",
+            "Productivity & Business Processes $33.1B (+16% YoY); M365 Commercial cloud +18%",
+            "More Personal Computing $13.5B (+9% YoY); Search ex-TAC +21%, Xbox content +13%",
+            "Returned $9.4B to shareholders this quarter and $37B for FY2025",
+            "FY2025 revenue $281.7B (+15%); operating income $128.5B (+17% CC); net income $101.8B (+16% CC)"
+          ]
+        }
+      }
+    }
+  }
+}
+

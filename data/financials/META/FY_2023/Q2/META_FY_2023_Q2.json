@@ -1,0 +1,621 @@
+{
+  "financial_reports": [
+    {
+      "period": {
+        "fiscal_quarter": "Q2 2023",
+        "calendar_quarter": "Q2 2023",
+        "fiscal_end_date": "June 30, 2023",
+        "comparison_period": {
+          "fiscal_quarter": "Q2 2022",
+          "calendar_quarter": "Q2 2022",
+          "fiscal_end_date": "June 30, 2022"
+        }
+      },
+      "income_statement": {
+        "net_sales": {
+          "total": {
+            "value": 31999,
+            "yoy_growth": 11.0
+          }
+        },
+        "operating_expenses": {
+          "cost_of_revenue": {
+            "value": 5945,
+            "yoy_growth": 14.5
+          },
+          "research_and_development": {
+            "value": 9344,
+            "yoy_growth": 7.5
+          },
+          "marketing_and_sales": {
+            "value": 3154,
+            "yoy_growth": -12.3
+          },
+          "general_and_administrative": {
+            "value": 4164,
+            "yoy_growth": 39.4
+          },
+          "total": {
+            "value": 22607,
+            "yoy_growth": 10.0
+          }
+        },
+        "operating_income": {
+          "value": 9392,
+          "yoy_growth": 12.0
+        },
+        "operating_margin": {
+          "current_value": 29.0,
+          "previous_value": 29.0,
+          "yoy_change": 0.0
+        },
+        "net_income": {
+          "value": 7788,
+          "yoy_growth": 16.0
+        },
+        "earnings_per_share": {
+          "basic": {
+            "value": 3.03,
+            "yoy_growth": 22.7
+          },
+          "diluted": {
+            "value": 2.98,
+            "yoy_growth": 21.0
+          }
+        }
+      },
+      "segment_information": {
+        "family_of_apps": {
+          "revenue": {
+            "advertising": {
+              "value": 31498,
+              "yoy_growth": 12.0
+            },
+            "other": {
+              "value": 225,
+              "yoy_growth": 3.2
+            },
+            "total": {
+              "value": 31723,
+              "yoy_growth": 11.8
+            }
+          },
+          "operating_income": {
+            "value": 13131,
+            "yoy_growth": 17.6
+          }
+        },
+        "reality_labs": {
+          "revenue": {
+            "value": 276,
+            "yoy_growth": -39.0
+          },
+          "operating_loss": {
+            "value": -3739,
+            "yoy_growth": 33.3
+          }
+        }
+      }
+    }
+  ],
+  "balance_sheet": {
+    "assets": {
+      "current_assets": {
+        "cash_and_equivalents": {
+          "value": 28785,
+          "previous": 14681,
+          "change_pct": 96.1
+        },
+        "marketable_securities": {
+          "value": 24661,
+          "previous": 26057,
+          "change_pct": -5.4
+        },
+        "accounts_receivable_net": {
+          "value": 12511,
+          "previous": 13466,
+          "change_pct": -7.1
+        },
+        "prepaid_expenses_and_other": {
+          "value": 3603,
+          "previous": 5345,
+          "change_pct": -32.6
+        },
+        "total_current_assets": {
+          "value": 69560,
+          "previous": 59549,
+          "change_pct": 16.8
+        }
+      },
+      "non_current_assets": {
+        "property_and_equipment_net": {
+          "value": 87949,
+          "previous": 79518,
+          "change_pct": 10.6
+        },
+        "operating_lease_assets": {
+          "value": 12955,
+          "previous": 12673,
+          "change_pct": 2.2
+        },
+        "intangible_assets_net": {
+          "value": 856,
+          "previous": 897,
+          "change_pct": -4.6
+        },
+        "goodwill": {
+          "value": 20659,
+          "previous": 20306,
+          "change_pct": 1.7
+        },
+        "equity_investments": {
+          "value": 6208,
+          "previous": 6201,
+          "change_pct": 0.1
+        },
+        "other_assets": {
+          "value": 8501,
+          "previous": 6583,
+          "change_pct": 29.1
+        },
+        "total_non_current_assets": {
+          "value": 137128,
+          "previous": 126178,
+          "change_pct": 8.7
+        }
+      },
+      "total_assets": {
+        "value": 206688,
+        "previous": 185727,
+        "change_pct": 11.3
+      }
+    },
+    "liabilities": {
+      "current_liabilities": {
+        "accounts_payable": {
+          "value": 3093,
+          "previous": 4990,
+          "change_pct": -38.0
+        },
+        "partners_payable": {
+          "value": 772,
+          "previous": 1117,
+          "change_pct": -30.9
+        },
+        "operating_lease_liabilities": {
+          "value": 1396,
+          "previous": 1367,
+          "change_pct": 2.1
+        },
+        "accrued_expenses_and_other": {
+          "value": 24660,
+          "previous": 19552,
+          "change_pct": 26.1
+        },
+        "total_current_liabilities": {
+          "value": 29921,
+          "previous": 27026,
+          "change_pct": 10.7
+        }
+      },
+      "non_current_liabilities": {
+        "operating_lease_liabilities": {
+          "value": 16440,
+          "previous": 15301,
+          "change_pct": 7.4
+        },
+        "long_term_debt": {
+          "value": 18382,
+          "previous": 9923,
+          "change_pct": 85.2
+        },
+        "other_liabilities": {
+          "value": 7912,
+          "previous": 7764,
+          "change_pct": 1.9
+        },
+        "total_non_current_liabilities": {
+          "value": 42734,
+          "previous": 32988,
+          "change_pct": 29.5
+        }
+      },
+      "total_liabilities": {
+        "value": 72655,
+        "previous": 60014,
+        "change_pct": 21.1
+      }
+    },
+    "stockholders_equity": {
+      "common_stock_and_paid_in_capital": {
+        "value": 69159,
+        "previous": 64444,
+        "change_pct": 7.3
+      },
+      "accumulated_other_comprehensive_income": {
+        "value": -3106,
+        "previous": -3530,
+        "change_pct": -12.0
+      },
+      "retained_earnings": {
+        "value": 67980,
+        "previous": 64799,
+        "change_pct": 4.9
+      },
+      "total_stockholders_equity": {
+        "value": 134033,
+        "previous": 125713,
+        "change_pct": 6.6
+      }
+    },
+    "total_liabilities_and_equity": {
+      "value": 206688,
+      "previous": 185727,
+      "change_pct": 11.3
+    }
+  },
+  "cash_flow": {
+    "cash_flow_statement": {
+      "operating_activities": {
+        "net_income": {
+          "value": 7788,
+          "previous": 6687,
+          "change_pct": 16.5
+        },
+        "adjustments": {
+          "depreciation_and_amortization": {
+            "value": 2623,
+            "previous": 1979,
+            "change_pct": 32.5
+          },
+          "share_based_compensation": {
+            "value": 4060,
+            "previous": 3351,
+            "change_pct": 21.2
+          },
+          "deferred_income_taxes": {
+            "value": -1137,
+            "previous": -453,
+            "change_pct": 150.9
+          },
+          "impairment_charges_facilities": {
+            "value": 232,
+            "previous": 0,
+            "change_pct": null
+          },
+          "other": {
+            "value": 212,
+            "previous": 189,
+            "change_pct": 12.2
+          }
+        },
+        "changes_in_assets_and_liabilities": {
+          "accounts_receivable": {
+            "value": -1424,
+            "previous": -522,
+            "change_pct": 172.8
+          },
+          "prepaid_expenses_and_other_current_assets": {
+            "value": -54,
+            "previous": -435,
+            "change_pct": -87.6
+          },
+          "other_assets": {
+            "value": 37,
+            "previous": -25,
+            "change_pct": -248.0
+          },
+          "accounts_payable": {
+            "value": -51,
+            "previous": 237,
+            "change_pct": -121.5
+          },
+          "partners_payable": {
+            "value": -116,
+            "previous": 73,
+            "change_pct": -258.9
+          },
+          "accrued_expenses_and_other_current_liabilities": {
+            "value": 5290,
+            "previous": 1180,
+            "change_pct": 348.3
+          },
+          "other_liabilities": {
+            "value": -151,
+            "previous": -64,
+            "change_pct": 135.9
+          }
+        },
+        "net_cash_from_operating_activities": {
+          "value": 17309,
+          "previous": 12197,
+          "change_pct": 41.9
+        }
+      },
+      "investing_activities": {
+        "property_and_equipment": {
+          "purchases": {
+            "value": -6216,
+            "previous": -7572,
+            "change_pct": -17.9
+          },
+          "proceeds": {
+            "value": 82,
+            "previous": 44,
+            "change_pct": 86.4
+          }
+        },
+        "marketable_securities": {
+          "purchases": {
+            "value": -717,
+            "previous": -2220,
+            "change_pct": -67.7
+          },
+          "sales_and_maturities": {
+            "value": 1816,
+            "previous": 3159,
+            "change_pct": -42.5
+          }
+        },
+        "acquisitions_and_intangibles": {
+          "value": -83,
+          "previous": -363,
+          "change_pct": -77.1
+        },
+        "other_investing_activities": {
+          "value": -85,
+          "previous": -7,
+          "change_pct": 1114.3
+        },
+        "net_cash_used_in_investing_activities": {
+          "value": -5203,
+          "previous": -6959,
+          "change_pct": -25.2
+        }
+      },
+      "financing_activities": {
+        "taxes_paid_for_share_settlement": {
+          "value": -1692,
+          "previous": -1002,
+          "change_pct": 68.9
+        },
+        "stock_repurchases": {
+          "value": -898,
+          "previous": -5233,
+          "change_pct": -82.8
+        },
+        "proceeds_from_long_term_debt": {
+          "value": 8455,
+          "previous": 0,
+          "change_pct": null
+        },
+        "finance_lease_payments": {
+          "value": -220,
+          "previous": -219,
+          "change_pct": 0.5
+        },
+        "other_financing_activities": {
+          "value": -353,
+          "previous": -109,
+          "change_pct": 223.9
+        },
+        "net_cash_used_in_financing_activities": {
+          "value": 5292,
+          "previous": -6563,
+          "change_pct": -180.6
+        }
+      },
+      "cash_and_equivalents": {
+        "exchange_rate_effects": {
+          "value": -14,
+          "previous": -550,
+          "change_pct": -97.5
+        },
+        "net_change": {
+          "value": 17384,
+          "previous": -1875,
+          "change_pct": -1027.1
+        },
+        "beginning_balance": {
+          "value": 12420,
+          "previous": 15353,
+          "change_pct": -19.1
+        },
+        "ending_balance": {
+          "value": 29804,
+          "previous": 13478,
+          "change_pct": 121.1
+        },
+        "reconciliation": {
+          "cash_and_cash_equivalents": {
+            "value": 28785,
+            "previous": 12681,
+            "change_pct": 127.0
+          },
+          "restricted_cash_current": {
+            "value": 165,
+            "previous": 228,
+            "change_pct": -27.6
+          },
+          "restricted_cash_non_current": {
+            "value": 854,
+            "previous": 569,
+            "change_pct": 50.1
+          }
+        }
+      }
+    }
+  },
+  "metrics": {
+    "working_capital_metrics": {
+      "days_sales_outstanding": {
+        "value": 35.2,
+        "description": "Average number of days to collect receivables",
+        "calculation": "Accounts Receivable (12511) / (Revenue (31999) / 90 days)"
+      },
+      "days_payable_outstanding": {
+        "value": 46.8,
+        "description": "Average number of days to pay suppliers",
+        "calculation": "Accounts Payable (3093) / (Cost of Revenue (5945) / 90 days)"
+      },
+      "days_inventory_outstanding": {
+        "value": 0,
+        "description": "Average number of days to sell inventory",
+        "calculation": "Not applicable - META has no physical inventory"
+      }
+    },
+    "turnover_metrics": {
+      "receivables_turnover": {
+        "value": 10.2,
+        "description": "Number of times receivables are collected annually",
+        "calculation": "Annualized Revenue (127996) / Accounts Receivable (12511)"
+      },
+      "asset_turnover": {
+        "value": 0.62,
+        "description": "Revenue generated per dollar of assets",
+        "calculation": "Annualized Revenue (127996) / Total Assets (206688)"
+      },
+      "fixed_asset_turnover": {
+        "value": 1.46,
+        "description": "Revenue generated per dollar of fixed assets",
+        "calculation": "Annualized Revenue (127996) / Property and Equipment (87949)"
+      }
+    },
+    "key_metrics": {
+      "operating_cash_flow_margin": {
+        "value": 54.1,
+        "description": "Operating Cash Flow as % of Revenue",
+        "calculation": "Operating Cash Flow (17309) / Revenue (31999) * 100"
+      },
+      "free_cash_flow": {
+        "value": 10955,
+        "description": "Operating Cash Flow minus Capex",
+        "calculation": "Operating Cash Flow (17309) - Capex (6354)"
+      },
+      "capex_to_revenue": {
+        "value": 19.9,
+        "description": "Capital Expenditure as % of Revenue",
+        "calculation": "(Capex (6354) / Revenue (31999)) * 100"
+      }
+    },
+    "efficiency_metrics": {
+      "revenue_per_employee": {
+        "value": 1.79,
+        "description": "Annual revenue per employee in millions",
+        "calculation": "Annualized Revenue (127996) / Number of Employees (71469)"
+      },
+      "operating_margin": {
+        "value": 29.4,
+        "description": "Operating Income as % of Revenue",
+        "calculation": "(Operating Income (9392) / Revenue (31999)) * 100"
+      }
+    },
+    "liquidity_metrics": {
+      "current_ratio": {
+        "value": 2.32,
+        "description": "Current assets divided by current liabilities",
+        "calculation": "Current Assets (69560) / Current Liabilities (29921)"
+      },
+      "quick_ratio": {
+        "value": 2.20,
+        "description": "Liquid assets divided by current liabilities",
+        "calculation": "(Cash (28785) + Marketable Securities (24661) + Receivables (12511)) / Current Liabilities (29921)"
+      },
+      "cash_ratio": {
+        "value": 1.79,
+        "description": "Cash and equivalents divided by current liabilities",
+        "calculation": "(Cash (28785) + Marketable Securities (24661)) / Current Liabilities (29921)"
+      }
+    },
+    "user_metrics": {
+      "facebook_platform": {
+        "daily_active_users": {
+          "value": 2060,
+          "yoy_growth": 5.0,
+          "unit": "millions"
+        },
+        "monthly_active_users": {
+          "value": 3030,
+          "yoy_growth": 3.0,
+          "unit": "millions"
+        }
+      },
+      "family_of_apps": {
+        "daily_active_people": {
+          "value": 3070,
+          "yoy_growth": 7.0,
+          "unit": "millions"
+        },
+        "monthly_active_people": {
+          "value": 3880,
+          "yoy_growth": 6.0,
+          "unit": "millions"
+        }
+      }
+    },
+    "revenue_segments": {
+      "advertising": {
+        "value": 31498,
+        "yoy_growth": 12.0,
+        "percentage_of_revenue": 98.4,
+        "metrics": {
+          "impressions_growth": 34.0,
+          "price_per_ad_growth": -16.0
+        }
+      },
+      "other": {
+        "value": 501,
+        "yoy_growth": -25.1,
+        "percentage_of_revenue": 1.6
+      }
+    },
+    "operational_metrics": {
+      "capital_expenditures": {
+        "value": 6354,
+        "description": "Including principal payments on finance leases"
+      },
+      "cash_and_investments": {
+        "value": 53446,
+        "description": "Cash, cash equivalents, and marketable securities"
+      },
+      "employees": {
+        "value": 71469,
+        "yoy_growth": -14.0
+      },
+      "share_repurchases": {
+        "value": 793,
+        "authorized_remaining": 40910,
+        "description": "Class A common stock repurchases"
+      }
+    },
+    "margin_metrics": {
+      "operating_margin": {
+        "value": 29.0,
+        "previous_value": 29.0,
+        "yoy_change": 0.0
+      }
+    },
+    "segment_results": {
+      "family_of_apps": {
+        "revenue": {
+          "value": 31723,
+          "yoy_growth": 11.8
+        },
+        "operating_income": {
+          "value": 13131,
+          "yoy_growth": 17.6
+        }
+      },
+      "reality_labs": {
+        "revenue": {
+          "value": 276,
+          "yoy_growth": -39.0
+        },
+        "operating_loss": {
+          "value": -3739,
+          "yoy_growth": 33.3
+        }
+      }
+    }
+  }
+}

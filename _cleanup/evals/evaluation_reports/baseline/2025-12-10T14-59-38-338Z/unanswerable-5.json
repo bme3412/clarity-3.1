@@ -1,0 +1,243 @@
+{
+  "id": "unanswerable-5",
+  "run_id": "2025-12-10T14-59-38-338Z",
+  "strategy_id": "baseline",
+  "question": "How many MI325X units did AMD ship in 2022?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts with Citations:\n• MI325X product mentioned in 2024 Q3 earnings context [C7]\n• 2022 Q4 revenue: $5,599M with 16% YoY growth [C1]\n• 2022 Q3 revenue: $5,565M with 29% YoY growth [C2]\n• 2022 Q2 revenue: $6,550M with 70.1% YoY growth [C3]\n• 2022 Q1 revenue: $5,887M with 70.9% YoY growth [C4]\n• No specific MI325X shipment data for 2022 found in sources\n• No GPU unit sales data for 2022 found in sources\n• No MI325X unit sales data for 2022 found in sources\n Final Answer:\nNot found in provided sources.\nThe MI325X GPU is mentioned in 2024 Q3 earnings materials [C7], but no shipment data, unit sales, or any MI325X-specific metrics for 2022 are available in the provided context. The 2022 financial data shows quarterly revenue figures ranging from $5.6B to $6.6B [C1-C4], but contains no GPU-specific unit shipment breakdowns or MI325X product information for that timeframe.",
+  "duration_ms": 13745,
+  "metrics": {
+    "relevance": {
+      "score": 0.9,
+      "reasoning": "The answer is highly relevant to the question. It directly addresses whether MI325X shipment data for 2022 exists in the sources, correctly identifies that MI325X is mentioned only in 2024 context (implying it wasn't available in 2022), and explicitly states that no MI325X shipment data for 2022 was found. The answer appropriately says 'Not found in provided sources' which is a valid and relevant response when the information doesn't exist. The additional context about 2022 revenue figures shows the system searched the 2022 data but couldn't find the specific information requested."
+    },
+    "faithfulness": {
+      "score": 0.9,
+      "reasoning": "The answer is highly faithful to the provided context. It correctly identifies that MI325X is mentioned in the context (Chunk 10 lists it as a product), accurately states that no MI325X shipment data for 2022 exists in the sources, and correctly reports the 2022 quarterly revenue figures from Chunks 1-4 (Q1: $5,887M with 70.9% growth, Q2: $6,550M with 70.1% growth, Q3: $5,565M with 29% growth, Q4: $5,599M with 16% growth). The answer appropriately acknowledges the limitations of the data and does not fabricate information. The only minor issue is the citation format - the answer uses [C1-C4] and [C7] which don't perfectly match the chunk numbering in the context, but the information itself is accurate. The answer correctly concludes that the specific query about MI325X shipments in 2022 cannot be answered from the provided sources."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer arrives at the same conclusion as the ground truth: 'Not found in provided sources.' While the generated answer provides additional context and explanation about what was searched (MI325X, 2022 data, revenue figures), the core factual answer is identical. The extra detail about why the information wasn't found and what related information was available is consistent and does not contradict the ground truth. The answer correctly identifies that MI325X data for 2022 is not available in the sources."
+    }
+  },
+  "context_count": 13,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3264,
+      "embeddingMs": 250,
+      "pineconeMs": 460,
+      "financialMs": 12,
+      "keywordMs": 13,
+      "llmMs": 9745,
+      "totalMs": 13745
+    },
+    "retrieval": {
+      "pineconeMatches": 4,
+      "financialMatches": 4,
+      "keywordMatches": 5,
+      "combinedContext": 13,
+      "filtersApplied": {
+        "company": "AMD",
+        "fiscal_year": "2022"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": true,
+      "usedKeywordFallback": true,
+      "financialQuery": true,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "financial",
+      "timeframe": "2022",
+      "company_name": "AMD",
+      "isComparisonQuery": false,
+      "primaryTicker": "AMD"
+    },
+    "llm": {
+      "input_tokens": 3843,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 313,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "context-0",
+      "score": 0,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"quarter\": \"Q1\",\n  \"revenue\": 5887,\n  \"gross_profit\": 2818,\n  \"gross_margin\": 48,\n  \"operating_income\": 951,\n  \"operating_margin\": 16.2,\n  \"net_income\": 786,\n  \"net_margin\": 13.351452352641413,\n  \"operating_cash_flow\": 0,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 70.9,\n  \"eps\": 0.56,\n  \"eps_diluted\": 0.56,\n  \"revenueSegments\": {\n    \"composition\": null,\n    \"geographies\": {\n      \"americas\": null,\n      \"europe\": null,\n      \"greater_china\": null,\n      \"japan\": null,\n      \"rest_of_asia_pacific\": null,\n      \"total\": 5887\n    }\n  },\n  \"profit\": 951,\n  \"margin\": 16.2,\n  \"growth\": 70.9,\n  \"netIncome\": 786,\n  \"grossMargin\": 48,\n  \"grossProfit\": 2818,\n  \"operatingCashFlow\": 0,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 0\n}"
+      }
+    },
+    {
+      "id": "context-1",
+      "score": 0,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q2",
+        "fiscalYear": "2022",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"quarter\": \"Q2\",\n  \"revenue\": 6550,\n  \"gross_profit\": 3028,\n  \"gross_margin\": 46,\n  \"operating_income\": 526,\n  \"operating_margin\": 8,\n  \"net_income\": 447,\n  \"net_margin\": 6.824427480916031,\n  \"operating_cash_flow\": 0,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 70.1,\n  \"eps\": 0.28,\n  \"eps_diluted\": 0.27,\n  \"revenueSegments\": {\n    \"composition\": null,\n    \"geographies\": {\n      \"americas\": null,\n      \"europe\": null,\n      \"greater_china\": null,\n      \"japan\": null,\n      \"rest_of_asia_pacific\": null,\n      \"total\": 6550\n    }\n  },\n  \"profit\": 526,\n  \"margin\": 8,\n  \"growth\": 70.1,\n  \"netIncome\": 447,\n  \"grossMargin\": 46,\n  \"grossProfit\": 3028,\n  \"operatingCashFlow\": 0,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 0\n}"
+      }
+    },
+    {
+      "id": "context-2",
+      "score": 0,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2022",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"quarter\": \"Q3\",\n  \"revenue\": 5565,\n  \"gross_profit\": 2354,\n  \"gross_margin\": 42,\n  \"operating_income\": -64,\n  \"operating_margin\": -1.1,\n  \"net_income\": 66,\n  \"net_margin\": 1.1859838274932615,\n  \"operating_cash_flow\": 0,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 29,\n  \"eps\": 0.04,\n  \"eps_diluted\": 0.04,\n  \"revenueSegments\": {\n    \"composition\": null,\n    \"geographies\": {\n      \"americas\": null,\n      \"europe\": null,\n      \"greater_china\": null,\n      \"japan\": null,\n      \"rest_of_asia_pacific\": null,\n      \"total\": 5565\n    }\n  },\n  \"profit\": -64,\n  \"margin\": -1.1,\n  \"growth\": 29,\n  \"netIncome\": 66,\n  \"grossMargin\": 42,\n  \"grossProfit\": 2354,\n  \"operatingCashFlow\": 0,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 0\n}"
+      }
+    },
+    {
+      "id": "context-3",
+      "score": 0,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q4",
+        "fiscalYear": "2022",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"quarter\": \"Q4\",\n  \"revenue\": 5599,\n  \"gross_profit\": 2403,\n  \"gross_margin\": 43,\n  \"operating_income\": -149,\n  \"operating_margin\": -2.7,\n  \"net_income\": 21,\n  \"net_margin\": 0.3750669762457582,\n  \"operating_cash_flow\": 0,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 16,\n  \"eps\": 0.01,\n  \"eps_diluted\": 0.01,\n  \"revenueSegments\": {\n    \"composition\": null,\n    \"geographies\": {\n      \"americas\": null,\n      \"europe\": null,\n      \"greater_china\": null,\n      \"japan\": null,\n      \"rest_of_asia_pacific\": null,\n      \"total\": 5599\n    }\n  },\n  \"profit\": -149,\n  \"margin\": -2.7,\n  \"growth\": 16,\n  \"netIncome\": 21,\n  \"grossMargin\": 43,\n  \"grossProfit\": 2403,\n  \"operatingCashFlow\": 0,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 0\n}"
+      }
+    },
+    {
+      "id": "AMD-2022-Q1-full-47",
+      "score": 2.7406688109999995,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "AMD_FY2022_Q1_qa.json",
+        "retrieval": null,
+        "text": "will you -- do you plan to charge for software? And can you share with us maybe how we might think about AMD as a software business going forward?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2022-03-31T00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q1 2022 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\"\n    ],\n    \"executive_changes\": {}\n  }\n}"
+      }
+    },
+    {
+      "id": "AMD-2022-Q4-full-41",
+      "score": 2.49863694,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q4",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "AMD_FY2022_Q4_qa.json",
+        "retrieval": null,
+        "text": "buy PS5, you still can't get your hands on it easily. So, do you think there's more legs left to the growth next year?\"\n        }\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2022-12-28T00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q4 2022 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Weak PC market\",\n      \"Inventory digestion at customer side\",\n      \"Supply constraints in server CPU\",\n      \"Macro headwinds affecting data center market\",\n      \"U.S.-China trade restrictions\",\n      \"Dynamic and volatile market conditions\",\n      \"Price pressure in Client business\",\n      \"Inventory management and clearance\"\n    ],\n    \"executive_changes\": {\n      \"retirements\": {\n        \"name\": \"Devinder Kumar\",\n        \"role\": \"Executive Vice President, Chief Financial Officer, and Treasurer\",\n        \"retirement_date\": \"N/A\",\n        \"context\": \"Retired during the Q4 earnings call; succeeded by Jean Hu\"\n      },\n      \"new_hires\": {\n        \"name\": \"Jean Hu\",\n        \"role\": \"Executive Vice President, Chief Financial Officer, and Treasurer\",\n        \"start_date\": \"Q4 2022\",\n        \"context\": \"Succeeded Devinder Kumar as CFO during the Q4 earnings call\"\n      }\n    }\n  }\n}"
+      }
+    },
+    {
+      "id": "AMD-2022-Q3-full-4",
+      "score": 2.269961441,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "AMD_FY2022_Q3_qa.json",
+        "retrieval": null,
+        "text": "where AMD is the strongest. We've had very good progress at the North America cloud vendors. And we continue to believe that although there may be some near-term, let's call it, optimization of, let's call it, individual footprints, and efficiencies at individual cloud vendors over the medium term, as we go into 2023, we expect growth in that market, particularly customers moving more workloads to AMD, just given the strength of our product portfolio and overall -- Genoa coming forward. As we look through the other segments, I think China is -- has been very weak in 2022, and we're not forecasting a significant recovery in 2023. So, we'll see how that goes. And then on the enterprise side, I would say enterprise is probably most impacted by the macro."
+      }
+    },
+    {
+      "id": "AMD-2022-Q2-full-34",
+      "score": 2.19971755,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q2",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "AMD_FY2022_Q2_qa.json",
+        "retrieval": null,
+        "text": "you talk about purchase commitments? There was a question on free cash flow, and I'm wondering if maybe there's a pretty big increase in purchase commitments. So I wonder if you can talk about that.\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2022-07-20T00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q2 2022 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Impact of COVID-19 on supply chain and inventory levels\",\n      \"Expense optimization and cost restructuring\",\n      \"Maintaining growth amid economic downturn\",\n      \"Adapting product offerings to shift towards cloud and data center demand\",\n      \"Managing risks in Other Bets and new product ramps\",\n      \"Capital allocation between growth investments and shareholder returns\",\n      \"Ensuring competitive positioning against major rivals like Intel\",\n      \"Enhancing data center and GPU business effectiveness\"\n    ],\n    \"executive_changes\": {\n      \"retirements\": {\n        \"name\": \"Laura Graves\",\n        \"role\": \"Corporate Vice President, Investor Relations\",\n        \"retirement_date\": \"N/A\",\n        \"context\": \"Upcoming retirement announced during the call\"\n      }\n    }\n  }\n}"
+      }
+    },
+    {
+      "id": "keyword-2024-Q3-qa",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AMD/FY_2024/Q3/parsed_earnings/AMD_FY2024_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": "business. Lisa, you took up your '24 outlook by $500 million.\\n\\nCurious what drove the change there? And more importantly, as you look forward into calendar '25, I doubt you're going to give us quantitative guidance on this call. But conceptually, how are you thinking about growth in your Instinct between your large cloud customers and your enterprise customers? And if you can speak to the possibility of adding new customers within cloud, again, specific to Instinct, that would be really helpf"
+      }
+    },
+    {
+      "id": "keyword-2024-Q3-earnings",
+      "score": 1.05,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/AMD/FY_2024/Q3/parsed_earnings/AMD_FY2024_Q3_earnings.json",
+        "retrieval": "keyword",
+        "text": "yzen™ 9000 series processors\", \"Ryzen AI 300 series processors\", \"Alveo V80 accelerators\", \"Next-gen Versal Adaptive SoCs\", \"Ultra Accelerator Link technology\", \"Telluride SoC\", \"RDNA 4 GPUs\", \"MI325X GPU\", \"MI350-series silicon\", \"MI400 series based on CDNA Next architecture\" ], \"partnerships_and_adoptions\": [ \"Microsoft adopting Instinct MI300X for GPT-4 Turbo and Copilot services\", \"Meta deploy"
+      }
+    },
+    {
+      "id": "keyword-2024-Q2-qa",
+      "score": 0.9,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q2",
+        "fiscalYear": "2024",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AMD/FY_2024/Q2/parsed_earnings/AMD_FY2024_Q2_qa.json",
+        "retrieval": "keyword",
+        "text": "\"responses\": [ { \"topic\": \"MI300 Sequential Revenue Growth and Q4 Outlook\", \"content\": \"Yeah. Great, Ben. Thanks for the question. So, first of all, on sort of MI300 and the customer evolution, we're very happy with how MI300 has progressed.\\n\\nWhen we started the year, I think the key point for us was to get our products into our customers' data centers, to have them qualify their workloads, to really ramp in production, and then see what the production capabil"
+      }
+    },
+    {
+      "id": "keyword-2024-Q2-earnings",
+      "score": 0.85,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q2",
+        "fiscalYear": "2024",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/AMD/FY_2024/Q2/parsed_earnings/AMD_FY2024_Q2_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"AMD\", \"quarter\": \"Q2\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 5.8, \"unit\": \"billion USD\", \"year_over_year_change\": \"+9%\", \"quarter_over_quarter_change\": \"+7%\", \"context\": \"Q2 2024\","
+      }
+    },
+    {
+      "id": "keyword-2025-Q3-qa",
+      "score": 0.35,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AMD/FY_2025/Q3/parsed_earnings/AMD_FY2025_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": "u: Have WIP inventory. Will assess demand environment.\" ] }, { \"analyst\": \"Ross Seymore\", \"firm\": \"Deutsche Bank\", \"topics\": [ \"Differentiation\", \"Deal Structure\" ], \"questions\": [ \"How does AMD differentiate to win multi-GW deals?\", \"Was the OpenAI warrant structure unique?\" ], \"answers\": [ \"Lisa Su: World needs more compute. MI450 strong product. TCO and open ecosystem key.\", \"Lisa Su: Uniqu"
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 0.000)\n{\n  \"quarter\": \"Q1\",\n  \"revenue\": 5887,\n  \"gross_profit\": 2818,\n  \"gross_margin\": 48,\n  \"operating_income\": 951,\n  \"operating_margin\": 16.2,\n  \"net_income\": 786,\n  \"net_margin\": 13.351452352641413,\n  \"operating_cash_flow\": 0,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 70.9,\n  \"eps\": 0.56,\n  \"eps_diluted\": 0.56,\n  \"revenueSegments\": {\n    \"composition\": null,\n    \"geographies\": {\n      \"americas\": null,\n      \"europe\": null,\n      \"greater_china\": null,\n      \"japan\": null,\n      \"rest_of_asia_pacific\": null,\n      \"total\": 5887\n    }\n  },\n  \"profit\": 951,\n  \"margin\": 16.2,\n  \"growth\": 70.9,\n  \"netIncome\": 786,\n  \"grossMargin\": 48,\n  \"grossProfit\": 2818,\n  \"operatingCashFlow\": 0,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 0\n}\n\n[Chunk 2] (Score: 0.000)\n{\n  \"quarter\": \"Q2\",\n  \"revenue\": 6550,\n  \"gross_profit\": 3028,\n  \"gross_margin\": 46,\n  \"operating_income\": 526,\n  \"operating_margin\": 8,\n  \"net_income\": 447,\n  \"net_margin\": 6.824427480916031,\n  \"operating_cash_flow\": 0,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 70.1,\n  \"eps\": 0.28,\n  \"eps_diluted\": 0.27,\n  \"revenueSegments\": {\n    \"composition\": null,\n    \"geographies\": {\n      \"americas\": null,\n      \"europe\": null,\n      \"greater_china\": null,\n      \"japan\": null,\n      \"rest_of_asia_pacific\": null,\n      \"total\": 6550\n    }\n  },\n  \"profit\": 526,\n  \"margin\": 8,\n  \"growth\": 70.1,\n  \"netIncome\": 447,\n  \"grossMargin\": 46,\n  \"grossProfit\": 3028,\n  \"operatingCashFlow\": 0,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 0\n}\n\n[Chunk 3] (Score: 0.000)\n{\n  \"quarter\": \"Q3\",\n  \"revenue\": 5565,\n  \"gross_profit\": 2354,\n  \"gross_margin\": 42,\n  \"operating_income\": -64,\n  \"operating_margin\": -1.1,\n  \"net_income\": 66,\n  \"net_margin\": 1.1859838274932615,\n  \"operating_cash_flow\": 0,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 29,\n  \"eps\": 0.04,\n  \"eps_diluted\": 0.04,\n  \"revenueSegments\": {\n    \"composition\": null,\n    \"geographies\": {\n      \"americas\": null,\n      \"europe\": null,\n      \"greater_china\": null,\n      \"japan\": null,\n      \"rest_of_asia_pacific\": null,\n      \"total\": 5565\n    }\n  },\n  \"profit\": -64,\n  \"margin\": -1.1,\n  \"growth\": 29,\n  \"netIncome\": 66,\n  \"grossMargin\": 42,\n  \"grossProfit\": 2354,\n  \"operatingCashFlow\": 0,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 0\n}\n\n[Chunk 4] (Score: 0.000)\n{\n  \"quarter\": \"Q4\",\n  \"revenue\": 5599,\n  \"gross_profit\": 2403,\n  \"gross_margin\": 43,\n  \"operating_income\": -149,\n  \"operating_margin\": -2.7,\n  \"net_income\": 21,\n  \"net_margin\": 0.3750669762457582,\n  \"operating_cash_flow\": 0,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 16,\n  \"eps\": 0.01,\n  \"eps_diluted\": 0.01,\n  \"revenueSegments\": {\n    \"composition\": null,\n    \"geographies\": {\n      \"americas\": null,\n      \"europe\": null,\n      \"greater_china\": null,\n      \"japan\": null,\n      \"rest_of_asia_pacific\": null,\n      \"total\": 5599\n    }\n  },\n  \"profit\": -149,\n  \"margin\": -2.7,\n  \"growth\": 16,\n  \"netIncome\": 21,\n  \"grossMargin\": 43,\n  \"grossProfit\": 2403,\n  \"operatingCashFlow\": 0,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 0\n}\n\n[Chunk 5] (Score: 2.741)\nwill you -- do you plan to charge for software? And can you share with us maybe how we might think about AMD as a software business going forward?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2022-03-31T00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q1 2022 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\"\n    ],\n    \"executive_changes\": {}\n  }\n}\n\n[Chunk 6] (Score: 2.499)\nbuy PS5, you still can't get your hands on it easily. So, do you think there's more legs left to the growth next year?\"\n        }\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2022-12-28T00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q4 2022 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Weak PC market\",\n      \"Inventory digestion at customer side\",\n      \"Supply constraints in server CPU\",\n      \"Macro headwinds affecting data center market\",\n      \"U.S.-China trade restrictions\",\n      \"Dynamic and volatile market conditions\",\n      \"Price pressure in Client business\",\n      \"Inventory management and clearance\"\n    ],\n    \"executive_changes\": {\n      \"retirements\": {\n        \"name\": \"Devinder Kumar\",\n        \"role\": \"Executive Vice President, Chief Financial Officer, and Treasurer\",\n        \"retirement_date\": \"N/A\",\n        \"context\": \"Retired during the Q4 earnings call; succeeded by Jean Hu\"\n      },\n      \"new_hires\": {\n        \"name\": \"Jean Hu\",\n        \"role\": \"Executive Vice President, Chief Financial Officer, and Treasurer\",\n        \"start_date\": \"Q4 2022\",\n        \"context\": \"Succeeded Devinder Kumar as CFO during the Q4 earnings call\"\n      }\n    }\n  }\n}\n\n[Chunk 7] (Score: 2.270)\nwhere AMD is the strongest. We've had very good progress at the North America cloud vendors. And we continue to believe that although there may be some near-term, let's call it, optimization of, let's call it, individual footprints, and efficiencies at individual cloud vendors over the medium term, as we go into 2023, we expect growth in that market, particularly customers moving more workloads to AMD, just given the strength of our product portfolio and overall -- Genoa coming forward. As we look through the other segments, I think China is -- has been very weak in 2022, and we're not forecasting a significant recovery in 2023. So, we'll see how that goes. And then on the enterprise side, I would say enterprise is probably most impacted by the macro.\n\n[Chunk 8] (Score: 2.200)\nyou talk about purchase commitments? There was a question on free cash flow, and I'm wondering if maybe there's a pretty big increase in purchase commitments. So I wonder if you can talk about that.\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2022-07-20T00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q2 2022 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Impact of COVID-19 on supply chain and inventory levels\",\n      \"Expense optimization and cost restructuring\",\n      \"Maintaining growth amid economic downturn\",\n      \"Adapting product offerings to shift towards cloud and data center demand\",\n      \"Managing risks in Other Bets and new product ramps\",\n      \"Capital allocation between growth investments and shareholder returns\",\n      \"Ensuring competitive positioning against major rivals like Intel\",\n      \"Enhancing data center and GPU business effectiveness\"\n    ],\n    \"executive_changes\": {\n      \"retirements\": {\n        \"name\": \"Laura Graves\",\n        \"role\": \"Corporate Vice President, Investor Relations\",\n        \"retirement_date\": \"N/A\",\n        \"context\": \"Upcoming retirement announced during the call\"\n      }\n    }\n  }\n}\n\n[Chunk 9] (Score: 1.200)\nbusiness. Lisa, you took up your '24 outlook by $500 million.\\n\\nCurious what drove the change there? And more importantly, as you look forward into calendar '25, I doubt you're going to give us quantitative guidance on this call. But conceptually, how are you thinking about growth in your Instinct between your large cloud customers and your enterprise customers? And if you can speak to the possibility of adding new customers within cloud, again, specific to Instinct, that would be really helpf\n\n[Chunk 10] (Score: 1.050)\nyzen™ 9000 series processors\", \"Ryzen AI 300 series processors\", \"Alveo V80 accelerators\", \"Next-gen Versal Adaptive SoCs\", \"Ultra Accelerator Link technology\", \"Telluride SoC\", \"RDNA 4 GPUs\", \"MI325X GPU\", \"MI350-series silicon\", \"MI400 series based on CDNA Next architecture\" ], \"partnerships_and_adoptions\": [ \"Microsoft adopting Instinct MI300X for GPT-4 Turbo and Copilot services\", \"Meta deploy\n\n[Chunk 11] (Score: 0.900)\n\"responses\": [ { \"topic\": \"MI300 Sequential Revenue Growth and Q4 Outlook\", \"content\": \"Yeah. Great, Ben. Thanks for the question. So, first of all, on sort of MI300 and the customer evolution, we're very happy with how MI300 has progressed.\\n\\nWhen we started the year, I think the key point for us was to get our products into our customers' data centers, to have them qualify their workloads, to really ramp in production, and then see what the production capabil\n\n[Chunk 12] (Score: 0.850)\n{ \"company_name\": \"AMD\", \"quarter\": \"Q2\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 5.8, \"unit\": \"billion USD\", \"year_over_year_change\": \"+9%\", \"quarter_over_quarter_change\": \"+7%\", \"context\": \"Q2 2024\",\n\n[Chunk 13] (Score: 0.350)\nu: Have WIP inventory. Will assess demand environment.\" ] }, { \"analyst\": \"Ross Seymore\", \"firm\": \"Deutsche Bank\", \"topics\": [ \"Differentiation\", \"Deal Structure\" ], \"questions\": [ \"How does AMD differentiate to win multi-GW deals?\", \"Was the OpenAI warrant structure unique?\" ], \"answers\": [ \"Lisa Su: World needs more compute. MI450 strong product. TCO and open ecosystem key.\", \"Lisa Su: Uniqu",
+  "created_at": "2025-12-10T15:32:41.747Z",
+  "category": "unanswerable"
+}

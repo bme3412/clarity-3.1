@@ -1,0 +1,76 @@
+{
+  "ticker": "AMD",
+  "fiscal_year": 2025,
+  "fiscal_quarter": "Q2",
+  "timeframe": {
+    "quarter_start": "2025-03-30",
+    "quarter_end": "2025-06-28",
+    "earnings_release_date": "2025-08-05"
+  },
+  "documents": [
+    {
+      "id": "AMD_FY25Q2_001",
+      "title": "AMD Reports Second Quarter 2025 Financial Results",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1257/amd-reports-second-quarter-2025-financial-results",
+      "publisher": "AMD Investor Relations",
+      "published_date": "2025-08-05",
+      "source_type": "official",
+      "category": ["earnings", "company_results"],
+      "event_date": "2025-06-28",
+      "relevance": "Primary source for AMD’s Q2 2025 financials and management commentary.",
+      "summary": "AMD announced record revenue of $7.7 billion for Q2 2025, up 32% YoY. GAAP gross margin was 40%; there was a GAAP operating loss of $134 million. Net income was $872 million (GAAP), diluted EPS $0.54. On a non-GAAP basis, gross margin was 43%, operating income $897 million, non-GAAP EPS $0.48. The quarter was impacted by U.S. export controls on the AMD Instinct MI308, resulting in approx. $800 million inventory/related charges. Data Center revenue was $3.2 billion (+14% YoY), Client & Gaming revenue was $3.6 billion (+69% YoY), Embedded revenue $824 million (-4% YoY). Guidance for Q3: revenue approx. $8.7 billion (± $300 million).",
+      "key_points": [
+        "Revenue: $7.7 billion (~+32% YoY).",
+        "GAAP EPS: $0.54; Non-GAAP EPS: $0.48.",
+        "Gross margin 40% GAAP; would have been ~54% excluding $800M MI308 export-control charge. :contentReference[oaicite:1]{index=1}",
+        "Data Center: $3.2B (+14% YoY); Client & Gaming: $3.6B (+69% YoY). :contentReference[oaicite:2]{index=2}",
+        "Embedded: $824M (-4% YoY). :contentReference[oaicite:3]{index=3}",
+        "Impact of U.S. export controls on MI308 products to China, causing inventory charges of ~$800 million. :contentReference[oaicite:4]{index=4}",
+        "Q3 guidance: revenue ~ $8.7B (~+28% YoY). :contentReference[oaicite:5]{index=5}"
+      ],
+      "embeddings_text": "In Q2 2025, AMD delivered ~ $7.7 billion in revenue, up 32% year-over-year. Although GAAP EPS was $0.54 and non-GAAP EPS $0.48, profitability was pressured by an $800 million inventory/related charge tied to U.S. export controls on the Instinct MI308 accelerator. Gross margin fell to 40% GAAP (43% non-GAAP) and would have been ~54% absent the export-control headwind. Data Center revenue of ~$3.2 billion grew 14%, while Client & Gaming revenue of ~$3.6 billion grew 69%. Embedded revenue declined ~4% to ~$824 million. AMD’s outlook calls for ~ $8.7 billion in revenue for Q3, underscoring strong demand in compute and AI segments but highlighting China/regulatory risk associated with GPU exports.",
+      "tags": ["FY25-Q2", "earnings", "export_controls", "AI_accelerators", "client_gaming_growth", "data_center", "guidance"]
+    },
+    {
+      "id": "AMD_FY25Q2_002",
+      "title": "AMD Q2 2025 Earnings Call Transcript & Market Reaction",
+      "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-amd-q2-2025-revenue-surges-stock-dips-postearnings-93CH-4171710",
+      "publisher": "Investing.com",
+      "published_date": "2025-08-05",
+      "source_type": "news",
+      "category": ["earnings_call", "market_reaction"],
+      "event_date": "2025-08-05",
+      "relevance": "Included management commentary and market sentiment following Q2 results; highlights investor caution despite strong topline growth.",
+      "summary": "The transcript notes AMD’s revenue up 32% YoY to ~$7.7 billion, matching EPS expectations at $0.48 non-GAAP; however, the stock dipped ~1.4% in after-hours. CEO Lisa Su emphasized robust demand across computing and AI portfolios and flagged regulatory and export-control headwinds. CFO Jean Hu commented on record free cash flow and strategic investments in hardware, software and systems. Analysts probe how quickly AMD can ramp MI350/MI355 series and resume MI308 China exports.",
+      "key_points": [
+        "Revenue up 32% YoY; Non-GAAP EPS $0.48. :contentReference[oaicite:8]{index=8}",
+        "Stock declined post-earnings despite beat, highlighting investor focus on margins and regulatory risk. :contentReference[oaicite:9]{index=9}",
+        "Lisa Su: emphasizing share gains in EPYC and Ryzen, ramp of MI350 series. :contentReference[oaicite:10]{index=10}",
+        "Analyst questions focus on China export licences and timeline for MI350/MI400 AI accelerators. :contentReference[oaicite:11]{index=11}"
+      ],
+      "embeddings_text": "In the earnings call for Q2 2025, AMD’s management discussed how the company achieved 32% revenue growth to ~$7.7 billion, driven by strong EPYC server CPU demand and client & gaming momentum. Non-GAAP EPS of $0.48 met expectations but disappointed some investors because gross margin fell significantly due to export-control charges tied to China shipments of MI308 GPUs. The market reaction was muted/negative, reflecting concerns about margin degradation, China regulatory risk, and how fast the MI350/MI355 AI accelerator ramp will unfold. CEO Lisa Su reinforced the company’s long-term AI and compute strategy, but analysts pressed on timeline and competitive positioning versus peers.",
+      "tags": ["earnings_call", "management_commentary", "market_sentiment", "china_risk", "ai_ramp"]
+    },
+    {
+      "id": "AMD_FY25Q2_003",
+      "title": "AMD Q2 2025: Sales Beat Offset by MI308-Linked EPS Decline",
+      "url": "https://futurumgroup.com/insights/amd-q2-fy-2025-sales-beat-offset-by-mi308-linked-eps-decline/",
+      "publisher": "Futurum Group",
+      "published_date": "2025-08-07",
+      "source_type": "analysis",
+      "category": ["analysis", "strategic_risk"],
+      "event_date": "2025-08-05",
+      "relevance": "Analyst commentary on strategic implications of the quarter for AMD’s AI roadmap, margin trajectory and China dependency—useful for deeper RAG insights.",
+      "summary": "While AMD posted a revenue beat in Q2 2025, profitability suffered due to ~$800 million in inventory charges stemming from export controls. Analyst takeaways: the MI350/MI355 ramp will be critical, China export licence clarity is a major overhang, EPYC share gains continue but the embedded business remains weak, and AI accelerator competition (especially from Nvidia) remains intense.",
+      "key_points": [
+        "Revenue beat but EPS decline due to inventory/export charge. :contentReference[oaicite:13]{index=13}",
+        "MI350/MI355 series seen as key lever for half-year growth. :contentReference[oaicite:14]{index=14}",
+        "China export licences for MI308 remain unresolved and pose upside risk if cleared. :contentReference[oaicite:15]{index=15}",
+        "Embedded segment remains a weakness (-4% YoY) and may weigh on margins. :contentReference[oaicite:16]{index=16}",
+        "Competitive landscape: AMD vs. Nvidia in AI accelerators; margin recovery is a key watch. :contentReference[oaicite:17]{index=17}"
+      ],
+      "embeddings_text": "In Q2 2025, AMD delivered a strong top-line performance (32% growth) but saw margin and EPS pressure due to a significant inventory/export charge tied to the MI308 GPU line and China export controls. The analysis suggests that the ramp of the next-generation MI350/MI355 series, clarity around export licences for China, and margin recovery are essential for sustaining the company’s compute-/AI-driven growth narrative. Additionally, while EPYC server CPUs and Ryzen client/gaming chips delivered strong growth, the embedded segment declined and remains a drag. For RAG use cases, this quarter illustrates how AMD is executing on compute share gains yet remains exposed to geo-regulatory, margin-compression and competitive risks in the AI accelerator market.",
+      "tags": ["margin_pressure", "export_controls", "ai_accelerator_ramp", "competitive_landscape", "embedded_weakness"]
+    }
+  ]
+}

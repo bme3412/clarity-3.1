@@ -1,0 +1,112 @@
+{
+  "id": "exec-1",
+  "run_id": "2025-12-10T17-08-34-318Z",
+  "strategy_id": "baseline",
+  "question": "What did AMD's CEO say about AI demand in recent earnings?",
+  "ground_truth": "AMD CEO Lisa Su emphasized strong AI demand, particularly for MI300 accelerators, and outlined plans to expand AI product portfolio to capture growing market opportunity.",
+  "generated_answer": "Atomic Facts with Citations\n• Q3 2025 revenue was $9.246B with 35.6% growth [C1]\n• Q2 2025 revenue was $7.685B with 31.7% growth [C2]  \n• Q1 2025 revenue was $7.438B with 35.9% growth [C3]\n• Q3 2025 gross margin was 52% [C1]\n• Q2 2025 gross margin was 40% [C2]\n• Q1 2025 gross margin was 50% [C3]\n• Q3 2025 operating margin was 13.7% [C1]\n• Q2 2025 operating margin was -1.7% [C2]\n• Q1 2025 operating margin was 10.8% [C3]\n• AI demand commentary: Not found in provided sources\n• CEO commentary: Not found in provided sources\n Final Answer\nAMD delivered strong financial performance in Q3 2025 with revenue of $9.246B, up 35.6% year-over-year [C1]. This represents sequential acceleration from Q2's $7.685B (+31.7%) [C2] and Q1's $7.438B (+35.9%) [C3]. \nProfitability improved significantly, with gross margin expanding to 52% in Q3 from 40% in Q2 [C1][C2]. Operating performance recovered sharply, with operating margin reaching 13.7% in Q3 versus -1.7% in Q2 and 10.8% in Q1 [C1][C2][C3].\nThe consistent revenue growth above 30% across all three quarters demonstrates sustained momentum. The margin expansion pattern suggests improving product mix and operational leverage.\nSpecific AI demand trends and CEO commentary regarding AI market dynamics are not found in provided sources.",
+  "duration_ms": 12725,
+  "metrics": {
+    "relevance": {
+      "score": 0.35,
+      "reasoning": "The answer does not address the user's specific question about what AMD's CEO said about AI demand in recent earnings. While the answer provides detailed financial metrics from AMD's quarterly reports, it explicitly states that 'AI demand commentary: Not found in provided sources' and 'CEO commentary: Not found in provided sources.' The user asked specifically for CEO statements about AI demand, and the answer fails to provide this information. The financial data provided, while accurate and well-cited, is tangential to the actual question asked. The answer deserves partial credit for acknowledging the limitation and providing related context, but fundamentally does not answer what was asked."
+    },
+    "faithfulness": {
+      "score": 0.85,
+      "reasoning": "The answer is largely faithful to the provided context, correctly extracting and citing financial metrics from all three chunks. Revenue figures, growth rates, gross margins, and operating margins are accurately reported with proper citations. The answer appropriately notes that AI demand commentary and CEO commentary are 'not found in provided sources,' which is honest and accurate. However, there are minor issues: (1) The answer states these are Q1, Q2, Q3 2025 quarters, but the context doesn't explicitly specify the time periods - this is an assumption. (2) The phrase 'sequential acceleration' and interpretive statements about 'improving product mix and operational leverage' go slightly beyond what's directly stated in the context, though they are reasonable inferences from the data. The core financial data is faithfully represented."
+    },
+    "accuracy": {
+      "score": 0.2,
+      "reasoning": "The generated answer fails to address the core content of the ground truth, which focuses on CEO Lisa Su's commentary about AI demand for MI300 accelerators and plans to expand the AI product portfolio. Instead, the generated answer provides detailed financial metrics (revenue, margins) that are not mentioned in the ground truth. The answer explicitly states 'AI demand commentary: Not found in provided sources' and 'CEO commentary: Not found in provided sources,' which directly contradicts the ground truth's focus on these topics. While the financial data provided may be accurate, it does not answer the question about AI demand and CEO commentary that the ground truth addresses. The small score reflects that both answers are about AMD, but the substance is completely different."
+    }
+  },
+  "context_count": 3,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3105,
+      "embeddingMs": 229,
+      "pineconeMs": 432,
+      "financialMs": 8,
+      "llmMs": 8951,
+      "totalMs": 12725
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 3,
+      "keywordMatches": 0,
+      "combinedContext": 3,
+      "filtersApplied": {
+        "company": "AMD",
+        "file_type": "earnings"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": true,
+      "usedKeywordFallback": false,
+      "financialQuery": false,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "strategic",
+      "timeframe": "most_recent",
+      "company_name": "AMD",
+      "isComparisonQuery": false,
+      "primaryTicker": "AMD"
+    },
+    "llm": {
+      "input_tokens": 1480,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 438,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "context-0",
+      "score": 0,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"revenue\": 9246,\n  \"gross_profit\": 4780,\n  \"gross_margin\": 52,\n  \"operating_income\": 1270,\n  \"operating_margin\": 13.7,\n  \"net_income\": 1243,\n  \"net_margin\": 13.44365130867402,\n  \"operating_cash_flow\": 1788,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 35.6,\n  \"eps\": 0.76,\n  \"eps_diluted\": 0.75,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 1270,\n  \"margin\": 13.7,\n  \"growth\": 35.6,\n  \"netIncome\": 1243,\n  \"grossMargin\": 52,\n  \"grossProfit\": 4780,\n  \"operatingCashFlow\": 1788,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 19.338092147955873\n}"
+      }
+    },
+    {
+      "id": "context-1",
+      "score": 0,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q2",
+        "fiscalYear": "2025",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"revenue\": 7685,\n  \"gross_profit\": 3059,\n  \"gross_margin\": 40,\n  \"operating_income\": -134,\n  \"operating_margin\": -1.7,\n  \"net_income\": 872,\n  \"net_margin\": 11.346779440468445,\n  \"operating_cash_flow\": 1462,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 31.7,\n  \"eps\": 0.54,\n  \"eps_diluted\": 0.54,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": -134,\n  \"margin\": -1.7,\n  \"growth\": 31.7,\n  \"netIncome\": 872,\n  \"grossMargin\": 40,\n  \"grossProfit\": 3059,\n  \"operatingCashFlow\": 1462,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 19.024072869225765\n}"
+      }
+    },
+    {
+      "id": "context-2",
+      "score": 0,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q1",
+        "fiscalYear": "2025",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"revenue\": 7438,\n  \"gross_profit\": 3736,\n  \"gross_margin\": 50,\n  \"operating_income\": 806,\n  \"operating_margin\": 10.8,\n  \"net_income\": 709,\n  \"net_margin\": 9.53213229362732,\n  \"operating_cash_flow\": 939,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 35.9,\n  \"eps\": 0.44,\n  \"eps_diluted\": 0.44,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 806,\n  \"margin\": 10.8,\n  \"growth\": 35.9,\n  \"netIncome\": 709,\n  \"grossMargin\": 50,\n  \"grossProfit\": 3736,\n  \"operatingCashFlow\": 939,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 12.62436138746975\n}"
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 0.000)\n{\n  \"revenue\": 9246,\n  \"gross_profit\": 4780,\n  \"gross_margin\": 52,\n  \"operating_income\": 1270,\n  \"operating_margin\": 13.7,\n  \"net_income\": 1243,\n  \"net_margin\": 13.44365130867402,\n  \"operating_cash_flow\": 1788,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 35.6,\n  \"eps\": 0.76,\n  \"eps_diluted\": 0.75,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 1270,\n  \"margin\": 13.7,\n  \"growth\": 35.6,\n  \"netIncome\": 1243,\n  \"grossMargin\": 52,\n  \"grossProfit\": 4780,\n  \"operatingCashFlow\": 1788,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 19.338092147955873\n}\n\n[Chunk 2] (Score: 0.000)\n{\n  \"revenue\": 7685,\n  \"gross_profit\": 3059,\n  \"gross_margin\": 40,\n  \"operating_income\": -134,\n  \"operating_margin\": -1.7,\n  \"net_income\": 872,\n  \"net_margin\": 11.346779440468445,\n  \"operating_cash_flow\": 1462,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 31.7,\n  \"eps\": 0.54,\n  \"eps_diluted\": 0.54,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": -134,\n  \"margin\": -1.7,\n  \"growth\": 31.7,\n  \"netIncome\": 872,\n  \"grossMargin\": 40,\n  \"grossProfit\": 3059,\n  \"operatingCashFlow\": 1462,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 19.024072869225765\n}\n\n[Chunk 3] (Score: 0.000)\n{\n  \"revenue\": 7438,\n  \"gross_profit\": 3736,\n  \"gross_margin\": 50,\n  \"operating_income\": 806,\n  \"operating_margin\": 10.8,\n  \"net_income\": 709,\n  \"net_margin\": 9.53213229362732,\n  \"operating_cash_flow\": 939,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 35.9,\n  \"eps\": 0.44,\n  \"eps_diluted\": 0.44,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 806,\n  \"margin\": 10.8,\n  \"growth\": 35.9,\n  \"netIncome\": 709,\n  \"grossMargin\": 50,\n  \"grossProfit\": 3736,\n  \"operatingCashFlow\": 939,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 12.62436138746975\n}",
+  "created_at": "2025-12-10T17:29:27.880Z",
+  "category": "executive"
+}

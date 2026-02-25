@@ -1,0 +1,178 @@
+{
+  "id": "exec-1",
+  "run_id": "2025-12-10T03-14-50-813Z",
+  "strategy_id": "baseline",
+  "question": "What did AMD's CEO say about AI demand in recent earnings?",
+  "ground_truth": "AMD CEO Lisa Su emphasized strong AI demand, particularly for MI300 accelerators, and outlined plans to expand AI product portfolio to capture growing market opportunity.",
+  "generated_answer": "Atomic Facts Extracted\n- MI450 expected to reach significant scale with customers including OCI and DOE [C1]\n- Both Servers and GPUs grew in Q3, with Server slightly better directionally [C1]\n- Q4 Data Center guidance described as \"strong double digit\" sequential growth [C1]\n- Q3 2025 revenue: $9.246B with 35.6% YoY growth [C2]\n- MI325 will start in Q4 2024 and ramp more in H1 2025 [C6]\n- MI350 Series will include multiple SKUs ranging from air-cooled to liquid-cooled configurations [C6]\n- MI300 progressed well through H1 2024 with products qualified in customer data centers and ramping in production [C8]\n- CEO commentary on AI demand drivers or strategic outlook: Not found in provided sources\n---\n Final Answer\nAMD's AI momentum continues accelerating, with Q3 2025 revenue reaching $9.246B (+35.6% YoY) [C2] and Data Center guiding to \"strong double digit\" sequential growth in Q4 [C1]. Both Server and GPU segments contributed to Q3 growth, with Server performing slightly better directionally [C1].\nThe GPU roadmap demonstrates sustained AI investment: MI300 achieved production ramp and customer qualification through 2024 [C8], MI325 began shipping Q4 2024 with H1 2025 ramp [C6], and MI450 is positioned to reach significant scale with hyperscalers and government customers including OCI and DOE [C1]. The MI350 Series will offer multiple SKUs spanning air-cooled to liquid-cooled configurations, addressing diverse customer deployment requirements [C6].\nDirect CEO commentary on AI demand outlook: Not found in provided sources. The context contains CFO (Jean Hu) responses regarding segment performance and guidance but lacks explicit CEO strategic remarks on AI demand trajectory.",
+  "duration_ms": 15217,
+  "metrics": {
+    "relevance": {
+      "score": 0.65,
+      "reasoning": "The answer provides substantial information about AMD's AI-related performance and product roadmap from earnings materials, which is partially relevant. However, the answer explicitly states that 'Direct CEO commentary on AI demand outlook: Not found in provided sources' and notes that the context contains CFO responses rather than CEO statements. This means the answer doesn't actually address what the CEO specifically said about AI demand, which was the core question. The answer is honest about this limitation but still provides related financial and product information, making it partially relevant but not directly responsive to the specific question asked."
+    },
+    "faithfulness": {
+      "score": 0.7,
+      "reasoning": "The answer contains several accurate elements from the context but also includes some problematic claims. Accurate: MI325 starting Q4 and ramping H1 2025, MI350 Series with multiple SKUs (air-cooled to liquid-cooled), MI300 progress through 2024, Server and GPU growth with Server slightly better, 'strong double digit' Q4 guidance. However, the answer states 'Q3 2025 revenue: $9.246B' but the context shows Q3 2024 revenue was $6.8B - the $9.246B figure appears in a different chunk without clear quarter/year attribution. The answer also claims MI450 will reach 'significant scale with hyperscalers and government customers including OCI and DOE' but the context only shows this as a partial fragment in analyst Q&A notes. The CEO commentary disclaimer is appropriate. The mixing of fiscal periods and some extrapolation from incomplete context fragments reduces faithfulness."
+    },
+    "accuracy": {
+      "score": 0.3,
+      "reasoning": "The generated answer fails to capture the key elements of the ground truth. The ground truth specifically mentions CEO Lisa Su emphasizing strong AI demand for MI300 accelerators and plans to expand the AI product portfolio. The generated answer explicitly states 'CEO commentary on AI demand drivers or strategic outlook: Not found in provided sources' and 'Direct CEO commentary on AI demand outlook: Not found in provided sources.' While the generated answer does mention MI300 achieving production ramp and provides detailed product roadmap information, it misses the core attribution to Lisa Su and her emphasis on strong AI demand. The answer provides related factual information about AMD's AI business but does not accurately reflect the ground truth's focus on the CEO's specific messaging about AI demand and strategic expansion plans."
+    }
+  },
+  "context_count": 8,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 3139,
+      "embeddingMs": 403,
+      "pineconeMs": 747,
+      "financialMs": 10,
+      "keywordMs": 11,
+      "llmMs": 10906,
+      "totalMs": 15217
+    },
+    "retrieval": {
+      "pineconeMatches": 0,
+      "financialMatches": 3,
+      "keywordMatches": 5,
+      "combinedContext": 8,
+      "filtersApplied": {
+        "company": "AMD",
+        "file_type": "earnings"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": true,
+      "usedKeywordFallback": true,
+      "financialQuery": false,
+      "hadTranscriptMatches": false
+    },
+    "intent": {
+      "analysis_type": "strategic",
+      "timeframe": "most_recent",
+      "company_name": "AMD",
+      "isComparisonQuery": false,
+      "primaryTicker": "AMD"
+    },
+    "llm": {
+      "input_tokens": 2107,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 448,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "keyword-2024-Q2-earnings",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q2",
+        "fiscalYear": "2024",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/AMD/FY_2024/Q2/parsed_earnings/AMD_FY2024_Q2_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"AMD\", \"quarter\": \"Q2\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 5.8, \"unit\": \"billion USD\", \"year_over_year_change\": \"+9%\", \"quarter_over_quarter_change\": \"+7%\", \"context\": \"Q2 2024\","
+      }
+    },
+    {
+      "id": "keyword-2024-Q2-qa",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q2",
+        "fiscalYear": "2024",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AMD/FY_2024/Q2/parsed_earnings/AMD_FY2024_Q2_qa.json",
+        "retrieval": "keyword",
+        "text": "ion, we're very happy with how MI300 has progressed.\\n\\nWhen we started the year, I think the key point for us was to get our products into our customers' data centers, to have them qualify their workloads, to really ramp in production, and then see what the production capabilities are, especially performance and all of those things. And I can say now being sort of more than halfway through the year, we've seen great progress across the board. As we look into the second half of the year, I think"
+      }
+    },
+    {
+      "id": "keyword-2024-Q3-earnings",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "transcript_earnings",
+        "source": "data/transcripts/AMD/FY_2024/Q3/parsed_earnings/AMD_FY2024_Q3_earnings.json",
+        "retrieval": "keyword",
+        "text": "{ \"company_name\": \"AMD\", \"quarter\": \"Q3\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 6.8, \"unit\": \"billion USD\", \"year_over_year_change\": \"+18%\", \"quarter_over_quarter_change\": \"+17%\", \"context\": \"Q3 2024\""
+      }
+    },
+    {
+      "id": "keyword-2024-Q3-qa",
+      "score": 1.2,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AMD/FY_2024/Q3/parsed_earnings/AMD_FY2024_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": "nt, there will be a small contribution in the fourth quarter, but it really is still mostly the MI300 capabilities.\\n\\nAnd 325 will start in the fourth quarter and then ramp more in the first half of next year. And then as we look at the 350 Series, what we're seeing and the reason we call it a series is because there will be multiple SKUs in that series that we'll go through the range of, let's call it, air-cooled to liquid-cooled. In spending time with our customers. I think there are people w"
+      }
+    },
+    {
+      "id": "keyword-2025-Q3-qa",
+      "score": 0.7000000000000001,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": "transcript_qa",
+        "source": "data/transcripts/AMD/FY_2025/Q3/parsed_earnings/AMD_FY2025_Q3_qa.json",
+        "retrieval": "keyword",
+        "text": "reach significant scale with MI450 (OCI, DOE, etc.).\" ] }, { \"analyst\": \"Stacy Rasgon\", \"firm\": \"Bernstein\", \"topics\": [ \"Data Center Growth\", \"Guidance Clarity\" ], \"questions\": [ \"Did Servers or GPUs grow more in Q3?\", \"Clarification on Q4 'strong double digit' guidance?\" ], \"answers\": [ \"Jean Hu: Both grew nicely; Server slightly better directionally.\", \"Jean Hu: Sequentially, Data Center u"
+      }
+    },
+    {
+      "id": "context-5",
+      "score": 0,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"revenue\": 9246,\n  \"gross_profit\": 4780,\n  \"gross_margin\": 52,\n  \"operating_income\": 1270,\n  \"operating_margin\": 13.7,\n  \"net_income\": 1243,\n  \"net_margin\": 13.44365130867402,\n  \"operating_cash_flow\": 1788,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 35.6,\n  \"eps\": 0.76,\n  \"eps_diluted\": 0.75,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 1270,\n  \"margin\": 13.7,\n  \"growth\": 35.6,\n  \"netIncome\": 1243,\n  \"grossMargin\": 52,\n  \"grossProfit\": 4780,\n  \"operatingCashFlow\": 1788,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 19.338092147955873\n}"
+      }
+    },
+    {
+      "id": "context-6",
+      "score": 0,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q2",
+        "fiscalYear": "2025",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"revenue\": 7685,\n  \"gross_profit\": 3059,\n  \"gross_margin\": 40,\n  \"operating_income\": -134,\n  \"operating_margin\": -1.7,\n  \"net_income\": 872,\n  \"net_margin\": 11.346779440468445,\n  \"operating_cash_flow\": 1462,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 31.7,\n  \"eps\": 0.54,\n  \"eps_diluted\": 0.54,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": -134,\n  \"margin\": -1.7,\n  \"growth\": 31.7,\n  \"netIncome\": 872,\n  \"grossMargin\": 40,\n  \"grossProfit\": 3059,\n  \"operatingCashFlow\": 1462,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 19.024072869225765\n}"
+      }
+    },
+    {
+      "id": "context-7",
+      "score": 0,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q1",
+        "fiscalYear": "2025",
+        "type": "financial_data",
+        "source": null,
+        "retrieval": null,
+        "text": "{\n  \"revenue\": 7438,\n  \"gross_profit\": 3736,\n  \"gross_margin\": 50,\n  \"operating_income\": 806,\n  \"operating_margin\": 10.8,\n  \"net_income\": 709,\n  \"net_margin\": 9.53213229362732,\n  \"operating_cash_flow\": 939,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 35.9,\n  \"eps\": 0.44,\n  \"eps_diluted\": 0.44,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 806,\n  \"margin\": 10.8,\n  \"growth\": 35.9,\n  \"netIncome\": 709,\n  \"grossMargin\": 50,\n  \"grossProfit\": 3736,\n  \"operatingCashFlow\": 939,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 12.62436138746975\n}"
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 1.200)\n{ \"company_name\": \"AMD\", \"quarter\": \"Q2\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 5.8, \"unit\": \"billion USD\", \"year_over_year_change\": \"+9%\", \"quarter_over_quarter_change\": \"+7%\", \"context\": \"Q2 2024\",\n\n[Chunk 2] (Score: 1.200)\nion, we're very happy with how MI300 has progressed.\\n\\nWhen we started the year, I think the key point for us was to get our products into our customers' data centers, to have them qualify their workloads, to really ramp in production, and then see what the production capabilities are, especially performance and all of those things. And I can say now being sort of more than halfway through the year, we've seen great progress across the board. As we look into the second half of the year, I think\n\n[Chunk 3] (Score: 1.200)\n{ \"company_name\": \"AMD\", \"quarter\": \"Q3\", \"fiscal_year\": \"2024\", \"financials\": { \"total_revenue\": { \"value\": 6.8, \"unit\": \"billion USD\", \"year_over_year_change\": \"+18%\", \"quarter_over_quarter_change\": \"+17%\", \"context\": \"Q3 2024\"\n\n[Chunk 4] (Score: 1.200)\nnt, there will be a small contribution in the fourth quarter, but it really is still mostly the MI300 capabilities.\\n\\nAnd 325 will start in the fourth quarter and then ramp more in the first half of next year. And then as we look at the 350 Series, what we're seeing and the reason we call it a series is because there will be multiple SKUs in that series that we'll go through the range of, let's call it, air-cooled to liquid-cooled. In spending time with our customers. I think there are people w\n\n[Chunk 5] (Score: 0.700)\nreach significant scale with MI450 (OCI, DOE, etc.).\" ] }, { \"analyst\": \"Stacy Rasgon\", \"firm\": \"Bernstein\", \"topics\": [ \"Data Center Growth\", \"Guidance Clarity\" ], \"questions\": [ \"Did Servers or GPUs grow more in Q3?\", \"Clarification on Q4 'strong double digit' guidance?\" ], \"answers\": [ \"Jean Hu: Both grew nicely; Server slightly better directionally.\", \"Jean Hu: Sequentially, Data Center u\n\n[Chunk 6] (Score: 0.000)\n{\n  \"revenue\": 9246,\n  \"gross_profit\": 4780,\n  \"gross_margin\": 52,\n  \"operating_income\": 1270,\n  \"operating_margin\": 13.7,\n  \"net_income\": 1243,\n  \"net_margin\": 13.44365130867402,\n  \"operating_cash_flow\": 1788,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 35.6,\n  \"eps\": 0.76,\n  \"eps_diluted\": 0.75,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 1270,\n  \"margin\": 13.7,\n  \"growth\": 35.6,\n  \"netIncome\": 1243,\n  \"grossMargin\": 52,\n  \"grossProfit\": 4780,\n  \"operatingCashFlow\": 1788,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 19.338092147955873\n}\n\n[Chunk 7] (Score: 0.000)\n{\n  \"revenue\": 7685,\n  \"gross_profit\": 3059,\n  \"gross_margin\": 40,\n  \"operating_income\": -134,\n  \"operating_margin\": -1.7,\n  \"net_income\": 872,\n  \"net_margin\": 11.346779440468445,\n  \"operating_cash_flow\": 1462,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 31.7,\n  \"eps\": 0.54,\n  \"eps_diluted\": 0.54,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": -134,\n  \"margin\": -1.7,\n  \"growth\": 31.7,\n  \"netIncome\": 872,\n  \"grossMargin\": 40,\n  \"grossProfit\": 3059,\n  \"operatingCashFlow\": 1462,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 19.024072869225765\n}\n\n[Chunk 8] (Score: 0.000)\n{\n  \"revenue\": 7438,\n  \"gross_profit\": 3736,\n  \"gross_margin\": 50,\n  \"operating_income\": 806,\n  \"operating_margin\": 10.8,\n  \"net_income\": 709,\n  \"net_margin\": 9.53213229362732,\n  \"operating_cash_flow\": 939,\n  \"free_cash_flow\": 0,\n  \"revenue_growth\": 35.9,\n  \"eps\": 0.44,\n  \"eps_diluted\": 0.44,\n  \"revenueSegments\": {\n    \"composition\": null\n  },\n  \"profit\": 806,\n  \"margin\": 10.8,\n  \"growth\": 35.9,\n  \"netIncome\": 709,\n  \"grossMargin\": 50,\n  \"grossProfit\": 3736,\n  \"operatingCashFlow\": 939,\n  \"freeCashFlow\": 0,\n  \"cashFlowMargin\": 12.62436138746975\n}",
+  "created_at": "2025-12-10T03:33:12.334Z",
+  "category": "executive"
+}

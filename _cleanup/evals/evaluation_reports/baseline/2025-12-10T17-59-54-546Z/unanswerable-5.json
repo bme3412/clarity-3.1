@@ -1,0 +1,136 @@
+{
+  "id": "unanswerable-5",
+  "run_id": "2025-12-10T17-59-54-546Z",
+  "strategy_id": "baseline",
+  "question": "How many MI325X units did AMD ship in 2022?",
+  "ground_truth": "Not found in provided sources.",
+  "generated_answer": "Atomic Facts with Citations:\n• MI325X GPUs are available now on DigitalOcean's AMD-based cloud offerings [C1]\n• MI325X is mentioned as part of AMD's Instinct GPU product line [C1]\n• No specific unit shipment numbers for MI325X are provided in the context [C1-C5]\n Final Answer:\nNot found in provided sources.\nThe provided context mentions that AMD Instinct MI325X GPUs are available now through DigitalOcean's cloud platform [C1], but does not contain any specific unit shipment data for the MI325X accelerator.",
+  "duration_ms": 5628,
+  "metrics": {
+    "relevance": {
+      "score": 0.8,
+      "reasoning": "The answer is relevant to the question as it directly addresses the query about MI325X shipment numbers. It correctly acknowledges that the specific shipment data requested is not available in the provided sources, which is an appropriate and honest response. The answer also provides related context about MI325X availability. However, it's worth noting that MI325X likely wasn't available in 2022 (it's a newer product), so the answer could have been slightly more helpful by noting this temporal impossibility, but it still appropriately indicates the information wasn't found."
+    },
+    "faithfulness": {
+      "score": 1,
+      "reasoning": "The answer is completely faithful to the provided context. The response correctly identifies that MI325X GPUs are mentioned as available through DigitalOcean (from Chunk 1: 'AMD Instinct MI325X GPUs available now'), and accurately states that no specific unit shipment numbers are provided in any of the chunks. The answer appropriately concludes with 'Not found in provided sources' since the context does not contain shipment data for MI325X. The atomic facts cited are all verifiable from the context, and the answer does not introduce any hallucinated information."
+    },
+    "accuracy": {
+      "score": 1,
+      "reasoning": "The generated answer correctly concludes with 'Not found in provided sources,' which matches the ground truth. While the generated answer provides additional context about what information IS available (MI325X availability on DigitalOcean), it correctly identifies that no specific unit shipment numbers are provided. The core factual determination is consistent with the ground truth."
+    }
+  },
+  "context_count": 5,
+  "pipeline_metrics": {
+    "timings": {
+      "intentMs": 0,
+      "embeddingMs": 242,
+      "pineconeMs": 509,
+      "llmMs": 4877,
+      "totalMs": 5628
+    },
+    "retrieval": {
+      "pineconeMatches": 5,
+      "financialMatches": 0,
+      "keywordMatches": 0,
+      "combinedContext": 5,
+      "filtersApplied": {
+        "company": "AMD"
+      }
+    },
+    "fallbacks": {
+      "usedFinancialData": false,
+      "usedKeywordFallback": false,
+      "financialQuery": false,
+      "hadTranscriptMatches": true
+    },
+    "intent": {
+      "analysis_type": "general",
+      "timeframe": "all",
+      "company_name": "AMD",
+      "isComparisonQuery": false,
+      "primaryTicker": "AMD"
+    },
+    "llm": {
+      "input_tokens": 1468,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 145,
+      "service_tier": "standard"
+    }
+  },
+  "context": [
+    {
+      "id": "AMD-2025-Q3-press_release-8",
+      "score": 3.6770869999999998,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2025",
+        "type": null,
+        "source": "AMD-Q3-2025-press-release.txt",
+        "retrieval": null,
+        "text": "to provide Zyphra with\nadvanced AI infrastructure, leveraging a large cluster of AMD Instinct MI350X\nGPUs to power next-generation multimodal AI models. o Cohere and AMD expanded their collaboration, bringing AMD Instinct GPUpowered infrastructure to Cohere’s full suite of enterprise AI offerings. o Vultr announced the global availability of AMD Instinct MI355X GPUs across its\ncloud platform. o DigitalOcean expanded its AMD-based cloud offerings to support a broader\nrange of AI workloads with AMD Instinct MI325X GPUs available now and AMD\nInstinct MI350X GPUs available later this year. o AMD and Tech Mahindra announced a collaboration to bring AMD Instinct GPUs\nand AMD EPYC processors to the Cloud BlazeTech enterprise AI solution. • AMD and the U.S."
+      }
+    },
+    {
+      "id": "AMD-2025-Q2-press_release-22",
+      "score": 3.5720935799999993,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q2",
+        "fiscalYear": "2025",
+        "type": null,
+        "source": "AMD-Q2-2025-press-release.txt",
+        "retrieval": null,
+        "text": "those expressed in, or implied or projected by, the forwardlooking information and statements. Material factors that could cause actual results to differ materially from current\nexpectations include, without limitation, the following: impact of government actions and regulations such as export\nregulations, tariffs and trade protection measures, and licensing requirements; competitive markets in which AMD’s\nproducts are sold; the cyclical nature of the semiconductor industry; market conditions of the industries in which AMD\nproducts are sold; AMD's ability to introduce products on a timely basis with expected features and performance\nlevels; loss of a significant customer; economic and market uncertainty; quarterly and seasonal sales patterns; AMD's\nability to adequately protect its technology or other intellectual property; unfavorable currency exchange rate\nfluctuations; ability of third party manufacturers to manufacture AMD's products on a timely basis in sufficient\nquantities and using competitive technologies; availability of essential equipment, materials, substrates or\nmanufacturing processes; ability to achieve expected manufacturing yields for AMD’s products; AMD's ability to\ngenerate revenue from its semi-custom SoC products; potential security vulnerabilities; potential security incidents\nincluding IT outages, data loss, data breaches and cyberattacks; uncertainties involving the ordering and shipment of\nAMD’s products; AMD’s reliance on third-party intellectual property to design and introduce new products; AMD's\nreliance on third-party companies for design, manufacture and supply of motherboards, software, memory and other\ncomputer platform components; AMD's reliance on Microsoft and other software vendors' support to design and\ndevelop software to run on AMD’s products; AMD’s reliance on third-party distributors and add-in-board partners;\nimpact of modification or interruption of AMD’s internal business processes and information systems; compatibility of\nAMD’s products with some or all industry-standard software and hardware; costs related to defective products;\nefficiency of AMD's supply chain; AMD's ability to rely on third party supply-chain logistics functions; AMD’s ability to\neffectively control sales of its products on the gray market; impact of climate change on AMD’s business; AMD’s\nability to realize its deferred tax assets; potential tax liabilities; current and future claims and litigation; impact of\nenvironmental laws, conflict minerals related provisions and other laws or regulations; evolving expectations from\ngovernments, investors, customers and other stakeholders regarding corporate responsibility matters; issues related\nto the responsible use of AI; restrictions imposed by agreements governing AMD’s notes, the guarantees of Xilinx’s\nnotes, the revolving credit agreement and the ZT Systems credit agreement; impact of acquisitions, joint ventures\nand/or strategic investments on AMD’s business and AMD’s ability to integrate acquired businesses, including ZT\nSystems; AMD’s ability to complete the sale of ZT Systems’ manufacturing business; impact of any impairment of the\ncombined company’s assets; political, legal and economic risks and natural disasters; future impairments of\ntechnology license purchases; AMD’s ability to attract and retain qualified personnel; and AMD’s stock price volatility."
+      }
+    },
+    {
+      "id": "AMD-2025-Q1-press_release-19",
+      "score": 3.5677063019999995,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q1",
+        "fiscalYear": "2025",
+        "type": null,
+        "source": "AMD-Q1-2025-press-release.txt",
+        "retrieval": null,
+        "text": "those expressed in, or implied or projected by, the forward-looking information and statements. Material factors that could\ncause actual results to differ materially from current expectations include, without limitation, the following: impact of government\nactions and regulations such as export regulations, tariffs and trade protection measures, and licensing requirements; Intel\nCorporation’s dominance of the microprocessor market and its aggressive business practices; Nvidia’s dominance in the graphics\nprocessing unit market and its aggressive business practices; competitive markets in which AMD’s products are sold; the cyclical\nnature of the semiconductor industry; market conditions of the industries in which AMD products are sold; AMD's ability to introduce\nproducts on a timely basis with expected features and performance levels; loss of a significant customer; economic and market\nuncertainty; quarterly and seasonal sales patterns; AMD's ability to adequately protect its technology or other intellectual property;\nunfavorable currency exchange rate fluctuations; ability of third party manufacturers to manufacture AMD's products on a timely\nbasis in sufficient quantities and using competitive technologies; availability of essential equipment, materials, substrates or\nmanufacturing processes; ability to achieve expected manufacturing yields for AMD’s products; AMD's ability to generate revenue\nfrom its semi-custom SoC products; potential security vulnerabilities; potential security incidents including IT outages, data loss,\ndata breaches and cyberattacks; uncertainties involving the ordering and shipment of AMD’s products; AMD’s reliance on thirdparty intellectual property to design and introduce new products; AMD's reliance on third-party companies for design, manufacture\nand supply of motherboards, software, memory and other computer platform components; AMD's reliance on Microsoft and other\nsoftware vendors' support to design and develop software to run on AMD’s products; AMD’s reliance on third-party distributors and\nadd-in-board partners; impact of modification or interruption of AMD’s internal business processes and information systems;\ncompatibility of AMD’s products with some or all industry-standard software and hardware; costs related to defective products;\nefficiency of AMD's supply chain; AMD's ability to rely on third party supply-chain logistics functions; AMD’s ability to effectively\ncontrol sales of its products on the gray market; long-term impact of climate change on AMD’s business; AMD’s ability to realize its\ndeferred tax assets; potential tax liabilities; current and future claims and litigation; impact of environmental laws, conflict minerals\nrelated provisions and other laws or regulations; evolving expectations from governments, investors, customers and other\n6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nstakeholders regarding corporate responsibility matters; issues related to the responsible use of AI;\nrestrictions imposed by agreements governing AMD’s notes, the guarantees of Xilinx’s notes, the\nrevolving credit agreement and the ZT Systems credit agreement; impact of acquisitions, joint ventures and/or strategic\ninvestments on AMD’s business and AMD’s ability to integrate acquired businesses, including ZT Systems; AMD’s ability to sell the\nZT Systems manufacturing business; impact of any impairment of the combined company’s assets; political, legal and economic\nrisks and natural disasters; future impairments of technology license purchases; AMD’s ability to attract and retain qualified\npersonnel; and AMD’s stock price volatility."
+      }
+    },
+    {
+      "id": "AMD-2022-Q1-full-47",
+      "score": 2.7406688109999995,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q1",
+        "fiscalYear": "2022",
+        "type": null,
+        "source": "AMD_FY2022_Q1_qa.json",
+        "retrieval": null,
+        "text": "will you -- do you plan to charge for software? And can you share with us maybe how we might think about AMD as a software business going forward?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2022-03-31T00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q1 2022 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\"\n    ],\n    \"executive_changes\": {}\n  }\n}"
+      }
+    },
+    {
+      "id": "AMD-2024-Q3-full-26",
+      "score": 2.6391523709999998,
+      "metadata": {
+        "company": "AMD",
+        "quarter": "Q3",
+        "fiscalYear": "2024",
+        "type": null,
+        "source": "AMD_FY2024_Q3_qa.json",
+        "retrieval": null,
+        "text": "year behind the industry leader, right? You're shipping something comparable to Hopper while they are starting to ship Blackwell next year. When you are at MI350, they will be on Blackwell Ultra or Rubin. So how do you see AMD closing that gap? And can you really gain share until that gap is closed?\\n\\nAnd for my follow-up, Lisa, back to the question on the PC market. So it was up -- or the client was up 26% sequentially. I think you are guiding to some growth in Q4 as well. How do you see the state of the channel? And I ask that just because sell-through in Q3 was not that great.\\n\\nAnd I think Intel had guided down their Q3 to be flat or down. So just how much of the growth that you are seeing is because of ASPs? How much of this is units?"
+      }
+    }
+  ],
+  "formatted_context": "[Chunk 1] (Score: 3.677)\nto provide Zyphra with\nadvanced AI infrastructure, leveraging a large cluster of AMD Instinct MI350X\nGPUs to power next-generation multimodal AI models. o Cohere and AMD expanded their collaboration, bringing AMD Instinct GPUpowered infrastructure to Cohere’s full suite of enterprise AI offerings. o Vultr announced the global availability of AMD Instinct MI355X GPUs across its\ncloud platform. o DigitalOcean expanded its AMD-based cloud offerings to support a broader\nrange of AI workloads with AMD Instinct MI325X GPUs available now and AMD\nInstinct MI350X GPUs available later this year. o AMD and Tech Mahindra announced a collaboration to bring AMD Instinct GPUs\nand AMD EPYC processors to the Cloud BlazeTech enterprise AI solution. • AMD and the U.S.\n\n[Chunk 2] (Score: 3.572)\nthose expressed in, or implied or projected by, the forwardlooking information and statements. Material factors that could cause actual results to differ materially from current\nexpectations include, without limitation, the following: impact of government actions and regulations such as export\nregulations, tariffs and trade protection measures, and licensing requirements; competitive markets in which AMD’s\nproducts are sold; the cyclical nature of the semiconductor industry; market conditions of the industries in which AMD\nproducts are sold; AMD's ability to introduce products on a timely basis with expected features and performance\nlevels; loss of a significant customer; economic and market uncertainty; quarterly and seasonal sales patterns; AMD's\nability to adequately protect its technology or other intellectual property; unfavorable currency exchange rate\nfluctuations; ability of third party manufacturers to manufacture AMD's products on a timely basis in sufficient\nquantities and using competitive technologies; availability of essential equipment, materials, substrates or\nmanufacturing processes; ability to achieve expected manufacturing yields for AMD’s products; AMD's ability to\ngenerate revenue from its semi-custom SoC products; potential security vulnerabilities; potential security incidents\nincluding IT outages, data loss, data breaches and cyberattacks; uncertainties involving the ordering and shipment of\nAMD’s products; AMD’s reliance on third-party intellectual property to design and introduce new products; AMD's\nreliance on third-party companies for design, manufacture and supply of motherboards, software, memory and other\ncomputer platform components; AMD's reliance on Microsoft and other software vendors' support to design and\ndevelop software to run on AMD’s products; AMD’s reliance on third-party distributors and add-in-board partners;\nimpact of modification or interruption of AMD’s internal business processes and information systems; compatibility of\nAMD’s products with some or all industry-standard software and hardware; costs related to defective products;\nefficiency of AMD's supply chain; AMD's ability to rely on third party supply-chain logistics functions; AMD’s ability to\neffectively control sales of its products on the gray market; impact of climate change on AMD’s business; AMD’s\nability to realize its deferred tax assets; potential tax liabilities; current and future claims and litigation; impact of\nenvironmental laws, conflict minerals related provisions and other laws or regulations; evolving expectations from\ngovernments, investors, customers and other stakeholders regarding corporate responsibility matters; issues related\nto the responsible use of AI; restrictions imposed by agreements governing AMD’s notes, the guarantees of Xilinx’s\nnotes, the revolving credit agreement and the ZT Systems credit agreement; impact of acquisitions, joint ventures\nand/or strategic investments on AMD’s business and AMD’s ability to integrate acquired businesses, including ZT\nSystems; AMD’s ability to complete the sale of ZT Systems’ manufacturing business; impact of any impairment of the\ncombined company’s assets; political, legal and economic risks and natural disasters; future impairments of\ntechnology license purchases; AMD’s ability to attract and retain qualified personnel; and AMD’s stock price volatility.\n\n[Chunk 3] (Score: 3.568)\nthose expressed in, or implied or projected by, the forward-looking information and statements. Material factors that could\ncause actual results to differ materially from current expectations include, without limitation, the following: impact of government\nactions and regulations such as export regulations, tariffs and trade protection measures, and licensing requirements; Intel\nCorporation’s dominance of the microprocessor market and its aggressive business practices; Nvidia’s dominance in the graphics\nprocessing unit market and its aggressive business practices; competitive markets in which AMD’s products are sold; the cyclical\nnature of the semiconductor industry; market conditions of the industries in which AMD products are sold; AMD's ability to introduce\nproducts on a timely basis with expected features and performance levels; loss of a significant customer; economic and market\nuncertainty; quarterly and seasonal sales patterns; AMD's ability to adequately protect its technology or other intellectual property;\nunfavorable currency exchange rate fluctuations; ability of third party manufacturers to manufacture AMD's products on a timely\nbasis in sufficient quantities and using competitive technologies; availability of essential equipment, materials, substrates or\nmanufacturing processes; ability to achieve expected manufacturing yields for AMD’s products; AMD's ability to generate revenue\nfrom its semi-custom SoC products; potential security vulnerabilities; potential security incidents including IT outages, data loss,\ndata breaches and cyberattacks; uncertainties involving the ordering and shipment of AMD’s products; AMD’s reliance on thirdparty intellectual property to design and introduce new products; AMD's reliance on third-party companies for design, manufacture\nand supply of motherboards, software, memory and other computer platform components; AMD's reliance on Microsoft and other\nsoftware vendors' support to design and develop software to run on AMD’s products; AMD’s reliance on third-party distributors and\nadd-in-board partners; impact of modification or interruption of AMD’s internal business processes and information systems;\ncompatibility of AMD’s products with some or all industry-standard software and hardware; costs related to defective products;\nefficiency of AMD's supply chain; AMD's ability to rely on third party supply-chain logistics functions; AMD’s ability to effectively\ncontrol sales of its products on the gray market; long-term impact of climate change on AMD’s business; AMD’s ability to realize its\ndeferred tax assets; potential tax liabilities; current and future claims and litigation; impact of environmental laws, conflict minerals\nrelated provisions and other laws or regulations; evolving expectations from governments, investors, customers and other\n6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nstakeholders regarding corporate responsibility matters; issues related to the responsible use of AI;\nrestrictions imposed by agreements governing AMD’s notes, the guarantees of Xilinx’s notes, the\nrevolving credit agreement and the ZT Systems credit agreement; impact of acquisitions, joint ventures and/or strategic\ninvestments on AMD’s business and AMD’s ability to integrate acquired businesses, including ZT Systems; AMD’s ability to sell the\nZT Systems manufacturing business; impact of any impairment of the combined company’s assets; political, legal and economic\nrisks and natural disasters; future impairments of technology license purchases; AMD’s ability to attract and retain qualified\npersonnel; and AMD’s stock price volatility.\n\n[Chunk 4] (Score: 2.741)\nwill you -- do you plan to charge for software? And can you share with us maybe how we might think about AMD as a software business going forward?\"\n      ]\n    }\n  ],\n  \"metadata\": {\n    \"parsed_date\": \"2022-03-31T00:00:00Z\",\n    \"company_ticker\": \"AMD\",\n    \"source\": \"Q1 2022 Earnings Call Transcript\",\n    \"operating_environment_challenges\": [\n      \"Supply constraints in wafers, substrates, and back-end assembly\",\n      \"Lockdowns in China affecting supply chains\",\n      \"Softening in certain parts of the PC market\",\n      \"High demand exceeding supply in Server and Semi-Custom segments\",\n      \"Integration of Xilinx and Pensando acquisitions\",\n      \"Competitive pressures from Intel's Sapphire Rapids and other competitors\",\n      \"Adoption of DDR5 potentially impacting server upgrades\",\n      \"Customization demands from large cloud and enterprise customers\",\n      \"Investment in AI and software stack development\"\n    ],\n    \"executive_changes\": {}\n  }\n}\n\n[Chunk 5] (Score: 2.639)\nyear behind the industry leader, right? You're shipping something comparable to Hopper while they are starting to ship Blackwell next year. When you are at MI350, they will be on Blackwell Ultra or Rubin. So how do you see AMD closing that gap? And can you really gain share until that gap is closed?\\n\\nAnd for my follow-up, Lisa, back to the question on the PC market. So it was up -- or the client was up 26% sequentially. I think you are guiding to some growth in Q4 as well. How do you see the state of the channel? And I ask that just because sell-through in Q3 was not that great.\\n\\nAnd I think Intel had guided down their Q3 to be flat or down. So just how much of the growth that you are seeing is because of ASPs? How much of this is units?",
+  "created_at": "2025-12-10T18:26:32.667Z",
+  "category": "unanswerable"
+}

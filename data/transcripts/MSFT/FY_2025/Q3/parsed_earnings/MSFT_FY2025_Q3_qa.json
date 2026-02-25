@@ -1,0 +1,144 @@
+{
+  "company_name": "Microsoft",
+  "quarter": "Q3",
+  "fiscal_year": "2025",
+  "speakers": {
+    "satya_nadella": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "Data center strategy",
+          "content": "We continuously tune the pace of leases and builds to match future workloads; that means thinking about demand shape, geography, power and the mix of training vs inference so we don't overcommit in one region or on one generation of hardware."
+        },
+        {
+          "topic": "Cloud migrations and AI",
+          "content": "Migration, data, and cloud native consumption are all moving in parallel, and they reinforce each other—AI workloads still rely on databases, storage and app services, so the next platform shift builds on our existing infrastructure momentum."
+        },
+        {
+          "topic": "DeepSeek and inference efficiency",
+          "content": "The software-driven gains that DeepSeek and others deliver compound Moore’s Law; every model generation and inference cycle is getting 10x more efficient, which lets customers consume more while we manage the fleet balance."
+        },
+        {
+          "topic": "Hyperscale economics",
+          "content": "Capital efficiency comes from system-wide software optimization—what differentiates hyperscale from hosting is that optimization, which allows us to keep the business attractive even though it is capital intensive."
+        }
+      ]
+    },
+    "amy_hood": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Data center balance",
+          "content": "These are long-lead decisions, so we constantly balance the demand curves Satya is watching; we pulled some space in earlier this quarter to deliver capacity faster, and while we’re tight as we exit the year, we're encouraged by the progress."
+        },
+        {
+          "topic": "Azure execution mix",
+          "content": "The surprise this quarter was mainly in the non-AI services, with enterprise and scale-account execution improving; the AI side just delivered supply a bit earlier, so the upside was more about non-AI growth than a change in the AI trajectory."
+        },
+        {
+          "topic": "CapEx efficiency",
+          "content": "The same levers that delivered capital efficiency in the server-to-cloud transition—long builds followed by software and hardware efficiencies—are happening faster on the AI side, giving us better margins today than when we went through the prior transition."
+        },
+        {
+          "topic": "Scale motion improvements",
+          "content": "We saw acceleration in enterprise customers and in parts of the scale motions that were challenged in Q2; execution improved, but we still have work to do, so we’re focused on staying disciplined as we close the year."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Keith Weiss",
+      "firm": "Morgan Stanley",
+      "topics": [
+        "Data center commitments",
+        "Power constraints"
+      ],
+      "questions": [
+        "Can you talk about what’s going on with the data center strategy given the reports of changing commitments, and explain the risks you referenced about potential GPU oversupply?"
+      ]
+    },
+    {
+      "analyst": "Brent Thill",
+      "firm": "Jefferies",
+      "topics": [
+        "Cloud migrations",
+        "Workload mix"
+      ],
+      "questions": [
+        "Can you dig deeper into the accelerating migration demand you referenced—what infrastructure and data trends are driving that?"
+      ]
+    },
+    {
+      "analyst": "Mark Moerdler",
+      "firm": "Bernstein Research",
+      "topics": [
+        "Macro resilience",
+        "Enterprise positioning"
+      ],
+      "questions": [
+        "How do you think about Microsoft’s stability and revenue volatility if a recession hits, and how can you help customers through any macro turbulence?"
+      ]
+    },
+    {
+      "analyst": "Karl Keirstead",
+      "firm": "UBS",
+      "topics": [
+        "Azure AI uplift",
+        "Workload mix"
+      ],
+      "questions": [
+        "Can you unpack the 16-point growth lift to Azure from AI—what workloads drove the demand and could AI growth be higher into June?"
+      ]
+    },
+    {
+      "analyst": "Kasthuri Rangan",
+      "firm": "Goldman Sachs",
+      "topics": [
+        "CapEx efficiency",
+        "AI margins"
+      ],
+      "questions": [
+        "Where do you stand on the ability to slow CapEx growth while still accelerating Azure and AI, and how do you think about the mark-to-market on those efficiencies?"
+      ]
+    },
+    {
+      "analyst": "Mark Murphy",
+      "firm": "JPMorgan",
+      "topics": [
+        "DeepSeek",
+        "Asset life"
+      ],
+      "questions": [
+        "How are the software efficiencies you dubbed the DeepSeek moment changing AI experimentation, and should we consider extending the useful life assumptions for GPUs?"
+      ]
+    },
+    {
+      "analyst": "S. Kirk Materne",
+      "firm": "Evercore ISI",
+      "topics": [
+        "Non-AI Azure",
+        "Execution"
+      ],
+      "questions": [
+        "Can you explain what drove the outperformance in the non-AI side of Azure, and what’s different about this cycle compared to prior optimization-related slowdowns?"
+      ]
+    },
+    {
+      "analyst": "Alex Zukin",
+      "firm": "Wolfe Research",
+      "topics": [
+        "AI demand correlation",
+        "Future growth path"
+      ],
+      "questions": [
+        "How much of the non-AI pull-through is tied to AI, and as test-time compute demand blows past expectations, how does that shift the AI growth curve going forward?"
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-04-30T00:00:00Z",
+    "source": "Microsoft FY 2025 Q3 earnings call transcript"
+  }
+}
+

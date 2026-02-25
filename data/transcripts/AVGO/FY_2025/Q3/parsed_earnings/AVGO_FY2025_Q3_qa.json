@@ -1,0 +1,138 @@
+{
+  "company_name": "Broadcom",
+  "quarter": "Q3",
+  "fiscal_year": "2025",
+  "speakers": {
+    "hock_tan": {
+      "role": "President and CEO",
+      "responses": [
+        {
+          "topic": "Q3 2025 Financial Highlights",
+          "content": "Q3 revenue was a record $16 billion, up 22% YoY. Adjusted EBITDA was $10.7 billion, up 30% YoY. Semiconductor revenue was $9.2 billion, up 26% YoY, driven by AI semiconductor revenue of $5.2 billion (up 63% YoY). Current consolidated backlog hit a record $110 billion."
+        },
+        {
+          "topic": "AI Business & XPU Momentum",
+          "content": "XPU business accelerated to 65% of AI revenue. We have secured over $10 billion of orders for AI accelerators from a fourth qualified customer, which will ship strongly in beginning of 2026. Demand from the existing 3 customers continues to grow. We expect the outlook for fiscal 2026 AI revenue to improve significantly."
+        },
+        {
+          "topic": "AI Networking",
+          "content": "AI networking demand remains strong. We launched Tomahawk 6 (102.4T Ethernet switch) which flattens networks to 2 tiers, and Jericho4 (51.2T Ethernet fabric router) for scaling across data centers beyond 200,000 compute nodes. We believe Ethernet is applicable to scale-up, scale-out, and scale-across challenges."
+        },
+        {
+          "topic": "Q4 2025 AI Forecast",
+          "content": "For Q4 2025, we forecast AI semiconductor revenue to be approximately $6.2 billion, up 66% YoY."
+        },
+        {
+          "topic": "Non-AI Semiconductors",
+          "content": "Non-AI semiconductor demand is slow to recover. Q3 revenue was $4 billion. Broadband showed strong sequential growth, but enterprise networking and server storage were down. In Q4, we forecast non-AI semiconductor revenue to grow low double digits sequentially to ~$4.6 billion driven by seasonality."
+        },
+        {
+          "topic": "Infrastructure Software & VMware",
+          "content": "Infrastructure software revenue was $6.8 billion, up 17% YoY. Bookings were strong with TCV over $8.4B. We released VMWare Cloud Foundation (VCF) 9.0. Over 90% of our top 10,000 customers have bought VCF. We expect Q4 software revenue to be ~$6.7 billion, up 15% YoY."
+        },
+        {
+          "topic": "CEO Tenure",
+          "content": "The Board and I have agreed that I will continue as CEO of Broadcom through at least 2030."
+        }
+      ]
+    },
+    "kirsten_spears": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Q3 Financial Details",
+          "content": "Consolidated revenue $16.0B (+22% YoY). Gross margin 78.4%. Adjusted EBITDA $10.7B (67% margin). Free cash flow $7.0B (44% of revenue). Cash position $10.7B."
+        },
+        {
+          "topic": "Q4 Guidance",
+          "content": "Q4 consolidated revenue ~$17.4B (+24% YoY). Semiconductor revenue ~$10.7B (+30% YoY), with AI revenue ~$6.2B (+66% YoY). Infrastructure software ~$6.7B (+15% YoY). Adjusted EBITDA ~67%."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Ross Seymore",
+      "firm": "Deutsche Bank",
+      "question": "What changed to drive the significant improvement in 2026 AI outlook? Is it the 4th customer or existing demand?",
+      "topics": ["AI Outlook", "New Customer", "Demand Drivers"]
+    },
+    {
+      "analyst": "Harlan Sur",
+      "firm": "JPMorgan",
+      "question": "How should we think about the magnitude of the cyclical upturn for non-AI segments from the bottom? Are you seeing order improvements?",
+      "topics": ["Non-AI Recovery", "Cyclical Trends", "Bookings"]
+    },
+    {
+      "analyst": "Vivek Arya",
+      "firm": "Bank of America",
+      "question": "Can you quantify the new fiscal '26 AI guidance (accelerating vs 60%)? How will the networking vs custom mix evolve?",
+      "topics": ["Fiscal '26 Guidance", "Revenue Mix", "Custom vs Networking"]
+    },
+    {
+      "analyst": "Stacy Rasgon",
+      "firm": "Bernstein Research",
+      "question": "Can you parse out the $110 billion backlog? How much is AI vs non-AI vs software?",
+      "topics": ["Backlog", "AI vs Non-AI"]
+    },
+    {
+      "analyst": "Benjamin Reitzes",
+      "firm": "Melius",
+      "question": "How is the dialogue going with the other 3 prospects beyond the 4 customers? Is the 1 million unit goal for 2027 still intact?",
+      "topics": ["Prospects", "Long-term Goals"]
+    },
+    {
+      "analyst": "James Schneider",
+      "firm": "Goldman Sachs",
+      "question": "How do you view the universe of additional prospects beyond the 7 identified? Are there others worthy of a custom chip?",
+      "topics": ["Market Opportunity", "Custom Silicon Landscape"]
+    },
+    {
+      "analyst": "Thomas O'Malley",
+      "firm": "Barclays",
+      "question": "Why is the Jericho4 and scale-across market developing materially now? Why is it important for inference?",
+      "topics": ["Jericho4", "Scale-Across", "Inference"]
+    },
+    {
+      "analyst": "Karl Ackerman",
+      "firm": "BNP Paribas",
+      "question": "Have you completely converted the top 10,000 accounts to VCF? Are you seeing cross-selling benefits?",
+      "topics": ["VMware Conversion", "VCF Adoption", "Cross-selling"]
+    },
+    {
+      "analyst": "Christopher Muse",
+      "firm": "Cantor Fitzgerald",
+      "question": "Can you help understand the gross margin guide (down 70 bps) given the mix shift?",
+      "topics": ["Gross Margin", "Mix Shift"]
+    },
+    {
+      "analyst": "Joseph Moore",
+      "firm": "Morgan Stanley",
+      "question": "Can you categorize the 4th customer (hyperscale vs LLM maker)? What is the time frame for the $10 billion orders?",
+      "topics": ["Customer Categorization", "Order Timeline"]
+    },
+    {
+      "analyst": "Joshua Buchalter",
+      "firm": "TD Cowen",
+      "question": "How does your scale-up Ethernet momentum compare to UALink/PCIe? How meaningful is the Tomahawk Ultra/scale-up opportunity?",
+      "topics": ["Scale-up Ethernet", "UALink", "Competition"]
+    },
+    {
+      "analyst": "Christopher Rolland",
+      "firm": "Susquehanna",
+      "question": "Do you view competition increasing on the ASIC or networking side (UALink/PCIe)?",
+      "topics": ["Competition", "ASIC", "Networking"]
+    },
+    {
+      "analyst": "Harsh Kumar",
+      "firm": "Piper Sandler",
+      "question": "Why should we not think your XPU share at existing customers will become bigger than GPU share long term?",
+      "topics": ["XPU Share", "Long-term Trends"]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2025-09-04",
+    "company_ticker": "AVGO",
+    "source": "earnings_call_transcript"
+  }
+}

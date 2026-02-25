@@ -1,0 +1,151 @@
+{
+  "company_name": "Oracle",
+  "quarter": "Q4",
+  "fiscal_year": "2023",
+  "speakers": {
+    "safra_ada_catz": {
+      "role": "Chief Executive Officer",
+      "responses": [
+        {
+          "topic": "Cloud Services Growth Drivers",
+          "content": "Let me take a start at it. And, Larry, you add in here. First of all, the fact that OCI is just growing and accelerating is because customers want to spend less. And they also need to do more.\n\nYou know, they need to stay competitive. They need to stay agile. And so our technology, whether it's our applications, which allow them to spend a lot less and make better decisions running their business, so that's very, very natural. So, our Fusion -- and there's just so many things about Fusion that are so compelling.\n\nIt costs less, it just helps them run their business. But then you go to OCI, where some of these customers are coming from our competitors. And as Larry said, imagine, Larry talked about the workload being twice as fast on OCI. But imagine it's 10 times as fast, or 100 times faster, or as is common in some cases, 1,000 times faster.\n\nSo, imagine what that bill looks like. So, we have compelling technology at a much lower price. And that's without a doubt causing our customers to move to us more quickly. I don't know, Larry, if you want to add into that."
+        },
+        {
+          "topic": "SaaS Application Migration Drivers and Vertical Offerings",
+          "content": "OK. Well, I will tell you that there's no question, our secret weapon is the fact that we have vertical applications also. Many of our customers end up wanting to buy a vertical application and Fusion together, and it's industry by industry. We will be posting online probably some of our wins for the quarter, but what you'll see is when we have existing customers in a segment and a vertical application in that, we truly are, without a doubt, the most popular.\n\nWhether it's healthcare with all of our existing customers, whether they be Cerner customers, the fact that we have ERP and HCM, SCM, all of our horizontal applications, CX, as well as the vertical applications, it makes us very tough to beat. New healthcare wins are going to be listed many, many, many go-lives, the same in financial services, retail, hospitality, these whole segments end up wanting to buy their entire solution from us. And that really makes us also very sensitive to their needs, and we can fill them much better. So, that's been a big winner for us.\n\nAnd I will tell you that our customers also, when they move from on-premise, they realize that they're moving into the 21st century with a much better system, but also a much lower cost system that also is kept current every 90 days. New capabilities become available. They'll never have to do that big implementation every five years like some of the older companies who say they're cloud but aren't actually cloud, they're just hosted. So, our products are just so differentiated all around that -- which is building momentum around the world.\n\nGo ahead."
+        },
+        {
+          "topic": "License Revenue Strength",
+          "content": "So contrary to, I think, the fears the people always have, the Oracle database is still the biggest part of license by far. So, most important part, the database remains strong because customers understand that they can BYOL, bring your own license, and they can have coverage, whether they're on-premise, in the cloud, or moving in between the two. So, again, really always the big number. But we've got growth rates that are very strong in Analytics.\n\nWe have growth rates that are super strong in Java. We have growth rates that are strong in the Industries areas. Some of our Industries applications. And then -- so, I want to make sure I gave you the numbers both ways.\n\nWith Cerner, we have a growth rate of 23% because, of course, you had the Cerner license. Without Cerner, it's 9% growth. So, even without Cerner, we have license growth after a very strong growth rate a full year ago in license. So, again, big dog is, of course, technology.\n\nThat's the bulk of it. But we've got a few industry apps and a little bit of Cerner. And it just remains just super strong."
+        },
+        {
+          "topic": "CapEx Efficiency and Data Center Optimization",
+          "content": "I mean, this past year was a big capex number as compared to usual. And we put out a lot of capacity. It is getting filled up and getting used up.\n\nAnd I think we're getting real economies. In addition, one of the things you don't realize is that our underlying infrastructure -- for example, I'll give you one example, our underlying infrastructure becomes more and more efficient, even under the best example actually is under Fusion. As we move, as we've moved to OCI, we are also moving to Autonomous Database Serverless, which again gives us added capacity. So, we're constantly, constantly becoming more efficient.\n\nOur original landing was 12 racks. We're moving to 10 racks to have all the services. We're just continuing to sort of miniaturize our capabilities and it's giving us enormous efficiencies and cost savings. So, staying the same as this year, again, if it just becomes overwhelming, it may go up higher, but I think we've got it very much in hand.\n\nWe've laid out a lot this past year. And I think if we stay where we're at, we're going to be able to fit a lot more workloads within that envelope straightforwardly."
+        }
+      ]
+    },
+    "larry_j_ellison": {
+      "role": "Chairman and Chief Technology Officer",
+      "responses": [
+        {
+          "topic": "OCI Cost Advantage",
+          "content": "Well, maybe the most interesting thing is we have a much faster network than anybody else. We have a fundamentally different network than any of the other cloud providers. We have what's called an RDMA network that we had to build because our Exadata machines and our database actually glued together a lot of computers. And when you had a single database application that could run on one computer or it could run on a cluster of computers, two computers, four computers, eight computers, whatever, so that there was no single point of failure.\n\nOne of the beauties of the Oracle Database, one of the big differences between the Oracle Database and other databases is that the Oracle Database, a single application could run on multiple computers. If one of those computers would fail, the application would keep running. It was fault tolerant. It would tolerate a failure of a machine.\n\nOther people don't have that. But in order to do that, we had to make our network. You're going to have a cluster of four machines running a single database app. We have to make that network between those four machines very fast.\n\nAnd that's called an RDMA network. It means that one computer can immediately access the memory of another computer without going through an interrupt. It's a very fast way to interconnect computers and have them act as a group. We built that for our entire cloud so we could run our database, our Oracle Real Application Cluster database on any of the computers in our cloud.\n\nNow, because we built this hyper-fast network, it turns out it has more utility than just running the Oracle Database. So, if you're running a cluster of computers doing a simulation, a car crash simulation -- that was one of the first applications people noticed ran much faster on Oracle. And now, a much bigger application that has run much faster on Oracle was on neural networks and machine-learning workloads, run much faster on Oracle, so -- because our network is just intrinsically much faster and thereby there are also -- there are security and reliability advantages to go along with that. So, our networks configured, we actually have -- all of our computers actually have two networks.\n\nI'm not going to go into all the details. But our computers are fundamentally different than any other cloud company. We have two networks. One of which is on the internet -- or I should say, one of which interconnects all of our customers' computers.\n\nAnd the other, which is our, if you will, our control network, where our -- and computers that run our cloud control software, which is isolated from the customer's software. So, the customer can't tamper with our cloud control software. They can't get control of it. And we can't see the customers' data.\n\nThat is unique to Oracle. But the -- because we have the two networks and because one of the networks is RDMA, we just run much, much faster, much more reliably than they do. And it's a fundamental advantage that they can't compete with, unless they rebuild their cloud from scratch."
+        },
+        {
+          "topic": "OCI Multi-Cloud Partnerships Impact",
+          "content": "Yeah, let me just add one thing, which is Safra addressed the issue of modernizing back office to save money. Let me tell you another way you can save money. We -- I personally have been talking to some of Amazon's most famous brands that are running at AWS.\n\nAnd the AWS build is getting very large, and they can save a huge amount of money by moving to OCI. And we, I expect next quarter, will be announcing some brands, some companies moving off of Amazon to OCI that will shock you. I'll stop there."
+        },
+        {
+          "topic": "Generative AI and Autonomous Database",
+          "content": "Yes, absolutely. It's very hard to answer that question. A long time ago, I said the biggest difference between the biggest strategic difference between Oracle's cloud and everyone else's cloud is actually not the RDMA network. That's a technical difference.\n\nThe biggest strategic difference is that we do both -- that we use our infrastructure and build applications with it. So, we learn a lot about how we can improve our infrastructure by building lots of applications, enterprise-scale applications, on top of our infrastructure. So, we have this continuous feedback loop. We're building applications, obtaining insights, making improvements in our productivity.\n\nWe have a new programming language. We have Java, and we love Java. We use it a lot for building applications. But we have this other low-code application development tool called Apex.\n\nAnd we're now building a lot of our applications in Apex. And our productivity gains are, again, a factor of 10. And we build the applications in one tenth the time, or one tenth the amount of people, or at one tenth the cost. But these are not typical low-code applications.\n\nThese are applications that can scale to millions of users and all over the world. So, most low-code applications are for small projects. We use them for applications we've rolled out globally. And we've made our underlying infrastructure, the Apex development environment, the underlying Apex database, which is the Oracle Autonomous Database, has made our application developers dramatically more productive.\n\nIt's one of the reasons why we bought into the idea that we could rewrite a whole suite of medical applications in a very, very short period of time, that we could redo, you know, Cerner very, very quickly because of these underlying tools. Let me close with one last thing. Again, we use AI technology to make our database better. And it's an autonomous database.\n\nYou don't need DBAs. It recovers itself, It updates, itself. It adds more space. It really is a self-driving database.\n\nWe've used AI technology to do that. We've used AI technology throughout our cloud, where our cloud is self-healing. We repair bugs while the cloud is running. We have an autonomous Linux operating system that's different than all of the other Linuxes.\n\nYou can patch it online. It patches itself online. It repairs itself online. So, again, by being in those two businesses, applications, and underlying infrastructure, we, again, use our infrastructure and make it better to make our applications better.\n\nAnd we gain insights as what we need to do with our -- what we need to add to our infrastructure to make the applications better. So, infrastructures make the applications better, applications make the infrastructure better. We're the only company with that continuous feedback loop. And I think it gives us a huge competitive advantage in technology.\n\nIt's why we have technologies that other people don't have."
+        }
+      ]
+    },
+    "ken_bond": {
+      "role": "Head of Investor Relations",
+      "responses": [
+        {
+          "topic": "Closing Remarks",
+          "content": "A telephonic replay of this conference call will be available for 24 hours on our Investor Relations website. Thank you for joining us today.\n\nAnd with that, I'll turn the call back to Emma for closing."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "John DiFucci",
+      "firm": "Guggenheim Partners",
+      "topics": ["Cloud Services Growth Drivers", "Revenue Growth Confidence", "Cloud Revenue Models"],
+      "questions": [
+        {
+          "question_text": "Thank you. My question's for, I think, mainly for Safra, but maybe Larry has some thoughts, too. It's somewhat surprising to see the acceleration across all your cloud businesses when others, whether it's the other hyperscalers or even other cloud-based vendors, are seeing just the opposite effects in this environment today, in today's environment. And that's important.\n\nWe get the better performance at a lower price. That makes a lot of sense, at least in, I've been around quite a while, I guess. And usually, in tough environments, we see people just freeze. But that's not what's happening here.\n\nSo, the question, in addition to what I just said, better performance at lower price, why? Is there anything else, outside of like Oracle even, that would show your cloud business accelerating when other pretty good companies are doing just the opposite?"
+        }
+      ]
+    },
+    {
+      "analyst": "Brad Zelnick",
+      "firm": "Deutsche Bank",
+      "topics": ["Generative AI Opportunity Allocation", "Infrastructure vs Applications Growth", "Single Medical Record Impact"],
+      "questions": [
+        {
+          "question_text": "Great, thank you so much. Congrats on a strong finish to the year. Larry, Oracle is somewhat unique in being a leader in both infrastructure and applications. And when we look back, I don't know, maybe five years from now, how much of the generative AI opportunity will have been captured on the infrastructure side of your business versus within apps? And I'm not just thinking strategic back office apps.\n\nI'm thinking front office, Cerner, and all the other verticals as well."
+        },
+        {
+          "question_text": "Excellent. Thank you so much for taking my question. Larry, as I think about the strong momentum in Cerner, expanding the contract base by $5 billion and your expectations for the business to accelerate, can you parse through the drivers in terms of new logo win rates versus the expansion and cross-sell you're doing with Fusion, for example? And then also, Larry, you touched on the idea of a single medical record. People have been talking about this for decades.\n\nWhen does it become clear that Oracle is helping improve the quality of care and saving lives? And I've got a quick follow-up for Safra to follow up. Thank you."
+        }
+      ]
+    },
+    {
+      "analyst": "Siti Panigrahi",
+      "firm": "Mizuho Securities",
+      "topics": ["SaaS Application Migration Drivers", "Vertical Offerings Impact on SaaS Growth"],
+      "questions": [
+        {
+          "question_text": "Thank you, and congrats on a great quarter. I want to dig into the application part of the business. Very impressive SaaS growth, especially in Fusion Apps and Cloud ERP in this macro environment. So, what are you hearing from your customer in terms of migrating to the SaaS application and what's driving that.\n\nAnd, also, the cloud world last year, you talked about the opportunity in combining horizontal application with vertical offering. So, how is that helping SaaS growth?"
+        }
+      ]
+    },
+    {
+      "analyst": "Raimo Lenschow",
+      "firm": "Barclays",
+      "topics": ["Cerner Integration Progress and Cost Synergies", "Operational and Technical Integration"],
+      "questions": [
+        {
+          "question_text": "Hey, thank you. Could I switch gear a little bit? A question for Safra. Safra, we now have Cerner in as part of Oracle. Where are we on the cost, on the synergy capture and cost takeout? And so are we -- do you see we are done there or are we kind of still at the beginning of a journey? Thank you.\n\nAnd congrats for me as well."
+        }
+      ]
+    },
+    {
+      "analyst": "Mark Murphy",
+      "firm": "JPMorgan Chase and Company",
+      "topics": ["Generative AI Opportunity Impact on Business"],
+      "questions": [
+        {
+          "question_text": "Thank you. Larry, my question was very much related to that, but maybe from a slightly different angle. I'm wondering if you could drill into the opportunity that you do see on the generative AI side? We're repeatedly hearing that companies are running those kinds of models on OCI. Nvidia is moving some of those workloads to the Oracle Cloud.\n\nAnd the other concept being that these AI models are so data hungry and that you have all the data already contained in the Fusion applications. I am curious if that piece of it, the generative AI piece, is something that you see lining up as a growth driver that is material overall on the entire business."
+        }
+      ]
+    },
+    {
+      "analyst": "Derrick Wood",
+      "firm": "Cowen and Company",
+      "topics": ["Telco Market Transformation", "OCI Go-to-Market Strategy", "Dedicated Data Centers for Telcos"],
+      "questions": [
+        {
+          "question_text": "Great. Thanks for taking my question and I'll echo my congratulations, especially on sustaining very high OCI growth. Larry, one area we've been doing more work on is how cloud vendors can help transform the telco market, including migrating their IT infrastructure and their network operations to the public cloud, which should lead to greater efficiencies and also give them a more effective platform to roll out new 5G and edge application services. I know you guys touched on this a bit at last year's Analyst Day, but I was just hoping to get an update on how you're thinking about that telco opportunity with the Oracle stack, especially with OCI? Who's some of the telco operators you're partnering with? And how you see this playing out over the next couple of years?"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2023-12-15T00:00:00Z",
+    "company_ticker": "ORCL",
+    "source": "Q4 2023 Earnings Call Transcript",
+    "operating_environment_challenges": [
+      "Macroeconomic uncertainty and potential recession impacts",
+      "High competition in cloud infrastructure and application markets",
+      "Integration of acquired companies (e.g., Cerner)",
+      "Customer demand for flexible, cost-effective, and high-performance cloud solutions",
+      "Technological advancements and competition in generative AI and machine learning workloads",
+      "Maintaining and expanding multi-cloud partnerships",
+      "Supply chain constraints affecting cloud and hardware delivery"
+    ],
+    "executive_changes": {
+      "new_leadership": {
+        "name": "N/A",
+        "role": "N/A",
+        "start_date": "N/A",
+        "context": "N/A"
+      },
+      "leadership_transition": {
+        "name": "N/A",
+        "role": "N/A",
+        "end_date": "N/A",
+        "successor": {
+          "name": "N/A",
+          "role": "N/A",
+          "context": "N/A"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q2",
+  "fiscal_year": "2024",
+  "speakers": {
+    "jensen_huang": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "Accelerated computing and generative AI",
+          "content": "Generative AI is powering a massive transition of the world’s $1 trillion data center infrastructure toward accelerated computing. We supply the full stack—GPUs, networking, software—so customers can build and operate AI factories across cloud and on-prem."
+        },
+        {
+          "topic": "Networking and full-stack value",
+          "content": "Our networking strategy (InfiniBand, Spectrum, BlueField-3) is inseparable from the compute. Accelerated computing is a data center-scale problem, not just a chip problem, and our full-stack stack (DOCA, Magnum IO, NVLink, Quantum and Ethernet) keeps throughput high while lowering TCO."
+        },
+        {
+          "topic": "Software platforms",
+          "content": "NVIDIA AI Foundations, AI Enterprise, and Omniverse unify model building, deployment, and robotics. DGX Cloud partnerships with Azure, GCP, and Oracle let us deliver these software stacks anywhere customers want to deploy."
+        },
+        {
+          "topic": "Inference and training",
+          "content": "Customers never stop training—they continuously refine models, vectorize data, and build large language models. Inference scales with usage, so we offer many GPU sizes (L4, L40, H100 NVL, Grace Hopper) to balance performance, cost, and pre/post-processing."
+        }
+      ]
+    },
+    "colette_kress": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "Data center visibility and supply",
+          "content": "Demand for accelerated computing continues to extend beyond the near term. We have procured substantial supply for H2, which supports our Q2 guidance and gives us confidence in scaling servers, networking, and storage capacity."
+        },
+        {
+          "topic": "Operating leverage and investment control",
+          "content": "We held operating expenses roughly flat sequentially while leaning into AI infrastructure; that discipline, paired with gross margin improvement, drives leverage. We remain opportunistic on share repurchases and are guiding toward continued capital deployment."
+        },
+        {
+          "topic": "Software monetization",
+          "content": "Software (AI Enterprise, Omniverse, AI Foundations) is integral to monetizing our hardware. These platforms run in multi-cloud and on-prem, and the mix of services plus ongoing patch/maintenance creates stickiness and recurring revenue."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Toshiya Hari",
+      "firm": "Goldman Sachs",
+      "topics": [
+        "Data center demand",
+        "Supply chain"
+      ],
+      "questions": [
+        "What is driving the sequential uptick in data center revenue, and how are you provisioning supply to support the second half of the year?"
+      ]
+    },
+    {
+      "analyst": "C.J. Muse",
+      "firm": "Evercore ISI",
+      "topics": [
+        "Acceleration",
+        "Procurement"
+      ],
+      "questions": [
+        "How are you managing the long lead times with suppliers such as TSMC while accelerating AI server production to meet demand?"
+      ]
+    },
+    {
+      "analyst": "Vivek Arya",
+      "firm": "Bank of America",
+      "topics": [
+        "Demand sustainability",
+        "Competition"
+      ],
+      "questions": [
+        "Does this extended visibility imply sequential growth beyond Q2, and how do you view the competitive landscape with more ASIC and GPU entrants?"
+      ]
+    },
+    {
+      "analyst": "Aaron Rakers",
+      "firm": "Wells Fargo",
+      "topics": [
+        "Software monetization",
+        "AI Enterprise"
+      ],
+      "questions": [
+        "How should investors think about NVIDIA’s ability to monetize its software stack as AI workloads scale?"
+      ]
+    },
+    {
+      "analyst": "Timothy Arcuri",
+      "firm": "UBS",
+      "topics": [
+        "InfiniBand vs Ethernet",
+        "Capital return"
+      ],
+      "questions": [
+        "How do you view Ethernet’s role versus InfiniBand, and why wasn’t there a share repurchase despite remaining authorization?"
+      ]
+    },
+    {
+      "analyst": "Stacy Rasgon",
+      "firm": "Bernstein Research",
+      "topics": [
+        "Inference vs training",
+        "LLM workloads"
+      ],
+      "questions": [
+        "Can you help quantify how inference and training workloads differ in growth, and which is the bigger opportunity over time?"
+      ]
+    },
+    {
+      "analyst": "Joseph Moore",
+      "firm": "Morgan Stanley",
+      "topics": [
+        "DGX Cloud",
+        "Hyperscale mix"
+      ],
+      "questions": [
+        "What is the mix between first-party DGX Cloud deployments and hyperscaler placements, and what have you learned since launching DGX Cloud?"
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2023-05-24T00:00:00Z",
+    "company_ticker": "NVDA",
+    "source": "NVDA Q1 FY2024 earnings call transcript (provided under the Q2 folder)",
+    "note": "Transcript text matches the April 30, 2023 earnings call; used as-is for the requested Q2 summary."
+  }
+}
+

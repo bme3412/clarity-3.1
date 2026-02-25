@@ -1,0 +1,129 @@
+{
+  "company_name": "NVIDIA",
+  "quarter": "Q1",
+  "fiscal_year": "2025",
+  "speakers": {
+    "jensen_huang": {
+      "role": "CEO",
+      "responses": [
+        {
+          "topic": "AI infrastructure demand",
+          "content": "AI is creating massive demand across CSPs, consumer internet companies, and enterprises. HGX/H100 with InfiniBand is the reference architecture for AI supercomputers, and we keep ramping supply—DGX Cloud and partnerships with Azure, GCP, OCI make it easy for customers to consume."
+        },
+        {
+          "topic": "Generative AI ecosystem",
+          "content": "We are enabling a full-stack AI ecosystem—AI Foundations, NeMo, Omniverse, TensorRT-LLM—and shipping inference platforms (L4, L40, H100 NVL). Enterprises, sovereign AI clouds, and creators all rely on NVIDIA stacks."
+        },
+        {
+          "topic": "Networking & Spectrum-X",
+          "content": "Quantum InfiniBand grew fivefold and is the go-to fabric for AI factories. Spectrum-X reimagines Ethernet for AI with BlueField DPUs and Spectrum switches, enabling enterprise AI deployments while keeping InfiniBand for high-performance workloads."
+        },
+        {
+          "topic": "DGX Cloud & AI Foundry",
+          "content": "DGX Cloud trains custom models alongside partners (Microsoft Azure, AWS, Google, Oracle) and acts as an AI foundry. Customers bring data and domain expertise; NVIDIA supplies AI foundations, NeMo tooling, and production-grade AI Enterprise runtime."
+        }
+      ]
+    },
+    "colette_kress": {
+      "role": "CFO",
+      "responses": [
+        {
+          "topic": "CapEx and long-lived assets",
+          "content": "About half of FY24/ Q4 capex was land/builds with 15-year-lived assets, enabling global scale. The other half is kit purchased as demand for inference/training materializes."
+        },
+        {
+          "topic": "Margins & operating leverage",
+          "content": "Q4 margins benefited from favorable component costs; we expect mid-70s margins moving forward. Operating expenses remain disciplined even as we invest across compute, networking, and software."
+        },
+        {
+          "topic": "Allocation and supply",
+          "content": "Inventory is shipped immediately; purchase commitments vary in duration. We work closely with CSPs to align allocations with deployment readiness and avoid excess stock."
+        }
+      ]
+    }
+  },
+  "analyst_questions": [
+    {
+      "analyst": "Vivek Arya",
+      "firm": "BofA Securities",
+      "topics": [
+        "Data center growth",
+        "Competition"
+      ],
+      "questions": [
+        "Can data center growth continue sequentially into Q3/Q4 once you fulfill supply, and how do you see the competitive landscape evolving with more ASIC and GPU entrants?"
+      ]
+    },
+    {
+      "analyst": "Aaron Rakers",
+      "firm": "Wells Fargo",
+      "topics": [
+        "Software monetization",
+        "AI Enterprise"
+      ],
+      "questions": [
+        "How should investors think about monetizing NVIDIA's software stack (AI Enterprise, Omniverse, AI Foundations) as AI workloads scale?"
+      ]
+    },
+    {
+      "analyst": "Timothy Arcuri",
+      "firm": "UBS",
+      "topics": [
+        "Networking",
+        "Share repurchases"
+      ],
+      "questions": [
+        "What's the role of Ethernet versus InfiniBand, and why were no share repurchases executed this quarter despite authorization?"
+      ]
+    },
+    {
+      "analyst": "Stacy Rasgon",
+      "firm": "Bernstein Research",
+      "topics": [
+        "Inference vs training",
+        "AI workloads"
+      ],
+      "questions": [
+        "Can you contrast the growth trajectories of inference and training workloads and give a sense of the opportunity size?"
+      ]
+    },
+    {
+      "analyst": "Joseph Moore",
+      "firm": "Morgan Stanley",
+      "topics": [
+        "Inference efficiency",
+        "Cost per query"
+      ],
+      "questions": [
+        "How are you helping customers reduce cost per query for inference, and do new tools like TensorRT LLM or specialty services play a role?"
+      ]
+    },
+    {
+      "analyst": "Harlan Sur",
+      "firm": "JP Morgan",
+      "topics": [
+        "Networking bandwidth",
+        "InfiniBand"
+      ],
+      "questions": [
+        "How do you keep networking bandwidth ahead of compute complexity with InfiniBand, DOCA, and Magnum IO?"
+      ]
+    },
+    {
+      "analyst": "Matt Ramsay",
+      "firm": "Cowen",
+      "topics": [
+        "DGX Cloud",
+        "Customer mix"
+      ],
+      "questions": [
+        "What mix of DGX Cloud (first-party) versus CSP hardware drives the upside, and what have you learned since launching the service?"
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_date": "2023-05-24T00:00:00Z",
+    "source": "NVDA Q1 FY2024 earnings call transcript",
+    "note": "Summaries emphasize AI infrastructure demand, software stack, networking and supply cadence."
+  }
+}

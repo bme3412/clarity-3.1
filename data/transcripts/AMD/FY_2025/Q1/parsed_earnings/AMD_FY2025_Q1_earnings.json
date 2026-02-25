@@ -1,0 +1,160 @@
+{
+  "company_name": "AMD",
+  "quarter": "Q1",
+  "fiscal_year": "2025",
+  "total_revenue": {
+    "value": 7.4,
+    "unit": "billion",
+    "context": "Up 36% year-over-year, exceeded high end of guidance",
+    "period": "Q1 FY2025",
+    "performance_details": {
+      "drivers": [
+        "Data Center growth (+57%)",
+        "Client and Gaming growth (+28%)",
+        "Strong Ryzen and EPYC sales"
+      ]
+    }
+  },
+  "segments": [
+    {
+      "name": "Data Center",
+      "revenue": {
+        "value": 3.7,
+        "unit": "billion",
+        "context": "Up 57% year-over-year",
+        "period": "Q1 FY2025"
+      },
+      "growth_yoy": 57.0,
+      "operating_income": 932,
+      "operating_margin": 25.0,
+      "key_points": [
+        "Gained server CPU share with 5th Gen EPYC Turin",
+        "Instinct GPU revenue grew significant double-digit percentage YoY",
+        "Strong enterprise adoption (Forbes 2000 instances doubled YoY)",
+        "MI350 series sampling, production mid-year",
+        "MI400 series on track for 2026 launch"
+      ]
+    },
+    {
+      "name": "Client and Gaming",
+      "revenue": {
+        "value": 2.9,
+        "unit": "billion",
+        "context": "Up 28% year-over-year (Combined Segment)",
+        "period": "Q1 FY2025"
+      },
+      "growth_yoy": 28.0,
+      "operating_income": 496,
+      "operating_margin": 17.0,
+      "breakdown": {
+        "client": {
+          "revenue": 2.3,
+          "growth_yoy": 68.0,
+          "context": "Driven by richer mix of high-end Ryzen processors"
+        },
+        "gaming": {
+          "revenue": 0.647,
+          "growth_yoy": -30.0,
+          "context": "Lower semi-custom sales, partially offset by Radeon ramp"
+        }
+      },
+      "key_points": [
+        "Client revenue up 68% YoY",
+        "Desktop channel sellout >50% YoY",
+        "Launched Ryzen 9000 X3D series",
+        "Radeon 9070 series saw record first-week sellout",
+        "Console channel inventory normalized"
+      ]
+    },
+    {
+      "name": "Embedded",
+      "revenue": {
+        "value": 0.823,
+        "unit": "billion",
+        "context": "Down 3% year-over-year",
+        "period": "Q1 FY2025"
+      },
+      "growth_yoy": -3.0,
+      "operating_income": 328,
+      "operating_margin": 40.0,
+      "key_points": [
+        "Demand recovering gradually",
+        "Sequential decline of 11% consistent with expectations",
+        "Launched EPYC Embedded 9005 series",
+        "Expect return to YoY growth in H2 2025"
+      ]
+    }
+  ],
+  "operational_metrics": {
+    "gross_margin": {
+      "value": 54.0,
+      "unit": "percentage",
+      "type": "Non-GAAP",
+      "context": "Up 140 basis points year-over-year",
+      "period": "Q1 FY2025",
+      "drivers": [
+        "Richer client product mix",
+        "Higher data center contribution"
+      ]
+    },
+    "operating_income": {
+      "value": 1.8,
+      "unit": "billion",
+      "type": "Non-GAAP",
+      "margin": 24.0
+    },
+    "net_income": {
+      "value": 1.6,
+      "unit": "billion",
+      "type": "Non-GAAP",
+      "eps": 0.96,
+      "eps_growth_yoy": 55.0
+    },
+    "cash_position": {
+      "cash_and_equivalents": 7.3,
+      "unit": "billion",
+      "cash_flow_operations": 939,
+      "free_cash_flow": 727,
+      "share_repurchases": 749
+    }
+  },
+  "future_guidance": {
+    "quarter": "Q2 FY2025",
+    "expectations": {
+      "revenue": "$7.4 billion +/- $300 million",
+      "revenue_context": "Includes ~$700M reduction due to new MI308 export license requirements",
+      "gross_margin": "43% (Non-GAAP)",
+      "gross_margin_context": "Includes ~$800M charge for inventory/reserves due to export controls. ~54% excluding charge.",
+      "operating_expenses": "~$2.3 billion",
+      "tax_rate": "13%",
+      "full_year_outlook": "Strong double-digit percentage revenue growth for 2025"
+    }
+  },
+  "strategic_highlights": {
+    "acquisitions": [
+      {
+        "name": "ZT Systems",
+        "status": "Closed March 31, 2025",
+        "impact": "Accelerates rack-scale AI solution capabilities"
+      }
+    ],
+    "regulatory": [
+      {
+        "issue": "China Export Controls",
+        "impact": "Restricts MI308 shipments. Estimated revenue impact: $700M in Q2, $1.5B full year 2025."
+      }
+    ],
+    "product_launches": [
+      "5th Gen EPYC Turin (Ramping)",
+      "MI325X (Ramping)",
+      "MI350 Series (Sampling)",
+      "Ryzen 9000 X3D",
+      "Radeon 9070 Series"
+    ]
+  },
+  "metadata": {
+    "parsed_date": "2025-05-06",
+    "company_ticker": "AMD",
+    "source": "earnings_call_transcript"
+  }
+}

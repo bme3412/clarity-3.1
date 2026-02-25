@@ -1,0 +1,169 @@
+{
+  "financial_report": {
+    "period": {
+      "fiscal_quarter": "Q1 2026",
+      "fiscal_year": "2026",
+      "year_ago_quarter": {
+        "date": "Q1 2025",
+        "type": "Year-over-Year Quarter"
+      }
+    },
+    "overview": {
+      "total_revenue": 14926,
+      "yoy_growth_usd": "12%",
+      "yoy_growth_constant_currency": "11%",
+      "cloud_revenue": 7186,
+      "cloud_growth_usd": "28%",
+      "cloud_growth_cc": "27%",
+      "rpo": {
+        "value": 455,
+        "unit": "billion USD",
+        "yoy_growth": "359%"
+      },
+      "software_revenue": 5721,
+      "software_yoy_usd": "-1%",
+      "software_yoy_cc": "-2%"
+    },
+    "income_statement": {
+      "revenue": {
+        "components": {
+          "cloud": 7186,
+          "software": 5721,
+          "hardware": 670,
+          "services": 1349
+        }
+      },
+      "operating_expenses": {
+        "total": 10649,
+        "breakdown": {
+          "cloud_and_software": 3607,
+          "hardware": 178,
+          "services": 1099,
+          "sales_and_marketing": 2063,
+          "research_and_development": 2491,
+          "general_and_administrative": 376,
+          "amortization_of_intangible_assets": 420,
+          "acquisition_related": 13,
+          "restructuring": 402
+        },
+        "non_gaap_adjustments": {
+          "stock_based_compensation": -1124,
+          "amortization_of_intangible_assets": -420,
+          "acquisition_related": -13,
+          "restructuring": -402,
+          "total_adjustments": -1959
+        },
+        "non_gaap_total": 8690
+      },
+      "operating_income": {
+        "gaap": 4277,
+        "non_gaap": 6236,
+        "non_gaap_margin": "42%"
+      },
+      "net_income": {
+        "gaap": 2927,
+        "non_gaap": 4283
+      },
+      "eps": {
+        "gaap": 1.01,
+        "non_gaap": 1.47,
+        "gaap_yoy": "-2%",
+        "non_gaap_yoy": "+6%"
+      }
+    },
+    "cash_flow": {
+      "operating_cash_flow": 8140,
+      "capital_expenditures": -8502,
+      "free_cash_flow": -362,
+      "notes": "Q1 FY26 cash flow impacted by heavy capex"
+    },
+    "capital_return": {
+      "dividend": {
+        "value": 0.50,
+        "unit": "USD per share",
+        "payment_date": "October 23, 2025"
+      },
+      "share_repurchases": {
+        "value": 0.095,
+        "unit": "billion USD"
+      }
+    },
+    "strategic_context": {
+      "infrastructure_forecast": [
+        "OCI revenue set to grow 77% to $18B in FY26 and reach $32B/$73B/$114B/$144B over next four years",
+        "MultiCloud revenue grew 1,529% in Q1; 34 datacenters live with 37 more planned"
+      ],
+      "Oracle_AI_Database": "New service enabling customers to run Gemini, ChatGPT, Grok, and Llama directly over vectorized private data"
+    },
+    "outlook": {
+      "q2_guidance": {
+        "revenue_constant_currency": "+12% to +14%",
+        "revenue_usd": "+14% to +16%",
+        "cloud_growth_constant_currency": "+32% to +36%",
+        "cloud_growth_usd": "+33% to +37%",
+        "non_gaap_eps_constant_currency": "$1.58 to $1.62",
+        "non_gaap_eps_usd": "$1.61 to $1.65",
+        "tax_rate": "19%",
+        "currency_impact": {
+          "revenue": "+1%",
+          "eps": "+$0.03"
+        }
+      },
+      "long_term": {
+        "fy26_total_revenue": 67,
+        "fy26_cloud_growth": "+>40%",
+        "fy26_iaas_growth": "+>70%",
+        "fy26_rpo_growth": "+>100%",
+        "fy26_capex": 35
+      }
+    }
+  },
+  "balance_sheet": {
+    "assets": {
+      "cash_and_equivalents": 10445,
+      "marketable_securities": 560,
+      "trade_receivables_net": 8843,
+      "prepaid_and_other_current_assets": 4786,
+      "total_current_assets": 24634,
+      "property_plant_equipment_net": 53194,
+      "intangible_assets_net": 4167,
+      "goodwill": 62211,
+      "deferred_tax_assets": 11734,
+      "other_non_current_assets": 24509,
+      "total_non_current_assets": 155815,
+      "total_assets": 180449
+    },
+    "liabilities": {
+      "current_liabilities": {
+        "notes_payable_and_other": 9079,
+        "accounts_payable": 8203,
+        "accrued_compensation": 1794,
+        "deferred_revenues": 12098,
+        "other_current_liabilities": 8700,
+        "total_current_liabilities": 39874
+      },
+      "non_current_liabilities": {
+        "notes_payable_and_other": 82236,
+        "income_taxes_payable": 10583,
+        "operating_lease_liabilities": 14094,
+        "other_non_current_liabilities": 8996,
+        "total_non_current_liabilities": 115909
+      },
+      "total_liabilities": 155783
+    },
+    "equity": {
+      "total": 24666
+    }
+  },
+  "metrics": {
+    "deferred_revenues": 12098,
+    "capex_growth": "+140% yoy",
+    "rpo_to_revenue_ratio": ">30"
+  },
+  "metadata": {
+    "parsed_date": "2025-09-09T00:00:00Z",
+    "source": "Q1 FY26 earnings release",
+    "ticker": "ORCL"
+  }
+}
+
